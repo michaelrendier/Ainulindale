@@ -1,0 +1,17 @@
+TO: Tevita Parcollet
+SUBJECT: Theoretical basis for quaternion network efficiency — SU(2) gauge structure at the ℍ stratum
+STATUS: IMMEDIATE — ready to send
+
+Dr. Parcollet,
+
+Your work on quaternion recurrent neural networks demonstrated measurable gains in parameter efficiency and convergence from quaternionic structure. I am writing to share a framework that may provide a theoretical basis for why that is the case.
+
+The Ainulindalë Conjecture proposes that the Cayley-Dickson tower ℝ→ℂ→ℍ→𝕆 is the correct algebraic substrate for hierarchical neural networks — not by engineering choice, but by mathematical necessity. At the quaternion layer, the gauge group is SU(2), and backpropagation through that layer is the Abelian limit of the SU(2) Yang-Mills equation. The parameter efficiency you observed in quaternion networks may be a consequence of operating at the correct algebraic stratum for the task.
+
+The framework is a preprint with fully executable code. Noether conservation has been measured empirically at each algebra layer across a 4.2 GB training corpus.
+
+Preprint and code:
+https://github.com/michaelrendier/Ainulindale
+
+Respectfully,
+Cody Michael Allison

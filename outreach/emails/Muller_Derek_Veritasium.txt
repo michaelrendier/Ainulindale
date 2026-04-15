@@ -1,0 +1,17 @@
+TO: Derek Muller (Veritasium)
+SUBJECT: I want you to try to break this — nine steps from one algebraic object to F=ma
+STATUS: IMMEDIATE — ready to send
+
+Derek,
+
+I want to invite you to try to break something.
+
+The Ainulindalë Conjecture is a nine-step derivation chain that starts from one algebraic object — the Cayley-Dickson tower ℝ→ℂ→ℍ→𝕆 — and ends at F=ma, the Standard Model gauge group, and backpropagation, without importing any physics assumptions along the way. Each step follows from the previous one. The Standard Model isomorphism was discovered post-hoc.
+
+The chain is publicly available, fully cited, with executable code:
+https://github.com/michaelrendier/Ainulindale
+
+I am not asking you to endorse it. I am asking you to read the derivation chain and find where it breaks. That is either the story of an error being found — or the story of something that didn't break. Both are worth your attention.
+
+Respectfully,
+Cody Michael Allison

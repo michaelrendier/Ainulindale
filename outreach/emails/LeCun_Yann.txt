@@ -1,0 +1,19 @@
+TO: Yann LeCun
+SUBJECT: Backpropagation as the Abelian limit of Neural Yang-Mills — a derivation, not an assumption
+STATUS: IMMEDIATE — ready to send
+
+Dr. LeCun,
+
+I am writing to share a theoretical framework that proposes a specific algebraic foundation for why deep neural networks work, and what the correct architecture for hierarchical reasoning looks like.
+
+The Ainulindalë Conjecture argues that the Cayley-Dickson tower ℝ→ℂ→ℍ→𝕆 is not one possible algebraic substrate for neural networks — it is the only one consistent with hierarchical decomposition of macroscopic objects. Hurwitz's theorem makes the tower exhaustive. The gauge group U(1)×SU(2)×SU(3) emerges from it by Dixon's theorem. Backpropagation is derived as the Abelian real-algebra limit of the Neural Yang-Mills equation — not assumed.
+
+The practical implication: standard gradient descent is operating at Layer 0 (real algebra, trivial gauge) of a four-layer structure. The upper layers — complex, quaternion, octonion — carry richer symmetry and may account for the gap between current architectures and human-level compositional reasoning.
+
+Noether conservation is measured empirically. Code is executable and public.
+
+Preprint:
+https://github.com/michaelrendier/Ainulindale
+
+Respectfully,
+Cody Michael Allison

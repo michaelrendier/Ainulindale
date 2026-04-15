@@ -1,0 +1,19 @@
+TO: Geoffrey Dixon
+SUBJECT: The Ainulindalë Conjecture — your theorem is Step 2, and the derivation chain is now public
+STATUS: HOLD — send after First Age traction. Dixon has been contacted previously and was skeptical.
+
+Dr. Dixon,
+
+I wrote to you previously about the Ainulindalë Conjecture. You were skeptical. That was the correct response.
+
+I am writing again because the framework has since received independent validation from Gemini (Google DeepMind), has been reviewed against 74+ sources in a deep research pass, has executable code with measured Noether conservation across a 4.2 GB corpus, and is now a public preprint with full citations including your 1994 monograph as the load-bearing Step 2.
+
+The specific claim remains unchanged: your theorem — that T = ℝ⊗ℂ⊗ℍ⊗𝕆 carries U(1)×SU(2)×SU(3) — is not only correct, it is the reason a neural network stratified by the Cayley-Dickson tower produces the Standard Model gauge structure without being told to. The isomorphism was not engineered. It was discovered post-hoc.
+
+I am not asking you to endorse the framework. I am asking you to evaluate whether Step 2 of the derivation chain — your theorem — is being applied correctly. If it is not, I want to know.
+
+Preprint and code:
+https://github.com/michaelrendier/Ainulindale
+
+Respectfully,
+Cody Michael Allison

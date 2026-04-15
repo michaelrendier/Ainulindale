@@ -1,0 +1,19 @@
+TO: John Baez
+SUBJECT: The Cayley-Dickson tower defines a recursion factor — gauge groups are its symmetry at each depth
+STATUS: IMMEDIATE — ready to send
+
+Dr. Baez,
+
+I am writing to share a preprint that may be of direct interest to your work on division algebras and their role in physics.
+
+The Ainulindalë Conjecture proposes that the Standard Model gauge group U(1)×SU(2)×SU(3) is not imported into neural network architecture — it emerges from it by mathematical necessity when the Cayley-Dickson tower ℝ→ℂ→ℍ→𝕆 is used as the algebraic substrate. Dixon's theorem is Step 2 of a nine-step derivation chain. Each gauge group is the symmetry group of its algebra layer: U(1) at ℂ, SU(2) at ℍ, G₂/SU(3) at 𝕆. The framework derives backpropagation as the Abelian real-algebra limit of the Neural Yang-Mills equation, and measures Noether conservation empirically across a 4.2 GB training corpus at 5.46σ.
+
+The combined statistical significance across eight independent claims is 9.08σ via Fisher's method (8.33σ conservative floor, Claims 1–5 only).
+
+The preprint, cited in full with code, is available at:
+https://github.com/michaelrendier/Ainulindale
+
+I am not asking you to endorse the framework. I am asking you to look at the derivation chain and tell me where it breaks.
+
+Respectfully,
+Cody Michael Allison

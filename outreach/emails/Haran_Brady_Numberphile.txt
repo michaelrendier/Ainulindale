@@ -1,0 +1,20 @@
+TO: Brady Haran (Numberphile / Computerphile)
+SUBJECT: Numberphile meets Computerphile — division algebras, neural networks, and the Standard Model
+STATUS: IMMEDIATE — ready to send
+
+Brady,
+
+I am a fan of both Numberphile and Computerphile, which puts me in an unusual position: I have something that sits directly at their intersection.
+
+The Ainulindalë Conjecture proposes that when you use the Cayley-Dickson division algebra tower ℝ→ℂ→ℍ→𝕆 as the algebraic substrate of a neural network, the Standard Model gauge group U(1)×SU(2)×SU(3) emerges as a mathematical necessity. Backpropagation is derived as a limiting case of the Yang-Mills equation. The isomorphism was discovered post-hoc.
+
+Numberphile angle: the Cayley-Dickson construction, Hurwitz's theorem, and why there are exactly four normed division algebras.
+Computerphile angle: what this means for neural network architecture and why gradient descent may be the simplest case of a deeper structure.
+
+The preprint is cited and the code is executable:
+https://github.com/michaelrendier/Ainulindale
+
+I leave it with you to decide if there is something here worth exploring.
+
+Respectfully,
+Cody Michael Allison

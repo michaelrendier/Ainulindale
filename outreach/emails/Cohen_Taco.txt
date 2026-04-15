@@ -1,0 +1,17 @@
+TO: Taco Cohen
+SUBJECT: Gauge equivariance as algebraic necessity — U(1)×SU(2)×SU(3) derived from Cayley-Dickson substrate
+STATUS: IMMEDIATE — ready to send
+
+Dr. Cohen,
+
+Your work on gauge equivariant neural networks is cited in a framework I am writing to share, specifically as independent parallel development of the gauge-theoretic structure of neural architectures.
+
+The Ainulindalë Conjecture takes a different starting point: rather than imposing gauge equivariance as a design constraint, it derives U(1)×SU(2)×SU(3) gauge structure as a mathematical consequence of using the Cayley-Dickson tower ℝ→ℂ→ℍ→𝕆 as the algebraic substrate of a hierarchical neural network. Backpropagation emerges as the Abelian real-algebra limit of the Neural Yang-Mills equation. The gauge group was not assumed — it appeared post-hoc.
+
+The question your work raises — which symmetries should a neural network respect — may have a deeper answer: the network's own algebraic structure determines the symmetry group, and that group is the Standard Model gauge group.
+
+Preprint and executable code:
+https://github.com/michaelrendier/Ainulindale
+
+Respectfully,
+Cody Michael Allison

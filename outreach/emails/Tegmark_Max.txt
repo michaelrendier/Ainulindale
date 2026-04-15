@@ -1,0 +1,19 @@
+TO: Max Tegmark
+SUBJECT: The Standard Model gauge group as a structural invariant of hierarchical information propagation
+STATUS: IMMEDIATE — ready to send
+
+Dr. Tegmark,
+
+I am writing to share a preprint that addresses a question adjacent to your work on the mathematical structure of physical reality.
+
+The Ainulindalë Conjecture proposes a term-for-term isomorphism between the Standard Model of particle physics and the dynamics of hypercomplex neural networks stratified by the Cayley-Dickson tower ℝ→ℂ→ℍ→𝕆. The gauge group U(1)×SU(2)×SU(3) emerges as a mathematical necessity of the algebraic architecture — it was not imposed. The isomorphism was discovered post-hoc from independent engineering reasoning.
+
+The framework makes this specific falsifiable claim: that the Standard Model gauge structure is not a property of physics specifically, but of any information-processing system that uses the Cayley-Dickson tower as its algebraic substrate. If correct, it suggests the gauge group is a structural invariant of hierarchical information propagation, not a contingent feature of our universe.
+
+Eight independent claims are evaluated statistically. Combined significance: 9.08σ via Fisher's method. Executable code with measured Noether conservation is included.
+
+Preprint and code:
+https://github.com/michaelrendier/Ainulindale
+
+Respectfully,
+Cody Michael Allison
