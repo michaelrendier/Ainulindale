@@ -18,6 +18,14 @@
 
 ORIGIN
 --------------------------------------------------------------------------------
+The name was not chosen for its analogy. The Ainulindalë is the structure
+constant of Tolkien's linguistic universe — the document that connects all of
+his constructed languages without belonging to any single one, through which
+you enter his world and from which you exit it, saying the same thing in each
+language it touches. That is the function of a structure constant. This
+conjecture performs the same role across the algebra tower. The name is a
+precise technical description, not a poetic one.
+
 The origin of this framework was a data integrity problem.
 
 In designing a hierarchically-stratified neural network, I needed a method to
