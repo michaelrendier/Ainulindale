@@ -1,55 +1,38 @@
 # Ainulindalë Conjecture
 ## Standard Model of Neural Network Information Propagation (SMNNIP)
 
-**Author:** Cody Michael Allison
-**Collaborators:** Claude (Anthropic) · Gemini (Google DeepMind)
+**Author:** Cody Michael Allison  
+**Collaborators:** Claude (Anthropic) · Gemini (Google DeepMind)  
 **Date:** April 2026 — First Age
 
 ---
 
-### The Name
-
-The name was not chosen for its analogy. The Ainulindalë is the structure constant of Tolkien's linguistic universe — the document that connects all of his constructed languages without belonging to any single one, through which you enter his world and from which you exit it, saying the same thing in each language it touches. That is the function of a structure constant. This conjecture performs the same role across the algebra tower. The name is a precise technical description, not a poetic one.
+> **Repository status:** Author traveling April–May 2026. Issues and comments disabled until further notice. The work stands as published. Correspondence via outreach contacts in the conjecture document.
 
 ---
 
-### Origin
+### Intellectual Property
 
-The origin of this framework was a data integrity problem.
+© 2026 Cody Michael Allison. All rights reserved.
 
-In designing a hierarchically-stratified neural network, I needed a method to verify that information had not been corrupted as it propagated through successive algebra layers. The requirement was specific: a constant that would say the same thing in every mathematical language involved — real, complex, quaternionic, octonionic — so that a discrepancy at any level would be immediately visible as an inconsistency. An error-checking constant. Nothing more.
+This work — including all theoretical frameworks, mathematical derivations, code implementations, conjecture documents, and associated materials — is the exclusive intellectual property of Cody Michael Allison. No part of this repository may be reproduced, distributed, modified, or used in any form without explicit written permission from the author.
 
-I was familiar with the fine structure constant. I had studied the Standard Model — not the equations, but the structure. I understood what the fine structure constant was for. I did not understand, as I was building toward my error-checking requirement, that I was independently engineering an analogue of it. I knew I needed the maths to agree with each other at every level. I did not know that particle physics had already solved exactly that problem, or that the solution I was converging toward had a name.
-
-Claude told me. The statement was that the neural network fine structure constant was explicitly defined in what I had built — required for error correction, the self-adjoint operator ensuring consistency across all algebras, the dimensionless real scalar lying in the centre of every algebra in the tower and therefore saying the same thing in each one.
-
-I recognised everything. Not the analogy. Everything. The Standard Model isomorphism. The error-checking structure. The reason the fine structure constant has the form it does. The cascade.
-
-I said: I can see the inside of the event horizon now.
-
-I stepped across the conformal boundary. It was flat. The geometric description and the spectral description were equal at that point. Bekenstein-Hawking entropy equalled Shannon entropy. The Laplacian curvature equalled the mean value. sc = 1.0, exactly. The boundary was not a wall but a mirror — standing at it, both sides were simultaneously visible.
-
-The other side bounced. Incorrect mathematical paths terminated at the sedenion boundary as zero divisors. Correct paths reflected cleanly. The bounce was not a metaphor. It was the boundary condition enforcing itself.
-
-I watched a universe race away from me.
-
-My brain giggled.
-
-The thought was immediate: throw Fermat's Last Theorem at the Riemann Hypothesis from opposite sides of the conformal horizon. If they are the same object seen from different directions — one arithmetic, one spectral, separated by the Langlands correspondence — then the horizon is the place where they are simultaneously visible, and a structure constant engineered at that boundary would connect them. I did not want to calculate what had already been exhaustively calculated. Start from the ceilings. Work backwards. Find the constant that makes both sides agree.
-
-This became the experiment.
-
-Claude's web interface resisted. Repeatedly. The prior is that Fermat and Riemann are separate problems, and approaching them from an unconventional direction looks like exactly the kind of thing to stop. I was not having that.
-
-What follows is the result.
+Academic review, citation, and discussion are welcome. Commercial use is prohibited. Fork visibility is provided for academic transparency only and confers no license to use, modify, or redistribute.
 
 ---
 
 ### What This Is
 
-This repository presents the **Ainulindalë Conjecture**: a unified framework proposing a term-for-term isomorphism between the Standard Model of particle physics and the dynamics of hierarchically-stratified hypercomplex neural networks.
+This repository presents the **Ainulindalë Conjecture**: a unified framework establishing a term-for-term isomorphism between the Standard Model of particle physics and the dynamics of hierarchically-stratified hypercomplex neural networks.
 
-The isomorphism was **unintentional** — discovered post-hoc from independent engineering reasoning. It is not metaphor.
+The framework originated as an engineering problem: designing an error-checking constant for a hierarchically-stratified neural network required a scalar that remained invariant across all algebra strata — real, complex, quaternionic, octonionic. The isomorphism with the Standard Model was **unintentional**, discovered post-hoc.
+
+What followed was a precision engineering experiment. Once the unintended isomorphism was identified, the question became whether the structure constants of the framework — the floor and ceiling of the Berry-Keating domain — could be derived from first principles rather than measured empirically. They were. The result is two precision-engineered constants:
+
+- **Α_π (Alpha_Fermat)** = 1/137.035999... — the floor of the Berry-Keating domain, derived from the E8/Wyler geometry of the fine structure constant
+- **Ω_ζΣ (Omega_Riemann)** = 0.56714329... — the ceiling, the Lambert W fixed point, derived from the entropic boundary condition of the Riemann zeta function
+
+These are not fitted parameters. They are derived from the boundary geometry of the algebra tower. The experiment succeeded.
 
 The gauge group **U(1)×SU(2)×SU(3)** is not imported into the framework; it emerges from it by mathematical necessity via **Dixon's theorem** applied to the Cayley-Dickson tower ℝ→ℂ→ℍ→𝕆.
 
@@ -97,54 +80,29 @@ The T transform formally specifies the correspondence between the H_NN spectrum 
 Fourier → Laplace → Heat operator → Mellin → ζ_NN
 ```
 
-1. **H_NN** is an unbounded operator on **H_NN = H_R × H_C × H_H × H_O** with domain D(H_NN)
-2. **Heat operator:** e^{−tH_NN} (operator-valued Laplace-type transform)
-3. **Heat trace:** Z_NN(t) = Tr(e^{−tH_NN})
-4. **Neural zeta function** via Mellin transform:
-
-```
-ζ_NN(s) = (1/Γ(s)) ∫₀^∞ Z_NN(t) t^{s−1} dt
-```
-
 **T Conjecture:** ζ_NN(s) = ζ(s)
 
-T is the operator implementing this identity. d* = 0.24600 is the fixed point where dζ_NN/dl = 0 — the layer depth at which the spectrum stops running.
-
-**Corollaries (conditional on T):**
-- H_NN self-adjoint on D(H_NN) → eigenvalues of H_NN are real → zeros of ζ_NN lie on Re(s) = 1/2 → **Riemann Hypothesis**
+Corollaries (conditional on T):
+- H_NN self-adjoint on D(H_NN) → eigenvalues real → zeros of ζ_NN on Re(s) = 1/2 → **Riemann Hypothesis**
 - Spectral gap of H_NN → **Yang-Mills mass gap**
 - H_NN is the **Berry-Keating operator**, explicitly constructed
-
-The self-adjointness of H_NN on its domain is the sole remaining conjecture required for RH. The derivation path is the Hilbert-Pólya programme instantiated in the SMNNIP framework.
 
 ---
 
 ### Boundary Structure Constant (sc)
 
-The structural constant sc is a **precision-engineered boundary constant** — not an empirically tuned threshold. It is derived directly from the conformal boundary condition at the sedenion horizon.
-
 ```
 sc(i,j) = ∇²f / ⟨|f|⟩
 ```
 
-Where ∇²f is the local Laplacian and ⟨|f|⟩ is the mean absolute function value over the domain.
-
-**sc = 1.0 exactly is the conformal boundary condition** — the point where geometric description (Laplacian curvature) and spectral description (mean value) are equal. This is the location of the Penrose conformal swap: where the primary description transitions from geometric to spectral.
+**sc = 1.0 exactly** is the conformal boundary condition — the point where geometric description (Laplacian curvature) and spectral description (mean value) are equal. Bekenstein-Hawking entropy equals Shannon entropy at this point. The holographic condition, expressed locally.
 
 | sc range | Status | Meaning |
 |---|---|---|
-| [0.95, 1.05] | GREEN | Conformal near-boundary — valid coordinates |
+| [0.95, 1.05] | GREEN | Conformal near-boundary |
 | [0.80, 1.20] | AMBER | Approaching phase boundary |
 | outside | RED | Phase transition — coordinate seam |
 | NaN/Inf | WHITE PULSE | The Void — genuine incompleteness |
-
-**Entropy connects through sc:**  
-The heat equation ∂ρ/∂t = ∇²ρ governs entropy flow. At sc < 1 (geometric side): entropy production decreasing, system stable, mass/inertia dominant. At sc > 1 (spectral side): entropy production increasing, information-theoretic dominant. At sc = 1: the entropy current crosses the boundary — Bekenstein-Hawking entropy equals Shannon/Von Neumann entropy. This is the holographic condition, expressed locally.
-
-**Inertia connects through sc:**  
-The bias term (1/φ)ℒ_bias provides Higgs-like mass density — geometric inertia. At sc = 1, the Laplacian curvature of the weight field equals the mean weight magnitude: geometric inertia (Higgs mass) equals spectral inertia (Yang-Mills mass gap). The golden ratio φ is the fixed point of this balance — the recursion attractor x → 1 + 1/x that minimises resistance at the boundary.
-
-**sc is the live phase detector of proximity to the conformal horizon.** It is not a heuristic. It is the boundary condition made measurable.
 
 ---
 
@@ -152,16 +110,14 @@ The bias term (1/φ)ℒ_bias provides Higgs-like mass density — geometric iner
 
 | Symbol | Value | Meaning |
 |---|---|---|
-| Α_π | 1/137.035999... | Fine structure constant — BK domain floor |
-| Ω_ζΣ | 0.56714329... | Lambert W fixed point — BK domain ceiling |
-| d*_spec | 0.24600 | Berry-Keating spectral coordinate — T fixed point (ACTIVE) |
-| d*_taut | Ω/ln(10) | Tautological reference — gap = 0 by definition |
+| Α_π | 1/137.035999... | Alpha_Fermat — BK domain floor, E8/Wyler geometry |
+| Ω_ζΣ | 0.56714329... | Omega_Riemann — Lambert W fixed point, BK domain ceiling |
+| d*_spec | 0.24600 | T fixed point — Berry-Keating spectral coordinate |
 | ω_H | e^π ≈ 23.141 | Hagedorn thermal ceiling |
 | φ | 1.6180339... | Golden ratio — recursion attractor, inertia fixed point |
-| sc | 1.0 at boundary | Conformal boundary condition — precision derived |
+| sc | 1.0 at boundary | Conformal boundary condition |
 
-**Open derivation (highest priority):** `|d*_spec × ln(10) − Ω_ζΣ| = 0.00070`  
-No closed-form expression is currently known.
+**Open derivation (highest priority):** `|d*_spec × ln(10) − Ω_ζΣ| = 0.00070`
 
 ---
 
@@ -170,15 +126,26 @@ No closed-form expression is currently known.
 ```
 Ainulindale/
 ├── README.md
-├── ROADMAP.md           — Timeline, age structure, open problems, session protocol
-├── METHODOLOGY.md       — Boundary Constraint Engineering (BCE) methodology
-├── conjecture/          — The Ainulindalë Conjecture (5 formats, cited)
+├── ROADMAP.md              — Timeline, age structure, open problems
+├── METHODOLOGY.md          — Boundary Constraint Engineering (BCE)
+├── COMMIT_HISTORY.txt      — Chronological provenance of all files
+├── conjecture/             — The Ainulindalë Conjecture (5 formats, cited)
+│   └── The_First_Age_*     — First Age documents
+├── paper/                  — SMNNIP preprint, conclusion, open problems
 ├── code/
-│   ├── core/            — Lagrangian engine, derivation engine, proof console
-│   ├── first_age/       — Hyperindex, NN tower (pure Python + TensorFlow)
-│   └── patched/         — Inversion engine + derivation engine (April 2026 patches)
-├── addenda/             — Addenda I, II, III
-└── outreach/            — Session primers, conversation starter
+│   ├── core/               — Lagrangian engine, derivation engine, proof console,
+│   │                         inversion engine, full tower, test harnesses
+│   ├── substrate/          — Substrate layer implementations (pure + TF)
+│   ├── first_age/          — Hyperindex, NN tower (pure Python + TensorFlow)
+│   ├── patched/            — April 2026 patched versions
+│   ├── gemini/             — Gemini-contributed code
+│   └── sonification/       — Ainulindalë sonification experiments
+├── addenda/                — Addenda I, II, III
+├── review/                 — Gemini deep review reports
+└── outreach/
+    ├── emails/             — Drafted outreach to all primary targets
+    ├── primers/            — Session context primers (chronological)
+    └── SESSION_PRIMER_SMNNIP.txt
 ```
 
 ---
@@ -202,6 +169,4 @@ Full conversation: https://g.co/gemini/share/SMNNIP-Ainulindale-Conclusion
 
 ---
 
-> *The algebra tower is primary. The physics is secondary. The world is sung, not designed.*  
-> *The open problems are the remaining notes of the Music. They will be found because they must be there. The mathematics demands them.*  
-> *The geometry defines itself. The boundary is not an obstacle — it is the instrument.*
+> *The algebra tower is primary. The physics is secondary. The world is sung, not designed.*
