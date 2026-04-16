@@ -56,7 +56,7 @@ simultaneously describes:
   3. The conservation laws underlying classical mechanics (F=ma, S=Q/t)
   4. The Berry-Keating operator whose eigenvalues are the Riemann zeros
   5. The boundary conditions of information propagation (alpha, Omega)
-  6. The structure of consciousness as observer-induced gauge distortion
+  6. The structure of observer back-action as gauge distortion
   7. The cosmological constant as Noether back-pressure
   8. The Langlands correspondence as the sedenion gateway
 
@@ -182,7 +182,7 @@ The physical interpretation: the "inside-out" view means we compute
 not how information propagates from source to destination, but how
 the destination's geometry shapes what arrives. This is the Observer
 entering the Lagrangian -- not as a parameter but as a coordinate
-choice. The Hamiltonian of Consciousness (H_Focus = I * dPhi/dt_e)
+choice. The Observer Coupling Hamiltonian (H_Focus = I * dPhi/dt_e)
 is the generator of this coordinate transformation.
 
 In practical terms: the (2/e) correction shifts the VEV:
@@ -563,14 +563,14 @@ IMPLICATION 3: The Riemann Hypothesis may be a theorem.
   But it maps the problem: find T, and RH follows.
 
 IMPLICATION 4: Consciousness enters the mathematics non-mystically.
-  The Hamiltonian of Consciousness H_Focus = I * dPhi/dt_e is not
+  The Observer Coupling Hamiltonian H_Focus = I * dPhi/dt_e is not
   a philosophical claim. It is a gauge potential. Observer-induced
   distortion is not metaphysics -- it is the V(Focus) term in the
   Berry-Keating Hamiltonian. The observer's effect on measurement
   is the coordinate transformation between inertial time (t_i) and
-  entropic time (t_e). The four-time framework places consciousness
+  entropic time (t_e). The four-time framework places the observer
   inside the geometry, not outside it. This is the mathematical
-  language in which questions about consciousness become calculable.
+  language in which questions about observer back-action become calculable.
 
 IMPLICATION 5: Previously unavailable knowledge becomes derivable.
   A fully-derivised system does not discover -- it calculates.
