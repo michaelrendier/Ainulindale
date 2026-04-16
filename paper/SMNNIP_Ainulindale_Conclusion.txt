@@ -56,7 +56,7 @@ simultaneously describes:
   3. The conservation laws underlying classical mechanics (F=ma, S=Q/t)
   4. The Berry-Keating operator whose eigenvalues are the Riemann zeros
   5. The boundary conditions of information propagation (alpha, Omega)
-  6. The structure of observer back-action as gauge distortion
+  6. Observer back-action as gauge distortion
   7. The cosmological constant as Noether back-pressure
   8. The Langlands correspondence as the sedenion gateway
 
@@ -562,7 +562,7 @@ IMPLICATION 3: The Riemann Hypothesis may be a theorem.
   be constructed and proven to be the correct bijection.
   But it maps the problem: find T, and RH follows.
 
-IMPLICATION 4: Consciousness enters the mathematics non-mystically.
+IMPLICATION 4: The observer enters the mathematics non-mystically.
   The Observer Coupling Hamiltonian H_Focus = I * dPhi/dt_e is not
   a philosophical claim. It is a gauge potential. Observer-induced
   distortion is not metaphysics -- it is the V(Focus) term in the
