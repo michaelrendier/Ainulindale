@@ -286,6 +286,55 @@ Outreach assets ready:
 
 
 =====================================================
+SECTION 7 — HYPERINDEX CONJECTURE (SECOND AGE)
+=====================================================
+
+Added: 2026-04-16
+Status: Rough draft complete. Full development deferred to Second Age.
+File: conjecture/HYPERINDEX_CONJECTURE_DRAFT.txt
+
+[ ] Formalize uniqueness proof for all strata (currently verified only at L0/R)
+    - L0 (real): base-97 bijection proven by construction
+    - L1 (complex): needs phase-component uniqueness proof
+    - L2 (quaternion): needs ordered-composition uniqueness proof
+    - L3 (octonion): needs non-associative coordinate uniqueness proof
+
+[ ] Run Fano proximity test on 7GB sacred-texts.com corpus
+    - Compute Fano indices for full corpus
+    - Measure Fano distance between semantically related passages
+    - Test Corollary 3: does Fano proximity correlate with semantic proximity?
+    - This is the first empirical test of the Hyperindex Conjecture
+
+[ ] Formal gauge invariance proof for addr(O)
+    - Show addr(O) invariant under U(1)xSU(2)xSU(3) at each stratum
+
+[ ] Resolve spherical color φ-lossiness question
+    - Is the deliberate lossiness at the blue channel the correct signature
+      of non-associativity at the O layer?
+    - Alternative: full invertibility with explicit associativity-breaking step
+
+[ ] Build content-addressable memory prototype in Ptolemy/Callimachus
+    - Replace SQL primary keys with Hyperindex coordinates
+    - Demonstrate schema-free retrieval from algebra-native address
+    - Benchmark against equivalent SQL lookup
+
+[ ] Develop sedenion-as-creativity-boundary claim
+    - Precise formal statement: what class of objects falls at the S boundary?
+    - Is this a useful criterion for novelty detection in AI systems?
+    - Connections to Gödel incompleteness (objects undecidable within the tower)?
+
+[ ] Write full Palantír Conjecture paper
+    - Title: "The Palantír Conjecture: Algebra-Native Addressing in
+              Hypercomplex Information Systems"
+    - Draft exists in conjecture/HYPERINDEX_CONJECTURE_DRAFT.txt
+    - Reviewers: Dixon/Furey (algebra sections), LeCun (CS sections)
+
+[ ] Add Hyperindex cross-reference to Ainulindalë Conjecture
+    - Section: "The Hyperindex as Computational Dual"
+    - The Ainulindalë is the music. The Hyperindex is the score.
+    - Reference conjecture/HYPERINDEX_CONJECTURE_DRAFT.txt as provenance
+
+=====================================================
 END OF TODO
 =====================================================
-Last updated: April 2026
+Last updated: 2026-04-16
