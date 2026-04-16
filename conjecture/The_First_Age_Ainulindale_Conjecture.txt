@@ -190,7 +190,7 @@ to Riemann zeros is the priority open derivation.
 
 §III. OBSERVER COUPLING HAMILTONIAN
 --------------------------------------------------------------------------------
-The Observer coupling enters as V(Focus) — inductive back-EMF of the measurement frame.
+The Observer coupling enters as V(Focus) — inductive back-EMF of the observer.
 Information Inductance ℐ resists change in information flux Φ. The entropic
 arrow of time t_e is friction-induced: the lag between field state and observer
 integration. This lag is where meaning is extracted.
