@@ -310,7 +310,7 @@ eigenvalue proof.
 
 §III. OBSERVER COUPLING HAMILTONIAN
 --------------------------------------------------------------------------------
-The Observer coupling enters as V(Focus) — inductive back-EMF of the measurement frame.
+The Observer coupling enters as V(Focus) — inductive back-EMF of the observer.
 Information Inductance ℐ resists change in information flux Φ. The entropic
 arrow of time t_e is friction-induced: the lag between field state and observer
 integration. This lag is where meaning is extracted.
@@ -601,7 +601,7 @@ TIER 3 — CONJECTURAL / DIRECTION ONLY:
   · Sedenion as Langlands Master Key [1][3]
   · Neural Einstein Field Equations
   · CKM/PMNS Matrices from Cayley-Dickson structure constants [1][3]
-  · Observer back-action as observer-induced gauge distortion
+  · Observer back-action as gauge distortion
 
 BY AGE:
   First Age:  Tier 1 claims. Human mathematical scrutiny. Outreach to Geoffrey
