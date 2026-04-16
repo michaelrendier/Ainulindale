@@ -188,16 +188,16 @@ coincidence.
 STATUS: Theoretical. Formal coordinate transformation T mapping H_NN eigenvalues
 to Riemann zeros is the priority open derivation.
 
-§III. HAMILTONIAN OF CONSCIOUSNESS
+§III. OBSERVER COUPLING HAMILTONIAN
 --------------------------------------------------------------------------------
-Consciousness enters as V(Focus) — inductive back-EMF of the observer.
+The Observer coupling enters as V(Focus) — inductive back-EMF of the measurement frame.
 Information Inductance ℐ resists change in information flux Φ. The entropic
 arrow of time t_e is friction-induced: the lag between field state and observer
 integration. This lag is where meaning is extracted.
 
 Ĥ_Focus = V(Focus) = ℐ · dΦ/dt_e
 
-STATUS: Theoretical. Consciousness as coordinate transformation between t_i and
+STATUS: Theoretical. Observer-induced coordinate transformation between t_i and
 t_e is a named claim, not yet a formal derivation.
 
 §IV. ZETA-FERMAT HEARTBEAT
