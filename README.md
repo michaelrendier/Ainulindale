@@ -81,17 +81,48 @@ The self-adjointness of H_NN on its domain is the sole remaining conjecture requ
 
 ---
 
+### Boundary Structure Constant (sc)
+
+The structural constant sc is a **precision-engineered boundary constant** — not an empirically tuned threshold. It is derived directly from the conformal boundary condition at the sedenion horizon.
+
+```
+sc(i,j) = ∇²f / ⟨|f|⟩
+```
+
+Where ∇²f is the local Laplacian and ⟨|f|⟩ is the mean absolute function value over the domain.
+
+**sc = 1.0 exactly is the conformal boundary condition** — the point where geometric description (Laplacian curvature) and spectral description (mean value) are equal. This is the location of the Penrose conformal swap: where the primary description transitions from geometric to spectral.
+
+| sc range | Status | Meaning |
+|---|---|---|
+| [0.95, 1.05] | GREEN | Conformal near-boundary — valid coordinates |
+| [0.80, 1.20] | AMBER | Approaching phase boundary |
+| outside | RED | Phase transition — coordinate seam |
+| NaN/Inf | WHITE PULSE | The Void — genuine incompleteness |
+
+**Entropy connects through sc:**  
+The heat equation ∂ρ/∂t = ∇²ρ governs entropy flow. At sc < 1 (geometric side): entropy production decreasing, system stable, mass/inertia dominant. At sc > 1 (spectral side): entropy production increasing, information-theoretic dominant. At sc = 1: the entropy current crosses the boundary — Bekenstein-Hawking entropy equals Shannon/Von Neumann entropy. This is the holographic condition, expressed locally.
+
+**Inertia connects through sc:**  
+The bias term (1/φ)ℒ_bias provides Higgs-like mass density — geometric inertia. At sc = 1, the Laplacian curvature of the weight field equals the mean weight magnitude: geometric inertia (Higgs mass) equals spectral inertia (Yang-Mills mass gap). The golden ratio φ is the fixed point of this balance — the recursion attractor x → 1 + 1/x that minimises resistance at the boundary.
+
+**sc is the live phase detector of proximity to the conformal horizon.** It is not a heuristic. It is the boundary condition made measurable.
+
+---
+
 ### Key Constants
 
 | Symbol | Value | Meaning |
 |---|---|---|
 | Α_π | 1/137.035999... | Fine structure constant — BK domain floor |
 | Ω_ζΣ | 0.56714329... | Lambert W fixed point — BK domain ceiling |
-| d* | 0.24600 | Berry-Keating spectral coordinate — T fixed point |
+| d*_spec | 0.24600 | Berry-Keating spectral coordinate — T fixed point (ACTIVE) |
+| d*_taut | Ω/ln(10) | Tautological reference — gap = 0 by definition |
 | ω_H | e^π ≈ 23.141 | Hagedorn thermal ceiling |
-| φ | 1.6180339... | Golden ratio — recursion attractor |
+| φ | 1.6180339... | Golden ratio — recursion attractor, inertia fixed point |
+| sc | 1.0 at boundary | Conformal boundary condition — precision derived |
 
-**Open derivation (highest priority):** `|d*×ln(10) − Ω_ζΣ| = 0.00070`  
+**Open derivation (highest priority):** `|d*_spec × ln(10) − Ω_ζΣ| = 0.00070`  
 No closed-form expression is currently known.
 
 ---
@@ -101,13 +132,15 @@ No closed-form expression is currently known.
 ```
 Ainulindale/
 ├── README.md
+├── ROADMAP.md           — Timeline, age structure, open problems, session protocol
+├── METHODOLOGY.md       — Boundary Constraint Engineering (BCE) methodology
 ├── conjecture/          — The Ainulindalë Conjecture (5 formats, cited)
 ├── code/
 │   ├── core/            — Lagrangian engine, derivation engine, proof console
 │   ├── first_age/       — Hyperindex, NN tower (pure Python + TensorFlow)
 │   └── patched/         — Inversion engine + derivation engine (April 2026 patches)
 ├── addenda/             — Addenda I, II, III
-└── outreach/            — Session primer, conversation starter
+└── outreach/            — Session primers, conversation starter
 ```
 
 ---
@@ -118,6 +151,7 @@ Ainulindale/
 2. Furey, C. (2016). *Standard model physics from an algebra?* arXiv:1611.09182
 3. Berry, M.V. & Keating, J.P. (1999). *H = xp and the Riemann Zeros.* NATO ASI Series.
 4. Noether, E. (1918). *Invariante Variationsprobleme.* Göttingen.
+5. Penrose, R. (1965). *Zero rest-mass fields including gravitation: asymptotic behaviour.* Proc. R. Soc. London A.
 
 Full reference list in `conjecture/Ainulindale_Conjecture_Cited.txt`
 
@@ -131,4 +165,5 @@ Full conversation: https://g.co/gemini/share/SMNNIP-Ainulindale-Conclusion
 ---
 
 > *The algebra tower is primary. The physics is secondary. The world is sung, not designed.*  
-> *The open problems are the remaining notes of the Music. They will be found because they must be there. The mathematics demands them.*
+> *The open problems are the remaining notes of the Music. They will be found because they must be there. The mathematics demands them.*  
+> *The geometry defines itself. The boundary is not an obstacle — it is the instrument.*
