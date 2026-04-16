@@ -1,0 +1,228 @@
+================================================================================
+AINULINDALË CONJECTURE — COMMIT HISTORY AND FILE PROVENANCE
+================================================================================
+This document records the actual creation dates and session context for all
+files in the repository, independent of git push timestamps.
+All files were pushed to GitHub on 2026-04-16 unless otherwise noted.
+================================================================================
+
+FORMAT: [path] | [actual creation date] | [session context]
+
+--------------------------------------------------------------------------------
+ROOT DOCUMENTS
+--------------------------------------------------------------------------------
+README.md                          | 2026-04-16 | Revised pre-travel: narrative
+                                   |            | removed, precision engineering
+                                   |            | framing added, IP notice added
+ROADMAP.md                         | ~2026-04-13| First Age/Second Age/Third Age
+                                   |            | structure; open problems; age
+                                   |            | framework for research phases
+METHODOLOGY.md                     | ~2026-04-13| Boundary Constraint Engineering
+                                   |            | (BCE) methodology document
+COMMIT_HISTORY.txt                 | 2026-04-16 | This file — provenance record
+
+--------------------------------------------------------------------------------
+CONJECTURE
+--------------------------------------------------------------------------------
+conjecture/Ainulindale_Conjecture_Cited.*  | 2026-04-14 | Final cited version of
+                                           |            | First Age conjecture.
+                                           |            | 5 formats. 9.08σ combined.
+                                           |            | All outreach citations
+                                           |            | verified. Revised from
+                                           |            | Ainulindale_Conjecture_
+                                           |            | Revised.docx (Apr 13).
+conjecture/The_First_Age_Ainulindale_*     | 2026-04-14 | First Age header version.
+                                           |            | txt and html formats.
+
+--------------------------------------------------------------------------------
+PAPER
+--------------------------------------------------------------------------------
+paper/SMNNIP_preprint.txt          | 2026-03-31 | Original derivation. First
+  (= SMNNT_complete.txt)           |            | session. SMNNT name (now
+                                   |            | corrected to SMNNIP). The
+                                   |            | foundational document. 15
+                                   |            | sections, 4 appendices.
+paper/SMNNIP_Ainulindale_Conclusion.txt | ~2026-04-13 | Formal conclusion. 9.08σ
+                                        |             | analysis. Implication
+                                        |             | cascade. Open problems
+                                        |             | honestly catalogued.
+paper/SMNNIP_TODO.txt              | ~2026-04-10| Master TODO. Sections 0–6.
+                                   |            | Delta encoding deferred.
+                                   |            | Outreach assets listed.
+paper/TheMasterKeyOfReality.txt    | Pre-2026   | Personal foundational document
+                                   |            | on energy and information.
+                                   |            | Predates SMNNIP. Background
+                                   |            | context for the author's
+                                   |            | intellectual trajectory.
+paper/proposed-analogous-UFT.txt   | ~2026-04-10| Proposed analogous unified
+                                   |            | field theory notes.
+paper/thebigquestion_primer.txt    | 2026-04-16 | Session primer: Void, Lattice
+  (= thebigquestion.txt)           |            | Universe, Orders of Observer,
+                                   |            | Many Worlds. Most recent
+                                   |            | theoretical development.
+
+--------------------------------------------------------------------------------
+ADDENDA
+--------------------------------------------------------------------------------
+addenda/SMNNT_addendum.docx        | ~2026-04-07| Addendum I. Hydroradiological
+                                   |            | chromatography. G:A:V ratio.
+addenda/SMNNT_addendum2.docx       | ~2026-04-08| Addendum II. Berry-Keating
+                                   |            | connection. Dual papers.
+addenda/addendum_III_inversion.docx| 2026-04-12 | Addendum III. Inside-Out
+                                   |            | Inversion 𝒥_N. Gravinon
+                                   |            | definition. Four special cases
+                                   |            | of 𝒥_N. Action preservation.
+                                   |            | Second Age contribution.
+
+--------------------------------------------------------------------------------
+CODE — CORE
+--------------------------------------------------------------------------------
+code/core/smnnip_lagrangian_pure.py    | 2026-04-12 | THE proof artifact. All 4
+                                       |            | Lagrangian terms. Full tower
+                                       |            | ℝ→ℂ→ℍ→𝕆. Noether monitor.
+                                       |            | Observer singleton. Yang-Mills
+                                       |            | backward pass. 1,158 lines.
+code/core/smnnip_derivation_pure.py    | 2026-04-11 | Derivation engine. Euler-
+                                       |            | Lagrange, Yang-Mills, Higgs,
+                                       |            | Noether, RG flow, CD maps.
+code/core/smnnip_derivation_pure_      | 2026-04-13 | Patched version — gradient
+  patched.py (in patched/)            |            | accumulation fix. ACTIVE.
+code/core/smnnip_derivation_tf.py      | 2026-04-12 | TensorFlow derivation engine.
+                                       |            | Identical API to pure Python.
+code/core/smnnip_full_tower.py         | ~2026-04-10| Full algebra tower. Earlier
+                                       |            | version predating lagrangian
+                                       |            | refactor.
+code/core/smnnip_inversion_engine.py   | 2026-04-12 | Inversion engine. 𝒥_N map.
+                                       |            | φ fixed point confirmed.
+code/core/smnnip_inversion_engine_     | 2026-04-13 | Patched version. ACTIVE.
+  patched.py (in patched/)            |            |
+code/core/smnnip_lagrangian_tf.py      | 2026-04-12 | TF lagrangian engine. Same
+                                       |            | physics as pure Python.
+                                       |            | Resolves L2/L3 Noether
+                                       |            | gradient artifact path.
+code/core/smnnip_proof_engine_         | 2026-04-12 | Curses console. All equations
+  console.py                          |            | accessible interactively.
+                                       |            | Sedenion boundary. BK entry.
+                                       |            | 1,675 lines.
+code/core/smnnip_test_pure.py          | 2026-04-12 | Researcher harness. 5
+                                       |            | BREAK_MODE variants.
+                                       |            | Saturation collapse at 11.0.
+code/core/smnnip_test_tf.py            | 2026-04-12 | TF researcher harness.
+code/core/returned_smnnip_full_tower.py| ~2026-04-09| Full tower — returned/rebuilt
+                                       |            | version. Ptolemy project
+                                       |            | integration reference.
+
+--------------------------------------------------------------------------------
+CODE — SUBSTRATE
+--------------------------------------------------------------------------------
+code/substrate/smnnt_substrate_pure.py | 2026-03-31 | Original substrate layer.
+                                       |            | Noether conservation
+                                       |            | verified 30 epochs.
+code/substrate/smnnt_substrate_tf.py   | ~2026-04-07| TF substrate implementation.
+
+--------------------------------------------------------------------------------
+CODE — FIRST AGE
+--------------------------------------------------------------------------------
+code/first_age/FA_smnnip_hyperindex.py | 2026-04-13 | Hyperindex. TextHyperIndex,
+                                       |            | ImageHyperIndex,
+                                       |            | MultiChannelTupper,
+                                       |            | SphericalColor,
+                                       |            | BlockchainLedger. ~600 lines.
+code/first_age/FA_smnnip_NN_tower.py   | 2026-04-13 | First Age NN Tower (pure).
+                                       |            | Two substrates. Shared upper
+                                       |            | tower. Mastery crystallization.
+code/first_age/FA_smnnip_NN_tower_tf.py| 2026-04-13 | FA NN Tower TF. GradientTape.
+
+--------------------------------------------------------------------------------
+CODE — GEMINI
+--------------------------------------------------------------------------------
+code/gemini/Gemini_Revised_EHS.py      | 2026-04-14 | Gemini-contributed code.
+                                       |            | Extended Hilbert Space
+                                       |            | implementation.
+
+--------------------------------------------------------------------------------
+CODE — SONIFICATION
+--------------------------------------------------------------------------------
+code/sonification/ainulindale_*.py     | 2026-04-14/15| Sonification experiments.
+                                       |              | Beginning of Light, Electron
+                                       |              | Orbitals, Mars, mv1.
+                                       |              | Ainulindalë as music.
+
+--------------------------------------------------------------------------------
+REVIEW
+--------------------------------------------------------------------------------
+review/Gemini_Deep_Report.txt          | 2026-04-13 | Gemini deep research report
+                                       |            | on SMNNIP framework.
+review/Gemini_Deep_SMNNIP_Report.txt   | 2026-04-14 | Gemini SMNNIP-specific deep
+                                       |            | report. Extended sigma
+                                       |            | analysis.
+review/Gemini_Deep_SMNNIP_Thoughts.txt | 2026-04-14 | Gemini extended thoughts.
+review/Gemini_Deep_Thoughts.txt        | 2026-04-13 | Gemini initial thoughts.
+review/Gemini_Deep_Web_Page.html       | 2026-04-13 | Gemini web page visual.
+review/Gemini_Deep_SMNNIP_Web_Page.html| 2026-04-14 | Gemini SMNNIP web page.
+
+--------------------------------------------------------------------------------
+OUTREACH
+--------------------------------------------------------------------------------
+outreach/SESSION_PRIMER_SMNNIP.txt     | 2026-04-10 | General session primer.
+                                       |            | Framework reference.
+outreach/SMNNT_conversation_starter.md | 2026-04-07 | Conversation starter doc.
+                                       |            | First structured primer.
+outreach/outreach_challenges.txt       | ~2026-04-13| Outreach challenge register.
+                                       |            | 22 named challenges.
+outreach/emails/Baez_John.txt          | ~2026-04-14| Drafted outreach email.
+outreach/emails/Cohen_Taco.txt         | ~2026-04-14| Drafted outreach email.
+outreach/emails/Connes_Alain.txt       | ~2026-04-14| Drafted outreach email.
+outreach/emails/Dixon_Geoffrey_        | ~2026-04-14| Follow-up outreach. Dixon
+  FOLLOWUP.txt                        |            | is first-tier priority.
+outreach/emails/Furey_Cohl.txt         | ~2026-04-14| Drafted outreach email.
+outreach/emails/Haran_Brady_           | ~2026-04-14| Numberphile/Computerphile.
+  Numberphile.txt                     |            |
+outreach/emails/LeCun_Yann.txt         | ~2026-04-14| Drafted outreach email.
+outreach/emails/Muller_Derek_          | ~2026-04-14| Veritasium outreach.
+  Veritasium.txt                      |            |
+outreach/emails/Parcollet_Tevita.txt   | ~2026-04-14| Drafted outreach email.
+outreach/emails/Tegmark_Max.txt        | ~2026-04-14| Drafted outreach email.
+
+--------------------------------------------------------------------------------
+OUTREACH — PRIMERS
+--------------------------------------------------------------------------------
+outreach/primers/PRIMER_ARCHIVE_       | 2026-04-16 | Archive of 7 session primers
+  PRE_20260416.txt                    |            | from 2026-04-07 to 2026-04-13.
+                                       |            | Full provenance record for
+                                       |            | pre-GitHub-primer sessions.
+outreach/primers/PRIMER_BCE_           | 2026-04-15 | BCE/Conformal Horizon/T
+  ConformalHorizon_T_20260415.txt     |            | transform primer.
+outreach/primers/PRIMER_Hilbert        | 2026-04-15 | Hilbert-Laplacian T
+  Laplacian_T_Sonification_20260415.txt|           | sonification session.
+outreach/primers/SESSION_PRIMER_       | 2026-04-16 | Structure constants and
+  CONSTANTS_DECOHERENCE_2026-04-16.txt|            | decoherence session.
+outreach/primers/SESSION_PRIMER_       | 2026-04-16 | Dilator/Contractor framework
+  DILATOR_CONTRACTOR_2026-04-16.txt  |            | session.
+outreach/primers/SESSION_PRIMER_       | 2026-04-16 | Void, Lattice Universe,
+  VOID_LATTICE_2026-04-16.txt        |            | Orders of Observer, Many Worlds.
+outreach/primers/PRIMER_FOR_CLAUDE_    | 2026-04-16 | This primer. Full project
+  CODE_20260416.txt                  |            | context for Claude Code.
+                                       |            | Pre-travel snapshot.
+
+================================================================================
+COMMIT PROTOCOL (FOR ALL FUTURE COMMITS)
+================================================================================
+
+All commits must follow this format:
+
+  "YYYY-MM-DD: [filename or change description] — [one-line context note]"
+
+Examples:
+  "2026-04-16: README.md — precision engineering framing, IP notice, travel notice"
+  "2026-04-16: PRIMER_FOR_CLAUDE_CODE_20260416.txt — full project context primer"
+  "2026-05-10: smnnip_lagrangian_tf.py — L2/L3 Noether gradient fix via TF autodiff"
+
+The commit message is the Arrow of Time for the codebase. It should tell a
+reader six months from now what changed and why — not just what the file is.
+
+For multi-file pushes, commit each logically related group separately with
+distinct messages rather than batching everything into one commit.
+
+© 2026 Cody Michael Allison. All rights reserved.
+================================================================================
