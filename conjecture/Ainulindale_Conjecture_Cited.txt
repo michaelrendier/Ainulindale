@@ -308,16 +308,16 @@ to Riemann zeros is the priority open derivation [8]. The BK connection is
 structural plausibility (3.03σ) — classified as Direction of Research pending
 eigenvalue proof.
 
-§III. HAMILTONIAN OF CONSCIOUSNESS
+§III. OBSERVER COUPLING HAMILTONIAN
 --------------------------------------------------------------------------------
-Consciousness enters as V(Focus) — inductive back-EMF of the observer.
+The Observer coupling enters as V(Focus) — inductive back-EMF of the measurement frame.
 Information Inductance ℐ resists change in information flux Φ. The entropic
 arrow of time t_e is friction-induced: the lag between field state and observer
 integration. This lag is where meaning is extracted.
 
 Ĥ_Focus = V(Focus) = ℐ · dΦ/dt_e
 
-STATUS: Theoretical. Consciousness as coordinate transformation between t_i and
+STATUS: Theoretical. Observer-induced coordinate transformation between t_i and
 t_e is a named claim, not yet a formal derivation.
 
 §IV. ZETA-FERMAT HEARTBEAT
@@ -601,7 +601,7 @@ TIER 3 — CONJECTURAL / DIRECTION ONLY:
   · Sedenion as Langlands Master Key [1][3]
   · Neural Einstein Field Equations
   · CKM/PMNS Matrices from Cayley-Dickson structure constants [1][3]
-  · Consciousness as observer-induced gauge distortion
+  · Observer back-action as observer-induced gauge distortion
 
 BY AGE:
   First Age:  Tier 1 claims. Human mathematical scrutiny. Outreach to Geoffrey
