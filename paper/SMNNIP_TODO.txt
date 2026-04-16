@@ -335,6 +335,99 @@ File: conjecture/HYPERINDEX_CONJECTURE_DRAFT.txt
     - Reference conjecture/HYPERINDEX_CONJECTURE_DRAFT.txt as provenance
 
 =====================================================
+SECTION 8 — HYPERWEBSTER / HYPERGALLERY INTEGRATION
+AND C++ PORT (SECOND AGE — TOP PRIORITY)
+=====================================================
+
+Added: 2026-04-16
+Purpose: Integrate Hyperindex addressing into the derivation and proof
+         engine pipeline; port all core engines to Qt/C++ for production use.
+
+--- 8A: HYPERWEBSTER + HYPERGALLERY IN DERIVATION ENGINE ---
+
+[ ] Add HyperwebsterIndex module to smnnip_derivation_pure.py
+    - Expose TextHyperIndex and MultiChannelTupper as first-class
+      derivation engine inputs (alongside scalar/vector activations)
+    - Each indexed object receives a full INDEX_RECORD at each
+      algebra stratum as it passes through the tower
+    - Noether delta recorded per index per stratum
+
+[ ] Add HyperGallery (image substrate) as parallel input channel
+    - SphericalColor + MultiChannelTupper pipeline feeds L2/L3 (H/O)
+    - Text and image substrates converge at shared C->H->O upper tower
+    - The O reasoning layer receives both modalities without knowing
+      which is which — modality-blind reasoning is the design target
+
+[ ] Expose Hyperwebster index coordinates in console GUI
+    - smnnip_proof_engine_console.py: new display mode showing
+      INDEX_RECORD alongside equation output for each active object
+    - Fano path visualized as generator traversal sequence
+    - Sedenion boundary displayed as hard stop with violation message
+
+[ ] Blockchain ledger integration with derivation engine output
+    - Every derivation run appends to the BlockchainLedger
+    - Noether delta per stratum per run stored in chain
+    - Chain hash displayed in console as session provenance
+
+--- 8B: Qt/C++ PORT — PRODUCTION ENGINES ---
+
+[ ] C++ port: smnnip_lagrangian_pure.py -> lagrangian_engine.cpp
+    - All four Lagrangian terms: L_kin, L_mat, L_bias, L_coup
+    - Full algebra tower R->C->H->O with native complex/quaternion/
+      octonion types (Eigen or custom)
+    - Observer singleton as constexpr (A_pi, Omega_zetaSigma compile-time)
+    - Noether monitor as template over algebra type
+    - Target: identical numerical output to Python reference implementation
+
+[ ] C++ port: smnnip_derivation_pure.py -> derivation_engine.cpp
+    - Euler-Lagrange, Yang-Mills, Higgs EOM, RG flow
+    - Cayley-Dickson maps as constexpr lookup tables
+    - Hyperwebster addressing integrated natively (base-97 arithmetic
+      in C++ arbitrary-precision int or __int128 for short sequences)
+    - Benchmark target: measure against Python baseline first,
+      then against SQL equivalent queries
+
+[ ] Qt GUI: smnnip_proof_engine_console.py -> ProofEngineQt (C++)
+    - Qt6 MainWindow replacing curses
+    - Left panel: equation list (same PROOF_ENTRIES, rendered as QListWidget)
+    - Right panel: equation display (MathJax or custom LaTeX renderer)
+    - Bottom: parameter input bar (QLineEdit)
+    - Options panel: algebra stratum, derivation target, constraint,
+      output format, confidence filter (all QComboBox)
+    - Hyperwebster index display pane (new — shows INDEX_RECORD live)
+    - Blockchain ledger viewer (scrollable QTextEdit, append-only)
+    - Session provenance: chain hash displayed in status bar
+
+[ ] Qt GUI: Hyperwebster browser pane
+    - Live display of Fano path as the user types input
+    - Generator traversal shown as Fano plane diagram (SVG or QPainter)
+    - Sedenion boundary visualized as red wall in the diagram
+    - Index coordinates displayed numerically alongside
+
+[ ] C++ Hyperwebster library: hyperwebster.cpp / hyperwebster.h
+    - USKeyboardMap as constexpr array
+    - TextHyperIndex encode/decode (arbitrary precision via GMP or
+      Boost.Multiprecision)
+    - FanoIndex encoder
+    - MultiChannelTupper for image tiles
+    - SphericalColor coordinate system
+    - BlockchainLedger (SHA256 via OpenSSL or libsodium)
+    - Full round-trip test suite (mirrors Python self-test)
+
+[ ] Benchmark suite: C++ vs Python vs SQL
+    - Text retrieval: C++ Hyperwebster vs SQLite SELECT by primary key
+    - Image retrieval: C++ Tupper decode vs filesystem read + decode
+    - Derivation: C++ engine vs Python engine per equation per stratum
+    - Report: operations per second, memory footprint, retrieval latency
+    - This is the empirical benchmark data for the Palantir Conjecture paper
+
+[ ] Long-term: full Ptolemy application in Qt/C++
+    - Ptolemy (king/MainWindow) -> Pharos (dialogs) -> Callimachus
+      (indexing, Hyperwebster) -> Philadelphos (SMNNIP engine)
+    - Architecture names preserved from Python prototype
+    - SMNNIP C++ engine as Philadelphos module
+
+=====================================================
 END OF TODO
 =====================================================
 Last updated: 2026-04-16
