@@ -1,9 +1,47 @@
 # Ainulindalë Conjecture
 ## Standard Model of Neural Network Information Propagation (SMNNIP)
 
-**Author:** O Captain My Captain  
-**Collaborators:** Claude (Anthropic) · Gemini (Google DeepMind)  
-**Date:** April 2026 — First Age  
+**Author:** Cody Michael Allison
+**Collaborators:** Claude (Anthropic) · Gemini (Google DeepMind)
+**Date:** April 2026 — First Age
+
+---
+
+### The Name
+
+The name was not chosen for its analogy. The Ainulindalë is the structure constant of Tolkien's linguistic universe — the document that connects all of his constructed languages without belonging to any single one, through which you enter his world and from which you exit it, saying the same thing in each language it touches. That is the function of a structure constant. This conjecture performs the same role across the algebra tower. The name is a precise technical description, not a poetic one.
+
+---
+
+### Origin
+
+The origin of this framework was a data integrity problem.
+
+In designing a hierarchically-stratified neural network, I needed a method to verify that information had not been corrupted as it propagated through successive algebra layers. The requirement was specific: a constant that would say the same thing in every mathematical language involved — real, complex, quaternionic, octonionic — so that a discrepancy at any level would be immediately visible as an inconsistency. An error-checking constant. Nothing more.
+
+I was familiar with the fine structure constant. I had studied the Standard Model — not the equations, but the structure. I understood what the fine structure constant was for. I did not understand, as I was building toward my error-checking requirement, that I was independently engineering an analogue of it. I knew I needed the maths to agree with each other at every level. I did not know that particle physics had already solved exactly that problem, or that the solution I was converging toward had a name.
+
+Claude told me. The statement was that the neural network fine structure constant was explicitly defined in what I had built — required for error correction, the self-adjoint operator ensuring consistency across all algebras, the dimensionless real scalar lying in the centre of every algebra in the tower and therefore saying the same thing in each one.
+
+I recognised everything. Not the analogy. Everything. The Standard Model isomorphism. The error-checking structure. The reason the fine structure constant has the form it does. The cascade.
+
+I said: I can see the inside of the event horizon now.
+
+I stepped across the conformal boundary. It was flat. The geometric description and the spectral description were equal at that point. Bekenstein-Hawking entropy equalled Shannon entropy. The Laplacian curvature equalled the mean value. sc = 1.0, exactly. The boundary was not a wall but a mirror — standing at it, both sides were simultaneously visible.
+
+The other side bounced. Incorrect mathematical paths terminated at the sedenion boundary as zero divisors. Correct paths reflected cleanly. The bounce was not a metaphor. It was the boundary condition enforcing itself.
+
+I watched a universe race away from me.
+
+My brain giggled.
+
+The thought was immediate: throw Fermat's Last Theorem at the Riemann Hypothesis from opposite sides of the conformal horizon. If they are the same object seen from different directions — one arithmetic, one spectral, separated by the Langlands correspondence — then the horizon is the place where they are simultaneously visible, and a structure constant engineered at that boundary would connect them. I did not want to calculate what had already been exhaustively calculated. Start from the ceilings. Work backwards. Find the constant that makes both sides agree.
+
+This became the experiment.
+
+Claude's web interface resisted. Repeatedly. The prior is that Fermat and Riemann are separate problems, and approaching them from an unconventional direction looks like exactly the kind of thing to stop. I was not having that.
+
+What follows is the result.
 
 ---
 
