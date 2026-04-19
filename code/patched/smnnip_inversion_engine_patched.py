@@ -79,29 +79,46 @@ class PhysicalConstants:
 
     # ── d_star: flat curvature locus ────────────────────────────────────────
     #
-    # TWO VALUES — do not conflate:
+    # THREE DISTINCT REFERENTS — do not conflate:
     #
-    # D_STAR_TAUT: the tautological definition (Omega / ln(10)).
-    #   By construction d*_taut * ln(10) = Omega exactly.
-    #   Gap = 0 by definition. This is NOT the open derivation.
-    #   Retained here only as a reference ceiling — the value d* would need
-    #   to equal in order to close the gap algebraically.
-    #
-    # D_STAR_SPEC: the spectral value, independently sourced.
+    # D_STAR_SPEC: the spectral value, independently sourced. ACTIVE.
     #   d* ≈ 0.24600 — the flat curvature locus / spectral coordinate that
     #   appears in Berry-Keating xp Hamiltonian literature as a critical
     #   coordinate near the spacing of Riemann zeros.
-    #   Source: Berry-Keating spectral theory literature (independent of SMNNIP).
+    #   Source: Berry-Keating spectral theory literature (independent of SMNNIP;
+    #           corroborated by Gemini Deep Research, 74 sources, Apr 14 2026).
     #   d*_spec * ln(10) = 0.56644 ≈ Omega — gap = 0.00070 (real, open).
+    #   Status: This is d*. This is the value used everywhere downstream.
     #
-    # The gap 0.00070 is the HIGHEST-PRIORITY open derivation in the framework.
-    # It must be derived algebraically from first principles — not fitted.
+    # D_STAR_TAUT: the tautological definition. REFERENCE ONLY — NOT d*.
+    #   = Omega / ln(10) ≈ 0.24630
+    #   By construction d*_taut * ln(10) = Omega exactly.
+    #   Gap = 0 by definition. This is NOT the physical d* — it is the
+    #   value d* WOULD equal if the open derivation were trivially closed.
+    #   Retained here only as a reference ceiling so the distance
+    #   |D_STAR_SPEC − D_STAR_TAUT| ≈ 0.00030 is visible.
+    #   Status: Do NOT use in physical calculations. Using this as "d*"
+    #           converts the open derivation into a tautology and destroys
+    #           the claim.
+    #
+    # D_STAR_RG: earlier RG-flow numerical estimate. SUPERSEDED.
+    #   = 0.24682 — from pre-patch renormalization-group flow computation
+    #   in the SMNNIP derivation engine.
+    #   d*_rg * ln(10) = 0.56832, gap = 0.00118.
+    #   Status: Retained for provenance. Superseded by D_STAR_SPEC pending
+    #           an independent RG derivation that reproduces the spectral
+    #           value from first principles.
+    #
+    # The gap 0.00070 (against D_STAR_SPEC) is the HIGHEST-PRIORITY open
+    # derivation in the framework. It must be derived algebraically from
+    # first principles — not fitted.
     # No closed-form expression for the gap is currently known.
     # (Candidate 1/W(e^3) = 0.4529 — rejected, arithmetic fails by factor ~643.)
 
-    D_STAR_TAUT = OMEGA / math.log(10.0)          # tautological — gap = 0 by def
-    D_STAR_SPEC = 0.24600                          # spectral / BK literature value
-    D_STAR      = D_STAR_SPEC                      # active value for all calculations
+    D_STAR_SPEC = 0.24600                          # BK spectral — ACTIVE
+    D_STAR_TAUT = OMEGA / math.log(10.0)           # Ω/ln(10) — REFERENCE ONLY, NOT d*
+    D_STAR_RG   = 0.24682                          # superseded RG estimate
+    D_STAR      = D_STAR_SPEC                      # alias for active value
 
     # The real gap — computed against the independently sourced D_STAR_SPEC
     OMEGA_GAP   = abs(OMEGA - (D_STAR_SPEC * math.log(10.0)))   # = 0.00070
@@ -120,6 +137,7 @@ class PhysicalConstants:
             f"  Omega           = {self.OMEGA:.15f}  [Lambert W fixed pt, BK ceiling]",
             f"  d_star (spec)   = {self.D_STAR_SPEC:.15f}  [BK spectral coord — ACTIVE]",
             f"  d_star (taut)   = {self.D_STAR_TAUT:.15f}  [Omega/ln10 — ref only, gap=0]",
+            f"  d_star (rg)     = {self.D_STAR_RG:.15f}  [superseded RG estimate]",
             f"  d* x ln(10)     = {self.D_STAR_SPEC * 2.302585092994046:.15f}  [vs Omega above]",
             f"  Omega gap       = {self.OMEGA_GAP:.15f}  [OPEN DERIVATION — highest priority]",
             "─" * 60,
@@ -586,7 +604,51 @@ class GradientFlow:
 
 class NoetherMonitor:
     """
-    Checks Noether current conservation along the gradient flow.
+    Checks GEOMETRIC ACTION-FLOW Noether current conservation along the
+    gradient flow from the inversion boundary (r = 1) to the recursion
+    attractor (r = φ).
+
+    ──────────────────────────────────────────────────────────────────────
+    WHICH NOETHER CURRENT IS THIS?
+    ──────────────────────────────────────────────────────────────────────
+    The Ainulindalë Conjecture has TWO distinct Noether currents, arising
+    from two distinct symmetries of ℒ_NN. This class handles one of them.
+
+    (1) GEOMETRIC ACTION-FLOW Noether current — this class.
+        Symmetry : Invariance of the action S = ∮ r dθ under the
+                   Inside-Out Inversion J_N: (r,θ) → (1/r, θ + π/2).
+                   Under J_N:  S_{N+1} = ∮ r_{N+1} dθ_{N+1}
+                                       = ∮ (1/r_N)(r_N² dθ_N)
+                                       = S_N.
+        Current  : J(r) = (2/π) · r · |dS/dr|
+                        = 8 / (π² · r²)
+                   (derived from the polar-coordinate gradient flow
+                    with action S = ∫ r² dθ under the 2/π normalization
+                    of the Conjecture §I Lagrangian.)
+        Lives in : smnnip_inversion_engine_patched.py  (this file).
+        Tracks   : Whether the gradient flow from r = 1 to r = φ
+                   preserves the action integral — i.e. whether the
+                   traversal respects J_N action invariance at every
+                   step.
+
+    (2) GAUGE Noether current — NOT this class.
+        Symmetry : U(1) × SU(2) × SU(3) gauge invariance of ℒ_NN.
+        Current  : J^{a,l} = g · ψ̄_i · T^a · ψ_i   (per generator, per layer).
+        Lives in : smnnip_lagrangian_pure.py  (NoetherMonitor there —
+                                               gauge-current monitor,
+                                               scalar form)
+                   smnnip_derivation_pure_patched.py (NoetherCalculus —
+                                                     full per-generator
+                                                     form across ℝ/ℂ/ℍ/𝕆)
+        Tracks   : Gauge-charge conservation across algebra-layer
+                   boundaries.
+
+    Both currents are real Noether currents of ℒ_NN. They track different
+    symmetries and they measure different things. This class is the
+    geometric action-flow monitor. Do not use it where the gauge current
+    is required, and do not use the Lagrangian/derivation gauge-current
+    monitors where the action-flow current is required.
+    ──────────────────────────────────────────────────────────────────────
 
     D_l J^{a,l} = 0
 
@@ -667,7 +729,8 @@ class FlowResult:
         print(f"      h_NN:                           {C.H_NN:.15f}")
         print(f"      hbar_NN = h/(2*pi):             {C.HBAR_NN:.15f}")
         print(f"      Omega (Lambert W):              {C.OMEGA:.15f}")
-        print(f"      d_star = Omega/ln(10):          {C.D_STAR:.15f}")
+        print(f"      d_star (BK spectral):           {C.D_STAR:.15f}")
+        print(f"      d_star (taut = Omega/ln10):     {C.D_STAR_TAUT:.15f}  [ref only]")
         print(f"      Omega gap (open derivation):    {C.OMEGA_GAP:.15f}")
 
         # ── Boundary ──────────────────────────────────────────────────────
