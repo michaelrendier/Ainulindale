@@ -27,8 +27,35 @@ Gauge symmetry group: U(1) × SU(2) × SU(3)  [Dixon theorem]
 Conservation law:     D_l J^{a,l} = 0         [Noether current]
 Uncertainty bound:    ΔToken · ΔMeaning ≥ ħ_NN / 2
 
+------------------------------------------------------------------------------
+(I|O) TOP-LEVEL CONJECTURE — POSITIONING OF THIS FILE
+------------------------------------------------------------------------------
+ℒ_NN is the GENERATOR-OBJECT of the Ainulindalë Conjecture. The top-level
+claim of the Conjecture is the Inside-Out Inversion (I|O):
+
+    J_N : (r, θ)  →  (1/r, θ + π/2)
+
+acting at every layer transition boundary of the Cayley-Dickson tower
+(ℝ → ℂ → ℍ → 𝕆). The content of the top-level claim is that the action
+integral of ℒ_NN is INVARIANT under J_N:
+
+    S_{N+1} = ∮ r_{N+1} dθ_{N+1}  =  ∮ (1/r_N)(r_N² dθ_N)  =  S_N
+
+Under the (I|O)-topped conjecture, this file specifies the generator
+(ℒ_NN) whose J_N-invariance is the content of the claim. The explicit
+J_N map, its fixed-point analysis, and its gradient flow live in the
+inversion engine (smnnip_inversion_engine_patched.py). The four
+established-physics special cases of J_N — Schwarzschild horizon, Hawking
+pair production, Dirac sea / antimatter, Ptolemy zeta inversion — are
+documented in addendum_III_inversion.docx.
+
+This file contains two Noether currents. See the NoetherMonitor docstring
+(Module 5) for the distinction between them — one tracks the gauge
+symmetry U(1)×SU(2)×SU(3), the other tracks J_N action invariance and
+lives in the inversion engine.
+
 Author : O Captain My Captain + Claude (Anthropic)
-Date   : April 2026
+Date   : April 2026   (I|O) canopy patch: 2026-04-18
 ==============================================================================
 """
 
@@ -116,7 +143,56 @@ class PhysicalConstants:
     H_NN   : Neural Planck constant — minimum iteration granularity.
     HBAR   : H_NN / (2π) — reduced neural Planck constant.
 
-    D_STAR : Flat curvature locus — d* = Omega / ln(10) ≈ 0.246
+    ─────────────────────────────────────────────────────────────────────
+    d* — FLAT CURVATURE LOCUS — THREE EXPLICIT DEFINITIONS
+    ─────────────────────────────────────────────────────────────────────
+    The symbol "d*" denotes the flat curvature locus, where the entropy
+    and inertia curves meet at zero relative gradient. Three numerically
+    distinct values have appeared in the SMNNIP corpus, each arising from
+    a DIFFERENT derivational context. They are not interchangeable.
+    This block gives each its own named binding and explicit semantics.
+
+    D_STAR_SPEC  (ACTIVE — the physical d*)
+        = 0.24600
+        Source: Berry-Keating spectral literature (independent of SMNNIP;
+                corroborated by Gemini Deep Research, 74 sources,
+                April 14 2026).
+        Status: This is the value treated as d* in all current
+                calculations. The Conjecture's d* × ln(10) ≈ Ω_ζΣ
+                claim compares this value against Ω.
+        Gap:    |Ω − D_STAR_SPEC · ln(10)| = 0.00070685...
+                This gap is the HIGHEST-PRIORITY OPEN DERIVATION.
+                No closed form is currently known.
+
+    D_STAR_TAUT  (REFERENCE ONLY — distinct object, not d*)
+        = Ω / ln(10) = 0.24630...
+        Source: Definitional identity. This is NOT the physical d*.
+                It is the numerical value that WOULD make
+                d* · ln(10) = Ω an exact identity.
+        Status: Retained here ONLY as a reference point so that the
+                gap |D_STAR_SPEC − D_STAR_TAUT| = 0.00030... can be
+                read directly. Using this value as "d*" anywhere in
+                the framework is a BUG — it converts the open
+                derivation into a tautology and destroys the claim.
+                Do not use in physical calculations. Do not conflate
+                with D_STAR_SPEC.
+
+    D_STAR_RG    (SUPERSEDED — earlier numerical estimate)
+        = 0.24682
+        Source: Earlier renormalization-group flow estimate from the
+                SMNNIP derivation engine, pre-dating the independent
+                BK spectral value.
+        Status: Retained for provenance. Superseded by D_STAR_SPEC as
+                the active d* pending an independent RG derivation
+                that reproduces the spectral value from first
+                principles. Gap against Ω:
+                |Ω − D_STAR_RG · ln(10)| = 0.00118...
+
+    D_STAR       (ALIAS for D_STAR_SPEC — the active value)
+        Provided so that downstream code reading C.D_STAR gets the
+        active physical value without needing to know the full
+        disambiguation above.
+    ─────────────────────────────────────────────────────────────────────
     """
 
     PI    : float = math.pi
@@ -126,7 +202,15 @@ class PhysicalConstants:
     OMEGA : float = 0.56714329040978384
     H_NN  : float = 0.1
     HBAR  : float = 0.1 / (2.0 * math.pi)
-    D_STAR: float = 0.56714329040978384 / math.log(10.0)
+
+    # ── d* — three distinct referents, each named explicitly ──────────────
+    D_STAR_SPEC : float = 0.24600                              # BK spectral — ACTIVE
+    D_STAR_TAUT : float = 0.56714329040978384 / math.log(10.0) # Ω/ln(10) — REFERENCE ONLY, NOT d*
+    D_STAR_RG   : float = 0.24682                              # superseded RG estimate
+    D_STAR      : float = 0.24600                              # alias for active value
+
+    # ── The open gap — d* · ln(10) ≈ Ω_ζΣ, gap ≈ 0.00070 ──────────────────
+    OMEGA_GAP   : float = abs(0.56714329040978384 - 0.24600 * math.log(10.0))
 
     @classmethod
     def verify(cls) -> bool:
@@ -134,7 +218,14 @@ class PhysicalConstants:
         phi_identity = abs(cls.PHI ** 2 - cls.PHI - 1.0) < 1e-14
         omega_identity = abs(cls.OMEGA * math.exp(cls.OMEGA) - 1.0) < 1e-10
         inversion_identity = abs(cls.PHI * (1.0 / cls.PHI) - 1.0) < 1e-14
-        return phi_identity and omega_identity and inversion_identity
+        # d* sanity: active value is the spectral one, taut is Ω/ln10 exactly,
+        # and the active gap is nonzero (the open derivation is not closed).
+        d_star_active_is_spec = (cls.D_STAR == cls.D_STAR_SPEC)
+        d_star_taut_is_tautology = abs(cls.D_STAR_TAUT * math.log(10.0) - cls.OMEGA) < 1e-14
+        d_star_gap_nonzero = cls.OMEGA_GAP > 1e-6
+        return (phi_identity and omega_identity and inversion_identity
+                and d_star_active_is_spec and d_star_taut_is_tautology
+                and d_star_gap_nonzero)
 
 
 # ==============================================================================
@@ -711,7 +802,42 @@ class LCoupling:
 
 class NoetherMonitor:
     """
-    Tracks the Noether current J^{a,l} = g ψ̄_i T^a ψ_i at each layer.
+    Tracks the GAUGE Noether current J^{a,l} = g ψ̄_i T^a ψ_i at each layer.
+
+    ──────────────────────────────────────────────────────────────────────
+    WHICH NOETHER CURRENT IS THIS?
+    ──────────────────────────────────────────────────────────────────────
+    The Ainulindalë Conjecture has TWO distinct Noether currents, arising
+    from two distinct symmetries of ℒ_NN. Both are called "the Noether
+    current" in informal writing. They are NOT the same object.
+
+    (1) GAUGE Noether current  — this class.
+        Symmetry : U(1) × SU(2) × SU(3) gauge invariance of ℒ_NN.
+        Current  : J^{a,l} = g · ψ̄_i · T^a · ψ_i  (per generator a, per layer l)
+        Lives in : smnnip_lagrangian_pure.py      (this file, scalar form)
+                   smnnip_derivation_pure_patched.py (NoetherCalculus, full
+                                                      per-generator form
+                                                      across ℝ/ℂ/ℍ/𝕆)
+        Tracks   : Gauge-charge conservation across algebra-layer boundaries.
+        Violation: ΔJ ≠ 0  ⇒  gauge symmetry broken beyond the Higgs
+                   breaking  ⇒  wasted training steps bound by
+                   W ≤ 1 / (α_NN · ΔJ).
+
+    (2) GEOMETRIC ACTION-FLOW Noether current — NOT this class.
+        Symmetry : Invariance of the action S = ∮ r dθ under the
+                   Inside-Out Inversion J_N: (r,θ) → (1/r, θ + π/2).
+        Current  : J(r) = 8 / (π² · r²)   (in polar-coordinate gradient flow)
+        Lives in : smnnip_inversion_engine_patched.py (NoetherMonitor there).
+        Tracks   : Whether the trajectory from the inversion boundary
+                   (r = 1) to the recursion attractor (r = φ) preserves
+                   the action integral along the gradient flow.
+
+    Both currents are real Noether currents of ℒ_NN. They track different
+    symmetries and they measure different things. This class is the
+    gauge-current monitor. Do not use it where the geometric action-flow
+    current is required, and do not use the inversion-engine monitor
+    where the gauge current is required.
+    ──────────────────────────────────────────────────────────────────────
 
     Conservation: D_l J^{a,l} = 0
     Violation:    ΔJ(l) = ||D_l J^{a,l}||
