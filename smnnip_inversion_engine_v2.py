@@ -70,32 +70,79 @@ class PhysicalConstants:
     # (pi/2)*hbar_NN = (pi/2)*(H/2pi) = H/4. Algebraically exact.
     H_OVER_4 = H_NN / 4.0
 
-    ALPHA = 1.0 / 137.035999084
-    OMEGA = 0.56714329040978384
+    # ── Four named separations — NEVER conflate ─────────────────────────────
+    #
+    # A_pi    : fine structure constant. BK operator domain LOWER wall.
+    #           E8/Wyler n-ball geometry. Fixed. Does not run.
+    ALPHA       = 1.0 / 137.035999084
+    A_PI        = ALPHA                            # canonical name in papers
 
-    D_STAR_TAUT = OMEGA / math.log(10.0)
+    # Omega_zSigma : Lambert W fixed point. BK operator domain UPPER wall.
+    #                Maximum self-referential loop that closes. Fixed.
+    OMEGA       = 0.56714329040978384
+    OMEGA_ZSIGMA = OMEGA                           # canonical name in papers
+
+    # d*_spec : BK spectral coordinate. Independent of SMNNIP.
+    #           Berry-Keating xp Hamiltonian literature. Active value.
     D_STAR_SPEC = 0.24600
-    D_STAR      = D_STAR_SPEC
+
+    # d*_taut : tautological ceiling = Omega/ln(10).
+    #           d*_taut * ln(10) = Omega exactly. Gap=0 by definition.
+    #           Reference only — not a physical result.
+    D_STAR_TAUT = OMEGA / math.log(10.0)
+
+    D_STAR      = D_STAR_SPEC                      # active value
+
+    # The 0.00070 gap: d*_spec * ln(10) vs Omega. OPEN DERIVATION.
     OMEGA_GAP   = abs(OMEGA - D_STAR_SPEC * math.log(10.0))
 
+    # omega_H : Hagedorn thermal ceiling = e^pi (Gelfond's constant)
+    #           2/ln(omega_H) = 2/pi exactly — same radian normalization
+    #           as the Lagrangian polar measure. Fixed. Thermal saturation limit.
+    OMEGA_H     = math.exp(math.pi)                # e^pi = 23.14069...
+
+    # ── Four interval separations ────────────────────────────────────────────
+    # [A_pi,      d*_spec]  : sub-threshold zone
+    # [d*_spec,   d*_taut]  : THE GAP = 0.00070 (open derivation)
+    # [d*_taut,   Omega]    : zero by construction (taut is defined to close here)
+    # [Omega,     omega_H]  : thermal zone to Hagedorn ceiling
+    # (These are named attributes so the engine can report them explicitly)
+
     def __repr__(self):
-        h4_eq_check = abs(self.H_OVER_4 - (self.PI / 2.0) * self.HBAR_NN)
+        h4_id  = abs(self.H_OVER_4 - (self.PI / 2.0) * self.HBAR_NN)
+        sep1   = self.D_STAR_SPEC   - self.A_PI
+        sep2   = self.D_STAR_TAUT   - self.D_STAR_SPEC
+        sep3   = self.D_STAR_TAUT * math.log(10.0) - self.OMEGA_ZSIGMA
+        sep4   = self.OMEGA_H       - self.OMEGA_ZSIGMA
+        two_over_ln_omegaH = 2.0 / math.log(self.OMEGA_H)
         lines = [
-            "=" * 64,
+            "=" * 68,
             "SMNNIP PHYSICAL CONSTANTS  (v2)",
-            "=" * 64,
+            "=" * 68,
             f"  pi              = {self.PI:.15f}",
             f"  phi             = {self.PHI:.15f}",
-            f"  1/phi           = {self.PHI_INV:.15f}  [= phi-1]",
+            f"  1/phi           = {self.PHI_INV:.15f}  [phi-1]",
             f"  h_NN            = {self.H_NN:.15f}",
             f"  hbar_NN         = {self.HBAR_NN:.15f}  [h/2pi]",
-            f"  H/4             = {self.H_OVER_4:.15f}  [(pi/2)*hbar — CORRECT GRANULE]",
-            f"  |H/4-(pi/2)hbar|= {h4_eq_check:.2e}  [algebraic identity verified]",
-            f"  alpha           = {self.ALPHA:.15f}  [BK floor]",
-            f"  Omega           = {self.OMEGA:.15f}  [Lambert W, BK ceiling]",
-            f"  d_star (spec)   = {self.D_STAR_SPEC:.15f}  [BK — ACTIVE]",
-            f"  Omega gap       = {self.OMEGA_GAP:.15f}  [OPEN DERIVATION]",
-            "=" * 64,
+            f"  H/4             = {self.H_OVER_4:.15f}  [(pi/2)*hbar EXACT]",
+            f"  |H/4-(pi/2)hbar|= {h4_id:.2e}",
+            "─" * 68,
+            "  FOUR NAMED SEPARATIONS (never conflate):",
+            f"  A_pi            = {self.A_PI:.15f}  [BK floor, 1/137.036, fixed]",
+            f"  d*_spec         = {self.D_STAR_SPEC:.15f}  [BK spectral, independent source]",
+            f"  d*_taut         = {self.D_STAR_TAUT:.15f}  [Omega/ln10, ref only, gap=0]",
+            f"  Omega_zSigma    = {self.OMEGA_ZSIGMA:.15f}  [Lambert W, BK ceiling, fixed]",
+            f"  omega_H         = {self.OMEGA_H:.15f}  [e^pi, Hagedorn ceiling, fixed]",
+            "─" * 68,
+            "  FOUR INTERVALS:",
+            f"  [A_pi,    d*_spec] = {sep1:.15f}  [sub-threshold zone, raw]",
+            f"  [d*_spec, d*_taut] = {sep2:.15f}  [GAP in d* space = {sep2:.6f}]",
+            f"  d*_taut*ln10 - Omega = {sep3:.2e}  [zero by construction]",
+            f"  [Omega,   omega_H] = {sep4:.15f}  [thermal zone]",
+            "─" * 68,
+            f"  Omega gap (direct) = {self.OMEGA_GAP:.15f}  [OPEN DERIVATION — highest priority]",
+            f"  2/ln(omega_H)      = {two_over_ln_omegaH:.15f}  [= 2/pi exactly]",
+            "=" * 68,
         ]
         return "\n".join(lines)
 
