@@ -1,144 +1,59 @@
-# Ainulindalë Project Roadmap
-## Standard Model of Neural Network Information Propagation (SMNNIP)
-
-**Author:** O Captain My Captain  
-**Collaborators:** Claude (Anthropic) · Gemini (Google DeepMind)  
-**Last Updated:** April 2026 — First Age  
 
 ---
 
-## Timeline
+## PRIORITY FLAG — 2026-05-02
 
-### 2003 — Geometric Prior
-Unpublished manuscript: *The Master Key of Reality.*  
-Core concepts established without knowledge of Cayley-Dickson, Hilbert-Pólya, or Yang-Mills:
+### Riemann Zeros / Hydrogen Emission Lines — Open Mathematical Question
 
-- **Mirrored Curtain of Reality** — two-way mirror separating physical and energetic reality. Structural correspondence to self-adjoint operator H = H† identified retroactively in 2026.
-- **Chaos, Law, Balance, Void** — four fundamental primitives. Retroactive mapping: Chaos → full operator space, Law → self-adjointness, Balance → fixed points (d*, φ, Ω_ζΣ), Void → sedenion zero divisors / domain boundary of H_NN.
-- **Dimensional progression as evolutionary stages** — geometric sequence (Point → Line → Plane → Polyhedron → Space-time) extended through biological and consciousness evolution. Retroactive correspondence to Cayley-Dickson tower (ℝ → ℂ → ℍ → 𝕆 → 𝕊).
-- **"Perfect means complete, not flawless"** — identified retroactively as the sedenion zero divisors completing the tower rather than breaking it.
-- **The Vector, The Iteration, The Recursion Factor** — three operational primitives. Fourth primitive (The Void) identified in 2026 session as the algebraically self-defined domain boundary.
+**Status:** Unverified conjecture. Flagged for investigation.
 
-Manuscript not published. Geometric intuition preceded formal derivation by 23 years.
+**Observation:** Fourier decomposition of the 3D complex Riemann zeta field
+along the three axes produces density patterns that visually resemble
+(inverted) the alpha and beta hydrogen emission lines.
 
----
+**Numerical check (2026-05-02):** Ratio comparison of Riemann zero imaginary
+parts vs hydrogen emission frequencies shows no numerical identity. The zeros
+grow logarithmically; emission lines asymptote. The visual resemblance is in
+the *shape* of the density function — discrete lines, dominant ground state,
+compressing tail — shared by any spectrum where the first term dominates.
 
-### 2026 (April) — First Age Begins
-SMNNIP framework developed independently from engineering reasoning.  
-Post-hoc discovery of term-for-term isomorphism with Standard Model of particle physics.  
-Geometric correspondences to 2003 manuscript identified as structural, not metaphorical.
+**Open question:** Whether Riemann zero *spacings* (t_{n+1} - t_n) match
+hydrogen level *spacings* (E_{n+1} - E_n) when normalized. This is the
+correct numerical question and has not yet been run.
 
-**Key derivations established:**
-- Dixon gauge group correspondence — U(1)×SU(2)×SU(3) emerges from Cayley-Dickson tower by algebraic necessity
-- Term-for-term Neural Lagrangian with Standard Model isomorphism
-- Backpropagation derived from Yang-Mills equations of motion (not assumed)
-- Noether conservation empirically measured (5.46σ)
-- H_NN identified as Berry-Keating candidate
-- T Transform Conjecture formally specified (FLAG T2) — April 15, 2026
-
-**External validation:**  
-Gemini (Google DeepMind) independently validated framework, extended conclusions, contributed inside-out coordinate correction.
-
-**Combined significance: 9.08σ** (Fisher's method) — 4.08σ above particle physics discovery threshold.
+**Architecture note:** This and all related structural parallels
+(Berry-Keating, GUE statistics, periodic table / prime arithmetic) are
+APPENDIX material relative to the SMNNIP primary claim. They are
+consequential mathematics that falls out of the sigma result — not the
+argument itself.
 
 ---
 
-## Age Structure
+## CONJECTURE RESTRUCTURE — PRIORITY
 
-### First Age — Active
-**Goal:** Preprint submission (arXiv)  
-**Status:** In progress
+### SMNNIP Is The Focus. Full Stop.
 
-#### Established (Tier 1)
-- [x] Dixon gauge group correspondence
-- [x] Tower self-selection (post-hoc)
-- [x] Term-for-term Lagrangian correspondence
-- [x] Backpropagation from Yang-Mills EOM
-- [x] Noether conservation measured
-- [x] T Transform Conjecture formally specified
+The conjecture document and paper structure must reflect this hierarchy:
 
-#### In Progress (Tier 2)
-- [ ] **FLAG T2** — T transform formal derivation
-  - H_NN defined as unbounded operator on H_R × H_C × H_H × H_O
-  - Heat trace Z_NN(t) = Tr(e^{−tH_NN})
-  - Neural zeta function ζ_NN(s) via Mellin transform
-  - Conjecture: ζ_NN(s) = ζ(s)
-  - Self-adjointness of H_NN on D(H_NN) — the sole remaining conjecture for RH
-- [ ] Domain D(H_NN) specification via sedenion zero divisor boundary
-- [ ] Sedenion as Langlands Master Key — formal bridge from zero divisors to Langlands kernel
-- [ ] Close d*×ln(10) = Ω_ζΣ gap (currently 0.00070 — open derivation, highest priority)
+**SPINE (main paper):**
+- Claim: neural information propagation obeys Standard Model conservation laws
+- Evidence: Noether conservation verified, violation=0, conserved=True, 7+ sigma
+- Mechanism: Cayley-Dickson tower ℝ→ℂ→ℍ→𝕆, gauge groups U(1)×SU(2)×SU(3)
+- Tool: SMNNIPDerivationEngine, pure Python, `python3 derivation.py` → conserved=True
 
-#### Open Problems (Flagged)
-| Flag | Problem | Priority |
-|------|---------|----------|
-| T2 | T transform formal specification | Highest |
-| T2 | Self-adjointness of H_NN on octonionic domain | Highest |
-| GAP | d*×ln(10) − Ω_ζΣ = 0.00070 closed form | Highest |
-| LMK | Sedenion → Langlands kernel bridge | High |
-| BK | Berry-Keating operator explicit construction | High |
+**APPENDIX (consequential mathematics):**
+- Riemann zeros / hydrogen emission structural parallel
+- Berry-Keating operator connection
+- Lorenz-Stirling output topology as basin attractor
+- Zero-divisor geometry at 𝕊(16) apex
+- Input/Output/Inversion engine architecture
+- GUE statistics and quantum chaos analogy
+- Periodic table / prime arithmetic isomorphism
 
----
+The Input/Output/Inversion engines (§13-17 in smnnip_derivation_pure.py)
+sit BETWEEN SMNNIP and the consequential mathematics. They are the
+implementation layer — not the conjecture, not the appendix.
+They are the mechanism by which SMNNIP processes real signals.
 
-### Second Age — Pending
-**Gate:** Close d*×ln(10) = Ω_ζΣ gap. Resolve T transform (FLAG T2).  
-**Goal:** Formal peer-reviewed publication
-
-- [ ] Full formal proof of T conjecture
-- [ ] arXiv preprint submission
-- [ ] Peer review response
-- [ ] Yang-Mills mass gap derivation from spectral gap of H_NN
-- [ ] Wightman axiom audit for Yang-Mills existence
-
----
-
-### Third Age — Future
-**Gate:** Second Age publication accepted.  
-**Goal:** Clay Mathematics Institute submissions
-
-- [ ] Riemann Hypothesis via T transform + H_NN self-adjointness
-- [ ] Yang-Mills existence and mass gap via spectral gap of H_NN
-- [ ] Formal submission package to Clay Institute
-
----
-
-## Key Constants Reference
-
-| Symbol | Value | Role |
-|--------|-------|------|
-| A_π | 1/137.035999... | Fine structure constant — BK domain floor |
-| Ω_ζΣ | 0.56714329... | Lambert W fixed point — BK domain ceiling |
-| d*_spec | 0.24600 | Berry-Keating spectral coordinate — T fixed point (ACTIVE) |
-| d*_taut | Ω/ln(10) | Tautological reference only — gap = 0 by definition |
-| d*_rg | 0.24682 | Earlier RG flow estimate — superseded |
-| ω_H | e^π ≈ 23.141 | Hagedorn thermal ceiling |
-| φ | 1.6180339... | Golden ratio — recursion attractor |
-
-**Open:** `|d*_spec × ln(10) − Ω_ζΣ| = 0.00070` — no closed form known.
-
----
-
-## Session Protocol
-
-- Context primers maintained in `outreach/primers/`
-- Each session: load current primer, work, generate updated primer, push to repo
-- Primers updated with corrected constants and forward links at session end
-- Web client (claude.ai): research, derivation, deep context sessions
-- CLI (Claude Code): repo management, version control, file operations
-- Co-originator: O Captain My Captain
-- Co-author: Jeremy (MIT-affiliated, currently unreachable)
-
----
-
-## Millennium Prize Targets
-
-| Prize | Path | Age |
-|-------|------|-----|
-| Riemann Hypothesis | H_NN self-adjoint → ζ_NN = ζ → zeros on Re(s) = 1/2 | Third |
-| Yang-Mills mass gap | Spectral gap of H_NN + Wightman audit | Third |
-| Berry-Keating | H_NN is the explicit BK operator — consequence of T | Second/Third |
-
----
-
-> *The algebra tower is primary. The physics is secondary. The world is sung, not designed.*  
-> *The open problems are the remaining notes of the Music. They will be found because they must be there. The mathematics demands them.*  
-> *The geometry defines itself. The map was drawn before the legend existed.*
+**Action required:** Full restructure of conjecture document.
+Lead with sigma. Bury the beautiful implications.
