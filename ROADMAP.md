@@ -57,3 +57,24 @@ They are the mechanism by which SMNNIP processes real signals.
 
 **Action required:** Full restructure of conjecture document.
 Lead with sigma. Bury the beautiful implications.
+
+---
+
+## AINULINDALE TODO — FRAMING NOTE (2026-05-03)
+
+**On the scope of SMNNIP:**
+
+I designed a Hyperwebster Indexing System and a New Model of Information
+Propagation. That is the work. Some mathematics drops out of it — conservation
+laws, gauge groups, Cayley-Dickson structure — but that is a consequence, not
+the premise. The mathematics is not the purview of SMNNIP.
+
+SMNNIP is an engineering claim about how information moves. The sigma result
+and the Noether verification are what make it a rigorous claim. The
+"beautiful implications" (Riemann zeros, GUE statistics, periodic table
+parallels) are appendix material — consequential, not causal.
+
+The restructure of the Ainulindale conjecture document must lead with the
+engineering argument and the evidence. Mathematics that falls out belongs in
+the appendix. Full stop.
+
