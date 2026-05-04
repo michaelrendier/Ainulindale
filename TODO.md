@@ -1,0 +1,154 @@
+# AINULINDALE — TODO
+Generated: 2026-05-03
+Session: CLAUDE-SMNNIP-00729-56714-24600
+
+================================================================================
+PRIORITY 1 — BLOCKING / ACTIVE
+================================================================================
+
+[ ] FLAG-4 RESOLVED in ValaQuenta + ainulindale_engine
+    gradient_flow: phi-recursion r → 1+1/r  (v0.112)
+    STATUS: DONE. Formal derivation from first principles still open.
+
+[ ] d* GAP — Open Problem 2 (berry_keating module)
+    gap = |Ω - d*×ln(10)| = 0.000707
+    No closed-form expression known. berry_keating.gap_candidates() lists
+    all evaluated candidates — none beat 0.000707.
+    TODO: algebraic derivation. Paper appendix when solved.
+
+[ ] T MAP — Open Problem 3 (berry_keating module)
+    T: x → x·e^{i·d*·ln(x)}  — scaffolded, not formally defined.
+    TODO: prove T is unitary, find spectrum, connect to Riemann zeros.
+
+================================================================================
+PRIORITY 2 — ENGINEERING
+================================================================================
+
+[ ] ValaQuenta → ainulindale_engine SYNC COMPLETE (2026-05-03)
+    All 8 modules live in ainulindale_engine. ValaQuenta remains as staging.
+    TODO: when a module version bumps in ainulindale_engine, sync back
+    to ValaQuenta manually (ValaQuenta is the staging area, not the source).
+
+[ ] PTOLEMY INTEGRATION — pending PtolBus
+    ainulindale_engine is ready to wire into Ptolemy as Philadelphos submodule.
+    Blocked on PtolBus (inter-Face communication bus).
+    TODO: when PtolBus is live, wire ainulindale_engine --curses to /derivation.
+    CyclicContextBuffer wiring to Ainulindale is also PtolBus-dependent.
+
+[ ] QTermWidget
+    console_qt.py has fallback REPL when QTermWidget not installed.
+    TODO: build QTermWidget on Surface Go (see INSTALL.md).
+    ShellPanel upgrades automatically on detection.
+
+[ ] SONIFICATION — Standalone Synthesizer repo
+    ainulindale_engine/modules/sonification/ feeds the viewer.
+    Standalone Ainulindale Synthesizer → own repo (not yet created).
+    TODO: create repo, move ainulindale_sonification_mv1.py there,
+    wire sonification module to export WAV to synth repo input.
+
+[ ] MODULES/__init__.py MANIFEST
+    ainulindale_engine/modules/__init__.py needs updating to list all 8 modules.
+    TODO: update manifest and roadmap comment block.
+
+[ ] HYPERWEBSTER — Tongue integration
+    hyperwebster.monad_address() is the Tongue scaffold.
+    TODO: wire SemanticWord reverse-lookup to SMNNIP output (attractor → word).
+    Full Tongue: OctEl attractor coordinate → nearest SemanticWord via
+    Fano neighbour search in HyperGallery.
+
+[ ] JWST — Real data ingest
+    jwst module has synthetic spectra only.
+    TODO: add FITS file reader, ingest real NIRCam pixel data,
+    produce 𝕆 elements from actual observations.
+
+[ ] BERRY-KEATING — Riemann zero spacing
+    ROADMAP documents hydrogen emission line spacing comparison (unrun).
+    TODO: run spacing comparison: Riemann zeros vs hydrogen emission lines.
+    Documented as conjecture; spacing comparison result needed before paper.
+
+[ ] NOETHER LEDGER — Ptolemy blockchain integration
+    NoetherLedger SHA-256 chain is self-contained in the module.
+    TODO: when Kryptos is live, wire ledger export to Kryptos .perm files.
+    Each violation block becomes a blockchain transaction.
+
+[ ] LSH_DATATYPE C++ — Hermitian/self-adjoint proof
+    Formal proof that LSH_Datatype operator claim is mathematically rigorous.
+    Currently architectural, not proven. Separate from Ainulindale.
+
+[ ] ARCHIMEDES CONSTANTS — four duplicate files
+    Constants are duplicated across four files in Ptolemy.
+    TODO: consolidate to single source of truth (Archimedes module).
+
+================================================================================
+PRIORITY 3 — PAPER
+================================================================================
+
+[ ] FLAG-1: Sedenion as hyper-modular form
+    Zero-divisors = algebraic shadow of modular transformation /
+    irreversibility in Langlands correspondence.
+    TODO: add to Open Problem 6 of paper.
+
+[ ] FLAG-2: 2-stroke engine framing
+    (I|O) = compression + expansion. Sedenion = top dead center, engine seized.
+    TODO: add to §VIII and paper intro.
+
+[ ] FLAG-3: Modularity Theorem as limiting case
+    "SMNNIP describes the substrate from which both sides of
+    Taniyama-Shimura emerge as limiting cases."
+    STATUS: CONJECTURE. TODO: add to Second Age section.
+
+[ ] FLAG-5: Provenance section
+    Timeline: late 1980s → 1996 (BBC Horizon, "i is important") → 2026 formalism.
+    Anti-coincidence argument for post-hoc isomorphism.
+    TODO: write and add to paper.
+
+[ ] SIGMA RESULT — paper spine
+    SMNNIP sigma result is the paper spine. All other mathematics to appendices.
+    Nature submission target.
+    TODO: write paper body (sigma result first, claims last).
+
+[ ] RIEMANN / HYDROGEN PARALLEL
+    Ratio check showed no numerical identity. Spacing comparison unrun.
+    STATUS: CONJECTURE. Do not call this a proof.
+
+================================================================================
+PRIORITY 4 — FUTURE MODULES / FEATURES
+================================================================================
+
+[ ] SMNNIP DISTRIBUTION ENGINE (see wiki)
+    The inference-time engine: trained SMNNIP network produces distribution
+    over SemanticWords via OctEl → Tongue → HyperGallery lookup.
+    Not yet designed beyond architecture sketch.
+
+[ ] GITنEXUS repurpose
+    Repurpose as semantic knowledge corpus visualiser.
+    HyperIndex visual (blockchain-style) showing what Ptolemy knows.
+    Tabled for dedicated session.
+
+[ ] FILESYSTEM DEEP INGEST
+    filesystem_ingest.py built. Full Linux Mint Xia + UbuntuStudio run pending.
+
+[ ] FLUTTER UNIVERSAL CLIENT
+    Web/Android/iOS/desktop. Server build deferred pending Flutter shape
+    and HyperDatabase schema finalization.
+
+[ ] LUTHSPELL / LATHSPELL (Halt Monitor, Gandalf layer)
+    Consciousness/governance layer above all Faces.
+    Pre-positions semantic boundary markers (Halt Passes) in octonion address space.
+    Each Halt Pass = blockchain transaction.
+    TODO: design session.
+
+[ ] UF FORMULARY RENDERER
+    Render Universal Framework equations in viewer.
+
+[ ] TRUTH/PROPAGANDA CONFIDENCE SCORING
+    Pluggable gate for web input learning.
+    Low-confidence pages → quarantine buffer.
+
+================================================================================
+VERSIONING
+================================================================================
+All files at v0.111. Increment 0.001 per change.
+Commit format: "YYYY-MM-DD: [file/description] — [one-line context note]"
+.archive/ is git-ignored. Previous versions move there on patch.
+================================================================================

@@ -265,13 +265,14 @@ class GradientFlow:
         self.att = RecursionAttractor()
 
     def step(self, r: float, hbar: float = None) -> float:
-        """Single gradient step toward phi attractor."""
-        if hbar is None:
-            hbar = C.HBAR_NN
-        # Gradient of inversion potential V(r) = (r - 1/r)^2 / 2
-        # dV/dr = r + 1/r^2 - 1/r - 1 ... simplified: step toward phi
-        grad = r - 1.0 / r
-        return r - hbar * grad
+        """
+        Step toward phi via phi-recursion: r -> 1 + 1/r  (FLAG-4 fix v0.112)
+        Fixed point: r* = 1 + 1/r* -> r* = phi exactly.
+        Converges from any r > 0 in O(log(1/epsilon)) steps.
+        """
+        if r == 0.0:
+            r = 1e-9
+        return 1.0 + 1.0 / r
 
     def flow(self, r0: float = 1.0, max_steps: int = 1000,
              tol: float = 1e-8) -> Dict[str, Any]:

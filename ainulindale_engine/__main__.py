@@ -25,10 +25,24 @@ import argparse
 
 from .engine.registry import get_registry, register
 from .modules.inversion import InversionModule
+from .modules.lagrangian import LagrangianModule
+from .modules.noether import NoetherModule
+from .modules.noether_information import NoetherInformationModule
+from .modules.berry_keating import BerryKeatingModule
+from .modules.sonification import SonificationModule
+from .modules.hyperwebster import HyperWebsterModule
+from .modules.jwst import JWSTModule
 
 def _register_all():
     registry = get_registry()
     register(InversionModule())
+    register(LagrangianModule())
+    register(NoetherModule())
+    register(NoetherInformationModule())
+    register(BerryKeatingModule())
+    register(SonificationModule())
+    register(HyperWebsterModule())
+    register(JWSTModule())
     return registry
 
 # ── GUI routers ───────────────────────────────────────────────────────────────
