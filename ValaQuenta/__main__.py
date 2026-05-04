@@ -25,10 +25,16 @@ import argparse
 
 from .engine.registry import get_registry, register
 from .modules.inversion import InversionModule
+from .modules.lagrangian import LagrangianModule
+from .modules.noether import NoetherModule
+from .modules.noether_information import NoetherInformationModule
 
 def _register_all():
     registry = get_registry()
     register(InversionModule())
+    register(LagrangianModule())
+    register(NoetherModule())
+    register(NoetherInformationModule())
     return registry
 
 # ── GUI routers ───────────────────────────────────────────────────────────────
