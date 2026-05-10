@@ -6,6 +6,7 @@ H_NN candidate operator, d* gap workbench, T coordinate scaffold.
 Open Problems:
   Open Problem 2: d* gap — algebraic derivation of 0.00070 gap
   Open Problem 3: T coordinate map — xp Hamiltonian T scaffold
+  RESOLVED — T_transform = Eichler-Shimura = Wiles 1995 (CLOSED Second Age)
 
 Berry-Keating spectral value:
   d* = 0.24600  (from xp Hamiltonian literature)
@@ -83,6 +84,124 @@ def lambert_W_approx(x: float) -> float:
     return w
 
 
+def two_loop_mass_gap_candidate(alpha_floor: float = 1.0 / 137.035999,
+                                omega: float = OMEGA_ZS,
+                                p: float = 4.0 / 3.0) -> Dict[str, Any]:
+    """
+    Lambert W two-loop beta function path for mass gap m.
+
+    From SF-QFT (Scale Factorized QFT), the two-loop running coupling in
+    massless Yang-Mills is:
+
+        α_ρ = 2 / W(π/e · (8ρ / (m · (1 − 2/p)²)))
+
+    Setting α_ρ = α_floor (SMIP domain floor) at ρ = Ω_ζΣ (domain ceiling),
+    we solve for m:
+
+        W_arg = π/e · (8 · Ω / (m · (1 − 2/p)²))
+        W_val = 2 / α_floor
+        m = 8 · Ω · π / (e · (1 − 2/p)² · exp(W_val) / W_val)
+
+    The (1 − 2/p)² factor with p = 4/3 (holographic/unification exponent):
+        (1 − 2/(4/3))² = (1 − 3/2)² = (−1/2)² = 1/4
+
+    So:  W_arg = π/e · (32ρ/m)
+         W_val = 2/α_floor ≈ 274.07
+
+    Solving  W(x)·e^{W(x)} = x  with W(x) = W_val:
+         m = 32 · Ω · π / (e · W_val · exp(W_val))
+
+    This m is an ultra-small number (exp(274) in denominator) — not the
+    physical mass gap directly, but establishes the scale hierarchy.
+    The physical gap is the ratio m/Ω evaluated at the conformal boundary.
+
+    Status: CANDIDATE PATH — not yet evaluated as closed form for 0.00070 gap.
+    From Addendum IV §VI (Gemini deep-research synthesis, 2026-05-07).
+    """
+    W_val  = 2.0 / alpha_floor                       # ≈ 274.07
+    factor = (1.0 - 2.0 / p) ** 2                   # = 1/4 for p=4/3
+    # m from the transcendental equation (see docstring)
+    # m = 32·Ω·π / (e · W_val · exp(W_val))  — astronomically small
+    try:
+        m = 32.0 * omega * PI / (math.e * W_val * math.exp(min(W_val, 700)))
+    except OverflowError:
+        m = 0.0
+
+    # More useful: the gap-scale ratio
+    ratio = abs(GAP / omega) if omega else 0.0
+
+    # Alternative: solve for m such that the two-loop coupling at ρ = α_floor
+    # equals Ω_ζΣ. This gives a different (physically meaningful) m:
+    #   α_floor = 2 / W(32 · Ω / m)  →  W(32·Ω/m) = 2/α_floor
+    #   32·Ω/m · exp(32·Ω/m) does not close simply.
+    # The W-branch inversion:  32·Ω/m = W_val·exp(W_val) ≈ W_val·e^274
+    # This path does not yield m ≈ 0.00070 in isolation — it requires
+    # additional physical input (the mass gap sets an absolute scale, not
+    # a pure coupling ratio). Flagged for second-age evaluation.
+
+    return {
+        'path'       : 'two_loop_lambert_W',
+        'source'     : 'SF-QFT two-loop beta function (Addendum IV §VI)',
+        'W_val'      : W_val,
+        'p_exponent' : p,
+        'factor_1m2p': factor,
+        'm_raw'      : m,
+        'gap_ratio'  : ratio,
+        'status'     : 'CANDIDATE — scale hierarchy established, closed form for 0.00070 not yet found',
+        'latex'      : r'\alpha_\rho = \frac{2}{W\!\left(\frac{\pi}{e}\cdot\frac{8\rho}{m(1-2/p)^2}\right)}',
+    }
+
+
+def lambert_tsallis_Wq_candidate(q: float = 1.1,
+                                 z: float = None) -> Dict[str, Any]:
+    """
+    Lambert-Tsallis W_q function candidate for the 0.00070 gap.
+
+    The W_q function is the solution to  W_q(z) ⊗_q exp_q(W_q(z)) = z,
+    where ⊗_q is the Tsallis q-product:  x ⊗_q y = [x^(1-q) + y^(1-q) - 1]^(1/(1-q))
+
+    When q → 1, W_q → standard Lambert W.
+    W_q encodes broken statistical symmetry — relevant when the SMIP vacuum
+    has non-extensive entropy (sedenion layer, zero-divisor boundary).
+
+    At q = 1.1, W_q(1) differs from W(1) = Ω_ζΣ by a correction term
+    that may encode the 0.00070 gap.
+
+    Approximation:  W_q(z) ≈ W(z) + (q-1)·correction(z) + O((q-1)²)
+
+    The first-order correction to W(z) at z = 1:
+        W(1) = Ω_ζΣ ≈ 0.56714
+        dW_q/dq |_{q=1} = ?   (not yet derived)
+
+    This is a candidate approach, not an evaluation.
+    Source: Gemini deep-research synthesis, 2026-05-07.
+    """
+    z_val  = z if z is not None else math.e  # W(e) = 1 exactly
+    W_std  = lambert_W_approx(z_val)
+
+    # First-order Tsallis correction (placeholder — formal derivation open)
+    # The q-exponential: exp_q(x) = [1 + (1-q)·x]^(1/(1-q))
+    # At q=1.1, z=e: exp_q(W_std) deviates from e by ~(q-1)·W_std·e ≈ 0.1·0.567·e
+    correction_approx = (q - 1.0) * W_std * math.exp(W_std)
+    W_q_approx = W_std - correction_approx / (1.0 + W_std)  # Newton-step estimate
+
+    gap_to_target = abs(W_q_approx - W_std - GAP)
+
+    return {
+        'path'             : 'lambert_tsallis_W_q',
+        'source'           : 'Lambert-Tsallis W_q generalization (Addendum IV §VI)',
+        'q'                : q,
+        'z'                : z_val,
+        'W_std'            : W_std,
+        'W_q_approx'       : W_q_approx,
+        'correction'       : W_q_approx - W_std,
+        'gap_target'       : GAP,
+        'gap_to_target'    : gap_to_target,
+        'status'           : 'CANDIDATE — first-order only; formal W_q derivation needed',
+        'latex'            : r'W_q(z)\otimes_q \exp_q(W_q(z))=z,\quad q\to 1\Rightarrow W_1=W',
+    }
+
+
 def gap_candidates(d_star: float = D_STAR_SPEC) -> List[Dict[str, Any]]:
     """
     Generate candidate expressions for d* from elementary constants.
@@ -103,6 +222,11 @@ def gap_candidates(d_star: float = D_STAR_SPEC) -> List[Dict[str, Any]]:
         ('sqrt(5)/20',      math.sqrt(5) / 20),
         ('1/(2*e)',          1.0 / (2 * math.e)),
         ('ln(2)/(pi+1)',    math.log(2) / (PI + 1)),
+        # Two-loop Yang-Mills Lambert W path (Addendum IV §VI, 2026-05-07)
+        # α_ρ = 2/W(32Ω/m) at domain floor — m sets absolute scale, not ratio
+        # Candidate: if gap = m/Ω, need m = 0.00070 · Ω ≈ 0.000397
+        # Not yet reducible to elementary constant expression
+        ('gap/Omega (scale ratio)', GAP / Ω),
     ]
     for name, val in exprs:
         gap_val = abs(Ω - val * ln10)
@@ -208,7 +332,7 @@ def T_map_scaffold(x: float, d_star: float = D_STAR_SPEC) -> Dict[str, Any]:
         'T_im'    : T_im,
         'T_mod'   : T_mod,
         'T_arg'   : math.atan2(T_im, T_re),
-        'note'    : 'Scaffold only — formal T definition is Open Problem 3',
+        'note'    : 'Scaffold only — xp T coordinate open; T_transform (interior/exterior) = Eichler-Shimura = Wiles 1995 (RESOLVED)',
         'latex'   : r'T:x\mapsto x\,e^{i\,d^*\ln x}',
     }
 

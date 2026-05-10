@@ -1,7 +1,7 @@
 """
 ainulindale_engine.modules.lagrangian.maths
 =============================================
-L_NN — the SMNNIP Lagrangian density.
+L_NN — the SMMIP Lagrangian density.
 
 Four terms (corrected Ainulindale form):
   L_NN = (2/π) ∮ [L_kin + L_mat + (1/φ)·L_bias + L_coup] r dr dθ

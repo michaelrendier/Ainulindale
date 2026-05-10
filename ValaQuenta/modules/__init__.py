@@ -7,13 +7,14 @@ implementing the EquationModule registry contract.
 Current modules (Phase 1):
     inversion   — (I|O) map, gradient flow, phi attractor
 
-Planned modules (Phase 2):
+Current modules (Phase 2):
     lagrangian         — L_NN, all four terms, running coupling
     noether            — Emmy Noether conserved currents, violation diagnostics
     noether_information — Information current, entropic arrow, blockchain ledger
+    spherical          — Y_lm harmonics, Courant theorem, Tesla/Schumann, J_N mode ID
 
 Planned modules (Phase 3+):
-    berry_keating      — H_NN candidate, d* gap, T coordinate map
+    berry_keating      — H_NN candidate, d* gap (OP-3 RESOLVED: T_transform = Wiles 1995)
     sonification       — Equation-derived audio (radian -> pitch)
     hyperwebster       — HyperWebster hypergalley, monad
     jwst               — JWST spectral pixel module

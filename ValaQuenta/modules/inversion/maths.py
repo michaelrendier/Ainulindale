@@ -5,7 +5,7 @@ Inside-Out Inversion Engine — Mathematics
 
 The (I|O) inversion map J_N: (r, theta) -> (1/r, theta + pi/2)
 
-This is the 2-stroke engine of the SMNNIP framework:
+This is the 2-stroke engine of the SMMIP framework:
     Compression stroke: r -> 1/r  (exterior folds inside)
     Expansion stroke:   1/r -> r  (interior releases)
     Top dead center:    r = 1     (the fixed point, the horizon)
@@ -174,10 +174,10 @@ class InversionMap:
                 'status': 'ESTABLISHED',
             },
             {
-                'name': 'Ptolemy inversion / Riemann zeta',
-                'mechanism': 'r -> 1/r straightens the zeta curve',
-                'coordinate_shift': 'spectral linearization',
-                'preservation': 'Spectral structure',
+                'name': 'J_N anti-Möbius involution / Riemann zeta',
+                'mechanism': 'J_N(z)=i/z̄ maps r->1/r with pi/2 rotation; fixed set r=1 is the critical line',
+                'coordinate_shift': 'spectral node at theta=pi/2 <-> Re(s)=1/2',
+                'preservation': 'Spectral structure; T_transform = Eichler-Shimura = Wiles 1995 (CLOSED)',
                 'status': 'ESTABLISHED',
             },
         ]

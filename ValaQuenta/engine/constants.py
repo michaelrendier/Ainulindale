@@ -1,7 +1,7 @@
 """
 ainulindale_engine.engine.constants
 =====================================
-Physical and mathematical constants for the SMNNIP framework.
+Physical and mathematical constants for the SMMIP framework.
 
 Single source of truth. All modules import from here.
 Nothing is fitted. Every constant has a derivation comment.
@@ -53,7 +53,7 @@ H_NN      = 0.1
 HBAR_NN   = H_NN / TAU                  # reduced: hbar_NN = h_NN / 2pi
 
 # ── Radian-primary Lagrangian factor ────────────────────────────────────────
-# The (2/pi) normalization of the SMNNIP Lagrangian.
+# The (2/pi) normalization of the SMMIP Lagrangian.
 # This is not a correction — it is the native form when the circle is primary.
 # 2/ln(OMEGA_H) = 2/pi exactly when OMEGA_H = e^pi.
 LAGRANGIAN_NORM = 2.0 / PI              # = 2/pi
