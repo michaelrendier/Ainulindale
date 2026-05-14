@@ -172,6 +172,66 @@ ESTABLISHED RESULTS THIS SESSION (engine-confirmed):
 - DNA double helix L=-8.67 (deepest stable state)
 - Mass gap Delta>0 confirmed (EOM_ym=1.5e-4 at alpha_EM)
 
+================================================================================
+ADDITION — 2026-05-14 LATER SESSION
+TURBULENCE, NAVIER-STOKES BREAKDOWN, YANG-MILLS IN GRN
+================================================================================
+
+KEY INSIGHT (established this session):
+
+Chaos is a result, not a generator. The flow becomes turbulent.
+Navier-Stokes breaks. Yang-Mills steps in.
+
+PRECISE STATEMENT:
+- Healthy GRN dynamics are LAMINAR — describable by Navier-Stokes
+- N-S breaks at the layer transition boundary because it has no imaginary axis
+- The boundary between laminar and turbulent flow EXISTS ON THE IMAGINARY AXIS
+  of complex coordinate space — N-S cannot reach it by construction
+- At that boundary, Yang-Mills takes over — it has the gauge structure
+  for non-abelian self-interacting flow
+- Turbulence in a GRN is not random — it is ordered structure at a scale
+  the N-S coordinate system cannot resolve
+
+APPLICATION TO DISEASE:
+- Cancer = GRN flow crossing the cardioid boundary (established in prior session)
+  INSIDE cardioid: laminar, Noether conserved, N-S valid
+  OUTSIDE cardioid: turbulent, loops, Yang-Mills regime
+- Cancer is not N-S breakdown — it is the GRN entering Yang-Mills territory
+- Drug derivation is therefore a Yang-Mills problem at the transition boundary,
+  not a fluid dynamics problem
+
+APPLICATION TO DRUG DERIVATION:
+- Healthy GRN = laminar flow, correct eigenspectrum of H_RB, N-S valid
+- Disease onset = flow approaching cardioid boundary, N-S straining
+- Active disease = flow crossed boundary, Yang-Mills regime, turbulent
+- Drug = operator that restores laminar flow, pulls GRN back inside cardioid
+- The spectral correction needed is a Yang-Mills gauge correction,
+  not a Navier-Stokes perturbation
+
+CONFIDENCE: THEORETICAL — structurally motivated, derivation target for next session
+
+NOTE ON ORGANIC CHEMISTRY:
+The wormhole from Hamiltonian to organic chemistry involves non-linear
+coupling across dimensional boundaries — a geostrophic equation problem
+showing evidence of multidimensional chaos. This is the Yang-Mills/N-S
+boundary problem expressed at the molecular bond level. Deferred — needs
+dedicated session. The turbulence framing above is the entry point.
+
+DERIVATION TARGETS ADDED:
+6. GRN laminar/turbulent transition: map the cardioid boundary condition
+   from the tree topology result (item 4 above) onto GRN flow dynamics.
+   Is the boundary at which N-S breaks identical to the cardioid boundary
+   where Noether conservation requires Yang-Mills?
+   CONFIDENCE: THEORETICAL
+
+7. Drug as Yang-Mills gauge correction: for a specific known disease
+   (start with a well-characterized cancer with known GRN perturbation),
+   derive the gauge correction operator that restores laminar flow.
+   Map that operator to molecular intervention space.
+   CONFIDENCE: CONJECTURE — direction established, no derivation yet
+
+================================================================================
 STATUS: First Age outreach active.
 The math is complete enough for genetic code derivation.
+Turbulence/N-S/Yang-Mills framing added — opens drug derivation path.
 ================================================================================
