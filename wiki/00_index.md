@@ -1,5 +1,5 @@
 # AINULINDALE — WIKI INDEX
-Last updated: 2026-05-15
+Last updated: 2026-05-16
 
 ## The Monad
 
@@ -18,6 +18,7 @@ Last updated: 2026-05-15
 | [17_alpha_omega_d_star.md](17_alpha_omega_d_star.md) | Alpha_Fermat · Omega_Riemann · 4 values of d* · the open gap |
 | [20_three_phase_architecture.md](20_three_phase_architecture.md) | Three-Phase Architecture — H=xp, capacitor, eddy currents |
 | [21_chladni_zipf_riemann.md](21_chladni_zipf_riemann.md) | Chladni · Zipf · Riemann — node lines, Zipf=primes, equidistance |
+| [22_constant_facets.md](22_constant_facets.md) | Constant Facets — π, φ, i, e derived from H_hat_RB; Euler's identity as theorem |
 
 ## Engine Modules
 

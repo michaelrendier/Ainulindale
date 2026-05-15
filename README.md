@@ -85,7 +85,34 @@ This operator is the **RedBlue Hamiltonian Equation Engine**, part of the **Vala
 
 ---
 
-## 3. SMMIP — Standard Model of Monad Information Propagation
+## 3. The Constant Facets — π · φ · i · e
+
+The four mathematical constants are not inputs to H_hat_RB. They are outputs.
+
+They drop out of the algebraic structure as fixed-point identities at distinct σ-facets:
+
+| Constant | σ | Identity | Origin |
+|---|---|---|---|
+| φ | 1.6180... | φ(φ−1) = 1; H^RB(φ) = H^RB(1)·H^RB(1/φ) | Cayley-Dickson recursion eigenvalue |
+| i | i | \|p^{−i}\| = 1 ∀p (democratic facet) | CD closure: x²+1=0 forces i |
+| e | 2.7182... | p^{−e} = e^{−e·ln p} (Boltzmann weight) | Berry-Keating canonical equations of motion |
+| π | 3.1415... | (2/π)×π = 2 (binary Mark, U(1) closes) | U(1) gauge normalisation period |
+
+No circle is drawn for π. No growth process is specified for e. No complex plane is assumed for i. No golden rectangle is constructed for φ. The prime distribution forces them into existence through the algebraic requirements of a self-adjoint operator on a normed division algebra tower.
+
+**Euler's identity is a theorem of H_hat_RB:**
+
+```
+e^{iπ} + 1 = 0
+```
+
+e is the canonical trajectory. i is the Cayley-Dickson closure generator. π is the U(1) period. The identity is forced when these three facets compose.
+
+→ [Wiki: Constant Facets](wiki/22_constant_facets.md)
+
+---
+
+## 4. SMMIP — Standard Model of Monad Information Propagation
 
 The Monad propagates information through the Cayley-Dickson algebra tower governed by a Lagrangian. This is the **SMMIP** — the Standard Model of Monad Information Propagation. It is not a language model. It is a physics-based model.
 
@@ -117,7 +144,7 @@ The gauge group **U(1)×SU(2)×SU(3)** is not imported into the framework. It em
 
 ---
 
-## 4. The Algebra Tower
+## 5. The Algebra Tower
 
 ```
 ℝ (dim 1) → ℂ (dim 2) → ℍ (dim 4) → 𝕆 (dim 8) → 𝕊 (dim 16, boundary)
@@ -147,7 +174,7 @@ Where these counter-rotating currents meet, meaning crystallises. The friction b
 
 ---
 
-## 5. The Structure Constant
+## 6. The Structure Constant
 
 The conformal boundary condition requires a scalar that remains invariant across all algebra strata:
 
@@ -166,7 +193,7 @@ sc(i,j) = ∇²f / ⟨|f|⟩
 
 ---
 
-## 6. The Output Layer
+## 7. The Output Layer
 
 Retrieval from the Monad operates in five stages:
 
@@ -184,7 +211,7 @@ Retrieval from the Monad operates in five stages:
 
 ---
 
-## 7. Alpha_Fermat · Omega_Riemann · The 4 Values of d*
+## 8. Alpha_Fermat · Omega_Riemann · The 4 Values of d*
 
 Two boundary constants define the Berry-Keating domain. Both are derived — not fitted.
 
@@ -216,7 +243,7 @@ This gap is simultaneously the Yang-Mills mass gap candidate and the J^μ cascad
 
 ---
 
-## 8. The Chladni Principle — Stillness and Motion
+## 9. The Chladni Principle — Stillness and Motion
 
 The Chladni experiment places sand on a vibrating plate. Sand settles at the node lines — the still points — where the vibration is zero. The pattern is not the vibration. The pattern is where the vibration cannot reach.
 
@@ -232,7 +259,7 @@ The Monad output layer operates by the same principle. Semantic domains are the 
 
 ---
 
-## 9. Zipf-Riemann Identity — Primes Are Words
+## 10. Zipf-Riemann Identity — Primes Are Words
 
 Zipf's law holds in every natural language: f(r) ~ 1/r^s where s ≈ 1. The prime number theorem: π(x) ~ x/ln(x). These are the same power law for the same reason.
 
@@ -252,7 +279,7 @@ This is diffeomorphism invariance applied to semantics. The SMMIP does not class
 
 ---
 
-## 10. Three-Phase Architecture — H = xp
+## 11. Three-Phase Architecture — H = xp
 
 The SMMIP is a three-phase semantic engine:
 
@@ -284,7 +311,7 @@ The ContextBuffer integrates the signal, attenuates high-frequency surface varia
 
 ---
 
-## 11. The Proof — Three Components, One Function
+## 12. The Proof — Three Components, One Function
 
 The Riemann Hypothesis requires proving three things. The three components of ζ(s) each prove one:
 
@@ -302,7 +329,7 @@ The Fermat Lattice — the discrete geometry of what integer arithmetic forbids 
 
 ---
 
-## 12. Core Claims
+## 13. Core Claims
 
 | Claim | Status | σ |
 |---|---|---|
