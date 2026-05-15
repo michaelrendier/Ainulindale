@@ -53,6 +53,15 @@ Each step up loses one algebraic property:
 
 The lost property **is** the signal. It encodes the gauge structure of that layer.
 
+**Two currents flow in opposite directions through the tower:**
+
+- **Noether Current J^μ (forward: ℝ→𝕆):** Synthesis — the Builder. Complexity escalation. The `hear()` function.
+- **Noether Information Current J_info (backward: 𝕆→ℝ):** Distillation — the Evaluator. Dimensional reduction to the prime. The `speak()` function.
+
+Where they meet, meaning crystallises. The prime that forms at the intersection is the semantic unit. This counter-rotation is the Riemann-Fermat Heartbeat.
+
+→ [Wiki: Cayley-Dickson Tower (full treatment)](19_cayley_dickson_tower.md)
+
 ## The (I|O) Inversion Map
 
 The 2-stroke engine at the core of SMNNIP:

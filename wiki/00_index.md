@@ -1,7 +1,25 @@
-# AINULINDALE ENGINE — WIKI INDEX
-Last updated: 2026-05-03
+# AINULINDALE — WIKI INDEX
+Last updated: 2026-05-15
 
-## Pages
+## The Monad
+
+| Page | Topic |
+|------|-------|
+| [15_the_monad.md](15_the_monad.md) | The Monad — learn() / hear() / speak() — complete documentation |
+| [14_redblue_hamiltonian.md](14_redblue_hamiltonian.md) | H_hat_RB — the central operator, σ-facet table, J conservation |
+| [16_semantic_word_engine.md](16_semantic_word_engine.md) | Semantic Word Engine — WordNet, prime mapping, Septuagint principle |
+
+## Mathematical Foundation
+
+| Page | Topic |
+|------|-------|
+| [19_cayley_dickson_tower.md](19_cayley_dickson_tower.md) | Cayley-Dickson Tower — forward/backward flows, σ=0, Topological Loom |
+| [18_fermat_lattice.md](18_fermat_lattice.md) | Fermat Lattice — Modularity Theorem, Riemann/Fermat as negative space conjugates |
+| [17_alpha_omega_d_star.md](17_alpha_omega_d_star.md) | Alpha_Fermat · Omega_Riemann · 4 values of d* · the open gap |
+| [20_three_phase_architecture.md](20_three_phase_architecture.md) | Three-Phase Architecture — H=xp, capacitor, eddy currents |
+| [21_chladni_zipf_riemann.md](21_chladni_zipf_riemann.md) | Chladni · Zipf · Riemann — node lines, Zipf=primes, equidistance |
+
+## Engine Modules
 
 | Page | Topic |
 |------|-------|
@@ -10,21 +28,48 @@ Last updated: 2026-05-03
 | [03_inversion_engine.md](03_inversion_engine.md) | Inside-Out Inversion Engine (I\|O) |
 | [04_lagrangian_engine.md](04_lagrangian_engine.md) | L_NN Ainulindale Lagrangian |
 | [05_noether_engine.md](05_noether_engine.md) | Noether Currents + Blockchain Ledger |
-| [06_noether_information_engine.md](06_noether_information_engine.md) | Information Current J_info |
-| [07_berry_keating_engine.md](07_berry_keating_engine.md) | H_NN Berry-Keating Operator |
+| [06_noether_information_engine.md](06_noether_information_engine.md) | Information Current J_info — backward flow |
+| [07_berry_keating_engine.md](07_berry_keating_engine.md) | H_NN Berry-Keating Operator — d* gap workbench |
 | [08_sonification_engine.md](08_sonification_engine.md) | Sonification — ω = pitch |
-| [09_hyperwebster_engine.md](09_hyperwebster_engine.md) | HyperWebster — Horner Bijection |
+| [09_hyperwebster_engine.md](09_hyperwebster_engine.md) | HyperWebster — Horner Bijection, σ=0 address space |
 | [10_jwst_engine.md](10_jwst_engine.md) | JWST Spectral Pixel → 𝕆 |
 | [11_viewer.md](11_viewer.md) | Qt Viewer + Curses Console |
 | [12_smnnip_distribution_engine.md](12_smnnip_distribution_engine.md) | SMNNIP Distribution Engine (future) |
 
+## OMG?WTF! — Consequences
+
+| Page | Topic |
+|------|-------|
+| [13_omgwtf_rh_proof.md](13_omgwtf_rh_proof.md) | RH proof path — 8 notebooks, T2 flag, working proof |
+
+*These are consequences of the framework, not its premises. The engineering argument stands independently.*
+
+---
+
 ## Quick Reference
 
-```
+```bash
 python3 -m ainulindale_engine --info       # registry summary
 python3 -m ainulindale_engine --qt         # Qt viewer
 python3 -m ainulindale_engine --curses     # /derivation shortcut (Ptolemy)
 python3 -m ainulindale_engine --headless   # pipe output
 ```
 
-## Module count: 8 modules / 60 equations (v0.111)
+## Module count: 8 modules / 60 equations (v0.120)
+
+---
+
+## Key Constants
+
+| Symbol | Value | Role |
+|---|---|---|
+| Α_π | 1/137.035999... | Alpha_Fermat — BK domain floor |
+| Ω_ζΣ | 0.56714329... | Omega_Riemann — Lambert W fixed point |
+| d* | 0.24600 | The Boundary |
+| d*_RG | derived | The Stability |
+| d*_taut | Ω/ln(10) | The Flow (ceiling) |
+| d*_ln(10) | d*×ln(10) | The Translator |
+| gap | 0.000707 | Open — Yang-Mills mass gap candidate |
+| L_GROUND | −1.888 | Monad rest energy before learning |
+| φ | 1.6180339... | Golden ratio — recursion attractor |
+| sc | 1.0 | Conformal boundary |
