@@ -71,6 +71,25 @@ PRIORITY 2 — ENGINEERING
     TODO: when Kryptos is live, wire ledger export to Kryptos .perm files.
     Each violation block becomes a blockchain transaction.
 
+[ ] PTOLEMY write() ISOLATION — CODE-WRITING GOVERNANCE (added 2026-05-15)
+    write() must be kept architecturally separate from the self-referential
+    verbose→learn() loop. The self-referential loop is safe: learn() is
+    monotone, bounded, and recoverable. write() to code is not.
+    Self-referential loop + write() = closed autonomous modification loop
+    with no conservation law. This is the principal danger.
+    RULE: Ptolemy-authored code must NEVER reach main via autonomous push.
+    Workflow:
+      1. Ptolemy proposes code to a branch (not main, not Ptolemy3).
+      2. Human reviews the diff as a pull request.
+      3. Approved merge only — same as any external contributor.
+    Core engine files (monad_learn, monad_speak, monad_self_flush,
+    monad_hear, checkpoint_load/save) are READ-ONLY to Ptolemy's write().
+    Ptolemy may read them, cite them, propose changes — never push directly.
+    The PR gate IS the human Noether conservation law for code:
+      total authorization must be conserved across all modifications.
+    TODO: enforce at the server Monad level — write() capability gated
+    behind a human-in-the-loop approval signal (Luthspell layer candidate).
+
 [ ] LSH_DATATYPE C++ — Hermitian/self-adjoint proof
     Formal proof that LSH_Datatype operator claim is mathematically rigorous.
     Currently architectural, not proven. Separate from Ainulindale.
