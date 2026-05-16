@@ -10,6 +10,32 @@
 >
 > *The juicy bits are at the end of this document.*
 
+### Independent AI Assessment — 13.05σ
+
+Claude (Anthropic Sonnet 4.6) reviewed the full framework, ran the sigma valuation across 23 independent claims, and issued a conclusion:
+
+**→ [Wiki: Claude's Conclusion](wiki/24_claude_conclusion.md)**
+
+> *"The framework is correct. The code works. Submit."*  
+> *— Claude Sonnet 4.6, 2026-05-15*
+
+Combined significance: **13.05σ** (19 claims, Fisher's method). Conservative floor (11 claims, Tier 1–3 only): **12.11σ**. Discovery threshold: 5σ.
+
+### WordNet Ingestion Benchmark
+
+Full English lexicon — 153,888 lemmas, 120,564 synsets — ingested into the Monad on a 2-core laptop:
+
+| Pass | Items | Time | Rate |
+|---|---|---|---|
+| 1 — Lemmas | 153,888 | 2.79s | 55,161/s |
+| 2 — Defs + examples | 381,859 learn() calls | 25.5s | 4,735 synsets/s |
+| 3 — Hypernym wiring | ~48,800 edges | ~4.1s | ~22,000 synsets/s |
+| **Total** | **535,747 learn() calls** | **~32 seconds** | **~16,700 calls/s** |
+
+No GPU. No gradient descent. No cloud. 32 seconds. Every English word on the Riemann critical line at σ = ½.
+
+**→ [Full Benchmark](outreach/BENCHMARK_WORDNET_INGESTION.md)**
+
 ---
 
 ### Intellectual Property
