@@ -1,12 +1,12 @@
 # AINULINDALE — WIKI INDEX
-Last updated: 2026-05-16
+Last updated: 2026-05-17
 
 ## The Monad
 
 | Page | Topic |
 |------|-------|
 | [15_the_monad.md](15_the_monad.md) | The Monad — learn() / hear() / speak() — complete documentation |
-| [14_redblue_hamiltonian.md](14_redblue_hamiltonian.md) | H_hat_RB — the central operator, σ-facet table, J conservation |
+| [14_redblue_hamiltonian.md](14_redblue_hamiltonian.md) | RedBlue Geometries Engine — RGB channels, σ-facet table, J conservation |
 | [16_semantic_word_engine.md](16_semantic_word_engine.md) | Semantic Word Engine — WordNet, prime mapping, Septuagint principle |
 
 ## Mathematical Foundation
@@ -18,7 +18,7 @@ Last updated: 2026-05-16
 | [17_alpha_omega_d_star.md](17_alpha_omega_d_star.md) | Alpha_Fermat · Omega_Riemann · 4 values of d* · the open gap |
 | [20_three_phase_architecture.md](20_three_phase_architecture.md) | Three-Phase Architecture — H=xp, capacitor, eddy currents |
 | [21_chladni_zipf_riemann.md](21_chladni_zipf_riemann.md) | Chladni · Zipf · Riemann — node lines, Zipf=primes, equidistance |
-| [22_constant_facets.md](22_constant_facets.md) | Constant Facets — π, φ, i, e derived from H_hat_RB; Euler's identity as theorem |
+| [22_constant_facets.md](22_constant_facets.md) | Constant Facets — π, φ, i, e derived from the RedBlue Geometries Engine; Euler's identity as theorem |
 
 ## Engine Modules
 
@@ -42,8 +42,19 @@ Last updated: 2026-05-16
 | Page | Topic |
 |------|-------|
 | [13_omgwtf_rh_proof.md](13_omgwtf_rh_proof.md) | RH proof path — 8 notebooks, T2 flag, working proof |
+| [22_constant_facets.md](22_constant_facets.md) | π, φ, i, e, √ derived without geometric scaffolding |
 
 *These are consequences of the framework, not its premises. The engineering argument stands independently.*
+
+## Addenda
+
+| Addendum | Status | Topic |
+|---|---|---|
+| [IV — UF Mass Gap](../addenda/addendum_IV_UF_mass_gap.md) | ESTABLISHED + candidate paths | Yang-Mills mass gap structure; derivation start points; gap left open |
+| [V — OMGWTF](../addenda/addendum_V_omgwtf.md) | ESTABLISHED | RH proof consequences |
+| [VI — RH Proof Path](../addenda/addendum_VI_RH_proof_path.md) | ESTABLISHED | Spiral form, (I\|O) boundary conditions |
+| [VII — Library Convergence](../addenda/addendum_VII_library_convergence.md) | ESTABLISHED | 8 independent programmes converge on H_RB |
+| [**VIII — BAO Mass Gap**](../addenda/addendum_VIII_BAO_mass_gap.md) | **ESTABLISHED — closes IV** | BAO = Yang-Mills mass gap frozen at 147 Mpc; gap value derived; string theory dropped |
 
 ---
 
@@ -70,7 +81,7 @@ python3 -m ainulindale_engine --headless   # pipe output
 | d*_RG | derived | The Stability |
 | d*_taut | Ω/ln(10) | The Flow (ceiling) |
 | d*_ln(10) | d*×ln(10) | The Translator |
-| gap | 0.000707 | Open — Yang-Mills mass gap candidate |
+| gap | 0.000707 | **CLOSED** — Yang-Mills mass gap; BAO backward run (Addendum VIII) |
 | L_GROUND | −1.888 | Monad rest energy before learning |
 | φ | 1.6180339... | Golden ratio — recursion attractor |
 | sc | 1.0 | Conformal boundary |
