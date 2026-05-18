@@ -1,4 +1,4 @@
-# 14 — REDBLUE HAMILTONIAN  H_hat_RB
+# 14 — REDBLUE GEOMETRIES ENGINE
 
 **Full name:** Inductive Self-Adjoint Geometric Coupling Hamiltonian  
 **Part of:** ValaQuenta Derivation Engine  
@@ -23,19 +23,19 @@ Where:
 
 ## The Three Channels
 
-| Channel | Operator | Role |
-|---|---|---|
-| Red | R̂_p = xp | What IS. Forward. Assertion. Kinetic energy. Particle. |
-| Blue | B̂_p = ½p² + ℘(x;g₂,g₃) | What CANNOT BE. Backward. Constraint. Potential. Exclusion. |
-| Boundary | ∂̂_{∂M} | Meaning. The Noether current J₃. The distinction. |
+| Channel | Colour | Operator | Role |
+|---|---|---|---|
+| Red | Inertial | R̂_p = xp | What IS. Forward. Assertion. Kinetic energy. Particle. |
+| Green | Geometries | ∂̂_{∂M} | The Riemann zero basis. Spectral addressing. The boundary. J₃. |
+| Blue | Entropic | B̂_p = ½p² + ℘(x;g₂,g₃) | What CANNOT BE. Backward. Constraint. Knowledge field. β vacuum. |
 
 **Conservation law:**
 
 ```
-J_Red  +  J_Blue  +  J₃  =  0
+J_Red  +  J_Green  +  J_Blue  =  0
 ```
 
-This is not a subtraction problem. It is a circular identity. Energy is rotated, not destroyed. When energy leaves the Red channel it rotates into the Blue channel via the boundary operator J₃. The total vector length — the Whole — is invariant.
+This is not a subtraction problem. It is a circular identity. Energy is rotated, not destroyed. When energy leaves the Red channel it rotates into the Blue channel via the Green boundary operator (J₃). The total vector length — the Whole — is invariant.
 
 R̂ and B̂ are self-adjoint conjugates: `R̂† = B̂`. The functional equation ξ(s) = ξ(1−s) is this self-adjointness condition expressed in the Riemann domain.
 
@@ -78,25 +78,25 @@ This is the high-symmetry state before the first distinction. It is the HyperWeb
 
 ### σ = ½ — The Critical Line
 
-The zeros of the Riemann Zeta function live at σ = ½ because this is the only locus where H_hat_RB is exactly self-adjoint. Red and Blue are in perfect equilibrium. Neither vortex dominates. The equator does not move.
+The zeros of the Riemann Zeta function live at σ = ½ because this is the only locus where the RedBlue Geometries Engine is exactly self-adjoint. Red and Blue are in perfect equilibrium. The Green boundary holds. Neither vortex dominates. The equator does not move.
 
 This is not assigned. It is forced by the conservation law `J_Red + J_Blue + J₃ = 0`.
 
 ### Navier-Stokes — The Missing i
 
-Navier-Stokes is Yang-Mills with the imaginary component forced to zero. It is H_hat_RB projected through a purely real-valued filter. The Blue channel is discarded.
+Navier-Stokes is Yang-Mills with the imaginary component forced to zero. It is the RedBlue Geometries Engine projected through a purely real-valued filter. The Blue channel is discarded. The Green geometry is invisible to it.
 
-When the velocity gradient approaches what classical mathematics calls a singularity, H_hat_RB performs a 90-degree rotation into the imaginary sector — the Fermat Lattice. The singularity is not infinite. It is a rotation the real-valued equations cannot follow. The smoothness is guaranteed by the self-adjoint structure: `R̂† = B̂`. The Noether current cannot be destroyed; it can only rotate.
+When the velocity gradient approaches what classical mathematics calls a singularity, the RedBlue Geometries Engine performs a 90-degree rotation into the imaginary sector — the Fermat Lattice. The singularity is not infinite. It is a rotation the real-valued equations cannot follow. The smoothness is guaranteed by the self-adjoint structure: `R̂† = B̂`. The Noether current cannot be destroyed; it can only rotate.
 
 ---
 
-## The Monad IS H_hat_RB
+## The Monad IS the RedBlue Geometries Engine
 
-`monad.py` is H_hat_RB running in real time.
+`monad.py` is the RedBlue Geometries Engine running in real time.
 
-- The `learn()` function is the Blue channel deepening — β increasing, Fermat Lattice crystallising
-- The `hear()` function is the Red channel activating — assertion propagating forward through the tower
-- The `speak()` function is the boundary operator J₃ — the Meaning channel returning the conserved result
+- The `learn()` function is the **Blue** channel — entropic deepening, β increasing, Fermat Lattice crystallising
+- The `hear()` function is the **Red** channel — inertial activation, assertion propagating forward through the tower
+- The `speak()` function is the **Green** channel — geometry boundary J₃, the Meaning channel returning the conserved result
 
 σ = ½ in every `lookup()` call. Not assigned. Derived from Noether balance. The equator does not move.
 
@@ -120,4 +120,5 @@ Related modules:
 → [Wiki: The Monad](15_the_monad.md)  
 → [Wiki: Fermat Lattice](18_fermat_lattice.md)  
 → [Wiki: Berry-Keating Engine](07_berry_keating_engine.md)  
-→ [Wiki: OMG?WTF! RH Proof Path](13_omgwtf_rh_proof.md)
+→ [Wiki: OMG?WTF! RH Proof Path](13_omgwtf_rh_proof.md)  
+→ [**Sedenion Manual — how to drive this Hamiltonian**](25_sedenion_manual.md)

@@ -10,7 +10,7 @@
 
 The Monad is a self-contained, single-equation analog of a human brain in code. It is not a language model. It is not a transformer. It does not predict tokens. It does not train on gradient descent.
 
-The Monad is H_hat_RB made executable.
+The Monad is RedBlue Geometries Engine made executable.
 
 It encodes meaning into the Cayley-Dickson algebra tower and retrieves from that tower by derivation — not by search. Retrieval path length is a property of the mathematics, not the dataset size. The address of a concept and the meaning of a concept share the same mathematical substrate.
 
@@ -97,7 +97,7 @@ print(m.lookup('aqua')['sigma'])     # 0.5
 print(m.lookup('wasser')['sigma'])   # 0.5
 ```
 
-The Noether conservation law `J_Red + J_Blue + J₃ = 0` forces σ = ½. This is the self-adjoint condition of H_hat_RB. The equator does not move.
+The Noether conservation law `J_Red + J_Blue + J₃ = 0` forces σ = ½. This is the self-adjoint condition of RedBlue Geometries Engine. The equator does not move.
 
 The Septuagint principle: 72 scholars, independently, every translation identical. Not by coordination. Forced by the mathematics.
 
@@ -106,7 +106,7 @@ The Septuagint principle: 72 scholars, independently, every translation identica
 ## Architecture Relationship
 
 ```
-H_hat_RB  (the operator)
+RedBlue Geometries Engine  (the operator)
     │
     ├── learn()  ←  Blue channel: β deepening, Fermat Lattice crystallisation
     ├── hear()   ←  Red channel:  assertion propagating forward through tower
@@ -148,3 +148,101 @@ The Monad does not search. It derives. The word is already in the algebra. The T
 → [Wiki: HyperWebster Engine](09_hyperwebster_engine.md)  
 → [Wiki: Cayley-Dickson Tower](19_cayley_dickson_tower.md)  
 → [Wiki: Three-Phase Architecture](20_three_phase_architecture.md)
+
+---
+
+## C Implementation (PtolC)
+
+**Location:** `Ptolemy3/PtolC/`  
+**Binary:** `ptolemy`  
+**Version:** v1.111  
+**Status:** ESTABLISHED — feature-complete, building clean
+
+The C implementation is the primary production binary. It mirrors `monad.py`
+exactly in its mathematics and adds filesystem ingest, daemon mode, and
+structured token filtering.
+
+### Build
+
+```bash
+sudo apt install build-essential libxml2-dev
+cd Ptolemy3/PtolC
+make && make corpus
+```
+
+`make corpus` downloads WordNet 3.1 via NLTK and builds the baseline
+checkpoint: `~/.ptolemy/monad_wordnet.bin` (13 MB, ~14,000 vocab, 766,000 A-edges).
+
+### Operations
+
+The three Monad operations map directly to CLI flags:
+
+| Operation | Python | C binary |
+|-----------|--------|----------|
+| `learn(text)` | `monad.learn("…")` | `ptolemy -l <file\|url\|->` |
+| `hear(prompt)` | `monad.hear("…")` | `ptolemy -h "…"` |
+| `speak()` | `monad.speak()` | implicit output of `-h` |
+
+Filesystem ingest (bulk learn from directory tree):
+
+```bash
+ptolemy -I ~/Documents       # learn all whitelisted files
+ptolemy -I ~/Projects/PtolC  # learn codebase (code filetype rules)
+```
+
+### Checkpoint v2
+
+Binary format. Header + one record per occupied zero:
+
+```
+"PTOL" [4]  version=2 [4]  N [4]  count [4]  ground [8]
+  per record: idx[4] wlen[2] E[8] home_stratum[1] gen_stratum[1] word[wlen]
+```
+
+Each VocabEntry carries Native Space stratum addresses for both where the
+result lives (`home_stratum`) and where computation happens (`gen_stratum`).
+Language tokens default to σ₁ (ℂ, relational).
+
+| Constant | σ | Algebra | Character |
+|----------|---|---------|-----------|
+| NS_SIGMA_R | 0 | ℝ | Real, enumerable |
+| NS_SIGMA_C | 1 | ℂ | Complex, relational (language default) |
+| NS_SIGMA_H | 2 | ℍ | Quaternion, non-commuting |
+| NS_SIGMA_O | 3 | 𝕆 | Octonion, non-associating |
+| NS_SIGMA_S | 4 | 𝕊 | Sedenion, non-alternative |
+
+### Token Filter
+
+Every token passes `token_accept(tok, filetype)` before being admitted to
+the field. Rejection is silent and counted (`monad.rejected_count`).
+
+Filetype is resolved from file extension at ingest time (`filetype_from_ext()`),
+so `.c`/`.py`/`.h` files use code rules (longer tokens, high-digit ratio OK)
+while `.txt`/`.md` use prose rules (max 24 chars, base64 rejected).
+
+View rejection count: `ptolemy -F` (field health report).
+
+### Daemon Mode
+
+```bash
+ptolemy -d           # start daemon
+ptolemy -D "query"   # query running daemon
+```
+
+Protocol over `~/.ptolemy/ptolemy.sock`:
+
+```
+HEAR <prompt>  →  response + ".\n"
+STATUS         →  field status + ".\n"
+HEALTH         →  full health report + ".\n"
+QUIT           →  saves checkpoint, closes socket
+```
+
+Systemd socket activation: `systemctl --user enable --now ptolemy.socket`
+
+### Security
+
+- Extension whitelist blocks `.pem`, `.key`, `.crt`, `.env` and all non-semantic types
+- `PRUNE_NAMES` prevents traversal of `.ssh`, `.gnupg`, `.aws`, `.azure`, `.gcloud`, `keyrings`, `.cert`, `.pki`
+- PEM content guard in `monad_learn()` refuses text starting with `-----BEGIN `
+- All three layers are defence-in-depth — each operates independently

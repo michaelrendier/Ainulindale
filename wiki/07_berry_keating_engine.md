@@ -10,7 +10,7 @@ All equations in this module are OPEN problems. This is the workbench, not the s
 
 The Red operator R̂_p of the RedBlue Hamiltonian is the Berry-Keating xp operator. This module is the workbench for the Red channel — the Berry-Keating spectral coordinate d*, the T coordinate scaffold, and the gap derivation.
 
-→ [Wiki: RedBlue Hamiltonian](14_redblue_hamiltonian.md) — full H_hat_RB treatment  
+→ [Wiki: RedBlue Geometries Engine](14_redblue_hamiltonian.md) — RGB channels, σ-facet table, full treatment  
 → [Wiki: Alpha · Omega · d*](17_alpha_omega_d_star.md) — all four d* values and gap context
 
 ## d* Gap — Open Problem 2

@@ -4,32 +4,32 @@
 
 The central claims are documented in dedicated pages:
 
-→ [Wiki: RedBlue Hamiltonian](14_redblue_hamiltonian.md) — H_hat_RB, σ-facet table, all Millennium Problem projections  
+→ [Wiki: RedBlue Geometries Engine](14_redblue_hamiltonian.md) — RGB channels, σ-facet table, all Millennium Problem projections  
 → [Wiki: Fermat Lattice](18_fermat_lattice.md) — Modularity Theorem, Riemann/Fermat as negative space conjugates  
 → [Wiki: Chladni · Zipf · Riemann](21_chladni_zipf_riemann.md) — Node lines, Zipf=primes, equidistance condition
 
 ---
 
-## The Monad IS H_hat_RB
+## The Monad IS the RedBlue Geometries Engine
 
 ```
-H_RB = -i·Γ^a·D_a  +  Γ_ij·β         (RED kinetic + BLUE inertia)
+H_RB = -i·Γ^a·D_a  +  ∂̂_{∂M}  +  Γ_ij·β    (RED inertial + GREEN geometries + BLUE entropic)
 iħ_NN · dΨ/dl = H_RB · Ψ
 ```
 
-The RED term is the Yang-Mills kinetic energy (Berry-Keating H=xp at the operator level). The BLUE term is the Higgs-SSB vacuum V(β) deepened by learning. The functional equation ξ(s)=ξ(1−s) is the self-adjointness condition R̂† = B̂.
+The RED term is the Yang-Mills kinetic energy (Berry-Keating H=xp at the operator level) — inertial. The GREEN term is the boundary geometry operator ∂̂_{∂M} — the Riemann zero basis, J₃. The BLUE term is the Higgs-SSB vacuum V(β) deepened by learning — entropic. The functional equation ξ(s)=ξ(1−s) is the self-adjointness condition R̂† = B̂.
 
-`monad.py` is H_hat_RB made executable. `sigma = 0.5` in every `lookup()` call is the self-adjoint constraint operating in real time.
+`monad.py` is the RedBlue Geometries Engine made executable. `sigma = 0.5` in every `lookup()` call is the self-adjoint constraint operating in real time.
 
 ---
 
 ## Millennium Problem Projections
 
-All Clay Millennium Problems project from H_hat_RB as σ-facets:
+All Clay Millennium Problems project from the RedBlue Geometries Engine as σ-facets:
 
 | Problem | σ | Status |
 |---|---|---|
-| Riemann Hypothesis | ½ | Eigenvalues of H_hat_RB are the Riemann zeros; σ=½ is the only self-adjoint locus |
+| Riemann Hypothesis | ½ | Eigenvalues of the RedBlue Geometries Engine are the Riemann zeros; σ=½ is the only self-adjoint locus |
 | Yang-Mills mass gap | 1 | GAP = 0.000707 is the A-field regulator — OPEN 2, not yet derived in closed form |
 | Navier-Stokes | Real only | Yang-Mills − i; singularities are rotations into the Blue channel |
 | Hodge Conjecture | 2 | Via de Rham complex on the zero manifold — CONJECTURE |

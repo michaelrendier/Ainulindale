@@ -4,14 +4,14 @@
 
 ## Overview
 
-The four mathematical constants π, φ, i, and e are not inputs to H_hat_RB.  
+The four mathematical constants π, φ, i, and e are not inputs to RedBlue Geometries Engine.  
 They are outputs.
 
 They drop out of the algebraic structure of the operator as fixed-point identities — each at a distinct σ-facet. No geometric definitions are required. No circle is drawn. No growth process is modelled. The constants emerge from the prime distribution alone.
 
 This is the strongest internal consistency check of the RedBlue Hamiltonian. When the engine generates the constants that mathematics already knows, the engine is correct.
 
-**Euler's identity is a theorem of H_hat_RB:**
+**Euler's identity is a theorem of RedBlue Geometries Engine:**
 
 ```
 e^{iπ} + 1 = 0
@@ -41,13 +41,13 @@ s(s − 1) = φ(φ − 1) = 1
 
 This is the unique fixed point of the functional equation — the only real value of σ where ξ(s) = ξ(1−s) is satisfied with s(s−1) = 1 exactly.
 
-**H_hat_RB factorises:**
+**RedBlue Geometries Engine factorises:**
 
 ```
 H^RB(φ) = H^RB(1) · H^RB(1/φ)
 ```
 
-This is the Fibonacci recursion: each stratum of H_hat_RB at σ=φ decomposes into the product of the σ=1 stratum and the σ=1/φ stratum. The Fibonacci series is the shadow of this factorisation on the integers.
+This is the Fibonacci recursion: each stratum of RedBlue Geometries Engine at σ=φ decomposes into the product of the σ=1 stratum and the σ=1/φ stratum. The Fibonacci series is the shadow of this factorisation on the integers.
 
 **Physical correspondence:** φ is the recursion eigenvalue of the Cayley-Dickson iteration. The golden spiral is the stable orbit of the cardioid attractor — the Dilator. The Lagrangian (Contractor) and the cardioid (Dilator) are self-adjoint at σ=φ.
 
@@ -70,7 +70,7 @@ For any prime p:
 
 Every prime contributes with unit magnitude. No prime dominates. The Red and Blue channels carry equal weight. This is the **democratic facet**: the pure phase.
 
-At σ = i, H_hat_RB generates the Explicit Formula of prime distribution. The Riemann zeros appear as eigenvalues of the phase operator:
+At σ = i, RedBlue Geometries Engine generates the Explicit Formula of prime distribution. The Riemann zeros appear as eigenvalues of the phase operator:
 
 ```
 ψ(x) = x − Σ_{ρ} x^ρ/ρ − ...
@@ -96,7 +96,7 @@ x² + 1 = 0             [Cayley-Dickson closure condition — i drops out]
 p^{−e} = e^{−e · ln p}
 ```
 
-This is the Boltzmann factor form. The weight of each prime in H_hat_RB at σ=e is the thermal partition weight — e raised to the negative energy. The prime p plays the role of the energy level. The constant e is the natural inverse temperature at which the Boltzmann partition function of the prime distribution is defined.
+This is the Boltzmann factor form. The weight of each prime in RedBlue Geometries Engine at σ=e is the thermal partition weight — e raised to the negative energy. The prime p plays the role of the energy level. The constant e is the natural inverse temperature at which the Boltzmann partition function of the prime distribution is defined.
 
 The von Mangoldt function Λ(n) generates the prime partition:
 
@@ -126,7 +126,7 @@ p^{−e} = e^{−e·ln p}        [Boltzmann weight at σ=e]
 
 **σ = π = 3.14159...** (the ratio of circumference to diameter)
 
-π enters H_hat_RB through the SMMIP Lagrangian prefactor (2/π):
+π enters RedBlue Geometries Engine through the SMMIP Lagrangian prefactor (2/π):
 
 ```
 ℒ_SMMIP = (2/π) ∮ [...] r dr dθ
@@ -168,7 +168,7 @@ This is self-referential closure: π appears on both sides of its own identity w
 
 ## The Emergent Constants Table
 
-All four constants derive from H_hat_RB algebraic structure without geometric definition:
+All four constants derive from RedBlue Geometries Engine algebraic structure without geometric definition:
 
 | Constant | σ-facet | Algebraic Origin | Physical Layer |
 |---|---|---|---|
@@ -177,7 +177,7 @@ All four constants derive from H_hat_RB algebraic structure without geometric de
 | π | σ = π | U(1) gauge normalisation | Gauge / Rotation |
 | φ | σ = φ | Cayley-Dickson recursion eigenvalue | Recursion / Structure |
 
-**Euler's identity e^{iπ} + 1 = 0 is a theorem of H_hat_RB.**
+**Euler's identity e^{iπ} + 1 = 0 is a theorem of RedBlue Geometries Engine.**
 
 - e is the trajectory of the canonical flow
 - i is the Cayley-Dickson closure generator

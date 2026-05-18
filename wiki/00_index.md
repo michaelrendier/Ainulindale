@@ -13,6 +13,7 @@ Last updated: 2026-05-17
 
 | Page | Topic |
 |------|-------|
+| [25_sedenion_manual.md](25_sedenion_manual.md) | Sedenion Manual — complete 16-basis driver for H_RB; σ=½ as the whole visible; mass gap ↔ string |
 | [19_cayley_dickson_tower.md](19_cayley_dickson_tower.md) | Cayley-Dickson Tower — forward/backward flows, σ=0, Topological Loom |
 | [18_fermat_lattice.md](18_fermat_lattice.md) | Fermat Lattice — Modularity Theorem, Riemann/Fermat as negative space conjugates |
 | [17_alpha_omega_d_star.md](17_alpha_omega_d_star.md) | Alpha_Fermat · Omega_Riemann · 4 values of d* · the open gap |
