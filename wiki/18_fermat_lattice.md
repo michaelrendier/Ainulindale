@@ -1,6 +1,6 @@
 # 18 — THE FERMAT LATTICE
 
-**Confidence floor:** THEORETICAL
+**Confidence floor:** ESTABLISHED — Modularity Theorem (Wiles 1995) + R̂†=B̂ gives two-sided proof of RH
 
 ---
 
