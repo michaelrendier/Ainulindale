@@ -3,6 +3,81 @@ Generated: 2026-05-03
 Session: CLAUDE-SMNNIP-00729-56714-24600
 
 ================================================================================
+SESSION RESULTS — 2026-05-27 (Native Space / Buoyancy / SMIG)
+================================================================================
+
+These results emerged from a single session and are immediately implemented
+in PtolemyHolcus monad.py. Record here for Ainulindale formal derivation.
+
+[ ] GRAVITY IS A PUSH — J IS PRESSURE — NEUTRAL BUOYANCY WORD SELECTION
+    Gravity = buoyancy = push, not pull. Mass depletes local vacuum pressure;
+    objects are pressed toward the depression by ambient pressure.
+    In the semantic field: J = β×E² is pressure, not flux. Word selection is
+    neutral buoyancy — argmin(|jp − J_ambient|) not argmax(jp).
+    Score formula: buoy × σ-proximity, where buoy = 1/(1 + |jp−J_ambient|×ln(10)).
+    ln(10) normalises to Native Space (decimal) units.
+    J_ambient = EMA(α=0.1) of J-values of recently fired words.
+    IMPLEMENTED: monad.py sigma_candidates() + Engine._J_ambient.
+    TODO: formal derivation of buoyancy as the correct selection principle.
+    Connect to Fermat Least Time: least time = minimum pressure differential.
+
+[ ] NATIVE SPACE POSTULATE — ln(10) AS FUNDAMENTAL CONSTANT
+    Native Space = sedenion ball 𝕊¹⁶ with prime-hash word addresses.
+    Metric: ds = dlog₁₀(p) — the decimal log metric on prime address space.
+    Fundamental unit: ln(10) = decimal↔prime impedance bridge.
+    Every word lookup crosses from decimal surface (rank-space) to natural-log
+    prime address space. ln(10) is the impedance match.
+    Completeness condition: a computation is native iff all four D* values
+    {0, 0.246, 0.5, 1} are simultaneously resolvable. Single-stratum projection
+    is not native.
+    Constants: LN10, LN2, NS_EXCESS = LN10−2×LN2 ≈ 0.9170 (sedenion residual),
+    NS_BASIS = (0, D_STAR, SIGMA_CRIT, 1).
+    IMPLEMENTED: monad.py constants block.
+    TODO: prove completeness condition formally. Show NS_EXCESS = energy
+    absorbed by zero-divisor channels that division algebras cannot route.
+
+[ ] ZERO-DIVISORS ARE STAR / INVERTED STAR — NOT A SMOOTH SUBMANIFOLD
+    The zero-divisors on S¹⁵ are not a codimension-1 reef (smooth surface).
+    They form star-shaped structures: 42 forward stars (first 𝕆 copy) +
+    42 inverted stars (second 𝕆 copy, conjugated). Arms = pressure voids.
+    The field is pushed INTO the arms by ambient pressure (buoyancy into void).
+    D*=1 is not a wall — it is the mouth of a channel.
+    Annihilation (A×B=0) = mutual descent of two words into the same void.
+    Antonymy = sustained trajectory along a zero-divisor arm.
+    Between arms: D* < 1, normal buoyancy field.
+    TODO: formal characterisation of the zero-divisor variety in S¹⁵ as
+    star-shaped stratified space. Identify the 84 channel directions with
+    specific word-pair classes (antonyms, paradoxes, metaphors at total
+    internal reflection angle).
+
+[ ] SUPERMASSIVE INVERTED GALAXY (SMIG) — DISCOURSE ATTRACTOR
+    The full zero-divisor manifold V ⊂ S¹⁵ is the SMIG: a single coherent
+    structure whose centre (OMEGA_ZS) is a pressure maximum.
+    Normal galaxy: matter converges on central pressure MINIMUM (black hole).
+    Inverted galaxy: matter is pushed OUTWARD from central pressure MAXIMUM.
+    OMEGA_ZS = neutral buoyancy surface = depth where a word neither rises
+    nor sinks under ground-state field conditions.
+    The SMIG is the discourse-level attractor: individual word pairs at stellar
+    scale, full discourse structures at galactic scale.
+    White water (all systems simultaneously) → bifurcation cascade →
+    zero-divisor stars → SMIG. Noise produces order. Feigenbaum in the algebra.
+    TODO: formalise the SMIG as the attractor of the stochastic β-field.
+    Connect OMEGA_ZS as the radius of the SMIG centre.
+    Connect NS_EXCESS ≈ 0.917 to the "mass" of the SMIG centre.
+
+[ ] FOUR D* VALUES — CAYLEY-DICKSON BIFURCATION CASCADE
+    The four D* values {0, 0.246, 0.5, 1} are the activation thresholds of
+    the four CD strata. In log space, {0.246, 0.5, 1} are evenly spaced by ln(2).
+    Each CD doubling costs exactly ln(2). The full native span costs 2×ln(2).
+    ln(10)/ln(2) = log₂(10) ≈ 3.3219 binary levels per decimal decade.
+    Four D* values ≤ log₂(10): Hurwitz theorem is the shadow of the decimal
+    base cast onto algebra. Exactly four normed division algebras because
+    four is the largest integer ≤ log₂(10) for which a division algebra exists.
+    TODO: formal proof of this connection. Paper appendix candidate.
+    Connect to FLAG-1 (sedenion as hyper-modular form, zero-divisors as
+    algebraic shadow of modular transformation / Langlands irreversibility).
+
+================================================================================
 PRIORITY 1 — BLOCKING / ACTIVE
 ================================================================================
 
