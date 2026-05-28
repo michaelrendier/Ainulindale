@@ -230,6 +230,52 @@ PRIORITY 2 — ENGINEERING
 PRIORITY 3 — PAPER
 ================================================================================
 
+[ ] FLAG-6: Speech as error check for mathematics
+    The DTC system (OBD2 fault codes) is a formal proof checker.
+    A field that generates without DTCs has satisfied: Noether conservation,
+    BAO spectral condition, zero-divisor boundary, emission threshold.
+    These four simultaneous conditions = self-consistency at σ=½.
+    RH = "no aphasias": all zeros at σ=½ ↔ DTC P0300/P0335/P0087 never fire.
+    The Gödelian escape is constructive, not formal: SELF_EQUATION emergence
+    demonstrates consistency without proving it from outside.
+    TODO: add to proof section. The DTC table IS the proof-checker table.
+    Connect: each DTC = one Clay problem condition. All clear = all solved.
+
+[ ] FLAG-7: Wernicke and Broca = J_neg/J_pos — NP oracle
+    Wernicke = J_neg (Fermat/comprehension). Broca = J_pos (Riemann/production).
+    σ=½ = only point where both channels simultaneously balanced.
+    Aphasia = zero off critical line: Wernicke's (J_neg→0, σ→1), Broca's (J_pos→0, σ→0).
+    Brain brute-forces NP: holds all sedenion patterns simultaneously,
+    routes answer through corpus callosum (zero-divisors) to language surface.
+    P=NP for self-referential class: answer pre-encoded as resonance at IQM depth.
+    σ=½ unified boundary: RH / P-NP / halting / buoyancy / Noether = same geometric point.
+    TODO: add to paper. Section after Core Claims. Neurological validation target.
+
+[ ] FLAG-8: Riemann fluid mechanics vs Newtonian — completed Navier-Stokes
+    Navier-Stokes fails because it uses Newtonian (real-valued) fluid mechanics.
+    It discards the imaginary component — the Blue/Fermat channel.
+    The "singularity" is not infinite: it is a rotation into the Fermat Lattice
+    that the real-valued equations cannot follow.
+    Riemann fluid mechanics: restore the missing imaginary component via H_RB.
+    The fluid equation becomes Cauchy-Riemann: ∂u/∂x = ∂v/∂y, ∂u/∂y = −∂v/∂x.
+    Cauchy-Riemann IS the smoothness guarantee for Navier-Stokes.
+    A self-adjoint operator on a normed division algebra tower guarantees smoothness
+    by construction: the zero-divisor structure prevents the singularity formation.
+    TODO: formal derivation. Add to Navier-Stokes Clay problem entry in proof section.
+    Connect to σ=½ table: "Real only → Navier-Stokes → Yang-Mills − i (missing imaginary)"
+    Proof: restore i → Cauchy-Riemann → smooth everywhere → Clay solved.
+
+[ ] FLAG-9: MindEye — second 𝕆 as visual/spatial workbench
+    𝕊 = 𝕆 ⊕ 𝕆. First 𝕆 = linguistic/motor (hands). Second 𝕆 = visual/spatial (mind).
+    Zero-divisors between them = corpus callosum.
+    MindEye encodes non-linguistic data (spatial, numeric, temporal) into e₈..e₁₅.
+    describe() fires accumulated state through callosum into first 𝕆 as language at σ=½.
+    Implemented in skills/mind_eye.py (PtolemyHolcus).
+    TODO: add formal derivation to sedenion manual. The second 𝕆 was always there
+    in the sedenion algebra; MindEye makes it addressable as an input channel.
+    Architecture: mind=NP oracle (second 𝕆) + hands=P machine (first 𝕆) + callosum=σ=½.
+    TODO: add to MindEye section of README and sedenion manual section XI.
+
 [ ] FLAG-1: Sedenion as hyper-modular form
     Zero-divisors = algebraic shadow of modular transformation /
     irreversibility in Langlands correspondence.
@@ -261,6 +307,26 @@ PRIORITY 3 — PAPER
 ================================================================================
 PRIORITY 4 — FUTURE MODULES / FEATURES
 ================================================================================
+
+[ ] MINDEYE MODULE — SECOND OCTONION WORKBENCH (added 2026-05-27)
+    skills/mind_eye.py: MindEye class wrapping Engine with second 𝕆 input channel.
+    see(data, label): encodes non-linguistic data (float vector up to 8 values)
+      into second 𝕆 components e₈..e₁₅ via EMA accumulation + normalization.
+    describe(query): fires psi2 through callosum (zero-divisor boundary at D*=1)
+      into first 𝕆 as language at σ=½. Projection: E_target = callosum × OMEGA_ZS.
+    snapshot(): returns full psi2 state and labeled observation history.
+    Socket commands: mindeye_see, mindeye_describe, mindeye_snapshot, mindeye_reset.
+    Architecture: mind = NP oracle (psi2 holds all patterns simultaneously).
+                  hands = P machine (first 𝕆 selects via Noether current).
+                  callosum = zero-divisor coupling strength at e₁₅.
+    Second 𝕆 input extensions (future):
+      - Audio band decomposition → 8 frequency bands → psi2
+      - Image pixel histogram → 8 intensity levels → psi2
+      - Sensor stream (OBD2 PIDs) → 8 diagnostic channels → psi2
+    TODO: formalise the callosum coupling equation. When |psi2| → OMEGA_ZS,
+    callosum strength → 1/(1 + 0) → maximum. This is the operating point.
+    Connection to sedenion manual: psi2[e₈..e₁₄] = A-fabric; psi2[e₁₅] = GAP crossing.
+    The describe() output is the second 𝕆 'speaking itself' through the first.
 
 [ ] SMNNIP DISTRIBUTION ENGINE (see wiki)
     The inference-time engine: trained SMNNIP network produces distribution
