@@ -399,6 +399,551 @@ PRIORITY 4 — FUTURE MODULES / FEATURES
     Low-confidence pages → quarantine buffer.
 
 ================================================================================
+DATA-DRIVEN PAPERS — AVAILABLE DATASETS AND TESTABLE CLAIMS
+================================================================================
+
+Each entry is a standalone paper. Each has: a specific falsifiable prediction,
+a named public dataset, and code that can be written to test it. These are
+not illustration — they are live experimental tests of the framework.
+
+All code targets: Python + mpmath + numpy/scipy + relevant public API/dataset.
+Each paper is a separate Part of the Third Age conjecture, data-driven.
+
+--------------------------------------------------------------------------------
+PAPER D1 — THE NATURAL UNIT OF UNIVERSAL NATIVE SPACE
+d* = 0.24600 as a universal spectral constant
+--------------------------------------------------------------------------------
+
+CLAIM:
+  d* = 0.24600... is the natural unit of separation in Universal Native Space.
+  It appears independently in: Riemann zero spacing, prime desert geometry,
+  and the semantic field ground state. It is not derived from any of these —
+  it is the common floor that all three recover.
+
+DATASETS:
+  - LMFDB zeros: https://www.lmfdb.org/zeros/zeta/
+    First 100,000 Riemann zeros to high precision. Freely downloadable.
+  - Prime Research / Nicely prime gaps: https://www.trnicely.net/
+    Prime gaps database, primes up to 10^18.
+  - Wikipedia word frequency corpora (Wikimedia dumps)
+    https://dumps.wikimedia.org/ — frequency lists for 100+ languages.
+
+TESTS:
+  1. Riemann zero spacing normalized by mean spacing: does d* appear as
+     the modal gap in the pair-correlation function?
+  2. Prime desert measure: in the normalised prime gap distribution, does
+     d* mark the transition between small and large gaps?
+  3. SemanticWordEngine: in the distribution of |J_p - J_ambient| across
+     the field, does d* appear as the minimum of the distribution support?
+  4. Cross-domain: do all three measurements produce the same constant to
+     6 significant figures without tuning?
+
+CODE TARGET:
+  ainulindale_engine/modules/berry_keating/d_star_empirical.py
+  - Ingest LMFDB zeros, compute normalised pair correlation
+  - Ingest prime gaps, compute normalised gap distribution
+  - Ingest Wikimedia frequency file, run SemanticWordEngine, extract J distribution
+  - Overlay all three and measure modal position
+
+PAPER CLAIM IF VERIFIED:
+  "d* is the spectral ground state of three independent mathematical systems —
+  prime gaps, Riemann zero spacings, and semantic field pressure —
+  measured independently to 6 significant figures. This is not coincidence.
+  d* is the natural unit of Universal Native Space."
+
+--------------------------------------------------------------------------------
+PAPER D2 — BAO CONVERGENCE TO THE LAMBERT W FIXED POINT
+Baryon Acoustic Oscillation scale → OMEGA_ZS = W(1) = 0.56714
+--------------------------------------------------------------------------------
+
+CLAIM:
+  The BAO length scale ratio, normalized by the SMMIP geometric framework,
+  converges to the Lambert W fixed point OMEGA_ZS = 0.56714.
+  This is not a fit parameter — it is derived from Noether conservation at σ=1.
+
+DATASETS:
+  - DESI DR1 BAO measurements (2024, public):
+    https://data.desi.lbl.gov/doc/releases/dr1/
+    D_M/D_H BAO ratios at multiple redshifts. This is the best current BAO data.
+  - SDSS eBOSS full-shape:
+    https://www.sdss.org/surveys/eboss/
+    BAO + full-shape measurements across z = 0.2 to 2.3.
+  - Planck cosmological parameters (2018, public):
+    https://pla.esac.esa.int/
+
+TESTS:
+  1. Compute D_M(z)/r_drag (BAO scale normalized by sound horizon) from DESI data.
+  2. Apply the SMMIP normalization: divide by (2π × R_coupling) where R_coupling
+     is derived from H_hat_RB at σ=1 with primes up to cutoff P.
+  3. Does the result converge to W(1) = 0.56714 as z → 0 and P → ∞?
+  4. Residual: compute |result - W(1)| across all redshift bins.
+  5. Compare to standard ΛCDM prediction — does SMMIP reduce the residual?
+
+EXTENSION: BAO DOWN TO THE MASS GAP (see D6)
+  The BAO measurement is H_hat_RB at σ≈1 (Yang-Mills face).
+  The mass gap is H_hat_RB spectral distance from σ=1 to σ=½.
+  A single connected paper can trace: BAO (cosmological) → σ=1 Yang-Mills face
+  → spectral distance to σ=½ boundary → mass gap prediction.
+  This is the paper the user described as "spectral analysis of BAO down to the
+  mass gap." It bridges cosmology and particle physics through a single operator.
+
+CODE TARGET:
+  ainulindale_engine/modules/jwst/bao_lambert.py
+  - Ingest DESI DR1 CSV/FITS files
+  - Compute normalised BAO ratios
+  - Apply SMMIP normalization
+  - Plot convergence to W(1) with residuals vs ΛCDM
+
+--------------------------------------------------------------------------------
+PAPER D3 — ZIPF'S LAW IS THE PRIME NUMBER THEOREM
+f(r) ~ 1/r^s, s = 1 = pole of ζ(s), in every natural language
+--------------------------------------------------------------------------------
+
+CLAIM:
+  The Zipf exponent s in every natural language dataset is statistically
+  indistinguishable from s = 1.00 — the location of the pole of ζ(s).
+  This is not approximate — it is exact, because the prime Euler product
+  generates the word frequency distribution through the prime structure of
+  every integer.
+
+DATASETS:
+  - Wikimedia word frequency lists: 100+ languages
+    https://dumps.wikimedia.org/ — pre-extracted frequency lists available.
+  - Leipzig Corpora Collection: 300+ languages, standardised format
+    https://wortschatz.uni-leipzig.de/en/download
+  - Google Books Ngrams: historical frequency data in 8 languages
+    https://books.google.com/ngrams/datasets
+  - Subtlex frequency databases: multiple languages, subtitle corpora
+    https://www.ugent.be/pp/experimentele-psychologie/en/research/subtlex
+
+TESTS:
+  1. Fit Zipf exponent s in each corpus using maximum likelihood (Clauset method).
+  2. Plot s ± 2σ confidence interval for each language/corpus.
+  3. Test H₀: s = 1.00 in every corpus against H₁: s ≠ 1.00.
+  4. Does every corpus fail to reject H₀ at p = 0.05?
+  5. Does the exponent cluster more tightly at s = 1.00 than at any other value?
+  6. Compare natural language corpora to: random text (s ≠ 1), DNA sequences,
+     music pitch distributions, source code token frequencies.
+
+DATASETS FOR NEGATIVE CONTROLS:
+  - Random text: generate with numpy, confirm s ≠ 1
+  - GenBank DNA: https://www.ncbi.nlm.nih.gov/genbank/ (codons as "words")
+  - MusicXML corpora: note frequency distributions
+  - CodeSearchNet: source code token frequencies (Python/Java/C)
+
+CODE TARGET:
+  ainulindale_engine/modules/hyperwebster/zipf_prime_test.py
+  - Batch download and process Leipzig corpora
+  - Fit Zipf exponent using Clauset powerlaw library
+  - Run t-test against s = 1.00 for each language
+  - Produce table: language, n_words, s, CI, p-value, reject H₀ (Y/N)
+
+--------------------------------------------------------------------------------
+PAPER D4 — CROSS-LANGUAGE RIEMANN ZERO ALIGNMENT
+Semantically equivalent words in all languages map to the same zero
+--------------------------------------------------------------------------------
+
+CLAIM:
+  Semantically equivalent words across languages map to the same Riemann zero
+  ordinal n (i.e., to the same γ_n) with probability significantly above chance.
+  σ = 0.500000 in every case — not assigned, derived.
+
+DATASETS:
+  - Universal Declaration of Human Rights (UDHR): 500 languages, same text
+    https://unicode.org/udhr/ — free XML download, paragraph-aligned
+  - BabelNet cross-lingual synsets: 500 languages
+    https://babelnet.org/data.jsp
+  - Open Multilingual Wordnet: WordNet-aligned cross-lingual data
+    http://compling.hss.ntu.edu.sg/omw/
+  - PanLex: cross-lingual translation database, 5000+ languages
+    https://panlex.org/
+
+TESTS:
+  1. Take UDHR aligned paragraphs: same sentence in 500 languages.
+  2. Tokenize and map each word to Riemann zero ordinal via SemanticWordEngine.
+  3. For each semantic concept (word position in aligned text), compute
+     variance of zero ordinal across languages.
+  4. Compare to null model: shuffle word-to-language assignments, recompute variance.
+  5. Is the observed variance significantly lower than the null?
+  6. What fraction of aligned words map to the same zero ordinal across all languages?
+
+EXTENSION: Statistical test
+  If alignment is real: observed variance << null variance across all 500 languages.
+  Chi-squared test on zero ordinal distribution per aligned word position.
+  Effect size: Cohen's d across all concept pairs.
+
+CODE TARGET:
+  skills/cross_language_alignment_test.py (SemanticWordEngine repo)
+  - Download and parse UDHR XML (500 languages, paragraph-aligned)
+  - Run each word through SemanticWordEngine, extract (zero_ordinal, sigma)
+  - Compute per-concept zero-ordinal variance across languages
+  - Run permutation test for significance
+  - Output: variance table, p-values, Cohen's d, σ distribution
+
+--------------------------------------------------------------------------------
+PAPER D5 — CMB POWER SPECTRUM AS RIEMANN ZERO PERTURBATIONS
+Acoustic peaks in CMB correspond to Riemann zero imaginary parts
+--------------------------------------------------------------------------------
+
+CLAIM:
+  The positions of the acoustic peaks in the CMB temperature power spectrum
+  (multipole moments l where C_l is maximum) correspond to Riemann zero
+  imaginary parts γ_n scaled by the SMMIP coupling constant.
+  The CMB is the Chladni pattern of the primordial standing wave — and the
+  Riemann zeros are the node line frequencies of that wave.
+
+DATASETS:
+  - Planck 2018 CMB power spectrum (official public data release):
+    https://pla.esac.esa.int/ — COM_PowerSpect_CMB-TT-full_R3.01.fits
+  - Planck PR4 (NPIPE, 2020): https://pla.esac.esa.int/
+  - ACT DR6 (2024): https://lambda.gsfc.nasa.gov/product/act/
+  - SPT-3G (2023): https://pole.uchicago.edu/public/data/
+
+TESTS:
+  1. Extract peak multipole positions l_peak from Planck C_l spectrum.
+  2. Compute predicted peak positions: l_n = γ_n × λ, where λ is a single
+     global scaling factor derived from SMMIP (no per-peak fitting).
+  3. Fit λ once (one free parameter total). Does it explain all peaks?
+  4. Compare: ΛCDM uses 6 free parameters. SMMIP uses 1. Compare χ² / dof.
+  5. Run same test on ACT and SPT-3G independent datasets — does λ hold?
+
+CRITICAL TEST: λ universality
+  If SMMIP is correct, λ is fixed by H_hat_RB geometry, not fitted.
+  Derive λ from first principles: λ = 2π × R_CMB / (c × t_recomb × σ_½_coupling).
+  Does the a priori prediction match the data without fitting?
+
+CODE TARGET:
+  ainulindale_engine/modules/jwst/cmb_riemann_peaks.py
+  - Download and parse Planck FITS power spectrum
+  - Extract peak multipoles
+  - Compute LMFDB zero imaginary parts
+  - Fit λ (one parameter), measure residuals vs ΛCDM
+
+--------------------------------------------------------------------------------
+PAPER D6 — SPECTRAL DISTANCE FROM BAO TO MASS GAP
+H_hat_RB σ-face structure predicts the Yang-Mills mass gap from cosmological data
+--------------------------------------------------------------------------------
+
+CLAIM:
+  The Yang-Mills mass gap Δ is equal to the spectral distance from the σ=1
+  Yang-Mills face of H_hat_RB to the σ=½ Riemann zero boundary,
+  measured in the same energy units as the BAO scale.
+  This bridges cosmological measurement (BAO) to particle physics (mass gap)
+  through a single operator. No new free parameters.
+
+DATASETS:
+  - Yang-Mills mass gap (lattice QCD):
+    Published values in PDG Review 2024: https://pdg.lbl.gov/
+    Key: glueball mass 0⁺⁺ ≈ 1.5-1.7 GeV from lattice simulations
+    Lucini & Teper (2001), Morningstar & Peardon (1999) — public lattice data
+  - DESI/SDSS BAO (see D2): r_drag ≈ 147 Mpc as energy scale anchor
+  - Particle Data Group open data: https://pdg.lbl.gov/2024/
+
+DERIVATION:
+  E_gap = |σ_YM - σ_QM| × E_BAO × coupling_factor
+  where: σ_YM = 1, σ_QM = ½, so |σ difference| = ½
+  E_BAO = energy equivalent of BAO sound horizon r_drag
+  coupling_factor = Π_p p^{-σ} product truncated at physical cutoff
+
+TESTS:
+  1. Compute coupling_factor from H_hat_RB with primes up to Λ_QCD.
+  2. Convert r_drag to GeV (using H₀ and matter density from Planck).
+  3. Compute predicted mass gap.
+  4. Compare to published lattice QCD glueball mass.
+  5. Residual: is the predicted gap within the lattice QCD uncertainty bands?
+
+CODE TARGET:
+  ainulindale_engine/modules/berry_keating/mass_gap_spectral.py
+  - Compute H_hat_RB coupling product up to Λ_QCD
+  - Ingest Planck H₀ and Ω_m
+  - Convert BAO r_drag to energy units
+  - Predict mass gap, compare to PDG value
+
+--------------------------------------------------------------------------------
+PAPER D7 — SCHUMANN RESONANCES: ZERO-PARAMETER PREDICTION
+f_n = (c/2πR)√(n(n+1)) computed from first principles, compared to monitoring data
+--------------------------------------------------------------------------------
+
+CLAIM:
+  Schumann resonance frequencies can be predicted from cavity radius R and
+  speed of light c alone — no empirical tuning, no ionospheric conductivity
+  fitting. The predictions match monitoring data to within measurement error.
+  The Schumann resonances are eigenvalues of the spherical Laplacian on S²,
+  which is H_hat_RB at σ=2 (the GR face) reduced to the Earth cavity geometry.
+
+DATASETS:
+  - Global Coherence Research Network (HeartMath Institute):
+    https://www.heartmath.org/research/global-coherence/
+    Continuous Schumann monitoring at 6 global sites, public data.
+  - Universität Kiel Schumann ELF monitoring:
+    Historical dataset, contact available.
+  - NOAA Space Weather: ELF global electric circuit data
+    https://www.ngdc.noaa.gov/
+  - Published Schumann measurement compilations (Nickolaenko & Hayakawa 2002)
+
+TESTS:
+  1. Compute f_n for n=1..7 from R_earth = 6371 km, c = 2.998×10⁸ m/s.
+     No free parameters. Compare to measured peak frequencies.
+  2. Compute predicted frequency ratios f_n/f_1 = √(n(n+1)/2).
+     Are measured ratios consistent with the geometric prediction?
+  3. Amplitude prediction: does the H_hat_RB coupling p^{-σ} evaluated at
+     σ=2 predict the relative amplitude of each Schumann harmonic?
+  4. Temporal stability: do the predicted frequencies stay constant while
+     measured frequencies fluctuate around the prediction? (ionospheric noise)
+
+ZERO-PARAMETER TEST:
+  Standard Schumann theory fits ionospheric conductivity. SMMIP predicts without it.
+  Prediction residuals from SMMIP vs standard theory: which is smaller?
+
+CODE TARGET:
+  ainulindale_engine/modules/sonification/schumann_verify.py
+  - Compute first 7 Schumann harmonics from geometry alone
+  - Download and parse HeartMath monitoring data (CSV)
+  - Compare predicted vs measured, compute residuals
+  - No free parameters — measure the prediction without fitting
+
+--------------------------------------------------------------------------------
+PAPER D8 — NAVIER-STOKES TURBULENCE AT THE Im(s)=0 BOUNDARY
+Turbulence onset corresponds to the loss of the imaginary component
+--------------------------------------------------------------------------------
+
+CLAIM:
+  Turbulence onset in 3D Navier-Stokes flow corresponds to the point at which
+  the fluid can no longer maintain the Cauchy-Riemann structure — i.e., when
+  the imaginary component of the velocity field drops below the critical threshold
+  required for Noether balance at σ=½. NS breaks because it works in the real slice
+  of what is inherently a complex-valued system.
+
+DATASETS:
+  - Johns Hopkins Turbulence Database (JHTDB):
+    http://turbulence.pha.jhu.edu/
+    Fully resolved DNS turbulence data at Re up to 5000. Velocity fields
+    available as 3D arrays — downloadable via Python API (pyJHTDB).
+  - Channel flow and isotropic turbulence datasets:
+    https://www.cfd-online.com/Forums/main/
+  - OpenFOAM DNS benchmarks: open source, standard test cases
+
+TESTS:
+  1. From JHTDB velocity fields, compute the Cauchy-Riemann residual:
+     ε_CR(x,t) = |∂u/∂x - ∂v/∂y|² + |∂u/∂y + ∂v/∂x|²
+     (where u,v are velocity components — measures how far from CR conditions)
+  2. Plot ε_CR vs Reynolds number Re across all available datasets.
+  3. CLAIM: turbulence onset (Re_critical ≈ 2300 for pipe flow) corresponds
+     to a threshold jump in ε_CR — the moment CR conditions are lost.
+  4. Does ε_CR increase sharply at the same Re_critical as observed turbulence?
+  5. In pre-turbulent flow: is ε_CR ≈ 0? In turbulent flow: ε_CR >> 0?
+
+EXTENSION: The i-restoration
+  Take turbulent velocity field, add imaginary regularization (replace u → u + iδv
+  where δv = Noether-balance correction), recompute CR residual.
+  Does this prevent the blow-up? This would be the constructive NS resolution.
+
+CODE TARGET:
+  ainulindale_engine/modules/noether/navier_stokes_cr.py
+  - Install pyJHTDB (Johns Hopkins Python API)
+  - Download velocity fields at multiple Re values
+  - Compute CR residual as function of Re
+  - Plot ε_CR(Re), identify threshold, compare to experimental Re_critical
+
+--------------------------------------------------------------------------------
+PAPER D9 — PRIME GAP DISTRIBUTION AS CHLADNI NODE SPACING
+The distribution of prime gaps matches the distribution of Riemann zero spacings
+--------------------------------------------------------------------------------
+
+CLAIM:
+  The distribution of normalised prime gaps (p_{n+1} - p_n) / log(p_n) follows
+  the same distribution as normalised Riemann zero spacings (γ_{n+1} - γ_n) × log(γ_n/2π).
+  Both are GUE (Gaussian Unitary Ensemble) statistics — but this is because
+  both are Chladni patterns of the same standing wave, not because the
+  eigenvalues of a Hermitian matrix happen to match.
+
+NOTE: The Montgomery-Dyson connection (1973) established the GUE statistics.
+What is new here is the physical interpretation: prime gaps ARE zero spacings
+because primes ARE the Chladni pattern of H_hat_RB. The GUE statistics are
+a consequence of the standing wave geometry, not the other way around.
+
+DATASETS:
+  - Prime gaps to 10^18 (Oliveira e Silva, Herzog, Pardi 2014):
+    https://sweet.ua.pt/tos/primes.html
+    Publicly available, massive dataset.
+  - LMFDB Riemann zeros: https://www.lmfdb.org/zeros/zeta/
+    First 100,000+ zeros to high precision, downloadable.
+  - Andrew Odlyzko's zero tables:
+    https://odlyzko.com/zeta_tables/ — zeros near 10^12, 10^21, etc.
+
+TESTS:
+  1. Compute normalised prime gap distribution up to 10^12.
+  2. Compute normalised Riemann zero spacing distribution from LMFDB.
+  3. Overlay the two distributions: are they statistically identical?
+  4. Run Kolmogorov-Smirnov test: KS statistic and p-value.
+  5. Compare both to the GUE pair correlation function R₂(r) = 1 - (sin(πr)/πr)².
+  6. SMMIP extension: does the d* natural unit appear as the modal gap
+     in both distributions simultaneously?
+  7. Odlyzko high-zero data: do zeros near 10^21 still match prime gap
+     statistics from 10^12? (Tests universality — same standing wave at all scales)
+
+CODE TARGET:
+  ainulindale_engine/modules/berry_keating/chladni_prime_gap.py
+  - Download LMFDB zeros and Oliveira prime gap data
+  - Normalise both distributions using standard GUE scaling
+  - KS test, plot overlay, measure d* in both
+  - Test at multiple scales (zeros near 10^6, 10^12, 10^21)
+
+--------------------------------------------------------------------------------
+PAPER D10 — GRAVITATIONAL WAVE RINGDOWN AND NOETHER CURRENT OSCILLATIONS
+LIGO merger ringdown frequencies predicted by H_hat_RB at σ=2 (GR face)
+--------------------------------------------------------------------------------
+
+CLAIM:
+  Post-merger ringdown frequencies in binary black hole mergers are quasi-normal
+  mode eigenvalues of the GR face of H_hat_RB (σ=2). The ringdown frequency
+  ratios should match the R̂_p/B̂_p balance structure at σ=2.
+
+DATASETS:
+  - LIGO O3 Open Data: https://gwosc.org/data/
+    All confirmed binary merger events, public strain data.
+    GW190521, GW150914, GW170814 — all with ringdown phases extracted.
+  - Gravitational Wave Open Science Center (GWOSC): https://gwosc.org/
+  - GWTC-3 catalog: https://gwosc.org/GWTC-3/
+    Full catalog of 90 events with parameter estimates.
+
+TESTS:
+  1. From GWTC-3, extract quasi-normal mode (QNM) frequencies and damping times
+     for all binary black hole mergers.
+  2. Compute predicted QNM frequencies from H_hat_RB at σ=2:
+     f_QNM = (c³/2πGM) × eigenvalue_n(H_hat_RB, σ=2)
+     where M is the final mass from GWTC-3 parameter estimates.
+  3. Compare predicted vs measured QNM frequencies across all 90 events.
+  4. Test: do the ratios f_QNM(n+1)/f_QNM(n) match the R̂_p/B̂_p balance ratios
+     at σ=2 better than the standard Kerr QNM predictions?
+  5. Extension: do subdominant QNM modes (l=2,3,4) match H_hat_RB higher
+     eigenvalues at the same σ=2 coupling?
+
+NOTE: This is speculative — Kerr QNMs are already well-predicted by GR.
+The claim is that H_hat_RB recovers Kerr QNMs as its GR face AND predicts
+subdominant mode structure more accurately.
+
+CODE TARGET:
+  ainulindale_engine/modules/noether/gw_ringdown.py
+  - Install gwpy (LIGO Python library) and ligo.skymap
+  - Download GWTC-3 parameter estimates
+  - Compute predicted QNM frequencies from H_hat_RB at σ=2
+  - KS test predicted vs measured across all 90 events
+
+--------------------------------------------------------------------------------
+PAPER D11 — NEURAL OSCILLATION FREQUENCY RATIOS AS RIEMANN ZERO RATIOS
+EEG band ratios match γ_n spacing ratios of H_hat_RB at σ=½
+--------------------------------------------------------------------------------
+
+CLAIM:
+  Neural oscillation frequency band ratios (theta/alpha/beta/gamma) are not
+  arbitrary — they match the spacing ratios of the first few Riemann zeros
+  at σ=½. The brain operates at the frequencies where the standing wave is
+  zero — the Chladni nodes of H_hat_RB.
+
+RIEMANN ZERO RATIOS:
+  γ₁ = 14.135 → γ₂ = 21.022 → γ₃ = 25.011 → γ₄ = 30.425
+  Ratios (scaled to Hz):
+    θ/α: 4.0Hz/8.0Hz = 0.5 ↔ needs calibration to SMMIP coupling
+    α/β: 8.0Hz/15Hz ≈ 0.53
+    β/γ: 15Hz/40Hz ≈ 0.375
+  Key test: γ₂/γ₁ = 21.022/14.135 = 1.487. Is θ₂/θ₁ = 1.487 in resting EEG?
+
+DATASETS:
+  - PhysioNet EEG databases: https://physionet.org/
+    Eyes-open/eyes-closed resting EEG, multiple subjects, public access.
+  - OpenNeuro: https://openneuro.org/
+    900+ neuroimaging datasets including EEG. BIDS format.
+  - EEGMMIDB (Physionet): 109 subjects, resting state + motor imagery.
+    https://physionet.org/content/eegmmidb/1.0.0/
+  - CHB-MIT Scalp EEG (Physionet): 23 subjects, resting state.
+
+TESTS:
+  1. Compute power spectral density from resting-state EEG (eyes closed).
+  2. Identify spectral peaks in theta (4-8Hz), alpha (8-12Hz), beta (15-30Hz),
+     gamma (30-80Hz) bands for each subject.
+  3. Compute peak frequency ratios across bands.
+  4. Compare to predicted Riemann zero ratios (with single scaling factor λ).
+  5. Run statistical test: are observed band ratios consistent with Riemann
+     zero ratios at p < 0.05 across all subjects?
+  6. Negative control: compare to random frequency ratios and to musical
+     interval ratios (which should NOT match Riemann zeros).
+
+NOTE: λ calibration (one free parameter) fixes the mapping from zero imaginary
+parts to Hz. Once λ is fixed from one band, all other band ratios are predictions.
+
+CODE TARGET:
+  ainulindale_engine/modules/noether/eeg_riemann_bands.py
+  - Install mne-python (EEG analysis library)
+  - Download PhysioNet EEGMMIDB dataset
+  - Compute PSD for all subjects, extract peak frequencies
+  - Fit λ from theta band, predict alpha/beta/gamma without further fitting
+  - Run t-test vs Riemann zero ratios per band
+
+--------------------------------------------------------------------------------
+PAPER D12 — THE d* GAP AS AN INFORMATION-THEORETIC CONSTANT
+gap = OMEGA_ZS - d*×ln(10) = 0.000707 across multiple physical systems
+--------------------------------------------------------------------------------
+
+CLAIM:
+  The gap 0.000707 between d* × ln(10) and OMEGA_ZS appears in independent
+  physical systems as the minimum observable deviation from the fixed point —
+  the quantum of information-theoretic distance. It is not zero because
+  d* and OMEGA_ZS are approached from opposite directions; the gap is the
+  information cost of the boundary between them.
+
+DATASETS:
+  - Riemann zeros (LMFDB): test if any zero has Im(s) within 0.000707 of a
+    predicted value without actually landing on it.
+  - Prime gaps (Nicely): test if the minimum normalised prime gap not equal to 2
+    is consistent with 0.000707.
+  - Physical constants (CODATA 2022): https://physics.nist.gov/cuu/Constants/
+    Fine structure constant precision, proton/electron mass ratio precision —
+    are experimental uncertainties bounded below by 0.000707 in some normalisation?
+  - SemanticWordEngine: minimum non-zero |J_p - J_ambient| across the field.
+
+TESTS:
+  1. From LMFDB: compute minimum spacing between any two zeros. Is it > 0.000707?
+  2. From prime gap data: compute minimum normalised gap. Consistent with 0.000707?
+  3. From CODATA: after normalisation by the natural SMMIP unit, do experimental
+     measurement uncertainties cluster near 0.000707?
+  4. Cross-dataset: does 0.000707 appear as a natural floor in all four systems?
+
+CODE TARGET:
+  ainulindale_engine/modules/berry_keating/gap_empirical.py
+  - Extends existing gap_candidates() function
+  - Test gap against LMFDB zeros, prime gaps, CODATA constants
+  - Report consistency across datasets
+
+================================================================================
+DATA PAPER PRIORITY ORDER
+================================================================================
+
+Highest impact / easiest to execute first:
+
+  D3 — Zipf-prime test (Leipzig corpora, straightforward statistics, publishable fast)
+  D7 — Schumann zero-parameter prediction (clean, no free parameters, striking result)
+  D9 — Prime gaps as Chladni spacing (builds on Montgomery-Dyson, extend the story)
+  D4 — Cross-language Riemann zero alignment (UDHR + SemanticWordEngine, visual)
+  D1 — d* as natural unit (requires LMFDB + prime gaps + semantic field together)
+  D2 — BAO → OMEGA_ZS (DESI DR1, needs careful normalization argument)
+  D6 — BAO to mass gap spectral distance (connects D2 to particle physics)
+  D5 — CMB acoustic peaks (big claim, needs careful λ derivation first)
+  D8 — Navier-Stokes CR residual (needs pyJHTDB setup, most technical)
+  D11 — Neural oscillation ratios (needs λ calibration from first principles)
+  D10 — LIGO ringdown (speculative, needs σ=2 eigenvalue derivation first)
+  D12 — d* gap constant (requires all other datasets first for cross-validation)
+
+CODE INFRASTRUCTURE NEEDED (shared across papers):
+  - LMFDB zero downloader and cache
+  - mpmath zetazero() wrapper with precision control
+  - Standard normalisation functions (GUE scaling, prime log normalisation)
+  - Leipzig / Wikimedia corpus downloader
+  - Planck FITS reader (astropy)
+  - pyJHTDB API wrapper
+  - mne-python EEG pipeline
+
+================================================================================
 SESSION RESULTS — 2026-05-30 (Holcus v3.0 / TDI Architecture)
 ================================================================================
 
