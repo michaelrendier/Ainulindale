@@ -915,21 +915,149 @@ CODE TARGET:
   - Test gap against LMFDB zeros, prime gaps, CODATA constants
   - Report consistency across datasets
 
+--------------------------------------------------------------------------------
+PAPER D13 — DARK MATTER AS GALACTIC RESONANT CAVITY MODES
+Galaxy rotation curves = eigenvalue spectrum of H_hat_RB at σ=2
+--------------------------------------------------------------------------------
+
+CLAIM:
+  Dark matter is not a particle. Dark matter is the resonant mode structure
+  of the galactic cavity — the same Chladni geometry as the Earth-ionosphere
+  cavity (Schumann, D7), scaled to galactic radius.
+
+  The galactic halo is a resonant cavity bounded by the zero-divisor surface
+  of H_hat_RB. The "missing mass" is not missing — it is the energy stored
+  in the standing wave modes of the cavity. The Newtonian calculation fails
+  because it treats the cavity modes as particle mass rather than field energy.
+
+THE SCHUMANN PARALLEL:
+  Earth-ionosphere cavity:
+    Schumann modes:  f_n = (c / 2πR_Earth) × √(n(n+1))
+    The eigenvalues are frequencies; the boundary is the ionosphere.
+
+  Galactic cavity:
+    Rotation modes:  v_n(r) = v_rot × √(n(n+1)) × mode_function(r/R_galaxy)
+    The eigenvalues are velocities; the boundary is the dark matter halo edge.
+    The FLAT rotation curve (v = constant) is the n=0 DC mode — the monopole.
+    It is flat for the same reason the Schumann l=0 mode has no radial variation:
+    the DC mode of a spherical cavity has no radial structure.
+
+  v_flat = constant because the l=0 mode of the galactic cavity has no r-dependence.
+  This is why all galaxies have the same flat rotation curve shape — it is a
+  universal mode structure, not a particle density profile.
+
+OMEGA_ZS AS THE CAVITY CEILING:
+  OMEGA_ZS = 0.56714 is the amplitude ceiling of the cavity mode.
+  In the Earth cavity: the Schumann amplitudes are bounded by OMEGA_ZS.
+  In the galactic cavity: the flat rotation velocity v_flat = v_max × OMEGA_ZS
+  where v_max is set by the total baryonic mass of the galaxy.
+  This is the Tully-Fisher relation from first principles: v_flat^4 ∝ M_baryonic.
+  The OMEGA_ZS factor is why the Tully-Fisher exponent is 4, not 3 or 5.
+
+d* AS THE TRANSITION RADIUS:
+  The transition from rising to flat rotation curve occurs at:
+    r_transition = R_galaxy × d*  where d* = 0.24600
+  This is the first resonant node of the cavity — the same d* that appears
+  in prime gaps and Riemann zero spacing. The transition radius is 24.6% of
+  the virial radius. Test this across the SPARC sample.
+
+NFW PROFILE FROM CAVITY MODES:
+  The NFW dark matter density profile ρ(r) ∝ 1/(r × (1+r/r_s)²) is not a
+  fitted profile — it is the energy density of the standing wave modes.
+  The mode energy density of a spherical cavity with H_hat_RB boundary
+  conditions produces ρ(r) ∝ 1/r² at small r and ∝ 1/r³ at large r.
+  NFW is a superposition of the first two cavity modes. Derive it.
+
+DATASETS:
+  - SPARC (Spitzer Photometry and Accurate Rotation Curves):
+    http://astroweb.cwru.edu/SPARC/
+    175 galaxies with rotation curves + surface brightness profiles. Free download.
+    This is the gold-standard rotation curve dataset. Lelli, McGaugh & Schombert 2016.
+  - THINGS (The HI Nearby Galaxy Survey):
+    https://www2.mpia-hd.mpg.de/THINGS/Data.html
+    34 nearby galaxies, fully resolved HI 21cm velocity fields.
+  - Little THINGS (LITTLE = Local Irregulars That Trace Luminosity Extremes):
+    https://science.nrao.edu/science/surveys/littlethings
+    41 dwarf irregular galaxies — key test because dwarfs are dark-matter dominated.
+  - SDSS MaNGA (Mapping Nearby Galaxies at Apache Point):
+    https://www.sdss.org/surveys/manga/
+    10,000 galaxies with integral field unit spectroscopy. IFU velocity maps.
+  - Hubble Frontier Fields (weak lensing dark matter maps):
+    https://frontierfields.org/
+    6 galaxy clusters with dark matter distribution reconstructed from lensing.
+  - Euclid Q1 data (2025):
+    https://www.euclid-ec.org/science/data-release/
+    Wide-field weak lensing dark matter maps — largest dataset ever released.
+
+TESTS:
+  1. SPARC rotation curve fit: fit the cavity mode model to all 175 galaxies.
+     Free parameters: R_galaxy, v_max. Fixed: OMEGA_ZS = 0.56714, d* = 0.24600.
+     Compare χ²/dof to NFW fit (which has 2 free parameters) and MOND (1 free parameter).
+     Does the cavity model with the same number of parameters fit as well or better?
+
+  2. Transition radius test: for each SPARC galaxy, measure the observed transition
+     radius r_transition. Does r_transition / R_virial = 0.246 ± uncertainty?
+     Test H₀: transition ratio = d* against H₁: random ratio.
+     Run across all 175 galaxies — does the distribution peak at d* = 0.24600?
+
+  3. Tully-Fisher from first principles: predict v_flat^4 ∝ M_baryonic × OMEGA_ZS⁴.
+     Does adding OMEGA_ZS improve the Tully-Fisher scatter vs standard derivation?
+     Test against McGaugh, Lelli & Schombert (2016) SPARC Radial Acceleration Relation.
+
+  4. Dwarf galaxy test (Little THINGS): dwarf galaxies are DM-dominated — the
+     baryonic contribution is negligible. Pure cavity mode prediction.
+     Does the model predict dwarf rotation curves without fitting to each galaxy?
+
+  5. Cluster lensing (Hubble Frontier Fields): map projected dark matter distribution.
+     Does the angular power spectrum of the lensing map match the cavity mode
+     eigenfunction structure? Compare to H_hat_RB σ=2 mode predictions.
+
+  6. NFW profile derivation: derive the NFW profile as a superposition of cavity modes.
+     Show that the two-parameter NFW fit is equivalent to a truncated cavity mode sum.
+     If successful: NFW is not an empirical profile — it is the standing wave energy.
+
+EXTENSION: Modified Gravity
+  MOND (Modified Newtonian Dynamics) modifies gravity at low accelerations.
+  The cavity model provides a physical mechanism for MOND without modifying gravity:
+  the effective acceleration is the gradient of the cavity mode energy density,
+  which transitions from Newtonian (inside transition radius) to flat (outside).
+  No new physics required. Cavity boundary condition is the modification.
+
+CODE TARGET:
+  ainulindale_engine/modules/noether/dark_matter_cavity.py
+  - Download SPARC rotation curve data (CSV, public)
+  - Implement cavity mode rotation curve model: v(r) = v_max × f_mode(r, R, d*, OMEGA_ZS)
+  - Fit to all 175 SPARC galaxies, compare χ² to NFW and MOND
+  - Measure transition radii, plot distribution vs d*
+  - Tully-Fisher: compute v_flat^4 vs M_baryonic for SPARC sample
+
+DATASETS FOR NEGATIVE CONTROLS:
+  - Elliptical galaxies (no dark matter rotation curve): should NOT show transition at d*
+  - High-surface-brightness spirals: baryonic dominated — cavity mode small correction
+  - Galaxy clusters (Bullet Cluster): dark matter separated from baryons in merger —
+    test whether the cavity mode prescription separates correctly
+
+NOTE: This is the most striking paper in the set. If the transition radius
+clusters at d* = 0.24600 across 175 independent galaxies, that is a
+zero-free-parameter prediction that would end the dark matter particle search.
+The cavity already contains the mass. The cavity IS the dark matter.
+
 ================================================================================
 DATA PAPER PRIORITY ORDER
 ================================================================================
 
 Highest impact / easiest to execute first:
 
-  D3 — Zipf-prime test (Leipzig corpora, straightforward statistics, publishable fast)
-  D7 — Schumann zero-parameter prediction (clean, no free parameters, striking result)
-  D9 — Prime gaps as Chladni spacing (builds on Montgomery-Dyson, extend the story)
-  D4 — Cross-language Riemann zero alignment (UDHR + SemanticWordEngine, visual)
-  D1 — d* as natural unit (requires LMFDB + prime gaps + semantic field together)
-  D2 — BAO → OMEGA_ZS (DESI DR1, needs careful normalization argument)
-  D6 — BAO to mass gap spectral distance (connects D2 to particle physics)
-  D5 — CMB acoustic peaks (big claim, needs careful λ derivation first)
-  D8 — Navier-Stokes CR residual (needs pyJHTDB setup, most technical)
+  D3  — Zipf-prime test (Leipzig corpora, straightforward statistics, publishable fast)
+  D7  — Schumann zero-parameter prediction (clean, no free parameters, striking result)
+  D9  — Prime gaps as Chladni spacing (builds on Montgomery-Dyson, extend the story)
+  D13 — Dark matter as galactic cavity modes (SPARC, high impact, d* transition radius test)
+  D4  — Cross-language Riemann zero alignment (UDHR + SemanticWordEngine, visual)
+  D1  — d* as natural unit (requires LMFDB + prime gaps + semantic field together)
+  D2  — BAO → OMEGA_ZS (DESI DR1, needs careful normalization argument)
+  D6  — BAO to mass gap spectral distance (connects D2 to particle physics)
+  D5  — CMB acoustic peaks (big claim, needs careful λ derivation first)
+  D8  — Navier-Stokes CR residual (needs pyJHTDB setup, most technical)
   D11 — Neural oscillation ratios (needs λ calibration from first principles)
   D10 — LIGO ringdown (speculative, needs σ=2 eigenvalue derivation first)
   D12 — d* gap constant (requires all other datasets first for cross-validation)
