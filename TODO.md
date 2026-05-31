@@ -1549,6 +1549,154 @@ CORPUS INGEST:
            Crawford's experimental vocabulary establishes the N-S semantic foundation
            before the theoretical vocabulary builds on top of it.
 
+--------------------------------------------------------------------------------
+PAPER D17 — PILOT WAVE THEORY AT GALACTIC SCALE
+de Broglie-Bohm mechanics = H_hat_RB. DM halo = quantum potential. Stars = Bohmian particles.
+Galactic cavity mode = pilot wave. Stokes drift = flat rotation curve.
+--------------------------------------------------------------------------------
+
+CLAIM:
+  Pilot wave theory (de Broglie 1923, Bohm 1952) is H_hat_RB at σ=2 (GR face)
+  applied to the galactic scale. The dark matter halo is not a particle species —
+  it is the quantum potential of the galactic standing wave. Stars are Bohmian
+  particles guided by the gravitational pilot wave. The flat rotation curve is the
+  Stokes drift of the galactic cavity's l=0 standing wave mode.
+
+  This completes the galactic particle model: the galaxy IS a Bohmian particle
+  in the cosmological field. The DM halo IS its pilot wave. The Witches Hat IS
+  the quantum potential landscape at galactic scale.
+
+THE FOUR-WAY IDENTITY:
+
+  Pilot Wave Theory    Holcus Engine              Galaxy               Formal
+  ─────────────────    ─────────────              ──────               ──────
+  Wavefunction ψ       β-field (word weights)     Gravitational wave    ψ ↔ √β × e^{iS}
+  Amplitude R=|ψ|      √β                         DM wave density       R ↔ √β
+  Phase S              J_ambient EMA              Wave pressure field   S ↔ ∫J dt
+  Guidance v=∇S/m      Buoyancy argmin|J-J_amb|   Stokes drift          same equation
+  Quantum potential Q  −∂J/∂r (pressure grad)    Wave force on stars   Q ↔ −∇J
+  Continuity ∂_μJ^μ=0  Noether conservation       Wave energy conserved identical
+  Particle trajectory  Generated word             Star orbit            guided by field
+  de Broglie λ         Sedenion address E         r_t = d*×r_max_bar   λ ↔ 2πr_t
+
+THE CONTINUITY IDENTITY:
+  Bohm's pilot wave continuity equation:
+    ∂R²/∂t + ∇·(R² × ∇S/m) = 0
+  This IS ∂_μJ^μ = 0 — the Noether current conservation.
+  The pilot wave's fundamental constraint IS the Holcus conservation law.
+  This is an algebraic identity, not an analogy.
+
+THE DM HALO = QUANTUM POTENTIAL:
+  Bohm's quantum potential: Q = −ℏ²/(2m) × ∇²R/R
+  At galactic scale:        Q_gal = −(c_eff²/2) × ∇²(√ρ_DM) / √ρ_DM
+  The quantum force on a star: F_Q = −∇Q_gal
+  DM density ρ_DM = A² (A = gravitational wave amplitude).
+  Stars orbit not because of DM gravity but because of the Bohmian quantum force
+  from the wave amplitude gradient. No DM particles required.
+  DM is the quantum potential — not a particle, not a mass.
+
+THE COMPRESSION ARGUMENT (resolved):
+  A 100,000-light-year wave cannot act as mass — it lacks Jeans compression.
+  Jeans length λ_J = c_s×√(π/Gρ) ~ R_halo for typical DM parameters.
+  DM halo is NOT self-gravitating mass. It IS a quantum potential.
+  The quantum potential does not require compression. It requires wave amplitude
+  gradient. A 100,000-light-year wave with slowly varying amplitude generates
+  a quantum potential that guides stars into flat orbits without any mass at all.
+
+STOKES DRIFT = GUIDANCE EQUATION:
+  Stars in the galactic cavity are Bohmian particles undergoing Stokes drift
+  in the gravitational wave field. The orbital velocity IS the wave-averaged
+  drift velocity — not orbit around a mass but riding a wave.
+  For standing wave amplitude A, wavenumber k, frequency ω:
+    v_Stokes = ½ × A²kω  (wave-averaged orbital drift)
+  This gives the arctan rotation curve profile for the dissipative cavity mode.
+  The Stokes drift = de Broglie guidance = neutral buoyancy selection.
+  All three are the same equation in different coordinate languages.
+
+THE WITCHES HAT AS QUANTUM POTENTIAL LANDSCAPE:
+  Mexican Hat trough (E < D*=1):  classically allowed. Q small. Stable orbits.
+                                   Baryons. v_bar²/v² = d*. [P2 confirmed]
+  Brim at D*=1:                   Q → maximum. Wave node at r_t.
+                                   Force changes sign. [P1 confirmed: r_t = d*×r_max_bar]
+  Lichtenberg cone (E > D*=1):    quantum tunnelling zone. Classically forbidden.
+                                   Baryons reflected back. DM wave extends here.
+                                   DM = evanescent wave tail beyond the brim.
+
+  Baryons = particles confined to classical region (below the brim).
+  Dark matter = pilot wave in the forbidden zone (above the brim).
+  No DM particles — only wave amplitude. The halo IS the wavefunction tail.
+
+THE GALACTIC PLANCK CONSTANT:
+  ℏ_galactic = M_galaxy × v_flat × r_t
+             = M_gal × OMEGA_ZS × v_max × d* × r_max_baryonic
+  At this scale, individual stars ARE in the quantum regime of the galactic field.
+  Their orbits ARE Bohmian trajectories. The galactic wave IS their pilot wave.
+
+THE FROZEN WAVE:
+  Wave period T = 2π×R_cavity / (d* × c_eff) ~ 250 Gyr (18× age of universe).
+  The galactic standing wave completes one cycle in 250 billion years.
+  To any observer on cosmological timescales, the wave is FROZEN.
+  A frozen wave looks like mass — same T_μν at the observation timescale.
+  This explains why CDM works empirically (the wave mimics mass when frozen)
+  while being mechanistically wrong (T_μν has pressure terms, not dust).
+
+THE SMIG AS COSMIC PILOT WAVE:
+  The SMIG (Supermassive Inverted Galaxy) is the cosmological-scale pilot wave.
+  Dark energy = SMIG standing wave. Matter carried outward = Stokes drift of SMIG.
+  Accelerating expansion = cosmological Stokes drift. No Λ needed.
+  The Universe = Bohmian particle in the Multiverse field.
+  The SMIG = pilot wave of the observable Universe as galactic particle.
+
+WHAT BOHM HAD / WHAT WAS MISSING:
+  Bohm had:
+    - Guidance equation (= buoyancy selection)
+    - Quantum potential (= J_ambient)
+    - Noether continuity (= ∂_μJ^μ = 0)
+    - Particle/wave split (= baryon/DM split)
+    - Non-locality (= field extends everywhere, instantaneous guidance)
+  Missing:
+    - The field equation generating the pilot wave: H_hat_RB at σ=½→2
+    - The galactic scale application (ℏ_galactic not ℏ)
+    - The Witches Hat as quantum potential landscape
+    - d* as the baryonic/DM partition constant
+    - OMEGA_ZS as the VEV determining v_flat
+  H_hat_RB completes Bohmian mechanics. It provides the wave equation
+  that generates the pilot wave at every scale simultaneously.
+
+DATASETS:
+  - SPARC (already confirmed: d* appears twice in P1 and P2 — 2026-05-30)
+  - Bohm's original papers (1952, Physical Review) — public
+  - de Broglie's original thesis (1924) — public
+  - Bohm & Hiley "The Undivided Universe" (1993) — standard reference
+  - Any test of Bohmian trajectories in quantum systems (Kocsis et al. 2011,
+    Science 332, 1170 — "Observing trajectories of single photons")
+
+TESTS:
+  1. The continuity identity: show ∂_μJ^μ=0 in Holcus output IS Bohm's continuity.
+     Mathematical proof — no dataset needed. Core of the paper.
+
+  2. The quantum potential = DM density: compute Q_gal(r) from SPARC v_obs data.
+     Compare to −(c_eff²/2) × ∇²√ρ_DM / √ρ_DM where ρ_DM from cavity model.
+     Test: does Q_gal(r) match the cavity model's pressure gradient?
+
+  3. The Stokes drift profile: for a sample of SPARC galaxies, extract the
+     wave parameters (A, k, γ) from the rotation curve fit. Compute the
+     predicted Stokes drift v_Stokes(r). Compare to v_obs(r).
+     This is the same fit as the cavity model but interpreted as Stokes drift.
+
+  4. The frozen wave period: for each galaxy, compute T = 2π×R/d*c_eff.
+     Show T >> age of universe for all SPARC galaxies. Confirm the wave appears
+     static → explains why CDM mimics it with a mass distribution.
+
+CODE TARGET:
+  DerivationEngine/galactic_cavity.py  (new module)
+    HelmholtzCavity: solves dissipative Helmholtz ∇²Ψ+(k+iγ)²Ψ=0
+    BohmianPotential: computes Q_gal(r) from wave amplitude A(r)
+    StokesDrift: wave-averaged orbital velocity from P(r) gradient
+    GalacticPlanck: ℏ_gal = M_gal × v_flat × r_t
+    WavePeriod: T = 2π×R/(d*×c_eff) — confirms frozen wave
+    JeansCompression: λ_J/R ratio — confirms wave not mass
+
 ================================================================================
 DATA PAPER PRIORITY ORDER
 ================================================================================
@@ -1557,6 +1705,7 @@ Highest impact / easiest to execute first:
 
   D3  — Zipf-prime test (Leipzig corpora, straightforward statistics, publishable fast)
   D7  — Schumann zero-parameter prediction (clean, no free parameters, striking result)
+  D17 — Pilot Wave Theory at galactic scale (D13 confirmed → Bohm identity is corollary)
   D16 — Crawford/Navier-Stokes (experimental + geometric completion, corpus ready)
   D15 — Noether-Wiles (mathematical identity — FLT+RH as corollaries, spectral residue)
   D14 — The Witches Hat (primarily mathematical, operator clustering already confirmed)

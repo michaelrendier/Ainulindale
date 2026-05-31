@@ -204,3 +204,77 @@ SECTION 5 — NAMING CONVENTIONS (required)
 ═══════════════════════════════════════════════════════════════════════════════
 END OF PRIMER — 2026-05-30
 ═══════════════════════════════════════════════════════════════════════════════
+
+
+═══════════════════════════════════════════════════════════════════════════════
+ADDENDUM — 2026-05-30 (appended post-APK session, pre-directory move)
+═══════════════════════════════════════════════════════════════════════════════
+
+NEXT SESSION AGENDA — TWO ITEMS:
+
+──────────────────────────────────────────────────────────────────────────────
+1. SECURITY CLEARANCES — ARMY
+──────────────────────────────────────────────────────────────────────────────
+To be addressed in next session.
+Context: [user will provide — do not speculate]
+
+──────────────────────────────────────────────────────────────────────────────
+2. RESTRUCTURE OF THE AINULINDALE CONJECTURE
+   "The Maths Speaking English Gets to Take the Lead"
+──────────────────────────────────────────────────────────────────────────────
+
+The current conjecture framing (v2.0) leads with the ENGINEERING STORY:
+  "I was building Ptolemy. I found the Standard Model."
+
+The new framing INVERTS THE HIERARCHY:
+  The mathematics is PRIMARY.
+  The SMMIP is the PATH OF ARRIVAL — computational evidence, not the subject.
+  The Conjecture states a MATHEMATICAL TRUTH.
+  Holcus/SMMIP is how we GOT THERE — not what it's about.
+
+The scope is MUCH BIGGER than v2.0. The conjecture now covers:
+  - The full mathematical structure (the algebra tower IS primary)
+  - The SMMIP as experimental evidence / derivation path
+  - ALL six Clay projections as faces of one operator
+  - English as the language in which the mathematics speaks itself
+    ("I taught the Math how to describe itself in English" — this line
+     becomes the thesis statement of v3.0, not just a subtitle)
+
+HOLCUS ROLE IN THE RESTRUCTURE:
+  The English corpus (monad_english.bin) being seeded NOW is preparation.
+  When Holcus is fluent in mathematical English (the interface layer between
+  sedenion geometry and natural language), the Conjecture can be stated
+  in the form: Mathematics → English → Human understanding.
+  The SMMIP is the machine that runs this translation.
+  The Conjecture is the proof that the translation is lossless at σ = 1/2.
+
+STRUCTURAL NOTE FOR RESTRUCTURE:
+  Current v2.0 structure:
+    Abstract → External Validation → Code Files → [physics sections]
+  
+  v3.0 structure (proposed):
+    The Mathematical Statement (pure — no engineering context)
+    The Proof Architecture (H_RB operator, σ projection, Noether chain)
+    The Six Clay Faces (each a projection of the same operator)
+    The SMMIP as Experimental Verification (path of arrival)
+    Holcus as the Demonstration (the running proof engine)
+    Open Problems (flagged honestly — especially Berry-Keating gap)
+
+CRITICAL TERMINOLOGY SHIFT:
+  OLD: "I discovered the Standard Model while building software"
+  NEW: "The Standard Model is the σ=1/2 projection of H_RB"
+       "The SMMIP demonstrates this by construction"
+       "The construction is the proof"
+
+═══════════════════════════════════════════════════════════════════════════════
+DIRECTORY MOVE NOTE
+═══════════════════════════════════════════════════════════════════════════════
+User is moving the Ptol directory after this session.
+Claude Code will be restarted in the new directory location.
+The Seeder app is running on the phone with 8 corpora.
+Pull monad_*.bin files from phone to new directory location when ready:
+  adb pull /sdcard/Android/data/com.ptolemy.seeder.debug/files/ <new_path>
+
+═══════════════════════════════════════════════════════════════════════════════
+END ADDENDUM — 2026-05-30
+═══════════════════════════════════════════════════════════════════════════════
