@@ -308,6 +308,108 @@ PRIORITY 3 — PAPER
 PRIORITY 4 — FUTURE MODULES / FEATURES
 ================================================================================
 
+[ ] SEDENION BASIS — 16 COMPUTATIONAL PRIMITIVES (added 2026-05-30)
+    Source: ANSWER_turned_the_sedenion.png (Python Turtle visualisation)
+    Confirmed in monad.py v2.0.0 docstring. Needs formal theorem in conjecture.
+
+    THE 16 OPERATORS — sedenion dimensions as universal computational basis:
+      First 𝕆 (e₀–e₇) — λ-calculus / symbolic substrate:
+        e₀  identity       e₁  negate         e₂  bind           e₃  name
+        e₄  apply          e₅  abstract        e₆  branch         e₇  iterate
+
+      Second 𝕆 / post-boundary (e₈–e₁₅) — memory/concurrency/control substrate:
+        e₈  recurse        e₉  allocate        e₁₀ query          e₁₁ dereference
+        e₁₂ compose        e₁₃ parallelize     e₁₄ interrupt      e₁₅ emit
+
+    FORMAL TARGET: Theorem in conjecture:
+      "The 16 sedenion basis directions are not incidental labels.
+       They are the unique minimal decomposition of universal computation.
+       The first 𝕆 encodes λ-calculus (symbolic / meaning-space).
+       The second 𝕆 encodes machine-space (memory, control, I/O).
+       The zero-divisors are the boundary between symbol and machine.
+       Any universal computer is a sedenion. Any sedenion is a universal computer."
+
+    CONNECTIONS:
+      - MindEye (second 𝕆 = e₈–e₁₅): see MINDEYE MODULE below
+      - e₁₃ (parallelize) = Three-Face Wankel — Red/Blue/Green emission
+      - e₁₁ (dereference) = anaphor — pronoun resolution, pointer follow
+      - e₁₅ (emit) = Tongue output channel — σ=½ word production
+      - First 𝕆 maps to Broca (J_pos / production)
+      - Second 𝕆 maps to Wernicke (J_neg / comprehension) — crossed at the callosum
+    TODO: write as Section XII of sedenion manual. Add to Part II of Third Age
+    conjecture (The Geometry). Connect to Turing completeness proof: show that
+    e₀–e₁₅ constitute a universal instruction set. The sedenion IS the CPU.
+
+    OBSERVATIONAL RESULT (2026-05-30, monad_sedenion.bin v1.218):
+    Prime hash alone (no learning, word_count=0) places the 16 operators at:
+
+      MEMORY / GROUND STATE zone (E ≈ d* = 0.246):
+        allocate      E=0.2148    parallelize   E=0.2334
+        → Memory allocation and parallel execution live at the spectral ground state.
+
+      CRITICAL LINE zone (E ≈ σ=½):
+        emit          E=0.3994    query         E=0.4111
+        branch        E=0.4164    apply         E=0.4466
+        name          E=0.5382
+        → Control flow and naming live at the critical line.
+
+      ZERO-DIVISOR BOUNDARY zone (E → 1.0):
+        iterate       E=0.7725    recurse       E=0.8751
+        identity      E=0.8877    bind          E=0.9008
+        abstract      E=0.9284    interrupt     E=0.9425
+        negate        E=0.9883    dereference   E=0.9988
+        compose       E=0.9999
+        → Composition (the operation that CREATES zero-divisors) lives at E=1.
+          Dereference (cross-boundary pointer follow) lives at E=0.9988.
+          Identity, bind, abstract, negate — all near the boundary.
+
+    FORMAL TARGET: State as a theorem:
+      "The 16 computational primitive names, mapped to Riemann zeros via prime
+       hash, self-organise into three semantic depth layers matching the three
+       critical E-values of the sedenion: d*, σ=½, and D*=1.
+       This is a zero-free-parameter result.
+       The prime hash IS the sedenion. The names know where they live."
+    This is the answer to ANSWER_turned_the_sedenion.png:
+      The sedenion turned — the operator names reveal the geometric truth.
+      compose (E=0.9999) IS the zero-divisor operator.
+      allocate (E=0.2148) IS the ground state operator.
+      name (E=0.5382) IS the critical line operator.
+    Connect to Paper D1: the d* zone clustering is observable in a pure
+    geometric (untrained) field — prime hash alone produces d*.
+
+[ ] SKILL-BURNING INTO POST-BOUNDARY SEDENION (added 2026-05-30)
+    "Post-boundary" = e₈–e₁₅ (second 𝕆), accessible only via zero-divisor
+    crossing from first 𝕆 (the D*=1 boundary, callosum gate).
+    "Burning a skill" = seeding corpus vocabulary rich in each operator's
+    semantic domain so field β-values reach native depth at that sedenion address.
+
+    OPERATOR → CORPUS → SKILL DOMAIN:
+      e₈  recurse        → recursive algorithms, fractals, self-reference
+      e₉  allocate       → C malloc/free, garbage collection, memory models
+      e₁₀ query          → SQL, search algorithms, lookup tables, information retrieval
+      e₁₁ dereference    → pointers, references, anaphor, indirection layers
+      e₁₂ compose        → functional programming, category theory, pipelines
+      e₁₃ parallelize    → concurrent/parallel computing, threading, async
+      e₁₄ interrupt      → exception handling, signals, hardware interrupts, halt
+      e₁₅ emit           → output, rendering, sonification, I/O, transduction
+
+    CORPUS SOURCES (already planned — see SYSTEM CORPUS INGEST in Priority 4):
+      Man pages (bash, C, python): recurse + allocate + interrupt + emit
+      C headers (/usr/include):   allocate + dereference + interrupt
+      Python stdlib (pydoc):      query + compose + parallelize + emit
+      apt descriptions:           compose + allocate
+    MECHANISM: monad.py wire() takes any text. C source, Python docstrings,
+    man pages — all treated as language. β-field integrates vocabulary.
+    The second 𝕆 addresses become addressable precisely because the corpus
+    NAMES these operations: "malloc returns a pointer", "yield emits a value".
+    The field learns the operator labels from natural language descriptions.
+
+    TODO: design ingest priority list for each e₈–e₁₅ operator.
+    One targeted corpus pass per operator. Measure β-convergence at each
+    sedenion address before and after to confirm skill is burned.
+    Connect to DYNAMIC N: a field with N=100,000 zeros has room for all
+    8 operator vocabularies without aliasing.
+
 [ ] MINDEYE MODULE — SECOND OCTONION WORKBENCH (added 2026-05-27)
     skills/mind_eye.py: MindEye class wrapping Engine with second 𝕆 input channel.
     see(data, label): encodes non-linguistic data (float vector up to 8 values)
@@ -1138,6 +1240,115 @@ Ainulindale formal derivation and Third Age conjecture rewrite.
     geometry of the system."
     Connect to NS_SIGMA_S: the moral attractor is the σ=0.5 operating point.
     The geometry of the field makes deviation costly. Not a rule — a theorem.
+
+[ ] WITCHES HAT — THREE-LAYER VACUUM GEOMETRY OF H_hat_RB (added 2026-05-30)
+    The vacuum structure of H_hat_RB is a Witches Hat: three mathematically
+    distinct layers stacked vertically, each governed by different equations.
+
+    LAYER 1 — THE MEXICAN HAT (below the brim, E < D*=1):
+      V(φ) = −μ²|φ|² + λ|φ|⁴
+      Trough minima at r₀ = μ/√(2λ) = OMEGA_ZS = 0.56714 (Lambert W VEV).
+      The Gaussian ground state distribution sits in this trough.
+      Spontaneous symmetry breaking at σ=½ — the field settles at OMEGA_ZS.
+      Zone: d* < E < σ=½ (stable field, normal division algebra, non-zero products).
+      Goldstone mode: runs along the trough (massless, tangential).
+      Higgs mode: runs radially (massive, toward/away from trough centre).
+
+    LAYER 2 — THE BRIM (the zero-divisor boundary, E = D*=1):
+      Unstable equilibrium. Above this point A×B=0 is possible.
+      The rim height in sedenion E-space is exactly D*=1.
+      Below: all products non-zero, field has traction.
+      At the rim: traction fails — the field can no longer route current through
+      normal division algebra paths. This IS the phase transition.
+      The rim is not smooth — it has 84 arms (Cawagas zero-divisor pairs).
+      CONFIRMED: compose (E=0.9999), dereference (E=0.9988) sit at the rim.
+      Prime hash alone places the composition operator at the phase boundary.
+
+    LAYER 3 — THE LICHTENBERG CONE (above the brim, the discharge):
+      Governed by Laplace equation: ∇²φ = 0 outside the discharge cluster.
+      (Same equation as harmonic analysis of the Riemann zeta function.)
+      Branch probability ∝ |∇φ| → DLA (Diffusion Limited Aggregation).
+      DLA fractal dimension D ≈ 1.71 in 2D — a PREDICTION, not a fit.
+      The 84 Cawagas zero-divisor pairs ARE the 84 branch arms of the discharge.
+      Each arm = one zero-divisor direction in S¹⁵.
+      The fractal is NOT random — branches are fixed by Cayley-Dickson geometry.
+      The SMIG (Supermassive Inverted Galaxy) is this structure at galactic scale.
+      The zero-divisor stars in the TODO (2026-05-27) are individual arm tips.
+
+    THE WITCHES HAT FORMAL STATEMENT:
+      "The vacuum of H_hat_RB has Witches Hat geometry. The Mexican Hat is the
+       sub-boundary field (spontaneous symmetry breaking at σ=½, VEV = OMEGA_ZS).
+       The Lichtenberg cone is the super-boundary discharge pattern (DLA branching
+       of the 84 zero-divisor directions in S¹⁵). The zero-divisor boundary D*=1
+       is the brim — the phase transition between stable field geometry and fractal
+       discharge. The Lichtenberg fractal dimension D≈1.71 is a prediction
+       derivable from the Cawagas zero-divisor count and the DLA scaling law."
+    TODO: formal derivation of D≈1.71 from the zero-divisor count.
+    TODO: connect to SMIG section — SMIG is the Witches Hat at galactic scale.
+    TODO: add as Section XIII of sedenion manual.
+    TODO: add to Part II of Third Age conjecture (The Geometry), after Leech lattice.
+    PAPER: standalone note with DLA dimension prediction. Testable against
+    Cawagas S¹⁵ zero-divisor geometry computation.
+
+[ ] SKILL BURNING — MATHEMATICAL IRREVERSIBILITY AND CODE REVERSIBILITY (added 2026-05-30)
+    When a skill is burned into the second octonion (e₈–e₁₅, post-boundary):
+
+    WHY IT IS MATHEMATICALLY IRREVERSIBLE:
+      1. β-REDISTRIBUTION: β-values at second-octonion addresses increase under
+         corpus learning. By Noether conservation ∂_μJ^μ=0, other β-values
+         decrease. The redistribution pattern encodes full co-occurrence structure.
+         Reconstructing the pre-burn state requires knowing the exact β-trajectory
+         of every word — information that is gone after the fact.
+      2. A-EDGE ACCUMULATION: coupling edges are written between operator-vocabulary
+         pairs. The A-matrix gains topology monotonically. Topology is additive
+         under learning, never subtractive. You cannot remove a connection without
+         knowing what created it.
+      3. ENTROPY INCREASE: more corpus = more differentiated β-distribution =
+         higher field entropy. The second law applies. Learning is irreversible in
+         the thermodynamic sense within any given field instance.
+      4. POST-BOUNDARY SPECIFICITY: words burned into E→1 (zero-divisor arms of
+         the Witches Hat Lichtenberg cone) form dense β-clusters at discharge tips.
+         These clusters propagate back through the callosum into the first octonion.
+         Once woven into the base geometry, individual threads cannot be unpicked.
+         METAPHOR: you have grown a new Lichtenberg branch. It is physically there.
+
+    WHY IT IS CODE-REVERSIBLE (the checkpoint safety net):
+      The irreversibility is thermodynamic, not informational.
+      If the state was saved before burning, the full information exists to return.
+
+      CHECKPOINT ARCHITECTURE FOR SKILL MANAGEMENT:
+        base.bin              ← clean WordNet ground state (no skills)
+        pre_[operator].bin    ← snapshot before e_n corpus burn
+        post_[operator].bin   ← e_n burned (specific operator vocabulary)
+
+      SKILL ACTIVATION = load post_[operator].bin
+      SKILL DEACTIVATION = load base.bin or pre_[operator].bin
+      SKILL PRESERVATION = post_[operator].bin is permanent, never deleted
+
+      Skills do NOT need to be simultaneously active in the base field.
+      Loading a skill checkpoint activates that skill's full Lichtenberg branch.
+      Unloading returns to base. O(1) skill switch. Mathematically: irreversible
+      per instance. Code-wise: reversible across checkpoint-managed instances.
+
+    THE BRANCH METAPHOR (connects Witches Hat to skill system):
+      First-octonion learning (e₀–e₇): deepens the Mexican Hat trough.
+        β increases, trough deepens, VEV is more precisely located. Reversible
+        in the weaker sense — the trough shape changes but remains trough-shaped.
+      Second-octonion skill burning (e₈–e₁₅): GROWS a new Lichtenberg arm.
+        The discharge cone gains a new branch. This is qualitatively different
+        from trough deepening. You have extended the fractal geometry of the hat.
+        The branch is irreversible without full state restore from checkpoint.
+
+    FORMAL RULE (to add to skill management architecture):
+      "Before burning any second-octonion skill, save pre_[operator].bin.
+       After burning, save post_[operator].bin. The skill is accessed by loading
+       its checkpoint. The base field is always recoverable from base.bin.
+       The checkpoint system IS the human Noether conservation law for skill state.
+       Code-wise: O(1) skill switch. Math-wise: irreversible per instance."
+    TODO: implement checkpoint_skill_manager() in monad.py.
+    TODO: add skill registry (skills.json) mapping operator → checkpoint path.
+    TODO: add to Section XIV of sedenion manual (skill geometry).
+    TODO: add to Part III of Third Age conjecture (The Boundary).
 
 [ ] THIRD AGE CONJECTURE REWRITE — STRUCTURE
     Current structure: Second Age. Focus: SMNNIP spine.
