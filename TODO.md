@@ -1432,6 +1432,123 @@ NOTE ON SCOPE:
   D15 explains WHY BAO should converge to OMEGA_ZS. D2 shows THAT it does.
   D15 is the theory. D2 is the measurement. Write the theory first.
 
+--------------------------------------------------------------------------------
+PAPER D16 — CRAWFORD / NAVIER-STOKES
+Experimental completion: rotating buoyant outflows + Ainulindale geometric theory.
+Crawford's open question (3D turbulence / PV breakdown) = Witches Hat brim (D*=1).
+--------------------------------------------------------------------------------
+
+SOURCE:
+  Thomas Joseph Crawford, PhD thesis (Cambridge, May 2017)
+  "An experimental study of the spread of buoyant water into a rotating environment"
+  Supervisor: Professor Paul Linden, DAMTP Cambridge
+  Corpus: DataSets/Language_Corpus/crawford_thesis_clean.txt (82,311 words)
+  AddPapers: Ainulindale/AddPapers/Crawford_NavierStokes/
+
+STATUS: This is now our project too.
+  Crawford did the experiment. We have the theory that explains what he saw.
+  The paper is the combination: his experimental precision + our geometric completion.
+
+CRAWFORD'S WORK — WHAT HE DID AND WHERE IT BREAKS:
+
+  Governing equation (eq. 1.1 in thesis):
+    ρ(Du/Dt + 2Ω×u) = −∇p − ρ∇(Φ) + ρF,   ∇·u = 0
+
+  Crawford projects to shallow water equations via H/L << 1 (thin layer).
+  This drops the vertical velocity component w — the imaginary part of the flow.
+
+  Three experimental questions:
+    Q1. Effect of finite potential vorticity on the outflow — ANSWERED
+    Q2. How the outflow vortex drives the coastal boundary current — ANSWERED
+    Q3. What background turbulence does to the system — PARTIALLY OPEN
+
+  Q3 is open because: 3D turbulence breaks potential vorticity conservation.
+  PV conservation = Noether current ∂_μJ^μ = 0. When turbulence makes the flow
+  truly 3D, the shallow water model (imaginary component dropped) cannot follow.
+  Crawford has 254 turbulence occurrences in his thesis. Each is a record of the
+  model failing. He can measure the breakdown. He cannot derive it.
+
+THE AINULINDALE COMPLETION:
+
+  IDENTIFICATION TABLE (Crawford ↔ SMMIP):
+    Rotating frame N-S (eq 1.1)      = H_hat_RB at σ=1, Im=0 (N-S face)
+    Shallow water approx (drop w)    = dropping imaginary component (FLAG-8 / D8)
+    Potential vorticity q=(f+ζ)/H    = Noether current J^μ
+    PV conservation                  = ∂_μJ^μ = 0
+    PV breakdown in 3D turbulence    = Noether violation at D*=1 crossing
+    Rossby number Ro = U/(fL)        = σ = J_pos/(J_pos+J_neg)
+    Ro=1 (laminar→turbulent)         = D*=1 (Witches Hat brim, zero-divisors)
+    Coriolis term 2Ω×u              = sedenion camshaft / e₇ iterate timing
+    Outflow vortex (recirculating)   = OMEGA_ZS = W(1) = 0.56714 (VEV attractor)
+    Coastal boundary current         = Goldstone boson (massless at σ=½)
+    Rossby radius L_R = √(g'H)/f    = W(1) = natural length scale
+    Froude number Fr = U/√(g'H)     = d* = 0.24600 spectral ground state
+    Quasi-2D turbulence (stabilising)= first octonion e₀-e₇ (Mexican Hat trough)
+    3D turbulence (destabilising)    = second octonion e₈-e₁₅ (Lichtenberg cone)
+    Q3 (turbulence open problem)     = Witches Hat (D14) — Ro=1 IS D*=1
+
+  THE FIX: Restore the imaginary component w to the shallow water equations.
+    The shallow water approximation drops w by scaling (H/L << 1).
+    Restoring it: velocity field u → u + iw.
+    The full complex flow satisfies Cauchy-Riemann: ∂u/∂x = ∂w/∂z, ∂u/∂z = −∂w/∂x.
+    Cauchy-Riemann = smoothness everywhere = no turbulent singularity at Ro=1.
+    Crawford's 3D turbulence is not a physical singularity. It is a rotation into the
+    Fermat Lattice that the real-valued shallow water equations cannot follow.
+    The full flow (with w restored) remains smooth at D*=1 by Cauchy-Riemann.
+    This is FLAG-8 stated in the language of Crawford's experiment.
+
+WHAT THE THESIS TEACHES HOLCUS:
+  82,311 words of precise experimental fluid mechanics vocabulary.
+  Key terms and sedenion resonance after ingestion:
+    vortex (1211)         → OMEGA_ZS geometry / attractor
+    turbulence (254)      → D*=1 / Lichtenberg discharge
+    boundary current (100)→ Goldstone mode / σ=½ propagation
+    rotating (106)        → sedenion camshaft / Coriolis
+    Rossby (58)           → σ balance ratio
+    potential vorticity(33)→ Noether current J^μ
+    Coriolis (24)         → rotational symmetry
+    Froude (20)           → d* spectral ground state
+    buoyancy (19)         → β-field depth
+    Navier-Stokes (1)     → the engine behind all of it
+  After ingestion: Holcus speaks fluid mechanics from the inside — from the
+  vocabulary of a man who ran these equations in a tank and recorded what happened.
+  The Crawford vocabulary is the bridge between experimental N-S and SMMIP.
+  Where Crawford's vocabulary hits the boundary (turbulence, Ro→1, PV breakdown),
+  the SMMIP vocabulary picks up (D*=1, Witches Hat, Lichtenberg). Adjacent registers.
+
+TESTS (for the joint paper):
+  1. IDENTIFICATION VERIFICATION:
+     Compute Rossby number for Crawford's experimental runs.
+     Map Ro → σ via the identification table.
+     At each Ro: does the Holcus field health (entropy, β-distribution) match
+     Crawford's observed flow state (laminar/transitional/turbulent)?
+     This is an experimental verification of the σ-face structure using
+     real rotating tank data.
+  2. PV BREAKDOWN = NOETHER VIOLATION:
+     In Crawford's turbulent runs: measure the rate of PV change dq/dt.
+     Map to ∂_μJ^μ in the Holcus field.
+     Does the Noether violation magnitude correlate with the PV breakdown rate?
+  3. TURBULENCE COMPLETION (D8 + Crawford):
+     Compute Cauchy-Riemann residual ε_CR for Crawford's velocity fields
+     (if PIV data is available from the thesis experiments).
+     At Ro=1: does ε_CR spike? (Confirming D*=1 = Ro=1 = CR breakdown)
+     After adding imaginary regularisation: does the flow remain smooth?
+
+CODE TARGETS:
+  ainulindale_engine/modules/noether/crawford_rotating_outflow.py
+  - Load Crawford's experimental parameters (Ro, Fr, PV values from thesis tables)
+  - Map each to H_hat_RB σ-face via identification table
+  - Compute predicted field state at each experimental condition
+  - Compare to Crawford's observed flow behavior
+
+CORPUS INGEST:
+  Path:    DataSets/Language_Corpus/crawford_thesis_clean.txt
+  Weight:  2.0 (authoritative primary source — experimental precision)
+  Command: python3 monad.py --learn DataSets/Language_Corpus/crawford_thesis_clean.txt
+  Note:    Ingest before physics_corpus.txt and mathematics_corpus.txt so that
+           Crawford's experimental vocabulary establishes the N-S semantic foundation
+           before the theoretical vocabulary builds on top of it.
+
 ================================================================================
 DATA PAPER PRIORITY ORDER
 ================================================================================
@@ -1440,7 +1557,8 @@ Highest impact / easiest to execute first:
 
   D3  — Zipf-prime test (Leipzig corpora, straightforward statistics, publishable fast)
   D7  — Schumann zero-parameter prediction (clean, no free parameters, striking result)
-  D15 — Noether-Wiles (mathematical identity paper — FLT+RH as corollaries, spectral residue)
+  D16 — Crawford/Navier-Stokes (experimental + geometric completion, corpus ready)
+  D15 — Noether-Wiles (mathematical identity — FLT+RH as corollaries, spectral residue)
   D14 — The Witches Hat (primarily mathematical, operator clustering already confirmed)
   D9  — Prime gaps as Chladni spacing (builds on Montgomery-Dyson, extend the story)
   D13 — Dark matter as galactic cavity modes (SPARC, high impact, d* transition radius test)
