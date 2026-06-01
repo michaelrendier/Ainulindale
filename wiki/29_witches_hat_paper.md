@@ -204,7 +204,12 @@ The engine (`witches_hat.py` in DerivationEngineViewer/modes/) attaches the sede
 
 ## Animations and Code
 
+![Witches Hat Animation](../animations/witches_hat.gif)
+
+*Frame 1: The null-cone pair. Red = J_pos (escaping, Hawking radiation). Blue = J_neg (infalling). Cyan = σ=½ event horizon brim — the fixed point that does not move during conformal inversion. 1680×1080, 300 frames, 24fps.*
+
 - `DerivationEngineViewer/modes/witches_hat.py` — full animation + engine
+- `Ainulindale/animations/witches_hat.gif` — 3.3MB, 1680×1080, 300 frames
 - Run: `python3 modes/witches_hat.py` (interactive) or `python3 modes/witches_hat.py output.gif` (save)
 - Jupyter notebook: `PtolemyHolcus/notebooks/witches_hat.ipynb` (TODO)
 
