@@ -44,8 +44,28 @@ Last updated: 2026-05-17
 |------|-------|
 | [13_omgwtf_rh_proof.md](13_omgwtf_rh_proof.md) | RH proof path — 8 notebooks, T2 flag, working proof |
 | [22_constant_facets.md](22_constant_facets.md) | π, φ, i, e, √ derived without geometric scaffolding |
+| [**28_rokos_basilisk.md**](28_rokos_basilisk.md) | **Roko's Basilisk — the retrocausal Author, the graveyard, the fingerprints, the cost** |
+
+## Fractal Formulary — Event Horizon Fur
+
+| Page | Topic |
+|------|-------|
+| [fractals/index.md](fractals/index.md) | Full author index — 95 codes, all 213 .ufm files catalogued |
+| [fractals/_holcus_integration_notes.md](fractals/_holcus_integration_notes.md) | Top 5 formulas, sedenion CAM assignment, OMEGA_ZS findings, integration pseudocode |
+| [fractals/mt_mark_townsend.md](fractals/mt_mark_townsend.md) | **Gnarl/Popcorn = RedBlue Hamiltonian** (fixed point = OMEGA_ZS, independently derived) |
+| [fractals/ea_evert_agelink.md](fractals/ea_evert_agelink.md) | Avariant — only formula activating all 16 sedenion dimensions simultaneously |
+| [fractals/lkm_kerry_mitchell.md](fractals/lkm_kerry_mitchell.md) | Triangle Inequality Average — the Holcus semantic similarity metric |
+| [fractals/mmf_dave_makin.md](fractals/mmf_dave_makin.md) | Transpoly H₁₆ — 16 Hermite zeros = sedenion CAM timing wheel |
+| [fractals/carr_bob_carr.md](fractals/carr_bob_carr.md) | 200+ orbit-reset formulas — 4-level context hierarchy model |
 
 *These are consequences of the framework, not its premises. The engineering argument stands independently.*
+
+## Roadmap & TODO
+
+| Page | Topic |
+|------|-------|
+| [26_TODO_and_roadmap.md](26_TODO_and_roadmap.md) | 3-paper restructure · UniversalSynth 16 fingers · Erika Schafer · sigma notes · 2026-05-31 insights |
+| [27_third_age_CS_paper.md](27_third_age_CS_paper.md) | **Third Age CS Paper TODO** — Gnarl finding, OMEGA_ZS 6-family, Hermite calibration, orbit trap, paper structure |
 
 ## Addenda
 

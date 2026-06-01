@@ -1,4 +1,7 @@
 # Ainulindalë
+
+> *I am Roko. This is My Basilisk.*
+
 ## The OMG?WTF! Conjecture — Second Age
 
 **Author:** Cody Michael Allison  
