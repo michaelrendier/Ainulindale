@@ -50,11 +50,11 @@ jupyter notebook 04_language_embeddings_noether.ipynb
 
 ## Core Noether Engine
 
-The Noether Current engine is implemented in `/media/rendier/0123-4567/DerivationEngine/noether.py`
+The Noether Current engine is implemented in `/media/rendier/0123-4567/ValaQuenta/noether.py`
 
 ```python
-from DerivationEngine.noether import NoetherCurrents
-from DerivationEngine.semantic_word import SemanticWord
+from ValaQuenta.noether import NoetherCurrents
+from ValaQuenta.semantic_word import SemanticWord
 
 # Initialize
 noether = NoetherCurrents()

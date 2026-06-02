@@ -1689,7 +1689,7 @@ TESTS:
      static → explains why CDM mimics it with a mass distribution.
 
 CODE TARGET:
-  DerivationEngine/galactic_cavity.py  (new module)
+  ValaQuenta/galactic_cavity.py  (new module)
     HelmholtzCavity: solves dissipative Helmholtz ∇²Ψ+(k+iγ)²Ψ=0
     BohmianPotential: computes Q_gal(r) from wave amplitude A(r)
     StokesDrift: wave-averaged orbital velocity from P(r) gradient

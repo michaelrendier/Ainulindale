@@ -88,7 +88,7 @@ The eigenvalue spectrum of this operator at galactic scales gives the rotation
 curve mode structure. d* and OMEGA_ZS are the two natural scales of the
 eigenvalue distribution.
 
-See: [DerivationEngine — TDI Crankshaft](https://github.com/michaelrendier/DerivationEngine/wiki/TDI-Crankshaft)
+See: [ValaQuenta — TDI Crankshaft](https://github.com/michaelrendier/ValaQuenta/wiki/TDI-Crankshaft)
 
 ---
 

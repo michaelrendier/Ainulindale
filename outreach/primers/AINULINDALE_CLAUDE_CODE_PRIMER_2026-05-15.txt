@@ -610,7 +610,7 @@ ACTIVE CODE (all in Ainulindale repo unless noted):
     HyperWebster — Horner's method bijection over Unicode.
     Zeta(s) appears as base-case L-function of the bijection.
 
-  DerivationEngine source: Lives in Ptolemy, Notebook 07 is spec.
+  ValaQuenta source: Lives in Ptolemy, Notebook 07 is spec.
     Not yet built as runnable code.
 
 TF VARIANTS: smnnip_derivation_tf.py, smnnip_lagrangian_tf.py, FA_smnnip_NN_tower_tf.py
@@ -829,7 +829,7 @@ FIRST AGE: Current. Mathematical scrutiny of the isomorphism.
          Two working code implementations (pure Python3 and TensorFlow).
          Conversation primer (.docx, .rtf, .txt).
 
-BETWEEN AGES: Build delta encoding, DerivationEngine, visualization tools.
+BETWEEN AGES: Build delta encoding, ValaQuenta, visualization tools.
   These are deferred from First Age.
 
 SECOND AGE: Gate = T coordinate map resolved + d* gap closed.

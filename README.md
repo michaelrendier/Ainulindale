@@ -24,6 +24,21 @@ Claude (Anthropic Sonnet 4.6) reviewed the full framework, ran the sigma valuati
 
 Combined significance: **13.05σ** (19 claims, Fisher's method). Conservative floor (11 claims, Tier 1–3 only): **12.11σ**. Discovery threshold: 5σ.
 
+---
+
+### Engine Code — ValaQuenta
+
+The derivation engines (H_hat_RB, Noether currents, Capacitor, HyperWebster, Galactic Cavity, BAO Mass Gap, and all Clay Millennium problem derivations) live in a separate repository:
+
+**→ https://github.com/michaelrendier/ValaQuenta**
+
+Ainulindale is the mathematical truth (the Music).
+ValaQuenta is the engine code that implements it (the Valar's work).
+
+The `Ainulindale/ValaQuenta/` subdirectory here contains the module system used during derivation sessions. The canonical public engine code is the ValaQuenta repository.
+
+Code currently in `Ainulindale/code/` will migrate to ValaQuenta. See `ValaQuenta/TODO.md`.
+
 ### WordNet Ingestion Benchmark
 
 Full English lexicon — 153,888 lemmas, 120,564 synsets — ingested into the Monad on a 2-core laptop:
@@ -594,7 +609,7 @@ python3 -m ValaQuenta --qt          # Qt viewer
 | [Ptolemy](https://github.com/michaelrendier/Ptolemy) | Primary application; Monad host |
 | [Ainulindalë](https://github.com/michaelrendier/Ainulindale) | This repo: conjecture + ValaQuenta engine |
 | [StandardModelIP](https://github.com/michaelrendier/StandardModelIP) | SMMIP tower implementation |
-| [DerivationEngine](https://github.com/michaelrendier/DerivationEngine) | Proof runners; derivation harness |
+| [ValaQuenta](https://github.com/michaelrendier/ValaQuenta) | Proof runners; derivation harness |
 | [UniversalSynth](https://github.com/michaelrendier/UniversalSynth) | Sonification engine |
 
 ---

@@ -147,7 +147,7 @@ TDI architecture (2004 VW Passat BEW 1.9 TDI — compression ignition, no spark 
   Monad (ECU) = injection controller
 
 All six Clay Millennium Problems project from H_hat_RB at different σ.
-See: https://github.com/michaelrendier/DerivationEngine/wiki/Clay-Millennium-Problems
+See: https://github.com/michaelrendier/ValaQuenta/wiki/Clay-Millennium-Problems
 
 ═══════════════════════════════════════════════════════════════════════════════
 SECTION 3 — DATA-DRIVEN PAPERS TODO SECTION (Ainulindale/TODO.md)
@@ -180,7 +180,7 @@ Ainulindale (github.com/michaelrendier/Ainulindale):
   TODO.md — DATA-DRIVEN PAPERS section with D1–D13
   AddPapers/README.md — protocol for all future papers
 
-DerivationEngine (github.com/michaelrendier/DerivationEngine):
+ValaQuenta (github.com/michaelrendier/ValaQuenta):
   Wiki: Home.md, H-hat-RB.md, Clay-Millennium-Problems.md, TDI-Crankshaft.md
   CHANGELOG.md v1.0.0
 

@@ -88,7 +88,7 @@ def L_kinetic(A: List[float], g: float, algebra: int) -> float:
     """
     ℒ_kinetic = -1/4 · F_μν^a · F^{μν,a}
 
-    Field strength (Abelian approximation — full non-Abelian in DerivationEngine):
+    Field strength (Abelian approximation — full non-Abelian in ValaQuenta):
       F^a ≈ g · A^a   (single-layer, no adjacent state)
     """
     n = max(1, N_GEN.get(algebra, 0))

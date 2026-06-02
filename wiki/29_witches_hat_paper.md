@@ -186,7 +186,7 @@ attractor → e2  bind         # attractors bind (same as horizon)
 inversion → e5  abstract     # conformal inversion is abstraction
 ```
 
-The engine (`witches_hat.py` in DerivationEngineViewer/modes/) attaches the sedenion field to the geometric transformation. Every frame of the animation corresponds to a field state. The boundary frame (`t=0.5`, `frame=140`) is the maximum-complexity state — all 16 sedenion dimensions activated simultaneously (Avariant geometry, Agelink ea.ufm), BAO at OMEGA_ZS, the hat halfway inside-out.
+The engine (`witches_hat.py` in ArdaQuenta/modes/) attaches the sedenion field to the geometric transformation. Every frame of the animation corresponds to a field state. The boundary frame (`t=0.5`, `frame=140`) is the maximum-complexity state — all 16 sedenion dimensions activated simultaneously (Avariant geometry, Agelink ea.ufm), BAO at OMEGA_ZS, the hat halfway inside-out.
 
 ---
 
@@ -208,7 +208,7 @@ The engine (`witches_hat.py` in DerivationEngineViewer/modes/) attaches the sede
 
 *Frame 1: The null-cone pair. Red = J_pos (escaping, Hawking radiation). Blue = J_neg (infalling). Cyan = σ=½ event horizon brim — the fixed point that does not move during conformal inversion. 1680×1080, 300 frames, 24fps.*
 
-- `DerivationEngineViewer/modes/witches_hat.py` — full animation + engine
+- `ArdaQuenta/modes/witches_hat.py` — full animation + engine
 - `Ainulindale/animations/witches_hat.gif` — 3.3MB, 1680×1080, 300 frames
 - Run: `python3 modes/witches_hat.py` (interactive) or `python3 modes/witches_hat.py output.gif` (save)
 - Jupyter notebook: `PtolemyHolcus/notebooks/witches_hat.ipynb` (TODO)
