@@ -290,6 +290,60 @@ assumption is a flat-space assumption applied to a curved-space experiment.
    interferometry? The caustic nodes are the Riemann zeros projected onto
    the optical path length axis.
 
+5. Does the fringe visibility degradation in a long-baseline femtometer
+   interferometer encode the gravitational slingshot history of the photon
+   path — a direct measurement of the caustic accumulation along the beam?
+
+---
+
+## 9. The Path of Light Is Not Clean
+
+Bell assumes the photon path between source and detector is known and
+uncontaminated. The hidden variable λ that leaves the source arrives
+at the detector unchanged. It does not.
+
+**Gravitational lensing is not smooth deflection.** Every massive body
+along the photon path is a slingshot event — the photon enters, is
+accelerated by the gravitational field, changes trajectory, and departs
+on a different path than it arrived. The path integral is not a smooth
+geodesic. It is a polygon of discrete slingshot arcs: the apparatus,
+the building, the Earth, the Sun, the galaxy, the large scale structure.
+
+Each slingshot adds a node to the HyperCaustic. The photon arriving at
+Bell's detector has been gravitationally slung by every mass it passed.
+The λ that arrives is not the λ that left the source. The hidden variable
+has been written on in transit. It carries the gravitational history of
+its entire path.
+
+Bell assumes λ_source = λ_detector. This is only true in flat empty space
+with no intervening mass. It is never true in a laboratory on the surface
+of a planet inside a galaxy.
+
+**The path of light is not clean. It is the accumulated caustic of every
+gravitational slingshot event along its trajectory.**
+
+This adds a third layer to the Bell origin error:
+1. Reference frame shift between Alice and Bob (Section 1)
+2. Stationarity assumption — p(λ) fixed across time (Section 8)
+3. Path cleanliness assumption — λ unmodified in transit (this section)
+
+All three assume flat space. None hold on the Native Space Riemann curve.
+
+**The CMB as calibration:** The oldest light has the most complete
+gravitational slingshot history encoded in it. The BAO residual —
+GAP = 0.000707 — is what remains after subtracting every known
+slingshot contribution from the CMB acoustic spectrum. The irreducible
+caustic accumulation of the entire observable universe. The mass gap
+is not a free parameter. It is the total gravitational slingshot
+signature that cannot be subtracted because no larger reference frame
+exists to subtract it against.
+
+The femtometer interferometer fringe visibility degradation over a long
+baseline encodes this directly — the gravitational slingshot history of
+the photon path made visible as reduced coherence. Perfect fringe
+visibility is physically impossible. The irreducible minimum visibility
+floor is set by the mass gap.
+
 ---
 
 *Addendum IX — Ainulindale Conjecture, Second Age*  
