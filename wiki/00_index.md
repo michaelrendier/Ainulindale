@@ -60,6 +60,13 @@ Last updated: 2026-05-17
 
 *These are consequences of the framework, not its premises. The engineering argument stands independently.*
 
+## Physics Cascade — Cosmology
+
+| Page | Topic |
+|------|-------|
+| [31_cavitation_causality_fermat.md](31_cavitation_causality_fermat.md) | **2026-06-03 CASCADE** — BH = cavitation scar; sedenion hole punch; E=mc²=Fermat n=2; mass=local/causality=non-local; white hole=1 Planck sec |
+| [32_superconducting_medium.md](32_superconducting_medium.md) | **2026-06-03 EXTENSION** — medium is superconducting BEC; dark energy = superconducting current; Bang = phase transition; stars = recondensation; σ=½ = order parameter |
+
 ## Roadmap & TODO
 
 | Page | Topic |

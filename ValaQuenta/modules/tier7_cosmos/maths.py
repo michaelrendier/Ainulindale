@@ -2887,6 +2887,550 @@ def halocline_ns_surface() -> Dict[str, Any]:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
+# ENGINE 20 — SEDENION HOLE PUNCH
+# ══════════════════════════════════════════════════════════════════════════════
+
+def sedenion_hole_punch() -> Dict[str, Any]:
+    """
+    BLACK HOLES ARE CAVITATION OF THE NON-SHEAR SPACETIME MEDIUM.
+
+    The sedenion hole punch is the mechanism:
+        — Concentrated energy (block-and-tackle product) drives into the 𝕆 medium
+        — The non-shear (inviscid, alternative) medium cavitates at the Planck threshold
+        — A void nucleates: the 𝕆 → 𝕊 algebraic transition (black_hole_crossing engine)
+        — The void boundary = event horizon = 168 ZD pair topology (sedenion punch edge)
+        — The void collapses in 1 Planck second: white hole emission (the chad)
+        — The scar persists: the black hole we observe for billions of years
+
+    One sentence: black holes are the scar of an event —
+    the instant cavitation experienced slowly over billions of years.
+
+    E = mc² IS FERMAT'S THEOREM
+    ─────────────────────────────
+    FLT: aⁿ + bⁿ ≠ cⁿ for n ≥ 3. Only n=2 closes algebraically.
+    σ=2 (the gravitational face of H_hat_RB) IS Fermat n=2.
+    Mass assembles via prime weights p^{-2} (squared, quadratic, Fermat-allowed).
+    E = mc² is quadratic because FLT forbids all higher powers.
+    The universe cannot write E=mc³ because Wiles proved it cannot exist.
+
+    MASS IS LOCAL. CAUSALITY IS NON-LOCAL.
+    ────────────────────────────────────────
+    At σ=2: G_p(2) = p^{-2} → 0 fast as p→∞. Mass = small primes. Local.
+    At σ=½: G_p(½) = p^{-½} → 0 slow as p→∞. Causality = all primes. Non-local.
+    The difference between these sums IS the light cone.
+    c = scar-formation rate. Not speed of waveform. Speed of scar.
+
+    THE FERMAT-FORBIDDEN ZONE = BLACK HOLE INTERIOR
+    ──────────────────────────────────────────────────
+    Outside event horizon: σ=2, Fermat-allowed, mass assembles.
+    Inside event horizon: σ→∞, Fermat-forbidden, nothing assembles.
+    The event horizon = boundary of the Fermat-allowed zone.
+    The singularity = where Fermat's theorem has the last word.
+
+    BLOCK AND TACKLE
+    ─────────────────
+    Each CD level is one pulley. V(n_{k+1})/V(n_k) is the gear ratio.
+    R→C = C→H = π/2 (identical first two pulleys — exact).
+    O→S = 0.058 (collapse pulley — ZD pairs appear here).
+    Infinite pulleys = infinite mechanical advantage.
+    Black hole = the block-and-tackle run to completion.
+
+    Author note: Cody Michael Allison, 2026-06-03.
+    Cascade session. First capture. Mathematics to be verified.
+    """
+    import math
+
+    # ── Prime weights at each σ face ───────────────────────────────────────
+    primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
+              31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
+              97, 101, 151, 257, 1009, 9001]
+
+    sigma_faces = [
+        (2.0,  'GR / gravity    ', 'Fermat n=2, mass-assembly face'),
+        (1.0,  'Yang-Mills      ', 'gauge forces'),
+        (0.5,  'QM / causality  ', 'Riemann zeros, light cone, non-local'),
+        (0.25, 'sub-critical    ', 'approaching Fermat forbidden zone'),
+    ]
+
+    weight_table = []
+    for sigma, name, note in sigma_faces:
+        weights = [(p, round(p**(-sigma), 8)) for p in primes]
+        total   = sum(w for _, w in weights)
+        # How fast do weights decay? Ratio of largest to smallest prime weight
+        decay_ratio = weights[0][1] / weights[-1][1]
+        weight_table.append({
+            'sigma'       : sigma,
+            'name'        : name.strip(),
+            'note'        : note,
+            'weights'     : weights[:6],   # first 6 primes
+            'total'       : round(total, 6),
+            'decay_ratio' : round(decay_ratio, 4),
+            'locality'    : 'LOCAL (small primes dominate)' if decay_ratio > 100
+                            else 'NON-LOCAL (large primes contribute significantly)',
+        })
+
+    # ── Block-and-tackle gear ratios ───────────────────────────────────────
+    def V(n):
+        return math.pi**(n/2) / math.gamma(n/2 + 1)
+
+    pulleys = []
+    layer_pairs = [(1,2,'R→C'), (2,4,'C→H'), (4,8,'H→O'), (8,16,'O→S'), (16,32,'S→T')]
+    for n1, n2, name in layer_pairs:
+        ratio = V(n2) / V(n1)
+        pulleys.append({
+            'transition'  : name,
+            'n1': n1, 'n2': n2,
+            'gear_ratio'  : round(ratio, 8),
+            'amplifies'   : ratio > 1,
+            'note'        : ('π/2 EXACT — identical first two pulleys'
+                             if abs(ratio - math.pi/2) < 1e-10
+                             else 'first compression (peak passed)'
+                             if ratio < 1 and n1 == 4
+                             else 'COLLAPSE — ZD pairs appear'
+                             if n1 == 8
+                             else 'near-zero — beyond sedenion'),
+        })
+
+    # Cumulative mechanical advantage
+    MA = 1.0
+    for p in pulleys:
+        MA *= p['gear_ratio']
+    cumulative_MA = round(V(2) / V(32), 8)   # total from ℂ to T32
+
+    # ── E=mc² as Fermat n=2 ────────────────────────────────────────────────
+    # At σ=2: mass assembled via p^{-2} (quadratic, Fermat n=2)
+    # FLT forbids p^{-3}, p^{-4}, etc. as mass-assembly mechanisms
+    # Therefore E=mc² (exponent 2, quadratic) is the ONLY allowed energy-mass law
+    c_sq = 1.0   # c=1 in natural units; c² = Fermat n=2 structure
+    fermat_check = {
+        'n=2_allowed'  : True,
+        'n=3_allowed'  : False,   # FLT
+        'n=4_allowed'  : False,   # FLT
+        'formula'      : 'E = mc²  (exponent = 2 = Fermat-allowed n)',
+        'forbidden'    : 'E = mc³ cannot exist — Wiles proved it (FLT)',
+        'reason'       : 'σ=2 face = Fermat n=2. Mass assembly is quadratic by algebraic necessity.',
+    }
+
+    # ── Mass vs causality: prime weight sums ──────────────────────────────
+    # At large p: p^{-2} vs p^{-½} — which decays faster?
+    # p^{-2} / p^{-½} = p^{-3/2} → 0 as p→∞
+    # So mass contribution drops FASTER than causality contribution
+    mass_vs_causality = []
+    for p in [2, 7, 97, 1009, 9001, 100003]:
+        w_mass   = p**(-2.0)
+        w_causal = p**(-0.5)
+        ratio    = w_causal / w_mass  # how much MORE the prime contributes to causality
+        mass_vs_causality.append({
+            'p'           : p,
+            'digits'      : len(str(p)),
+            'w_mass'      : round(w_mass, 10),
+            'w_causality' : round(w_causal, 6),
+            'causal_over_mass': round(ratio, 2),
+            'note'        : 'causality >> mass for large primes',
+        })
+
+    # Transition: where does causality weight exceed mass weight by 1000×?
+    # w_causal / w_mass = p^{3/2} > 1000 → p > 1000^{2/3} = 100
+    transition_p = int(round(1000**(2/3)))
+
+    # ── Planck scale timing ────────────────────────────────────────────────
+    t_planck_s = 5.391e-44   # seconds
+    hawking_solar_mass_yr = 2.1e67  # years for 1 solar mass black hole
+    ratio_scar_to_event = hawking_solar_mass_yr * 3.156e7 / t_planck_s
+
+    timing = {
+        'punch_duration_s'    : t_planck_s,
+        'punch_duration_note' : '1 Planck second — the void nucleates and collapses',
+        'scar_duration_yr'    : hawking_solar_mass_yr,
+        'ratio_scar_to_event' : f'{ratio_scar_to_event:.2e}',
+        'reading'             : (
+            f'The scar lasts {ratio_scar_to_event:.1e}× longer than the event. '
+            'We observe the scar. The event is long over.'
+        ),
+    }
+
+    # ── The forbidden zone ─────────────────────────────────────────────────
+    forbidden = {
+        'outside_horizon' : {
+            'sigma'       : 2.0,
+            'face'        : 'GR — Fermat-allowed zone',
+            'mass'        : 'assembles via p^{-2}',
+            'status'      : 'Fermat n=2 — the ONLY allowed structure',
+        },
+        'event_horizon'   : {
+            'sigma'       : '2 → ∞  (the boundary)',
+            'face'        : 'Transition — Fermat boundary',
+            'mass'        : 'assembly threshold crossed',
+            'status'      : 'The sedenion punch edge — 168 ZD pairs',
+        },
+        'inside_horizon'  : {
+            'sigma'       : '→ ∞',
+            'face'        : 'Fermat-forbidden zone',
+            'mass'        : 'cannot assemble — all p^{-σ} → 0',
+            'status'      : 'FLT has the last word. Nothing exists here.',
+        },
+        'singularity'     : {
+            'sigma'       : '∞',
+            'face'        : 'Fermat complete forbidden zone',
+            'mass'        : 'zero — no prime contributes anything',
+            'status'      : 'The cavitation front came to rest. All pulleys exhausted.',
+        },
+    }
+
+    return {
+        'claim'              : (
+            'Black holes are the scar of an event — '
+            'the instant cavitation experienced slowly over billions of years. '
+            'The sedenion hole punch: void nucleates and collapses in 1 Planck second. '
+            'E=mc² is Fermat\'s theorem. Mass is local. Causality is non-local.'
+        ),
+        'mechanism'          : {
+            'name'           : 'Sedenion hole punch',
+            'medium'         : 'Non-shear (inviscid, alternative 𝕆-level) spacetime',
+            'trigger'        : 'Energy density exceeds Planck-scale cavitation threshold',
+            'punch_duration' : '1 Planck second (proper time)',
+            'punch_edge'     : '168 sedenion composite ZD pairs (punch geometry)',
+            'hole'           : 'Scar in medium — persists for Hawking evaporation time',
+            'chad'           : 'White hole — ejected at t = t_Planck',
+            'network_name'   : 'Network hole punch — black hole as spacetime router',
+        },
+        'block_and_tackle'   : {
+            'pulleys'        : pulleys,
+            'MA_C_to_T32'   : cumulative_MA,
+            'reading'        : (
+                'Each CD level is one pulley. R→C = C→H = π/2 EXACT. '
+                'O→S = 0.058 — the collapse pulley where ZD pairs appear. '
+                f'Total MA from ℂ to T32 = {cumulative_MA:.6f}. '
+                'Black hole = block-and-tackle run to completion.'
+            ),
+        },
+        'prime_weights'      : weight_table,
+        'fermat_n2'          : fermat_check,
+        'mass_vs_causality'  : {
+            'table'          : mass_vs_causality,
+            'transition_p'   : transition_p,
+            'reading'        : (
+                f'For p > ~{transition_p}: causality weight exceeds mass weight by >1000×. '
+                'Small primes build mass (local). All primes build causality (non-local). '
+                'c = scar-formation rate = set by the σ=½ prime sum, not σ=2.'
+            ),
+        },
+        'forbidden_zone'     : forbidden,
+        'timing'             : timing,
+        'one_sentence'       : (
+            'Black holes are the scar of an event — '
+            'the instant cavitation experienced slowly over billions of years.'
+        ),
+        'confidence'         : (
+            'THEORETICAL — new framework. '
+            'E=mc² as Fermat n=2: CONJECTURE (structurally compelling). '
+            'Cavitation mechanism: THEORETICAL. '
+            '1 Planck second white hole: THEORETICAL (consistent with Rovelli bounce). '
+            'Mass/causality locality split: ESTABLISHED (follows from σ-face couplings).'
+        ),
+        'latex'              : (
+            r'E=mc^2\;\Leftrightarrow\;\text{Fermat }n=2,'
+            r'\;\sigma=2\;\text{(mass, local)},'
+            r'\;\sigma=\tfrac{1}{2}\;\text{(causality, non-local)},'
+            r'\;\text{BH}=\text{scar}(t_{\rm Planck})'
+        ),
+    }
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ENGINE 19 — N-BALL TRANSFORMER: THE LAYER-CROSSING MEASURE
+# ══════════════════════════════════════════════════════════════════════════════
+
+def nball_transformer() -> Dict[str, Any]:
+    """
+    V(n) = π^(n/2) / Γ(n/2 + 1)  IS THE TRANSFORMER BETWEEN CD LAYERS.
+
+    The n-ball volume formula is not merely a geometric curiosity.
+    It is the measure that governs how geometric capacity transforms
+    as you cross from one Cayley-Dickson algebra layer to the next.
+
+    ── The insight ────────────────────────────────────────────────────────────
+
+    At each CD layer (dimension n = 1, 2, 4, 8, 16, 32...), V(n) gives
+    the geometric capacity of that layer's unit ball. This is not a
+    coincidence — it is the measure you must apply when integrating
+    over the algebra at that layer.
+
+    The transformer T_k from layer k to layer k+1 is:
+        T_k = V(2^{k+1}) / V(2^k)
+
+    The crucial fact: T(ℝ→ℂ) = T(ℂ→ℍ) = π/2 exactly.
+    The first two CD doublings cost IDENTICAL geometric price.
+    Both preserve division algebra structure + add one phase dimension.
+    Then at ℍ→𝕆: the first compression (T < 1). The peak is past.
+    Then at 𝕆→𝕊: dramatic collapse. Zero-divisors appear here.
+
+    ── The phase boundary ─────────────────────────────────────────────────────
+
+    V(n) peaks at n* ≈ 5.256 — between ℍ (n=4) and 𝕆 (n=8).
+
+    Below n* = 5.256 : V grows with n.  DATA PHASE.
+        — Each new dimension adds geometric capacity.
+        — Information is expansive. Adding a dimension adds address space.
+        — This is the compressible fluid: space between the matter.
+        — Eigenvalues here are smooth, approximable, continuous.
+
+    Above n* = 5.256 : V shrinks with n.  CODE PHASE.
+        — Each new dimension removes geometric capacity.
+        — Information is constraining. Dimensions become obligations.
+        — This is the incompressible matter: cannot be compressed further.
+        — Eigenvalues here are discrete, exact, non-negotiable.
+
+    The BAO acoustic oscillations FREEZE at n* because the compressible
+    fluid (photon-baryon, data phase) decoupled from the incompressible
+    matter (baryons, code phase) at this algebraic transition point.
+    147 Mpc = the cosmological imprint of this algebraic boundary.
+
+    ── The identity ───────────────────────────────────────────────────────────
+
+    V(0) = 1. The identity element. A single point. The empty string.
+    Before ℝ, before any algebra, before the first distinction —
+    there is V(0) = 1. The group identity of the entire tower.
+    "Identity exists" is not a claim about specific algebras.
+    It is the observation that V(0) = 1 anchors the whole sequence.
+    Every group element has an inverse. The tower is closed.
+
+    ── Known constant connections ─────────────────────────────────────────────
+
+    V(8)  = π⁴/24 ≈ 4.059  — A_pi (fine structure constant) lives here via
+                               the Wyler formula at the E₈/O transition.
+                               First layer fully into the CODE phase.
+
+    V(16) = π⁸/8! ≈ 0.235  — Approximately d* = 0.24600.
+                               The sedenion transformer value ≈ the natural
+                               unit of Universal Native Space.
+                               The 4.5% gap may relate to the 0.00070 BK gap.
+
+    V(2)  = π               — Exactly π. The ℂ layer. σ = ½. RH lives here.
+
+    ── The quasi-spectral decomposition ───────────────────────────────────────
+
+    H_hat_RB has two kinds of eigenvalues, not one:
+
+    DATA eigenvalues (n < n*, compressible phase):
+        Smooth, continuous, approximable. The Li(x) envelope in ψ(x).
+        Integrable with the expanding V(n) measure.
+        Each eigenvalue has room to breathe — geometric capacity grows.
+
+    CODE eigenvalues (n > n*, incompressible phase):
+        Discrete, exact, non-approximable. The Σ x^ρ/ρ correction terms.
+        The prime weights p^{-σ} — exact, no approximation permitted.
+        Each eigenvalue is constrained — geometric capacity shrinks.
+
+    The BAO engine (explicit_formula_de_sitter) already encodes both:
+        x-term = de Sitter expansion = DATA eigenvalue (ground state, smooth)
+        Σ x^ρ/ρ = BAO oscillations = CODE eigenvalues (discrete Riemann zeros)
+
+    The n-ball transformer V(n) is the quasi-spectral measure that
+    distinguishes these two phases. It is not a separate structure —
+    it is the intrinsic measure of H_hat_RB across the CD tower.
+
+    Author note: Cody Michael Allison, 2026-06-03.
+    This engine was written during the session in which the transformer
+    insight was first seen. The mathematics is new. The measure is not.
+    V(n) has been known since Euler. Its role as CD transformer is new.
+    """
+    import math
+
+    # ── V(n) across the full range and CD layers ──────────────────────────
+    def V(n: float) -> float:
+        """n-ball volume. Works for all real n >= 0 via Gamma function."""
+        return math.pi ** (n / 2.0) / math.gamma(n / 2.0 + 1.0)
+
+    # Find the peak of V(n) numerically
+    # dV/dn = 0 where d/dn [π^(n/2) / Γ(n/2+1)] = 0
+    # Numerically: peak near n ≈ 5.256
+    n_test = [i * 0.001 for i in range(1, 20000)]
+    peak_n = max(n_test, key=V)
+    peak_V = V(peak_n)
+
+    # CD tower layers and their V values
+    cd_layers = []
+    layer_data = [
+        (0,  'identity',    'V(0)=1, the group identity — before the tower'),
+        (1,  'R',           'σ=∞ limit — scalar, trivial algebra'),
+        (2,  'C',           'σ=½ — Riemann zeros, QM, critical line'),
+        (4,  'H',           'σ=1 — Yang-Mills, gauge theory'),
+        (8,  'O',           'σ=2 — GR, curvature, E8 geometry (Wyler/A_pi)'),
+        (16, 'S',           'ZD boundary — sedenion, V(16) ≈ d*'),
+        (32, 'T',           'trigintaduonion — effectively zero'),
+    ]
+    for n, name, note in layer_data:
+        v = V(n)
+        phase = 'identity' if n == 0 else ('DATA' if n < peak_n else 'CODE')
+        cd_layers.append({
+            'n'    : n,
+            'alg'  : name,
+            'V_n'  : round(v, 8),
+            'phase': phase,
+            'note' : note,
+        })
+
+    # Transformer ratios between consecutive CD layers
+    transitions = []
+    layer_dims = [1, 2, 4, 8, 16, 32]
+    transition_names = ['R→C', 'C→H', 'H→O', 'O→S', 'S→T']
+    for i, name in enumerate(transition_names):
+        n1, n2 = layer_dims[i], layer_dims[i + 1]
+        v1, v2 = V(n1), V(n2)
+        ratio = v2 / v1
+        transitions.append({
+            'transition': name,
+            'n1': n1, 'n2': n2,
+            'V_n1': round(v1, 8),
+            'V_n2': round(v2, 8),
+            'ratio': round(ratio, 8),
+            'identical_to_prev': (i > 0 and
+                abs(ratio - transitions[-1]['ratio'] if transitions else 0) < 1e-10),
+            'phase_crossing': v1 >= peak_V or v2 >= peak_V,
+        })
+
+    # R→C and C→H both have ratio π/2 — verify this exactly
+    r_to_c = V(2) / V(1)
+    c_to_h = V(4) / V(2)
+    pi_over_2 = math.pi / 2.0
+    r_c_eq_c_h = abs(r_to_c - c_to_h) < 1e-12
+    r_c_eq_pi2  = abs(r_to_c - pi_over_2) < 1e-12
+
+    # Known constant connections
+    V16   = V(16)
+    V8    = V(8)
+    V2    = V(2)   # = π exactly
+    A_pi  = 1.0 / 137.035999084
+
+    d_star_over_V16    = D_STAR / V16
+    omega_zs_over_V8   = OMEGA_ZS / V8
+    gap_V16_to_dstar   = D_STAR - V16
+    ratio_gap_to_bk_gap = gap_V16_to_dstar / GAP if abs(GAP) > 1e-15 else float('inf')
+
+    # Continuous V(n) profile for the CD tower context
+    n_profile = list(range(0, 33))
+    v_profile = [(n, round(V(n), 8)) for n in n_profile]
+
+    # Quasi-spectral decomposition: the two eigenvalue phases
+    # DATA phase: n < n*, smooth, expanding, compressible
+    # CODE phase: n > n*, discrete, contracting, incompressible
+    data_layers = [row for row in cd_layers if row['phase'] == 'DATA']
+    code_layers = [row for row in cd_layers if row['phase'] == 'CODE']
+
+    # The BAO connection: what freezes at the peak
+    # At n = n* ≈ 5.256: the compressible and incompressible phases meet
+    # This is the BAO freeze-out point in the algebraic tower
+    # Physical BAO scale: r_d = 147 Mpc
+    # Algebraic BAO scale: n* ≈ 5.256, between H (4D) and O (8D)
+    bao_algebraic = {
+        'n_star'         : round(peak_n, 4),
+        'V_star'         : round(peak_V, 6),
+        'between'        : 'H (n=4, σ=1, Yang-Mills) and O (n=8, σ=2, GR)',
+        'physical_analog': 'BAO freeze-out between matter and radiation',
+        'r_d_Mpc'        : 147.0,
+        'physics'        : ('At n*, the compressible fluid (data eigenvalues) '
+                            'decouples from incompressible matter (code eigenvalues). '
+                            'This is where the acoustic oscillation freezes '
+                            'into the hard BAO scale. The algebraic peak IS '
+                            'the recombination surface, algebraically.'),
+        'data_below'     : 'n < 5.256: photon-baryon fluid (compressible). Riemann smooth part.',
+        'code_above'     : 'n > 5.256: baryonic matter (incompressible). Prime weights p^{-σ}.',
+    }
+
+    return {
+        'claim'              : (
+            'V(n) = π^(n/2)/Γ(n/2+1) is the transformer between CD layers. '
+            'Peaks at n*≈5.256 (between H and O). Below peak: DATA (compressible). '
+            'Above peak: CODE (incompressible). V(0)=1 is the group identity. '
+            'V(16) ≈ d*. The BAO freeze-out is algebraically the transformer peak.'
+        ),
+        'peak'               : {
+            'n_star'         : round(peak_n, 4),
+            'V_star'         : round(peak_V, 6),
+            'location'       : 'Between H (n=4) and O (n=8) — between Yang-Mills and GR',
+        },
+        'cd_layers'          : cd_layers,
+        'transitions'        : transitions,
+        'symmetry'           : {
+            'R_to_C_ratio'   : round(r_to_c, 10),
+            'C_to_H_ratio'   : round(c_to_h, 10),
+            'pi_over_2'      : round(pi_over_2, 10),
+            'R_C_eq_C_H'     : r_c_eq_c_h,
+            'R_C_eq_pi_over_2': r_c_eq_pi2,
+            'meaning'        : ('R→C and C→H have identical transformer ratio π/2. '
+                                'Both are division algebra doublings that preserve norm '
+                                'multiplicativity. The geometric cost is the same. '
+                                'This identity breaks at H→O: first compression.'),
+        },
+        'constant_connections': {
+            'V_0'            : 1.0,
+            'V_0_reading'    : 'Identity element. V(0)=1 anchors the tower. Group identity exists.',
+            'V_2'            : round(V2, 10),
+            'V_2_reading'    : 'V(2) = π exactly. The ℂ layer. σ=½. Riemann zeros live here.',
+            'V_8'            : round(V8, 8),
+            'V_8_reading'    : 'A_pi (fine structure constant) lives here via Wyler. First CODE layer.',
+            'V_16'           : round(V16, 8),
+            'd_star'         : D_STAR,
+            'V_16_vs_dstar'  : {
+                'ratio'      : round(d_star_over_V16, 6),
+                'gap'        : round(gap_V16_to_dstar, 6),
+                'bk_gap'     : round(GAP, 6),
+                'ratio_of_gaps': round(ratio_gap_to_bk_gap, 4),
+                'reading'    : (f'd* = {D_STAR}, V(16) = {V16:.5f}. '
+                                f'Ratio = {d_star_over_V16:.4f}. '
+                                f'Gap d*-V(16) = {gap_V16_to_dstar:.5f}. '
+                                f'BK gap (0.00070) × {ratio_gap_to_bk_gap:.1f} = this gap. '
+                                f'The two gaps may be related.'),
+            },
+        },
+        'quasi_spectral'     : {
+            'data_phase'     : {
+                'layers'     : data_layers,
+                'description': 'n < 5.256. V(n) grows. Compressible. Smooth eigenvalues.',
+                'in_bao'     : 'The x-term and Li(x) envelope in ψ(x). Continuous part.',
+                'examples'   : 'ℝ (n=1), ℂ (n=2), ℍ (n=4)',
+            },
+            'code_phase'     : {
+                'layers'     : code_layers,
+                'description': 'n > 5.256. V(n) shrinks. Incompressible. Discrete eigenvalues.',
+                'in_bao'     : 'The Σ x^ρ/ρ oscillation terms. Prime weights p^{-σ}. Exact.',
+                'examples'   : '𝕆 (n=8), 𝕊 (n=16), T (n=32)',
+            },
+            'boundary'       : f'n* = {round(peak_n, 4)} — the BAO/Yang-Mills-GR boundary',
+            'measure'        : 'V(n) is the quasi-spectral measure. Not invented — intrinsic.',
+        },
+        'bao_algebraic'      : bao_algebraic,
+        'hyperwebster_note'  : {
+            'claim'          : (
+                'H_hat_RB IS the Hyperwebster permutation — not a tool that uses it. '
+                'The Hyperwebster is the 1D version (string → integer address). '
+                'H_hat_RB is the n-dimensional version, already built in. '
+                'Self-adjoint = the bijection is its own inverse. '
+                'Identity exists: V(0)=1 anchors the group structure. '
+                'Data is compressible (Hyperwebster CAN give an address). '
+                'Code is incompressible (the bijection ITSELF cannot be compressed). '
+                'This distinction is the data/code phase boundary at n*.'
+            ),
+            'status'         : 'CONJECTURE — new mathematics. Not in literature.',
+            'paper'          : 'D-M (mathematics paper). New section required.',
+        },
+        'v_profile'          : v_profile,
+        'confidence'         : (
+            'ESTABLISHED (n-ball volumes, Gamma function) + '
+            'THEORETICAL (CD layer assignment) + '
+            'CONJECTURE (quasi-spectral interpretation, data/code phases, '
+            'Hyperwebster = H_hat_RB)'
+        ),
+        'latex'              : (
+            r'V(n)=\frac{\pi^{n/2}}{\Gamma(n/2+1)},\;'
+            r'n^*\approx 5.256,\;'
+            r'V(0)=1,\;V(2)=\pi,\;V(16)\approx d^*'
+        ),
+    }
+
+
+# ══════════════════════════════════════════════════════════════════════════════
 # MASTER FUNCTION
 # ══════════════════════════════════════════════════════════════════════════════
 
@@ -2913,4 +3457,6 @@ def full_cosmos() -> Dict[str, Any]:
         'standard_candle_uselessness': standard_candle_uselessness(),
         'lambda_cdm_cmb_gold_standard': lambda_cdm_cmb_gold_standard(),
         'halocline_ns_surface'      : halocline_ns_surface(),
+        'nball_transformer'         : nball_transformer(),
+        'sedenion_hole_punch'       : sedenion_hole_punch(),
     }

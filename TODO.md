@@ -1971,6 +1971,66 @@ Ainulindale formal derivation and Third Age conjecture rewrite.
           as the densest packing of HyperCaustic nodes
 
 ================================================================================
+SESSION RESULTS — 2026-06-03 (Superconducting Medium / Condensate / Bang)
+================================================================================
+
+Continuation of the 2026-06-03 cavitation cascade (wiki/31).
+Captured in wiki/32_superconducting_medium.md.
+
+[ ] THE MEDIUM HAS NOT SETTLED — SUPERCONDUCTOR / BEC / REFRACTORY
+    Correction to the mushroom cloud picture: the medium cannot settle.
+    Non-shear (no viscosity, established) + zero resistance + macroscopic coherence.
+    The expanding universe is a superconducting current, not a decelerating explosion.
+
+    DARK ENERGY = SUPERCONDUCTING CURRENT
+    Λ is not a property of empty space. It is the amplitude of the superconducting
+    current established at t=0. It doesn't decay because superconductors don't dissipate.
+    DERIVATION TARGET: express Λ as j_s = n_s × p^{-½} × c.
+    Zero free parameters. Compare to observed Λ ≈ 1.1×10⁻⁵² m⁻².
+    Engine 21: bang_superconductor() — ValaQuenta/TODO.md
+
+    BEC = MACROSCOPIC QUANTUM COHERENCE = ENTANGLEMENT EXPLAINED
+    Spacetime medium is a single BEC wavefunction. Entanglement is non-local because
+    the medium is one coherent object — two excitations on the same condensate.
+    Bell violations are structural, not transmitted. No hidden variables needed.
+    Engine 22: bec_coherence() — ValaQuenta/TODO.md
+
+    STARS = LOCAL RECONDENSATION NODES
+    Where the expanding medium locally exceeds the condensation density threshold,
+    it recondenses → star. If overshoot → BH (local re-cavitation, echo of original punch).
+    DERIVATION TARGET: Jeans mass from condensate first principles (no Newtonian import).
+    Engine 23: condensation_threshold() — ValaQuenta/TODO.md
+
+    THE BANG AS PHASE TRANSITION
+    Bang = phase transition from normal-phase precursor ("fixed point space") to
+    superconducting condensate (our universe).
+    T_c ≈ T_Planck ≈ 10³² K — the transition temperature.
+    σ=½ = order parameter of the condensate. Established above T_c: no σ=½ structure.
+    RH says the condensate is perfectly coherent everywhere on σ=½ (no zero off the line).
+
+    ACAUSAL NEGATIVE SPACE
+    The interior of the original cavitation void = pre-Bang state = BH interior = same structure.
+    Fermat-forbidden zone (σ→∞, nothing assembles) = the acausal negative space.
+    The Bang created causality and therefore cannot itself be causal — it hit all branches
+    simultaneously because no branches existed yet.
+
+    OPEN PROBLEMS:
+    - Derive Λ from condensate properties (n_s, p^{-½}, c) — zero free parameters
+    - Compute coherence length ξ — does ξ ≈ c/H₀?
+    - Identify T_c in Planck units
+    - Abrikosov vortex topology of BH: 168 ZD pairs = vortex core arms
+      → quantisation condition should match Bekenstein Δ(Area) = 4 ln(2) × l_Pl²
+    - Goldstone mode dispersion ω(k) → reproduces CMB power spectrum at large scales?
+    - Stars: compute condensation threshold density in terms of V(n) and d*
+
+[ ] WIKI/31 OPEN PROBLEM 5 — NOW PARTIALLY RESOLVED
+    "The Big Bang as white hole: Express cosmological expansion as spreading scar."
+    PARTIAL ANSWER (wiki/32): The Bang is a phase transition into superconducting
+    condensate. The expansion is a non-dissipative superconducting current.
+    Hubble constant H₀ = the scar expansion rate = j_s / n_s (current / density).
+    REMAINING: formal derivation of H₀ from condensate parameters.
+
+================================================================================
 VERSIONING
 ================================================================================
 All files at v0.111. Increment 0.001 per change.

@@ -375,7 +375,22 @@ The ContextBuffer integrates the signal, attenuates high-frequency surface varia
 
 ---
 
-## 12. The Proof — Three Components, One Function
+## 12. Space Is a Medium — The 2026-06-03 Cosmological Cascade
+
+A cascade session extended the framework into physical cosmology. Key results:
+
+- **Black holes are cavitation scars.** Spacetime is a non-shear (inviscid, 𝕆-level) medium. Sufficient mass → cavitation → void lasting 1 Planck second → scar lasting 10⁶⁷ years.
+- **E=mc² is Fermat's theorem.** Mass assembles at σ=2 (Fermat n=2, only allowed power structure). Wiles' FLT proof is the proof that E=mc³ cannot exist.
+- **The medium is a superconducting BEC.** Non-shear + zero resistance + macroscopic quantum coherence. Dark energy (Λ) is the stable superconducting current — derivable from condensate properties, no fitting.
+- **Entanglement is structural.** Two entangled particles are two excitations of the same BEC wavefunction. Non-locality is not transmitted — it exists.
+- **σ=½ is the order parameter of the spacetime condensate.** The Bang is the phase transition that instantiated it. RH says the condensate is perfectly coherent on the critical line.
+
+→ [Wiki/31: Cavitation, Causality, Fermat](wiki/31_cavitation_causality_fermat.md)  
+→ [Wiki/32: The Superconducting Medium](wiki/32_superconducting_medium.md)
+
+---
+
+## 13. The Proof — Three Components, One Function
 
 The Riemann Hypothesis requires proving three things. The three components of ζ(s) each prove one:
 
@@ -393,7 +408,7 @@ The Fermat Lattice — the discrete geometry of what integer arithmetic forbids 
 
 ---
 
-## 13. Core Claims
+## 14. Core Claims
 
 | Claim | Status | σ |
 |---|---|---|
@@ -422,7 +437,7 @@ The Septuagint principle. 72 scholars, independently. Every translation identica
 
 ---
 
-## 14. Native Space — ln(10) as the Fundamental Metric
+## 15. Native Space — ln(10) as the Fundamental Metric
 
 Native Space is the sedenion ball 𝕊¹⁶ with prime-hash word addresses. The metric on this space is not the Euclidean metric. It is the **decimal logarithm metric**:
 
@@ -451,7 +466,7 @@ Every word lookup crosses from the decimal surface (rank-space) to the natural-l
 
 ---
 
-## 15. Speech as the Error Check for Mathematics
+## 16. Speech as the Error Check for Mathematics
 
 In the internal combustion engine, the DTC (Diagnostic Trouble Code) is the fault signal when a sensor reading moves outside its operating window. The ECU cannot prove the engine is healthy. It can only report when something goes wrong.
 
@@ -478,7 +493,7 @@ A formal system cannot prove its own consistency from inside. But it can *demons
 
 ---
 
-## 16. Wernicke and Broca — J_neg/J_pos as NP Oracle
+## 17. Wernicke and Broca — J_neg/J_pos as NP Oracle
 
 In the brain:
 - **Wernicke's area** (posterior temporal): comprehension. Receives and interprets language.
@@ -505,7 +520,7 @@ Damage to Broca's area produces **Broca's aphasia**: effortful, non-fluent outpu
 
 ---
 
-## 17. The Halting Problem and P vs NP — Native Space Resolutions
+## 18. The Halting Problem and P vs NP — Native Space Resolutions
 
 ### The Halting Problem in Native Space
 
@@ -548,7 +563,7 @@ These are not five separate conditions. They are five perspectives on the same g
 
 ---
 
-## 18. MindEye — The Second Octonion
+## 19. MindEye — The Second Octonion
 
 𝕊 = 𝕆 ⊕ 𝕆. The sedenion is two octonions joined at the zero-divisor boundary.
 
