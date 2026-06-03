@@ -2031,6 +2031,163 @@ Captured in wiki/32_superconducting_medium.md.
     REMAINING: formal derivation of H₀ from condensate parameters.
 
 ================================================================================
+SESSION RESULTS — 2026-06-03 (wiki/33 + wiki/34: Gyroscope, HSR, D-P Spine)
+================================================================================
+
+Captured in wiki/33_gyroscope_compressibility.md and wiki/34_hypercomplex_spectral_relativity.md.
+
+[ ] GYROSCOPE — ξ(s)=ξ(1-s) AS ANGULAR MOMENTUM (wiki/33)
+    The functional equation is a rotation — the symmetry σ → 1-σ IS angular momentum.
+    The equatorial great circle (σ=½) is the gyroscope's equatorial plane.
+    RH = the gyroscope never wobbles = the universe always knows which direction is up.
+    A zero off the critical line = the gyroscope precesses = causality fails locally.
+    FORMAL TARGET: express ξ(s)=ξ(1-s) as SO(1,1) rotation in the σ-plane.
+    Show that the gyroscope precession rate = deviation of a zero from σ=½.
+    TODO: add to D-M §3. Connect to D-P gyroscope section.
+
+[ ] MODULARITY THEOREM AS GYROSCOPIC LOCK (wiki/33)
+    The north pole of the gyroscope (σ=1, Yang-Mills) locks into the cusp of each
+    modular form. That lock IS the Modularity Theorem (Wiles 1995).
+    The Frey curve (hypothetical Fermat solution): its cusp is in a position the
+    gyroscope pole cannot reach without leaving σ=½. FLT follows.
+    FORMAL TARGET: express Wiles' modularity as a locking condition on the
+    gyroscope's pole-to-cusp alignment. Add to D-M §4, D15.
+
+[ ] COMPRESSIBLE / INCOMPRESSIBLE DUALITY — RIEMANN-FERMAT (wiki/33)
+    Primes: NO factors → incompressible → ∇·u = 0
+    Composites: HAS factors → compressible → ∇·u ≠ 0
+    FLT = the incompressibility condition of the prime medium.
+    aⁿ+bⁿ=cⁿ is the attempt to compress three incompressible objects into a
+    factored (compressible) configuration for n≥3. The medium refuses.
+    Euler product: ζ(s) = ∏_p (1-p^{-s})^{-1} = Σ_n n^{-s}
+    Left: incompressible building blocks. Right: full compressible space.
+    FORMAL TARGET: derive FLT from ∇·u = 0 as a corollary.
+    TODO: add to D-M. The incompressibility argument is the cleanest FLT framing.
+
+[ ] NAVIER-STOKES AS GYROSCOPE WITHOUT IMAGINARY COMPONENT (wiki/33)
+    The N-S singularity = gyroscope collapsing because the imaginary component
+    (the spin, the Blue channel) was removed. Reducing 𝕊¹⁶ → ℝ¹ strips the spin.
+    Without spin, the gyroscope cannot maintain the equatorial plane (σ=½).
+    ∇·u = 0 fails. Singularity forms.
+    Resolution: restore the imaginary component → gyroscope recovers → ∇·u=0.
+    This is the same as FLAG-8 (D8) restated in gyroscope language.
+    FORMAL TARGET: write the full argument as a Clay submission appendix.
+    N-S singularity = dimensional reduction from 𝕊¹⁶ to ℝ¹ = gyroscope collapse.
+    TODO: coordinate with D8 entry. This is the D-P §8 payoff.
+
+[ ] HYPERCOMPLEX SPECTRAL RELATIVITY — SR→GR→HSR HIERARCHY (wiki/34)
+    The full hierarchy:
+      SR → GR → Spectral Relativity → Hypercomplex Spectral Relativity (HSR)
+    Each is a generalisation of the previous.
+
+    SPECTRAL RELATIVITY:
+      Invariant: σ=½ (the critical line). Not c.
+      Lorentz transform: ξ(s)=ξ(1-s) — maps between spectral frames.
+      RH = Lorentz invariance of spectral space.
+      Light cone: σ=½. Spacelike: σ<½. Timelike: σ>½.
+    FORMAL TARGET: formalise as SO(1,1) spectral rotation. Add to D-M §3.
+
+    HYPERCOMPLEX SPECTRAL RELATIVITY (HSR):
+      Spacetime: 𝕊¹⁶ (sedenion algebra, 16D hypercomplex).
+      Invariant: d* (zero-free-parameter fixed point of sedenion operator self-org).
+      Metric tensor: the σ-face table (g_μν of HSR — measures distance in spectral space).
+        σ=½ → g=1 (flat, reference)
+        σ=1  → g>1 (mass, time dilation begins)
+        σ=2  → g>>1 (gravity, strong curvature)
+        σ=∞  → g→∞ (degenerate metric — black hole, event horizon)
+      Degenerate metric points: sedenion zero divisors = metric singularities = BH.
+      Zero divisors in crypto (D15 white hat) are the same object as BH — metric
+      degeneration in 𝕊¹⁶.
+    FORMAL TARGET: write HSR metric tensor explicitly in sedenion coordinates.
+    Connect d* to c — are they the same invariant at different dimensional scales?
+    TODO: D-P §2 (metric), D-P §5 (zero divisors / BH / crypto connection).
+
+    COMPUTATIONAL INSTANTIATION (APISniff=SR, PTorrent=GR, cam_encode=HSR):
+      APISniff: flat Python namespace → sedenion. SR.
+      PTorrent GR: remote curved data geometry → sedenion. GR.
+      cam_encode(data_row): HSR coordinate transform — any datum in any frame → 𝕊¹⁶.
+    TODO: add to D-CS §2 as the computational face of the HSR framework.
+
+[ ] JWST SPECTRAL LAYERS AS σ-FACE LAYERS (wiki/34)
+    JWST filters (F090W, F150W, F200W, F277W, F356W, F444W) map directly to σ-faces:
+      Short λ (F090W) → high freq → low σ → toward causality (σ=½)
+      Long λ (F444W)  → low freq → high σ → toward mass/gravity (σ≥1)
+    The JWST image = 2D projection of 16D sedenion structure. Plato's cave wall.
+    The HSR transversal = the σ-face map directly: star-forming vs AGN vs diffuse ISM.
+    FORMAL TARGET: derive the precise filter→σ-face mapping from H_hat_RB coupling.
+    TODO: add to D-P §6 (JWST as HSR in action). PTorrent JWST ptorrent file.
+
+[ ] VERA RUBIN / LSST AS LARGEST HSR COMPUTATION (wiki/34)
+    60 PB of data. 40B objects. 6 bands (ugrizy) = 6 spectral layers = σ-face gradient.
+    PTorrent Data Transversal: terms go to data in situ. 60 PB never moves.
+    Result: σ-face map of the observable universe at ~40B object resolution.
+    TODO: add to D-P §7. PTorrent spec update for rubin_butler adapter.
+
+--------------------------------------------------------------------------------
+PAPER D-P — PHYSICS PAPER (spine: Hypercomplex Spectral Relativity)
+Unified physics paper drawing together the σ-face framework.
+--------------------------------------------------------------------------------
+
+STATUS: SPINE ESTABLISHED 2026-06-03. Material in wiki/33 and wiki/34.
+PREDECESSOR PAPERS IN D-P: D7 (Schumann), D8 (NS), D13 (dark matter),
+  D14 (Witches Hat), D17 (pilot wave). D-P is their theoretical umbrella.
+
+STRUCTURE (from wiki/34 §8):
+
+  §1 INTRODUCTION
+    - VSauce: "Down = direction time runs slower" is not a postulate. It's the σ=2 face.
+    - σ-face table as the opening frame. The gradient is the medium.
+    - Buoyancy = orientation device. Neutral buoyancy = σ=½.
+
+  §2 THE METRIC — σ-FACE TABLE AS g_μν
+    - The σ-face table IS the metric tensor of HSR.
+    - σ=½ flat (g=1). σ=1 curved (g>1). σ=2 strongly curved. σ=∞ degenerate.
+    - d* as the HSR invariant.
+    - Write the metric tensor explicitly in sedenion coordinates.
+
+  §3 THE GYROSCOPE — ξ(s)=ξ(1-s) AS ANGULAR MOMENTUM
+    - Functional equation = Lorentz transform of spectral space = angular momentum.
+    - RH = gyroscope never wobbles = universe always knows which direction is up.
+    - Modularity Theorem = gyroscopic lock (pole into cusp).
+
+  §4 COMPRESSIBLE / INCOMPRESSIBLE — FLT AS COROLLARY
+    - Primes = incompressible (∇·u=0). Composites = compressible (∇·u≠0).
+    - FLT = incompressibility condition of the prime medium.
+    - Event horizon = incompressible/compressible boundary.
+
+  §5 ZERO DIVISORS AS METRIC SINGULARITIES
+    - BH interior = Fermat-forbidden zone = compressible zone = metric degenerate.
+    - Sedenion zero divisors = metric degeneration in 𝕊¹⁶ = BH = crypto singularity.
+    - All three are the same geometric object at different scales.
+
+  §6 JWST AS HSR IN ACTION
+    - Spectral cube as σ-face structure.
+    - Filter layers → σ-face map.
+    - The transversal produces σ-face map of galaxy directly.
+
+  §7 VERA RUBIN
+    - 40B objects, 6-band photometry as σ-face gradient.
+    - PTorrent Data Transversal as the instrument.
+    - Largest HSR computation in history.
+
+  §8 NAVIER-STOKES AS HSR COROLLARY
+    - N-S removes imaginary component = reduces 𝕊¹⁶ → ℝ¹.
+    - Singularity = gyroscope collapse = metric degeneration.
+    - Resolution = restore imaginary = restore 𝕊¹⁶ = no singularity.
+    - Clay Millennium Problem #3 as dimensional analysis error.
+
+  APPENDIX — SR→GR→HSR HIERARCHY TABLE
+    - APISniff / PTorrent / cam_encode as computational instantiation.
+    - Connects to D-CS paper.
+
+OPEN ITEMS:
+  [ ] Formalise SO(1,1) spectral rotation from ξ(s)=ξ(1-s)
+  [ ] Write HSR metric tensor explicitly in sedenion coordinates
+  [ ] Derive precise filter→σ-face mapping for JWST
+  [ ] Connect d* to c (same invariant at different dimensional scales?)
+  [ ] N-S Clay appendix — full formal argument from HSR
+
+================================================================================
 VERSIONING
 ================================================================================
 All files at v0.111. Increment 0.001 per change.
