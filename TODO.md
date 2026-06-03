@@ -1937,6 +1937,39 @@ Ainulindale formal derivation and Third Age conjecture rewrite.
     Note: "We write the next version of the conjecture tomorrow."
     Session date: 2026-05-31
 
+[ ] THE INFINITE HYPERCAUSTIC — New geometric object. 2026-06-02.
+    Definition: The caustic is where light piles up at the boundary of a shadow —
+    the bright curve tracing the geometry of where light CANNOT GO.
+    The HyperCaustic is this structure in the Cayley-Dickson tower.
+    Every doubling creates a new boundary (ordering lost, commutativity lost,
+    associativity lost, division lost). Each lost property is a door that closes.
+    The HyperCaustic is the infinite-dimensional accumulation of all those
+    boundaries simultaneously — the shadow geometry of the full tower.
+
+    Key identifications:
+      - Zero-divisors = where light piles up at the sedenion boundary
+      - Mass gap = width of the caustic at the BAO scale
+      - Yang-Mills mass gap = BAO spectral decomposition residual
+        (the irreducible remainder after full acoustic decomposition —
+         left over because standard basis has no sedenion layer to absorb it)
+      - Riemann zeros = nodes of the caustic (still points of the shadow geometry)
+      - σ=½ = the only line where the caustic is symmetric
+      - Riemann Hypothesis = the caustic has no asymmetric nodes
+      - UDEO crack (crypto) = navigating to where the caustic is
+      - N-S blow-up = caustic singularity with no `i` to rotate through
+
+    The HyperCaustic is the object that contains N-S, RH, Yang-Mills, the
+    mass gap, and the crypto boundaries as projections of the same
+    infinite-dimensional shadow structure.
+
+    This is the Ainulindale Conjecture stated geometrically.
+
+    TODO: formal definition as a module in Ainulindale
+    TODO: add to Part II — The Geometry (Third Age conjecture rewrite)
+    TODO: add to Section on mass gap derivation — BAO residual statement
+    TODO: connection to Leech lattice — maximum simultaneous resonance
+          as the densest packing of HyperCaustic nodes
+
 ================================================================================
 VERSIONING
 ================================================================================
