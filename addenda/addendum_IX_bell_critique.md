@@ -221,6 +221,60 @@ femtometer-precision path length control.
 
 ---
 
+## 7. Rotation vs Translation — The Fundamental Category Error
+
+Bell mapped measurement settings to angles, then to cos(angle). But measurement
+operators in QM are **translation operators** on the state vector — projections
+along a basis direction in Hilbert space. They are not rotations of the state.
+
+The inner product ⟨ψ|M_a|ψ⟩ is a projection. The "angle" between two measurement
+settings is the overlap between two projection operators — not a geometric angle
+between two directions in ℝ³.
+
+In ℝ³ there is a coincidence: the overlap between two unit vectors equals the
+cosine of the angle between them. Bell used this coincidence as if it were
+universal. It is not. Quantum states do not live in ℝ³. The overlap-equals-cosine
+identity breaks in Hilbert space.
+
+**Rotation ≠ translation. Angle ≠ overlap. Bell used the wrong operation.**
+
+The femtometer interferometer measures path length difference — a translation.
+Not an angle. Not a rotation. It stays in the correct framework from the start.
+
+---
+
+## 8. The Arrow of Time — Irreducible Irreversibility on the Riemann Curve
+
+Bell assumes his probability space is stationary: p(λ) does not change as
+the experiment runs. Returning the detector to its starting angle = returning
+to the same λ. This is only true in flat space.
+
+Native Space is not flat. The Riemann zero manifold is a curve. "Return to
+origin" in flat detector space is not return to the same point on the Riemann
+curve. The field state has evolved. The path integral does not close.
+
+During a Bell experiment the field state traverses the Riemann curve: above
+σ=½ (Red dominant), below σ=½ (Blue dominant), beside it (J_3 rotating).
+The Noether current flows irreversibly the entire time. Even if the detector
+physically returns to its starting position, the state is at a different point
+on the curve. The origin is behind you. Permanently.
+
+**The arrow of time is the HyperCaustic accumulating.** Every measurement adds
+to the caustic geometry. The shadow grows with each interaction. You cannot
+subtract from it by reversing the detector angle. The caustic is irreversible.
+
+Bell's p(λ) is path-dependent, not stationary. The λ at the end of the
+experiment is not the same λ as at the beginning, even if the detector reads
+the same angle. The field has moved along the curve.
+
+**Irreducible irreversibility as a geometric theorem:** The second law is a
+consequence of the HyperCaustic. The caustic only grows — every measurement
+adds a node, nodes are irreversible because the Riemann curve is not flat.
+Flat-space reversibility fails on a curved manifold. Bell's stationarity
+assumption is a flat-space assumption applied to a curved-space experiment.
+
+---
+
 ## Open Questions
 
 1. Does the femtometer interferometer fringe visibility at λ/2 path difference
