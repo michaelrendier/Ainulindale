@@ -8,6 +8,18 @@
 
 ---
 
+*"I do not see that the sex of the candidate is an argument against her admission*  
+*as Privatdozent. After all, we are a university, not a bathing establishment."*  
+— David Hilbert, Göttingen faculty meeting, 1915  
+*Fighting for Emmy Noether's right to teach mathematics.*
+
+*This paper stands on Noether's theorem. It stands on Riemann's conjecture.*  
+*It stands on Hilbert's insistence that mathematics belongs to everyone.*
+
+---
+
+---
+
 ### §1.1 — The Singularity That Every Equation Finds
 
 There is a point that every sufficiently developed mathematical description of
