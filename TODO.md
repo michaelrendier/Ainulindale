@@ -2373,6 +2373,58 @@ The framework either passes all nine or it fails.
 If it passes: this is the physics.
 
 ================================================================================
+SESSION RESULTS — 2026-06-03 (wiki/38: Fermat-Riemann Negative Space Duality)
+================================================================================
+
+MAJOR THEORETICAL RESULT — captured in wiki/38.
+
+[ ] FERMAT IS THE NEGATIVE SPACE OF RIEMANN (wiki/38)
+    Factoring is compression. Composites are compressible numbers.
+    Primes are the incompressible residue — what no factorisation can reach.
+    The Fermat lattice (aⁿ+bⁿ=cⁿ solutions) tiles all compression space.
+    The holes in the lattice — the tips, the singular boundary points — ARE the primes.
+    FLT does not merely forbid equations. FLT defines the complete map of
+    compression space. The primes sit in the negative space of that map.
+
+    Riemann geometry is incompressible. The zeta zeros are the geometric
+    negative space of the primes — the holes in the Euler product structure.
+
+    FERMAT AND RIEMANN ARE DUAL DESCRIPTIONS OF THE SAME NEGATIVE SPACE.
+    One arithmetic (compression side). One geometric (spectral side).
+    Same object. Same holes. Same primes.
+
+    Wiles proved the duality exists: modularity theorem = Fermat curve IS
+    a geometric object. FLT was the proof of consistency between the two
+    descriptions.
+
+    RH is the other half:
+      FLT (proved):  Fermat negative space = Riemann negative space
+      RH (pending):  Riemann negative space lies at σ=½
+      Therefore:     Fermat tips (primes) lie at σ=½
+
+    THIS IS D15.
+    Noether: incompressibility of primes is a conservation law.
+    Symmetry: the Fermat-Riemann duality transformation.
+    Conserved charge: σ=½.
+    Wiles proved the symmetry. D15 identifies the charge.
+    The Ainulindale conjecture IS the Noether current of the Fermat-Riemann duality.
+
+    FORMAL TARGETS:
+    TODO: State Fermat-Riemann duality as a formal theorem.
+    TODO: Show Noether current explicitly — derive σ=½ as conserved charge.
+    TODO: Connect to modularity — modular form of Fermat curve has zeros at σ=½.
+    TODO: Derive π(x) from Fermat lattice boundary geometry directly.
+          Show it agrees with Riemann derivation to same error term.
+    TODO: Connect to D2 — BAO scale = Fermat-Riemann boundary coherence length.
+
+    LSHS IMPLICATION:
+    Corpus = Fermat lattice (all compressible meaning).
+    Monad = compression engine.
+    Output = prime tips — incompressible residue — negative space of training data.
+    The LSHS speaks from the holes in compression space.
+    Compression-ignition fires at σ=½ because that is where the Fermat tips are.
+
+================================================================================
 VERSIONING
 ================================================================================
 All files at v0.111. Increment 0.001 per change.
