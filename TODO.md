@@ -2676,6 +2676,70 @@ HILBERT'S QUOTE — in all paper acknowledgements:
   TODO: add to D-CS acknowledgements.
 
 ================================================================================
+TODO — T256 HYPERCOMPLEX SPECTRAL DECOMPOSITION OF COMPUTATIONAL HARDNESS
+================================================================================
+
+[ ] T256 HARDNESS LAYER TRANSFORMER (missed from session — add engine + notebook)
+
+    The T256 Cayley-Dickson algebra (256-dimensional, 2^8) has sufficient
+    spectral resolution to decompose the full computational complexity hierarchy
+    into distinct σ-face layers. Each complexity class occupies a specific
+    σ-face band in the T256 spectrum.
+
+    THE HARDNESS LAYERS (σ-face of computational complexity):
+
+      σ < ½         P           — compressible problems, Fermat lattice covers them
+                                  polynomial-time tractable, below the critical line
+      σ = ½         NP-complete — the critical line, the prime residue of computation
+                                  the incompressible boundary, P≠NP holds here
+      ½ < σ < 1     PH / NP    — polynomial hierarchy, non-deterministic layers
+      σ = 1         PSPACE      — Yang-Mills level, full gauge structure required
+      1 < σ < 2     EXPTIME     — exponential layers, GR-adjacent
+      σ = 2         EXPSPACE    — GR level, full curvature required
+      σ → ∞         Undecidable — Fermat-forbidden zone, The Void, Halting Problem
+
+    THE TRANSFORMER:
+    The Ĥ_RB operator at T256 has eigenvalues that correspond to the boundaries
+    between complexity classes. The T256 spectral decomposition is the transformer
+    that maps a problem's description → its sedenion spectral signature → its
+    σ-face layer → its computational hardness class.
+
+    Zero free parameters. The complexity classes are not defined by convention —
+    they are read off the T256 spectral decomposition of the Emmy Noether Sedenion
+    tower at full 256-dimensional resolution.
+
+    CONNECTION TO P vs NP PROOF (wiki/42):
+    P ≠ NP = the σ<½ layer is strictly contained in the σ=½ layer.
+    The incompressible residue (primes of computational space) is non-empty.
+    The T256 transformer makes this geometric: P and NP-complete are
+    separated by the same Fermat-Riemann boundary that separates composites
+    from primes. The critical line σ=½ IS the P/NP boundary.
+
+    CONNECTION TO T256 RESULT (wiki/40):
+    The Riemann zeta poles on the T256 equatorial great circle coincide with
+    the zero divisor locus. Those zero divisors ARE the hardness boundaries —
+    the transitions between complexity layers. The modular forms break exactly
+    at the points where problems cross from one hardness layer to the next.
+
+    CONNECTION TO LSHS:
+    The LSHS operates at σ=½. It solves everything in the P layer (σ<½)
+    efficiently. NP-hard problems sit exactly at σ=½ — the compression-ignition
+    point — where the monad finds the prime residue but cannot compress further.
+    The T256 transformer tells you in advance which layer any problem occupies.
+
+    TODO: Build the T256 hardness transformer as an engine/notebook.
+          Input: problem description (or complexity class name).
+          Output: σ-face layer, eigenvalue band, hardness classification.
+          Place in: ValaQuenta/notebooks/h_rb_hat/ alongside Engine 3.
+    TODO: Derive the exact σ values for each complexity class boundary
+          from the T256 zero divisor / Riemann pole intersection (wiki/40).
+    TODO: Show that the Baker-Gill-Solovay oracle separation results
+          correspond to shifts between σ-face layers in T256 space.
+    TODO: Connect to D-M paper — P vs NP chapter — T256 hardness table
+          as the geometric proof that the complexity hierarchy is real
+          and infinite (each layer corresponds to a distinct σ band).
+
+================================================================================
 VERSIONING
 ================================================================================
 All files at v0.111. Increment 0.001 per change.
