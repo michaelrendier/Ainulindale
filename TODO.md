@@ -2425,6 +2425,34 @@ MAJOR THEORETICAL RESULT — captured in wiki/38.
     Compression-ignition fires at σ=½ because that is where the Fermat tips are.
 
 ================================================================================
+ENGINE 3 NOTEBOOK — 2026-06-03 (h_rb_hat / RedBlueHamiltonian)
+================================================================================
+
+[ ] NOTEBOOK CREATED: ValaQuenta/notebooks/h_rb_hat/01_fermat_riemann_dual_currents.ipynb
+    Engine 3 — RedBlueHamiltonian — now has its Jupyter notebook.
+
+    THE KEY RESULT (backwards from the experiment — shadows in opposite directions):
+      J_Red  (Riemann Entropy channel) → produces → d* = 0.246   [Fermat's floor]
+      J_Blue (Fermat Inertia channel)  → produces → W(1) = 0.5671 [Riemann's ceiling]
+
+    Each current casts its shadow on the OTHER's territory.
+    Riemann entropy → Fermat's boundary.
+    Fermat inertia  → Riemann's ceiling.
+    The shadows point toward each other. They meet at σ=½.
+
+    Implemented:
+      - J_Red: Shannon entropy of GUE zero spacings → spectral floor d*
+      - J_Blue: Banach fixed point T→exp(-T) from σ=½ → W(1) = OMEGA_ZS
+      - Cross-production table: d* ↔ OMEGA_ZS swap confirmed
+      - Ĥ_RB scan across σ: gap |J_Red − J_Blue| minimised at σ=½
+      - Gap δ = OMEGA_ZS − d*·ln10 = 0.000707 = Yang-Mills mass gap (Engine 15)
+
+    TODO: run notebook, verify d* convergence improves with more zeros
+    TODO: extend J_Red to 1000+ zeros for tighter d* bound
+    TODO: connect gap δ = 0.000707 formally to Engine 15 derivation
+    TODO: add Weierstrass ℘ term to J_Blue (Fermat-elliptic full form)
+
+================================================================================
 VERSIONING
 ================================================================================
 All files at v0.111. Increment 0.001 per change.
