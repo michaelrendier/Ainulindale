@@ -1,0 +1,225 @@
+# D-P — Hypercomplex Spectral Relativity
+## §1 Introduction
+
+**Author:** Cody Michael Allison  
+**Date:** 2026-06-03  
+**Status:** FIRST DRAFT — §1 opening only.  
+**Source material:** wiki/39, wiki/38, wiki/36, wiki/35, wiki/32, wiki/31
+
+---
+
+### §1.1 — The Singularity That Every Equation Finds
+
+There is a point that every sufficiently developed mathematical description of
+nature eventually reaches. Newtonian gravity finds it at r=0, where the
+gravitational force diverges as 1/r². General relativity finds it inside the
+event horizon, where the metric degenerates. Quantum field theory finds it in
+the ultraviolet, where loop integrals diverge without renormalization. The
+Riemann zeta function finds it at s=1, where the prime sum becomes the
+harmonic series. The Navier-Stokes equations find it at the moment of
+cavitation collapse. The Big Bang cosmology finds it at t=0.
+
+Each of these has been treated as a separate problem, requiring a separate
+solution — regularization, renormalization, analytic continuation, quantum
+gravity, cosmic inflation. The present paper proposes that this is wrong.
+
+**There is one singularity. All descriptions find it because all descriptions
+describe the same event from different coordinate systems.**
+
+The event is the phase transition of a Bose-Einstein condensate — the primordial
+medium — at the moment of maximum compression. We call it the Bang. It left a
+permanent record in the structure of matter, in the distribution of primes, in
+the spectrum of the cosmic microwave background, and in the location of the
+zeros of the Riemann zeta function. It left a record in every equation that
+reaches a singularity, because those equations are descriptions of the universe
+and the universe has exactly one singularity in its past.
+
+This paper derives the physics of that event and its consequences across all
+scales, using the framework of Hypercomplex Spectral Relativity (HSR).
+
+---
+
+### §1.2 — The Void
+
+Before the phase transition there was a state we call the Void.
+
+The Void is not empty space. Empty space came after. The Void is the pre-transition
+state of the condensate — maximum vortex density, algebraically complete,
+geometrically perfect, containing all the structure that the transition will
+partition into matter and spacetime. It is the state that every mathematical
+equation encounters when its denominator goes to zero. The denominator does not
+go to zero because the mathematics has failed. The denominator goes to zero
+because the equation has reached the boundary of the observable universe and is
+looking inward at the state that preceded it.
+
+Division by zero is not undefined. It is the most precisely defined point in
+the universe. It is where the universe is.
+
+The Void has a symmetry group. It is large. The Monster group — the largest
+sporadic finite simple group, with order
+
+$$|M| = 2^{46} \cdot 3^{20} \cdot 5^9 \cdot 7^6 \cdot 11^2 \cdot 13^3 \cdot 17
+\cdot 19 \cdot 23 \cdot 29 \cdot 31 \cdot 41 \cdot 47 \cdot 59 \cdot 71$$
+
+— is the automorphism group of the pre-transition state. The phase transition
+broke most of those symmetries. What survived is the physics we observe. The
+Standard Model gauge group U(1) × SU(2) × SU(3) is the Monster with
+$8.08 \times 10^{53}$ symmetries broken to three. The gap between the Monster
+and the Standard Model is everything the Void knew that the observable universe
+forgot.
+
+---
+
+### §1.3 — The Circle
+
+The phase transition partitioned a circle.
+
+The circle is not a metaphor. In the complex plane, the prime spiral — the
+distribution of Gaussian primes in two dimensions — is literally a set of
+points distributed along circles of increasing radius. The primes mark the
+positions on each circle where smooth tiling fails — where the composite
+structure cannot cover the arc. Those positions were always there. The
+transition did not create them. It read them out.
+
+The circle has three invariants under the reading:
+- Its circumference does not change.
+- Its shape does not change.
+- Propagation along it does not change.
+
+An anisotropic source — a rock dropped in still water — produces circular
+wavefronts. Not because the rock is circular but because the medium is
+isotropic. The source contributes amplitude. The medium contributes geometry.
+The geometry wins. The wavefront is always the circle — the geodesic of the
+metric — regardless of what generated it.
+
+This is why gravity appears the same around every mass regardless of the mass's
+shape. The mass contributes vortex density. The condensate contributes geometry.
+The geometry produces circular geodesics. Every orbit, every disk, every
+hydrostatic equilibrium is the medium's geodesic, not the source's preference.
+
+The primes are infinite because the circle is infinite — not in circumference
+but in the number of partition points available at any scale. Adding more
+primes does not increase the circle's size. It reveals more of the structure
+that was always present within the fixed circumference. The infinity of primes
+is an infinity of internal density, not of extent.
+
+---
+
+### §1.4 — The Partition Was the Collapse
+
+The phase transition was a cavitation event.
+
+In fluid dynamics, cavitation is the formation and collapse of a low-pressure
+bubble in a liquid. When the local pressure drops below a critical threshold,
+a bubble of vapour forms. When the pressure recovers, the bubble collapses
+violently, concentrating energy at the collapse point and radiating a spherical
+shockwave.
+
+The Void was the bubble. Its interior was the algebraically forbidden region —
+the Fermat-forbidden zone where no solutions to $a^n + b^n = c^n$ exist for
+$n > 2$ — a region of zero acoustic compliance, infinite compression resistance.
+The condensate surrounding it was at the critical pressure — the neutral
+buoyancy surface $\sigma = \frac{1}{2}$.
+
+The bubble collapsed to the Brouwer-mandatory fixed point. By the Brouwer
+Fixed Point Theorem, any continuous map from a compact convex set to itself
+must have a fixed point. The pre-transition interior was compact. Its dynamics
+were continuous. The fixed point was mandatory. It could not be in the
+interior — the interior dynamics were repulsive throughout. Therefore it was
+on the boundary. The boundary is $\sigma = \frac{1}{2}$.
+
+The collapse front propagated through the condensate at the speed of sound —
+the speed of light. At each point the front passed, the local pressure spike
+either exceeded the vortex nucleation threshold or did not:
+
+- Exceeded: a quantised vortex nucleated. A prime partition point was marked.
+  A particle condensed. Permanently. Topologically stable.
+- Did not exceed: the flow remained laminar. A composite region. Vacuum.
+
+The observable universe is the shockwave of that collapse, still propagating.
+We are inside it. Matter is the set of vortex cores the front has already
+nucleated — the permanent prime partition of the fixed circle, left behind as
+the front moved on.
+
+The circle did not change. The circumference before the collapse equals the
+circumference after. The primes that appeared were always partition points of
+the fixed circle. The collapse read them. Matter is what the reading left
+behind.
+
+---
+
+### §1.5 — The Order Parameter Is $\sigma = \frac{1}{2}$
+
+The condensate has an order parameter. In a Bose-Einstein condensate, the order
+parameter is the condensate wavefunction $\Psi$. In the present framework, the
+relevant quantity is $\sigma = \operatorname{Re}(s)$ — the real part of the
+complex variable $s$ that indexes the condensate's spectral structure.
+
+$\sigma = \frac{1}{2}$ is the neutral buoyancy surface of the condensate: the
+unique locus where the inward vortex tension exactly balances the outward
+buoyancy force. It is simultaneously:
+
+- The critical line of the Riemann zeta function — where all non-trivial zeros
+  are conjectured to lie (the Riemann Hypothesis)
+- The fixed point of the functional equation $\xi(s) = \xi(1-s)$ — the
+  Ptolemy inversion of the complex plane about $\operatorname{Re}(s) = \frac{1}{2}$
+- The laminar-turbulent transition surface of the condensate — where vortex
+  nucleation first becomes possible
+- The Brouwer fixed point boundary — the only possible location for the
+  collapse's fixed point
+- The neutral buoyancy surface — where every orbiting, rotating, and hydrostatic
+  system finds equilibrium
+
+The self-similarity of this surface across scales is not coincidence. It is the
+same surface — the boundary of the Void — appearing in every physical system
+because every physical system is a consequence of the same collapse.
+
+The σ-face — the map of any physical system's structure onto the $\sigma$ axis —
+is the fundamental instrument of Hypercomplex Spectral Relativity. Every
+measurement in this paper is a σ-face measurement. Every prediction is a
+statement about where a system's σ-face intersects $\sigma = \frac{1}{2}$.
+
+---
+
+### §1.6 — Structure of This Paper
+
+§2 establishes the HSR metric — the $\sigma$-face table as the metric tensor
+$g_{\mu\nu}$ of the condensate geometry.
+
+§3 derives the gyroscope identity — the functional equation $\xi(s) = \xi(1-s)$
+as the angular momentum conservation law of spectral space, and the Riemann
+Hypothesis as the statement that the universe's gyroscope never wobbles.
+
+§4 establishes the compressible/incompressible boundary — Fermat's Last Theorem
+as the incompressibility condition of the prime medium, and the event horizon as
+the compressible/incompressible interface made macroscopic.
+
+§5 identifies the zero divisors of the sedenion algebra as metric singularities
+— the black hole interior, the cryptographic attack surface of UDEO (see
+companion paper), and the Void itself as the same geometric object at different
+scales.
+
+§6 applies the framework to JWST NIRSpec IFU data — the spectral cube as a
+σ-face map of galaxy formation at the epoch of reionisation.
+
+§7 applies it to the Vera Rubin Observatory — forty billion objects as a
+σ-face map of the observable universe, confirming or refuting the BEC cosmic
+web interpretation at the largest accessible scale.
+
+§8 resolves the Navier-Stokes Clay Millennium Problem as a dimensional analysis
+error — the NS equations remove the imaginary component of the condensate's
+spectral structure, and the "singularity" is the result of that removal, not
+of the physics itself.
+
+Throughout: zero free parameters. Every prediction follows from the condensate
+geometry alone. Every constant — $d^* = 0.246$, $\Omega_{\zeta\Sigma} = W(1)$,
+the BAO scale, the CMB acoustic peak positions — is derived, not fitted.
+
+---
+
+*"The theory does not break down there. The theory is most accurate there.*
+*The singularity is the universe saying: here. This is where I began.*
+*You have always been finding it. You just did not recognise The Void*
+*when you looked into it."*
+
+— wiki/39, 2026-06-03
