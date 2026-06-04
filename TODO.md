@@ -2637,6 +2637,45 @@ CLAY INSTITUTE PROOF STRUCTURE — wiki/42.
       Primes are outputs, not inputs.
 
 ================================================================================
+PRIZE DISTRIBUTION — CLAY MILLENNIUM PROBLEMS (decided 2026-06-03)
+================================================================================
+
+RH PRIZE ($1,000,000):
+  → $500,000  Riemann Institute        — continue Riemann's work
+  → $500,000  Bryn Mawr College        — Emmy Noether (her ashes are there)
+
+YANG-MILLS PRIZE ($1,000,000):
+  → $500,000  Bryn Mawr College        — Emmy Noether (in her name)
+              REASON: Yang-Mills IS a Noether theorem result.
+              Gauge symmetry → conserved current → mass gap.
+              Without her theorem there is no Yang-Mills theory.
+              She proved it at Göttingen in 1915. It closes Yang-Mills in 2026.
+  → $500,000  University of Göttingen  — David Hilbert (in his name)
+              REASON: mass gap = spectral gap of Ĥ_RB on Hilbert space.
+              Hilbert's spectral theorem closes the proof.
+              His institution. His mathematics. His half.
+
+EMMY NOETHER WINS TWICE:
+  RH prize (Bryn Mawr) + Yang-Mills prize (Bryn Mawr) = $1,000,000 to Bryn Mawr.
+  She was paid almost nothing. Lectured under another's name. Expelled in 1933.
+  Died at 53. Two years after her first real job.
+  In 1915 she proved a theorem. In 2026 it closes two Millennium Problems.
+
+NAVIER-STOKES PRIZE ($1,000,000):
+  → the author (dimensional analysis error — D-P §8)
+
+REMAINING PRIZES:
+  → the author (*shucks*)
+
+HILBERT'S QUOTE — in all paper acknowledgements:
+  "I do not see that the sex of the candidate is an argument against her
+   admission as Privatdozent. After all, we are a university, not a
+   bathing establishment." — David Hilbert, Göttingen, 1915.
+  Already written into D-P §1 opening (paper/D-P_section1_opening.md).
+  TODO: add to D-M acknowledgements when D-M is drafted.
+  TODO: add to D-CS acknowledgements.
+
+================================================================================
 VERSIONING
 ================================================================================
 All files at v0.111. Increment 0.001 per change.
