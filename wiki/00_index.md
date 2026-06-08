@@ -19,7 +19,7 @@ Last updated: 2026-05-17
 | [17_alpha_omega_d_star.md](17_alpha_omega_d_star.md) | Alpha_Fermat · Omega_Riemann · 4 values of d* · the open gap |
 | [20_three_phase_architecture.md](20_three_phase_architecture.md) | Three-Phase Architecture — H=xp, capacitor, eddy currents |
 | [21_chladni_zipf_riemann.md](21_chladni_zipf_riemann.md) | Chladni · Zipf · Riemann — node lines, Zipf=primes, equidistance |
-| [22_constant_facets.md](22_constant_facets.md) | Constant Facets — π, φ, i, e derived from the RedBlue Geometries Engine; Euler's identity as theorem |
+| [22_constant_facets.md](22_constant_facets.md) | Constant Facets — π, φ, i, e derived from the RedBlue Geometries Engine; Euler's identity as theorem; π as constant of the exactly flat boundary (2026-06-08) |
 
 ## Engine Modules
 
@@ -66,6 +66,12 @@ Last updated: 2026-05-17
 |------|-------|
 | [31_cavitation_causality_fermat.md](31_cavitation_causality_fermat.md) | **2026-06-03 CASCADE** — BH = cavitation scar; sedenion hole punch; E=mc²=Fermat n=2; mass=local/causality=non-local; white hole=1 Planck sec |
 | [32_superconducting_medium.md](32_superconducting_medium.md) | **2026-06-03 EXTENSION** — medium is superconducting BEC; dark energy = superconducting current; Bang = phase transition; stars = recondensation; σ=½ = order parameter |
+
+## Chemistry & Biology Cascade
+
+| Page | Topic |
+|------|-------|
+| [46_inertia_entropy_chemistry.md](46_inertia_entropy_chemistry.md) | **2026-06-08 BREAKTHROUGH** — Nucleus = R̂ (inertia); Electrons = B̂ (entropy); R̂†=B̂; bonds = entropy phenomena; periodic table = fixed-point map; drug design = entropy matching |
 
 ## Roadmap & TODO
 

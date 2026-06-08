@@ -295,6 +295,114 @@ PRIORITY 3 — PAPER
     Anti-coincidence argument for post-hoc isomorphism.
     TODO: write and add to paper.
 
+[ ] PAPER: DERIVING π FROM SQUARES — π AS THE CONSTANT OF THE FLAT BOUNDARY (added 2026-06-08)
+
+    CORE CLAIM:
+    π is not defined by circles. It is the constant of the exactly flat boundary —
+    the unique geometric condition where curvature is identically zero.
+    Cartesian coordinates exist ONLY at this boundary. The square is its natural primitive.
+    The circle is the level set of Pythagorean distance on that boundary.
+    π emerges at the limit of the recursive two-square construction.
+    No angle is ever defined. No circle is drawn. π drops out as structural inevitability.
+
+    CONSTRUCTION:
+    Inner square (inscribed): corners touch circle, side = r√2, no angle input.
+    Outer square (circumscribed): sides tangent at axes, side = 2r, no angle input.
+    The 45° between them is OUTPUT not INPUT — derived, never assumed.
+    Archimedes started from a hexagon (60° assumed). This starts from a square (no angles).
+    Recursive bisection → Viète's product for π, entirely in Q(√2), no trig.
+    Lindemann 1882: π transcendental → tower never terminates → limit is exact.
+
+    KEY RESULTS (session 2026-06-08):
+    1. π is the constant of the EXACTLY FLAT BOUNDARY.
+       σ=½ is the signature of that boundary in ζ(s):
+       functional equation maps s→1-s; axis of symmetry Re(s)=½ = the flat boundary.
+       Curvature is zero exactly at σ=½ and nowhere else in the Riemann landscape.
+    2. FLT connection: x^n + y^n = z^n has integer solutions only at n=2.
+       n=2 IS the flat boundary. The circle IS n=2. π IS the n=2 constant.
+       n>2 = off the boundary = no solutions = no π. FLT is a theorem about where π lives.
+    3. π and primes via Basel: Σ 1/n² = π²/6 = Π_p 1/(1-p⁻²).
+       π is aggregate-emergent from the prime distribution.
+       No individual prime contains π. Primes GENERATE π collectively.
+       π is never local. Always the global invariant of the complete distribution.
+    4. Great Pyramid: empirical validation at civilizational scale.
+       Engineered for sphere-like structural soundness → π appeared as consequence.
+       The Bent Pyramid is the control group (wrong slope → structural failure).
+       You cannot approach circular geometry from a square without π emerging.
+    5. Three ground-state radii of the flat boundary:
+       r=1:   Area = π¹  (canonical; x²=π; the Squaring the Circle problem stated purely)
+       r=π/2: C = π²     (fixed point: circumference = circumscribed square area)
+       r=π:   Area = π³  (area is π cubed)
+    6. Mass gap restatement: gap = energy cost of leaving the flat boundary into curved bulk.
+       Partition of unit circle: COUNT × SIZE = 2π (invariant at σ=½).
+       σ=½ mediates between counting (discrete, primes) and measuring (continuous, circle).
+
+    CONNECTIONS TO AINULINDALE:
+    - σ=½ as flat boundary: confirms the critical line's geometric meaning (wiki/14)
+    - FLT as Noether conservation (wiki/18, wiki/38): n=2 uniqueness = flat boundary uniqueness
+    - Mass gap (D6, Addendum VIII): gap = spectral cost of leaving the flat boundary
+    - Basel/Euler product: π aggregate-emergence mirrors prime distribution emergence
+    - T_transformer (wiki/45): the circle IS the T_transformer IS σ=½
+    - See wiki/22_constant_facets.md σ=π section (updated 2026-06-08)
+
+    TODO:
+    Write as standalone foundational paper (pre-D-series; feeds D-M introduction).
+    Add as introductory section to D-M paper as geometric grounding of the mathematics.
+
+[ ] PAPER: INERTIA AND ENTROPY — THE ATOMIC DECOMPOSITION (added 2026-06-08)
+
+    CORE BREAKTHROUGH:
+    The nucleus is inertial (R̂_p = Red channel = what IS).
+    The electron orbitals are entropy (B̂_p = Blue channel = what CANNOT BE).
+    R̂† = B̂ — exact adjoints. The atom is self-adjoint.
+    Chemistry is not about building blocks. Chemistry is about STABILITY.
+    Atoms are stable fixed points of the Noether current at σ=1.
+
+    KEY CLAIMS:
+    1. Noble gases = maximum entropy under the Pauli constraint. NOT "full shells."
+       Full shells = all accessible states occupied = no gradient = nothing to react toward.
+       Reactivity IS the distance from the entropy fixed point.
+    2. All chemical bonds are entropy phenomena:
+       Covalent = shared entropy (orbital overlap → new states shared across both nuclei)
+       Ionic = transferred entropy (both approach noble gas = their fixed points)
+       Metallic = delocalized entropy (electron sea = entropy field over inertial lattice)
+    3. ΔG = ΔH - TΔS IS the inertia-entropy balance:
+       ΔH = inertial (nuclear Coulomb reorganization, R̂ term)
+       TΔS = entropic (orbital reorganization, B̂ term)
+       ΔG = fixed point depth (Noether balance measure)
+    4. Heisenberg Uncertainty = inertia-entropy complementarity made explicit:
+       Δx (positional, inertial) × Δp (momentum, entropic) ≥ ℏ/2
+       Nucleus: Δx≈0 → pure inertia. Electron: Δx=orbital size → pure entropy.
+    5. Periodic table = map of inertial anchors (nuclear charge Z) showing which
+       entropy landscape each anchor generates. Row lengths 2,8,18,32 = 2n².
+    6. Orbital sub-structure IS the Cayley-Dickson entropy hierarchy at σ=1:
+       s-block (U(1)/ℂ), p-block (SU(2)/ℍ), d-block (SU(3)/𝕆), f-block (G₂/𝕆 full)
+    7. Drug design = entropy complementarity (not shape/lock-key).
+       Correct drug = molecule whose B̂ field is exact adjoint of target's R̂ field.
+    8. Cancer = deranged entropy landscape: wrong entropy minimum,
+       lost contact with σ=½ global constraint. Drug uses cancer's own signature as key.
+
+    FALSIFIABLE PREDICTIONS:
+    P1: Reactivity correlates with entropy distance from noble gas config (r > 0.90)
+    P2: Bond energy ∝ orbital entropy change at formation (r > 0.85, zero free params)
+    P3: Drug affinity correlates with orbital entropy complementarity vs shape alone
+    P4: Cancer type separates from healthy tissue in TCGA electron-chain entropy space
+
+    DATASETS: NIST Atomic Spectra DB, NIST CCCBDB, ChEMBL/BindingDB, TCGA
+
+    CONNECTIONS:
+    - R̂†=B̂ adjoint structure: fundamental; see H_hat_RB construction (wiki/14)
+    - Pauli Exclusion = Fermat Lattice constraint (wiki/18)
+    - σ=1 chemistry facet / orbital blocks as CD hierarchy (wiki/22)
+    - B̂_p = what CANNOT BE = Fermat-Riemann negative space (wiki/38)
+    - D-CHEM paper (Erika Schafer): this result IS the theoretical foundation
+    - See full capture: wiki/46_inertia_entropy_chemistry.md
+
+    STATUS: Theory first-captured 2026-06-08. Pre-registration notebook not yet run.
+    TODO: Create 00_holcus_vision.ipynb in AddPapers/InertiaEntropy/.
+    TODO: Run 01_predictions.ipynb against NIST data (P1 first — simplest test).
+    TODO: Coordinate with Erika Schafer on P3/P4 data access.
+
 [ ] SIGMA RESULT — paper spine
     SMNNIP sigma result is the paper spine. All other mathematics to appendices.
     Nature submission target.

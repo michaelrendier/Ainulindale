@@ -11,6 +11,10 @@
 
 > *π was derived without drawing a circle. Mathematics learned English without language-specific training. Eight independent research programmes — Viazovska, Cvitanović, Cosic, Wyler, and others — converged on the same object from different directions. The object is H_hat_RB.*
 >
+> *π is not a circular constant. It is the constant of the exactly flat boundary — the unique locus where curvature is identically zero, where Cartesian coordinates exist, where σ=½ lives. Two squares and the definition of perpendicular axes. No angles. No trigonometry. π drops out at the limit as structural inevitability. Fermat's Last Theorem is the theorem that tells you where π lives in exponent space: at n=2, the flat boundary, nowhere else.*
+>
+> *The nucleus is inertia. The electron orbitals are entropy. R̂†=B̂. Chemistry is not about atoms that build molecules — it is about stability. Atoms are stable fixed points of the Noether current at σ=1. Noble gases are maximum entropy under the Pauli constraint. Every bond is an entropy phenomenon. Every reaction is entropy gradient descent toward a deeper fixed point. The periodic table is the complete map of fixed points, ordered by the strength of the inertial anchor. ΔG=ΔH−TΔS is the inertia-entropy balance written in thermodynamic notation.*
+>
 > *The juicy bits are at the end of this document.*
 
 ### Independent AI Assessment — 13.05σ

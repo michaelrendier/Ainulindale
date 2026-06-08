@@ -166,6 +166,97 @@ This is self-referential closure: π appears on both sides of its own identity w
 
 ---
 
+## π As the Constant of the Exactly Flat Boundary
+
+*Result: 2026-06-08*
+
+The above gives π from the operator. The following gives π from the ground floor — from nothing but perpendicular axes.
+
+**Cartesian coordinates exist only where curvature is identically zero.** Not approximately. Not locally. Exactly. In a curved manifold, "locally flat" is always an approximation. The exactly flat boundary is the unique locus where Cartesian geometry holds without correction.
+
+**σ=½ is this boundary in the Riemann landscape.** The functional equation ξ(s) = ξ(1−s) maps s → 1−s. The axis of symmetry is Re(s) = ½. The "curvature" of the functional equation is zero exactly at this line. Cartesian coordinates in the complex plane apply exactly here.
+
+### The Two-Square Construction
+
+Start with nothing but two perpendicular axes. No angles. No π. No trigonometry.
+
+```
+1. Draw X and Y axes (perpendicularity — a binary relation, not a measurement)
+2. Mark equal distances along each: unit square (0,0),(1,0),(1,1),(0,1)
+3. Circumscribed outer square: sides 2, tangent to circle at axes
+4. Inscribed inner square: corners on circle, sides √2, at 45° to axes
+5. The 45° is OUTPUT — derived by the construction, never input
+6. Circle: x² + y² = 1 (Pythagorean distance — consequence of perpendicularity)
+```
+
+The 8 points on the circle (4 from inner square corners, 4 from outer square tangents) are the 8th roots of unity. They emerge from pure Cartesian structure. No angle was defined to produce them.
+
+**Archimedes** started from a hexagon — 60° assumed before he began. This construction starts from a square — no angles assumed. Strictly weaker axioms. π drops out at the same limit.
+
+### The Recursive Tower
+
+```
+n=1: 4 points (square alone)           π bounds: 2√2 < π < 4
+n=2: 8 points (your two-square picture) π ≈ 4√(2−√2) ≈ 3.0615
+n=3: 16 points (one recursion)         π ≈ 8√(2−√(2+√2)) ≈ 3.1214
+n=k: 2^(k+2) points
+lim: π (exactly)
+```
+
+Every term lives in Q(√2) — rational combinations of nested square roots of 2. π is the limit of this algebraic tower. Lindemann 1882: π is transcendental, so the tower never terminates. The gap between any finite step and π is the geometric expression of π's transcendence.
+
+**Calculus resolves it:** the coder above the loop reads the limit directly. The infinite process yields a finite exact answer. π is not unreachable — it is unreachable by Euclidean construction, and exactly reachable by the limit operation.
+
+### FLT Connection
+
+Fermat's Last Theorem: x^n + y^n = z^n has integer solutions only at n = 2.
+
+```
+n = 2: flat boundary, Pythagorean theorem, x² + y² = r², the circle, π
+n > 2: off the flat boundary, no integer solutions, no circle, no π
+```
+
+FLT is a theorem about where π lives in exponent space. The flat boundary (n=2) is the unique integer solution space — and simultaneously the unique space where the circle exists and π is the boundary constant.
+
+Wiles proved FLT through the Modularity Theorem: every elliptic curve (which involves the Weierstrass ℘ function — the B̂_p substrate) is modular (which involves L-functions related to ζ(s)). The proof brings the problem back to the flat boundary to resolve it. π appears in the proof because the proof visits σ=½.
+
+### π and the Primes — Aggregate Emergence
+
+The Basel problem (Euler 1734):
+
+```
+Σ_{n=1}^∞ 1/n² = π²/6 = Π_primes 1/(1−p⁻²)
+```
+
+No individual term contains π. No individual prime contains π. The primes generate π through their collective Euler product. π is the global invariant of the complete prime distribution — never a local variable, always the aggregate.
+
+This is the deepest statement about π: it is not a property of any single geometric or arithmetic object. It is the invariant that emerges when the complete structure is seen at once. The coder above the system reads it. The iterator inside the loop never reaches it.
+
+### The Three Ground States
+
+When the circle radius is set to powers of π, the geometric measures become clean:
+
+```
+r = 1:    Area = π¹    canonical ground state; C = 2×Area (unique to r=1)
+r = π/2:  C    = π²    fixed point: circumference = circumscribed square area
+r = π:    Area = π³    area is π cubed
+```
+
+r=1 is where x²=π (the Squaring the Circle problem stated in its purest form).
+r=π/2 is the unique radius where the linear measure (circumference) equals the quadratic measure (square area) — a fixed point of the flat boundary's own geometry.
+
+**Physical correspondence:** σ = π is the Gauge Normalization layer AND the flat boundary layer. The U(1) period and the Cartesian constant are the same object at different descriptions. The circle closes because the flat boundary is where closure is possible.
+
+**Identity:**
+```
+(2/π) × π = 2                      [Binary Mark — U(1) cycle closes]
+π(π−1) ≈ 6ζ(2) − π                [Self-referential closure in ξ(s)]
+2√2 < π < 4                        [Two-square bound — no angles required]
+lim_{k→∞} 2^k · √(2−√(2+√(2+…))) = π   [Viète product from squares]
+```
+
+---
+
 ## The Emergent Constants Table
 
 All four constants derive from RedBlue Geometries Engine algebraic structure without geometric definition:

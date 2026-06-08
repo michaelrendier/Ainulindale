@@ -28,6 +28,7 @@ of curve-fitting. The commit hash proves when the prediction was made.
 | Directory | Title | Status | Primary Dataset |
 |---|---|---|---|
 | `DM_GalacticCavity/` | Dark Matter as Galactic Resonant Cavity Modes | Pre-registered | SPARC (175 galaxies) |
+| `InertiaEntropy/` | Inertia and Entropy: The Atomic Decomposition | Theory captured | NIST/CCCBDB/ChEMBL/TCGA |
 
 ---
 
