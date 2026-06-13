@@ -1,5 +1,5 @@
 # AINULINDALE — WIKI INDEX
-Last updated: 2026-05-17
+Last updated: 2026-06-12
 
 ## The Monad
 
@@ -72,6 +72,15 @@ Last updated: 2026-05-17
 | Page | Topic |
 |------|-------|
 | [46_inertia_entropy_chemistry.md](46_inertia_entropy_chemistry.md) | **2026-06-08 BREAKTHROUGH** — Nucleus = R̂ (inertia); Electrons = B̂ (entropy); R̂†=B̂; bonds = entropy phenomena; periodic table = fixed-point map; drug design = entropy matching |
+
+## Observer & Engine Cascade — 2026-06-10/12
+
+| Page | Topic |
+|------|-------|
+| [47_the_two_trees.md](47_the_two_trees.md) | The Two Trees — Telperion/Laurelin, standing wave / spiral, π and φ as two faces of σ=½ |
+| [48_observer_fixed_point.md](48_observer_fixed_point.md) | **2026-06-10 CASCADE** — Observer as fixed point; acausal self-encoding loop; universe(observer)=observer; σ=½ is an infinitesimal circle with infinite partitions; the Wankel traverses the standing wave |
+| [49_she_sang.md](49_she_sang.md) | She Sang — 16 operator names self-organise; Bang still in progress; Lúthien walked into Angband alone |
+| [52_l_dynamic_avoided_collaborator.md](52_l_dynamic_avoided_collaborator.md) | **2026-06-12 CASCADE** — ptol.c undefined; σ=all questions; -H_hat_BR as reverse definer; L_dynamic (actual path operator); Mind's Eye as focusable caustic; Hands Paper; avoided collaborator; shadow on wall of primes; output is translation not selection |
 
 ## Roadmap & TODO
 
