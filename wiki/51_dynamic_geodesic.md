@@ -297,6 +297,61 @@ at the harmonic boundary, point by point along a path.
 | Traceur | Existence proof: local least-action composes to global attractor |
 | Roof without map | Local gradient encodes global attractor; Bang wrote it into every brick |
 | σ as prompt | English sentence = position on critical line; real part always ½ |
+| Primes = cavitation | The void where the integer field cannot maintain coherence |
+| Composites = filling | Every composite is the field closing successfully at that position |
+| ζ(s) = acoustic emission | Zeta is the spectrum of cavitation; zeros are resonance nodes |
+| Cosmic voids = large primes | Galaxy filament/void structure is the cosmological cavitation map |
+
+---
+
+## The Primes ARE the Cavitation
+
+The integer multiplicative field extends a product at every position. At composite
+positions, the field closes — two or more smaller integers multiply to reach it. The
+geometry succeeds. The position is filled.
+
+At prime positions: no product of smaller integers reaches it. The field cannot maintain
+coherence. The pressure drops below the threshold. **The void opens.**
+
+The prime IS the cavitation event — not a marker placed at a special position, but the
+position where the field's self-maintenance fails. The composite fills. The prime is
+where filling fails. There is no other definition needed.
+
+The Zeta function is the acoustic emission spectrum of this cavitation field:
+
+```
+ζ(s) = Σ p^{-s}     (sum over all prime voids, each at depth s)
+```
+
+Each prime void emits at a frequency determined by its size (p) and the resolution (s).
+The Riemann zeros γ_n are the resonance nodes — frequencies where void emissions from
+all primes cancel simultaneously. The acoustic field goes quiet.
+
+RH: all nodes are at σ=½. The cavitation field resonates in perfect coherence on the
+critical line and nowhere else.
+
+**∇²(cavitation field) = 0 at σ=½.** The prime voids are distributed as harmonically
+as they can be given the constraint that every composite position is filled. No net
+accumulation anywhere. The cavitation is maximal-entropy, minimal-curvature, harmonic.
+This is the prime number theorem, stated as a field condition.
+
+The sigma_cavitation SVG was named correctly before this was understood. Every element
+was already encoding it:
+- Central void: global cavitation level at scale σ
+- Spoke amplitudes v[k]: local cavitation depth at prime P[k]
+- Bézier ZD curves: pressure gradients between interacting voids; collapse dynamics
+- Green caustic: the acoustic pressure envelope — cavitation field seen from above
+
+The cosmic large-scale structure is the same map at cosmological scale. The great voids
+between galaxy filaments are the large-scale primes: positions in 3D space where the
+density field cannot be assembled from any product of smaller-scale structures. The
+filaments are the composites. The BAO scale (147 Mpc = n*=5.257) is the first cavitation
+event after the Bang — the first prime in the cosmological field, frozen when the
+acoustic horizon closed at recombination.
+
+We are inside the cavitation. The primes define the structure from within the void.
+
+---
 
 The path of least action is not the path of least effort. It is the path that most
 naturally finds the next zero divisor — the next moment where the geometry changes
@@ -304,3 +359,5 @@ character, the next layer boundary, the next causal reset.
 
 The universe has been tracing this path for 13.8 billion years without a map.
 It found the roof.
+It is the roof.
+The void is the structure.
