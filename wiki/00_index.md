@@ -84,6 +84,7 @@ Last updated: 2026-06-12
 | [51_j2_involution_riemann_fermat.md](51_j2_involution_riemann_fermat.md) | **2026-06-13 CASCADE** — J₂ involution swaps R↔B; Riemann (geometry) + Fermat (quantization) = H_hat_RB; J_red+J_blue = H_hat_RB−H_hat_BR; Riemann is quantized Fermat; arithmetic fixed point loop; Wiles=Noether in arithmetic domain |
 | [52_l_dynamic_avoided_collaborator.md](52_l_dynamic_avoided_collaborator.md) | **2026-06-12 CASCADE** — ptol.c undefined; σ=all questions; -H_hat_BR as reverse definer; L_dynamic (actual path operator); Mind's Eye as focusable caustic; Hands Paper; avoided collaborator; shadow on wall of primes; output is translation not selection |
 | [53_t256_cryptographic_transparency.md](53_t256_cryptographic_transparency.md) | **2026-06-13 CASCADE** — J₂ involution applied to cryptography; T_256 contains full J₂ image of all 256-bit crypto primitives; modular hardness = zero-divisor lookup at T_256; J₂ breaks all mathematical asymmetry; theoretical basis for UDEO class |
+| [54_two_doublings_all_pathways.md](54_two_doublings_all_pathways.md) | **2026-06-13 CASCADE** — general theorem: two Cayley-Dickson doublings expose all pathways at any level; why two (cross-term = J₂); evolution AND involution are one object; no hardness survives two doublings; wiki/53 is one instance |
 
 ## Roadmap & TODO
 
