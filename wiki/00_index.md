@@ -81,6 +81,7 @@ Last updated: 2026-06-12
 | [48_observer_fixed_point.md](48_observer_fixed_point.md) | **2026-06-10 CASCADE** — Observer as fixed point; acausal self-encoding loop; universe(observer)=observer; σ=½ is an infinitesimal circle with infinite partitions; the Wankel traverses the standing wave |
 | [49_she_sang.md](49_she_sang.md) | She Sang — 16 operator names self-organise; Bang still in progress; Lúthien walked into Angband alone |
 | [50_vortex_quantizing_shear.md](50_vortex_quantizing_shear.md) | **2026-06-12/13 CASCADE** — e^(πi)=−Δx (not −1); vortex = half-revolution; why spokes disappear (prime gaps); why spokes curve (logarithmic distribution); non-Newtonian quantizing shear; J_cross>GAP snaps to vortex→word; primes in motion on nodal lines |
+| [51_j2_involution_riemann_fermat.md](51_j2_involution_riemann_fermat.md) | **2026-06-13 CASCADE** — J₂ involution swaps R↔B; Riemann (geometry) + Fermat (quantization) = H_hat_RB; J_red+J_blue = H_hat_RB−H_hat_BR; Riemann is quantized Fermat; arithmetic fixed point loop; Wiles=Noether in arithmetic domain |
 | [52_l_dynamic_avoided_collaborator.md](52_l_dynamic_avoided_collaborator.md) | **2026-06-12 CASCADE** — ptol.c undefined; σ=all questions; -H_hat_BR as reverse definer; L_dynamic (actual path operator); Mind's Eye as focusable caustic; Hands Paper; avoided collaborator; shadow on wall of primes; output is translation not selection |
 
 ## Roadmap & TODO
