@@ -247,11 +247,97 @@ flow boundary of the universe.
 
 ---
 
-### §1.7 — Structure of This Paper
+### §1.7 — The Gravastar: The Preserved Void
+
+The interior of a black hole is not a singularity.
+
+Mazur and Mottola (2001) proposed the *gravastar* — gravitational vacuum condensate
+star — in which the black hole interior is not a point of infinite density but a
+de Sitter space: a region of positive cosmological constant, a Bose-Einstein
+condensate in the vacuum state. The event horizon is not the boundary of a trap.
+It is a phase transition surface — the interface between the phase-transitioned
+exterior universe and the un-transitioned Void interior.
+
+In the present framework: crossing **through** $i$ (the turbulent flow boundary,
+§1.6) reveals not a singularity but the **preserved Void** — the region of the
+primordial BEC that did not undergo the phase transition at the Bang.
+
+The Bang was a phase transition of the BEC. It was not complete everywhere
+simultaneously. At points of extreme vortex density — the prime partition points
+where pressure exceeded the nucleation threshold (§1.4) — the collapse was so
+rapid that a region was enclosed before it could transition. The enclosed region
+preserved the pre-transition state: de Sitter space. The cosmological constant.
+The Void.
+
+This is the gravastar. Not a stellar remnant. A primordial remnant of the Bang
+itself.
+
+---
+
+**Pre-recombination formation.** Primordial gravastars did not form from
+collapsing stars. They formed in the very early universe, before recombination —
+before the CMB flash at $z \approx 1100$, $T \approx 3000\,\text{K}$, orange
+light. They are preserved pieces of the Void, enclosed by the cavitation event
+and sealed at the event horizon. The CMB was emitted from the surrounding universe
+**after** the gravastar was already enclosed. The gravastar predates the oldest
+light.
+
+---
+
+**The view from inside.** An observer crossing through $i$ — through the phase
+transition surface, not across it — enters the Void. From inside the preserved
+pre-transition BEC, the entire post-recombination history of the external universe
+is visible, compressed into the forward light cone. The $r$ coordinate is
+timelike; the external universe's future is the observer's present. The universe
+races away — not as escape but as 13.8 billion years of external history
+completing itself in compressed time. Daytime-clear, from inside the thing that
+was there before any of it existed.
+
+The singularity is not ahead. The Void is ahead. Undisturbed. Pre-transition.
+Still ringing at the frequency it always rang at.
+
+---
+
+**Dark energy as the leaking Void.** The de Sitter interior of every primordial
+gravastar is not fully contained. The boundary $i$ is a crossing point, not a
+wall. Dark energy — the cosmological constant $\Lambda$ — is the de Sitter
+vacuum energy of all primordial gravastars contributing through their phase
+transition surfaces to the surrounding universe. The cosmological constant is the
+boundary condition of the gravastar surface, integrated over all enclosed Void
+regions.
+
+**The $10^{120}$ discrepancy resolved.** Quantum field theory sums over all
+vacuum modes — including those inside every primordial gravastar, treating the
+Void interior as accessible. Gravity respects the gravastar boundary: the Void
+interior is causally separated from the exterior. The ratio between the QFT
+estimate and the observed $\Lambda$ is the ratio between *all modes including the
+enclosed Void* and *only the modes outside the gravastar boundary*. The
+cosmological constant problem is a boundary condition error — the failure to
+account for the Void enclosures that the phase transition left behind.
+
+---
+
+**Every black hole is a window back through $i$ into the pre-recombination BEC.**
+
+The Void was not destroyed at the Bang.
+It was enclosed.
+It is still there.
+Still at the frequency before the first light.
+
+$$i \xrightarrow{\text{through}} \text{Void} \xrightarrow{\text{de Sitter}} \Lambda$$
+
+---
+
+### §1.8 — Structure of This Paper
 
 §1.6 establishes that $i$ is the turbulent flow boundary — the precise statement
 of what $\sigma = \frac{1}{2}$ is in fluid language, unifying Navier-Stokes and
 Riemann as the same problem.
+
+§1.7 establishes the gravastar as the preserved Void: the black hole interior is
+de Sitter BEC, not a singularity. Pre-recombination gravastars are the Void
+enclosed by the Bang's phase transition. Dark energy is the leaking Void.
+The $10^{120}$ cosmological constant discrepancy is a boundary condition error.
 
 §2 establishes the HSR metric — the $\sigma$-face table as the metric tensor
 $g_{\mu\nu}$ of the condensate geometry.
