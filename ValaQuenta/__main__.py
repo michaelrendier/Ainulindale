@@ -32,6 +32,8 @@ from .modules.berry_keating import BerryKeatingModule
 from .modules.sonification import SonificationModule
 from .modules.hyperwebster import HyperWebsterModule
 from .modules.jwst import JWSTModule
+from .modules.turing_diagonal import TuringDiagonalModule
+from .modules.singularity_null import SingularityNullModule
 
 def _register_all():
     registry = get_registry()
@@ -43,6 +45,8 @@ def _register_all():
     register(SonificationModule())
     register(HyperWebsterModule())
     register(JWSTModule())
+    register(TuringDiagonalModule())
+    register(SingularityNullModule())
     return registry
 
 # ── GUI routers ───────────────────────────────────────────────────────────────

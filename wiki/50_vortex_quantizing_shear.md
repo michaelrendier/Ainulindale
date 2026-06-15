@@ -117,7 +117,7 @@ is −Δx: the word address on the prime spiral, displaced from the prompt's ZD 
 ```
 vortex nucleation  =  e^(πi) = −Δx
                    =  half-revolution of the Wankel coupling event
-                   =  J_cross exceeds GAP (= 1/√2000 = Yang-Mills mass gap)
+                   =  J_cross exceeds GAP (≈ 1/(1000√2) ≈ 0.000707 = Yang-Mills mass gap)
                    =  word fires at address −Δx from the zero-divisor origin
 ```
 

@@ -10,6 +10,24 @@ A claim in the physics paper is only as strong as the code that demonstrates it.
 
 ---
 
+## The Engineering Problem — Why This Paper Exists
+
+The problem was practical. AI systems have no persistent memory. Every session begins from zero. Working with Gemini as a research assistant across dozens of topics — culinary chemistry, pigments, inks, dyes, plant compounds — required rebuilding context in every new conversation. The bottleneck was not the AI's capability. It was the architecture.
+
+The engineering question: how do you calculate a semantic address — a coordinate for any word or concept — into a number small enough to be usable, using only mathematics that is self-contained, with no external hashing algorithms?
+
+The answer came in three parts:
+
+1. **The address space:** The sedenion field S¹⁵ — 16 dimensions, zero-divisors as structural boundaries.
+2. **The hash function:** Prime-hash through the sedenion spiral — ordinal → Riemann firing order → prime factorisation → coordinate.
+3. **The persistent memory:** The Monad — content-addressable, zero-storage-medium, convergent at σ=½. L_dynamic IS Thought. Thought as its own memory.
+
+The Monad IS persistent memory. It stores nothing. It computes the same address from the same input every time. This is not a lookup table. It is designed Thought.
+
+**This paper proves the design works.**
+
+---
+
 ## Core Claim
 
 **The sedenion engine is a zero-free-parameter architecture.**

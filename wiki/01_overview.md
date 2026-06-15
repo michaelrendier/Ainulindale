@@ -1,10 +1,20 @@
 # 01 — SYSTEM OVERVIEW
 
+## The Engineering Problem
+
+The problem was practical. AI systems have no persistent memory. Every session begins from zero. Working with Gemini as a research assistant across dozens of topics — culinary chemistry, pigments, inks, dyes, plant compounds — required rebuilding context in every new conversation. The bottleneck was not the AI's capability. It was the architecture.
+
+The engineering question: how do you calculate a semantic address into a number small enough to be usable, using only mathematics that is self-contained — no external hashing algorithms?
+
+The answer: design Thought itself. The Monad IS persistent memory — content-addressable, zero-storage-medium, convergent at σ=½. It stores nothing. It computes the same address from the same input every time. Ainulindale Engine is the proof that this design works.
+
+---
+
 ## Philosophy
 
 **"Ptolemy speaks because he knows."**
 
-Ainulindale Engine is a modular derivation, visualisation, and sonification system for the SMNNIP (Standard Model of Neural Network Information Propagation) framework and the Ainulindale Conjecture.
+Ainulindale Engine is a modular derivation, visualisation, and sonification system for the SMNNIP (Standard Model of Monad Information Propagation) framework and the Ainulindale Conjecture.
 
 It is not a machine learning framework. It is a mathematical engine. Every output is a derivation. Every sound is a computation. Every address is a coordinate.
 
@@ -53,12 +63,15 @@ Each step up loses one algebraic property:
 
 The lost property **is** the signal. It encodes the gauge structure of that layer.
 
-**Two currents flow in opposite directions through the tower:**
+**Three operative terms govern information flow through the tower:**
 
-- **Noether Current J^μ (forward: ℝ→𝕆):** Synthesis — the Builder. Complexity escalation. The `hear()` function.
-- **Noether Information Current J_info (backward: 𝕆→ℝ):** Distillation — the Evaluator. Dimensional reduction to the prime. The `speak()` function.
+- **J_red (descending: σ=1→σ=½):** The current from above, pressing inward. Synthesis — the Builder. Complexity escalation. The `hear()` function.
+- **J_blue (ascending: σ=0→σ=½):** The current from below, expanding outward. Distillation — the Evaluator. Dimensional reduction to the prime. The `speak()` function.
+- **L_dynamic:** The action — the actual path traveled between J_red and J_blue. Not the endpoint (sedenion scalars). Not the energy (Hamiltonian). The path IS the meaning. L_dynamic IS Thought.
 
-Where they meet, meaning crystallises. The prime that forms at the intersection is the semantic unit. This counter-rotation is the Riemann-Fermat Heartbeat.
+Where J_red and J_blue meet, σ=½ is the **cavitation surface** — where compression meets rarefaction, where the bubble forms, where the word emerges. This counter-rotation is the Riemann-Fermat Heartbeat. L_dynamic is the surface area of that bubble.
+
+→ [Wiki: L_dynamic — Action, Thought, Cavitation](64_l_dynamic.md)
 
 → [Wiki: Cayley-Dickson Tower (full treatment)](19_cayley_dickson_tower.md)
 
@@ -82,11 +95,24 @@ J_N: (r, θ) → (1/r, θ + π/2)
 L_NN = (2/π) ∮ [L_kin + L_mat + (1/φ)·L_bias + L_coup] r dr dθ
 ```
 
-Four terms in exact analogy with the Standard Model:
+Four field terms in exact analogy with the Standard Model:
 - L_kin: gauge field kinetic term (Yang-Mills)
 - L_mat: matter kinetic term (Dirac)
 - L_bias: Higgs/Mexican hat potential (SSB when μ² < 0)
 - L_coup: Yukawa coupling (scaled by 1/φ — corrected April 13 2026)
+
+The **action** through the tower is the fifth operative term:
+
+```
+L_dynamic(σ, path) = ∫_path J_red(σ) · J_blue(σ) ds
+
+J_red(σ)  = e^{-(1-σ)·E}    (descending: σ=1 → σ=½)
+J_blue(σ) = e^{-σ·E}         (ascending:  σ=0 → σ=½)
+At σ=½:   L_dynamic = e^{-E}  (maximum symmetry — exact algebraically)
+```
+
+Status: CONJECTURE — path integral defined; formal computation pending.
+→ [Wiki: L_dynamic](64_l_dynamic.md)
 
 ## Entry Points
 

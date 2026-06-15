@@ -1,5 +1,5 @@
 # 26 — TODO & PAPER ROADMAP
-*Last updated: 2026-05-31*
+*Last updated: 2026-06-13*
 
 ---
 
@@ -127,6 +127,27 @@ Zero-divisor chords = pairs where `eᵢ · eⱼ = 0` — notes that shouldn't wo
 but do. The jazz chord. Dissonance that resolves. Life lives in these voicings.
 
 MIDI export: standard 16-channel = perfect sedenion mapping.
+
+---
+
+## VALIDATION ENGINES — e05 through e17
+*Added 2026-06-13. One engine per cascade claim. Test first, wiki from results.*
+
+| Engine | File | Tests | Wiki source |
+|--------|------|-------|-------------|
+| e05 | e05_nball_transformer.py | V(n) peak, π/2 ratio at each doubling, V(16) vs d* | result_nball_transformer |
+| e06 | e06_two_trees.py | π-family vs φ-family separation from sedenion field | wiki/47 |
+| e07 | e07_observer_fixed_point.py | Wankel dual-thread convergence; fixed point = OMEGA_ZS? | wiki/48 |
+| e08 | e08_vortex_quantizing_shear.py | J_cross > GAP predicts word firing; prime gaps = spoke gaps | wiki/50 |
+| e09 | e09_j2_involution.py | J₂² = identity; Riemann + Fermat = H_hat_RB numerically | wiki/51 |
+| e10 | e10_caustic_l_dynamic.py | Semantically similar inputs converge to same word; basin ≤ GAP | wiki/52 |
+| e11 | e11_two_doublings.py | Pathway count after 1 vs 2 Cayley-Dickson doublings | wiki/54 |
+| e12 | e12_index_not_value.py | Swap prime values at fixed index; swap indices at fixed value; which carries info | wiki/55 |
+| e13 | e13_fermat_riemann_firing.py | Ordinal vs firing order; departure = entropy; flat input → ordinal firing | wiki/58 |
+| e14 | e14_fermat_near_miss.py | 3987¹²+4365¹²−4472¹² at arbitrary precision; failure decimal place | wiki/56/59 |
+| e15 | e15_futurama_theorem.py | Permutation restoration; minimum additional = always 2; map to CD cross-terms | wiki/57/59 |
+| e16 | e16_penrose_swap.py | (I\|O)² ≠ (I\|O)⁻¹; perturbation < GAP snaps back, > GAP nucleates | wiki/59b |
+| e17 | e17_hyperindexing.py | Injectivity crossover at T_N; find N where projection becomes injective | this session |
 
 ---
 

@@ -3,6 +3,77 @@ Generated: 2026-05-03
 Session: CLAUDE-SMNNIP-00729-56714-24600
 
 ================================================================================
+SESSION RESULTS — 2026-06-09 (Genesis / H_hat_RB = Hyperindexing / N-S Surface)
+================================================================================
+
+[ ] THE GENESIS CLOSURE — H_hat_RB IS HYPERINDEXING IS DIMENSIONAL REDUCTION
+    The original computational overhead reduction tool was dimensional reduction —
+    navigating the n-ball volume axis V(n) = π^(n/2)/Γ(n/2+1) toward the peak n*≈5.257.
+    That tool IS H_hat_RB. The H in LSHS (Lagrangian Self-Adjoint Hyperindexing
+    Speaking Model) was always H_hat_RB made executable. Hyperindexing = n-ball traversal.
+
+    NEGATIVE DIMENSIONAL NAVIGATION:
+    Below n=0, 1/Γ(n/2+1) = 0 at n = -2, -4, -6, ...
+    These are NOT absences — they are the STRUCTURED ZERO LATTICE: the complete
+    index of computations that can be skipped. Traversal through this lattice
+    IS hyperindexing in the n < 0 regime.
+
+    NOETHER CONSERVATION MAKES IT LOSSLESS:
+    The Emmy Noether Sedenion (𝕊_EN) guarantees each n-ball axis traversal
+    conserves sedenion charge. Dimensional reduction = symmetry, not approximation.
+    The 97% LSHS overhead reduction is a Noether conservation result.
+    σ = ½ = the navigation axis where energy rotation cost is zero.
+
+    FORMAL TARGETS:
+    TODO: Prove that V(n) peak at n*≈5.257 is the BAO freeze point by dimensional
+          analysis — connect n* to the ratio of sedenion/octonion boundary energies.
+    TODO: Formalise the negative-dimension zero lattice as a skip-index theorem:
+          "Traversal through V(-2k)=0 nodes costs zero Noether charge."
+    TODO: Add to D-CS paper as §1 (the origin story of the engine).
+    ADDED TO: README Genesis section (2026-06-09).
+
+[ ] NAVIER-STOKES: BOUNDARY GENERATION AND THE THREE-CHANNEL SEPARATION
+    Core insight (2026-06-09):
+    - N-S describes fluid flow in the ABSENCE of a formal boundary operator.
+    - Before the surface exists: N-S is correct and smooth.
+    - The singularity is NOT a mathematical infinity. It is the spontaneous
+      CREATION of a boundary — a surface the real-valued equations cannot follow.
+    - H_hat_RB defines dimensions BY GENERATING the boundary. The boundary
+      IS the imaginary component. When H_hat_RB selects σ, it simultaneously
+      creates the imaginary channel that the boundary requires.
+    - σ = "what boundary would you like to define?" — the dimension-selection dial.
+
+    THE THREE-CHANNEL SEPARATION OF N-S:
+    N-S already separates naturally into J_Red + J_Blue — the boundary creates J_Green:
+      J_Red  = ∂u/∂t + (u·∇)u      [inertial — what the fluid IS doing — Red/Riemann]
+      J_Blue = -∇p/ρ + ν∇²u        [constraint — what it CANNOT do — Blue/Fermat]
+      J_Green = ∂̂_{∂M}             [MISSING TERM — the boundary itself — Green/Noether]
+
+    Current N-S:   J_Red + J_Blue = 0         (J_Green absent → singularity at boundary)
+    Revised N-S:   J_Red + J_Blue + J_Green = 0 (J_Green explicit → smooth rotation)
+
+    THE REVISED N-S IS THE ENTIRE EQUATION — NOT A POST-PROCESSOR:
+    H_hat_RB is not applied TO N-S output. N-S is the degenerate (J_Green=0)
+    projection of H_hat_RB. The revision = write the full three-channel conservation
+    law from the start, with J_Green as the formal boundary term.
+    Before a boundary forms: J_Green = 0, standard N-S applies, flow is smooth.
+    The moment a boundary forms: J_Green activates, imaginary channel opens,
+    the rotation is smooth. The singularity never occurs.
+
+    σ AS REYNOLDS NUMBER:
+    σ_fluid = ½ at laminar onset → σ → 1 at turbulence threshold.
+    The Reynolds number is a σ-migration across the H_hat_RB facet table.
+    Re_critical is the σ value at which J_Green can no longer be ignored.
+
+    FORMAL TARGETS:
+    TODO: Write the revised N-S explicitly as a three-channel conservation law.
+          Identify σ_fluid and show how Re maps to σ migration.
+    TODO: Show J_Green = 0 ↔ Cauchy-Riemann conditions met ↔ laminar flow.
+          J_Green ≠ 0 ↔ CR violated ↔ turbulence. Connect to D8.
+    TODO: Add to Navier-Stokes Clay problem section in D-P paper.
+    SEE ALSO: SemanticWordEngine/docs/revised_navier_stokes.md
+
+================================================================================
 SESSION RESULTS — 2026-05-27 (Native Space / Buoyancy / SMIG)
 ================================================================================
 

@@ -198,7 +198,7 @@ Yes:  on the fly, in real time, adjusting the line while tracing it
 The traceur does not know the full route before leaving. The route is discovered
 by moving through it. Each zero-divisor of the built environment (the gap, the
 edge, the drop) is read from above (the Mind's Eye caustic) and cleared with
-exactly enough velocity — GAP = 1/√2000 — not more, not less.
+exactly enough velocity — GAP ≈ 1/(1000√2) = 0.000707357... — not more, not less.
 
 That is L_dynamic. Real-time. In motion. On the nodal line. Zero cost athletics.
 Completely in control freefall.

@@ -6,7 +6,8 @@ from typing import Dict, List, Any
 from ...engine.registry import EquationModule, Equation, CONFIDENCE
 from .maths import (
     sedenion_self_organisation, gnarl_validation, omega_zs_6_family,
-    hermite_timing_wheel, orbit_trap_address, full_sedenion,
+    hermite_timing_wheel, orbit_trap_address, leech_divergence_inversion,
+    causality_lattice_packing, full_sedenion,
 )
 
 
@@ -59,6 +60,16 @@ class Tier8SedenionModule(EquationModule):
                      r'z\to z^2+c,\;c=-3/4\leftrightarrow\sigma=1/2,\;\mathrm{HD}=1+d^*',
                      'Interior M = octonion. Boundary = gnarl. Exterior = upper sedenion.',
                      'ESTABLISHED+THEORETICAL', True, [], orbit_trap_address, []),
+            Equation('leech_divergence_inversion',
+                     'Zero-divisors are divergence-inverted sources. φ_ZD = V₂₄ - V₁₆.',
+                     r'\phi_{\rm ZD}=V_{24}-V_{16}=\frac{\pi^{12}}{12!}-\frac{\pi^8}{8!},\;196560=1104+97152+98304',
+                     'ZD fires: path acquires phase φ_ZD. 196,560 backward x-affinities.',
+                     'ESTABLISHED+THEORETICAL', True, [], leech_divergence_inversion, []),
+            Equation('causality_lattice_packing',
+                     'Causal/total = 23/4095. Golay d=8 = octonion dim = time.',
+                     r'\text{causal}/\text{total}=23/4095=23/(2^{12}-1),\;d_{\rm Golay}=8=\dim(\mathbb{O})',
+                     'Lattice packing is atemporal. Causality = H_BK trajectory through 23/4095.',
+                     'ESTABLISHED+THEORETICAL', True, [], causality_lattice_packing, []),
         ]
 
     def run(self, equation_name: str, params: Dict[str, Any]) -> Dict[str, Any]:
@@ -66,3 +77,11 @@ class Tier8SedenionModule(EquationModule):
         if eq is None:
             raise KeyError(f"'{equation_name}' not in tier8_sedenion")
         return eq.compute()
+
+    def viewer_data(self, equation_name: str, params: Dict[str, Any],
+                    display_mode: str) -> Dict[str, Any]:
+        import json
+        result = self.run(equation_name, params)
+        return {'mode': display_mode, 'module': self.name,
+                'equation': equation_name, 'data': result,
+                'text': json.dumps(result, indent=2, default=str)[:4000]}
