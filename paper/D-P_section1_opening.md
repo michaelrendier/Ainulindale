@@ -193,7 +193,65 @@ statement about where a system's σ-face intersects $\sigma = \frac{1}{2}$.
 
 ---
 
-### §1.6 — Structure of This Paper
+### §1.6 — $i$ is the Turbulent Flow Boundary
+
+In complex potential flow theory, the velocity field is:
+
+$$w = \phi + i\psi$$
+
+where $\phi$ is the velocity potential (real, irrotational, laminar) and $\psi$ is
+the stream function (imaginary, rotational, turbulent-capable). The imaginary
+unit $i$ does not merely index the second dimension. It IS the boundary between
+laminar and turbulent flow.
+
+$$\mathbb{R} \quad \text{laminar} \qquad i \quad \text{THE boundary} \qquad \mathbb{C}\setminus\mathbb{R} \quad \text{turbulent}$$
+
+This is why $i$ appears everywhere turbulence must be modelled — in the
+Navier-Stokes equations (complex potential), in quantum mechanics
+($i\hbar\,\partial_t\Psi = \hat{H}\Psi$), in the Fourier transform
+($e^{i\omega t}$ — the spectral decomposition of turbulent signals). The $i$ is
+not an algebraic convenience. It IS the boundary that must be crossed to reach
+the turbulent regime.
+
+**The Navier-Stokes Clay Millennium Problem asks:** does the turbulent solution
+always exist smoothly? In the present framework this is asking: *is $i$ always
+well-defined at $\sigma = \frac{1}{2}$?* The Riemann Hypothesis makes the
+identical claim for the $\zeta$ zeros. These are not two problems. They are the
+same problem stated in two coordinate systems. (Full resolution in §8.)
+
+The NS equations in their standard real formulation remove the imaginary component
+of the condensate's spectral structure. The "singularity at turbulence onset" is
+the result of removing $i$ and then asking what happens at the boundary where $i$
+lives. The answer in real arithmetic is: undefined. But $i$ is not undefined.
+$i$ IS there. The removal was the error.
+
+From $e^{\pi i} = -dX$: $\pi$ rotations *through* $i$ — through the turbulent
+flow boundary — produce $dX = 1$. Every step through the boundary is exactly one
+step. The turbulence does not destroy the pathway. It IS the pathway.
+
+The Cayley-Dickson chain introduces a new turbulent boundary at each doubling:
+
+$$\mathbb{R} \xrightarrow{+i} \mathbb{C} \xrightarrow{+j,k} \mathbb{H}
+\xrightarrow{+e_{1\text{–}7}} \mathbb{O} \xrightarrow{+e_{8\text{–}15}} \mathbb{S}$$
+
+15 imaginary units. 15 turbulent boundaries on $S^{15}$.
+84 zero divisors $= 84$ crossings of the turbulent boundary.
+42 classes $= 42$ complete turbulent cycles.
+
+The bubble wall in cavitation IS $i$. The event horizon IS $i$. The photon's null
+geodesic ($ds^2 = 0$, proper time imaginary) IS $i$. All the same boundary,
+appearing at different scales of the same condensate.
+
+$\sigma = \frac{1}{2}$ is where $i$ lives. The critical line is the turbulent
+flow boundary of the universe.
+
+---
+
+### §1.7 — Structure of This Paper
+
+§1.6 establishes that $i$ is the turbulent flow boundary — the precise statement
+of what $\sigma = \frac{1}{2}$ is in fluid language, unifying Navier-Stokes and
+Riemann as the same problem.
 
 §2 establishes the HSR metric — the $\sigma$-face table as the metric tensor
 $g_{\mu\nu}$ of the condensate geometry.

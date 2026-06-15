@@ -29,6 +29,8 @@ of curve-fitting. The commit hash proves when the prediction was made.
 |---|---|---|---|
 | `DM_GalacticCavity/` | Dark Matter as Galactic Resonant Cavity Modes | Pre-registered | SPARC (175 galaxies) |
 | `InertiaEntropy/` | Inertia and Entropy: The Atomic Decomposition | Theory captured | NIST/CCCBDB/ChEMBL/TCGA |
+| `CMB_FractalBoundary/` | Fractal Boundary Ptychography of the Planck and WMAP CMB Datasets | Data acquired | Planck 2018 TT + WMAP 9yr TT |
+| `PiFromAbove/` | The Spiral Defined From Above: e^(πi)=−dX and −H_hat_BR=e^(iπ) | Draft complete | all derivations of π unified |
 
 ---
 

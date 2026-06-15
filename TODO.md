@@ -3166,6 +3166,63 @@ SESSION RESULTS — 2026-06-08 (σ-face Dataset Transversal Evaluation)
     that was not used in its construction."
 
 ================================================================================
+FOURTH AGE — INDIVIDUAL ENGINE PAPERS
+After D-CS → D-M → D-P → D-CHEM: one paper per engine.
+================================================================================
+
+[ ] D-CHEM EXTENSION — THE SEDENION NATURE OF CANCER (added 2026-06-15)
+
+    CORE INSIGHT:
+    Cancer is not a structural deviation from the sedenion — it IS the sedenion
+    expressing a specific mode. The healthy cell has a sedenion nature at one
+    fixed point (σ = ½, contact with the Noether current). The cancer cell has a
+    sedenion nature at a DIFFERENT fixed point — one that lost contact with σ = ½.
+
+    NOT "sedenion structure of cancer" — the sedenion is not a map imposed on
+    cancer from outside. The sedenion IS the nature of cellular multiplication,
+    communication, and inhibition. Cancer is the algebra expressing a specific
+    non-healthy zero-divisor configuration.
+
+    WHAT CHANGED:
+    Healthy cell: sedenion nature at σ = ½ (contact inhibition = Noether balance).
+    Cancer cell: sedenion nature at a different BAO state — the cell lost the
+    fixed point. It no longer feels the bowl. It proliferates without limit
+    because the bowl that contains it no longer rings at the right frequency.
+
+    Cancer = the leaf that lost the bowl.
+    The tumour = the leaf generating its own bowl at the wrong frequency.
+
+    THE DRUG:
+    Does not impose a structure. Does not poison the cancer from outside.
+    Speaks to the cancer's sedenion nature and calls it back to σ = ½.
+    The drug's sedenion nature is the exact adjoint of the cancer's —
+    B̂_drug = R̂_cancer† — the molecule whose nature reverses the cancer's mode.
+
+    FALSIFIABLE PREDICTIONS (for D-CHEM paper):
+    P1: Cancer cell types separate in sedenion zero-divisor configuration space.
+        Each cancer type has a specific ZD signature, distinct from healthy tissue.
+        Dataset: TCGA (The Cancer Genome Atlas)
+    P2: Drug affinity correlates with sedenion nature complementarity
+        (B̂_drug = R̂_cancer† criterion) better than shape-based docking alone.
+        Dataset: ChEMBL / BindingDB
+    P3: Erika Schafer's super-oxide reductase structure maps to a specific
+        sedenion fixed point. Its binding specificity IS the adjoint relationship.
+    P4: One success. Any one cancer patient whose treatment is improved by
+        a drug designed from the sedenion nature criterion.
+
+    CONNECTION:
+    - InertiaEntropy paper P4: TCGA electron-chain entropy already planned
+    - D-P §1.6: i as turbulent boundary — cancer lost the boundary
+    - DM_GalacticCavity: the cancer cell lost the bowl that rings at σ = ½,
+      exactly as the leaf loses its bowl when the resonant cavity breaks
+    - Erika Schafer collaboration (D-CHEM paper)
+
+    TODO: Add sedenion nature framing to D-CHEM paper draft when created.
+    TODO: Coordinate with Erika Schafer — does her super-oxide reductase
+          work have TCGA data access? P3 and P4 may connect directly.
+    TODO: Create AddPapers/DChem/ with pre-registration notebooks.
+
+================================================================================
 VERSIONING
 ================================================================================
 All files at v0.111. Increment 0.001 per change.
