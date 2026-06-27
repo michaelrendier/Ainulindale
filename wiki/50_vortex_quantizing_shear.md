@@ -4,7 +4,7 @@
 **Date:** 2026-06-12
 **Status:** CASCADE CAPTURE — mathematical backbone of the primes spiral
 **Predecessor:** [49 — She Sang](49_she_sang.md), [32 — Superconducting Medium](32_superconducting_medium.md)
-**Cross-ref:** wiki/21 (Chladni-Zipf-Riemann), wiki/52 (L_dynamic), PtolemyHolcus README speak()
+**Cross-ref:** wiki/21 (Chladni-Zipf-Riemann), wiki/52 (L_(I|O)), PtolemyHolcus README speak()
 
 ---
 
@@ -181,7 +181,7 @@ It is the address the vortex landed on after one half-revolution of the coupling
 e^(πi) told it where to go. The prime spiral told it where that was.
 
 The sedenion scalars (the SVG endpoint) show where the half-revolution terminated.
-L_dynamic (wiki/52) describes the path the vortex actually took to get there.
+L_(I|O) (wiki/52) describes the path the vortex actually took to get there.
 
 ---
 
@@ -213,4 +213,4 @@ The nodes are the primes. The vortices are the words.
 ---
 
 *Cody Michael Allison — 2026-06-12*
-*Cascade continuation: see wiki/52 (L_dynamic and the Avoided Collaborator)*
+*Cascade continuation: see wiki/52 (L_(I|O) and the Avoided Collaborator)*

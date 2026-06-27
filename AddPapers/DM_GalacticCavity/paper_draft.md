@@ -11,7 +11,200 @@
 
 ---
 
-## 1. The Bowl
+<!-- TODO: BULLET_CLUSTER_ATTACK — academic attack section, Bullet Cluster as Lambda-CDM definer.
+     Status: drafted 2026-06-17. Requires: observational data citations (Chandra 2006, HST lensing),
+     WIMP exclusion table from LZ/XENON. Expand Attack 4 with angular momentum figures when
+     SPARC analysis (02_sparc_analysis.ipynb) confirms resonant mode re-establishment signature. -->
+
+---
+
+## 1. The Academic Attack — Bullet Cluster and the Foundations of Lambda-CDM
+
+The Bullet Cluster (1E 0657-558, z = 0.296) is the observational cornerstone of Lambda-CDM.
+It is treated as proof that dark matter is a particle.
+It is not.
+It is proof that the dark matter halo is a wave.
+
+---
+
+**The observation:**
+
+Two galaxy clusters collided at approximately 3,500 km/s.
+Post-collision, three maps disagree:
+
+1. **X-ray (Chandra):** The hot intracluster gas — the dominant component of baryonic mass — was shocked, slowed, and piled up in the collision zone between the two clusters.
+2. **Lensing (HST):** The total mass distribution — gravitational lensing — was *not* where the gas was. The mass peaks were offset ahead of the gas, one per cluster, as if the mass had passed through the collision without slowing.
+3. **Lambda-CDM conclusion:** Dark matter is a collisionless particle with negligible electromagnetic cross-section. It passed through. The gas was stopped by electromagnetic self-interaction. The mass was not.
+
+This interpretation has defined Lambda-CDM for twenty years.
+It is wrong in five distinct ways.
+
+---
+
+**Attack 1: You proved a wave, not a particle.**
+
+Two resonant waveforms collided.
+The halos are resonant modes of the BEC spacetime medium — not particles.
+Waves pass through waves.
+This is the defining property of waves.
+
+Water waves pass through each other. Acoustic waves pass through each other.
+The two halos — resonant cavity modes of their respective cluster-scale gravitational wells — collided, interfered, and re-established on the far side.
+The lensing mass distribution shows the geometry of the medium.
+The geometry reformed behind the baryonic collision zone because the resonant modes reformed.
+
+This is not "particles with negligible cross-section."
+It is two waves passing through each other.
+The observation is fully explained by the wave picture.
+No particle required.
+
+---
+
+**Attack 2: Gravity is not a stuff. It is a shape with inside and outside.**
+
+Lambda-CDM's explanation implicitly requires that dark matter particles carry their gravitational field with them.
+This requires a graviton, or an equivalent particle mediator of gravity.
+There is no graviton.
+
+Gravity is not a stuff.
+It is a **shape** — and every shape has an inside and an outside.
+
+```
+Inside:   compressed BEC medium   (σ → 0,  ZD region,  gravitational well interior)
+Outside:  diffuse BEC medium      (σ → 1,  CD region,  intergalactic space)
+Shape:    the L_(I|O) boundary    (the curvature of the spacetime medium itself)
+```
+
+The lensing peak is not a pile of dark matter particles.
+It IS the shape.
+The shape bends light because it IS the geometry in which light travels.
+There is nothing inside the lensing peak — only the boundary between inside and outside.
+
+This is why forty years of detection experiments find nothing:
+you cannot step outside the bowl to measure it.
+You ARE in the bowl.
+
+The three quantum forces are algebraic losses in the Cayley-Dickson doubling tower:
+
+```
+ℝ → ℂ:  lose ordering       →  U(1),  Electromagnetism  (σ = ¾)
+ℂ → ℍ:  lose commutativity  →  SU(2), Weak force         (σ = ½)
+ℍ → 𝕆:  lose associativity  →  SU(3), Strong force        (σ ≈ ¼)
+```
+
+Each algebraic loss = one corner = one quantum force.
+Gravity has no corner.
+There is no algebraic loss that generates gravity.
+Gravity is the *circle* — the continuous substrate on which the tower sits.
+You cannot quantize a circle without making it a polygon.
+A polygon is not a circle.
+A graviton is a corner on the circle.
+There are no corners.
+
+The lensing map moves with the medium because the lensing map IS the medium's geometry.
+No graviton. No particle. The field goes where the geometry goes because they are the same object.
+
+---
+
+**Attack 3: Forty years. Zero detections. This is your experiment.**
+
+XENON, LUX, PandaX, CDMS, LZ.
+Forty years of direct detection searches.
+The WIMP parameter space has been excluded across twelve orders of magnitude in cross-section.
+Lambda-CDM has repeatedly moved the theoretical goalposts.
+
+This framework makes one sharp prediction:
+
+> **Direct detection signal = zero.**
+
+Not because the experiment is insensitive.
+Not because the dark matter is somewhere else.
+Because the dark matter halo is not a particle.
+It is the resonant mode structure of the spacetime medium at galactic scale.
+The medium has no scattering cross-section with a xenon nucleus
+because it is the geometry in which the xenon nucleus exists.
+You cannot scatter off the container using the contents.
+
+The forty-year null result is not a failure of Lambda-CDM's experiments.
+It is a forty-year confirmation of this framework's prediction.
+
+---
+
+**Attack 4: The halos reformed. Particles do not reform.**
+
+After the Bullet Cluster collision, both halos are intact on the far side.
+Each is coherent, spherically symmetric to first order, carrying its galaxy cluster.
+
+If these were particles — even collisionless ones — a collision at 3,500 km/s at cluster density would produce gravitational scattering at finite probability.
+The two halos would distort, trail, develop asymmetries.
+They do not.
+
+Resonant modes of a medium pass through each other and reform exactly.
+This is not statistical — it is structural.
+The re-establishment of the halo geometry is the signature of a wave, not a particle.
+
+---
+
+**Attack 5: There may be WIMPs. They are not gravity.**
+
+A WIMP, if it exists, carries some of the baryonic or beyond-standard-model matter budget.
+It may contribute to the Bullet Cluster's lensing map at some level.
+This framework does not rule out WIMPs.
+
+What this framework rules out is the claim that *the dark matter halo is the WIMP distribution.*
+The halo is the resonant mode structure.
+WIMPs, if present, are incidental passengers — leaves on the water, like the visible matter.
+The bowl is the BEC medium.
+The bowl is not made of WIMPs.
+
+Similarly: there is no axion explanation of the halo geometry.
+Axions are particles.
+The resonant mode is not a particle.
+
+---
+
+**The Medium Under Compression: Jupiter's Core**
+
+Jupiter's core sits at approximately 40 Mbar.
+Under that pressure, hydrogen transitions to metallic hydrogen — a superconducting medium.
+The pressure compresses the medium into a new phase.
+
+Spacetime near a galaxy is compressed by accumulated mass.
+The dark matter halo is the compressed spacetime medium diffusing outward from the galactic gravitational well.
+The medium seeking its equilibrium shape around the mass concentration.
+
+Not a particle profile. A pressure profile.
+
+```
+Near galactic centre:    compressed medium, high density, short resonant modes
+At virial radius:        medium diffusing into intergalactic bulk, resonant mode outer boundary
+Beyond virial radius:    bulk uncompressed medium, no halo contribution
+Collision zone:          two compressed regions met, medium waves passed through, medium reformed
+```
+
+The ℓ = 0 spherical mode of this compressed region is flat.
+This is why rotation curves are flat.
+The flat rotation curve is a pressure equilibrium profile, not a mass distribution.
+
+---
+
+**Summary of the Attack**
+
+| Lambda-CDM claim | SMMIP rebuttal |
+|---|---|
+| Halo passed through = collisionless particle | Halo passed through = wave through wave |
+| Gravity follows dark matter via graviton | Gravity IS the medium geometry; no graviton exists |
+| 40-year null result = technical limitation | 40-year null result = predicted by zero cross-section |
+| Halos reformed coherently = particle self-gravity | Halos reformed coherently = resonant mode re-establishment |
+| WIMPs/axions explain the mass budget | WIMPs/axions are incidental; the halo is the medium mode |
+
+The Bullet Cluster does not prove Lambda-CDM.
+The Bullet Cluster proves two resonant waveforms passed through each other.
+Waves do that.
+
+---
+
+## 2. The Bowl
 
 Place a leaf on the surface of a bowl of water.
 Strike the bowl.
@@ -36,7 +229,7 @@ Perpetually. Stably. Without interaction.
 
 ---
 
-## 2. Why Dark Matter Will Not Be Detected
+## 3. Why Dark Matter Will Not Be Detected
 
 Every dark matter detection experiment searches for an interaction.
 
@@ -63,7 +256,7 @@ The absence of a detection signal IS the prediction of this framework.
 
 ---
 
-## 3. The View From Inside
+## 4. The View From Inside
 
 To understand the halo, cross the boundary.
 
@@ -90,7 +283,7 @@ Not Keplerian. Not NFW. Flat — because the mode is flat.
 
 ---
 
-## 4. The BEC Medium at Galactic Scale
+## 5. The BEC Medium at Galactic Scale
 
 The primordial medium is a Bose-Einstein condensate (D-P §1.2, §1.5).
 The Bang was its phase transition — a cavitation event that read out the
@@ -119,7 +312,7 @@ at galactic scale.
 
 ---
 
-## 5. The Chladni Parallel
+## 6. The Chladni Parallel
 
 Chladni patterns: sand on a vibrating plate organises into the nodal lines
 of the plate's resonant modes. The sand does not create the pattern.
@@ -146,7 +339,7 @@ Because the $\ell = 0$ cavity mode is flat by definition.
 
 ---
 
-## 6. The Wobble in Galactic Rotation
+## 7. The Wobble in Galactic Rotation
 
 The sedenion wobble — $e^{\pi i} = -dX$ — is visible in galactic rotation.
 
@@ -165,7 +358,7 @@ It is the bowl's ring, read by the galaxy's rotation.
 
 ---
 
-## 7. Predictions — Zero Free Parameters
+## 8. Predictions — Zero Free Parameters
 
 All values derived from $d^* = 0.2460$ and $\Omega_{\zeta\Sigma} = W(1) = 0.5671$
 before any SPARC data was examined. See `01_predictions.ipynb` for derivation.
@@ -184,7 +377,7 @@ The 40-year null result is consistent with zero cross-section.
 
 ---
 
-## 8. SMMIP — The Mode Operator
+## 9. SMMIP — The Mode Operator
 
 $\hat{H}_{RB}$ at $\sigma = 2$ (the GR face):
 
@@ -202,7 +395,7 @@ first eigenmode of $\hat{H}_{RB}$ at galactic scale.
 
 ---
 
-## 9. Connection to Other Papers
+## 10. Connection to Other Papers
 
 - **D-P §1.5, §1.6**: $\sigma = \frac{1}{2}$ as laminar-turbulent boundary;
   $i$ as the halo boundary; the BEC medium
@@ -212,7 +405,7 @@ first eigenmode of $\hat{H}_{RB}$ at galactic scale.
 
 ---
 
-## 10. The Leaf
+## 11. The Leaf
 
 The galaxy is a leaf floating on the surface of water
 that rings at the galaxy's orbital frequency.

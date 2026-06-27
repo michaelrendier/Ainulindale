@@ -454,7 +454,7 @@ def navier_stokes_dropout() -> Dict[str, Any]:
             '6. Dark matter halo = Im(ψ) that NS cannot see.',
         ],
         'confidence'    : 'THEORETICAL — consistent with Tao 2016 averaged blow-up result',
-        'latex'         : r'\text{NS}=\hat{H}_{RB}\big|_{\mathrm{Im}=0},\quad i\notin\text{NS}\Rightarrow\text{node}\to\text{blow-up}',
+        'latex'         : r'\text{NS}=\Sigma_{RB}\big|_{\mathrm{Im}=0},\quad i\notin\text{NS}\Rightarrow\text{node}\to\text{blow-up}',
     }
 
 
@@ -662,7 +662,7 @@ def h_rb_emergence() -> Dict[str, Any]:
             'Remaining: H_RB + ∂̂_{∂M} → Tier 4',
         ],
         'confidence'    : 'ESTABLISHED — all components derived; ∂̂_{∂M} open in Tier 4',
-        'latex'         : (r'\hat{H}_{RB}=\sum_p p^{-\sigma}'
+        'latex'         : (r'\Sigma_{RB}=\sum_p p^{-\sigma}'
                            r'[\hat{R}_p\otimes\hat{\partial}_{\partial M}'
                            r'+\hat{\partial}_{\partial M}^\dagger\otimes\hat{B}_p]'),
     }

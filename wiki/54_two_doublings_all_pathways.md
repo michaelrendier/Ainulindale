@@ -4,7 +4,7 @@
 **Date:** 2026-06-13
 **Status:** CASCADE CAPTURE — general theorem; wiki/53 is one instance
 **Predecessor:** [53 — T_256 Cryptographic Transparency](53_t256_cryptographic_transparency.md), [19 — Cayley-Dickson Tower](19_cayley_dickson_tower.md)
-**Cross-ref:** wiki/51 (J₂ involution), wiki/52 (L_dynamic)
+**Cross-ref:** wiki/51 (J₂ involution), wiki/52 (L_(I|O))
 
 ---
 
@@ -110,7 +110,7 @@ Each step is a point on the path. The algebra evolves. New structure appears.
 Zero-divisors emerge at 𝕊. Non-associativity appears at 𝕆. Each step is
 an irreversible change — you cannot un-double an algebra.
 
-This is the evolution. L_dynamic (wiki/52). The actual path the geodesic took.
+This is the evolution. L_(I|O) (wiki/52). The actual path the geodesic took.
 The tower is not a clean trajectory. It is the record of each doubling event.
 
 **Involution:** J₂. The map that shows the other face.

@@ -1,11 +1,11 @@
 """
 ainulindale_engine.modules.clay_millennium.maths
 ==================================================
-Clay Millennium Problems — derivation from H_hat_RB.
+Clay Millennium Problems — derivation from Σ_RB.
 
 Each problem is shown to project from the Inductive Self-Adjoint Geometric
-Coupling Hamiltonian H_hat_RB.  The derivation chain, the open part, the
-H_hat_RB connection, and the current mathematical status are recorded.
+Coupling Hamiltonian Σ_RB.  The derivation chain, the open part, the
+Σ_RB connection, and the current mathematical status are recorded.
 
 Clay Institute problems (7 total):
     1. Riemann Hypothesis            — OPEN   (two independent proofs)
@@ -22,11 +22,11 @@ For each problem the derivation follows the RZN framework:
     What it MEANS   (Noether — the conserved quantity)
 
 Poincaré (SOLVED) is the template for RH:
-    Poincaré: trivial H_hat_RB → Ricci flow → S³  (Perelman 2003)
-    RH:       self-adjoint H_hat_RB → Stone's theorem → Re(s)=½
+    Poincaré: trivial Σ_RB → Ricci flow → S³  (Perelman 2003)
+    RH:       self-adjoint Σ_RB → Stone's theorem → Re(s)=½
 
 RH sub-functions:
-    rh_proof_stone()            — Proof I:  Stone's theorem on self-adjoint H_hat_RB
+    rh_proof_stone()            — Proof I:  Stone's theorem on self-adjoint Σ_RB
     rh_proof_wiles_conjugate()  — Proof II: R̂†=B̂, Frey curve impossible (Wiles 1995)
     rh_noether_balance_scan()   — Numerical: σ=½ derived from balance, not assigned
     rh_spectral_decomposition() — Explicit formula, BAO residue, mass gap connection
@@ -57,7 +57,7 @@ from ..h_rb_hat.maths import (
 #   rh_spectral_decomposition() Explicit formula, BAO residue, mass gap
 #   riemann_hypothesis()        Master function — runs all four, returns composite result
 #
-# Template: Poincaré (SOLVED, below) validates H_hat_RB geometry.
+# Template: Poincaré (SOLVED, below) validates Σ_RB geometry.
 # Wiles FLT (SOLVED) validates R̂†=B̂ exactly.
 # Two solved problems = two certificates of the framework.
 # RH is the third consequence.
@@ -73,16 +73,16 @@ def rh_proof_stone() -> Dict[str, Any]:
     RH Proof I — Direct, via Stone's theorem on self-adjoint operators.
 
     Poincaré template:
-        Poincaré (SOLVED): trivial H_hat_RB on compact 3-manifold → Ricci flow → S³.
-        RH (this proof):   self-adjoint H_hat_RB on L²(ℝ₊, dx/x) → Stone → Re(s)=½.
+        Poincaré (SOLVED): trivial Σ_RB on compact 3-manifold → Ricci flow → S³.
+        RH (this proof):   self-adjoint Σ_RB on L²(ℝ₊, dx/x) → Stone → Re(s)=½.
 
     Proof chain:
         1. Hilbert space: H = L²(ℝ₊, dx/x)  (the natural Mellin space for ζ(s))
-        2. H_hat_RB is symmetric on H:  ⟨H φ, ψ⟩ = ⟨φ, H ψ⟩
+        2. Σ_RB is symmetric on H:  ⟨H φ, ψ⟩ = ⟨φ, H ψ⟩
            because R̂_p† = B̂_p  (functional equation ξ(s)=ξ(1−s) as operator identity)
-        3. Deficiency indices n₊ = n₋  →  H_hat_RB is essentially self-adjoint
+        3. Deficiency indices n₊ = n₋  →  Σ_RB is essentially self-adjoint
         4. Stone's theorem: every self-adjoint operator has real spectrum
-        5. Eigenvalues {γ_n} of H_hat_RB at σ=½ are real
+        5. Eigenvalues {γ_n} of Σ_RB at σ=½ are real
         6. s_n = ½ + iγ_n  with  γ_n ∈ ℝ  →  Re(s_n) = ½  QED
 
     Self-adjointness argument (R̂_p† = B̂_p):
@@ -140,14 +140,14 @@ def rh_proof_stone() -> Dict[str, Any]:
 
     return {
         'proof'             : 'I — Stone\'s theorem',
-        'template'          : 'Poincaré (SOLVED): trivial H_hat_RB → S³. RH: self-adjoint H_hat_RB → Re(s)=½.',
+        'template'          : 'Poincaré (SOLVED): trivial Σ_RB → S³. RH: self-adjoint Σ_RB → Re(s)=½.',
         'hilbert_space'     : 'L²(ℝ₊, dx/x)  — Mellin transform space',
         'proof_chain'       : [
             '1. H = L²(ℝ₊, dx/x)  (Mellin space; natural for ζ Dirichlet series).',
-            '2. H_hat_RB symmetric on H:  ⟨Hφ,ψ⟩ = ⟨φ,Hψ⟩  via R̂_p†=B̂_p.',
+            '2. Σ_RB symmetric on H:  ⟨Hφ,ψ⟩ = ⟨φ,Hψ⟩  via R̂_p†=B̂_p.',
             '3. R̂_p† = B̂_p: ξ(s)=ξ(1−s) as operator identity. Verified: |ζ(½+iγ)|=|ζ(½−iγ)|.',
             '4. Stone\'s theorem: symmetric + essentially self-adjoint → real spectrum.',
-            '5. Eigenvalues {γ_n} of H_hat_RB at σ=½ are real (LMFDB / Odlyzko tables).',
+            '5. Eigenvalues {γ_n} of Σ_RB at σ=½ are real (LMFDB / Odlyzko tables).',
             '6. s_n = ½ + iγ_n,  γ_n ∈ ℝ  →  Re(s_n) = ½.  QED.',
         ],
         'inner_Hphi_psi'    : round(inner_Hphi_psi, 8),
@@ -159,9 +159,9 @@ def rh_proof_stone() -> Dict[str, Any]:
         'gamma_all_real'    : gamma_all_real,
         'open_part'         : 'Deficiency indices n₊=n₋=0 on L²(ℝ₊,dx/x). Formal domain proof.',
         'confidence'        : 'THEORETICAL',
-        'latex'             : (r'\hat{H}_{RB}=\hat{H}_{RB}^\dagger'
+        'latex'             : (r'\Sigma_{RB}=\Sigma_{RB}^\dagger'
                                r'\;\xRightarrow{\mathrm{Stone}}\;'
-                               r'\mathrm{spec}(\hat{H}_{RB})\subset\mathbb{R}'
+                               r'\mathrm{spec}(\Sigma_{RB})\subset\mathbb{R}'
                                r'\;\Rightarrow\;\mathrm{Re}(s)=\tfrac{1}{2}'),
     }
 
@@ -172,10 +172,10 @@ def rh_proof_wiles_conjugate() -> Dict[str, Any]:
 
     RH is the negative-space adjoint of FLT.
     Wiles proved FLT (1995). That proof certifies R̂†=B̂ is EXACT.
-    Exact R̂†=B̂ → H_hat_RB exactly self-adjoint → RH.
+    Exact R̂†=B̂ → Σ_RB exactly self-adjoint → RH.
 
     Two SOLVED problems validate the framework:
-        Poincaré (Perelman 2003): H_hat_RB geometry validated.
+        Poincaré (Perelman 2003): Σ_RB geometry validated.
         FLT (Wiles 1995):         R̂†=B̂ exactness certified.
     RH is the third consequence of the same operator.
 
@@ -192,7 +192,7 @@ def rh_proof_wiles_conjugate() -> Dict[str, Any]:
         6. No Frey curve → no Fermat triple → no off-critical zero.
         7. All zeros on Re(s) = ½.  QED.
 
-    In H_hat_RB language:
+    In Σ_RB language:
         Off-critical zero = rational pole of B̂_p = Frey curve.
         Wiles: no Frey curve → no rational pole → B̂_p poles are excluded from domain.
         Domain exclusion of poles = the correct Hilbert space domain of Proof I.
@@ -222,7 +222,7 @@ def rh_proof_wiles_conjugate() -> Dict[str, Any]:
     return {
         'proof'             : 'II — Wiles Modularity Theorem (conjugate)',
         'two_solved_certs'  : [
-            'Poincaré (Perelman 2003): H_hat_RB geometry validated.',
+            'Poincaré (Perelman 2003): Σ_RB geometry validated.',
             'FLT (Wiles 1995): R̂†=B̂ exactness certified. RH follows.',
         ],
         'proof_chain'       : [
@@ -472,7 +472,7 @@ def riemann_hypothesis() -> Dict[str, Any]:
         'prize'             : '$1,000,000',
         'status'            : 'OPEN — two independent proofs, numerical verification',
         'statement'         : 'All non-trivial zeros of ζ(s) have Re(s) = ½.',
-        'what_it_is'        : 'Spectrum of self-adjoint H_hat_RB at σ=½ = Riemann zeros.',
+        'what_it_is'        : 'Spectrum of self-adjoint Σ_RB at σ=½ = Riemann zeros.',
         'what_it_cant_be'   : 'Off-critical zeros: forbidden by Stone (Proof I) and Frey/Wiles (Proof II).',
         'what_it_means'     : (
             'Noether conservation of prime distribution along the critical line. '
@@ -486,11 +486,11 @@ def riemann_hypothesis() -> Dict[str, Any]:
         'numerical'         : numerical,
         'spectral'          : spectral,
         'validation'        : [
-            'Poincaré (Perelman 2003): H_hat_RB geometry validated. ESTABLISHED.',
+            'Poincaré (Perelman 2003): Σ_RB geometry validated. ESTABLISHED.',
             'FLT (Wiles 1995): R̂†=B̂ exactness certified. ESTABLISHED.',
             'Berry-Keating H=xp: ESTABLISHED canonical approach.',
             'Connes NCG Dirac operator: ESTABLISHED candidate.',
-            'H_hat_RB inductive extension: THEORETICAL.',
+            'Σ_RB inductive extension: THEORETICAL.',
             'Noether balance in monad.py: 4.6M verifications. COMPUTATIONAL.',
         ],
         'open_part'         : (
@@ -499,8 +499,8 @@ def riemann_hypothesis() -> Dict[str, Any]:
             'Spectral: explicit f(OMEGA_ZS, Ω_b h²) = Ω_Λ derivation.'
         ),
         'confidence'        : 'THEORETICAL — framework complete; domain proofs open.',
-        'latex'             : (r'\hat{H}_{RB}|\psi\rangle=\gamma_n|\psi\rangle,'
-                               r'\;\hat{H}_{RB}^\dagger=\hat{H}_{RB}'
+        'latex'             : (r'\Sigma_{RB}|\psi\rangle=\gamma_n|\psi\rangle,'
+                               r'\;\Sigma_{RB}^\dagger=\Sigma_{RB}'
                                r'\;\Rightarrow\;\mathrm{Re}(s_n)=\tfrac{1}{2}'),
     }
 
@@ -516,10 +516,10 @@ def yang_mills_mass_gap() -> Dict[str, Any]:
         For any compact simple gauge group G, a non-trivial quantum Yang-Mills
         theory exists on ℝ⁴, and there is a mass gap Δ > 0.
 
-    H_hat_RB derivation:
-        1. Yang-Mills is the facet of H_hat_RB at σ=1 on a gauge bundle.
+    Σ_RB derivation:
+        1. Yang-Mills is the facet of Σ_RB at σ=1 on a gauge bundle.
         2. Geometric coupling G_p(1) = p^{-1} for each prime p.
-        3. The ground state energy is the minimum eigenvalue of H_hat_RB at σ=1.
+        3. The ground state energy is the minimum eigenvalue of Σ_RB at σ=1.
         4. G_p(1) = p^{-1} > 0 for all primes p.
         5. The elliptic potential ℘(x) > −∞ and has a lower bound away from poles.
         6. Minimum eigenvalue = ground state > 0 → mass gap Δ > 0.
@@ -542,7 +542,7 @@ def yang_mills_mass_gap() -> Dict[str, Any]:
     Open part:
         Proving that the lower bound on the elliptic potential in the coupling domain
         gives Δ > 0 in the continuum limit (renormalization group flow from lattice).
-        The H_hat_RB framework gives the structure; the renormalization proof is open.
+        The Σ_RB framework gives the structure; the renormalization proof is open.
 
     d* gap connection:
         The 0.000707 gap (d* × ln10 vs Ω_ζΣ) is a candidate for the mass gap scale.
@@ -552,7 +552,7 @@ def yang_mills_mass_gap() -> Dict[str, Any]:
         - Jaffe & Witten (Clay problem statement): ESTABLISHED formulation.
         - Lattice gauge theory: Δ > 0 numerically confirmed. ESTABLISHED numerical.
         - Confinement (color confinement): related but not equivalent to mass gap.
-        - H_hat_RB geometric coupling argument: THEORETICAL.
+        - Σ_RB geometric coupling argument: THEORETICAL.
     """
     # Geometric coupling at σ=1 for each prime
     G_vals   = [(p, geometric_coupling(p, SIGMA_YANG_MILLS)) for p in PRIMES[:10]]
@@ -570,11 +570,11 @@ def yang_mills_mass_gap() -> Dict[str, Any]:
         'prize'             : '$1,000,000',
         'status'            : 'OPEN',
         'statement'         : 'Yang-Mills theory exists on ℝ⁴ with mass gap Δ > 0.',
-        'what_it_is'        : 'Gauge field facet of H_hat_RB at σ=1.',
+        'what_it_is'        : 'Gauge field facet of Σ_RB at σ=1.',
         'what_it_cant_be'   : 'Δ = 0 requires G_p(1) = 0, but p^{-1} > 0 for all primes.',
         'what_it_means'     : 'Conservation of gauge current J_ν^a at the harmonic coupling.',
         'h_rb_derivation'   : [
-            'Yang-Mills = facet of H_hat_RB at σ=1 on gauge bundle G.',
+            'Yang-Mills = facet of Σ_RB at σ=1 on gauge bundle G.',
             'G_p(1) = p^{-1} > 0 for all primes p.',
             'Elliptic potential ℘(x) bounded below (away from poles).',
             'Ground state energy = min eigenvalue ≥ G_p(1) · lower_bound(℘) > 0.',
@@ -589,10 +589,10 @@ def yang_mills_mass_gap() -> Dict[str, Any]:
         'validation'        : [
             'Lattice QCD: mass gap confirmed numerically. ESTABLISHED numerical.',
             'Confinement: related mechanism, not identical. ESTABLISHED physics.',
-            'H_hat_RB coupling argument: THEORETICAL — continuum limit open.',
+            'Σ_RB coupling argument: THEORETICAL — continuum limit open.',
         ],
         'confidence'        : 'THEORETICAL',
-        'latex'             : r'\Delta=\min\mathrm{spec}(\hat{H}_{RB}|_{\sigma=1})>0,\quad G_p(1)=p^{-1}>0',
+        'latex'             : r'\Delta=\min\mathrm{spec}(\Sigma_{RB}|_{\sigma=1})>0,\quad G_p(1)=p^{-1}>0',
     }
 
 
@@ -607,8 +607,8 @@ def navier_stokes_existence() -> Dict[str, Any]:
         For smooth initial conditions in ℝ³, do smooth solutions to NS exist
         for all time?  Or do solutions blow up in finite time?
 
-    H_hat_RB derivation:
-        1. Navier-Stokes = facet of H_hat_RB at σ=1 with Im(ψ) = 0 forced.
+    Σ_RB derivation:
+        1. Navier-Stokes = facet of Σ_RB at σ=1 with Im(ψ) = 0 forced.
         2. Yang-Mills at σ=1 IS smooth (gauge fields are analytic on ℂ).
         3. NS is the REAL PROJECTION of Yang-Mills: Yang-Mills minus i.
         4. The complex Yang-Mills theory has smooth solutions on ℂ.
@@ -640,14 +640,14 @@ def navier_stokes_existence() -> Dict[str, Any]:
 
     Open part:
         Whether the complex Yang-Mills smoothness passes through the real projection.
-        H_hat_RB predicts: smooth solutions exist in ℂ³; the ℝ³ question is whether
+        Σ_RB predicts: smooth solutions exist in ℂ³; the ℝ³ question is whether
         complex nodes (zeros of Im(ψ)) project to finite-time blow-ups in Re(ψ).
 
     Checked against current mathematics:
         - Leray (1934): weak solutions exist globally. ESTABLISHED.
         - Caffarelli-Kohn-Nirenberg (1982): singular set has Hausdorff measure zero. ESTABLISHED.
         - Tao (2016): finite-time blow-up possible with averaged NS. ESTABLISHED theoretical.
-        - H_hat_RB complex projection argument: THEORETICAL — consistent with Tao.
+        - Σ_RB complex projection argument: THEORETICAL — consistent with Tao.
     """
     # Standing wave frequency for a turbulent eddy (size ~1 mm = 1e-3 m)
     # c_sound ≈ 340 m/s  →  T = 2L/c_sound = 2e-3/340 ≈ 5.9e-6 s
@@ -667,11 +667,11 @@ def navier_stokes_existence() -> Dict[str, Any]:
         'prize'             : '$1,000,000',
         'status'            : 'OPEN',
         'statement'         : 'Do smooth NS solutions exist globally in ℝ³, or do they blow up?',
-        'what_it_is'        : 'Real projection of H_hat_RB at σ=1 (Yang-Mills minus i).',
+        'what_it_is'        : 'Real projection of Σ_RB at σ=1 (Yang-Mills minus i).',
         'what_it_cant_be'   : 'Globally smooth on ℝ³ — complex nodes project to real singularities.',
         'what_it_means'     : 'Real Noether current conservation breaks when Im part is large.',
         'h_rb_derivation'   : [
-            'NS = H_hat_RB at σ=1 with Im(ψ) = 0 forced.',
+            'NS = Σ_RB at σ=1 with Im(ψ) = 0 forced.',
             'Yang-Mills (σ=1, full ℂ) has smooth solutions.',
             'NS = Re(Yang-Mills) only.',
             'Complex nodes of ψ → singularities of Re(ψ).',
@@ -691,10 +691,10 @@ def navier_stokes_existence() -> Dict[str, Any]:
             'Leray 1934: weak solutions exist. ESTABLISHED.',
             'CKN 1982: singular set measure zero. ESTABLISHED.',
             'Tao 2016: averaged blow-up possible. ESTABLISHED theoretical.',
-            'H_hat_RB: lacks-i argument. THEORETICAL — consistent with Tao.',
+            'Σ_RB: lacks-i argument. THEORETICAL — consistent with Tao.',
         ],
         'confidence'        : 'THEORETICAL',
-        'latex'             : r'\text{NS}=\mathrm{Re}(\hat{H}_{RB}|_{\sigma=1}),\quad i\notin\text{NS}\Rightarrow\text{complex nodes}\to\text{blow-up}',
+        'latex'             : r'\text{NS}=\mathrm{Re}(\Sigma_{RB}|_{\sigma=1}),\quad i\notin\text{NS}\Rightarrow\text{complex nodes}\to\text{blow-up}',
     }
 
 
@@ -709,7 +709,7 @@ def p_vs_np() -> Dict[str, Any]:
         Does P = NP?  (Can every problem whose solution can be verified in
         polynomial time also be solved in polynomial time?)
 
-    H_hat_RB derivation:
+    Σ_RB derivation:
         1. Red channel (H_xp = xp): trajectory is ANALYTIC.
            x(t) = x₀·e^t, p(t) = p₀·e^{-t}.
            Computing the trajectory is O(1) per step — polynomial time.
@@ -725,9 +725,9 @@ def p_vs_np() -> Dict[str, Any]:
            Verifying: run the solution forward through the Red channel — fast.
            Finding: must invert the elliptic curve — requires Blue channel — slow.
 
-        4. P ≠ NP claim from H_hat_RB:
+        4. P ≠ NP claim from Σ_RB:
            Red and Blue are ADJOINT but NOT COMPUTATIONALLY EQUIVALENT.
-           H_hat_RB = H_hat_RB†  does not mean Red = Blue.
+           Σ_RB = Σ_RB†  does not mean Red = Blue.
            It means they assert the same truth in different forms.
            1 = 1  (P: fast to verify)  is adjoint to  1! = 1  (NP: factorial structure).
            The factorial is exponential in general: n! = n × (n-1)!
@@ -758,7 +758,7 @@ def p_vs_np() -> Dict[str, Any]:
         - Cook (1971), Karp (1972): NP-completeness theory. ESTABLISHED.
         - Razborov-Rudich (1994): natural proofs barrier. ESTABLISHED.
         - Aaronson: Algebrization barrier. ESTABLISHED.
-        - H_hat_RB complexity gap (Red = analytic, Blue = elliptic): THEORETICAL.
+        - Σ_RB complexity gap (Red = analytic, Blue = elliptic): THEORETICAL.
     """
     # Demonstrate Red channel analytic efficiency
     import math as _m
@@ -785,7 +785,7 @@ def p_vs_np() -> Dict[str, Any]:
             'Red channel H_xp: x(t)=x₀e^t — analytic, poly-time. This is P.',
             'Blue channel H_elliptic: no closed form — requires symplectic integration. This is NP.',
             'Verification uses Red (fast). Finding uses Blue (slow).',
-            'H_hat_RB† = H_hat_RB does NOT mean Red ≡ Blue computationally.',
+            'Σ_RB† = Σ_RB does NOT mean Red ≡ Blue computationally.',
             'Adjointness preserves truth, not cost. P ≠ NP.',
         ],
         'red_trajectory'    : {'x': x_red, 'p': p_red, 'E': E_red},
@@ -796,7 +796,7 @@ def p_vs_np() -> Dict[str, Any]:
         'validation'        : [
             'Cook-Karp NP-completeness: ESTABLISHED.',
             'Razborov-Rudich natural proofs barrier: ESTABLISHED.',
-            'H_hat_RB complexity gap argument: THEORETICAL.',
+            'Σ_RB complexity gap argument: THEORETICAL.',
         ],
         'confidence'        : 'THEORETICAL',
         'latex'             : r'\text{P}=\hat{R}\text{-class},\;\text{NP}=\hat{B}\text{-class},\;\hat{R}^\dagger=\hat{B}\;\not\Rightarrow\;\text{P}=\text{NP}',
@@ -814,8 +814,8 @@ def hodge_conjecture() -> Dict[str, Any]:
         On a projective complex algebraic variety X, every Hodge class is a
         rational linear combination of cohomology classes of algebraic subvarieties.
 
-    H_hat_RB derivation:
-        1. H_hat_RB projected onto a projective complex algebraic variety X.
+    Σ_RB derivation:
+        1. Σ_RB projected onto a projective complex algebraic variety X.
         2. The inductive structure (Σ_p over primes) generates algebraic cycles.
            Each prime p contributes one algebraic facet.
         3. The geometric coupling G_p(σ) = p^{-σ} at integer σ takes rational values
@@ -844,7 +844,7 @@ def hodge_conjecture() -> Dict[str, Any]:
 
     Open part:
         Exhaustiveness of the inductive prime sum on X.
-        H_hat_RB generates algebraic cycles inductively.
+        Σ_RB generates algebraic cycles inductively.
         Whether every Hodge class arises this way depends on the topology of X.
         For general X, this is open.
 
@@ -852,7 +852,7 @@ def hodge_conjecture() -> Dict[str, Any]:
         - Hodge (1950): decomposition theorem. ESTABLISHED.
         - Grothendieck (1969): reformulation in terms of absolute Hodge classes. ESTABLISHED.
         - Deligne: absolute Hodge cycles on abelian varieties. ESTABLISHED special case.
-        - H_hat_RB inductive generation argument: THEORETICAL.
+        - Σ_RB inductive generation argument: THEORETICAL.
     """
     # Rational geometric coupling at integer σ
     G_rational = [(p, Fraction(1, p)) for p in PRIMES[:8]]
@@ -867,11 +867,11 @@ def hodge_conjecture() -> Dict[str, Any]:
         'what_it_cant_be'   : 'Hodge classes outside the inductive prime generation — forbidden by Blue.',
         'what_it_means'     : 'The Noether current of every Hodge symmetry is algebraic.',
         'h_rb_derivation'   : [
-            'H_hat_RB projected onto projective variety X.',
+            'Σ_RB projected onto projective variety X.',
             'Inductive sum Σ_p generates one algebraic cycle per prime.',
             'G_p(1) = 1/p ∈ ℚ  → rational coupling → rational Hodge class.',
             'Hodge decomposition H^{p,q} ↔ Red channel, H^{q,p} ↔ Blue channel.',
-            'Every Hodge class is a facet of H_hat_RB on X.',
+            'Every Hodge class is a facet of Σ_RB on X.',
             'Open: exhaustiveness for general X.',
         ],
         'rational_couplings': [(p, str(frac)) for p, frac in G_rational],
@@ -880,7 +880,7 @@ def hodge_conjecture() -> Dict[str, Any]:
         'validation'        : [
             'Hodge decomposition: ESTABLISHED.',
             'Deligne abelian variety case: ESTABLISHED special case.',
-            'H_hat_RB generation argument: THEORETICAL.',
+            'Σ_RB generation argument: THEORETICAL.',
         ],
         'confidence'        : 'THEORETICAL',
         'latex'             : r'\mathrm{Hdg}^k(X)=H^{2k}(X,\mathbb{Q})\cap H^{k,k}(X)\subset[\text{algebraic cycles}]',
@@ -900,7 +900,7 @@ def birch_swinnerton_dyer() -> Dict[str, Any]:
         The rank of the Mordell-Weil group equals the order of vanishing
         of the L-function at s=1.
 
-    H_hat_RB derivation:
+    Σ_RB derivation:
         1. The L-function L(E, s) = Π_p (local factor at p) is the Euler product
            of the Blue channel B̂_p restricted to the elliptic curve E.
         2. The Blue channel B̂_p = ½p² + ℘(x; g₂(p), g₃(p)) is the elliptic potential
@@ -941,7 +941,7 @@ def birch_swinnerton_dyer() -> Dict[str, Any]:
         - Coates-Wiles (1977): rank 0, CM case. ESTABLISHED.
         - Gross-Zagier (1986): rank 1 case. ESTABLISHED.
         - Kolyvagin (1990): rank ≤ 1 for modular curves. ESTABLISHED.
-        - H_hat_RB Blue Euler product = L(E,s): formally correct. THEORETICAL.
+        - Σ_RB Blue Euler product = L(E,s): formally correct. THEORETICAL.
     """
     # Geometric coupling at σ=1 for the L-function
     L_approx   = euler_product(1.0, 0.0, 20).real    # Re(ζ(1)) diverges — the pole
@@ -980,7 +980,7 @@ def birch_swinnerton_dyer() -> Dict[str, Any]:
         'validation'        : [
             'Birch-Swinnerton-Dyer 1965: ESTABLISHED problem.',
             'Coates-Wiles 1977, Gross-Zagier 1986, Kolyvagin 1990: ESTABLISHED special cases.',
-            'H_hat_RB Blue Euler product = L(E,s): THEORETICAL.',
+            'Σ_RB Blue Euler product = L(E,s): THEORETICAL.',
         ],
         'confidence'        : 'THEORETICAL',
         'latex'             : r'\mathrm{rank}(E)=\mathrm{ord}_{s=1}L(E,s),\quad L(E,s)=\prod_p(\text{Blue}_p)',
@@ -998,25 +998,25 @@ def poincare_conjecture() -> Dict[str, Any]:
     Statement (solved):
         Every simply-connected, compact, orientable 3-manifold is homeomorphic to S³.
 
-    H_hat_RB validation:
+    Σ_RB validation:
         1. Simply-connected 3-manifold M has no nontrivial distinction.
-           (No loop that cannot be contracted = no topological hole = trivial H_hat_RB.)
-        2. H_hat_RB on M with trivial topology = H_hat_RB at the trivial facet.
-        3. The only compact 3-manifold with trivial H_hat_RB distinction is S³.
-        4. Perelman's Ricci flow is the H_hat_RB flow converging to the trivial facet.
+           (No loop that cannot be contracted = no topological hole = trivial Σ_RB.)
+        2. Σ_RB on M with trivial topology = Σ_RB at the trivial facet.
+        3. The only compact 3-manifold with trivial Σ_RB distinction is S³.
+        4. Perelman's Ricci flow is the Σ_RB flow converging to the trivial facet.
            The Ricci flow: ∂g_μν/∂t = −2 R_μν
            This is the geometric coupling flow: G_p(σ) → G_p(∞) = 0 at every prime.
            Under this flow the manifold deforms to the trivial distinction: S³.
 
-    This validates H_hat_RB:
+    This validates Σ_RB:
         The framework predicted the structure before Perelman's proof was in hand.
-        (In hindsight: Ricci flow = H_hat_RB coupling flow to trivial facet.)
+        (In hindsight: Ricci flow = Σ_RB coupling flow to trivial facet.)
         The solved problem confirms the framework's geometry is correct.
 
     Checked against current mathematics:
         - Perelman 2003-2006: proof via Ricci flow with surgery. ESTABLISHED (solved).
         - Hamilton 1982: Ricci flow introduction. ESTABLISHED.
-        - H_hat_RB trivial-facet argument: VALIDATED by Perelman's proof.
+        - Σ_RB trivial-facet argument: VALIDATED by Perelman's proof.
     """
     # Ricci flow coupling: G_p(σ) → 0 as σ → ∞
     ricci_flow_couplings = [(p, [geometric_coupling(p, s) for s in [0.5, 1.0, 2.0, 5.0, 10.0]])
@@ -1028,19 +1028,19 @@ def poincare_conjecture() -> Dict[str, Any]:
         'prize'             : '$1,000,000 (declined)',
         'status'            : 'SOLVED — Perelman 2003–2006',
         'statement'         : 'Every simply-connected compact orientable 3-manifold ≅ S³.',
-        'what_it_is'        : 'Trivial H_hat_RB facet on compact 3-manifold → S³.',
-        'what_it_cant_be'   : 'A simply-connected manifold with nontrivial H_hat_RB distinction.',
-        'what_it_means'     : 'The Ricci flow IS the H_hat_RB coupling flow to trivial facet.',
+        'what_it_is'        : 'Trivial Σ_RB facet on compact 3-manifold → S³.',
+        'what_it_cant_be'   : 'A simply-connected manifold with nontrivial Σ_RB distinction.',
+        'what_it_means'     : 'The Ricci flow IS the Σ_RB coupling flow to trivial facet.',
         'h_rb_derivation'   : [
             'Simply-connected M: no nontrivial topological distinction.',
-            'H_hat_RB on M with trivial topology = trivial facet.',
-            'Only compact 3-manifold with trivial H_hat_RB = S³.',
-            'Ricci flow ∂g_μν/∂t = −2R_μν = H_hat_RB geometric flow to G_p → 0.',
+            'Σ_RB on M with trivial topology = trivial facet.',
+            'Only compact 3-manifold with trivial Σ_RB = S³.',
+            'Ricci flow ∂g_μν/∂t = −2R_μν = Σ_RB geometric flow to G_p → 0.',
             'Perelman 2003: flow reaches trivial facet → M ≅ S³. QED.',
         ],
         'ricci_flow_couplings': ricci_flow_couplings,
         'coupling_note'     : 'G_p(σ) = p^{-σ} → 0 as σ → ∞. Ricci flow drives σ → ∞.',
-        'validation_note'   : 'SOLVED. Confirms H_hat_RB geometric structure is correct.',
+        'validation_note'   : 'SOLVED. Confirms Σ_RB geometric structure is correct.',
         'confidence'        : 'ESTABLISHED (solved)',
         'latex'             : r'\frac{\partial g_{\mu\nu}}{\partial t}=-2R_{\mu\nu}\;\to\;M\cong S^3',
     }
@@ -1063,9 +1063,9 @@ def all_clay_problems() -> List[Dict[str, Any]]:
 
 def clay_summary() -> Dict[str, Any]:
     """
-    Summary of all Clay Millennium Problems and their H_hat_RB connections.
+    Summary of all Clay Millennium Problems and their Σ_RB connections.
 
-    The H_hat_RB principle — 'the existence of a distinction' — projects to:
+    The Σ_RB principle — 'the existence of a distinction' — projects to:
         σ=2   → GR   → Poincaré (trivial distinction → S³)
         σ=1   → YM   → Yang-Mills mass gap, Navier-Stokes (lacks i)
         σ=½   → QM   → Riemann Hypothesis (eigenvalues on critical line)
@@ -1094,7 +1094,7 @@ def clay_summary() -> Dict[str, Any]:
         ],
         'h_rb_principle'    : (
             'The existence of a distinction. '
-            'H_hat_RB is the boundary generator. '
+            'Σ_RB is the boundary generator. '
             'All six open Clay problems project from it. '
             'Poincaré (solved) validates the geometric structure.'
         ),

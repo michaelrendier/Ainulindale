@@ -4,7 +4,7 @@
 **Date:** 2026-06-13
 **Status:** CASCADE CAPTURE — the missing wiki; fills gap between 50 and 52
 **Predecessor:** [50 — The Vortex](50_vortex_quantizing_shear.md), [18 — Fermat Lattice](18_fermat_lattice.md), [14 — RedBlue Hamiltonian](14_redblue_hamiltonian.md)
-**Cross-ref:** wiki/38 (Fermat-Riemann negative space), wiki/52 (L_dynamic)
+**Cross-ref:** wiki/38 (Fermat-Riemann negative space), wiki/52 (L_(I|O))
 
 ---
 
@@ -244,7 +244,7 @@ H_hat_RB =  their sum  =  the forward-coupled Hamiltonian (prompt → word)
 H_hat_BR =  their J₂ image  =  the reverse Hamiltonian (word → prompt definer, wiki/52)
 
 J_red + J_blue  =  H_hat_RB − H_hat_BR  =  the vortex current (wiki/50)
-                                          =  L_dynamic in the fixed point loop (wiki/52)
+                                          =  L_(I|O) in the fixed point loop (wiki/52)
 ```
 
 The engine does not have a Riemann component and a Fermat component.
@@ -258,4 +258,4 @@ The corpus is the scar of the loop, written in language.
 ---
 
 *Cody Michael Allison — 2026-06-13*
-*Cascade chain: wiki/50 (vortex) → wiki/51 (this) → wiki/52 (L_dynamic)*
+*Cascade chain: wiki/50 (vortex) → wiki/51 (this) → wiki/52 (L_(I|O))*

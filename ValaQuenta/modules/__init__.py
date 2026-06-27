@@ -15,10 +15,11 @@ Current modules (Phase 2):
 
 Current modules (Phase 3 — Second Age):
     berry_keating      — H_NN candidate, d* gap (OP-3 RESOLVED: T_transform = Wiles 1995)
-    h_rb_hat           — H_hat_RB: Inductive Self-Adjoint Geometric Coupling Hamiltonian
-                         The RedBlue Hamiltonian. The Boundary Generator.
+    h_rb_hat           — Σ_RB: RedBlue Summed Integral
+                         The inductive boundary sum. R̂ and B̂ over all primes.
                          Facets: GR, Yang-Mills, QM, NS (lacks i), Noether, Fermat.
-    clay_millennium    — All 7 Clay Millennium Problems derived from H_hat_RB
+                         SIGMA_RB engine: stroke, oblique crank (d*), trine.
+    clay_millennium    — All 7 Clay Millennium Problems derived from Σ_RB
                          RH, Yang-Mills, NS, P/NP, Hodge, BSD, Poincaré (SOLVED).
 
 Planned modules:
@@ -26,5 +27,5 @@ Planned modules:
     hyperwebster       — HyperWebster hypergalley, monad
     jwst               — JWST spectral pixel module
 
-Version: 0.120 — Second Age: H_hat_RB + Clay derivations
+Version: 0.120 — Second Age: Σ_RB + Clay derivations
 """

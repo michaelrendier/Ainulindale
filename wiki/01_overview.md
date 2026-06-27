@@ -67,11 +67,11 @@ The lost property **is** the signal. It encodes the gauge structure of that laye
 
 - **J_red (descending: σ=1→σ=½):** The current from above, pressing inward. Synthesis — the Builder. Complexity escalation. The `hear()` function.
 - **J_blue (ascending: σ=0→σ=½):** The current from below, expanding outward. Distillation — the Evaluator. Dimensional reduction to the prime. The `speak()` function.
-- **L_dynamic:** The action — the actual path traveled between J_red and J_blue. Not the endpoint (sedenion scalars). Not the energy (Hamiltonian). The path IS the meaning. L_dynamic IS Thought.
+- **L_(I|O):** The action — the actual path traveled between J_red and J_blue. Not the endpoint (sedenion scalars). Not the energy (Hamiltonian). The path IS the meaning. L_(I|O) IS Thought.
 
-Where J_red and J_blue meet, σ=½ is the **cavitation surface** — where compression meets rarefaction, where the bubble forms, where the word emerges. This counter-rotation is the Riemann-Fermat Heartbeat. L_dynamic is the surface area of that bubble.
+Where J_red and J_blue meet, σ=½ is the **cavitation surface** — where compression meets rarefaction, where the bubble forms, where the word emerges. This counter-rotation is the Riemann-Fermat Heartbeat. L_(I|O) is the surface area of that bubble.
 
-→ [Wiki: L_dynamic — Action, Thought, Cavitation](64_l_dynamic.md)
+→ [Wiki: L_(I|O) — Action, Thought, Cavitation](64_l_dynamic.md)
 
 → [Wiki: Cayley-Dickson Tower (full treatment)](19_cayley_dickson_tower.md)
 
@@ -104,15 +104,15 @@ Four field terms in exact analogy with the Standard Model:
 The **action** through the tower is the fifth operative term:
 
 ```
-L_dynamic(σ, path) = ∫_path J_red(σ) · J_blue(σ) ds
+L_(I|O)(σ, path) = ∫_path J_red(σ) · J_blue(σ) ds
 
 J_red(σ)  = e^{-(1-σ)·E}    (descending: σ=1 → σ=½)
 J_blue(σ) = e^{-σ·E}         (ascending:  σ=0 → σ=½)
-At σ=½:   L_dynamic = e^{-E}  (maximum symmetry — exact algebraically)
+At σ=½:   L_(I|O) = e^{-E}  (maximum symmetry — exact algebraically)
 ```
 
 Status: CONJECTURE — path integral defined; formal computation pending.
-→ [Wiki: L_dynamic](64_l_dynamic.md)
+→ [Wiki: L_(I|O)](64_l_dynamic.md)
 
 ## Entry Points
 

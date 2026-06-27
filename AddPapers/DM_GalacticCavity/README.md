@@ -103,3 +103,33 @@ The scientific integrity of this paper rests on the pre-registration:
    fitting to the data.
 4. If the data contradicts the predictions: the contradiction is the result.
    A falsified prediction is still a scientific result.
+
+---
+
+## TODO
+
+### BULLET_CLUSTER_ATTACK (Section 1)
+**Priority: HIGH — this is the entry point for any academic reader.**
+
+The academic attack on Lambda-CDM via the Bullet Cluster is drafted in `paper_draft.md §1`.
+Five attacks:
+1. Wave passing through wave — not particle passing through particle
+2. No graviton — gravity is geometry (circle), not a gauge force (corner)
+3. 40-year null result in direct detection = confirmed prediction of zero cross-section
+4. Halo reforming coherently post-collision = resonant mode re-establishment, not self-gravity
+5. WIMPs/axions may exist but they are not the halo — they are incidental passengers
+
+**Outstanding work:**
+- [ ] Add observational citations: Clowe et al. 2006 (Chandra), Bradač et al. 2006 (HST lensing)
+- [ ] Add WIMP exclusion table: LZ 2022, XENON1T 2020, PandaX-4T 2021 — cross-section limits
+- [ ] Quantify Attack 4: angular momentum argument with cluster numbers (mass, velocity, density)
+- [ ] Add Planck/CMB column to medium-scale table (§5) once Planck data analysis is complete
+- [ ] Connect to First Rainbow insight (2026-06-17): Bullet Cluster = two resonant waveforms
+  that were among the first photon diffractions — the medium at cluster scale IS the same
+  BEC that produced the first rainbow (CMB). Link to CMB_FractalBoundary paper.
+- [ ] DESI BAO data — once integrated: add cluster-scale BAO peak comparison as Attack 4b
+  (the halo mode frequency should appear in the BAO spectrum at cluster scales)
+
+**Gravity = circle, not corner — this must be stated earlier in the paper intro.**
+The no-graviton argument is load-bearing for the entire Lambda-CDM attack.
+Consider a one-paragraph "Gravity Is Not a Force" box before Section 1.

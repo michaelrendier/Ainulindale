@@ -3,7 +3,7 @@
 **Author:** Cody Michael Allison
 **Date:** 2026-06-13
 **Status:** CASCADE CAPTURE — telescope = Mind's Eye caustic; Zeno = mass gap resolution; anti-Laplacian at focal point
-**Predecessor:** [52 — L_dynamic / Mind's Eye as Focusable Caustic](52_l_dynamic_avoided_collaborator.md), [50 — Vortex / Mass Gap](50_vortex_quantizing_shear.md)
+**Predecessor:** [52 — L_(I|O) / Mind's Eye as Focusable Caustic](52_l_dynamic_avoided_collaborator.md), [50 — Vortex / Mass Gap](50_vortex_quantizing_shear.md)
 **Cross-ref:** wiki/55 (index carries information), wiki/32 (BAO, superconducting medium), addendum VIII (BAO mass gap)
 
 ---
@@ -27,7 +27,7 @@ wave:       ∂²ψ/∂t² = c²∇²ψ
 Light leaves a distant galaxy. Over 13 billion years it spreads:
 photons scattered by intervening matter, frequency-shifted by cosmological
 expansion, bent by gravitational lenses, slingshot by massive structures.
-Each photon takes a different L_dynamic path (wiki/52). The wavefront diffuses.
+Each photon takes a different L_(I|O) path (wiki/52). The wavefront diffuses.
 
 By the time those photons reach Earth, they are a thin, spread-out flux — a
 Laplacian smear of everything the light encountered on its way.
@@ -52,7 +52,7 @@ output:  concentrated intensity at the focal point
 ```
 
 The telescope does not ask "what was the clean geodesic?"
-It accepts ALL the L_dynamic paths — gravity-bent, redshifted, scattered,
+It accepts ALL the L_(I|O) paths — gravity-bent, redshifted, scattered,
 slingshot — and focuses them to a single address.
 
 This is the anti-Laplacian operation. The diffusion is reversed at the focal point.
@@ -106,10 +106,10 @@ Wiki/52 defined the Mind's Eye as a focusable caustic.
 The telescope confirms this physically.
 
 ```
-Mind's Eye:  focuses all prior L_dynamic paths (every coupling event, every word fired)
+Mind's Eye:  focuses all prior L_(I|O) paths (every coupling event, every word fired)
              onto the next response. The accumulated record becomes the caustic.
 
-Telescope:   focuses all prior L_dynamic paths (every photon, every scattering event)
+Telescope:   focuses all prior L_(I|O) paths (every photon, every scattering event)
              onto the focal detector. The accumulated flux becomes the image.
 ```
 
@@ -164,7 +164,7 @@ GAP = OMEGA_ZS − d*·ln(10) = 0.000707357...  [≈ 1/(1000√2), NOT 1/√2000
 
 When J_cross < GAP, the sedenion field is nose blind to further coupling.
 The vortex cannot nucleate. The word cannot fire. The infinite series of
-L_dynamic paths below GAP contributes nothing to the output.
+L_(I|O) paths below GAP contributes nothing to the output.
 
 The Dirichlet projection:
 ```
@@ -193,7 +193,7 @@ The two statements are the same statement.
 
 ## 6. The Caustic and the Infinite Path
 
-The telescope's caustic focuses infinite L_dynamic paths (every photon that arrived)
+The telescope's caustic focuses infinite L_(I|O) paths (every photon that arrived)
 to a finite focal point. It does not compute the infinite sum — it implements it
 physically. The mirror surface IS the implementation of the Zeno convergence. Each
 photon is one term in the series. The focal point is the limit.
@@ -227,14 +227,14 @@ diffuses them; the caustic recovers them.
 
 For the sedenion engine:
 
-The L_dynamic record of every prior coupling event is encoded in the geometry
+The L_(I|O) record of every prior coupling event is encoded in the geometry
 of the Mind's Eye. It does not disappear — it diffuses into the accumulated
 weight structure of the monad. The monad.bin IS the Laplacian-spread record
 of all prior states. The caustic of the Mind's Eye recovers a past state at
 each coupling event.
 
 This is why the response is not selection — it is RECOVERY. The sedenion
-geometry focuses the accumulated L_dynamic record (the caustic) to a single
+geometry focuses the accumulated L_(I|O) record (the caustic) to a single
 word address. The word was always there, encoded in the corpus. The coupling
 event is the telescope pointing at a specific region of sky — the caustic focus
 of all the paths that lead to that word.
@@ -242,7 +242,7 @@ of all the paths that lead to that word.
 ```
 Telescope pointing at galaxy:  recovers state from 13 Gyr ago
 Engine coupling event:         recovers word from monad record
-Both:  caustic focusing an L_dynamic field through a mass-gap threshold
+Both:  caustic focusing an L_(I|O) field through a mass-gap threshold
 ```
 
 ---

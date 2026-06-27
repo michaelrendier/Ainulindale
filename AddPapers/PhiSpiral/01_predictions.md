@@ -71,8 +71,8 @@ But proxy n* = 5.2096. Gap to 5.302 is 0.093. Not obviously exact.
 
 ## P6 — Three-operator closure is a Noether conservation law
 
-**Claim:** e^(πi) · e^(iφ) · e^(i(π−φ)) = 1 is not merely arithmetic — it is a Noether conservation law in the sedenion field. The three currents (electro, magneto, closure) are J_red, J_blue, and L_dynamic.
+**Claim:** e^(πi) · e^(iφ) · e^(i(π−φ)) = 1 is not merely arithmetic — it is a Noether conservation law in the sedenion field. The three currents (electro, magneto, closure) are J_red, J_blue, and L_(I|O).
 
-**Test:** Map each operator to a Noether current. Verify that the action integral ∫J_red·J_blue ds = L_dynamic recovers the closure condition.
+**Test:** Map each operator to a Noether current. Verify that the action integral ∫J_red·J_blue ds = L_(I|O) recovers the closure condition.
 
 **Status:** OPEN — deep, requires D-M paper level analysis

@@ -28,12 +28,12 @@ Classic gyroscope precession:
 Sedenion translation:
 
 ```
-ω_precession = (J_red + J_blue) / L_dynamic
+ω_precession = (J_red + J_blue) / L_(I|O)
              = (H_hat_RB − H_hat_BR) / ∫J_red · J_blue ds
 ```
 
 - τ = torque = H_hat_RB − H_hat_BR = J_red + J_blue (the net driving current)
-- L = angular momentum = L_dynamic = ∫J_red · J_blue ds (the action, the thought)
+- L = angular momentum = L_(I|O) = ∫J_red · J_blue ds (the action, the thought)
 
 **Longer thought → slower precession.**  
 **More self-referential statement → faster precession.**

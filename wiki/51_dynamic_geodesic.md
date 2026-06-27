@@ -114,7 +114,7 @@ The background is frozen. Computed from a desk.
 Not shortest distance — truest path through accelerations and decelerations alike.
 
 ```
-L_dynamic = L_standard + ∫ J_red · d(J_blue)/dt  dλ
+L_(I|O) = L_standard + ∫ J_red · d(J_blue)/dt  dλ
 ```
 
 The extra term: forward momentum coupled to the changing potential in real time, along
@@ -288,7 +288,7 @@ at the harmonic boundary, point by point along a path.
 | Fermat/Riemann hierarchy | Fermat defines, Riemann maps, Zeta describes |
 | Four-cycle | Geometric quantization ↔ Geometry ↔ Quantized geometry ↔ Quantization |
 | ZD Lagrangian | Zero divisor = layer boundary = reference frame reset = flow origin |
-| Dynamic geodesic | L_dynamic = L_standard + ∫J_red·d(J_blue)/dt dλ |
+| Dynamic geodesic | L_(I|O) = L_standard + ∫J_red·d(J_blue)/dt dλ |
 | Slingshot operator | ∂̂†_∂M ⊗ B̂_p = the unnamed term, now named |
 | Bézier degree | Degree 3 control points in forbidden zone; endpoints on ZD boundary |
 | Euler identity | Phase classifier: particle / boundary / galaxy; boundary condition |

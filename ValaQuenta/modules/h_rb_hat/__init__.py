@@ -1,2 +1,2 @@
-from .tools import HRBHatModule
-__all__ = ['HRBHatModule']
+from .tools import SigmaRBModule
+__all__ = ['SigmaRBModule']

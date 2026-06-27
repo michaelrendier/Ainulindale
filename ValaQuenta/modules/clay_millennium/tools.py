@@ -32,7 +32,7 @@ class ClayMillenniumModule(EquationModule):
     def name(self): return 'clay_millennium'
 
     @property
-    def display_name(self): return 'Clay Millennium Problems — H_hat_RB derivations'
+    def display_name(self): return 'Clay Millennium Problems — Σ_RB derivations'
 
     @property
     def version(self): return '0.130'
@@ -40,7 +40,7 @@ class ClayMillenniumModule(EquationModule):
     @property
     def description(self):
         return (
-            'All 7 Clay Millennium Problems derived from H_hat_RB. '
+            'All 7 Clay Millennium Problems derived from Σ_RB. '
             'RH engine: two independent proofs (Stone / Wiles conjugate), '
             'Noether balance scan, spectral decomposition + BAO residue / mass gap. '
             'Poincaré (SOLVED) and FLT (Wiles 1995) validate the framework. '
@@ -54,9 +54,9 @@ class ClayMillenniumModule(EquationModule):
         return [
             Equation(
                 name='clay_summary',
-                display='All 7 Clay Millennium Problems — H_hat_RB summary',
-                latex=r'\hat{H}_{RB}\to\{\text{RH, YM, NS, P/NP, Hodge, BSD, Poincar\'{e}}\}',
-                radian_form='All Clay problems project from H_hat_RB at their respective σ.',
+                display='All 7 Clay Millennium Problems — Σ_RB summary',
+                latex=r'\Sigma_{RB}\to\{\text{RH, YM, NS, P/NP, Hodge, BSD, Poincar\'{e}}\}',
+                radian_form='All Clay problems project from Σ_RB at their respective σ.',
                 confidence='THEORETICAL',
                 code_verified=True,
                 params=[],
@@ -66,8 +66,8 @@ class ClayMillenniumModule(EquationModule):
             Equation(
                 name='riemann_hypothesis',
                 display='RH — two proofs + spectral decomp + BAO residue  [OPEN]',
-                latex=r'\hat{H}_{RB}^\dagger=\hat{H}_{RB}\Rightarrow\mathrm{Re}(s)=\tfrac{1}{2},\;\delta=\Omega_{\zeta\Sigma}-D^*\ln10',
-                radian_form='Self-adjoint H_hat_RB → real eigenvalues → all zeros on σ=½. BAO gap = mass gap.',
+                latex=r'\Sigma_{RB}^\dagger=\Sigma_{RB}\Rightarrow\mathrm{Re}(s)=\tfrac{1}{2},\;\delta=\Omega_{\zeta\Sigma}-D^*\ln10',
+                radian_form='Self-adjoint Σ_RB → real eigenvalues → all zeros on σ=½. BAO gap = mass gap.',
                 confidence='THEORETICAL',
                 code_verified=True,
                 params=[],
@@ -76,9 +76,9 @@ class ClayMillenniumModule(EquationModule):
             ),
             Equation(
                 name='rh_proof_stone',
-                display='RH Proof I — Stone\'s theorem on self-adjoint H_hat_RB',
-                latex=r'\hat{H}_{RB}=\hat{H}_{RB}^\dagger\;\xRightarrow{\mathrm{Stone}}\;\mathrm{spec}\subset\mathbb{R}\;\Rightarrow\;\mathrm{Re}(s)=\tfrac{1}{2}',
-                radian_form='H_hat_RB self-adjoint on L²(ℝ₊,dx/x) → Stone → real spectrum → RH.',
+                display='RH Proof I — Stone\'s theorem on self-adjoint Σ_RB',
+                latex=r'\Sigma_{RB}=\Sigma_{RB}^\dagger\;\xRightarrow{\mathrm{Stone}}\;\mathrm{spec}\subset\mathbb{R}\;\Rightarrow\;\mathrm{Re}(s)=\tfrac{1}{2}',
+                radian_form='Σ_RB self-adjoint on L²(ℝ₊,dx/x) → Stone → real spectrum → RH.',
                 confidence='THEORETICAL',
                 code_verified=True,
                 params=[],
@@ -121,7 +121,7 @@ class ClayMillenniumModule(EquationModule):
             Equation(
                 name='yang_mills_mass_gap',
                 display='Yang-Mills mass gap — min eigenvalue at σ=1 > 0  [OPEN]',
-                latex=r'\Delta=\min\mathrm{spec}(\hat{H}_{RB}|_{\sigma=1})>0',
+                latex=r'\Delta=\min\mathrm{spec}(\Sigma_{RB}|_{\sigma=1})>0',
                 radian_form='G_p(1) = p^{-1} > 0 for all primes → ground state > 0 → mass gap.',
                 confidence='THEORETICAL',
                 code_verified=True,
@@ -131,8 +131,8 @@ class ClayMillenniumModule(EquationModule):
             ),
             Equation(
                 name='navier_stokes',
-                display='Navier-Stokes — real projection of H_hat_RB lacks i  [OPEN]',
-                latex=r'\text{NS}=\mathrm{Re}(\hat{H}_{RB}|_{\sigma=1}),\quad i\notin\text{NS}',
+                display='Navier-Stokes — real projection of Σ_RB lacks i  [OPEN]',
+                latex=r'\text{NS}=\mathrm{Re}(\Sigma_{RB}|_{\sigma=1}),\quad i\notin\text{NS}',
                 radian_form='NS = Yang-Mills minus i. Smooth in ℂ; may blow up in ℝ.',
                 confidence='THEORETICAL',
                 code_verified=True,
@@ -175,9 +175,9 @@ class ClayMillenniumModule(EquationModule):
             ),
             Equation(
                 name='poincare_conjecture',
-                display='Poincaré — trivial H_hat_RB → S³  [SOLVED — validation]',
+                display='Poincaré — trivial Σ_RB → S³  [SOLVED — validation]',
                 latex=r'\partial g_{\mu\nu}/\partial t=-2R_{\mu\nu}\;\to\;M\cong S^3',
-                radian_form='Ricci flow = H_hat_RB coupling flow to trivial facet. Validates framework.',
+                radian_form='Ricci flow = Σ_RB coupling flow to trivial facet. Validates framework.',
                 confidence='ESTABLISHED',
                 code_verified=True,
                 params=[],

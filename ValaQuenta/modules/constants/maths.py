@@ -1301,5 +1301,5 @@ def all_constants() -> Dict[str, Any]:
         ),
         'confidence'    : 'ESTABLISHED (5+OMEGA_ZS+Λ existence); THEORETICAL (α_F); OPEN (d* tower, Λ value)',
         'latex'         : (r'i,\sqrt{\cdot},e,\pi,\varphi,\Omega_{\zeta\Sigma},\alpha_F,d^*,\Lambda'
-                           r'\;\text{drop out of }\hat{H}_{RB}'),
+                           r'\;\text{drop out of }\Sigma_{RB}'),
     }

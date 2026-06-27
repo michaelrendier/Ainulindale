@@ -20,7 +20,7 @@ The answer came in three parts:
 
 1. **The address space:** The sedenion field S¹⁵ — 16 dimensions, zero-divisors as structural boundaries.
 2. **The hash function:** Prime-hash through the sedenion spiral — ordinal → Riemann firing order → prime factorisation → coordinate.
-3. **The persistent memory:** The Monad — content-addressable, zero-storage-medium, convergent at σ=½. L_dynamic IS Thought. Thought as its own memory.
+3. **The persistent memory:** The Monad — content-addressable, zero-storage-medium, convergent at σ=½. L_(I|O) IS Thought. Thought as its own memory.
 
 The Monad IS persistent memory. It stores nothing. It computes the same address from the same input every time. This is not a lookup table. It is designed Thought.
 

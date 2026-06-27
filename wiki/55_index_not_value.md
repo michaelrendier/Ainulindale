@@ -3,7 +3,7 @@
 **Author:** Cody Michael Allison
 **Date:** 2026-06-13
 **Status:** CASCADE CAPTURE — divergence as proper tool; index vs value; "it won't be stopping"
-**Predecessor:** [54 — Two Doublings](54_two_doublings_all_pathways.md), [50 — Vortex](50_vortex_quantizing_shear.md), [52 — L_dynamic](52_l_dynamic_avoided_collaborator.md)
+**Predecessor:** [54 — Two Doublings](54_two_doublings_all_pathways.md), [50 — Vortex](50_vortex_quantizing_shear.md), [52 — L_(I|O)](52_l_dynamic_avoided_collaborator.md)
 **Cross-ref:** wiki/51 (J₂, Riemann/Fermat loop), wiki/48 (fixed point), ptol.c (P[16] prime array)
 
 ---

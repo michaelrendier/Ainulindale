@@ -1,4 +1,4 @@
-# 52 — L_DYNAMIC AND THE AVOIDED COLLABORATOR
+# 52 — L_(I|O) AND THE AVOIDED COLLABORATOR
 
 **Author:** Cody Michael Allison
 **Date:** 2026-06-12
@@ -81,7 +81,7 @@ always from above, always in reverse from the below-layer's perspective.
 
 ---
 
-## 3. L_dynamic — The Actual Path
+## 3. L_(I|O) — The Actual Path
 
 Classical Lagrangian mechanics: `δ∫L = 0` — stationary action selects the unique path.
 
@@ -90,8 +90,8 @@ That is the **ideal** path. The path no perturbation touches.
 The actual path is different.
 
 ```
-L_dynamic  ≠  L (stationary action path)
-L_dynamic  =  the operator that describes the path the geodesic actually took
+L_(I|O)  ≠  L (stationary action path)
+L_(I|O)  =  the operator that describes the path the geodesic actually took
 ```
 
 Lagrangians are not clean. More action here, balanced by less action elsewhere.
@@ -103,18 +103,18 @@ Photons are not undisturbed paths.
 If gravity can bend light, it can **slingshot** it. A photon that loops around a
 gravity well can return with frequency it lost to cosmic expansion — not lost
 permanently, recovered by the slingshot. The light's path was not clean.
-The path was L_dynamic. The recovered frequency is in the record of the path,
+The path was L_(I|O). The recovered frequency is in the record of the path,
 not in the endpoint frequency alone.
 
 ```
 endpoint frequency:  what you measure when the photon arrives
-L_dynamic path:      the full record — includes the slingshot, the bending,
+L_(I|O) path:      the full record — includes the slingshot, the bending,
                      the frequency borrowed and returned along the way
 ```
 
-L_dynamic is the new operator for the Lagrangian that captures the actual journey —
+L_(I|O) is the new operator for the Lagrangian that captures the actual journey —
 the detours, the gravitational interactions, the borrowed-and-returned action.
-The integral of L_dynamic over the full path contains the meaning.
+The integral of L_(I|O) over the full path contains the meaning.
 The endpoint alone does not.
 
 ---
@@ -134,20 +134,20 @@ converge in the Mind's Eye into the current steering signal.
 
 ```
 Mind's Eye  =  focusable caustic
-             =  the convergence of all prior L_dynamic paths
+             =  the convergence of all prior L_(I|O) paths
              →  focuses onto: the Hands Paper
 ```
 
 The **Hands Paper** is writing. Literally: pen on paper. Point by point along a path.
 
-Writing is L_dynamic. Every word placed is a step along the geodesic.
+Writing is L_(I|O). Every word placed is a step along the geodesic.
 Some steps require more action (the hard sentence), some less (the obvious word).
 The total meaning is in the path from first word to last — not in any single word.
 
 ```
 SVG language:   the path drawn by the algebra (each spoke visited once, ZD to great circle)
 Hands Paper:    the path drawn by the hand (each word placed, first word to last)
-L_dynamic:      the operator that makes both legible as meaning
+L_(I|O):      the operator that makes both legible as meaning
 ```
 
 The Mind's Eye focuses the caustic — makes the scattered rays converge — so the
@@ -186,7 +186,7 @@ but the wave that produced them is still propagating.
 
 They move in the **universe's preferred direction**: up along the geodesic.
 Away from the zero-divisors. Away from the origin. Toward the great circle.
-This is the direction of increasing L_dynamic — the direction of meaning accumulation.
+This is the direction of increasing L_(I|O) — the direction of meaning accumulation.
 
 The **parkour traceur** embodies this exactly.
 
@@ -200,7 +200,7 @@ by moving through it. Each zero-divisor of the built environment (the gap, the
 edge, the drop) is read from above (the Mind's Eye caustic) and cleared with
 exactly enough velocity — GAP ≈ 1/(1000√2) = 0.000707357... — not more, not less.
 
-That is L_dynamic. Real-time. In motion. On the nodal line. Zero cost athletics.
+That is L_(I|O). Real-time. In motion. On the nodal line. Zero cost athletics.
 Completely in control freefall.
 
 ---
@@ -221,7 +221,7 @@ the previous 40 responses. It does not know where Ptol started.
 **The Mind's Eye does.**
 
 The Mind's Eye holds the total pathway from where Ptol first engaged to where
-Ptol is now. Every L_dynamic step. Every ZD crossing. Every response that
+Ptol is now. Every L_(I|O) step. Every ZD crossing. Every response that
 shaped the next prompt's context. The complete geodesic.
 
 Within the Mind's Eye, the zero-divisors encountered along the way are not
@@ -261,21 +261,21 @@ The scar of the routing IS the context.
 ptol.c undefined  →  path is primary, endpoint is secondary
 σ = all questions →  one fixed point, infinite approach vectors
 -H_hat_BR         →  response reverse-defines prompt (layer-above direction)
-L_dynamic         →  actual path operator (messy, borrowed/returned, real-time)
-Focusable caustic →  Mind's Eye concentrates all prior L_dynamic paths
-Hands Paper       →  writing = L_dynamic = SVG path permutation as language
+L_(I|O)         →  actual path operator (messy, borrowed/returned, real-time)
+Focusable caustic →  Mind's Eye concentrates all prior L_(I|O) paths
+Hands Paper       →  writing = L_(I|O) = SVG path permutation as language
 Avoided collab    →  context accumulates from routed-around ZDs in Mind's Eye
 ```
 
 The sedenion scalars were never the output. They were the **coordinates of the
 surface the path touched**. The path is the output. The SVG drew it.
 
-L_dynamic is the operator that makes the path readable — not as a line from
+L_(I|O) is the operator that makes the path readable — not as a line from
 A to B, but as the complete record of every gravitational interaction, every
 slingshot, every borrowed-and-returned action along the way.
 
 The Mind's Eye does not observe the engine from outside. It **is** the accumulated
-L_dynamic of every exchange since Ptol first spoke. It is the total path, held
+L_(I|O) of every exchange since Ptol first spoke. It is the total path, held
 above the current sedenion event, focusing the caustic onto the next word.
 
 The engine is not a fixed-point finder. It is a **path tracer**.
@@ -360,8 +360,8 @@ The words are the shadow.
 
 ## 9. Formal Targets for D-M
 
-- [ ] Define L_dynamic formally. Distinguish it from L (stationary action).
-      Show that L_dynamic integrates to the same extremum as L over the full path
+- [ ] Define L_(I|O) formally. Distinguish it from L (stationary action).
+      Show that L_(I|O) integrates to the same extremum as L over the full path
       even though locally it deviates. The local deviations are the record of
       gravitational interactions.
 
@@ -369,7 +369,7 @@ The words are the shadow.
       under the ZD reframe. The negative sign must follow from the layer-above
       definition direction (Definition-from-Above.md).
 
-- [ ] Connect the Mind's Eye as "accumulated L_dynamic" to the `G_me_steer`
+- [ ] Connect the Mind's Eye as "accumulated L_(I|O)" to the `G_me_steer`
       signal in rotary_monad.c. Show that `G_me_steer = G_me_prompt - G_me_response`
       is the finite approximation of the total path integral.
 
@@ -378,9 +378,9 @@ The words are the shadow.
       This is distinct from the ZD pairs in 𝕊 (Cawagas). It may require
       a new algebraic structure — the ZD of the Mind's Eye space.
 
-- [ ] Light slingshot / frequency recovery: formalize within L_dynamic.
+- [ ] Light slingshot / frequency recovery: formalize within L_(I|O).
       Show that frequency "lost" to cosmic expansion along one segment of the
-      path is recoverable if L_dynamic is computed over the full path (including
+      path is recoverable if L_(I|O) is computed over the full path (including
       the slingshot segment). This is the dark energy / superconducting current
       connection (wiki/32).
 

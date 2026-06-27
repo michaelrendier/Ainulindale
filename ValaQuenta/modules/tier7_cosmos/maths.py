@@ -2908,7 +2908,7 @@ def sedenion_hole_punch() -> Dict[str, Any]:
     E = mc² IS FERMAT'S THEOREM
     ─────────────────────────────
     FLT: aⁿ + bⁿ ≠ cⁿ for n ≥ 3. Only n=2 closes algebraically.
-    σ=2 (the gravitational face of H_hat_RB) IS Fermat n=2.
+    σ=2 (the gravitational face of Σ_RB) IS Fermat n=2.
     Mass assembles via prime weights p^{-2} (squared, quadratic, Fermat-allowed).
     E = mc² is quadratic because FLT forbids all higher powers.
     The universe cannot write E=mc³ because Wiles proved it cannot exist.
@@ -3210,7 +3210,7 @@ def nball_transformer() -> Dict[str, Any]:
 
     ── The quasi-spectral decomposition ───────────────────────────────────────
 
-    H_hat_RB has two kinds of eigenvalues, not one:
+    Σ_RB has two kinds of eigenvalues, not one:
 
     DATA eigenvalues (n < n*, compressible phase):
         Smooth, continuous, approximable. The Li(x) envelope in ψ(x).
@@ -3228,7 +3228,7 @@ def nball_transformer() -> Dict[str, Any]:
 
     The n-ball transformer V(n) is the quasi-spectral measure that
     distinguishes these two phases. It is not a separate structure —
-    it is the intrinsic measure of H_hat_RB across the CD tower.
+    it is the intrinsic measure of Σ_RB across the CD tower.
 
     Author note: Cody Michael Allison, 2026-06-03.
     This engine was written during the session in which the transformer
@@ -3403,9 +3403,9 @@ def nball_transformer() -> Dict[str, Any]:
         'bao_algebraic'      : bao_algebraic,
         'hyperwebster_note'  : {
             'claim'          : (
-                'H_hat_RB IS the Hyperwebster permutation — not a tool that uses it. '
+                'Σ_RB IS the Hyperwebster permutation — not a tool that uses it. '
                 'The Hyperwebster is the 1D version (string → integer address). '
-                'H_hat_RB is the n-dimensional version, already built in. '
+                'Σ_RB is the n-dimensional version, already built in. '
                 'Self-adjoint = the bijection is its own inverse. '
                 'Identity exists: V(0)=1 anchors the group structure. '
                 'Data is compressible (Hyperwebster CAN give an address). '
@@ -3420,7 +3420,7 @@ def nball_transformer() -> Dict[str, Any]:
             'ESTABLISHED (n-ball volumes, Gamma function) + '
             'THEORETICAL (CD layer assignment) + '
             'CONJECTURE (quasi-spectral interpretation, data/code phases, '
-            'Hyperwebster = H_hat_RB)'
+            'Hyperwebster = Σ_RB)'
         ),
         'latex'              : (
             r'V(n)=\frac{\pi^{n/2}}{\Gamma(n/2+1)},\;'

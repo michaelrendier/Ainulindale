@@ -64,7 +64,7 @@ class ConstantsModule(EquationModule):
             Equation(
                 name='all_constants',
                 display='All 9 constants — Tier 0: π φ e √ i Ω_ζΣ α_F d* Λ',
-                latex=r'i,\sqrt{\cdot},e,\pi,\varphi\;\text{drop out of }\hat{H}_{RB}',
+                latex=r'i,\sqrt{\cdot},e,\pi,\varphi\;\text{drop out of }\Sigma_{RB}',
                 radian_form='Every constant emerges from the prime distribution. No geometric definition used.',
                 confidence='ESTABLISHED',
                 code_verified=True,

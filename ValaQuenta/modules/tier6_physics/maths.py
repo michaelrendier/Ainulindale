@@ -492,7 +492,7 @@ def quantum_mechanics() -> Dict[str, Any]:
         },
         'measurement'       : measurement,
         'confidence'        : 'ESTABLISHED (QM structure) + THEORETICAL (BK domain identification)',
-        'latex'             : r'i\hbar\partial_t|\psi\rangle=\hat{H}_{RB}|\psi\rangle,\;\hat{H}_{RB}=xp,\;\sigma=\tfrac{1}{2}',
+        'latex'             : r'i\hbar\partial_t|\psi\rangle=\Sigma_{RB}|\psi\rangle,\;\Sigma_{RB}=xp,\;\sigma=\tfrac{1}{2}',
     }
 
 

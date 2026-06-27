@@ -19,6 +19,46 @@
 
 ---
 
+## PRIORITY #1 TODO — Develop L_(I|O) — The Pathway
+
+**Official geometry variable established 2026-06-16.**
+
+```
+L_(I|O)  ≡  The Pathway
+
+       I ─────────── | ─────────── O
+     origin       boundary     destination
+      (ZD)      (ZD crossing)    (CD)
+    Mind's Eye  imparts meaning  Paper's Hands
+     past ↓                        future ↑
+  (time slow)                  (time fast)
+```
+
+**Three primitives. One variable.**
+- **I** = Inside = ZD = Mind's Eye = origin = past (time runs slow, stops at TDC)
+- **|** = zero-divisor crossing = the boundary that imparts meaning = surface of the ripple
+- **O** = Outside = CD = Paper's Hands = destination = future (time runs fast)
+
+**Why this is the priority:** L_(I|O) is the missing operative term that makes the full architecture legible.
+
+**The Heisenberg resolution lives here:**
+Paper's Hands moves point by point toward O — it cannot see that it IS the pathway (Heisenberg: the traveler cannot measure their own trajectory). The Mind's Eye sits at | and looks **DOWN** — into slow time, into the past, reading the path already traversed. It never looks UP (future = uncertain = would disturb). Two simultaneous views: inside the ripple (Paper's Hands) and outside looking down (Mind's Eye). Full knowledge of the past. Zero disturbance of the future.
+
+**DOWN = time runs slower = into the past.** Gravitational time dilation. ZD is the singularity. TDC = time stops.
+
+**Tasks:**
+- [ ] Full derivation of L_(I|O) path integral (E formally specified)
+- [ ] English_WordNet.bin — combined bin: monad_english (pathway scaffold) + WordNet edges (Mind's Eye view)
+- [ ] wiki/64 updated ✓ (2026-06-16)
+- [x] wiki/README/TODO: L_dynamic → L_(I|O) complete (2026-06-17)
+- [ ] D-CS paper: rewrite L_dynamic → L_(I|O) throughout
+- [ ] Temporal geometry section: connect DOWN/UP to gravitational time dilation formally
+- [ ] Heisenberg section: architectural proof that DOWN-only observation is non-disturbing
+
+→ [wiki/64: L_(I|O) — The Pathway](wiki/64_l_dynamic.md)
+
+---
+
 ## The Genesis — H_hat_RB IS Hyperindexing IS Dimensional Reduction
 
 **2026-06-09. The chain closed.**
@@ -184,6 +224,7 @@ Key identifications:
 - Riemann Hypothesis = the caustic has no asymmetric nodes
 - UDEO crypto crack = navigating to where the caustic is reachable from valid key material
 - N-S blow-up = caustic singularity with no `i` to rotate through
+- **∇² = The Extrapolator = The Caustic Focuser:** The Laplacian measures how much a point deviates from its neighbourhood average. At the caustic surface, ∇²f = 0 — the field equals its average, rays concentrate, the focus forms. The Laplacian IS what drives toward and identifies the caustic. sc(i,j) = ∇²f / ⟨|f|⟩ = 1 at the conformal boundary IS the Caustic Focuser at work.
 
 **The HyperCaustic is the Ainulindale Conjecture stated geometrically.** N-S, RH, Yang-Mills, the mass gap, and the crypto boundaries are all projections of the same infinite-dimensional shadow structure onto different σ-facets.
 
@@ -247,6 +288,8 @@ The SMMIP was not designed to reproduce particle physics. The correspondence was
 | Noether conservation ∂_μJ^μ = 0 | Conservation laws |
 
 The gauge group **U(1)×SU(2)×SU(3)** is not imported into the framework. It emerges from it by mathematical necessity — Dixon's theorem applied to the tower. The Lagrangian is the **Contractor** — path of least action, collapsing the solution space toward the minimum energy trajectory. The Cardioid attractor is the **Dilator** — the expanding stable orbit that bounds the contractor from the outside. They are self-adjoint conjugates.
+
+**The Dirty Lagrangian:** L_(I|O) = ∫ J_red · J_blue ds is NOT the clean static Lagrangian of textbook physics (L = T − V). Real pathways are dirty — noisy, branching, Lichtenberg-scarred. A clean geodesic carries zero information. The dirt IS the physics of information. Clean (geodesic) is the blue strawberry moon exception, not the norm. L_(I|O) brings dirt to clean static Lagrangian physics.
 
 → [Wiki: Lagrangian Engine](wiki/04_lagrangian_engine.md)
 

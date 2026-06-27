@@ -57,7 +57,7 @@ class DerivationChainModule(EquationModule):
             Equation(
                 name='full_derivation_chain',
                 display='Full chain T1→T5: Riemann=Fermat → dropouts → H_RB → Observer → ln',
-                latex=r'\alpha_F+\Omega_{\zeta\Sigma}\to d^*\to\hat{R}^\dagger=\hat{B}\to\hat{H}_{RB}\to\hat{H}_{\rm obs}',
+                latex=r'\alpha_F+\Omega_{\zeta\Sigma}\to d^*\to\hat{R}^\dagger=\hat{B}\to\Sigma_{RB}\to\hat{H}_{\rm obs}',
                 radian_form='All tiers in sequence. The complete derivation.',
                 confidence='THEORETICAL',
                 code_verified=True, params=[], compute=full_derivation_chain, display_options=[],
@@ -97,7 +97,7 @@ class DerivationChainModule(EquationModule):
             Equation(
                 name='navier_stokes_dropout',
                 display='T2 — NS: H_RB|_{Im=0}, missing i causes apparent singularity',
-                latex=r'\text{NS}=\hat{H}_{RB}\big|_{\mathrm{Im}=0},\;i\notin\text{NS}',
+                latex=r'\text{NS}=\Sigma_{RB}\big|_{\mathrm{Im}=0},\;i\notin\text{NS}',
                 radian_form='Yang-Mills at σ=1, real projection. Singularity = complex node in ℝ.',
                 confidence='THEORETICAL',
                 code_verified=True, params=[], compute=navier_stokes_dropout, display_options=[],
@@ -121,7 +121,7 @@ class DerivationChainModule(EquationModule):
             Equation(
                 name='h_rb_emergence',
                 display='T3 — H_RB emergence: what remains after all drop-outs',
-                latex=r'\hat{H}_{RB}=\sum_p p^{-\sigma}[\hat{R}_p\otimes\hat{\partial}_{\partial M}+\hat{\partial}^\dagger_{\partial M}\otimes\hat{B}_p]',
+                latex=r'\Sigma_{RB}=\sum_p p^{-\sigma}[\hat{R}_p\otimes\hat{\partial}_{\partial M}+\hat{\partial}^\dagger_{\partial M}\otimes\hat{B}_p]',
                 radian_form='Not postulated. Falls out after BK+Fermat+2ceilings simplify everything else.',
                 confidence='ESTABLISHED',
                 code_verified=True, params=[], compute=h_rb_emergence, display_options=[],
