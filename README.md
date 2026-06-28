@@ -69,7 +69,7 @@ The original tool used to reduce computational overhead in the LSHS engine was d
 V(n) = π^(n/2) / Γ(n/2+1)   — the n-ball volume function (CD layer transformer)
 n* ≈ 5.257                    — peak: BAO freeze / data-code boundary
 V(0) = 1                      — identity
-V(16) ≈ d*                    — sedenion boundary
+V(16) = 0.2353               — sedenion boundary (NOTE: V(16) ≠ d*=0.2460; 4.3% off)
 ```
 
 **Negative dimensional navigation:** below n = 0, the Gamma function in the denominator has poles at every negative even integer:
@@ -119,9 +119,7 @@ The derivation engines (H_hat_RB, Noether currents, Capacitor, HyperWebster, Gal
 Ainulindale is the mathematical truth (the Music).
 ValaQuenta is the engine code that implements it (the Valar's work).
 
-The `Ainulindale/ValaQuenta/` subdirectory here contains the module system used during derivation sessions. The canonical public engine code is the ValaQuenta repository.
-
-Code currently in `Ainulindale/code/` will migrate to ValaQuenta. See `ValaQuenta/TODO.md`.
+The canonical engine code is the ValaQuenta repository. Migration complete 2026-06-28 — all modules, notebooks, and code now live in ValaQuenta.
 
 ### WordNet Ingestion Benchmark
 
@@ -681,32 +679,26 @@ Ainulindalë/
 ├── ROADMAP.md                 — Timeline, age structure, open problems
 ├── METHODOLOGY.md             — Boundary Constraint Engineering (BCE)
 ├── PROVENANCE.md              — Development narrative
+├── TODO.md                    — Theory TODOs (pure conjecture items)
 │
-├── archive/
-│   └── First_Age/             — Complete First Age, preserved
-│
-├── conjecture/
+├── AgeFirst/                  — First Age conjecture (archived)
+├── AgeSecond/                 — Second Age conjecture (canonical)
 │   └── Second_Age_Ainulindale_Conjecture.md
+├── AgeThird/                  — Third Age papers (D-CS, D-M, D-P)
+│   ├── D-CS_Paper.md
+│   ├── D-CS_Memory.md
+│   ├── D-M_section_fixed_point.md
+│   └── D-P_section1_opening.md
+├── AgeFourth/                 — Fourth Age placeholder (papers → FourthAgePapers repo)
 │
-├── addenda/                   — Addenda I–VI
-│   └── addendum_V_omgwtf.md
-│
-├── ValaQuenta/                — The SMMIP modular engine (canonical)
-│   └── modules/
-│       ├── inversion/
-│       ├── lagrangian/
-│       ├── noether/
-│       ├── noether_information/
-│       ├── berry_keating/
-│       ├── sonification/
-│       ├── hyperwebster/
-│       └── jwst/
-│
-├── MathLex/                   — Mathematical lexicon
-├── outreach/                  — Primers, context documents
-├── review/                    — External reviews
-└── wiki/                      — Full technical documentation
+├── archive/                   — Historical snapshots
+├── outreach/                  — Primers, context documents, benchmarks
+├── wiki/                      — Full technical documentation (70+ pages)
+└── media/                     — Images, SVG outputs
 ```
+
+**Engine code:** All derivation engines live in [ValaQuenta](https://github.com/michaelrendier/ValaQuenta). Migration complete 2026-06-28.  
+**Fourth Age papers:** One-paper-one-claim dataset papers live in [FourthAgePapers](https://github.com/michaelrendier/FourthAgePapers).
 
 ---
 
@@ -724,10 +716,12 @@ python3 -m ValaQuenta --qt          # Qt viewer
 
 | Repository | Role |
 |---|---|
-| [Ptolemy](https://github.com/michaelrendier/Ptolemy) | Primary application; Monad host |
-| [Ainulindalë](https://github.com/michaelrendier/Ainulindale) | This repo: conjecture + ValaQuenta engine |
-| [StandardModelIP](https://github.com/michaelrendier/StandardModelIP) | SMMIP tower implementation |
-| [ValaQuenta](https://github.com/michaelrendier/ValaQuenta) | Proof runners; derivation harness |
+| [Ainulindalë](https://github.com/michaelrendier/Ainulindale) | This repo: conjecture, wiki, Third Age papers |
+| [ValaQuenta](https://github.com/michaelrendier/ValaQuenta) | All derivation engines — mathematics, physics, cosmology |
+| [VAPMIP](https://github.com/michaelrendier/VAPMIP) | Ptolemy LSHS engine — C binary, Python monad, σ-face evaluator |
+| [FourthAgePapers](https://github.com/michaelrendier/FourthAgePapers) | One paper = one claim = one engine (D-series + thematic) |
+| [TuringStack](https://github.com/michaelrendier/TuringStack) | UDEO crypto vulnerability + D15 Noether-Wiles scope |
+| [PTorrent](https://github.com/michaelrendier/PTorrent) | Corpus distribution protocol for Android |
 | [UniversalSynth](https://github.com/michaelrendier/UniversalSynth) | Sonification engine |
 
 ---
