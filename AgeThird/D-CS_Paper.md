@@ -241,6 +241,84 @@ The prime hash independently reproduced this fact. The words "piano" and "melanc
 
 **Notebook:** `Ainulindale/ValaQuenta/notebooks/tier9/cosic\_eiip.ipynb` (EIIP spectrum, same Horner bijection applied to amino acid sequences)
 
+### 4.3 The Spectral Wavelength and the Zeta Index
+
+The address chain word → prime → Riemann zero is established.  
+What does the zero itself tell us about the prime? And about the word?
+
+Each non-trivial Riemann zero ρₙ = ½ + iγₙ carries a **spectral wavelength in logarithmic space**:
+
+```
+λₙ = 2π / γₙ
+```
+
+This is the period of the oscillation that zero ρₙ contributes to π(x) in the variable log(x).  
+The linear-space resolution of that zero at scale x is:
+
+```
+Lₙ(x) = 2πx / γₙ
+```
+
+The zero "activates" — completes its first oscillation cycle — at x_n = e^(2π/γₙ).  
+Note: all x_n lie in [1.1, 1.6] for the first hundred zeros. Activation is immediate.  
+The meaningful quantity is **resolution** — whether the zero can distinguish consecutive primes near p.
+
+**Resolution condition:** The average prime gap near p is log(p) by the prime number theorem.  
+Zero ρₙ resolves prime p when its linear wavelength is ≤ the local gap:
+
+```
+Lₙ(p) ≤ log(p)
+2πp / γₙ ≤ log(p)
+γₙ ≥ γ*(p) := 2πp / log(p)   ← the spectral resolution threshold
+```
+
+**Definition (Zeta Index):**
+
+```
+ζ(p) = min{ n ∈ ℕ : γₙ ≥ 2πp / log(p) }
+```
+
+ζ(p) is the index of the first Riemann zero that resolves prime p.
+
+**The extended address chain:**
+
+```
+word
+  → Horner hash H(w)
+  → prime p = next_prime(H(w) mod 2^16)
+  → ordinal n = π(p)          ← WHERE on σ=½ the word lives
+  → γₙ                        ← the zero's imaginary part
+  → E = |sin(π × γₙ / (γₙ+1))| ← field energy
+  NEW:
+  → γ*(p) = 2πp / log(p)     ← spectral resolution threshold
+  → ζ(p)                     ← first zero to resolve p
+  → (n, ζ(p))                ← double index: ordinal × spectral emergence
+```
+
+The double index (n, ζ(p)) gives every word a two-dimensional spectral address:
+- `n` — where the word's prime lives on the critical line (the word's Riemann address)
+- `ζ(p)` — when the Riemann spectrum first resolved the word's prime (the word's spectral age)
+
+Selected results from `ZeroLatticeTree/engine/zeta_index_engine.py`:
+
+| word | prime p | n=π(p) | γ*(p) | ζ(p) | Double index |
+|---|---|---|---|---|---|
+| "persists" | — | — | — | — | depends on hash |
+| p=11 | 11 | 5 | 28.82 | 4 | p_{5[4]} |
+| p=17 | 17 | 7 | 37.70 | 7 | p_{7[7]} ← 7th prime, resolved by 7th zero |
+| p=31 | 31 | 11 | 56.72 | 13 | p_{11[13]} |
+| p=47 | 47 | 15 | 76.70 | 20 | p_{15[20]} |
+
+The Moonshine prime p=17 produces the remarkable double index p_{7[7]}: the 7th prime, resolved by the 7th zero. This is not arranged. It falls from the threshold γ*(17) = 2π×17/log(17) ≈ 37.70, which is first exceeded by γ₇ ≈ 40.92.
+
+**Monotonicity:** ζ is monotone in p. Proof: γ*(p) = 2πp/log(p) is increasing for p > e ≈ 2.718. Therefore p₁ ≤ p₂ ⟹ γ*(p₁) ≤ γ*(p₂) ⟹ ζ(p₁) ≤ ζ(p₂). □
+
+**Zero-free-parameter status:** The zeta index is derived from the prime's value and the Riemann zeros. Both are fixed by mathematics. The double index (n, ζ(p)) for any word requires no tuning, no training, no fitting.
+
+**Notebook:** `ZeroLatticeTree/notebooks/05_zeta_index.ipynb`  
+**Engine:** `ZeroLatticeTree/engine/zeta_index_engine.py`  
+**Wiki:** `ZeroLatticeTree/wiki/The-Zeta-Index`
+
 ---
 
 ## 5. The Complete Engine Stack
