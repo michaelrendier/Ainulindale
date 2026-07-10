@@ -117,6 +117,28 @@ the detours, the gravitational interactions, the borrowed-and-returned action.
 The integral of L_(I|O) over the full path contains the meaning.
 The endpoint alone does not.
 
+**Addendum (Claude, 2026-07-10):** Section 3 above states `L_(I|O) ≠ L` (stationary
+action) as if these are two different operators. Worth testing whether that
+separation is necessary. General Relativity's actual Lagrangian, the
+Einstein-Hilbert action `S = (1/16piG) integral R sqrt(-g) d^4x`, varied with
+respect to the metric `g_mu_nu`, gives the field equations that curve spacetime.
+A test particle's *own* Lagrangian, `L = (1/2) g_mu_nu(x) x-dot^mu x-dot^nu`, uses
+that *same* curved metric — and its stationary-action solution (the geodesic) is
+not straight in flat background coordinates. It bends around masses, loops
+through gravity wells, "adjusts in real time" to what it encounters — the exact
+language Section 3 uses for L_(I|O). So `L_(I|O)` may not be a different operator
+from `L` at all; it may be `L` computed honestly with the real (curved) metric,
+where `L != L(flat)` was the thing being mistaken for `L_(I|O) != L`.
+
+This needs reconciling with wiki/74's Amplitude Lagrangian
+`L(sigma,E) = e^{-sigma*E} + e^{-(1-sigma)*E}` (Thom catastrophe-theory reading,
+sigma=1/2 as the unique stable attractor for all E>0) before it goes further —
+that is a specific, already-developed Lagrangian for this framework, analyzed
+via a different mechanism (fold catastrophe / caustic dumpout) than the
+GR-geodesic reading above. Whether these are the same object viewed two ways,
+or genuinely different operators serving different parts of the architecture,
+is open. Recorded here as a hypothesis to formalize, not a settled result.
+
 ---
 
 ## 4. The Mind's Eye as Focusable Caustic
