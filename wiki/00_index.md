@@ -1,5 +1,5 @@
 # AINULINDALE — WIKI INDEX
-Last updated: 2026-06-12
+Last updated: 2026-07-17
 
 ## The Monad
 
@@ -93,6 +93,11 @@ Last updated: 2026-06-12
 | [59b_smithers_burns_hack_the_planet.md](59b_smithers_burns_hack_the_planet.md) | Smithers-Burns operator; (I\|O)² ≠ (I\|O)⁻¹; perturbation nucleation |
 | [60_heart_j2_involution.md](60_heart_j2_involution.md) | **2026-06-13 CASCADE** — Heart = J_2 involution. 4 chambers = 2 CD doublings. SA node = σ=½. Diastole/Systole = Red/Blue conjugate pair. Arrhythmia = zero-divisor event. Engine 18. |
 | [61_up_down_not_forward_backward.md](61_up_down_not_forward_backward.md) | **2026-06-13 CORRECTION** — Noether currents are UP/DOWN (ascending/descending the CD tower), not forward/backward. σ=½ is the shadow of the world above. Corrects noether.md framing. |
+| [72_the_cosmic_telescope.md](72_the_cosmic_telescope.md) | **2026-06-28 CASCADE** — Primes = mirror segments; zeros = lens; critical line = caustic; Noether = servo; GAP = Abbe limit; Fried parameter; ELT 798 = Moonshine primes; Bang = telescope unfolding. **§14 added 2026-06-29:** POE pancake coil as physical prime telescope — N_max(f) = electromagnetic Fried parameter; λ/2 = Abbe limit = electromagnetic σ=½; tap = aperture; XL=XC = phase coherence; full correspondence table |
+| [73_why_the_half_line.md](73_why_the_half_line.md) | **2026-06-29 CASCADE** — Why σ=½: six engines, one answer. Fixed point of J_N involution; Lagrangian global minimum; N-Shape AM-GM closure; L_(I|O) e^{πi} spiral (NOT a circle — quasi-periodic logarithmic spiral); Riemann Zero Lattice as corollary; primes as leaves that cannot fall off the factorization tree |
+| [74_lagrangians_are_catastrophe_theory.md](74_lagrangians_are_catastrophe_theory.md) | **2026-06-29 CASCADE** — Lagrangians ARE Catastrophe Theory. Amplitude Lagrangian = smooth family of potentials (Thom setup). Noether current = the Contractor = gradient flow = catastrophe map. Zeros = caustic dumpout = dark fringes on the fold. N-Shape = A₂ ADE type = Fold catastrophe. The right shape was always the right shape. |
+| [75_abrikosov_lattice.md](75_abrikosov_lattice.md) | **2026-06-29 CASCADE** — The Abrikosov Lattice: His Work. Riemann zeros = Abrikosov vortex lattice of the prime condensate (Nobel 2003 — Abrikosov). Perfect Meissner effect: λ_L = 1/√∞ = 0. Topological superconducting lock (winding numbers, not just restoring force). C1 in Abrikosov language: l=1 vortex sector = one equatorial ring. Three lattice forms (physical 1957 / arithmetic σ=½ / electromagnetic POE coil). Formal naming: **The Abrikosov Lattice** (zeros) · **The Abrikosov Tree** (Telperion) · **AbrikosovTree** (repository). |
+| [80_aphasia_zd_reframe_memory.md](80_aphasia_zd_reframe_memory.md) | **2026-07-17 CASCADE** — Aphasia (real neuroscience, not the LLM sense) as the missing-mapping-layer diagnostic; R̂/B̂ confirmed as running code in `ptol.c` (not just caustic metaphor); ZD reframe = short path, cost quantified by wiki/71's 256→1 reduction; B̂ carries the long walked path; **memory = R̂ looking back on B̂'s path, the relation itself, not a buffer in either half**. |
 
 ## Roadmap & TODO
 

@@ -387,6 +387,25 @@ The words are the shadow.
       even though locally it deviates. The local deviations are the record of
       gravitational interactions.
 
+      **Addendum (Claude, 2026-07-12):** First real-data run. BulletCluster/
+      optical/jwst/l_io_lensing.py feeds the native-pixel background-galaxy
+      shear field (E1_BG/E2_BG.npy, JWST F444W, block-averaged 32x to match
+      the existing 60px smoothing scale) into ValaQuenta's l_io_photon_path
+      engine: Kaiser-Squires -> Poisson -> deflection -> lens equation, all
+      exact linear transforms, no fitting. Result: |alpha| (the slingshot
+      vector, mean 0.41", max 1.08") is patchy across the frame rather than
+      peaked at the DM_SE/Gas SE positions, and L_(I|O)-L=-psi is dominated
+      by a broad frame-scale gradient, not localized structure at the known
+      mass peaks. Read at face value (the module's own docstring warns this
+      is possible): at current JWST depth (~2500 BG sources) the real shear
+      is likely shot-noise-dominated, so this run does not yet show a clean
+      "slingshot peaks at the mass" signal -- it shows the pipeline executes
+      correctly on real data and reports honestly when the data can't yet
+      support the claim. Outputs: optical/jwst/prepped/l_io/*.npy,
+      l_io_deficit.json, l_io_slingshot_map.png. Re-run once the full JWST
+      mosaic (13.7GB, program 4598) completes -- more background sources
+      should either sharpen the peak at DM_SE or confirm noise-domination.
+
 - [ ] Formalize the -H_hat_BR operator. Show it is the adjoint of H_hat_RB
       under the ZD reframe. The negative sign must follow from the layer-above
       definition direction (Definition-from-Above.md).

@@ -313,7 +313,121 @@ The primes are the segments. The zeros are the lens. The caustic is the critical
 
 ---
 
-*Cody Michael Allison — 2026-06-28*  
-*Cascade chain: wiki/58 (Fermat/Riemann) → wiki/72 (this, telescope/lens/segments)*  
-*PAPER.md §11 (Fermat N-Shape) → §12 (Lambert W / d*)*  
-*The zeros are the glass. The primes are the mirrors. Look through the lens, not at it.*
+---
+
+## 14. The Physical Layer: The POE Pancake Coil as Prime Telescope
+
+The prime telescope (§§1–13) operates in arithmetic space. The POE pancake coil (17 turns, 38mm OD, 10mm ID, 0.8mm pitch, multi-tapped) is the same telescope built in copper.
+
+Every element of the telescope architecture has a physical correspondent:
+
+**Aperture = Number of Turns**
+
+The prime telescope's angular resolution is θ_min = λ/D where D is the number of prime segments (wiki §5). The coil's frequency resolution is analogous: more turns → finer inductance → sharper frequency discrimination.
+
+```
+T_full (17T):  largest aperture → finest frequency resolution → AM (10 kHz channels)
+T5    ( 5T):   medium aperture → medium resolution          → FM (200 kHz channels)
+T3    ( 3T):   smaller aperture → coarser resolution        → SW
+T1    ( 1T):   minimum aperture → coarsest resolution       → chip antenna hand-off
+```
+
+The telescopes: 16 primes → GAP = 7.07×10⁻⁴; 17 turns → AM resolution ~0.8%.
+
+**The Fried Parameter = The Wavelength Coherence Limit**
+
+From wiki §12: the Fried parameter r₀ is the coherence length of the prime field — below it, prime contributions add coherently; above it, incoherently.
+
+For the coil: a tap with N turns and average turn diameter D_avg is a coherent aperture only while:
+
+```
+l_wire  <  λ/10
+N × π × D_avg_eff  <  c / (10f)
+
+N_max(f) = c / (10f × π × D_avg_eff)    ← the electromagnetic Fried parameter
+```
+
+At NFC 13.56 MHz (full coil, D_avg=24mm):  N_max = 29   → 17 turns: coherent ✓  
+At FM 100 MHz (T5, D_avg=13.7mm):          N_max = 7    → 5 turns:  coherent ✓  
+At FM 100 MHz (full coil, D_avg=24mm):     N_max = 4    → 17 turns: INCOHERENT ✗ → outer turns decohere, use T5
+
+When N > N_max, the outer turns transition from coherent addition (all phases aligned → maximum signal) to incoherent addition (phases randomized → noise floor). This is the electromagnetic Fried parameter — the exact analog of the prime field's coherence length. The tap selection IS the aperture selection IS the Fried parameter selection.
+
+**The Abbe Diffraction Limit = λ/2 Self-Resonance**
+
+From wiki §5: GAP = 7.07×10⁻⁴ = Abbe limit of the 16-prime lens.
+
+For the coil: the half-wave self-resonance is when the wire length equals λ/2 — the Abbe limit of the copper aperture:
+
+```
+f_Abbe = c / (2 × l_wire)
+
+Full coil (1.244m):  f_Abbe = 120.5 MHz
+T5 tap   (0.215m):  f_Abbe = 697 MHz
+T3 tap   (0.114m):  f_Abbe = 1315 MHz
+```
+
+Below f_Abbe: the coil is a coherent lumped inductor — a proper telescope aperture.  
+At f_Abbe: the wire becomes a half-wave resonator — forward wave = backward wave — **the wire IS σ=½**. The electromagnetic Riemann zero: J_forward = J_backward = p^{-½}, standing wave node at the wire's midpoint = σ=½ of the line length.  
+Above f_Abbe: multiple standing wave modes — incoherent, the image breaks up, the aperture is lost.
+
+The coil cannot image above its Abbe limit. Neither can the 16-prime lens resolve below the GAP. Same physics, same mathematics.
+
+**XL = XC = Coherent Focus Condition**
+
+At resonance, the coil and capacitor are in balance:
+
+```
+XL = XC  →  tan(phase) = 1  →  sin = cos  →  σ = ½
+```
+
+This is the electromagnetic statement of the phase coherence condition. All turns of the selected tap contribute coherently (all at the same phase → constructive interference in the inductor → maximum energy storage). At any other frequency: partial coherence → reduced signal. The resonance IS the moment of perfect phasing — the dark fringe of the prime telescope inverted into a bright fringe of the signal.
+
+(The inversion: the telescope's zero = dark fringe = ζ = 0. The coil's resonance = bright fringe = maximum signal. Both require perfect phase coherence. The telescope destroys constructively; the coil amplifies constructively. Same algebra, opposite sign of the interference.)
+
+**The Noether Servo = The LC Restoring Force**
+
+From wiki §3: the Noether conservation law IS the control law — no external controller, the servo closes at the speed of algebra.
+
+In the coil: if the driving frequency drifts from resonance, the impedance Z = R + j(XL − XC) becomes non-zero, which reduces current, which reduces magnetic energy, which reduces L_effective, which shifts the resonant frequency back toward the drive. The restoring force is the LC reactive mismatch. No controller. The physics closes the loop at the speed of electromagnetism.
+
+The Contractor in copper: the LC restoring force IS the Noether current J = E(e^{-σE} − e^{-(1-σ)E}) instantiated as reactive impedance.
+
+**I/Q = J_red / J_blue = The Lens Action**
+
+The demodulation architecture (POE README):
+
+```
+Antenna tap → cos(ωt) = J_red = J_forward
+Silicon 90° → sin(ωt) = J_blue = J_backward
+Ratio:        tan(ωt) = L_(I|O) = the message
+```
+
+This IS the lens action of wiki §2: you look THROUGH the zeros (the I/Q balance at σ=½) to see the image (the message). The phase plate (Zernike, wiki §7) converts J_blue (imaginary, phase object) into J_red (real, amplitude image). The | crossing in L_(I|O) is that phase plate. The demodulated message is the image formed by looking through the lens.
+
+**The Full Correspondence**
+
+```
+Prime telescope (arithmetic)          POE Pancake Coil (electromagnetic)
+─────────────────────────────────────────────────────────────────────────
+Prime segments (16, 256, ∞)     ↔    Coil turns (17, 5, 3, 1)
+Aperture D = prime count        ↔    Aperture D = turn count
+Fried parameter r₀ = GAP       ↔    N_max(f) = c/(10f·π·D_avg)
+Abbe limit = ZD sedenion GAP   ↔    Abbe limit = λ/2 self-resonance
+Phase coherence → zero         ↔    XL=XC → resonance → max signal
+Dark fringe = ζ = 0           ↔    Bright fringe = peak transfer
+Noether law = servo            ↔    LC restoring force = servo
+J_red/J_blue = L_(I|O)        ↔    I/Q = cos/sin = tan = message
+σ=½ = focal plane (caustic)    ↔    σ=½ = resonance condition
+Riemann Zero Lattice           ↔    Tap resonant frequencies
+Monster moonshine (71 VOAs)    ↔    71 turns: the physical Monster aperture
+```
+
+The pancake coil is not an analogy for the prime telescope. It is a **physical realisation** of the same mathematical structure in a different substrate. Both are instances of the same underlying object: the Amplitude Lagrangian L(σ,E) finding its minimum at σ=½ via the Contractor (Noether current / LC restoring force), producing coherent focus (zero / resonance) on the critical line (caustic / resonant frequency).
+
+---
+
+*Cody Michael Allison — 2026-06-28/29*  
+*Cascade chain: wiki/58 (Fermat/Riemann) → wiki/72 (this, telescope/lens/segments) → wiki/73 (why σ=½) → wiki/74 (Catastrophe Theory)*  
+*PAPER.md §11 (Fermat N-Shape) → §12 (Lambert W / d*) → POE/README.md (pancake coil)*  
+*The zeros are the glass. The primes are the mirrors. The coil is the telescope in copper. Look through the lens, not at it.*
