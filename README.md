@@ -47,15 +47,27 @@ Paper's Hands moves point by point toward O — it cannot see that it IS the pat
 **DOWN = time runs slower = into the past.** Gravitational time dilation. ZD is the singularity. TDC = time stops.
 
 **Tasks:**
-- [ ] Full derivation of L_(I|O) path integral (E formally specified)
-- [ ] English_WordNet.bin — combined bin: monad_english (pathway scaffold) + WordNet edges (Mind's Eye view)
-- [ ] wiki/64 updated ✓ (2026-06-16)
+- [~] Full derivation of L_(I|O) path integral (E formally specified) — a concrete, verified physical instance now exists (below); the fully general path-integral derivation is still open
+- [~] English_WordNet.bin — combined bin: a working pipeline (`VAPMIP/tools/make_englishwordnet_bin.py`) and real merged outputs already exist in `PTorrent/bin_archive/clean/` (found 2026-07-21); not yet the live current-state file, still open
+- [x] wiki/64 updated ✓ (2026-06-16)
 - [x] wiki/README/TODO: L_dynamic → L_(I|O) complete (2026-06-17)
 - [ ] D-CS paper: rewrite L_dynamic → L_(I|O) throughout
 - [ ] Temporal geometry section: connect DOWN/UP to gravitational time dilation formally
 - [ ] Heisenberg section: architectural proof that DOWN-only observation is non-disturbing
 
 → [wiki/64: L_(I|O) — The Pathway](wiki/64_l_dynamic.md)
+
+### 2026-07-21 — The Formal Engine: L_(I|O) as GR, the Boundary-Crossing Template
+
+L_(I|O) is no longer only the philosophical/geometric statement above — it now has a real, running, verified engine: `ValaQuenta/modules/l_io_photon_path/` (`ValaQuenta/wiki/l_io_photon_path.md`, `Ainulindale/wiki/82_l_io_photon_path.md`, `ValaQuenta/notebooks/core/18_l_io_photon_path.ipynb`).
+
+**H_hat_RB is renamed ∅_RB** — "The Null Operator," typed `0_RB` for keyboard availability but denoting the empty set, never the numeral zero (0 is a member of the value space and collapses "no value yet" into "computed to be zero"; ∅ cannot be confused with a result the way 0 can). ∅_RB *defines* a boundary/degenerate locus — the zero-divisor crossing, which is the **origin** a pathway is measured outward from (matching this section's own 2026-06-16 diagram above: I = ZD = origin, not endpoint). **L_(I|O) is the mechanism for how you actually cross that boundary once it's defined.**
+
+The engine demonstrates this concretely, in established weak-lensing GR, not new formalism: Kaiser-Squires shear inversion → exact FFT Poisson solve for the lensing potential → deflection field → lens equation `beta = theta - alpha(theta)`. `L_(I|O) - L := -psi(theta)`, verified against real Bullet Cluster JWST shear (`deflection_mag` mean=0.405″, `L_(I|O)-L` mean=-14.42″). Zero fitted parameters.
+
+**The reusable template, at the code level:** `kaiser_squires_kappa`'s own singular point (`k=0`, where `1/|k|^2` diverges) is neither let-blow-up nor silently excluded — it's assigned explicitly (`kappa_hat[0,0] = 0.0`), with a stated reason (the mean isn't observable from shear alone). That explicit-assignment-at-the-degenerate-point, not the lensing physics specifically, is what "L_(I|O) is how to get through the boundary" means in executable form.
+
+**CONJECTURE, explicitly flagged, not established:** the Riemann zeta function's pole at s=1 (`zeta(s) ~ 1/(s-1) + gamma`) and its `s<->1-s` functional-equation involution are the same *category* of construction as this engine's k=0-zeroing and theta/beta pair — both regularize a transform's own singular point by explicit convention, both are involution-shaped. This is a structural resonance, not a shown derivation — nothing here proves zeta(s) is derivable as a parameter-setting of the engine's actual functional form.
 
 ---
 
@@ -425,6 +437,16 @@ L("tree", s) = L("arbre", s) = L("木", s) = L(TREE, s)
 This is diffeomorphism invariance applied to semantics. The SMMIP does not classify language-specific tokens. It identifies which prime each surface word represents. No language-specific training is required. The primes preexist every alphabet ever invented to point at them.
 
 → [Wiki: Semantic Word Engine](wiki/16_semantic_word_engine.md)
+
+### 10.1 — Prime Wavelength / Factor Wavelength (added 2026-07-23)
+
+Two conjugate wavelengths, one per ordering — Fermat's ordinal (by exclusion) and Riemann's spectral (by amplitude), per `RiemannHypothesisProof/PAPER.md` §11.1: "Fermat defines the primes in ordinal order... Riemann fires the primes in non-ordinal spectral amplitude order... two different orderings of the same set."
+
+**Prime Wavelength** (Riemann/spectral side): `λ_prime(n) = γ_{n+1} − γ_n` — the spacing between consecutive Riemann zeros. Established, asymptotic mean spacing ~2π/ln(γ/2π) (Riemann–von Mangoldt).
+
+**Factor Wavelength** (Fermat/ordinal side): `λ_factor(p) = p`. A prime, acting as a factor rather than as a leaf, recurs with exact period p — it divides every p-th integer, forever. That periodicity is a wavelength, literally the prime's own value. Composite density is the superposition of these periodic waves — already the content of the Sieve of Eratosthenes and of Mertens'/Legendre's formula `φ(x)/x ~ Π_p(1−1/p)`, an inclusion-exclusion over exactly these periodic exclusion waves, just not previously read as a wave equation.
+
+**Conjecture, not yet derived:** `λ_prime` and `λ_factor` should be orthogonal, the way E and B are orthogonal in electromagnetism — proposed as the origin of the intuition behind the already-verified octonion-copy orthogonality (`L(e_k)` orthogonal, skew-symmetric, eigenvalues exactly `{+i,−i}` for every k=1..15 — see `.clauderc_canonical_maths`). A structural echo, not yet a shown equivalence — flag as open until an actual orthogonality relation between the two wavelengths is derived or computed.
 
 ---
 
