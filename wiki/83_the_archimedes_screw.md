@@ -141,16 +141,64 @@ That dispersion relation fixes the contour and prices the loop. Until it is writ
 
 **This engine is the instrument built to look at that question.** It is not the answer to it.
 
-## 9. Symbol Hygiene
+## 9. The Slot Correspondence — and the Fourth Column
 
-Two unrelated ψ now coexist across the repos and must not be merged:
+*(Revised 2026-08-04. This section previously read "two unrelated ψ, do not merge." That was true and it undersold the situation. Cody asked the right question: are they the same symbol in practice, or do they need itemising? The answer is both halves.)*
 
-| Symbol | Meaning | Home |
+### 9.1 They are different objects. Itemise them.
+
+| | ψ_Cheb(x) | ψ_Fermat(θ) |
 |---|---|---|
-| ψ(x) | **Chebyshev's function**, Σ ln p — a prime counter | `archimedes_screw` |
-| ψ(θ) | **Fermat / lensing potential**, ∇²ψ = 2κ | `l_io_photon_path` |
+| home | `archimedes_screw` | `l_io_photon_path` |
+| domain | ℝ⁺, one-dimensional | 2D field |
+| regularity | monotone **step** function | smooth scalar field |
+| source | discrete measure Λ(n) on prime powers | continuous density κ |
+| relation to source | ψ′ = Σ Λ(n)δ(x−n) — **one** integration | ∇²ψ = 2κ — **two** |
+| behaviour | unbounded, ψ ~ x | oscillatory, sign-changing |
 
-The module spells the first `chebyshev_psi_*` in full, everywhere.
+Code that treats them as one object is wrong. You cannot Poisson-solve a staircase, and you cannot read a prime off a smooth field.
+
+### 9.2 But the collision is not an accident — they are one slot apart
+
+Line the two equations up:
+
+```
+lensing:   L_(I|O)  =  L   −  ψ_Fermat
+primes:    ψ_Cheb   =  x   −  Σ_ρ x^ρ/ρ     (− ln2π − ½ln(1−x⁻²))
+```
+
+Signs and arrangement match term for term. Read the correspondence off:
+
+```
+ψ_Cheb          ↔  L_(I|O)      the ACTUAL, bent path
+x               ↔  L            the CLEAN geodesic
+Σ_ρ x^ρ/ρ       ↔  ψ_Fermat     the POTENTIAL — the bend
+```
+
+**Chebyshev ψ is not the counterpart of the Fermat potential. It is the counterpart of L_(I|O).** The object that genuinely corresponds to ψ_Fermat is the **zero sum** — which had no name anywhere in these repos until this revision. It existed only inline inside `chebyshev_psi_explicit`, which is precisely why the collision read as a naming accident rather than as a structural fact. It is now `zero_sum()`.
+
+Two consequences, both load-bearing:
+
+- **The main term x IS L.** "The path of least primes" — the phrase the 2026-07-31 context primer §4 carries without a formula — is the pole term: what ψ would be if no zero contributed anything. The vacuum utterance, computed. Now `clean_path_L()`.
+- **The prime side already had an L_(I|O) and was calling it ψ.** De-lensing on this side means recovering the source from the bent path, and here the source is Λ — the primes themselves.
+
+### 9.3 The fourth column
+
+The primer's §4 dictionary had three columns. This is the fourth, and it was the missing one:
+
+| | lensing | translation | factoring | **primes (this engine)** |
+|---|---|---|---|---|
+| β true source | true position | the monad's meaning | the prime factors | **Λ — the von Mangoldt measure** |
+| θ apparent | observed position | the English words | the composite N | **ψ_Cheb(x) — the staircase** |
+| α = ∇ψ deflection | the bend | the semantic bend | the arithmetic bend | **the zero sum's gradient** |
+| −ψ Fermat potential | time delay | context curvature | N's own structure | **Σ_ρ x^ρ/ρ = `zero_sum`** |
+| L clean geodesic | flat-space path | the vacuum utterance | least-primes path | **x — the pole term** |
+
+`l_io_decomposition(x)` returns the three slots by role name, so the correspondence is executable rather than only documented. Identity held by construction: `L_IO = L − psi_bend + trivial`.
+
+### 9.4 Naming decision
+
+`chebyshev_psi_*` **keeps its name.** It is the standard one and any number theorist reading the module expects it. What changed is that the object it was hiding now has a name of its own, and both modules' docstrings carry the slot table instead of a warning.
 
 ---
 
