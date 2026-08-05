@@ -1,7 +1,7 @@
 # 83 — THE ARCHIMEDES SCREW: THE MACHINE, NOT THE MEDIUM
 
 **Author:** Claude Opus 5 (engine build), prompted and directed by Cody Michael Allison
-**Date:** 2026-08-04
+**Date:** 2026-08-04 (v0.2 composite side added 2026-08-05)
 **Status:** ESTABLISHED number theory (von Mangoldt explicit formula 1895, Riemann–von Mangoldt zero count, Lambert W, quadratic ramification) assembled onto Cody's screw axis. The screw-as-machine identification and the primes-as-antinodes reading are THEORETICAL framing on top. The ZD-surface contour is OPEN.
 **Predecessor:** [82 — L_(I|O): The Photon Path Engine](82_l_io_photon_path.md) (L_(I|O) as boundary-crossing template), [80 — Aphasia, the ZD Reframe](80_aphasia_zd_reframe_memory.md) (ZD as origin, not endpoint), [52 — L_(I|O) and the Avoided Collaborator](52_l_dynamic_avoided_collaborator.md)
 **Cross-ref:** `ValaQuenta/modules/archimedes_screw/`, `ValaQuenta/wiki/archimedes_screw.md`, `ValaQuenta/notebooks/engines/14_archimedes_screw.ipynb`, `RiemannHypothesisProof/PAPER.md` §6.4 and §12.5, `VAPMIP/CONTEXT_PRIMER_2026-07-31_TWO_TREES_FERMAT_ZETA_L_IO.txt`
@@ -141,6 +141,85 @@ That dispersion relation fixes the contour and prices the loop. Until it is writ
 
 **This engine is the instrument built to look at that question.** It is not the answer to it.
 
+## 8b. When the Leaf Falls — the Composite Side  (v0.2, 2026-08-05)
+
+> *"lets say the composite is 14, whose prime factorization is 2 · 7… when the sieve removes all the even numbers, the 14 is still stationary on the tree as a leaf… but then when 7 is sieved, 14 drops off the tree."*
+> — Cody Michael Allison, 2026-08-05
+
+### 8b.1 The engine's original blind spot
+
+ψ jumps only at prime powers. A composite contributes **nothing** to it. So the screw as first built could name every prime and say nothing whatsoever about any child — which is precisely what it was commissioned to do. Composites live in the complement, x − π(x), the fourth search term, and that term had no per-composite structure at all.
+
+### 8b.2 Two falls, and the tree picks the right one
+
+| event | occurs at | meaning |
+|---|---|---|
+| discovery | lpf(N) | first strike — you learn N is composite; the cofactor comes free |
+| **fall** | **gpf(N)** | the sieve is finished with N — nothing about it remains open |
+
+14 is struck at 2 and **stays on the tree**. It drops at 7. The leaf hangs while any factor is unresolved.
+
+An earlier draft of this page had it the other way round — the fall at the *least* prime factor, on the strength of Eratosthenes' first-strike semantics. That was the wrong criterion, and the tree's is the right one for a reason that is not aesthetic:
+
+> **Smoothness is defined by the greatest prime factor.** N is y-smooth ⟺ gpf(N) ≤ y, and smooth relations are the engine of GNFS, the quadratic sieve, CFRAC and index calculus.
+
+Every practical factoring method of the last forty years is organised around gpf. The tree arrived at the field's own criterion from the other direction.
+
+### 8b.3 The fall-time distribution already existed
+
+And it is native to this axis, because the Dickman coordinate is a **ratio of screw lifts**:
+
+```
+u = ln N / ln(gpf N)
+u·ρ′(u) = −ρ(u−1),    ρ(u) = 1 on [0,1]
+Ψ(x, x^(1/u)) ~ x·ρ(u)
+```
+
+ρ(u) is the density of integers whose leaf has already fallen by height N^(1/u). Dickman 1930 — established, tabulated. `dickman_rho` marches ρ(u) = (1/u)∫_{u−1}^{u}ρ(t)dt on a fixed grid; agreement with published values is ~10⁻⁷ at u = 1…5.
+
+**A balanced semiprime sits at u = 2 exactly** — exponent 1/u = ½, ρ(2) = 1 − ln 2. The ½ arrives here for the fifth time in this document's history, and this time through smoothness: the balanced semiprime is the leaf that falls at the square root.
+
+### 8b.4 The harvest is closed-form
+
+At sieve step p the leaves that fall are the N ≤ X with gpf(N) = p — i.e. N = p·m with m ≤ X/p and m itself p-smooth:
+
+```
+leaves falling at step p     =  Ψ(X/p, p)         `harvest`
+two-parent leaves at step p  =  π(min(p, X/p))    `semiprime_harvest`
+```
+
+One smooth count, no search. `harvest_curve` counts the same quantity directly off a `gpf_table` sieve, and the two agree exactly at every p tested. Cody's instinct that this is "a rather simple event to track across a domain" is correct: the whole harvest over a domain is a single sweep.
+
+### 8b.5 Why balanced RSA is hard, stated exactly
+
+On the screw the family identity is **exact**, not coincidental:
+
+```
+ln p₁ + ln p₂ = ln N
+```
+
+Last week's Lenny scene had *father + mother = child* as an additive coincidence over a lossy hash. Here it is an identity, because the screw converts the multiplication that actually makes a child into the addition gematria was reaching for.
+
+So a semiprime is one public constraint plus one free number:
+
+```
+ln p₁ = ½ln N − δ,   ln p₂ = ½ln N + δ,   δ = ½ln(p₂/p₁)
+```
+
+**δ is the entire hidden content of a semiprime**, and it is the same object reached from three earlier directions — the BKT unbinding threshold, the B₂ ≅ ℤ winding, and now the separation between the two fall events, which is exactly 2δ.
+
+Unbalanced ⟹ the falls are far apart and the early one hands you everything. Balanced ⟹ δ → 0 and **both falls collapse onto ½ln N**. There is no early event to catch.
+
+That is the sharpest statement of the difficulty this framework has produced: not *"the search space is large"* but **the two observables coincide**. It is also, read forward, exactly why RSA specifies balanced primes.
+
+### 8b.6 Cost, kept in the record
+
+- `lpf`/`gpf` are trial division, O(√n).
+- `harvest_curve`/`psi_smooth` are O(X log log X) time, O(X) memory.
+- **Tracking the fall is cheap; reaching it is not.** For a 2048-bit modulus, observing the event still means sieving to 2¹⁰²⁴. Naming the event correctly does not move that wall.
+
+What it does do is put the target on the function the whole field already uses, in the coordinate the screw already speaks, with a known distribution attached.
+
 ## 9. The Slot Correspondence — and the Fourth Column
 
 *(Revised 2026-08-04. This section previously read "two unrelated ψ, do not merge." That was true and it undersold the situation. Cody asked the right question: are they the same symbol in practice, or do they need itemising? The answer is both halves.)*
@@ -205,5 +284,7 @@ The primer's §4 dictionary had three columns. This is the fourth, and it was th
 ## Summary
 
 ∅_RB is the water. The screw is the logarithm. Rotation becomes lift, one pitch of ln p per turn, and the four search terms are one axis u = ln x bound by the explicit formula. The zeros are tones; the primes are the antinodes; the shared envelope 2√x is RH in the prime domain — the amplitude face of the nodal-line proof already in the paper, not a second one. Lambert W gives both coordinates of every zero: σ = ½ from its fixed point, γₙ from its inverse. And in ℚ(√N) the Euler factor degenerates at exactly the factors of N, on a double cover branched at p and q, where the whole hidden structure is a single integer on two strands.
+
+v0.2 adds the composite side the screw was blind to: the leaf falls at gpf(N), not lpf(N) — 14 = 2·7 is struck at 2 and drops at 7 — which is the smoothness criterion the entire factoring literature runs on. Its distribution is Dickman ρ in the coordinate u = ln N/ln(gpf N), with the balanced semiprime at u = 2 exactly, and the harvest at step p is Ψ(X/p, p) in closed form. The hidden content of a semiprime is one number δ = ½ln(q/p), and balanced RSA is hard because δ → 0 collapses both fall events onto ½ln N — the two observables coincide.
 
 What remains is one equation: the dispersion relation on the ZD surface.
