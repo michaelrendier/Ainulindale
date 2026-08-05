@@ -220,6 +220,36 @@ That is the sharpest statement of the difficulty this framework has produced: no
 
 What it does do is put the target on the function the whole field already uses, in the coordinate the screw already speaks, with a known distribution attached.
 
+## 8c. The Projection Ledger — what "the domain" actually is
+
+`domain_ladder(modulus_bits)`. Cody, 2026-08-05: *"is that everything from 2 through the RSA modulus? or is that only using the prime numbers that have enough digits?"* — **neither.**
+
+```
+RSA-2048                                    log₂(count)
+all integers 2 … N                             2048
+all integers 2 … √N          trial range       1024
+all PRIMES ≤ √N              only these test   1014.53
+primes with exactly 1024 bits                  1013.53
+GNFS pathway actually walked                    112
+
+√N bound saves      1024 bits   (free — Fermat: p ≤ q ⟹ p ≤ √N)
+primes-only saves      9.47 bits
+size restriction       1.00 bit
+GNFS saves further   901.53 bits
+```
+
+**THE ONE-BIT FACT.** Restricting to primes "with enough digits" prunes by a factor of exactly **2**, not by orders of magnitude. Primes are top-heavy: density 1/ln x barely moves across an octave (at 2¹⁰²⁴, ln x differs by 0.1% between x/2 and x), so
+
+```
+π(x) − π(x/2) ≈ x/(2 ln x) ≈ ½ π(x)
+```
+
+Half of all primes below any bound live in the top octave. The size restriction discards the other half and nothing else. Verified: the saving is 1.0028 at 1024 bits, 1.0014 at 2048, 1.0007 at 4096 — tightening to exactly 1 as the modulus grows.
+
+This joins the other cheap algebraic constraints, all worth single digits: mod 4 ≈ 1 bit, mod 16 = 3 bits, size = 1 bit.
+
+**The only row that is a target.** Everything above 2¹¹² is naive-domain accounting that was beaten in the 1990s. A new method must clear **2¹¹²**, not 2¹⁰²⁴.
+
 ## 9. The Slot Correspondence — and the Fourth Column
 
 *(Revised 2026-08-04. This section previously read "two unrelated ψ, do not merge." That was true and it undersold the situation. Cody asked the right question: are they the same symbol in practice, or do they need itemising? The answer is both halves.)*
