@@ -80,8 +80,8 @@ growing that trace** is iterate-while-modify, one level up from the list idiom. 
 not raise. It drifts — until the internal span covers the kernel and the instrument
 reports *all quiet* forever, confidently, having gone blind.
 
-The fix is not a lock. **It is an epoch.** Freeze the field, stamp it, measure the
-snapshot, and date the mutation with `precession()` instead of straddling it. Mutation
+The fix is not a lock. **It is a datum.** Freeze the field, stamp it, measure the
+datum, and date the mutation with `bearing()` instead of straddling it. Mutation
 was never the bug. Mutation measured across an unbounded interval is the bug.
 
 And the bounded case is already proven and already measured — Phase 27.3: net winding

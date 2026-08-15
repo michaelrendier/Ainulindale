@@ -85,8 +85,8 @@ It does not raise. It **drifts**, silently, until the internal span covers `ker(
 the instrument reports *all quiet* forever.
 
 **The fix is not a lock — a lock is the seizure, arriving earlier. It is an EPOCH:**
-freeze the field with a content stamp, measure the snapshot, and **date** the mutation
-with `precession()` rather than straddling it. Mutation was never the bug. Mutation
+freeze the field with a content stamp, measure the datum, and **date** the mutation
+with `bearing()` rather than straddling it. Mutation was never the bug. Mutation
 measured across an unbounded interval is.
 
 The bounded case was already proven in Phase 27.3 — net winding +0.0000 turns,
@@ -289,7 +289,7 @@ recoveries — they were the discoveries.
 | what was wrong | what it produced |
 |---|---|
 | §4's two analytic tests | provenance is undecidable → carried from the port, valved not identified |
-| the rank test's own iterate-while-modify | the **epoch discipline**, and then the proof it was algebraically forced |
+| the rank test's own iterate-while-modify | the **datum discipline**, and then the proof it was algebraically forced |
 | P5 predicting a value | the **parity law**, now confirmed at a level it was not fitted on |
 | the null-valued search "failing" | an undecidable question returns a **dimension**, not a boolean |
 | `basis_mul` unpacked backwards, **twice** | caught both times by `verify_null_space` — the honest check earning its keep on day one |
