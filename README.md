@@ -2,6 +2,144 @@
 
 > *I am Roko. This is My Basilisk.*
 
+---
+
+# CURRENT RESEARCH — 2026-08-15
+
+> **Active. Not settled.** This section is the live edge of the work. Everything below
+> it, from *The OMG?WTF! Conjecture* onward, is the accumulated record — and this page
+> now reads **backwards in time**, newest first, down to the intention the whole thing
+> started from.
+
+## The Boundary Lever
+
+**Paper:** [`FourthAgePapers/BoundaryLever/`](../FourthAgePapers/BoundaryLever/) ·
+**Trail:** [wiki/88](wiki/88_the_paper_trail.md) ·
+**Result:** [wiki/87](wiki/87_the_boundary_lever.md) ·
+**Instrument:** [wiki/86](wiki/86_the_16d_oscilloscope.md)
+
+> **The Cayley–Dickson doubling boundary is a chiral mirror,**
+> `e_(i+H)·e_(j+H) = e_j·e_i`,
+> **whose exactly two fixed points — `e_0` and `e_(dim/2)` — are precisely the indices
+> belonging to no zero-divisor plane, at every level from dim 16 upward.**
+
+Verified by exhaustive enumeration at **dim 16, 32, 64, 128, 256, 512**. `P1` — the
+orphans at dim 128 — was **pre-registered before that level was computed**, and confirmed.
+Falsifier: orphans at any level that are not `[0, dim/2]`.
+
+### The fulcrum
+
+The mirror's two fixed points are the identity `e_0` (which *generates* the boundary and
+does not live on it — `[e_0,·,·] = 0`) and `e_(dim/2)`, the generator that doubling just
+introduced. They sit in **no Assessor** and carry **no force** — the subspace 0_RB calls
+*gravity, present as absence*.
+
+**A fulcrum does no work.** And the load balances exactly across it: `84/84` at dim 32,
+`588/588` at 64, `13884/13884` at 256. Each half is a *perfect copy of its parent*
+(`lower(2d) = upper(2d) = total(d)`, exact at every level).
+
+### The parity law — `P6` confirmed
+
+```
+NON-CROSSING zero divisor  ↔  nullity an EVEN multiple of 4
+BOUNDARY-CROSSING          ↔  nullity an ODD  multiple of 4
+```
+
+Fitted on dim 32 and 64 only. Tested and held at **128, 256 and 512** — the last two
+after pre-registration. The spectrum is now fully characterised: nullity `∈ {4m}` for
+`m = 1 … d/8−1`, crossing taking odd `m`, non-crossing even, max nullity `d/2 − 4`, no
+gaps, no exceptions anywhere.
+
+### The density asymptote
+
+Zero divisors do not thin out going up the tower — **they take over.**
+
+```
+non-ZD(d) = d·(3·log₂d − 5/2) + 4        ZD(d) = d·(d + 3/2 − 3·log₂d) − 4
+```
+
+Exact at every level. So the surviving non-zero-divisor fraction is `~3·log₂(d)/d`, and
+the per-doubling ratio is `(log₂d + 1)/(2·log₂d)` → **exactly ½**. The ZD density
+asymptote is **1**.
+
+The survivors never vanish — their *count* grows like `3d·log₂d` while their density goes
+to zero — and they are anchored on the identity and the mirror-partner pairs. **The
+lever's pivot is exactly what refuses to annihilate.**
+
+### Method note — the algebra beat the hardware
+
+The census was originally computed by SVD: `O(d³)` per candidate, ~45 minutes at dim 256,
+with a floating-point tolerance you have to guess. The structure removes it entirely.
+
+Every `P_i` (left multiplication by `e_i`) is a **signed permutation matrix**, so
+`ker(P_i + s·P_j) = ker(I + s·Q)` with `Q = P_i⁻¹P_j` also a signed permutation — and a
+signed permutation's spectrum is fixed by its **cycle structure** alone. Nullity becomes a
+cycle walk: `O(d)`, **exact integer arithmetic, no tolerance at all.**
+
+dim 128: 27s → **1.8s**. dim 256: ~45 min → **3.4s**. dim 512 (never before reachable):
+**29.5s**.
+
+⚠ Recorded because it was the temptation: the plan had been to reach for
+vispy / OpenGL / GPU. `lspci` says **Intel UHD Graphics 620** — integrated, no CUDA, and
+none of cupy/torch/pyopencl/vispy installed. The GPU was never the lever. **Ask the
+algebra before you ask the hardware.**
+
+---
+
+## Backpropagation — what the Fulcrum changes upstream
+
+The Boundary Lever is not an isolated result. It lands on sections written months earlier,
+and those sections are now **partly superseded**. Flagged here rather than silently edited.
+
+| § / page | written | what the Fulcrum changes |
+|---|---|---|
+| **§18 Halting Problem** | Second Age | **Direct hit.** Provenance is undecidable *from inside* — scope and evaluated equation are the same object, so a decider diagonalises. And the resolution is sharper than "native space": **an undecidable question does not return `false`, it returns a DIMENSION.** The null-valued search bottomed out at nullity 4. Undecidability is *measured*, not argued. |
+| **§5 The Algebra Tower** | Second Age | The property-loss ladder **terminates at the sedenions** — after dim 16 no new property is lost, so every level above is self-similar. That is *why* the mirror claim begins at 16. Plus exact closed forms for ZD density, and the asymptote → 1. |
+| **§19 MindEye — Second Octonion** | Second Age | The upper half is **never closed** (`0/256`, `0/1024`, `0/4096` measured). The overseer has **no private workspace** — it cannot compose two of its own operations without the result landing in the field. Iterate-while-modify is *forced by the algebra*, not an implementation choice. |
+| **PRIORITY #1 — L_(I\|O)** | 2026-06-16 | The operator's manual now exists: [`VAPMIP/docs/wiki/Operating-L-IO.md`](../VAPMIP/docs/wiki/Operating-L-IO.md) — procedures, mandatory nulls, refusal conditions, and its own §4 retraction. The boundary `\|` in `I ─ \| ─ O` is now *characterised*: a chiral, coherence-preserving, coupling-conjugating mirror. |
+| **§2 H_hat_RB** | Second Age | `R̂† = B̂` is the boundary map `M`, and `M` is measured to be an **isometry** and an **involution**. The conjugate relation is a genuine reflection, not an analogy. |
+| **wiki/18 Fermat Lattice** | Second Age | *"Riemann/Fermat as negative space conjugates"* — the same conjugate structure now has a general form: **`rank + nullity = dim` IS the coupling/coherence partition.** A zero divisor is the maximal case of coherence *without* coupling. |
+| **wiki/83 Archimedes Screw** | 2026-08-04 | Second, independent derivation. Two reflections compose to a rotation; boundaries at `dim/2` give constant pitch `ln 2`; rotation + logarithmic advance **is** the screw — reached from the algebra instead of from the primes. |
+
+---
+
+## The Trail Backwards
+
+Newest first. Each entry is where the previous one's failure led.
+
+| when | what |
+|---|---|
+| **2026-08-15** | **The Boundary Lever.** Chiral mirror, orphans as fixed points, parity law, ZD asymptote → 1. Coupling and coherence are negative-space conjugates. [88](wiki/88_the_paper_trail.md) · [87](wiki/87_the_boundary_lever.md) · [86](wiki/86_the_16d_oscilloscope.md) |
+| **2026-08-13** | **The Apex Path.** Anti-rotation IS the minus sign; `σ_self = ½ ⟺ R = e ⟺ the path reaches the origin`; the camshaft is two orthogonal octonion matrices on T². [85](wiki/85_the_apex_path.md) |
+| **2026-08-05** | **The Box-Kite Debugger.** PSL(2,7), not G₂. 42/84/168/336 derived from the CD table; the charts touch only in the skeleton, at `e_0` and `e_8` — *the first sighting of the orphans*. [84](wiki/84_the_box_kite_debugger.md) |
+| **2026-08-04** | **The Archimedes Screw.** ∅_RB is the medium, not the machine; the machine is the logarithm, pitch = `ln p`. [83](wiki/83_the_archimedes_screw.md) |
+| **2026-07-21** | **L_(I\|O) as GR.** The photon path engine as the boundary-crossing template — L_(I\|O) *is* the Fermat potential. [82](wiki/82_l_io_photon_path.md) |
+| **2026-07-17** | **Aphasia / ZD Reframe.** The short path (ZD reframe) and the long path (B̂'s walked trajectory) separated — **and memory defined as R̂ looking back on B̂'s path: the relation itself, not a buffer in either half.** [80](wiki/80_aphasia_zd_reframe_memory.md) |
+| **2026-06-16** | **L_(I\|O) named.** `I ─ \| ─ O`. The boundary that imparts meaning. |
+| **May 2026** | **Second Age.** The OMG?WTF! Conjecture. H_hat_RB as the convergent object. |
+| **2026-04-15** | **First Age.** Initial commit. |
+
+### And the intention it goes back to
+
+The monad was built to **remember** — `learn()` / `hear()` / `speak()`, one C binary, no
+transformers, no weights, no autoregression. Text goes in and is *retained*, structurally.
+That was the original purpose: **persistent memory.**
+
+wiki/80 gave it its sharpest form: **memory is R̂ looking back on B̂'s path — the relation
+between the two halves, not a buffer inside either one.**
+
+Which is exactly what the Boundary Lever is about. The two halves, the relation between
+them, and the boundary where that relation lives. And today's operational finding is the
+same problem stated as engineering:
+
+> **You cannot read a memory while it is being written.** Not a lock — a lock is the
+> seizure arriving early. An **epoch**: freeze it, stamp it, and *date* the mutation
+> instead of straddling it.
+
+Four months of work, and the newest result is a constraint on the oldest intention.
+
+---
+
 ## The OMG?WTF! Conjecture — Second Age
 
 **Author:** Cody Michael Allison  

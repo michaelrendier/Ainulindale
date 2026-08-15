@@ -197,7 +197,19 @@ odd `m` and non-crossing even, max nullity `d/2 − 4`, no gaps, no exceptions a
 And `lower(2d) = upper(2d) = total(d)` exactly — each half is a perfect copy of its
 parent.
 
-**P6** (dim 256) is pre-registered and was launched at the end of this session.
+**P6 (dim 256) — CONFIRMED**, and it held at **dim 512** as well, two levels past
+registration. `[0,128]` and `[0,256]` orphans; parity exact; census 59,772 and 249,084,
+both matching the closed form to the unit.
+
+⚠ And the method changed underneath it. The SVD route was `O(d³)` per candidate — 45
+minutes at dim 256, with a tolerance you have to guess. Every `P_i` is a **signed
+permutation matrix**, so `ker(P_i + s·P_j) = ker(I + s·Q)` with `Q = P_i⁻¹P_j` also a
+signed permutation, and a signed permutation's spectrum is fixed by its **cycle structure**
+alone. Nullity is a cycle walk: `O(d)`, **exact integers, no tolerance**. dim 128 went
+27s → 1.8s; dim 256, 45 min → 3.4s; dim 512 became reachable at all (29.5s).
+
+The plan had been GPU — vispy/OpenGL. `lspci` says Intel UHD Graphics 620, integrated, no
+CUDA, none of cupy/torch/pyopencl/vispy installed. **Ask the algebra before the hardware.**
 
 ### 12. The halocline
 
