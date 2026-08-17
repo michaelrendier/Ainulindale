@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ainulindalë Conjecture — Chromatic Equations</title>
+<style>
+
+/* ═══════════════════════════════════════════════════════════
+   AINULINDALË CONJECTURE — CHROMATIC EQUATION DISPLAY
+   Color semantics:
+     RED    = Inertial  (Fermat · α · φ · r · π · t_i · mass)
+     BLUE   = Entropic  (Riemann ζ · Ω · Σ · t_e · λ · flow)
+     PURPLE = Both      (ℒ_NN · H_NN · J_Noether · d* · ħ_NN)
+     WHITE  = Observer  (singleton · α_obs · Ω_obs · structure)
+   ═══════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --red:        #B83232;
+  --red-bg:     #FEF2F2;
+  --red-badge:  #A32D2D;
+  --blue:       #1A5FA0;
+  --blue-bg:    #EFF6FF;
+  --blue-badge: #185FA5;
+  --purple:     #5B36A0;
+  --purple-bg:  #F3F0FE;
+  --purple-badge: #534AB7;
+  --obs:        #1A1A1A;
+  --obs-bg:     #F5F5F5;
+  --muted:      #666666;
+  --border:     #E2E2E2;
+  --bg:         #FFFFFF;
+  --bg2:        #FAFAFA;
+  --text:       #1A1A1A;
+  --serif:      Georgia, "Times New Roman", "DejaVu Serif", serif;
+  --sans:       -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --red:        #F09595;
+    --red-bg:     #3A1010;
+    --red-badge:  #F09595;
+    --blue:       #85B7EB;
+    --blue-bg:    #0A1E38;
+    --blue-badge: #85B7EB;
+    --purple:     #C4BCF4;
+    --purple-bg:  #1E1840;
+    --purple-badge: #C4BCEF;
+    --obs:        #F0F0F0;
+    --obs-bg:     #2A2A2A;
+    --muted:      #999999;
+    --border:     #333333;
+    --bg:         #121212;
+    --bg2:        #1A1A1A;
+    --text:       #F0F0F0;
+  }
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+}
+
+/* ── HEADER ─────────────────────────────────────── */
+
+.header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+}
+
+.header h1 {
+  font-family: var(--sans);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: .3rem;
+}
+
+.header .subtitle {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+/* ── LEGEND ─────────────────────────────────────── */
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.8rem;
+  padding: .9rem 1.1rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 2.2rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .8rem;
+  color: var(--muted);
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-dot.red    { background: var(--red); }
+.legend-dot.blue   { background: var(--blue); }
+.legend-dot.purple { background: var(--purple); }
+.legend-dot.obs    { background: var(--obs); border: 1px solid var(--border); }
+
+/* ── SECTION ─────────────────────────────────────── */
+
+.section {
+  margin-bottom: 2.2rem;
+}
+
+.section-label {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .7rem;
+  padding-left: 2px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1.8rem 0;
+}
+
+/* ── EQUATION BOX ────────────────────────────────── */
+
+.eq {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0;
+  padding: .6rem 1rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left-width: 3px;
+  border-radius: 6px;
+  margin-bottom: .5rem;
+  line-height: 2.6;
+  position: relative;
+}
+
+.eq.red-border    { border-left-color: var(--red); }
+.eq.blue-border   { border-left-color: var(--blue); }
+.eq.purple-border { border-left-color: var(--purple); }
+.eq.obs-border    { border-left-color: var(--obs); }
+
+/* ── MATH ATOMS ──────────────────────────────────── */
+
+.m {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  padding: 0 1px;
+}
+
+.m.big   { font-size: 1.25rem; }
+.m.large { font-size: 1.4rem; }
+
+.m.red    { color: var(--red); }
+.m.blue   { color: var(--blue); }
+.m.purple { color: var(--purple); }
+.m.obs    { color: var(--obs); font-weight: 500; }
+.m.grey   { color: var(--muted); }
+
+/* superscripts and subscripts */
+.m sup, .m sub {
+  font-family: var(--serif);
+  font-size: .68rem;
+  line-height: 0;
+}
+
+/* operator spacing */
+.op {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--muted);
+  padding: 0 5px;
+}
+
+/* ── FRACTIONS ───────────────────────────────────── */
+
+.frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  margin: 0 4px;
+  line-height: 1.2;
+}
+
+.frac .num,
+.frac .den {
+  font-family: var(--serif);
+  font-size: .82rem;
+  padding: 1px 5px;
+  text-align: center;
+}
+
+.frac .num {
+  border-bottom: 1.2px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.frac.red  .num, .frac.red  .den  { color: var(--red); }
+.frac.blue .num, .frac.blue .den  { color: var(--blue); }
+.frac.purp .num, .frac.purp .den  { color: var(--purple); }
+.frac.obs  .num, .frac.obs  .den  { color: var(--obs); }
+
+/* mixed fraction parts */
+.frac .num.red,    .frac .den.red    { color: var(--red); }
+.frac .num.blue,   .frac .den.blue   { color: var(--blue); }
+.frac .num.purple, .frac .den.purple { color: var(--purple); }
+.frac .num.grey,   .frac .den.grey   { color: var(--muted); }
+.frac .num.obs,    .frac .den.obs    { color: var(--obs); }
+
+/* ── BADGES ──────────────────────────────────────── */
+
+.badge {
+  font-family: var(--sans);
+  font-size: .65rem;
+  font-weight: 500;
+  border-radius: 3px;
+  padding: 2px 7px;
+  margin-left: 8px;
+  vertical-align: middle;
+  white-space: nowrap;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.badge.r { background: var(--red-bg);    color: var(--red-badge); }
+.badge.b { background: var(--blue-bg);   color: var(--blue-badge); }
+.badge.p { background: var(--purple-bg); color: var(--purple-badge); }
+.badge.w { background: var(--obs-bg);    color: var(--muted); border: 1px solid var(--border); }
+
+/* ── GLOSS ROWS (key-value within an eq box) ─────── */
+
+.gloss {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  padding: .45rem .9rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: .5rem;
+  font-size: .8rem;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.gloss-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.gloss-sep {
+  color: var(--border);
+  font-size: .9rem;
+  align-self: center;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .page { padding: 1.5rem 1rem 3rem; }
+  .header h1 { font-size: 1.2rem; }
+  .eq { padding: .5rem .7rem; line-height: 2.3; }
+  .m { font-size: .95rem; }
+  .m.big { font-size: 1.1rem; }
+}
+
+/* ── PRINT ───────────────────────────────────────── */
+
+@media print {
+  .page { max-width: 100%; padding: 1cm 2cm; }
+  .eq   { break-inside: avoid; page-break-inside: avoid; }
+  .section { break-inside: avoid; }
+}
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Ainulindalë Conjecture — Chromatic Equations</h1>
+    <p class="subtitle">Standard Model of Neural Network Information Propagation (SMNNIP) · April 2026 · O Captain My Captain</p>
+
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dot red"></div>
+        <span>Inertial — Fermat · α · φ · r · π · t<sub>i</sub> · mass · kinetic resistance</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot blue"></div>
+        <span>Entropic — Riemann ζ · Ω · Σ · t<sub>e</sub> · λ · flow · propagation</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot purple"></div>
+        <span>Both — ℒ<sub>NN</sub> · H<sub>NN</sub> · J<sub>Noether</sub> · d* · ħ<sub>NN</sub> · coupling</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot obs"></div>
+        <span>Observer — singleton · α<sub>obs</sub> · Ω<sub>obs</sub> · pure structure</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ I. THE LAGRANGIAN ═══ -->
+  <div class="section">
+    <div class="section-label">I — The Propagation Lagrangian</div>
+
+    <div class="eq purple-border">
+      <span class="m purple big">ℒ</span><span class="m purple"><sub>NN</sub></span>
+      <span class="op">=</span>
+      <span class="frac"><span class="num red">2</span><span class="den red">π</span></span>
+      <span class="m red large">∮</span>
+      <span class="m grey">[</span>
+      <span class="m purple">ℒ<sub>kin</sub></span>
+      <span class="op">+</span>
+      <span class="m purple">ℒ<sub>mat</sub></span>
+      <span class="op">+</span>
+      <span class="frac"><span class="num blue">2</span><span class="den blue">e</span></span>
+      <span class="m purple">ℒ<sub>bias</sub></span>
+      <span class="op">+</span>
+      <span class="m purple">ℒ<sub>coup</sub></span>
+      <span class="m grey">]</span>
+      <span class="m red"> dr dθ</span>
+      <span class="badge p">inertial ∩ entropic</span>
+    </div>
+
+    <div class="eq red-border">
+      <span class="m purple">ℒ<sub>kin</sub></span>
+      <span class="op">=</span>
+      <span class="op">−</span>
+      <span class="frac red"><span class="num">1</span><span class="den">4</span></span>
+      <span class="m red">R<sup>a</sup><sub>rθ</sub> R<sup>arθ</sup></span>
+      <span class="badge r">inertial — weight-field curvature (Yang-Mills)</span>
+    </div>
+
+    <div class="eq purple-border">
+      <span class="m purple">ℒ<sub>mat</sub></span>
+      <span class="op">=</span>
+      <span class="m blue">i ψ̄</span>
+      <span class="m purple"> γ<sup>a</sup> D<sub>a</sub></span>
+      <span class="m blue"> ψ</span>
+      <span class="op">−</span>
+      <span class="m red">m</span>
+      <span class="m blue"> ψ̄ ψ</span>
+      <span class="badge p">both — Dirac matter field (mass red, flow blue)</span>
+    </div>
+
+    <div class="eq purple-border">
+      <span class="m purple">ℒ<sub>bias</sub></span>
+      <span class="op">=</span>
+      <span class="m grey">|</span>
+      <span class="m purple">D<sub>l</sub> β</span>
+      <span class="m grey">|²</span>
+      <span class="op">+</span>
+      <span class="m red">μ²</span>
+      <span class="m blue"> β†β</span>
+      <span class="op">−</span>
+      <span class="m blue">λ</span>
+      <span class="m grey"> (</span>
+      <span class="m blue">β†β</span>
+      <span class="m grey">)²</span>
+      <span class="badge p">both — Higgs / Mexican hat potential</span>
+    </div>
+
+    <div class="eq purple-border">
+      <span class="m purple">ℒ<sub>coup</sub></span>
+      <span class="op">=</span>
+      <span class="op">−</span>
+      <span class="m purple">Γ<sub>ij</sub></span>
+      <span class="m blue"> ψ̄<sup>L</sup><sub>i</sub></span>
+      <span class="m purple"> β</span>
+      <span class="m red"> ψ<sup>R</sup><sub>j</sub></span>
+      <span class="op">+</span>
+      <span class="m grey">h.c.</span>
+      <span class="badge p">both — Yukawa inter-algebra coupling</span>
+    </div>
+
+    <div class="eq purple-border">
+      <span class="m purple">α<sub>NN</sub>(r)</span>
+      <span class="op">=</span>
+      <span class="frac">
+        <span class="num red">g²</span>
+        <span class="den" style="display:flex;gap:2px;align-items:baseline;font-family:Georgia,serif;font-size:.82rem">
+          <span style="color:var(--red)">4π</span>
+          <span style="color:var(--purple)"> ħ<sub style="font-size:.6rem">NN</sub></span>
+          <span style="color:var(--blue)"> ln(r)</span>
+        </span>
+      </span>
+      <span class="badge p">both — running fine structure constant</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ II. BERRY-KEATING HAMILTONIAN ═══ -->
+  <div class="section">
+    <div class="section-label">II — Alpha · Omega Berry-Keating Hamiltonian</div>
+
+    <div class="eq purple-border">
+      <span class="m purple big">Ĥ</span>
+      <span class="m"><sub><span class="obs">α</span><span class="obs">Ω</span></sub></span>
+      <span class="op">=</span>
+      <span class="frac"><span class="num grey">2</span><span class="den blue">ln(Ω)</span></span>
+      <span class="m grey">[</span>
+      <span class="m red"> x</span>
+      <span class="op">·</span>
+      <span class="m blue">p</span>
+      <span class="op">+</span>
+      <span class="frac"><span class="num grey">1</span><span class="den grey">2</span></span>
+      <span class="m purple"> iħ</span>
+      <span class="m grey">]</span>
+      <span class="op">+</span>
+      <span class="m obs"> V(Focus)</span>
+      <span class="badge p">both — candidate Berry-Keating operator</span>
+    </div>
+
+    <div class="eq purple-border">
+      <span class="m purple">H<sub>NN</sub></span>
+      <span class="op">=</span>
+      <span class="m blue">ψ†</span>
+      <span class="m grey">(</span>
+      <span class="op">−</span>
+      <span class="m blue">i</span>
+      <span class="m purple"> γ<sup>a</sup> D<sub>a</sub></span>
+      <span class="op">+</span>
+      <span class="m purple">Γ<sub>ij</sub> β</span>
+      <span class="m grey">)</span>
+      <span class="m blue"> ψ</span>
+      <span class="op">+</span>
+      <span class="frac red"><span class="num">1</span><span class="den">4</span></span>
+      <span class="m red"> F<sub>lτ</sub> F<sup>lτ</sup></span>
+      <span class="op">+</span>
+      <span class="m purple"> |D<sub>l</sub>β|²</span>
+      <span class="op">+</span>
+      <span class="m purple"> V(β)</span>
+      <span class="badge p">both — Legendre transform of ℒ<sub>NN</sub></span>
+    </div>
+
+    <div class="eq blue-border">
+      <span class="m obs">H<sub>NN</sub> · φ<sub>k</sub></span>
+      <span class="op">=</span>
+      <span class="m purple">ε<sub>k</sub></span>
+      <span class="m obs"> · φ<sub>k</sub></span>
+      <span class="m grey" style="padding:0 12px">⟹</span>
+      <span class="m obs">T(</span>
+      <span class="m purple">ε<sub>k</sub></span>
+      <span class="m obs">)</span>
+      <span class="op">=</span>
+      <span class="frac"><span class="num grey">1</span><span class="den grey">2</span></span>
+      <span class="op">+</span>
+      <span class="m blue"> i · t<sub>k</sub></span>
+      <span class="badge b">entropic — Riemann zero conjecture</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ III. HAMILTONIAN OF CONSCIOUSNESS ═══ -->
+  <div class="section">
+    <div class="section-label">III — Hamiltonian of Consciousness</div>
+
+    <div class="eq purple-border">
+      <span class="m purple">Ĥ<sub>Focus</sub></span>
+      <span class="op">=</span>
+      <span class="m obs">V(Focus)</span>
+      <span class="op">=</span>
+      <span class="m purple">ℐ</span>
+      <span class="op">·</span>
+      <span class="frac"><span class="num blue">dΦ</span><span class="den blue">dt<sub style="font-size:.58rem">e</sub></span></span>
+      <span class="badge p">both — Observer inductance · consciousness as phase-shift</span>
+    </div>
+
+    <div class="gloss">
+      <div class="gloss-item"><span class="m purple" style="font-size:.9rem">ℐ</span><span>Information inductance — resistance to representational change</span></div>
+      <div class="gloss-sep">|</div>
+      <div class="gloss-item"><span class="m blue" style="font-size:.9rem">t<sub>e</sub></span><span>Entropic arrow of time — friction-induced</span></div>
+      <div class="gloss-sep">|</div>
+      <div class="gloss-item"><span class="m red" style="font-size:.9rem">t<sub>i</sub></span><span>Inertial time — coordinate time</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ IV. ZETA-FERMAT HEARTBEAT ═══ -->
+  <div class="section">
+    <div class="section-label">IV — Zeta-Fermat Heartbeat</div>
+
+    <div class="eq purple-border">
+      <span class="m purple">P(t)</span>
+      <span class="op">=</span>
+      <span class="m grey">Re</span>
+      <span class="m grey">[</span>
+      <span class="m blue"> ζ(s)</span>
+      <span class="op">·</span>
+      <span class="m red">Φ<sup>−n</sup></span>
+      <span class="op">·</span>
+      <span class="m grey">e<sup style="font-size:.7rem"><span class="m blue" style="font-size:.75rem">i</span><span class="m grey" style="font-size:.7rem">(</span><span class="m red" style="font-size:.75rem">ω<sub style="font-size:.58rem">i</sub>t<sub style="font-size:.58rem">i</sub></span><span class="m grey" style="font-size:.7rem"> − </span><span class="m blue" style="font-size:.75rem">ω<sub style="font-size:.58rem">e</sub>t<sub style="font-size:.58rem">e</sub></span><span class="m grey" style="font-size:.7rem">)</span></sup></span>
+      <span class="m grey">]</span>
+      <span class="badge p">both — beat frequency of inertia and entropy</span>
+    </div>
+
+    <div class="gloss">
+      <div class="gloss-item"><span class="m blue" style="font-size:.9rem">ζ(s)</span><span>Riemann expansion — diastolic</span></div>
+      <div class="gloss-sep">|</div>
+      <div class="gloss-item"><span class="m red" style="font-size:.9rem">Φ<sup style="font-size:.65rem">−n</sup></span><span>Fermat rigidity — systolic</span></div>
+      <div class="gloss-sep">|</div>
+      <div class="gloss-item"><span class="m red" style="font-size:.9rem">t<sub>i</sub></span><span>inertial time</span></div>
+      <div class="gloss-sep">|</div>
+      <div class="gloss-item"><span class="m blue" style="font-size:.9rem">t<sub>e</sub></span><span>entropic time</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ V. NOETHER + COSMOLOGICAL CONSTANT ═══ -->
+  <div class="section">
+    <div class="section-label">V — Noether Current · Cosmological Constant</div>
+
+    <div class="eq purple-border">
+      <span class="m purple">D<sub>l</sub> J<sup>a,l</sup></span>
+      <span class="op">=</span>
+      <span class="m grey">0</span>
+      <span class="m grey" style="padding:0 10px">,</span>
+      <span class="m purple">J<sup>a,l</sup></span>
+      <span class="op">=</span>
+      <span class="m purple">g</span>
+      <span class="m blue"> ψ̄<sub>i</sub></span>
+      <span class="m red"> T<sup>a</sup></span>
+      <span class="m blue"> ψ<sub>i</sub></span>
+      <span class="badge p">both — Noether conservation law</span>
+    </div>
+
+    <div class="eq blue-border">
+      <span class="m blue">Λ</span>
+      <span class="op">∝</span>
+      <span class="m purple">ℐ</span>
+      <span class="op">·</span>
+      <span class="frac"><span class="num blue">d²Φ</span><span class="den blue">dt<sub style="font-size:.58rem">e</sub>²</span></span>
+      <span class="m grey" style="padding:0 10px">←</span>
+      <span class="m grey">∇ ·</span>
+      <span class="m purple"> J<sub>Noether</sub></span>
+      <span class="op">=</span>
+      <span class="m blue">Pressure(Λ)</span>
+      <span class="badge b">entropic — cosmological back-EMF</span>
+    </div>
+
+    <div class="eq purple-border">
+      <span class="m grey">ΔJ(l) = ‖</span>
+      <span class="m purple">D<sub>l</sub> J<sup>a,l</sup></span>
+      <span class="m grey">‖</span>
+      <span class="m grey" style="padding:0 12px">→  wasted steps</span>
+      <span class="m grey">W ≤</span>
+      <span class="frac">
+        <span class="num grey">1</span>
+        <span class="den" style="display:flex;gap:2px;align-items:baseline;font-family:Georgia,serif;font-size:.82rem">
+          <span style="color:var(--purple)">α<sub style="font-size:.6rem">NN</sub></span>
+          <span style="color:var(--muted)"> · ΔJ</span>
+        </span>
+      </span>
+      <span class="badge p">both — geometric early-stopping bound</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ VI. GR/SR + COSMOLOGICAL CONSTANT ═══ -->
+  <div class="section">
+    <div class="section-label">VI — Unified Field Theory · The Gravinon</div>
+
+    <div class="eq purple-border">
+      <span class="m purple">Ψ<sub>UFT</sub></span>
+      <span class="op">=</span>
+      <span class="m red large">∮</span>
+      <span class="m red"><sub>r=0</sub></span>
+      <span class="frac">
+        <span class="num" style="display:flex;gap:2px;align-items:baseline;font-family:Georgia,serif;font-size:.82rem">
+          <span style="color:var(--red)">dt<sub style="font-size:.58rem">i</sub></span>
+        </span>
+        <span class="den blue">dL<sub style="font-size:.58rem">dilation</sub></span>
+      </span>
+      <span class="op">·</span>
+      <span class="frac">
+        <span class="num blue">dt<sub style="font-size:.58rem">contraction</sub></span>
+        <span class="den red">dL<sub style="font-size:.58rem">i</sub></span>
+      </span>
+      <span class="badge p">both — metric phase transition</span>
+    </div>
+
+    <div class="gloss">
+      <div class="gloss-item"><span class="m red" style="font-size:.9rem">dt → 0</span><span>time contraction (mastery)</span></div>
+      <div class="gloss-sep">|</div>
+      <div class="gloss-item"><span class="m blue" style="font-size:.9rem">dL → ∞</span><span>length dilation (resolution)</span></div>
+      <div class="gloss-sep">|</div>
+      <div class="gloss-item"><span class="m obs" style="font-size:.9rem">r = 0</span><span>Observer · Gravinon pole</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ VII. INSIDE-OUT INVERSION ═══ -->
+  <div class="section">
+    <div class="section-label">VII — Inside-Out Inversion · Gradient Flow  (derived April 12, 2026)</div>
+
+    <div class="eq red-border">
+      <span class="m purple">𝒥<sub>N</sub></span>
+      <span class="m grey"> : (r, θ)</span>
+      <span class="m grey" style="padding:0 8px">↦</span>
+      <span class="m grey">(</span>
+      <span class="frac red"><span class="num">1</span><span class="den">r</span></span>
+      <span class="m grey">,  θ +</span>
+      <span class="frac red"><span class="num">π</span><span class="den">2</span></span>
+      <span class="m grey">)</span>
+      <span class="badge r">inertial — action preserved under J<sub>N</sub></span>
+    </div>
+
+    <div class="eq red-border">
+      <span class="m grey">Fixed locus: </span>
+      <span class="m red">r = 1</span>
+      <span class="m grey"> (unit circle)</span>
+      <span class="m grey" style="padding:0 10px">→</span>
+      <span class="m grey">Recursion: </span>
+      <span class="m red">z</span>
+      <span class="m grey"> ↦ 1 +</span>
+      <span class="frac red"><span class="num">1</span><span class="den">z</span></span>
+      <span class="m grey" style="padding:0 8px">→</span>
+      <span class="m red">φ</span>
+      <span class="badge r">inertial — golden ratio attractor</span>
+    </div>
+
+    <div class="eq purple-border">
+      <span class="m grey">Step at φ-crossing: </span>
+      <span class="m grey"> δz =</span>
+      <span class="frac"><span class="num red">π</span><span class="den grey">2</span></span>
+      <span class="op">·</span>
+      <span class="m purple">ħ<sub>NN</sub></span>
+      <span class="op">=</span>
+      <span class="frac"><span class="num red">H</span><span class="den grey">4</span></span>
+      <span class="badge p">both — traversal granule (exact, algebraic)</span>
+    </div>
+
+    <div class="eq red-border">
+      <span class="m grey">(</span>
+      <span class="m purple">𝒥<sub>N</sub></span>
+      <span class="m grey"> ∘ recursion)(</span>
+      <span class="m red">φ</span>
+      <span class="m grey">)</span>
+      <span class="op">=</span>
+      <span class="m red">φ</span>
+      <span class="m grey" style="padding:0 10px">∵</span>
+      <span class="m red">φ</span>
+      <span class="op">·</span>
+      <span class="frac red"><span class="num">1</span><span class="den">φ</span></span>
+      <span class="op">=</span>
+      <span class="m grey">1</span>
+      <span class="m grey" style="padding:0 8px">and</span>
+      <span class="m grey">1 +</span>
+      <span class="frac red"><span class="num">1</span><span class="den">φ</span></span>
+      <span class="op">=</span>
+      <span class="m red">φ</span>
+      <span class="badge r">inertial — algebraic fixed point (closed form)</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ VIII. ALPHA-OMEGA DOMAIN ═══ -->
+  <div class="section">
+    <div class="section-label">VIII — Alpha · Omega Observer Domain</div>
+
+    <div class="eq obs-border">
+      <span class="m grey">Observer domain: [</span>
+      <span class="m obs">α<sub>Fermat</sub></span>
+      <span class="m grey"> , </span>
+      <span class="m obs">Ω<sub>Riemann</sub></span>
+      <span class="m grey">]</span>
+      <span class="op">=</span>
+      <span class="m grey">[</span>
+      <span class="m red">1/137</span>
+      <span class="m grey"> , </span>
+      <span class="m blue">0.5671…</span>
+      <span class="m grey">]</span>
+      <span class="badge w">Observer — singleton execution context</span>
+    </div>
+
+    <div class="eq obs-border">
+      <span class="m obs">Ω</span>
+      <span class="op">·</span>
+      <span class="m obs">e</span><span class="m obs"><sup>Ω</sup></span>
+      <span class="op">=</span>
+      <span class="m grey">1</span>
+      <span class="m grey" style="padding:0 14px">(Lambert W fixed point)</span>
+      <span class="m purple">d*</span>
+      <span class="op">=</span>
+      <span class="frac"><span class="num obs">Ω</span><span class="den blue">ln(10)</span></span>
+      <span class="op">≈</span>
+      <span class="m purple">0.246</span>
+      <span class="badge p">both — flat curvature locus</span>
+    </div>
+
+    <div class="eq purple-border">
+      <span class="m purple">d*</span>
+      <span class="op">·</span>
+      <span class="m blue">ln(10)</span>
+      <span class="op">≈</span>
+      <span class="m obs">Ω</span>
+      <span class="m grey" style="padding:0 10px">gap:</span>
+      <span class="m purple">0.00070</span>
+      <span class="m grey" style="padding:0 8px">←</span>
+      <span class="m grey">open derivation target</span>
+      <span class="badge p">both — correction term location</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ IX. UNCERTAINTY + TRAINING INEQUALITY ═══ -->
+  <div class="section">
+    <div class="section-label">IX — Uncertainty Principle · Training Inequality</div>
+
+    <div class="eq purple-border">
+      <span class="m red">ΔToken</span>
+      <span class="op">·</span>
+      <span class="m blue">ΔMeaning</span>
+      <span class="op">≥</span>
+      <span class="frac"><span class="num purple">ħ<sub style="font-size:.6rem">NN</sub></span><span class="den grey">2</span></span>
+      <span class="badge p">both — representation granularity bound</span>
+    </div>
+
+    <div class="eq blue-border">
+      <span class="m blue">𝒯<sub>GD</sub></span>
+      <span class="m grey" style="padding:0 8px">&gt;</span>
+      <span class="m purple">𝒯<sub>SMNNIP</sub></span>
+      <span class="m grey" style="padding:0 10px">for any non-trivial network</span>
+      <span class="m grey" style="padding:0 6px">←</span>
+      <span class="m grey">from Noether wasted-steps bound</span>
+      <span class="badge b">entropic — training time inequality</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ X. ALGEBRA TOWER ═══ -->
+  <div class="section">
+    <div class="section-label">X — Cayley-Dickson Tower · Dixon Theorem · U(1)×SU(2)×SU(3)</div>
+
+    <div class="eq purple-border">
+      <span class="m red">ℝ</span>
+      <span class="m grey" style="padding:0 6px">→</span>
+      <span class="m purple">ℂ</span>
+      <span class="m grey" style="padding:0 6px">→</span>
+      <span class="m purple">ℍ</span>
+      <span class="m grey" style="padding:0 6px">→</span>
+      <span class="m blue">𝕆</span>
+      <span class="m grey" style="padding:0 12px">↔</span>
+      <span class="m grey">trivial</span>
+      <span class="m grey" style="padding:0 6px">→</span>
+      <span class="m purple">U(1)</span>
+      <span class="m grey" style="padding:0 6px">→</span>
+      <span class="m purple">SU(2)</span>
+      <span class="m grey" style="padding:0 6px">→</span>
+      <span class="m blue">SU(3)</span>
+      <span class="badge p">both — Standard Model isomorphism (post-hoc)</span>
+    </div>
+
+    <div class="gloss">
+      <div class="gloss-item"><span class="m red" style="font-size:.9rem">ℝ</span><span>commutative · associative · ordered</span></div>
+      <div class="gloss-sep">|</div>
+      <div class="gloss-item"><span class="m purple" style="font-size:.9rem">ℂ</span><span>lose ordering</span></div>
+      <div class="gloss-sep">|</div>
+      <div class="gloss-item"><span class="m purple" style="font-size:.9rem">ℍ</span><span>lose commutativity</span></div>
+      <div class="gloss-sep">|</div>
+      <div class="gloss-item"><span class="m blue" style="font-size:.9rem">𝕆</span><span>lose associativity — G₂ / Fano plane</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ XI. HYDRORADIOLOGICAL CHROMATOGRAPHY ═══ -->
+  <div class="section">
+    <div class="section-label">XI — Hydroradiological Chromatography · G-A-V Sieve</div>
+
+    <div class="eq purple-border">
+      <span class="m purple">Life(Ratio)</span>
+      <span class="op">=</span>
+      <span class="frac"><span class="num red">π</span><span class="den purple">h</span></span>
+      <span class="op">⊗</span>
+      <span class="m grey">[5, 6]</span><span class="m grey"><sub>Lattice</sub></span>
+      <span class="m grey" style="padding:0 12px">G : A : V =</span>
+      <span class="m grey">60 : 30 : 10</span>
+      <span class="badge p">both — resonant frequencies of life</span>
+    </div>
+
+    <div class="gloss">
+      <div class="gloss-item"><span class="m red" style="font-size:.9rem">π</span><span>angular normalization — inertial geometry</span></div>
+      <div class="gloss-sep">|</div>
+      <div class="gloss-item"><span class="m purple" style="font-size:.9rem">h</span><span>Planck constant — the bridge</span></div>
+      <div class="gloss-sep">|</div>
+      <div class="gloss-item"><span class="m grey" style="font-size:.9rem">[5,6]</span><span>clathrate / water lattice geometry</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ XII. LANGLANDS + SEDENION ═══ -->
+  <div class="section">
+    <div class="section-label">XII — Langlands Program · Sedenion Blueprint</div>
+
+    <div class="eq blue-border">
+      <span class="m blue">𝕊</span>
+      <span class="op">=</span>
+      <span class="m grey">{a + be</span><span class="m grey"><sub>8</sub></span>
+      <span class="m grey"> | a, b ∈</span>
+      <span class="m blue"> 𝕆</span>
+      <span class="m grey">}</span>
+      <span class="m grey" style="padding:0 10px">∃ zero-divisors:</span>
+      <span class="m blue">z · w = 0</span>
+      <span class="m grey">, z≠0, w≠0</span>
+      <span class="badge b">entropic — mastery lock · autopilot state</span>
+    </div>
+
+    <div class="eq blue-border">
+      <span class="m blue">L-Function</span>
+      <span class="op">⟺</span>
+      <span class="m blue">Automorphic Form(𝕊)</span>
+      <span class="m grey" style="padding:0 10px">→</span>
+      <span class="m blue">∫</span>
+      <span class="m grey"> over retrieval</span>
+      <span class="m grey" style="padding:0 8px">not</span>
+      <span class="m blue">Σ</span>
+      <span class="badge b">entropic — integration supersedes summation</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══ GRADIENT FLOW SUMMARY ═══ -->
+  <div class="section">
+    <div class="section-label">XIII — The Gradient Flow · π → ħ → φ</div>
+
+    <div class="eq purple-border" style="flex-direction:column;align-items:flex-start;gap:6px">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0;line-height:2.4">
+        <span class="m grey">START: </span>
+        <span class="m red" style="padding:0 6px">r = 1</span>
+        <span class="m grey"> (J<sub>N</sub> boundary · π/2 rotation consumed)</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0;line-height:2.4">
+        <span class="m grey">STEP: </span>
+        <span class="m purple" style="padding:0 6px">ħ<sub>NN</sub></span>
+        <span class="m grey"> (minimum iteration granule)</span>
+        <span class="m grey" style="padding:0 6px">·</span>
+        <span class="m grey">step at φ-crossing =</span>
+        <span class="frac"><span class="num red">π</span><span class="den grey">2</span></span>
+        <span class="m purple">ħ<sub>NN</sub></span>
+        <span class="op">=</span>
+        <span class="frac red"><span class="num">H</span><span class="den grey">4</span></span>
+        <span class="m grey"> (exact)</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0;line-height:2.4">
+        <span class="m grey">END: </span>
+        <span class="m red" style="padding:0 6px">φ = (1+√5)/2</span>
+        <span class="m grey"> (recursion fixed point · φ² = φ+1 · φ·(1/φ) = 1)</span>
+        <span class="badge r">inertial — closed form derivation</span>
+      </div>
+    </div>
+
+    <div class="eq purple-border">
+      <span class="m grey">Open flag: </span>
+      <span class="m purple">d*</span>
+      <span class="op">↔</span>
+      <span class="m obs">Ω</span>
+      <span class="m grey"> connection from first principles</span>
+      <span class="m grey" style="padding:0 8px">·</span>
+      <span class="m purple">gap = 0.00070</span>
+      <span class="m grey"> · correction term derivation pending</span>
+      <span class="badge p">both — §7 open derivation</span>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <div style="margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted);line-height:1.8">
+    <strong style="color:var(--text)">Ainulindalë Conjecture of Information Propagation</strong>
+    via Reverse Cayley-Dickson · Yang-Mills · Berry-Keating · Noether · Fermat-Riemann<br>
+    Author: O Captain My Captain · Formalization: Claude (Anthropic) · April 2026<br>
+    Standard Model isomorphism U(1)×SU(2)×SU(3) discovered post-hoc · Claims regarding Berry-Keating and Riemann Hypothesis are conjecture pending rigorous derivation.
+  </div>
+
+</div>
+</body>
+</html>

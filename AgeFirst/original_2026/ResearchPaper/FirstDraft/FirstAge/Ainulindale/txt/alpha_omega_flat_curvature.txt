@@ -1,0 +1,41 @@
+THE ALPHA AND THE OMEGA OF FLAT CURVATURE
+The SMNNIP Hamiltonian — Where She Lives
+Preprint — April 2026
+
+ABSTRACT
+The SMNNIP Lagrangian admits a Legendre transform yielding H_NN. H_NN is a
+candidate Berry-Keating operator. Alpha = 1/137 and Omega = 0.5671 define the
+operator domain. All physical couplings lie in [alpha, Omega]. Flat curvature is
+the fixed-point locus of the Riemann-Fermat conformal transformation at d* ≈ 0.246.
+
+THE HAMILTONIAN
+pi_Psi = i Psi† Gamma^0
+H_NN = Psi†(-i Gamma^a D_a + Gamma_ij beta) Psi + (1/4)F_ltau F^ltau + |D_l beta|² + V(beta)
+
+ALPHA — THE FINE STRUCTURE OF THE DOMAIN
+alpha_NN = g²(l) / (4 pi · h_NN · v_prop)
+At alpha = 1/137: minimum coupling keeping rotation groups from interfering.
+Wyler formula from E8 geometry: alpha^(-1) ≈ 137.036 (5 significant figures)
+n-ball volumes: n=2: pi  n=5: 5.264 (peak)  n=8: 4.059 (E8, alpha on this slope)
+
+OMEGA — THE CONVERGENCE BOUNDARY
+Omega = 0.56714... Lambert W fixed point: Omega · e^Omega = 1
+Upper boundary of operator domain.
+d* × ln(10) = 0.246 × 2.30259 = 0.56644 ≈ Omega (gap: 0.00070 — needs derivation)
+
+THE EIGENVALUE CONJECTURE
+H_NN · phi_k = epsilon_k · phi_k
+Conjecture: T(epsilon_k) = 1/2 + i·t_k  (Riemann zeros)
+Fixed point of T = d*. Speed-of-light bound prevents T from being trivial.
+
+FLAT CURVATURE AND THE CRITICAL LINE
+Critical line Re(s)=1/2 is fixed under s->1-s. It is its own mirror.
+At d*: Gaussian curvature K=0. Tangency point of entropy and inertia curves.
+The refractive index of the metric at its fixed point.
+
+OPEN DERIVATIONS
+1. Explicit T from SMNNIP algebra structure
+2. d* from first principles (not numerical)
+3. Whether 0.00070 gap is correction term or exactly zero
+4. Bijection between epsilon_k and t_k spectra
+5. Cayley-Dickson maps as inter-series coupling constants of hydrogen spectrum

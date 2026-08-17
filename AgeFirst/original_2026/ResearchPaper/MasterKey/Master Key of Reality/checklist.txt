@@ -1,0 +1,127 @@
+@The Wandering God
+@-Michael Rendier
+@--The Master Key of Reality v2.0 ~'02
+@--Essays, Papers and Rants
+@--Poetry
+@--Collected Quotations
+@--Random Reading
+@--Vampyre
+@--Personal
+@-As a Matter of Mind
+Library Rendier
+-Research Notebook
+-Pee-Chee Folder
+--MIT
+---Science
+----Chemistry
+-----5.12 Organic Chemistry I
+-----5.04 Principles of Inorganic Chemistry II
+----Mathematics
+-----18.01 Single Variable Calculus
+----Physics
+-----8.01 Physics I: Classical Mechanics
+---Engineering
+----Mechanical Engineering
+-----2.000 How and Why Machines Work
+--Inbox
+-Atlantean Technologies
+--Ancient Lore
+---Ancient Civilizations
+----Egypt
+----Inca
+----Maya
+----Aztec
+----Olmec
+----Khmer
+---Ancient Underwater Cities
+----Antarctica
+----Bahamas
+----China
+----Cuba
+----Cyprus
+----Egypt
+----India
+----Japan
+----North Sea
+----Spain
+----Titicaca
+---Global Navigation
+--Ancient Technology
+---Ancient Electricity
+---Crystal Technology
+---Harmonic Resonance
+---Photonics
+--Misc Atlantis Research
+-Vast Repository
+--Metaphysics
+---Plants
+----A
+----B
+----C
+----D
+----E
+----F
+----G
+----H
+----I
+----J
+----K
+----L
+----M
+----N
+----O
+----P
+----Q
+----R
+----S
+----T
+----U
+----V
+----W
+----X
+----Y
+----Z
+---Conscious Evolution
+---Traditional Chinese Medicine
+---Divination
+---Recipes
+---Organic Chem
+--Movement
+---Parkour
+---Juggling
+---Martial Arts
+---Dancing
+--Linux
+---Scripting
+----php
+----Shell
+----Javascript
+----Perl
+---Kernel
+---Problems/Solutions
+--Nikola Tesla
+--Cryptology
+---Undeciphered Texts
+---The Code Book
+--Creations
+--Sailing
+--Travel Destinations
+--Stanford Encyclopedia of Philosophy
+-Grant Writing
+--PNWPA
+---Grant
+----Grants and Notes
+----Statistics
+----Working
+---Parkour Park
+---First Aid Page
+--PSCS
+---Grant
+----Grants and Notes
+----Statistics
+----Working
+--Network
+---Prospectives
+---Resources
+---Gov't Agencies
+----Documents

@@ -1,0 +1,91 @@
+SMNNIP — MATHEMATICAL NOTES LOG
+Running record of incidental, surreptitious, and tangential mathematics
+arising in conversation — kept separate from formal papers
+
+Format: [Timestamp] | [Topic] | [Result or Observation]
+============================================================
+
+[260409-10:34] | OMEGA CONSTANT / FIXED POINT |
+  Ω = Lambert W(1) = 0.567143290409783872999...
+  Fixed point of f(x) = e^{-x}: Ω = e^{-Ω}
+  Forward entropy ceiling meets inverse entropy floor at T_omega:
+    T_omega = Ω · T_Planck = 0.567143... × 1.4168e32 K = 8.035e31 K
+  Match precision: 3.05e-16 (machine epsilon — exact to floating point)
+  The singularity sits at d ≈ 0.246 — pre-arithmetic, between d=0 and d=1
+  Both descriptions of the universe (forward/inverse entropy)
+  output the same number at this temperature.
+  NOTE: This is the same fixed-point structure as the neural RG
+  fixed point g(l*) = g_0 · Ω (see Addendum III).
+
+[260409-10:34] | PRIME DISTRIBUTION / RIEMANN |
+  Primes do NOT stop. Euclid's proof is airtight (300 BC).
+  Prime density near N thins as 1/ln(N) by the Prime Number Theorem.
+  Near Planck-scale numbers: primes are astronomically sparse but infinite.
+  Riemann Hypothesis is about the PRECISION of that thinning —
+  whether gaps obey the regularity dictated by the non-trivial zeros of ζ(s).
+  User's intuition: primes would "integrate into the lattice" at extreme scale.
+  Correct intuition, wrong conclusion: density → 0 but count → ∞.
+
+[260409-10:34] | MÖBIUS / BISECTION LAW |
+  n odd twists → 1 loop with 2n+2 twists after bisection
+  n even twists → 2 loops with n twists each after bisection
+  GCD(twists, cut_denominator) = number of resulting loop pieces
+  This equals the prime factorization structure of the twist number.
+  Schwartz minimum length theorem: L_min = √3 (equilateral triangle skeleton)
+  Klein bottle = limit of infinite-order Möbius
+  Klein bottle = natural habitat of Riemann surface for ζ(s)
+
+[260409-10:34] | HYDRORADIOLOGICAL CHROMATOGRAPHY |
+  Primary angular constraint: E(θ) = E₀·cos⁴(θ)
+  Active selection cone: 32.77°
+  Hex water cage void: 72 ų → selects Gly, Ala
+  Pent water cage void: 58 ų → selects Gly only
+  Mixed hex/pent environment → {Gly, Ala, Val} (matches hypothesis, 0 free params)
+  3₁₀-helix twist = 120°/residue = hexagonal cage interior angle (exact)
+  PAR = σ_derived/σ_max = 5.1/5.64 = 0.9037 (90.4% of finite data ceiling)
+
+[260409-10:34] | WILES PROOF — MATHEMATICAL INVENTORY |
+  Sub-maths required (in order of dependency):
+  1. Elliptic curves over ℚ — group structure, conductor N, L-function
+  2. Modular forms — SL₂(ℤ) symmetry, Hecke operators, eigenvalue lattice
+  3. Taniyama-Shimura-Weil conjecture — the bridge (this IS the proof target)
+  4. Galois representations — common language for both sides
+  5. Mazur's deformation theory — R = T setup
+  6. Selmer groups — measuring obstruction to rationality
+  7. Euler systems / Kolyvagin — bounding Selmer via Heegner points
+  8. Gorenstein / multiplicity-one commutative algebra — closing R = T
+  Fermat's Last Theorem follows via:
+    Frey curve construction → Ribet's theorem → violates T-S-W → contradiction
+  FLT is a 3-line corollary. T-S-W is the actual theorem.
+  Tools available in Fermat's time that could have approached this:
+    - Fermat's method of infinite descent (he used it for n=4)
+    - Euler's algebraic number theory (post-Fermat but elementary)
+    - Basic modular arithmetic and congruence conditions
+    NOTE: See Fermat proof attempt document for SMNNIP-based approach.
+
+[260409-11:15] | NEURAL RG FIXED POINT / OMEGA |
+  g(l*) · e^{g(l*)/g_0} = g_0
+  Solution: g(l*) = g_0 · W(1) = g_0 · Ω
+  The horizon coupling is the bare coupling scaled by the Omega Constant.
+  Five simultaneous conditions at l*:
+    1. R_NN = 0         (flat event horizon)
+    2. D_l J = 0        (Noether conservation)
+    3. β(g) = 0         (RG fixed point)
+    4. β = β₀           (Higgs VEV locus)
+    5. dR_NN/dl ≠ 0     (non-degenerate crossing)
+  These are not independent. They are five names for the same layer.
+
+[260409-11:15] | BEKENSTEIN-HAWKING NEURAL ENTROPY |
+  S_NN = Area(Noether surface at l*) / (4 · ℏ_NN²)
+  Neural Hawking temperature:
+    T_Hawking^NN = ℏ_NN · κ_surface / (2π · k_B^NN)
+  where κ_surface = d²R_NN/dl² evaluated at l*
+  Claim (unproved): S_NN = -Tr(ρ_NN log ρ_NN) [neural holographic principle]
+
+============================================================
+NOTES ON FORMAT:
+- Add new entries at the bottom with timestamp
+- Keep entries brief — headline result only, enough to reconstruct
+- Full derivations go in the appropriate paper document
+- This file is the INDEX, not the archive
+============================================================

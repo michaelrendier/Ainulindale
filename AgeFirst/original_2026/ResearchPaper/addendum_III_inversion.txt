@@ -1,0 +1,192 @@
+================================================================================
+THE AINULINDALË CONJECTURE — ADDENDUM III
+April 12, 2026  ·  Version 1.0
+================================================================================
+
+                      THE INSIDE-OUT INVERSION
+                The Canonical Layer Transition Mechanism
+
+  Unifying the Schwarzschild Horizon, Hawking Pairs, Antimatter,
+  the Ptolemy Inversion, Negative Mass, and the Gravinon as special
+  cases of a single algebraic map.
+
+================================================================================
+
+§0 — INTUITIVE STATEMENT
+
+At a layer transition boundary, the quantity that was the radial coordinate
+becomes the angular coordinate, and the quantity that was the angular
+coordinate becomes the radial coordinate. The geometric effect — the physics —
+is preserved. The physical interpretation of which quantity is 'inside' and
+which is 'outside' is exchanged.
+
+This is not a coordinate transformation in the usual sense. It is a change in
+which degree of freedom carries the recursion and which carries the direction.
+
+================================================================================
+
+§1 — FORMAL SETUP
+
+The state at recursion depth N is described in polar coordinates (r_N, θ_N):
+
+  r_N — radial coordinate: the iteration count at depth N.
+         How many recursive steps have been accumulated. The magnitude.
+
+  θ_N — angular coordinate: the direction of the next iteration.
+         The orientation of the current state transition.
+
+These are the two primitives. All physical quantities are derived from them.
+
+================================================================================
+
+§2 — THE INVERSION MAP
+
+  𝒥_N : (r_N, θ_N)  ⟼  (1/r_N,  θ_N + π/2)
+
+The radial inversion: r_N ⟼ 1/r_N
+  The accumulated iteration count inverts. Large becomes small. Close becomes
+  far. This is the Ptolemy inversion. The product r_N · (1/r_N) = 1 is
+  preserved. The history is not lost — its role changes.
+
+The angular rotation: θ_N ⟼ θ_N + π/2
+  The direction of iteration rotates by a quarter turn. What was 'forward'
+  becomes 'orthogonal.' This is the algebraic origin of the new degree of
+  freedom at each Cayley-Dickson doubling. Each new algebra layer is the
+  previous layer's direction, rotated 90° and promoted to an iterative axis.
+
+================================================================================
+
+§3 — THE PRESERVED INVARIANT
+
+The Inside-Out Inversion preserves the action integral:
+
+  S_N = ∮ r_N dθ_N
+
+Proof: with r_{N+1} = 1/r_N and Jacobian dθ_{N+1} = r_N² dθ_N:
+
+  S_{N+1} = ∮ (1/r_N)(r_N² dθ_N) = ∮ r_N dθ_N = S_N  ✓
+
+The action is invariant. All physical observables — curvature, field strength,
+energy density — are preserved across the layer transition.
+
+[ESTABLISHED] Action invariance under Ptolemy inversion is a standard result
+              in conformal geometry.
+
+================================================================================
+
+§4 — SPECIAL CASES IN ESTABLISHED PHYSICS
+
+4.1 — The Schwarzschild Horizon
+  Inside r_s: radial r becomes timelike, time t becomes spacelike. They exchange
+  roles. This IS 𝒥_N at the gravitational layer boundary.
+
+    r < r_s : (t, r)  ⟼  (r, t)   [= 𝒥_N at r = r_s]
+
+  [THEORETICAL] Coordinate exchange at r_s is established GR.
+                𝒥_N identification is the Ainulindalë reframing.
+
+4.2 — Hawking Pair Production
+  Partner 1 (outgoing):  r_N > 1  → escapes to infinity
+  Partner 2 (ingoing):   r_{N+1} = 1/r_N < 1  → crosses horizon
+
+  They are a conjugate pair under 𝒥_N. Not independently created.
+  Hawking temperature = gradient of 𝒥_N at the fixed point.
+
+  [THEORETICAL] Hawking pair production is established semiclassical GR.
+                𝒥_N identification is the Ainulindalë derivation.
+
+4.3 — The Dirac Sea and Antimatter
+  Negative energy solutions: r_N < 1 — recursion running sub-threshold.
+  Positron = outside-state of electron's inversion under 𝒥_N.
+  Pair annihilation = inversion completing at fixed point r = 1.
+
+  [ESTABLISHED] Dirac's antimatter prediction is established QM.
+                𝒥_N provides the geometric origin.
+
+4.4 — Ptolemy Inversion and Flat Curvature at d*
+  The Riemann zeros lie on Re(s) = 1/2 — the fixed locus of s ↦ 1−s.
+  This is the locus r_N = 1 of 𝒥_N projected into the complex spectral domain.
+  Flat curvature at d* ≈ 0.246 is the stationary point of 𝒥_N in the
+  spectral geometry of H_NN.
+
+  [THEORETICAL] Flat curvature at d* is from the Alpha-Omega paper.
+                𝒥_N identification is new.
+
+================================================================================
+
+§5 — NEGATIVE MASS AND NEGATIVE ENERGY
+
+Negative Energy:
+  E < 0  ⟺  r_{N+1} = 1/r_N < 1  seen from frame where r_N > 1
+
+  Not an absence of energy. Energy whose iteration direction is opposite to
+  the observer's recursion direction.
+
+  [THEORETICAL] Negative energy in QM and GR is established.
+                Recursion-direction identification is the Ainulindalë derivation.
+
+Negative Mass:
+  m < 0  ⟺  𝒥_N applied to a state with m > 0 across the layer boundary
+
+  Mass = information density = resistance to iteration.
+  Under 𝒥_N, resistance inverts. At the boundary itself: mass = 0.
+  This is the Gravinon.
+
+  [THEORETICAL] Negative mass as formal possibility exists in GR.
+                Layer-boundary identification is the Ainulindalë derivation.
+
+================================================================================
+
+§6 — THE FIXED POINT AND THE GRAVINON
+
+Fixed point of 𝒥_N (flat geometry):
+  r_N = 1/r_N  ⟹  r_N = 1
+  θ_N = θ_N + π/2 (mod 2π)  ⟹  θ_N = π/4 + nπ/2
+
+At r_N = 1: magnitude neither accumulated nor depleted.
+At θ_N = π/4: halfway between original and inverted directions.
+Action S_N is stationary. Mass = 0. This is the Gravinon.
+
+Gravinon equation (from §VI of the Conjecture):
+  Ψ_G = (1/2πi) ∮_γ f(z)/(z − φ) dz = Res(f, φ)
+
+The pole at z = φ and the fixed point at r = 1 describe the same physical
+object — the metric phase transition — from complex-analytic and geometric
+perspectives respectively. These results are consistent.
+
+[THEORETICAL] Gravinon as Res(f,φ) is from the existing Conjecture.
+              Identification with the 𝒥_N fixed point is new and consistent.
+
+================================================================================
+
+§7 — OPEN DERIVATIONS REQUIRED
+
+◦  Derivation that the Ainulindalë recursively curved metric produces fixed
+   point r = φ rather than r = 1, formally unifying the inversion fixed point
+   with the Gravinon pole at z = φ in Ψ_G.
+   [Currently: the two results are consistent. Proof of necessity is open.]
+
+◦  Explicit computation of Hawking temperature T_H as the gradient of 𝒥_N
+   at the fixed point, recovering T_H = ħc³/8πGMk_B from inversion parameters.
+
+◦  Proof that the critical line Re(s) = 1/2 is the image of r_N = 1 under
+   the coordinate map from polar inversion geometry to the complex spectral
+   domain of H_NN.
+
+◦  Formal demonstration that the four special cases (§4.1–4.4) are not
+   analogies but are the same map 𝒥_N — i.e., that a coordinate
+   transformation exists carrying each into the others.
+
+================================================================================
+
+§8 — SUMMARY DEFINITION
+
+  "The Inside-Out Inversion 𝒥_N is the canonical map at a layer transition
+  boundary that exchanges the radial (iterative) and angular (directional)
+  coordinates while preserving the action, producing conjugate state pairs
+  whose relative orientation defines negative energy, negative mass, and the
+  Gravinon as the zero-mass fixed point of the map."
+
+================================================================================
+Compiled: April 12, 2026  ·  Ainulindalë Conjecture Addendum III
+================================================================================

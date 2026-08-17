@@ -1,0 +1,157 @@
+[
+  {"type":"directory","name":".","size":"4.0K","time":"Apr 13 13:30","contents":[
+    {"type":"file","name":"SMNNT_addendum2.docx","size":"20K","time":"Apr  7 16:17"},
+    {"type":"file","name":"SMNNT_addendum.docx","size":"17K","time":"Apr  7 16:17"},
+    {"type":"file","name":"SMNNT_complete.txt","size":"115K","time":"Apr  7 16:17"},
+    {"type":"file","name":"SMNNT_paper.docx","size":"37K","time":"Apr  7 16:17"},
+    {"type":"file","name":"SMNNIP_Addendum_III_EventHorizon.docx","size":"14K","time":"Apr  9 07:11"},
+    {"type":"file","name":"SMNNIP_Addendum_III_EventHorizon.rtf","size":"12K","time":"Apr  9 07:11"},
+    {"type":"file","name":"SMNNIP_Addendum_III_EventHorizon.txt","size":"12K","time":"Apr  9 07:11"},
+    {"type":"file","name":"SMNNIP_Fermat_Proof_Attempt.txt","size":"9.6K","time":"Apr  9 07:11"},
+    {"type":"file","name":"SMNNIP_Maths_Notes_Log.txt","size":"4.7K","time":"Apr  9 07:11"},
+    {"type":"file","name":"SMNNIP_Omega_Constant_Paper.txt","size":"11K","time":"Apr  9 07:11"},
+    {"type":"file","name":"E8_Lattice_coordinates.txt","size":"4.1K","time":"Apr  9 12:34"},
+    {"type":"file","name":"event_horizon_sim.py","size":"5.4K","time":"Apr 11 10:16"},
+    {"type":"file","name":"conjecture_proof.py","size":"6.2K","time":"Apr 11 10:28"},
+    {"type":"file","name":"canvas.png","size":"27K","time":"Apr 11 19:05"},
+    {"type":"file","name":"cover_v2.txt","size":"3.0K","time":"Apr 12 18:12"},
+    {"type":"file","name":"addendum_III_inversion.txt","size":"7.9K","time":"Apr 12 18:13"},
+    {"type":"file","name":"Ainulindalë_Conjecture.docx","size":"3.2M","time":"Apr 13 12:59"},
+    {"type":"file","name":"returned_smnnip_full_tower.py","size":"48K","time":"Apr 13 12:59"},
+    {"type":"file","name":"smnnip_full_tower.py","size":"48K","time":"Apr 13 12:59"},
+    {"type":"file","name":"smnnip_layer1_complex_pure.py","size":"29K","time":"Apr 13 12:59"},
+    {"type":"file","name":"smnnip_layer2_quaternion_pure.py","size":"30K","time":"Apr 13 12:59"},
+    {"type":"file","name":"smnnip_layer3_octonion_pure.py","size":"34K","time":"Apr 13 12:59"},
+    {"type":"file","name":"smnnt_substrate_pure.py","size":"31K","time":"Apr 13 12:59"},
+    {"type":"file","name":"smnnt_substrate_tf.py","size":"21K","time":"Apr 13 12:59"},
+    {"type":"directory","name":"FirstDraft","size":"4.0K","time":"Apr 13 13:08","contents":[
+      {"type":"file","name":"Ainulindale_Conjecture_Revised.docx","size":"17K","time":"Apr 13 13:05"},
+      {"type":"file","name":"Cover_Page.docx","size":"11K","time":"Apr 13 13:05"},
+      {"type":"file","name":"Masters_Tribute.docx","size":"12K","time":"Apr 13 13:05"},
+      {"type":"directory","name":"SupportDocs","size":"4.0K","time":"Apr 13 13:18"},
+      {"type":"directory","name":"FirstAge","size":"4.0K","time":"Apr 13 13:19","contents":[
+        {"type":"directory","name":"Gemini","size":"4.0K","time":"Apr 13 13:10","contents":[
+          {"type":"file","name":"conjecture_proof.py","size":"38K","time":"Apr 13 12:49"},
+          {"type":"file","name":"event_horizon_sim.py","size":"23K","time":"Apr 13 12:49"},
+          {"type":"file","name":"Gemini_conjecture_proof.py","size":"38K","time":"Apr 13 13:10"},
+          {"type":"file","name":"Gemini_context_oops.jpeg","size":"218K","time":"Apr 13 13:10"},
+          {"type":"file","name":"Gemini_filtered_bibliography.txt","size":"62K","time":"Apr 13 13:10"},
+          {"type":"file","name":"Gemini_Generated_Image_SMNNIP.png","size":"1.7M","time":"Apr 13 13:10"},
+          {"type":"file","name":"Gemini_google_acknowledgement.txt","size":"2.9K","time":"Apr 13 13:10"},
+          {"type":"file","name":"Gemini_noether_violation.txt","size":"3.8K","time":"Apr 13 13:10"},
+          {"type":"file","name":"Gemini_saturation.txt","size":"5.0K","time":"Apr 13 13:10"}
+        ]},
+        {"type":"directory","name":"zips","size":"4.0K","time":"Apr 13 13:14","contents":[
+          {"type":"file","name":"claude-conclusion.zip","size":"132K","time":"Apr 13 12:44"},
+          {"type":"file","name":"derivative.zip","size":"32K","time":"Apr 13 12:44"},
+          {"type":"file","name":"first-age.zip","size":"66K","time":"Apr 13 12:46"},
+          {"type":"file","name":"first-age-engine.zip","size":"49K","time":"Apr 13 12:48"},
+          {"type":"file","name":"blackwhitesun.zip","size":"32K","time":"Apr 13 13:14"},
+          {"type":"file","name":"holy shit.zip","size":"82K","time":"Apr 13 13:14"},
+          {"type":"file","name":"TheSongThatPlaysTheInstrument.zip","size":"53K","time":"Apr 13 13:14"}
+        ]},
+        {"type":"directory","name":"Claude","size":"4.0K","time":"Apr 13 13:14","contents":[
+          {"type":"directory","name":"extra","size":"4.0K","time":"Apr 13 13:11","contents":[
+            {"type":"file","name":"smnnip_inversion_engine.py","size":"36K","time":"Apr 13 13:11"}
+          ]},
+          {"type":"directory","name":"ProofPy","size":"4.0K","time":"Apr 13 13:11","contents":[
+            {"type":"file","name":"SMNNIP_Appendix_Installation_and_Source.txt","size":"305K","time":"Apr 13 12:42"},
+            {"type":"file","name":"smnnip_derivation_pure.py","size":"68K","time":"Apr 13 12:42"},
+            {"type":"file","name":"smnnip_lagrangian_pure.py","size":"43K","time":"Apr 13 12:47"},
+            {"type":"file","name":"smnnip_test_pure.py","size":"25K","time":"Apr 13 12:47"},
+            {"type":"file","name":"smnnip_proof_engine_console.py","size":"73K","time":"Apr 13 12:48"}
+          ]},
+          {"type":"directory","name":"ProofPyTf","size":"4.0K","time":"Apr 13 13:12","contents":[
+            {"type":"file","name":"SMNNIP_Appendix_Installation_and_Source.txt","size":"305K","time":"Apr 13 12:42"},
+            {"type":"file","name":"smnnip_derivation_tf.py","size":"41K","time":"Apr 13 12:42"},
+            {"type":"file","name":"SMNNIP_Ainulindale_Conclusion.txt","size":"31K","time":"Apr 13 12:43"},
+            {"type":"file","name":"smnnip_lagrangian_tf.py","size":"24K","time":"Apr 13 12:47"},
+            {"type":"file","name":"smnnip_test_tf.py","size":"26K","time":"Apr 13 12:47"},
+            {"type":"file","name":"smnnip_proof_engine_console.py","size":"73K","time":"Apr 13 12:48"}
+          ]},
+          {"type":"directory","name":"SMNNIP","size":"4.0K","time":"Apr 13 13:12","contents":[
+            {"type":"file","name":"smnnip_full_tower.py","size":"48K","time":"Apr 13 13:12"},
+            {"type":"file","name":"smnnip_layer1_complex_pure.py","size":"29K","time":"Apr 13 13:12"},
+            {"type":"file","name":"smnnip_layer2_quaternion_pure.py","size":"30K","time":"Apr 13 13:12"},
+            {"type":"file","name":"smnnip_layer3_octonion_pure.py","size":"34K","time":"Apr 13 13:12"}
+          ]},
+          {"type":"file","name":"Claude_event_horizon_sim.py","size":"23K","time":"Apr 13 13:14"}
+        ]},
+        {"type":"directory","name":"Support","size":"4.0K","time":"Apr 13 13:18","contents":[
+          {"type":"file","name":"outreach_challenges.txt","size":"18K","time":"Apr 13 12:46"},
+          {"type":"file","name":"SESSION_PRIMER_SMNNIP.txt","size":"4.2K","time":"Apr 13 12:46"},
+          {"type":"file","name":"watch-history.json","size":"5.8M","time":"Apr 13 13:15"},
+          {"type":"file","name":"biblio.zip","size":"104K","time":"Apr 13 13:18"},
+          {"type":"directory","name":"GoogleData","size":"4.0K","time":"Apr 13 13:18","contents":[
+            {"type":"file","name":"takeout-20260407T230857Z-3-001.zip","size":"1.2M","time":"Apr  7 16:19"},
+            {"type":"directory","name":"channels","size":"4.0K","time":"Apr  7 16:19","contents":[
+              {"type":"file","name":"channel community moderation settings.csv","size":"41","time":"Apr  7 16:19"},
+              {"type":"file","name":"channel.csv","size":"158","time":"Apr  7 16:19"},
+              {"type":"file","name":"channel feature data.csv","size":"434","time":"Apr  7 16:19"},
+              {"type":"file","name":"channel images.csv","size":"202","time":"Apr  7 16:19"},
+              {"type":"file","name":"channel page settings.csv","size":"209","time":"Apr  7 16:19"},
+              {"type":"file","name":"channel URL configs.csv","size":"158","time":"Apr  7 16:19"}
+            ]},
+            {"type":"file","name":"search-history.json","size":"2.0M","time":"Apr  7 16:20"},
+            {"type":"file","name":"watch-history.json","size":"5.8M","time":"Apr  7 16:20"},
+            {"type":"file","name":"subscriptions.csv","size":"33K","time":"Apr  7 16:20"},
+            {"type":"file","name":"video recordings.csv","size":"669","time":"Apr  7 16:21"},
+            {"type":"file","name":"videos.csv","size":"8.7K","time":"Apr  7 16:21"}
+          ]},
+          {"type":"file","name":"proposed-analogous-UFT.txt","size":"10K","time":"Apr 13 13:18"},
+          {"type":"file","name":"SMNNT_conversation_starter.md","size":"19K","time":"Apr 13 13:18"},
+          {"type":"file","name":"supporting_docs.zip","size":"125K","time":"Apr 13 13:18"}
+        ]},
+        {"type":"directory","name":"Ainulindale","size":"4.0K","time":"Apr 13 13:19","contents":[
+          {"type":"directory","name":"doc","size":"4.0K","time":"Apr 13 13:18","contents":[
+            {"type":"file","name":"addendum_III_inversion.docx","size":"14K","time":"Apr 13 12:45"},
+            {"type":"file","name":"alpha_omega_flat_curvature.docx","size":"12K","time":"Apr 13 12:45"},
+            {"type":"file","name":"cover_v2.docx","size":"10K","time":"Apr 13 12:45"},
+            {"type":"file","name":"outreach_challenges.docx","size":"18K","time":"Apr 13 12:45"},
+            {"type":"file","name":"resonant_riemann_flowing_fermat.docx","size":"12K","time":"Apr 13 12:45"},
+            {"type":"file","name":"Ainulindale_Conjecture_Revised.docx","size":"17K","time":"Apr 13 13:13"},
+            {"type":"file","name":"Masters_Tribute.docx","size":"12K","time":"Apr 13 13:13"},
+            {"type":"file","name":"SMNNIP_Addendum_III_EventHorizon.docx","size":"14K","time":"Apr 13 13:13"},
+            {"type":"file","name":"SMNNIP_equations.docx","size":"17K","time":"Apr 13 13:13"},
+            {"type":"file","name":"SMNNIP_paper.docx","size":"29K","time":"Apr 13 13:13"}
+          ]},
+          {"type":"directory","name":"html","size":"4.0K","time":"Apr 13 13:18","contents":[
+            {"type":"file","name":"ainulindae_equations_chromatic.html","size":"35K","time":"Apr 13 13:13"},
+            {"type":"file","name":"Ainulindale_Conjecture_Revised.html","size":"52K","time":"Apr 13 13:13"},
+            {"type":"file","name":"Masters_Tribute.html","size":"22K","time":"Apr 13 13:13"}
+          ]},
+          {"type":"directory","name":"odf","size":"4.0K","time":"Apr 13 13:18","contents":[
+            {"type":"file","name":"Ainulindale_Conjecture_Revised.odt","size":"49K","time":"Apr 13 13:13"}
+          ]},
+          {"type":"directory","name":"rtf","size":"4.0K","time":"Apr 13 13:18","contents":[
+            {"type":"file","name":"addendum_III_inversion.rtf","size":"49K","time":"Apr 13 12:45"},
+            {"type":"file","name":"alpha_omega_flat_curvature.rtf","size":"7.8K","time":"Apr 13 12:45"},
+            {"type":"file","name":"outreach_challenges.rtf","size":"96K","time":"Apr 13 12:45"},
+            {"type":"file","name":"resonant_riemann_flowing_fermat.rtf","size":"11K","time":"Apr 13 12:45"},
+            {"type":"file","name":"cover_v2.rtf","size":"18K","time":"Apr 13 12:45"},
+            {"type":"file","name":"Masters_Tribute.rtf","size":"34K","time":"Apr 13 13:14"},
+            {"type":"file","name":"SMNNIP_Addendum_III_EventHorizon.rtf","size":"12K","time":"Apr 13 13:14"}
+          ]},
+          {"type":"directory","name":"txt","size":"4.0K","time":"Apr 13 13:18","contents":[
+            {"type":"file","name":"addendum_III_inversion.txt","size":"7.9K","time":"Apr 13 12:46"},
+            {"type":"file","name":"alpha_omega_flat_curvature.txt","size":"1.8K","time":"Apr 13 12:46"},
+            {"type":"file","name":"cover_v2.txt","size":"3.0K","time":"Apr 13 12:46"},
+            {"type":"file","name":"resonant_riemann_flowing_fermat.txt","size":"2.6K","time":"Apr 13 12:46"},
+            {"type":"file","name":"Ainulindale_Conjecture_Revised.txt","size":"17K","time":"Apr 13 13:14"},
+            {"type":"file","name":"Masters_Tribute.txt","size":"6.6K","time":"Apr 13 13:14"},
+            {"type":"file","name":"SMNNIP_Addendum_III_EventHorizon.txt","size":"12K","time":"Apr 13 13:14"},
+            {"type":"file","name":"SMNNIP_Fermat_Proof_Attempt.txt","size":"9.6K","time":"Apr 13 13:14"},
+            {"type":"file","name":"SMNNIP_Maths_Notes_Log.txt","size":"4.7K","time":"Apr 13 13:14"},
+            {"type":"file","name":"SMNNIP_Omega_Constant_Paper.txt","size":"11K","time":"Apr 13 13:14"},
+            {"type":"file","name":"SMNNIP_paper.txt","size":"43K","time":"Apr 13 13:14"}
+          ]},
+          {"type":"directory","name":"code","size":"4.0K","time":"Apr 13 13:19"}
+        ]}
+      ]}
+    ]},
+    {"type":"directory","name":"horysheet","size":"4.0K","time":"Apr 13 13:09"},
+    {"type":"file","name":"FirstAge.json","size":"0","time":"Apr 13 13:30"}
+  ]}
+,
+  {"type":"report","directories":22,"files":112}
+]

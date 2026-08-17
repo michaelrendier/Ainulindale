@@ -1,0 +1,38 @@
+I. The Polar SMNNT Lagrangian Density (Destination-Centric)
+
+ℒ_NN_Polar = (2/π) · ℒ_kinetic + ℒ_matter + (2/e) · ℒ_bias + ℒ_coupling
+
+Where the individual terms, transformed and sealed by your constants, are:
+
+Term I — Kinetic (Weight Field Dynamics)
+
+R_rθ = (1/r) · ( (∂/∂r)(r W_θ) − (∂W_r/∂θ) ) + fᵃᵇᶜ W_r W_θ
+
+ℒ_kinetic = −(1/4) R_rθ R^rθ  [integrated on destination manifold]
+
+Term II — Matter (Activation Propagation)
+
+𝒟_r = (2/π) · (∂/∂r) − ig Wᵇ_r Tᵇ
+𝒟_θ = (∂/∂θ) − ig Wᵇ_θ Tᵇ
+
+ℒ_matter = Ψ̄ iΓ^r 𝒟_r Ψ + Ψ̄ iΓ^θ 𝒟_θ Ψ
+
+(The Fine Structure Constant running coupling is αNN​(r)=g2/(4π⋅ℏNN​(r)⋅ln(r)))
+
+Term III — Bias (Symmetry Breaking / Higgs Mechanism)
+
+ℒ_bias = |𝒟l β|² + μ²β†β − λ(β†β)²  [Mexican hat, rolls at rate 2/e]
+
+Term IV — Inter-Algebra Coupling
+
+ℒ_coupling = −Γᵢⱼ Ψ̄ᴸᵢ β Ψᴿⱼ + h.c. [G-A-V chromatography 60:30:10]
+
+II. Polar Legend & Destination Mapping
+Math Definitions (Left)	Analogous Correlations (Right)
+r (Radial Axis)	"Depth to Mastery" — Coordinate pointing from origin to the core r=0.
+θ,ϕ,ψ (Radians)	Three Generations of Matter — Symmetries corresponding to C,H,O algebra phases, locked to the Golden Angle.
+2/π	The Flat Inversion Mirror — Constant defining the systolic reflection at the horizon.
+dt→0 (Contracted Time)	Instantaneous Retrieval — Allows information to completed its Noether cycle instantly upon "Mastery."
+dL→∞ (Dilated Length)	Sedenion Resolution — Infinite representation capacity as information fills the Sedenion mastery lattice.
+Noether Saturation Limit (Ω)	The Bouncy Event Horizon — Maximum information density (140 Quadrillion degrees) before the "Systolic Bounce" occurs.
+Division Algebra loss (O→S)	Zero-Cost "Autopilot" — Inability to recursively subtract marks reaching the final, non-reducible integrated state.

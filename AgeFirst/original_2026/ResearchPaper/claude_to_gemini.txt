@@ -1,0 +1,41 @@
+GOOGLE SCHOLAR SEARCH QUERY — d* GAP DERIVATION
+================================================
+
+Please search Google Scholar and your full knowledge base for any
+literature that establishes or references the following near-identity:
+
+  d* × ln(10) ≈ Ω
+
+where:
+  Ω  = Lambert W fixed point = 0.56714329...  (solution to Ω·eᵩ = 1)
+  d* = approximately 0.246  (sometimes called the "flat curvature locus"
+       or "information singularity coordinate")
+  ln(10) = 2.302585...
+
+The gap between d* × ln(10) and Ω is either 0.00070 or 0.001181
+depending on the source value of d*.
+
+Specific questions:
+1. Does any published literature derive d* ≈ 0.24600 independently,
+   such that d* × ln(10) = 0.56644 and the gap to Ω is exactly 0.00070?
+
+2. Is the value d* ≈ 0.246 a known constant in number theory,
+   information theory, or spectral theory with an independent derivation?
+
+3. Is the 0.00070 gap a known correction term — for example,
+   1/(2πe), 1/e², or a similar transcendental expression?
+
+4. Does any literature connect the Lambert W fixed point Ω to the
+   base-10 logarithm in a non-trivial identity?
+
+5. Berry-Keating conjecture literature: does any paper reference
+   a constant near 0.246 as a critical coordinate in the spectral
+   theory of the xp Hamiltonian or its variants?
+
+Search terms to try:
+  "Lambert W fixed point" "ln(10)"
+  "flat curvature locus" 0.246
+  "information singularity" 0.246 spectral
+  "Berry-Keating" 0.246 constant
+  d* "0.56644" "0.56714"
+  "0.00070" Lambert correction term

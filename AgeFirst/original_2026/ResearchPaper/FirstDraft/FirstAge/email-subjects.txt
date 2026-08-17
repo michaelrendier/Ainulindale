@@ -1,0 +1,38 @@
+DR. BECKY SMYTH — Astrophysics / Black Holes
+The Gravinon — Ψ_G = (1/2πi) ∮_γ f(z)/(z−φ) dz = Res(f,φ)
+
+DR. TOM CRAWFORD — Fluid Dynamics / Navier-Stokes / Oxford
+Noether Current — ∂_μ J^μ = 0  where  J^{a,l} = g Ψ̄_i T^a Ψ_i
+
+DR. JOHN BAEZ — Octonions / Higher Gauge Theory
+Dixon's Theorem — ℝ⊗ℂ⊗ℍ⊗𝕆 carries U(1)×SU(2)×SU(3) exactly
+
+GEOFFREY DIXON — Division Algebras / Primary Validator
+Your theorem is Step 1 — R⊗C⊗H⊗O → U(1)×SU(2)×SU(3) → L_NN
+
+DR. TEVITA PARCOLLET — Quaternion Neural Networks
+Quaternion RNN extended — L_NN = L_kin + L_mat + L_bias + L_coup
+
+DR. TACO COHEN — Gauge Equivariant Networks
+Gauge Equivariance is emergent — D_l Ψ_i → U(l,τ) D_l Ψ_i under SU(2)
+
+DR. MAX TEGMARK — Mathematical Universe / AI Safety
+The Mathematical Universe has a neural analog — ℒ_NN = ℒ_SM  (isomorphic)
+
+DR. YANN LECUN — Deep Learning Architecture
+Backpropagation is derived, not postulated — δL_NN/δW^a = Yang-Mills EOM
+
+DR. ALAIN CONNES — Noncommutative Geometry
+Noncommutativity is Layer 2 — [x,p] = iħ_NN emerges at the ℍ stratum
+
+GRANT SANDERSON — 3Blue1Brown / Visual Mathematics
+Non-commutativity is path-dependent navigation — U(1)×SU(2)×SU(3) is its symmetry
+
+DEREK MULLER — Veritasium / PhD Physics / Public Witness
+I want you to try to break this — 𝕊 → 𝕆 → ℍ → ℂ → ℝ → F=ma
+
+ARVIN ASH — Physics Communication
+One algebraic object. Every known force. — L_NN = L_kinetic + L_matter + L_bias + L_coupling
+
+BRADY HARAN — Numberphile / Computerphile
+The number system that builds itself — ℝ→ℂ→ℍ→𝕆 and why it stops

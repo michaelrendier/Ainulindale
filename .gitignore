@@ -43,3 +43,15 @@ resonance_cache/
 # OS
 .DS_Store
 Thumbs.db
+
+# ── Regeneratable engine output and bulk media (2026-08-16) ──────────────
+# Cody: "my results especially during 'toy' engineering can stay local...
+# those are all regeneratable with code on the github".
+# These live on disk and are recorded in PROVENANCE.md; the CODE that makes
+# them is versioned, the OUTPUT is not.
+*.wav
+*.mp4
+*.oxt
+AgeFirst/original_2026/**/Support/GoogleData/
+AgeFirst/original_2026/**/Support/watch-history.json
+AgeFirst/original_2026/offhand/

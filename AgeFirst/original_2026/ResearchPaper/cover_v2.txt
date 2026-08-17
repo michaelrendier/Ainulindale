@@ -1,0 +1,67 @@
+================================================================================
+PREPRINT  ·  OPEN COLLABORATION INVITED  ·  APRIL 2026
+================================================================================
+
+
+                      THE AINULINDALË CONJECTURE
+
+          A Unified Geometric Framework for Information Propagation
+         via Reverse Cayley-Dickson, Yang-Mills, and the Recursion Factor
+
+                        (The OMG?WTF! Conjecture)
+
+
+================================================================================
+
+  L_NN = (2/π) ∮ [ L_kin + L_mat + (1/φ)L_bias + L_coup ] dr dθ
+
+  Observer singleton:  α = 1/137.036  ·  Ω = e^π ≈ 23.1407  ·  φ = 1.6180…
+
+================================================================================
+
+  CORE CLAIMS
+
+  Layer = Recursion Factor         |  The observer is not a variable.
+                                   |  It is the execution context.
+  ─────────────────────────────────┼──────────────────────────────────────────
+  Time is the primitive.           |  Hidden variables are coordinate
+  Angle is direction.              |  definitions — always present,
+  Distance is derived.             |  never named.
+  ─────────────────────────────────┼──────────────────────────────────────────
+  The Sedenion reduces to every    |  Bell's λ assumed frame-independence.
+  known equation by elementary     |  Frames are the variable.
+  steps.                           |
+
+================================================================================
+
+  Claims stratified by confidence:
+    [ESTABLISHED]   Established mathematics
+    [THEORETICAL]   Theoretical & testable
+    [SPECULATIVE]   Speculative
+
+  4.5σ internal consistency  ·  Eight sections
+  Derivation chain: 𝕊 → F=ma verified
+
+================================================================================
+
+  OPEN COLLABORATION — TIER STRUCTURE
+
+  Tier 1 — Mathematical Validators
+    Geoffrey Dixon · John Baez · Grant Sanderson · Taco Cohen · Alain Connes
+
+  Tier 2 — Credentialed Public Witnesses
+    Derek Muller (PhD Physics) · Arvin Ash · Brady Haran
+
+  Tier 3 — Institutional Anchors
+    Max Tegmark · Yann LeCun · arXiv preprint (timestamp pending)
+
+================================================================================
+
+  "The mathematics is not describing different things.
+   The mathematics is describing one thing — from every angle."
+
+  Refine. Restructure if necessary. Stand behind the results.
+
+================================================================================
+  Compiled: April 12, 2026  ·  Eureka, California  ·  Version 2.0
+================================================================================

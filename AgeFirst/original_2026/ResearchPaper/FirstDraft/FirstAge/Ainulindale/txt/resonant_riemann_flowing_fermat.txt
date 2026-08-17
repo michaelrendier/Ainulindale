@@ -1,0 +1,58 @@
+THE RESONANT RIEMANN AND THE FLOWING FERMAT
+A Proof Direction — The Ainulindale
+Preprint — April 2026
+
+"In order to define what something is, you must first define what it is not."
+
+ABSTRACT
+Fermat and Riemann are two descriptions of one object. Fermat = Special Relativity
+(boundary, skeleton, discrete, event horizon). Riemann = Entropy (interior, filler,
+continuous, propagation). The critical line Re(s)=1/2 is the mirror between them.
+d* ≈ 0.246 is the tangency point. The Langlands correspondence is the dictionary.
+SMNNIP structure constants are the translation operator.
+
+FERMAT — SPECIAL RELATIVITY, THE SKELETON
+x^n + y^n = z^n has no integer solutions for n > 2.
+Wiles: via Taniyama-Shimura-Weil, Frey curve contradiction.
+Fermat lattice density at depth pi, alpha=1/137: drops to ~10^(-4) of Riemann field.
+Measure zero inside the continuum. The thin invariant skin. The event horizon.
+
+RIEMANN — ENTROPY, THE FILLER
+zeta(s) = product over p of 1/(1 - p^(-s))
+Zeros are where all prime frequencies cancel simultaneously.
+Primes TRANSLATE (not transform) — preserve curvature in the gaps.
+Riemann zeros are residual curvature that survives the log translation.
+
+THE MIRROR — d* AND THE CRITICAL LINE
+Functional equation: zeta(s) = 2^s pi^(s-1) sin(pi s/2) Gamma(1-s) zeta(1-s)
+Under s->1-s: every zero maps to another zero. Re(s)=1/2 is its own mirror.
+d* = tangency of S(r) and I(r) in polar coordinates. K=0 exactly at d*.
+Langlands: d* is where Galois representation and automorphic representation coincide.
+
+WHAT DROPS OUT
+
+Established connection to SMNNIP:
+- Yang-Mills mass gap (Clay) — Yang-Mills derived not assumed
+- Berry-Keating conjecture — H_NN is candidate operator
+- Why three matter generations — three algebra boundaries, forced by Dixon
+- Why coupling constants run — alpha_NN running derived not fitted
+- Hierarchy problem — G_NN connects gravity to algebra constants
+- Baryon asymmetry — chirality structure of L_coupling
+
+Strong structural connection, derivation in progress:
+- Riemann Hypothesis — via T(epsilon_k) = 1/2 + i·t_k
+- Langlands correspondence — d* tangency as R=T theorem
+- Dark matter — gravitational wave halo, lowest galactic normal mode
+- Quantum gravity — time as anti-field, not quantizable
+
+Speculative, real bones:
+- Fine structure constant from E8 geometry (Wyler, 5 sig figs)
+- Van der Waals 1/r^6 as derivative of n-ball curve at n=6
+- Hydrogen series as physical algebra tower
+- CMB as fundamental waveform, period ~90 billion years
+
+MORNING SESSION TARGETS
+1. C implementation + separate visualizer
+2. Infinite permutation of structure constants
+3. Explicit T transformation
+4. Name the 16/9 correction factor

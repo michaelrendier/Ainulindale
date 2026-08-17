@@ -1,0 +1,730 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Courier New;}}
+\f0\fs18
+#!/usr/bin/env python3\par
+"""\par
+==============================================================================\par
+FA_smnnip_NN_tower_tf.py\par
+SMNNIP Neural Network Tower -- TensorFlow -- First Age\par
+==============================================================================\par
+Standard Model of Neural Network Information Propagation\par
+\par
+TensorFlow version of the FA_smnnip_NN_tower.\par
+\par
+Key design principle:\par
+  TF trains weights (what it is good at).\par
+  Pure Python computes all indices (arbitrary precision, no overflow).\par
+  The two never touch the same data.\par
+\par
+Index arithmetic: pure Python int throughout (unlimited precision).\par
+  TF never sees permutation indices. Indices go directly to the ledger\par
+  as decimal strings. No chunking. No int64 overflow. No special cases.\par
+\par
+Architecture:\par
+  TextSubstrate  (TF Dense, 97-char fixed vocab)  --+\par
+                                                     +--> SharedUpperTower --> output\par
+  ImageSubstrate (TF Dense, spherical CMYK Oct)   --+\par
+\par
+  Corrected Lagrangian: L_NN = (2/pi)*oint[L_kin + L_mat + (1/phi)*L_bias + L_coup]\par
+  Mastery: tf.Variable(trainable=False) boolean flag per weight field\par
+\par
+Imports FA_smnnip_hyperindex for all indexing.\par
+Imports FA_smnnip_NN_tower for shared non-TF components (SphericalColor etc).\par
+\par
+Author: O Captain My Captain + Claude (Anthropic)\par
+Date:   April 2026 -- First Age\par
+==============================================================================\par
+"""\par
+\par
+import math\par
+import random\par
+import sys\par
+import os\par
+import time\par
+from typing import List, Tuple, Optional, Dict, Any\par
+\par
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\par
+\par
+# Pure Python index system (no TF needed for indices)\par
+from FA_smnnip_hyperindex import (\par
+    TextHyperIndex, ImageHyperIndex, MultiChannelTupper,\par
+    SphericalColor, BlockchainLedger,\par
+    layer_to_r, alpha_nn_from_r, polar_lagrangian,\par
+    assert_within_tower, SedenionBoundaryViolation,\par
+    MASTERY_THRESHOLDS, US_KEYBOARD_CHARS, VOCAB_SIZE,\par
+)\par
+\par
+# TF import\par
+try:\par
+    import tensorflow as tf\par
+    _TF_OK = True\par
+    print(f"TensorFlow \{tf.__version__\} loaded")\par
+except ImportError:\par
+    _TF_OK = False\par
+    print("WARNING: TensorFlow not found. Install: pip install tensorflow")\par
+    print("Falling back to pure Python tower.")\par
+    # Fall back to pure python tower transparently\par
+    from FA_smnnip_NN_tower import (\par
+        FATextNNTower, FAImageNNTower, FACombinedNNTower\par
+    )\par
+    # Re-export so caller code works unchanged\par
+    __all__ = ['TFTextNNTower', 'TFImageNNTower', 'TFCombinedNNTower',\par
+               'FATextNNTower', 'FAImageNNTower', 'FACombinedNNTower']\par
+\par
+# ── Constants ────────────────────────────────────────────────────────────────\par
+\par
+L_TOTAL     = 4\par
+PHI         = (1.0 + math.sqrt(5.0)) / 2.0\par
+BIAS_COUP   = 1.0 / PHI         # 0.6180...\par
+TWO_OVER_PI = 2.0 / math.pi\par
+\par
+LNAME  = \{0:'R', 1:'C', 2:'H', 3:'O'\}\par
+LHBAR  = \{0:0.10, 1:0.08, 2:0.05, 3:0.02\}\par
+LG     = \{0:0.010, 1:0.009, 2:0.007, 3:0.005\}\par
+LMU    = \{0:0.5,  1:0.5,  2:0.4,  3:0.3\}\par
+LLAM   = \{0:0.10, 1:0.10, 2:0.12, 3:0.15\}\par
+\par
+\par
+if _TF_OK:\par
+\par
+    # =========================================================================\par
+    # TF LAYER WITH MASTERY\par
+    # =========================================================================\par
+\par
+    class TFMasteredLayer(tf.keras.layers.Layer):\par
+        """\par
+        Yang-Mills weight layer with mastery crystallization.\par
+\par
+        When mastered:\par
+          - trainable=False set on all weights\par
+          - forward pass still runs (zero cost: no gradient computation)\par
+          - mastery flag stored as non-trainable tf.Variable\par
+\par
+        Index arithmetic (permutation, Tupper, Fano): pure Python.\par
+        TF never sees the indices. They go straight to the ledger.\par
+        """\par
+\par
+        def __init__(self, in_d, out_d, layer_idx, name_sfx='', **kw):\par
+            super().__init__(name=f"mastered_L\{layer_idx\}_\{name_sfx\}", **kw)\par
+            self.in_d       = in_d\par
+            self.out_d      = out_d\par
+            self.layer_idx  = layer_idx\par
+            self.hbar       = LHBAR[layer_idx]\par
+            self.g_coup     = LG[layer_idx]\par
+            self.r          = layer_to_r(layer_idx, L_TOTAL)\par
+            self.alpha_nn   = alpha_nn_from_r(self.g_coup, self.hbar, self.r)\par
+            self._threshold = MASTERY_THRESHOLDS[LNAME[layer_idx]]\par
+            self._mastered_flag = False\par
+\par
+            assert_within_tower(layer_idx)\par
+\par
+            scale = math.sqrt(2.0 / (in_d + out_d))\par
+            self.W = self.add_weight(\par
+                name='W', shape=(in_d, out_d),\par
+                initializer=tf.initializers.TruncatedNormal(stddev=scale),\par
+                trainable=True\par
+            )\par
+            self.b = self.add_weight(\par
+                name='b', shape=(out_d,),\par
+                initializer='zeros', trainable=True\par
+            )\par
+            # Non-trainable mastery flag (survives save/load)\par
+            self.mastered = self.add_weight(\par
+                name='mastered', shape=(), dtype=tf.bool,\par
+                initializer=tf.initializers.Constant(False),\par
+                trainable=False\par
+            )\par
+            # VEV reference\par
+            self.vev_ref = self.add_weight(\par
+                name='vev_ref', shape=(), dtype=tf.float32,\par
+                initializer='zeros', trainable=False\par
+            )\par
+\par
+        def call(self, psi):\par
+            out = tf.matmul(psi, self.W) + self.b\par
+            return tf.nn.relu(out)\par
+\par
+        def field_strength(self):\par
+            return float(tf.norm(self.W).numpy())\par
+\par
+        def noether_current(self, psi):\par
+            return float(self.g_coup * tf.reduce_sum(psi * psi).numpy())\par
+\par
+        def l_kinetic(self):\par
+            return -0.25 * self.field_strength()**2\par
+\par
+        def vev_distance(self, vev):\par
+            return abs(self.field_strength() - vev)\par
+\par
+        def check_mastery(self, vev):\par
+            if self._mastered_flag:\par
+                return True\par
+            if self.vev_distance(vev) < self._threshold:\par
+                self._mastered_flag = True\par
+                self.mastered.assign(True)\par
+                self.vev_ref.assign(float(vev))\par
+                # Freeze weights\par
+                self.W.assign(self.W)  # no-op for value; trainable cleared below\par
+                # TF: set non-trainable by rebuilding trainable list\par
+                self._set_mastered()\par
+            return self._mastered_flag\par
+\par
+        def _set_mastered(self):\par
+            """Freeze this layer's weights."""\par
+            self.W._trainable = False\par
+            self.b._trainable = False\par
+\par
+        def is_mastered(self):\par
+            return self._mastered_flag\par
+\par
+\par
+    class TFHiggsLayer(tf.keras.layers.Layer):\par
+        """Higgs bias field with (1/phi) polar correction and mastery."""\par
+\par
+        def __init__(self, size, layer_idx, mu_sq, lam, **kw):\par
+            super().__init__(name=f"higgs_L\{layer_idx\}", **kw)\par
+            self.size     = size\par
+            self.layer_idx = layer_idx\par
+            self.mu_sq    = mu_sq\par
+            self.lam      = lam\par
+            self.vev      = math.sqrt(mu_sq/(2.0*lam)) if mu_sq > 0 else 0.0\par
+            self._threshold = MASTERY_THRESHOLDS[LNAME[layer_idx]]\par
+            self._mastered  = False\par
+\par
+            self.beta = self.add_weight(\par
+                name='beta', shape=(size,),\par
+                initializer=tf.initializers.TruncatedNormal(stddev=0.01),\par
+                trainable=True\par
+            )\par
+\par
+        def call(self, psi):\par
+            return psi + self.beta\par
+\par
+        def potential(self):\par
+            b2 = float(tf.reduce_sum(self.beta * self.beta).numpy())\par
+            return -self.mu_sq*b2 + self.lam*b2*b2\par
+\par
+        def polar_l_bias(self):\par
+            return BIAS_COUP * self.potential()\par
+\par
+        def vev_distance(self):\par
+            b_norm = float(tf.norm(self.beta).numpy())\par
+            return abs(b_norm - self.vev)\par
+\par
+        def check_mastery(self):\par
+            if self._mastered: return True\par
+            if self.vev_distance() < self._threshold:\par
+                self._mastered = True\par
+                self.beta._trainable = False\par
+            return self._mastered\par
+\par
+        def is_mastered(self): return self._mastered\par
+\par
+\par
+    # =========================================================================\par
+    # TEXT SUBSTRATE (TF)\par
+    # =========================================================================\par
+\par
+    class TFTextSubstrate(tf.keras.Model):\par
+        """\par
+        TF Layer 0: 97-char fixed vocab -> hidden_dim.\par
+        Index arithmetic: pure Python (no TF int overflow).\par
+        """\par
+\par
+        def __init__(self, hidden_dim, ctx_len):\par
+            super().__init__(name='text_substrate')\par
+            self.vocab_size = VOCAB_SIZE\par
+            self.hidden_dim = hidden_dim\par
+            self.ctx_len    = ctx_len\par
+            self.in_dim     = VOCAB_SIZE * ctx_len\par
+            self.r          = layer_to_r(0, L_TOTAL)  # r=1.0\par
+\par
+            # Python-side char maps (not TF)\par
+            self._c2i = \{c: i for i, c in enumerate(US_KEYBOARD_CHARS)\}\par
+            self._i2c = \{i: c for i, c in enumerate(US_KEYBOARD_CHARS)\}\par
+\par
+            self.W = TFMasteredLayer(self.in_dim, hidden_dim, 0, 'text')\par
+            self.H = TFHiggsLayer(hidden_dim, 0, LMU[0], LLAM[0])\par
+\par
+        def one_hot_batch(self, contexts: List[str]) -> tf.Tensor:\par
+            """\par
+            Pure Python encodes context strings to one-hot tensors.\par
+            Index arithmetic (char -> int) stays in Python.\par
+            """\par
+            batch = []\par
+            for ctx in contexts:\par
+                flat = []\par
+                for c in ctx[-self.ctx_len:]:\par
+                    v = [0.0] * self.vocab_size\par
+                    if c in self._c2i:\par
+                        v[self._c2i[c]] = 1.0\par
+                    flat.extend(v)\par
+                while len(flat) < self.in_dim:\par
+                    flat.append(0.0)\par
+                batch.append(flat[:self.in_dim])\par
+            return tf.constant(batch, dtype=tf.float32)\par
+\par
+        def call(self, psi_input):\par
+            out = self.W(psi_input)\par
+            out = self.H(out)\par
+            return out\par
+\par
+        def hyperindex(self, ctx: str):\par
+            """Pure Python index -- no TF involved."""\par
+            return TextHyperIndex.index_record(ctx)\par
+\par
+\par
+    # =========================================================================\par
+    # IMAGE SUBSTRATE (TF)\par
+    # =========================================================================\par
+\par
+    class TFImageSubstrate(tf.keras.Model):\par
+        """\par
+        TF Layer 0: 8x8 RGB tile -> spherical CMYK Oct -> hidden_dim.\par
+        Spherical color encoding: pure Python (SphericalColor).\par
+        Tupper index: pure Python (MultiChannelTupper).\par
+        TF only handles the Dense layer weights.\par
+        """\par
+\par
+        def __init__(self, hidden_dim, tile=8, img_w=8, img_h=8):\par
+            super().__init__(name='image_substrate')\par
+            self.tile       = tile\par
+            self.in_dim     = tile * tile * 8\par
+            self.hidden_dim = hidden_dim\par
+            self.img_w      = img_w\par
+            self.img_h      = img_h\par
+\par
+            self.W = TFMasteredLayer(self.in_dim, hidden_dim, 0, 'image')\par
+            self.H = TFHiggsLayer(hidden_dim, 0, LMU[0], LLAM[0])\par
+\par
+        def encode_batch(self, tiles, depths=None, confs=None):\par
+            """\par
+            Pure Python spherical CMYK encoding.\par
+            Returns tf.Tensor for TF to process.\par
+            """\par
+            batch = []\par
+            for bi, tile in enumerate(tiles):\par
+                d = depths[bi] if depths else 0.0\par
+                c = confs[bi]  if confs  else 0.0\par
+                flat = []\par
+                for x in range(self.tile):\par
+                    for y in range(self.tile):\par
+                        try:   rv,gv,bv = tile[x][y]\par
+                        except: rv,gv,bv = 0.0,0.0,0.0\par
+                        flat.extend(SphericalColor.to_octonion(rv,gv,bv,d,c))\par
+                while len(flat) < self.in_dim: flat.append(0.0)\par
+                batch.append(flat[:self.in_dim])\par
+            return tf.constant(batch, dtype=tf.float32)\par
+\par
+        def call(self, psi_input):\par
+            out = self.W(psi_input)\par
+            out = self.H(out)\par
+            return out\par
+\par
+        def hyperindex(self, rgb_tile, tx=0, ty=0, depth=0.0, conf=0.0):\par
+            """Pure Python Tupper index -- no TF."""\par
+            return ImageHyperIndex.index_record(\par
+                rgb_tile, tx, ty, self.img_w, self.img_h, depth, conf)\par
+\par
+        def tile_r(self, tx, ty):\par
+            return ImageHyperIndex.tile_radial_r(tx, ty, self.img_w, self.img_h)\par
+\par
+\par
+    # =========================================================================\par
+    # SHARED UPPER TOWER TF (C -> H -> O)\par
+    # =========================================================================\par
+\par
+    class TFSharedUpperTower(tf.keras.Model):\par
+        """\par
+        TF C->H->O tower. Receives from either substrate.\par
+        Sedenion boundary enforced.\par
+        Polar Lagrangian computed using Python float ops on TF tensors\par
+        (extracted via .numpy() -- outside the graph for logging only).\par
+        """\par
+\par
+        def __init__(self, hidden_dim, output_dim):\par
+            super().__init__(name='shared_upper_tower')\par
+            assert_within_tower(1)\par
+            assert_within_tower(2)\par
+            assert_within_tower(3)\par
+\par
+            self.hidden_dim = hidden_dim\par
+            self.output_dim = output_dim\par
+\par
+            self.W1 = TFMasteredLayer(hidden_dim, hidden_dim, 1, 'C')\par
+            self.H1 = TFHiggsLayer(hidden_dim, 1, LMU[1], LLAM[1])\par
+            self.W2 = TFMasteredLayer(hidden_dim, hidden_dim, 2, 'H')\par
+            self.H2 = TFHiggsLayer(hidden_dim, 2, LMU[2], LLAM[2])\par
+            self.W3 = TFMasteredLayer(hidden_dim, output_dim, 3, 'O')\par
+            self.H3 = TFHiggsLayer(output_dim, 3, LMU[3], LLAM[3])\par
+\par
+            self.noether_hist:    List[float] = []\par
+            self.lagrangian_hist: List[float] = []\par
+\par
+        def call(self, sub_out, training=False):\par
+            p1 = self.W1(sub_out);  p1 = self.H1(p1)\par
+            p2 = self.W2(p1);       p2 = self.H2(p2)\par
+            p3 = self.W3(p2);       p3 = self.H3(p3)\par
+            return p3\par
+\par
+        def polar_lagrangian_diagnostics(self, sub_out_np,\par
+                                          layer=1) -> float:\par
+            """\par
+            Compute polar Lagrangian scalar for diagnostics.\par
+            Uses Python floats (outside graph). Not used in gradient computation.\par
+            """\par
+            if hasattr(sub_out_np, 'numpy'):\par
+                psi = sub_out_np.numpy().flatten().tolist()\par
+            else:\par
+                psi = list(sub_out_np)\par
+            L_kin  = -0.25 * self.W1.field_strength()**2\par
+            L_mat  = sum(x*x for x in psi[:8]) * 0.1\par
+            L_bias = self.H1.polar_l_bias()\par
+            L_coup = -self.W1.g_coup * sum(x*x for x in psi[:8])\par
+            return polar_lagrangian(L_kin, L_mat, L_bias, L_coup,\par
+                                    layer=layer, L_total=L_TOTAL)\par
+\par
+        def noether_violation(self, sub_out) -> float:\par
+            """Noether current conservation diagnostic (Python float)."""\par
+            if hasattr(sub_out, 'numpy'):\par
+                psi = sub_out.numpy().flatten().tolist()\par
+            else:\par
+                psi = list(sub_out)\par
+            J1 = self.W1.g_coup * sum(x*x for x in psi)\par
+            J2 = self.W2.g_coup * sum(x*x for x in psi)\par
+            J3 = self.W3.g_coup * sum(x*x for x in psi)\par
+            return (abs(J2-J1) + abs(J3-J2)) / 2.0\par
+\par
+        def check_all_mastery(self, vev=0.5) -> Dict[str, bool]:\par
+            return \{\par
+                'W1': self.W1.check_mastery(vev),\par
+                'H1': self.H1.check_mastery(),\par
+                'W2': self.W2.check_mastery(vev),\par
+                'H2': self.H2.check_mastery(),\par
+                'W3': self.W3.check_mastery(vev),\par
+                'H3': self.H3.check_mastery(),\par
+            \}\par
+\par
+        def mastered_count(self):\par
+            return sum(1 for f in\par
+                       [self.W1,self.H1,self.W2,self.H2,self.W3,self.H3]\par
+                       if f.is_mastered())\par
+\par
+\par
+    # =========================================================================\par
+    # TF TEXT NN TOWER\par
+    # =========================================================================\par
+\par
+    class TFTextNNTower:\par
+        """\par
+        TF text tower: TextSubstrate -> SharedUpperTower -> softmax.\par
+        Pure Python computes all permutation indices.\par
+        TF handles all weight gradients via GradientTape.\par
+        """\par
+\par
+        def __init__(self, hidden_dim=64, ctx_len=8,\par
+                     ledger_path='FA_hyperindex_ledger'):\par
+            self.ctx_len    = ctx_len\par
+            self.hidden_dim = hidden_dim\par
+            self.out_dim    = VOCAB_SIZE\par
+\par
+            self.substrate = TFTextSubstrate(hidden_dim, ctx_len)\par
+            self.tower     = TFSharedUpperTower(hidden_dim, VOCAB_SIZE)\par
+            self.opt       = tf.keras.optimizers.Adam(learning_rate=0.005)\par
+            self.ledger    = BlockchainLedger(ledger_path)\par
+\par
+            self._c2i = \{c:i for i,c in enumerate(US_KEYBOARD_CHARS)\}\par
+            self._i2c = \{i:c for i,c in enumerate(US_KEYBOARD_CHARS)\}\par
+            self.loss_hist: List[float] = []\par
+            self._epoch = 0; self._step = 0\par
+\par
+            # Build models by calling with dummy input\par
+            dummy = self.substrate.one_hot_batch([' ' * ctx_len])\par
+            sub_out = self.substrate(dummy, training=False)\par
+            self.tower(sub_out, training=False)\par
+\par
+        @tf.function\par
+        def _forward_tf(self, psi_input):\par
+            sub_out = self.substrate(psi_input, training=True)\par
+            logits  = self.tower(sub_out, training=True)\par
+            return logits, sub_out\par
+\par
+        def train_step(self, context: str, target: str, lr: float = 0.005):\par
+            """\par
+            One training step.\par
+            Index arithmetic: pure Python.\par
+            Weight updates: TF GradientTape.\par
+            """\par
+            if target not in self._c2i:\par
+                return None, None\par
+            ti = self._c2i[target]\par
+\par
+            psi_input = self.substrate.one_hot_batch([context])\par
+            target_t  = tf.constant([ti], dtype=tf.int32)\par
+\par
+            all_vars = (self.substrate.trainable_variables +\par
+                        self.tower.trainable_variables)\par
+\par
+            with tf.GradientTape() as tape:\par
+                sub_out = self.substrate(psi_input, training=True)\par
+                logits  = self.tower(sub_out, training=True)\par
+                probs   = tf.nn.softmax(logits)\par
+                loss    = tf.reduce_mean(\par
+                    tf.nn.sparse_softmax_cross_entropy_with_logits(\par
+                        labels=target_t, logits=logits\par
+                    )\par
+                )\par
+\par
+            grads = tape.gradient(loss, all_vars)\par
+            self.opt.apply_gradients(zip(grads, all_vars))\par
+\par
+            loss_val   = float(loss.numpy())\par
+            noether    = self.tower.noether_violation(sub_out[0])\par
+\par
+            # Pure Python index (no TF arithmetic, no overflow)\par
+            text_idx, fano_idx, data_len = self.substrate.hyperindex(context)\par
+\par
+            mastery = self.tower.check_all_mastery(vev=0.5)\par
+            any_m   = any(mastery.values())\par
+\par
+            self.ledger.append(\par
+                'text', self._epoch, self._step,\par
+                text_idx, data_len, LNAME[0], noether, any_m,\par
+                \{'fano': str(fano_idx), 'loss': loss_val\}\par
+            )\par
+            self.loss_hist.append(loss_val)\par
+            self._step += 1\par
+            return loss_val, noether\par
+\par
+        def train_epoch(self, text: str, lr: float = 0.005,\par
+                        max_steps: int = 500):\par
+            valid = [(text[i:i+self.ctx_len], text[i+self.ctx_len])\par
+                     for i in range(len(text)-self.ctx_len-1)\par
+                     if text[i+self.ctx_len] in self._c2i]\par
+            random.shuffle(valid)\par
+            valid = valid[:max_steps]\par
+            tl = tn = 0.0; n = 0\par
+            for ctx, tgt in valid:\par
+                ctx = ''.join(c if c in self._c2i else ' ' for c in ctx)\par
+                l, no = self.train_step(ctx, tgt, lr)\par
+                if l is not None:\par
+                    tl += l; tn += no; n += 1\par
+            self._epoch += 1\par
+            n = max(1, n)\par
+            return tl/n, tn/n\par
+\par
+        def generate(self, seed: str, length: int = 100,\par
+                     temp: float = 1.0) -> str:\par
+            ctx = seed[-self.ctx_len:]\par
+            ctx = ''.join(c if c in self._c2i else ' ' for c in ctx)\par
+            out = seed\par
+            for _ in range(length):\par
+                psi  = self.substrate.one_hot_batch([ctx])\par
+                so   = self.substrate(psi, training=False)\par
+                log  = self.tower(so, training=False)\par
+                if temp != 1.0:\par
+                    log = log / temp\par
+                probs = tf.nn.softmax(log)[0].numpy()\par
+                ch = int(tf.random.categorical(\par
+                    tf.math.log(tf.maximum(probs, 1e-12))[None], 1)[0,0])\par
+                c  = self._i2c.get(ch, '?')\par
+                out += c\par
+                ctx = (ctx + c)[-self.ctx_len:]\par
+            return out\par
+\par
+        def status(self):\par
+            v,_,msg = self.ledger.verify()\par
+            return (f"TF Mastery: tower \{self.tower.mastered_count()\}/6 "\par
+                    f"| steps=\{self._step\} | \{msg[:30]\}")\par
+\par
+\par
+    # =========================================================================\par
+    # TF IMAGE NN TOWER\par
+    # =========================================================================\par
+\par
+    class TFImageNNTower:\par
+        """TF image tower: ImageSubstrate -> SharedUpperTower -> class output."""\par
+\par
+        def __init__(self, hidden_dim=64, n_classes=16, tile=8,\par
+                     img_w=8, img_h=8,\par
+                     ledger_path='FA_hyperindex_ledger'):\par
+            self.hidden_dim = hidden_dim\par
+            self.n_classes  = n_classes\par
+\par
+            self.substrate = TFImageSubstrate(hidden_dim, tile, img_w, img_h)\par
+            self.tower     = TFSharedUpperTower(hidden_dim, n_classes)\par
+            self.opt       = tf.keras.optimizers.Adam(learning_rate=0.005)\par
+            self.ledger    = BlockchainLedger(ledger_path)\par
+            self._epoch = 0; self._step = 0\par
+\par
+            # Build\par
+            dummy_tile = [[(0.5,0.5,0.5) for _ in range(tile)]\par
+                          for _ in range(tile)]\par
+            dummy_t = self.substrate.encode_batch([dummy_tile])\par
+            so = self.substrate(dummy_t, training=False)\par
+            self.tower(so, training=False)\par
+\par
+        def train_step(self, rgb_tile, target_class: int, lr=0.005,\par
+                       tx=0, ty=0, depth=0.0, conf=0.0):\par
+            psi_input = self.substrate.encode_batch([rgb_tile],[depth],[conf])\par
+            target_t  = tf.constant([target_class], dtype=tf.int32)\par
+\par
+            all_vars = (self.substrate.trainable_variables +\par
+                        self.tower.trainable_variables)\par
+\par
+            with tf.GradientTape() as tape:\par
+                sub_out = self.substrate(psi_input, training=True)\par
+                logits  = self.tower(sub_out, training=True)\par
+                loss    = tf.reduce_mean(\par
+                    tf.nn.sparse_softmax_cross_entropy_with_logits(\par
+                        labels=target_t, logits=logits\par
+                    )\par
+                )\par
+\par
+            grads = tape.gradient(loss, all_vars)\par
+            self.opt.apply_gradients(zip(grads, all_vars))\par
+\par
+            loss_val = float(loss.numpy())\par
+            noether  = self.tower.noether_violation(sub_out[0])\par
+\par
+            # Pure Python Tupper index\par
+            idx = self.substrate.hyperindex(rgb_tile, tx, ty, depth, conf)\par
+            tile_idx = idx.get('k_C', '0')\par
+\par
+            mastery = self.tower.check_all_mastery()\par
+            self.ledger.append(\par
+                'image', self._epoch, self._step,\par
+                tile_idx, self.substrate.tile**2,\par
+                LNAME[0], noether, any(mastery.values()),\par
+                \{'color': idx.get('color_index','0'),\par
+                 'r': idx.get('radial_r', 0.0),\par
+                 'loss': loss_val\}\par
+            )\par
+            self._step += 1\par
+            return loss_val, noether\par
+\par
+\par
+    # =========================================================================\par
+    # TF COMBINED TOWER\par
+    # =========================================================================\par
+\par
+    class TFCombinedNNTower:\par
+        """\par
+        The Two Towers (TF) -- one shared upper tower, two substrates.\par
+        Independent themes. One Music.\par
+        """\par
+\par
+        def __init__(self, hidden_dim=64, ctx_len=8, n_classes=16,\par
+                     ledger_path='FA_hyperindex_ledger'):\par
+            out_dim = max(VOCAB_SIZE, n_classes)\par
+            self.text_sub  = TFTextSubstrate(hidden_dim, ctx_len)\par
+            self.img_sub   = TFImageSubstrate(hidden_dim)\par
+            self.tower     = TFSharedUpperTower(hidden_dim, out_dim)\par
+            self.ledger    = BlockchainLedger(ledger_path)\par
+            self._c2i = \{c:i for i,c in enumerate(US_KEYBOARD_CHARS)\}\par
+            self._epoch = 0; self._step = 0\par
+\par
+            # Build\par
+            dummy_ctx = self.text_sub.one_hot_batch([' ' * ctx_len])\par
+            so = self.text_sub(dummy_ctx, training=False)\par
+            self.tower(so, training=False)\par
+\par
+        def forward_text(self, ctx: str) -> List[float]:\par
+            psi = self.text_sub.one_hot_batch([ctx])\par
+            so  = self.text_sub(psi, training=False)\par
+            l   = self.tower(so, training=False)\par
+            return tf.nn.softmax(l[0,:VOCAB_SIZE]).numpy().tolist()\par
+\par
+        def forward_image(self, rgb_tile, depth=0.0, conf=0.0):\par
+            psi = self.img_sub.encode_batch([rgb_tile],[depth],[conf])\par
+            so  = self.img_sub(psi, training=False)\par
+            l   = self.tower(so, training=False)\par
+            return tf.nn.softmax(l[0]).numpy().tolist()\par
+\par
+        def mastery_summary(self):\par
+            v,_,msg = self.ledger.verify()\par
+            return \{\par
+                'tower_mastered': self.tower.mastered_count(),\par
+                'text_W': self.text_sub.W.is_mastered(),\par
+                'img_W':  self.img_sub.W.is_mastered(),\par
+                'chain':  v,\par
+                'blocks': self.ledger._block_id,\par
+            \}\par
+\par
+\par
+# ==============================================================================\par
+# DEMO\par
+# ==============================================================================\par
+\par
+def run_demo():\par
+    print("FA_smnnip_NN_tower_tf -- TensorFlow -- First Age")\par
+    print("=" * 60)\par
+\par
+    if not _TF_OK:\par
+        print("TensorFlow not available. Running pure Python fallback.")\par
+        from FA_smnnip_NN_tower import run_demo as py_demo\par
+        py_demo()\par
+        return\par
+\par
+    print(f"TF \{tf.__version__\} | "\par
+          f"Lagrangian: (2/pi)*oint[...+(1/phi)*L_bias+...]")\par
+    print(f"1/phi = \{BIAS_COUP:.6f\} | "\par
+          f"Index arithmetic: pure Python (no TF int overflow)")\par
+    print()\par
+\par
+    # Text tower\par
+    print("-- TF Text Tower --")\par
+    txt = TFTextNNTower(hidden_dim=32, ctx_len=4,\par
+                         ledger_path='/tmp/FA_tf_demo_ledger')\par
+    corpus = (\par
+        "the algebra tower is primary. the world is secondary. "\par
+        "noether conservation holds at every boundary. "\par
+        "the two towers sing different themes into one music. "\par
+    ) * 3\par
+    for ep in range(3):\par
+        loss, noether = txt.train_epoch(corpus, lr=0.005, max_steps=80)\par
+        print(f"  Epoch \{ep+1\}: loss=\{loss:.4f\}  noether=\{noether:.4f\}")\par
+    print(f"  Generated: \{repr(txt.generate('the ', length=30))\}")\par
+    print(f"  \{txt.status()\}")\par
+    print()\par
+\par
+    # Image tower\par
+    print("-- TF Image Tower --")\par
+    img = TFImageNNTower(hidden_dim=32, n_classes=8,\par
+                          ledger_path='/tmp/FA_tf_demo_ledger')\par
+    tile = [[(x/7, y/7, 0.5) for y in range(8)] for x in range(8)]\par
+    loss, noether = img.train_step(tile, target_class=3, tx=2, ty=2)\par
+    print(f"  Tile step: loss=\{loss:.4f\}  noether=\{noether:.4f\}")\par
+    print()\par
+\par
+    # Combined\par
+    print("-- TF Combined Tower (Two Themes -> One Music) --")\par
+    comb = TFCombinedNNTower(hidden_dim=32, ctx_len=4,\par
+                              ledger_path='/tmp/FA_tf_demo_ledger')\par
+    print(f"  \{comb.mastery_summary()\}")\par
+    print()\par
+\par
+    # Blockchain\par
+    led = BlockchainLedger('/tmp/FA_tf_demo_ledger')\par
+    v,_,msg = led.verify()\par
+    print(f"-- Blockchain: \{msg\} --")\par
+    print()\par
+\par
+    # Verify index is pure Python (demo: long context no overflow)\par
+    seq = "the two towers" * 10\par
+    ti, fi, dl = TextHyperIndex.index_record(seq)\par
+    rec = TextHyperIndex.decode_text(ti, dl)\par
+    print(f"-- Index demo: \{dl\} chars, \{ti.bit_length()\} bits "\par
+          f"(pure Python, no TF int used) --")\par
+    assert rec == seq, "Index round-trip failed"\par
+    print(f"   Round-trip verified.")\par
+    print()\par
+\par
+    print("=" * 60)\par
+    print("Done. Ledger: /tmp/FA_tf_demo_ledger.jsonl + .chain")\par
+\par
+\par
+if __name__ == '__main__':\par
+    run_demo()\par
+
+}

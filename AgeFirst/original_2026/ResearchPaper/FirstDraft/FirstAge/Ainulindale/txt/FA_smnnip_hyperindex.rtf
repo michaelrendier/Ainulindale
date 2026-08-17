@@ -1,0 +1,1058 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Courier New;}}
+\f0\fs18
+#!/usr/bin/env python3\par
+"""\par
+==============================================================================\par
+FA_smnnip_hyperindex.py\par
+SMNNIP Hyperindex Library — First Age\par
+==============================================================================\par
+Standard Model of Neural Network Information Propagation\par
+Hyperindex System: Text + Image Substrates + Blockchain Ledger\par
+\par
+Two Substrates. One Tower. One Music.\par
+\par
+Text substrate:  base-97 permutation index (US keyboard charset, fixed)\par
+                 + Fano base-7 octonion path index\par
+Image substrate: multi-channel generalized Tupper (base-2^b per channel)\par
+                 + spherical color coordinates (θ, φ, r, ρ) → CMYK → Oct\par
+Blockchain:      SHA256-chained ledger, append-only, tamper-evident\par
+\par
+Architecture note:\par
+  The two substrates are independent singers of independent themes.\par
+  Both feed the shared ℂ→ℍ→𝕆 tower.\par
+  The 𝕆 reasoning layer does not know the modality.\par
+  This is correct. Abstract reasoning has no modality.\par
+\par
+Index arithmetic uses Python int throughout (arbitrary precision).\par
+TensorFlow version calls these same functions — Python handles indices,\par
+TF handles weight training. No int overflow anywhere.\par
+\par
+Author: O Captain My Captain + Claude (Anthropic)\par
+Date:   April 2026 — First Age\par
+==============================================================================\par
+"""\par
+\par
+import math\par
+import hashlib\par
+import json\par
+import os\par
+import datetime\par
+from typing import List, Tuple, Optional, Dict, Any\par
+\par
+\par
+# ==============================================================================\par
+# CONSTANTS\par
+# ==============================================================================\par
+\par
+# Fixed US keyboard character set — EliteBook 820 G3 layout\par
+# 97 characters: a-z, A-Z, 0-9, punctuation, space, tab, newline\par
+US_KEYBOARD_CHARS: str = (\par
+    'abcdefghijklmnopqrstuvwxyz'\par
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZ'\par
+    '0123456789'\par
+    '!"#$%&\\'()*+,-./:;<=>?@[\\\\]^_`\{|\}~'\par
+    ' \\t\\n'\par
+)\par
+assert len(US_KEYBOARD_CHARS) == 97, f"Expected 97 chars, got \{len(US_KEYBOARD_CHARS)\}"\par
+\par
+VOCAB_SIZE: int = 97\par
+VOCAB_BASE: int = 97\par
+\par
+# Fano plane lines — 7 imaginary octonion generators \{e1..e7\}\par
+FANO_LINES: List[Tuple[int,int,int]] = [\par
+    (0,1,3),(1,2,4),(2,3,5),(3,4,6),(4,5,0),(5,6,1),(6,0,2)\par
+]\par
+FANO_BASE: int = 7\par
+\par
+# Image substrate\par
+TUPPER_H: int = 8          # height = octonion dimension (not original 17)\par
+TUPPER_BITS: int = 8       # bits per channel value (256 levels)\par
+CMYK_CHANNELS: int = 4     # C, M, Y, K\par
+\par
+# Spherical color quantization\par
+THETA_STEPS: int = 512     # hue angle 0-2π\par
+PHI_STEPS:   int = 256     # elevation 0-π\par
+R_STEPS:     int = 256     # saturation 0-1\par
+RHO_STEPS:   int = 256     # luminance 0-1\par
+\par
+# Mastery threshold: ħ_NN/2 per layer (uncertainty bound)\par
+MASTERY_THRESHOLDS: Dict[str, float] = \{\par
+    'R': 0.10 / 2,   # ħ_L0 / 2\par
+    'C': 0.08 / 2,\par
+    'H': 0.05 / 2,\par
+    'O': 0.02 / 2,\par
+\}\par
+\par
+# Sedenion boundary — tower terminates at 𝕆. Crossing to 𝕊 is mastery, not training.\par
+SEDENION_BOUNDARY: int = 4   # algebra index 4 = sedenion; raises error if reached\par
+\par
+\par
+# ==============================================================================\par
+# MODULE 1 — CHARACTER MAP\par
+# ==============================================================================\par
+\par
+class USKeyboardMap:\par
+    """\par
+    Fixed bijection between US keyboard characters and integer indices 0..96.\par
+    Immutable. Built once at import time.\par
+    """\par
+\par
+    _char_to_idx: Dict[str, int] = \{c: i for i, c in enumerate(US_KEYBOARD_CHARS)\}\par
+    _idx_to_char: Dict[int, str] = \{i: c for i, c in enumerate(US_KEYBOARD_CHARS)\}\par
+\par
+    @classmethod\par
+    def encode(cls, char: str) -> int:\par
+        """Character → index 0..96. Raises KeyError if not in charset."""\par
+        if char not in cls._char_to_idx:\par
+            raise KeyError(f"Character \{repr(char)\} not in US keyboard charset")\par
+        return cls._char_to_idx[char]\par
+\par
+    @classmethod\par
+    def decode(cls, idx: int) -> str:\par
+        """Index 0..96 → character."""\par
+        if idx not in cls._idx_to_char:\par
+            raise KeyError(f"Index \{idx\} out of range 0..96")\par
+        return cls._idx_to_char[idx]\par
+\par
+    @classmethod\par
+    def is_valid(cls, char: str) -> bool:\par
+        return char in cls._char_to_idx\par
+\par
+\par
+# ==============================================================================\par
+# MODULE 2 — TEXT HYPERINDEX\par
+# ==============================================================================\par
+\par
+class TextHyperIndex:\par
+    """\par
+    Lossless permutation index for text sequences.\par
+\par
+    Two indices computed simultaneously:\par
+      text_index  : base-97 mixed-radix integer (exact sequence address)\par
+      fano_index  : base-7 Fano/octonion path (algebra-native address)\par
+\par
+    Both are pure Python int — arbitrary precision, no overflow.\par
+    TensorFlow callers receive these as strings from the ledger.\par
+\par
+    Stored as INDEX_RECORD = (text_index: int, fano_index: int, data_length: int)\par
+    """\par
+\par
+    @staticmethod\par
+    def encode_text(sequence: str) -> int:\par
+        """\par
+        Encode a character sequence as a base-97 integer.\par
+        idx = c0·97^(k-1) + c1·97^(k-2) + ... + c_\{k-1\}·97^0\par
+\par
+        Lossless. Invertible. Any length.\par
+        """\par
+        idx = 0\par
+        for char in sequence:\par
+            idx = idx * VOCAB_BASE + USKeyboardMap.encode(char)\par
+        return idx\par
+\par
+    @staticmethod\par
+    def decode_text(idx: int, length: int) -> str:\par
+        """\par
+        Decode base-97 integer back to character sequence of given length.\par
+        """\par
+        chars = []\par
+        remaining = idx\par
+        for _ in range(length):\par
+            chars.append(USKeyboardMap.decode(remaining % VOCAB_BASE))\par
+            remaining //= VOCAB_BASE\par
+        chars.reverse()\par
+        return ''.join(chars)\par
+\par
+    @staticmethod\par
+    def encode_fano(sequence: str) -> int:\par
+        """\par
+        Encode a character sequence as a Fano/octonion base-7 path index.\par
+\par
+        Each character maps to an octonion generator via:\par
+          fano_component = char_index % FANO_BASE  (0..6 → e1..e7)\par
+\par
+        This is the algebra-native address of the sequence.\par
+        Different from the text index — encodes which octonion\par
+        generators were traversed, not which characters.\par
+        """\par
+        idx = 0\par
+        for char in sequence:\par
+            component = USKeyboardMap.encode(char) % FANO_BASE\par
+            idx = idx * FANO_BASE + component\par
+        return idx\par
+\par
+    @staticmethod\par
+    def decode_fano(idx: int, length: int) -> List[int]:\par
+        """\par
+        Decode Fano index back to sequence of generator indices (0..6).\par
+        """\par
+        components = []\par
+        remaining = idx\par
+        for _ in range(length):\par
+            components.append(remaining % FANO_BASE)\par
+            remaining //= FANO_BASE\par
+        components.reverse()\par
+        return components\par
+\par
+    @staticmethod\par
+    def index_record(sequence: str) -> Tuple[int, int, int]:\par
+        """\par
+        Compute full INDEX_RECORD for a text sequence.\par
+        Returns (text_index, fano_index, data_length).\par
+        """\par
+        return (\par
+            TextHyperIndex.encode_text(sequence),\par
+            TextHyperIndex.encode_fano(sequence),\par
+            len(sequence)\par
+        )\par
+\par
+    @staticmethod\par
+    def verify(sequence: str) -> bool:\par
+        """\par
+        Round-trip verification: encode then decode returns original.\par
+        """\par
+        text_idx, _, length = TextHyperIndex.index_record(sequence)\par
+        recovered = TextHyperIndex.decode_text(text_idx, length)\par
+        return recovered == sequence\par
+\par
+\par
+# ==============================================================================\par
+# MODULE 3 — SPHERICAL COLOR COORDINATE SYSTEM\par
+# ==============================================================================\par
+\par
+class SphericalColor:\par
+    """\par
+    4D spherical color space: (θ, φ, r, ρ)\par
+\par
+    θ (theta):  hue angle         0 ≤ θ < 2π    position on color wheel\par
+    φ (phi):    elevation angle   0 ≤ φ ≤ π     0=white pole, π=black pole\par
+    r:          saturation        0 ≤ r ≤ 1     distance from grey axis\par
+    ρ (rho):    luminance         0 ≤ ρ ≤ 1     total brightness\par
+\par
+    Full conversion chain:\par
+      (θ, φ, r, ρ) → HSL → RGB → CMYK\par
+      CMYK → RGB → HSL → (θ, φ, r, ρ)\par
+\par
+    Octonion encoding (8 floats = 1 octonion):\par
+      [θ_norm, φ_norm, r, ρ, depth, depth_conf, K_derived, reserved]\par
+    """\par
+\par
+    @staticmethod\par
+    def rgb_to_spherical(r: float, g: float, b: float) -> Tuple[float,float,float,float]:\par
+        """\par
+        RGB (each 0..1) → (theta, phi, sat_r, luminance_rho)\par
+        """\par
+        # Luminance (rho)\par
+        rho = 0.2126 * r + 0.7152 * g + 0.0722 * b\par
+\par
+        # Saturation (r) via HSL\par
+        cmax = max(r, g, b)\par
+        cmin = min(r, g, b)\par
+        delta = cmax - cmin\par
+        sat = 0.0 if (cmax + cmin) == 0 else delta / (1.0 - abs(cmax + cmin - 1.0) + 1e-12)\par
+        sat = min(1.0, max(0.0, sat))\par
+\par
+        # Hue angle (theta)\par
+        if delta < 1e-9:\par
+            theta = 0.0\par
+        elif cmax == r:\par
+            theta = (math.pi / 3.0) * (((g - b) / (delta + 1e-12)) % 6)\par
+        elif cmax == g:\par
+            theta = (math.pi / 3.0) * (((b - r) / (delta + 1e-12)) + 2.0)\par
+        else:\par
+            theta = (math.pi / 3.0) * (((r - g) / (delta + 1e-12)) + 4.0)\par
+        theta = theta % (2.0 * math.pi)\par
+\par
+        # Elevation (phi) — warm colors (red/orange) near 0, cool (blue/violet) near π\par
+        # Approximate: phi correlates with B channel dominance\par
+        phi = math.pi * (b / (r + g + b + 1e-12))\par
+\par
+        return theta, phi, sat, rho\par
+\par
+    @staticmethod\par
+    def spherical_to_rgb(theta: float, phi: float,\par
+                         sat: float, rho: float) -> Tuple[float,float,float]:\par
+        """\par
+        (theta, phi, sat, rho) → RGB (each 0..1)\par
+        Via HSL intermediate. phi is advisory (warm/cool) — not directly invertible.\par
+        """\par
+        # Convert to HSL\par
+        H_deg = math.degrees(theta) % 360.0\par
+        S = min(1.0, max(0.0, sat))\par
+        L = min(1.0, max(0.0, rho))\par
+\par
+        # HSL → RGB (standard formula)\par
+        C = (1.0 - abs(2.0 * L - 1.0)) * S\par
+        X = C * (1.0 - abs((H_deg / 60.0) % 2.0 - 1.0))\par
+        m = L - C / 2.0\par
+\par
+        sector = int(H_deg / 60.0) % 6\par
+        if sector == 0:   r1,g1,b1 = C, X, 0.0\par
+        elif sector == 1: r1,g1,b1 = X, C, 0.0\par
+        elif sector == 2: r1,g1,b1 = 0.0, C, X\par
+        elif sector == 3: r1,g1,b1 = 0.0, X, C\par
+        elif sector == 4: r1,g1,b1 = X, 0.0, C\par
+        else:             r1,g1,b1 = C, 0.0, X\par
+\par
+        return (r1 + m, g1 + m, b1 + m)\par
+\par
+    @staticmethod\par
+    def rgb_to_cmyk(r: float, g: float, b: float) -> Tuple[float,float,float,float]:\par
+        """RGB (0..1) → CMYK (0..1 each). K derived from absence of RGB."""\par
+        k = 1.0 - max(r, g, b)\par
+        if abs(k - 1.0) < 1e-9:\par
+            return 0.0, 0.0, 0.0, 1.0\par
+        inv = 1.0 / (1.0 - k + 1e-12)\par
+        c = min(1.0, max(0.0, (1.0 - r - k) * inv))\par
+        m = min(1.0, max(0.0, (1.0 - g - k) * inv))\par
+        y = min(1.0, max(0.0, (1.0 - b - k) * inv))\par
+        return c, m, y, min(1.0, max(0.0, k))\par
+\par
+    @staticmethod\par
+    def cmyk_to_rgb(c: float, m: float,\par
+                    y: float, k: float) -> Tuple[float,float,float]:\par
+        """CMYK (0..1) → RGB (0..1)."""\par
+        r = (1.0 - c) * (1.0 - k)\par
+        g = (1.0 - m) * (1.0 - k)\par
+        b = (1.0 - y) * (1.0 - k)\par
+        return r, g, b\par
+\par
+    @staticmethod\par
+    def to_octonion(r_rgb: float, g_rgb: float, b_rgb: float,\par
+                    depth: float = 0.0, depth_conf: float = 0.0) -> List[float]:\par
+        """\par
+        RGB pixel → 8-component octonion vector for substrate input.\par
+        [θ_norm, φ_norm, sat, lum, depth, depth_conf, K_derived, reserved]\par
+        """\par
+        theta, phi, sat, rho = SphericalColor.rgb_to_spherical(r_rgb, g_rgb, b_rgb)\par
+        k = 1.0 - max(r_rgb, g_rgb, b_rgb)\par
+        return [\par
+            theta / (2.0 * math.pi),   # θ normalized to [0,1]\par
+            phi / math.pi,             # φ normalized to [0,1]\par
+            sat,                       # saturation\par
+            rho,                       # luminance\par
+            min(1.0, max(0.0, depth)), # depth estimate (normalized)\par
+            min(1.0, max(0.0, depth_conf)),  # depth confidence\par
+            min(1.0, max(0.0, k)),     # K derived (absence of RGB)\par
+            0.0,                       # reserved\par
+        ]\par
+\par
+    @staticmethod\par
+    def color_index(theta: float, phi: float,\par
+                    sat: float, rho: float) -> int:\par
+        """\par
+        Quantize (θ, φ, r, ρ) to a 33-bit integer color index.\par
+        idx = θ_q·(PHI·R·RHO) + φ_q·(R·RHO) + r_q·RHO + ρ_q\par
+        """\par
+        tq = min(THETA_STEPS-1, int(theta / (2.0*math.pi) * THETA_STEPS))\par
+        pq = min(PHI_STEPS-1,   int(phi / math.pi * PHI_STEPS))\par
+        rq = min(R_STEPS-1,     int(sat * R_STEPS))\par
+        lq = min(RHO_STEPS-1,   int(rho * RHO_STEPS))\par
+        return (tq * PHI_STEPS * R_STEPS * RHO_STEPS +\par
+                pq * R_STEPS * RHO_STEPS +\par
+                rq * RHO_STEPS + lq)\par
+\par
+\par
+# ==============================================================================\par
+# MODULE 4 — GENERALIZED MULTI-CHANNEL TUPPER\par
+# ==============================================================================\par
+\par
+class MultiChannelTupper:\par
+    """\par
+    Generalized Tupper's Self-Referential Formula for multi-channel float images.\par
+\par
+    Standard Tupper (binary, H=17):\par
+      pixel(x,y) = ½ < ⌊ mod(⌊y/H⌋ · 2^(−H·x − y mod H), 2) ⌋\par
+\par
+    Generalized (b-bit depth, H=8 for octonion alignment):\par
+      pixel_c(x,y) = ⌊ mod(⌊k_c / B^(H·x + y mod H)⌋, B) ⌋ / (B-1)\par
+      where B = 2^b\par
+\par
+    H=8: each column of the Tupper bitmap encodes one full octonion.\par
+    8 octants of the color sphere × 8 elevation bands = one tile.\par
+\par
+    Encode: k_c = Σ_\{x=0\}^\{W-1\} Σ_\{y=0\}^\{H-1\} quantize(v, b) · B^(H·x + y)\par
+    Decode: value = ⌊ mod(⌊k_c / B^(H·x + y)⌋, B) ⌋ / (B-1)\par
+\par
+    Storage per 8×8 tile at b=8:\par
+      k per channel = 512 bits = 64 bytes\par
+      4 CMYK channels = 2048 bits = 256 bytes\par
+      Stored as Python int (arbitrary precision)\par
+      Ledger stores as decimal string\par
+    """\par
+\par
+    H: int = TUPPER_H\par
+    B: int = 2 ** TUPPER_BITS   # = 256\par
+\par
+    @classmethod\par
+    def encode_channel(cls, channel_values: List[List[float]]) -> int:\par
+        """\par
+        Encode a 2D float array (W × H, values 0..1) into k for one channel.\par
+        channel_values[x][y] ∈ [0, 1]\par
+        Returns k as Python int (arbitrary precision).\par
+        """\par
+        W = len(channel_values)\par
+        H = cls.H\par
+        B = cls.B\par
+        k = 0\par
+        for x in range(W):\par
+            col = channel_values[x]\par
+            for y in range(min(H, len(col))):\par
+                q = min(B - 1, int(col[y] * B))\par
+                k += q * (B ** (H * x + y))\par
+        return k\par
+\par
+    @classmethod\par
+    def decode_channel(cls, k: int, W: int) -> List[List[float]]:\par
+        """\par
+        Decode k back to W × H float array.\par
+        Returns channel_values[x][y] ∈ [0, 1].\par
+        """\par
+        H = cls.H\par
+        B = cls.B\par
+        result = []\par
+        k_work = k\par
+        for x in range(W):\par
+            col = []\par
+            for y in range(H):\par
+                pos = H * x + y\par
+                val_q = (k_work // (B ** pos)) % B\par
+                col.append(val_q / (B - 1))\par
+            result.append(col)\par
+        return result\par
+\par
+    @classmethod\par
+    def encode_tile(cls, tile_cmyk: List[List[List[float]]]) -> Tuple[int,int,int,int]:\par
+        """\par
+        Encode an 8×8 CMYK tile into 4 k values.\par
+        tile_cmyk[channel][x][y] — channel: 0=C, 1=M, 2=Y, 3=K\par
+\par
+        Returns (k_C, k_M, k_Y, k_K) as Python ints.\par
+        """\par
+        return tuple(\par
+            cls.encode_channel(tile_cmyk[c])\par
+            for c in range(CMYK_CHANNELS)\par
+        )\par
+\par
+    @classmethod\par
+    def decode_tile(cls, k_vec: Tuple[int,int,int,int],\par
+                    W: int = 8) -> List[List[List[float]]]:\par
+        """\par
+        Decode (k_C, k_M, k_Y, k_K) back to tile_cmyk[channel][x][y].\par
+        """\par
+        return [cls.decode_channel(k_vec[c], W) for c in range(CMYK_CHANNELS)]\par
+\par
+    @classmethod\par
+    def tile_index_record(cls,\par
+                          tile_cmyk: List[List[List[float]]],\par
+                          tile_x: int = 0,\par
+                          tile_y: int = 0) -> Dict[str, Any]:\par
+        """\par
+        Full INDEX_RECORD for one image tile.\par
+        Returns dict with k_C, k_M, k_Y, k_K as strings (arbitrary precision safe).\par
+        """\par
+        k_C, k_M, k_Y, k_K = cls.encode_tile(tile_cmyk)\par
+        return \{\par
+            'k_C':    str(k_C),\par
+            'k_M':    str(k_M),\par
+            'k_Y':    str(k_Y),\par
+            'k_K':    str(k_K),\par
+            'tile_x': tile_x,\par
+            'tile_y': tile_y,\par
+            'H':      cls.H,\par
+            'b':      TUPPER_BITS,\par
+        \}\par
+\par
+\par
+# ==============================================================================\par
+# MODULE 5 — IMAGE HYPERINDEX\par
+# ==============================================================================\par
+\par
+class ImageHyperIndex:\par
+    """\par
+    Lossless hyperindex for image tiles.\par
+\par
+    Pipeline:\par
+      RGB pixel → spherical (θ,φ,r,ρ) → CMYK → Tupper k-vector\par
+      Tupper k-vector → tile INDEX_RECORD\par
+\par
+    Radial correspondence for image tiles:\par
+      r(tile) = 1.0 - sqrt((tx - cx)^2 + (ty - cy)^2) / r_max\par
+      Image center is the Observer at r=0 (destination-centric).\par
+      Tiles further from center are at larger r (closer to input surface).\par
+    """\par
+\par
+    @staticmethod\par
+    def rgb_tile_to_cmyk(rgb_tile: List[List[Tuple[float,float,float]]]\par
+                         ) -> List[List[List[float]]]:\par
+        """\par
+        Convert W×H RGB tile to CMYK tile.\par
+        rgb_tile[x][y] = (r, g, b) each 0..1\par
+        Returns cmyk_tile[channel][x][y]\par
+        """\par
+        W = len(rgb_tile)\par
+        H = len(rgb_tile[0]) if W > 0 else 0\par
+        cmyk = [[[] for _ in range(W)] for _ in range(CMYK_CHANNELS)]\par
+        for x in range(W):\par
+            for y in range(H):\par
+                r, g, b = rgb_tile[x][y]\par
+                k = 1.0 - max(r, g, b)\par
+                if abs(k - 1.0) < 1e-9:\par
+                    c, m, yv = 0.0, 0.0, 0.0\par
+                else:\par
+                    inv = 1.0 / (1.0 - k + 1e-12)\par
+                    c  = min(1.0, max(0.0, (1.0 - r - k) * inv))\par
+                    m  = min(1.0, max(0.0, (1.0 - g - k) * inv))\par
+                    yv = min(1.0, max(0.0, (1.0 - b - k) * inv))\par
+                cmyk[0][x].append(c)\par
+                cmyk[1][x].append(m)\par
+                cmyk[2][x].append(yv)\par
+                cmyk[3][x].append(k)\par
+        return cmyk\par
+\par
+    @staticmethod\par
+    def tile_radial_r(tile_x: int, tile_y: int,\par
+                      img_w_tiles: int, img_h_tiles: int) -> float:\par
+        """\par
+        Map tile position to radial coordinate r.\par
+        Image center = Observer at r→0 (destination).\par
+        Input edge tiles at r=1.\par
+\par
+        r(tile) = sqrt((tx - cx)^2 + (ty - cy)^2) / r_max\par
+        (inverted so center=0, edge=1)\par
+        """\par
+        cx = (img_w_tiles - 1) / 2.0\par
+        cy = (img_h_tiles - 1) / 2.0\par
+        r_max = math.sqrt(cx**2 + cy**2) + 1e-12\par
+        dist = math.sqrt((tile_x - cx)**2 + (tile_y - cy)**2)\par
+        return min(1.0, dist / r_max)\par
+\par
+    @staticmethod\par
+    def index_record(rgb_tile: List[List[Tuple[float,float,float]]],\par
+                     tile_x: int = 0, tile_y: int = 0,\par
+                     img_w_tiles: int = 1, img_h_tiles: int = 1,\par
+                     depth_est: float = 0.0,\par
+                     depth_conf: float = 0.0) -> Dict[str, Any]:\par
+        """\par
+        Full INDEX_RECORD for one image tile.\par
+        """\par
+        cmyk = ImageHyperIndex.rgb_tile_to_cmyk(rgb_tile)\par
+        tupper = MultiChannelTupper.tile_index_record(cmyk, tile_x, tile_y)\par
+        r = ImageHyperIndex.tile_radial_r(tile_x, tile_y, img_w_tiles, img_h_tiles)\par
+\par
+        # Representative pixel color index (center pixel)\par
+        cx = len(rgb_tile) // 2\par
+        cy = len(rgb_tile[0]) // 2 if len(rgb_tile) > 0 else 0\par
+        try:\par
+            rc, gc, bc = rgb_tile[cx][cy]\par
+            theta, phi, sat, rho = SphericalColor.rgb_to_spherical(rc, gc, bc)\par
+            color_idx = SphericalColor.color_index(theta, phi, sat, rho)\par
+        except (IndexError, ValueError):\par
+            color_idx = 0\par
+\par
+        return \{\par
+            **tupper,\par
+            'color_index': str(color_idx),\par
+            'radial_r':    r,\par
+            'depth_est':   depth_est,\par
+            'depth_conf':  depth_conf,\par
+        \}\par
+\par
+\par
+# ==============================================================================\par
+# MODULE 6 — HIERARCHICAL CODE INDEX\par
+# ==============================================================================\par
+\par
+class CodeIndex:\par
+    """\par
+    Hierarchical address scheme for the codebase.\par
+\par
+    Level 0 — Global  (ℝ, trivial): SHA256 of entire file\par
+    Level 1 — Class   (ℂ, U(1)):    G·7 + class_k\par
+    Level 2 — Method  (ℍ, SU(2)):   G·7² + class_k·7 + method_m\par
+    Level 3 — Line    (𝕆, G₂):     G·7³ + class_k·7² + method_m·7 + line_n\par
+\par
+    Each address encodes its full ancestry.\par
+    Strip indices from right to walk back to root.\par
+    Non-commutativity at ℍ: (class, method) order matters.\par
+    Non-associativity at 𝕆: nesting structure baked into address.\par
+    """\par
+\par
+    @staticmethod\par
+    def global_hash(filepath: str) -> str:\par
+        """SHA256 of file contents."""\par
+        with open(filepath, 'rb') as f:\par
+            return hashlib.sha256(f.read()).hexdigest()\par
+\par
+    @staticmethod\par
+    def build(filepath: str) -> Dict[str, Any]:\par
+        """\par
+        Build the CODE_INDEX for a Python source file.\par
+        Scans for class and def statements.\par
+        """\par
+        if not os.path.exists(filepath):\par
+            return \{\}\par
+\par
+        g_hash = CodeIndex.global_hash(filepath)\par
+        g_int  = int(g_hash, 16) % (7**6)  # compact global index\par
+\par
+        classes  = \{\}\par
+        methods  = \{\}\par
+        current_class = None\par
+        current_method = None\par
+        class_k  = 0\par
+        method_m = 0\par
+\par
+        with open(filepath, 'r', encoding='utf-8') as f:\par
+            lines = f.readlines()\par
+\par
+        for line_n, line in enumerate(lines):\par
+            stripped = line.lstrip()\par
+            if stripped.startswith('class '):\par
+                name = stripped[6:].split('(')[0].split(':')[0].strip()\par
+                addr = g_int * 7 + class_k\par
+                classes[name] = \{\par
+                    'class_idx': class_k,\par
+                    'address':   addr,\par
+                    'line_start': line_n,\par
+                \}\par
+                current_class = name\par
+                class_k += 1\par
+                method_m = 0\par
+\par
+            elif stripped.startswith('def '):\par
+                name = stripped[4:].split('(')[0].strip()\par
+                ck   = classes[current_class]['class_idx'] if current_class else 0\par
+                addr = g_int * 49 + ck * 7 + method_m\par
+                key  = f"\{current_class\}.\{name\}" if current_class else name\par
+                methods[key] = \{\par
+                    'class':      current_class,\par
+                    'method_idx': method_m,\par
+                    'address':    addr,\par
+                    'line_start': line_n,\par
+                \}\par
+                current_method = key\par
+                method_m += 1\par
+\par
+        return \{\par
+            'filepath':    filepath,\par
+            'global_hash': g_hash,\par
+            'global_idx':  g_int,\par
+            'total_lines': len(lines),\par
+            'total_bytes': os.path.getsize(filepath),\par
+            'classes':     classes,\par
+            'methods':     methods,\par
+            'version':     'FA_1.0',\par
+            'charset':     'US_KB_97',\par
+            'algebra_tower': 'R->C->H->O',\par
+            'sedenion_boundary': SEDENION_BOUNDARY,\par
+        \}\par
+\par
+\par
+# ==============================================================================\par
+# MODULE 7 — BLOCKCHAIN LEDGER\par
+# ==============================================================================\par
+\par
+class BlockchainLedger:\par
+    """\par
+    Append-only blockchain ledger for training history.\par
+\par
+    Each block:\par
+      block_id       : int\par
+      timestamp      : ISO datetime string\par
+      prev_hash      : SHA256 of previous block (genesis = '0'*64)\par
+      modality       : 'text' | 'image'\par
+      epoch          : int\par
+      step           : int\par
+      perm_index     : str  (arbitrary precision decimal, text or Tupper k)\par
+      data_length    : int  (context window k or tile count)\par
+      layer          : str  ('R'|'C'|'H'|'O')\par
+      noether_current: float\par
+      mastered       : bool  (crystallization event)\par
+      block_hash     : SHA256 of this block's content\par
+\par
+    Two output files:\par
+      .jsonl  — human readable, one JSON per line\par
+      .chain  — verification file (hashes only, fast check)\par
+\par
+    Tamper detection: any modification breaks subsequent hashes.\par
+    Provenance: every crystallized weight traces back to its training data.\par
+    """\par
+\par
+    def __init__(self, base_path: str = 'FA_hyperindex_ledger'):\par
+        self.jsonl_path  = base_path + '.jsonl'\par
+        self.chain_path  = base_path + '.chain'\par
+        self._prev_hash  = '0' * 64\par
+        self._block_id   = 0\par
+        self._load_state()\par
+\par
+    def _load_state(self) -> None:\par
+        """Resume from existing ledger if present."""\par
+        if os.path.exists(self.jsonl_path):\par
+            try:\par
+                with open(self.jsonl_path, 'r') as f:\par
+                    lines = [l.strip() for l in f if l.strip()]\par
+                if lines:\par
+                    last = json.loads(lines[-1])\par
+                    self._prev_hash = last.get('block_hash', '0'*64)\par
+                    self._block_id  = last.get('block_id', -1) + 1\par
+            except (json.JSONDecodeError, KeyError):\par
+                pass\par
+\par
+    def _make_hash(self, block: Dict[str, Any]) -> str:\par
+        content = (\par
+            f"\{block['block_id']\}|\{block['timestamp']\}|\{block['prev_hash']\}|"\par
+            f"\{block['modality']\}|\{block['epoch']\}|\{block['step']\}|"\par
+            f"\{block['perm_index']\}|\{block['data_length']\}|\{block['layer']\}|"\par
+            f"\{block['noether_current']:.8f\}|\{block['mastered']\}"\par
+        )\par
+        return hashlib.sha256(content.encode()).hexdigest()\par
+\par
+    def append(self,\par
+               modality: str,\par
+               epoch: int,\par
+               step: int,\par
+               perm_index: Any,     # int or str\par
+               data_length: int,\par
+               layer: str,\par
+               noether_current: float,\par
+               mastered: bool = False,\par
+               extra: Optional[Dict] = None) -> Dict[str, Any]:\par
+        """\par
+        Append one block to the ledger.\par
+        Returns the completed block dict.\par
+        """\par
+        now = datetime.datetime.now(datetime.timezone.utc)\par
+        ts  = now.isoformat()\par
+\par
+        block: Dict[str, Any] = \{\par
+            'block_id':        self._block_id,\par
+            'timestamp':       ts,\par
+            'prev_hash':       self._prev_hash,\par
+            'modality':        modality,\par
+            'epoch':           epoch,\par
+            'step':            step,\par
+            'perm_index':      str(perm_index),\par
+            'data_length':     data_length,\par
+            'layer':           layer,\par
+            'noether_current': float(noether_current),\par
+            'mastered':        mastered,\par
+        \}\par
+        if extra:\par
+            block['extra'] = extra\par
+\par
+        block['block_hash'] = self._make_hash(block)\par
+\par
+        # Write to jsonl\par
+        with open(self.jsonl_path, 'a') as f:\par
+            f.write(json.dumps(block) + '\\n')\par
+\par
+        # Write to chain (hashes only)\par
+        with open(self.chain_path, 'a') as f:\par
+            f.write(f"\{block['block_id']\}:\{block['block_hash']\}\\n")\par
+\par
+        self._prev_hash = block['block_hash']\par
+        self._block_id += 1\par
+        return block\par
+\par
+    def verify(self) -> Tuple[bool, int, str]:\par
+        """\par
+        Verify the entire chain.\par
+        Returns (valid, first_broken_id, message).\par
+        """\par
+        if not os.path.exists(self.jsonl_path):\par
+            return True, -1, "No ledger found"\par
+\par
+        prev = '0' * 64\par
+        with open(self.jsonl_path, 'r') as f:\par
+            for line in f:\par
+                line = line.strip()\par
+                if not line:\par
+                    continue\par
+                try:\par
+                    block = json.loads(line)\par
+                except json.JSONDecodeError:\par
+                    return False, -1, "JSON decode error"\par
+\par
+                if block.get('prev_hash') != prev:\par
+                    return False, block['block_id'], \\\par
+                           f"Chain broken at block \{block['block_id']\}: prev_hash mismatch"\par
+\par
+                stored_hash = block.pop('block_hash', None)\par
+                computed    = self._make_hash(block)\par
+                block['block_hash'] = stored_hash\par
+\par
+                if stored_hash != computed:\par
+                    return False, block['block_id'], \\\par
+                           f"Chain broken at block \{block['block_id']\}: hash mismatch"\par
+\par
+                prev = stored_hash\par
+\par
+        return True, -1, f"Chain valid — \{self._block_id\} blocks verified"\par
+\par
+    def last_hash(self) -> str:\par
+        return self._prev_hash\par
+\par
+\par
+# ==============================================================================\par
+# MODULE 8 — SEDENION BOUNDARY GUARD\par
+# ==============================================================================\par
+\par
+class SedenionBoundaryViolation(Exception):\par
+    """\par
+    Raised when code attempts to operate beyond the 𝕆 layer.\par
+\par
+    The NN tower terminates at 𝕆.\par
+    𝕊 (sedenion) informs the Lagrangian from outside but does not run inside.\par
+    Zero-divisors in 𝕊 break norm preservation — the training invariant.\par
+    Mastery transition (𝕆→𝕊) is crystallization, not computation.\par
+    """\par
+    pass\par
+\par
+\par
+def assert_within_tower(algebra_index: int) -> None:\par
+    """\par
+    Assert that an algebra index is within the NN tower (≤ 𝕆).\par
+    Raises SedenionBoundaryViolation if algebra_index >= SEDENION_BOUNDARY.\par
+    """\par
+    if algebra_index >= SEDENION_BOUNDARY:\par
+        raise SedenionBoundaryViolation(\par
+            f"Algebra index \{algebra_index\} exceeds 𝕆 (index 3). "\par
+            f"The NN tower terminates at 𝕆. "\par
+            f"Sedenion (index 4+) is outside the training domain. "\par
+            f"Mastery transition occurs via crystallize(), not forward()."\par
+        )\par
+\par
+\par
+# ==============================================================================\par
+# MODULE 9 — RADIAL / LAYER CORRESPONDENCE\par
+# ==============================================================================\par
+\par
+def layer_to_r(layer: int, L_total: int = 4) -> float:\par
+    """\par
+    Map layer depth index to radial coordinate r.\par
+\par
+    ℝ substrate (layer=0) is at the outermost surface: r = 1.0\par
+    𝕆 reasoning (layer=3) is innermost, closest to Observer: r = 0.25\par
+    Observer itself (r→0) is outside the NN.\par
+\par
+    r(l) = (L_total - l) / L_total\par
+\par
+    Ainulindale polar form: α_NN(r) = g² / (4π·ħ_NN·ln(1/r))\par
+    RG form equivalent:     α_NN(l) = α_0 / (1 + β_0·α_0·ln(l/l_0))\par
+    Bridge:                 ln(1/r) = ln(L/(L-l))\par
+    """\par
+    assert_within_tower(layer)\par
+    return max(1e-6, (L_total - layer) / L_total)\par
+\par
+\par
+def r_to_layer(r: float, L_total: int = 4) -> int:\par
+    """\par
+    Map radial coordinate r back to layer depth index.\par
+    Inverse of layer_to_r.\par
+    """\par
+    return max(0, min(L_total - 1, round(L_total * (1.0 - r))))\par
+\par
+\par
+def alpha_nn_from_r(g: float, hbar: float, r: float) -> float:\par
+    """\par
+    Neural fine structure constant from radial coordinate.\par
+    α_NN(r) = g² / (4π·ħ_NN·ln(1/r))\par
+\par
+    Ainulindale form — singular at r→0 by design (full coupling at destination).\par
+    r_min = 1/L_total prevents singularity in practice.\par
+    """\par
+    if r <= 0:\par
+        return float('inf')\par
+    ln_inv_r = math.log(1.0 / r)\par
+    if ln_inv_r < 1e-12:\par
+        return 0.0\par
+    return (g**2) / (4.0 * math.pi * hbar * ln_inv_r)\par
+\par
+\par
+# ==============================================================================\par
+# MODULE 10 — POLAR LAGRANGIAN WRAPPER\par
+# ==============================================================================\par
+\par
+def polar_lagrangian(L_kin: float, L_mat: float,\par
+                     L_bias: float, L_coup: float,\par
+                     layer: int = 0, L_total: int = 4) -> float:\par
+    """\par
+    Ainulindale corrected Lagrangian density.\par
+\par
+    ℒ_NN = (2/π) ∮ [ℒ_kin + ℒ_mat + (1/φ)·ℒ_bias + ℒ_coup] dr dθ\par
+\par
+    Discrete approximation (one layer = one integration step):\par
+      ℒ_NN(l) ≈ (2/π) · Δr · [ℒ_kin + ℒ_mat + (1/φ)·ℒ_bias + ℒ_coup]\par
+\par
+    Where:\par
+      (2/π)  : radian normalization of circular polar measure\par
+      (1/φ)  : golden ratio conjugate bias coupling = 0.6180...\par
+               (from Ainulindale_Conjecture_Revised.docx, April 13 2026)\par
+      Δr     : radial step = 1/L_total (uniform layer spacing)\par
+\par
+    The bias term carries (1/φ) because in destination-centric coordinates\par
+    the bias field must be weighted by the golden ratio conjugate to preserve\par
+    the VEV relationship under the conformal map from Cartesian to polar.\par
+    """\par
+    PHI  = (1.0 + math.sqrt(5.0)) / 2.0\par
+    bias_coupling = 1.0 / PHI          # = 0.61803...\par
+    two_over_pi   = 2.0 / math.pi      # = 0.63662...\par
+    delta_r       = 1.0 / L_total\par
+\par
+    inner = L_kin + L_mat + bias_coupling * L_bias + L_coup\par
+    return two_over_pi * delta_r * inner\par
+\par
+\par
+# ==============================================================================\par
+# SELF-TEST\par
+# ==============================================================================\par
+\par
+def run_self_test() -> bool:\par
+    """Quick verification of all modules."""\par
+    print("FA_smnnip_hyperindex — self-test")\par
+    print("=" * 50)\par
+    passed = 0\par
+    failed = 0\par
+\par
+    # Test 1: US keyboard map\par
+    try:\par
+        assert USKeyboardMap.encode('a') == 0\par
+        assert USKeyboardMap.decode(0) == 'a'\par
+        assert USKeyboardMap.encode(' ') == 94   # space is at index 94\par
+        assert USKeyboardMap.encode('\\n') == 96  # newline at 96\par
+        assert len(US_KEYBOARD_CHARS) == 97\par
+        print("  [PASS] USKeyboardMap: charset verified (97 chars)")\par
+        passed += 1\par
+    except Exception as e:\par
+        print(f"  [FAIL] USKeyboardMap: \{e\}")\par
+        failed += 1\par
+\par
+    # Test 2: Text hyperindex round-trip\par
+    try:\par
+        seq = "Hello!"\par
+        idx, fidx, length = TextHyperIndex.index_record(seq)\par
+        recovered = TextHyperIndex.decode_text(idx, length)\par
+        assert recovered == seq, f"Got \{repr(recovered)\}"\par
+        assert TextHyperIndex.verify(seq)\par
+        print(f"  [PASS] TextHyperIndex: '\{seq\}' -> idx=\{idx\} -> '\{recovered\}'")\par
+        passed += 1\par
+    except Exception as e:\par
+        print(f"  [FAIL] TextHyperIndex: \{e\}")\par
+        failed += 1\par
+\par
+    # Test 3: Long sequence (overflow test, ASCII only)\par
+    try:\par
+        seq = "The Two Towers Ainulindale First Age 2026"\par
+        idx, fidx, length = TextHyperIndex.index_record(seq)\par
+        recovered = TextHyperIndex.decode_text(idx, length)\par
+        assert recovered == seq\par
+        print(f"  [PASS] TextHyperIndex long: \{length\} chars, \{idx.bit_length()\} bits")\par
+        passed += 1\par
+    except Exception as e:\par
+        print(f"  [FAIL] TextHyperIndex long: \{e\}")\par
+        failed += 1\par
+\par
+    # Test 4: Spherical color (phi is lossy by design — test invertible dims only)\par
+    try:\par
+        r, g, b = 0.8, 0.3, 0.1\par
+        theta, phi, sat, rho = SphericalColor.rgb_to_spherical(r, g, b)\par
+        # phi encodes warm/cool from B channel — not fully invertible\par
+        # Test that theta, sat, rho reconstruct reasonably\par
+        r2, g2, b2 = SphericalColor.spherical_to_rgb(theta, phi, sat, rho)\par
+        # Luminance and saturation should be close; hue should be close\par
+        rho2 = 0.2126*r2 + 0.7152*g2 + 0.0722*b2\par
+        rho1 = 0.2126*r  + 0.7152*g  + 0.0722*b\par
+        err_lum = abs(rho1 - rho2)\par
+        assert err_lum < 0.12, f"Luminance error \{err_lum:.4f\} too large"\par
+        print(f"  [PASS] SphericalColor: theta=\{theta:.3f\} sat=\{sat:.3f\} "\par
+              f"rho=\{rho:.3f\} lum_err=\{err_lum:.4f\} (phi is advisory/lossy)")\par
+        passed += 1\par
+    except Exception as e:\par
+        print(f"  [FAIL] SphericalColor: \{e\}")\par
+        failed += 1\par
+\par
+    # Test 5: Tupper encode/decode round-trip\par
+    try:\par
+        tile = [[[0.5 + 0.1*x*0.1*y for y in range(8)]\par
+                  for x in range(8)]\par
+                 for _ in range(4)]\par
+        k_vec = MultiChannelTupper.encode_tile(tile)\par
+        recovered = MultiChannelTupper.decode_tile(k_vec)\par
+        err = max(abs(tile[c][x][y] - recovered[c][x][y])\par
+                  for c in range(4) for x in range(8) for y in range(8))\par
+        assert err < 1.0/(2**TUPPER_BITS), f"Quantization error \{err:.6f\}"\par
+        total_bits = sum(k.bit_length() for k in k_vec)\par
+        print(f"  [PASS] MultiChannelTupper: 4ch 8×8 tile, total bits=\{total_bits\}, err=\{err:.6f\}")\par
+        passed += 1\par
+    except Exception as e:\par
+        print(f"  [FAIL] MultiChannelTupper: \{e\}")\par
+        failed += 1\par
+\par
+    # Test 6: Radial correspondence\par
+    try:\par
+        for l in range(4):\par
+            r = layer_to_r(l, 4)\par
+            l2 = r_to_layer(r, 4)\par
+            assert l2 == l, f"layer \{l\} → r=\{r:.3f\} → layer \{l2\}"\par
+        print(f"  [PASS] Radial correspondence: ℝ(r=1.0)→ℂ(0.75)→ℍ(0.50)→𝕆(0.25)")\par
+        passed += 1\par
+    except Exception as e:\par
+        print(f"  [FAIL] Radial correspondence: \{e\}")\par
+        failed += 1\par
+\par
+    # Test 7: Sedenion boundary\par
+    try:\par
+        assert_within_tower(3)   # 𝕆 — OK\par
+        try:\par
+            assert_within_tower(4)  # 𝕊 — should raise\par
+            print("  [FAIL] Sedenion boundary: should have raised")\par
+            failed += 1\par
+        except SedenionBoundaryViolation:\par
+            print("  [PASS] Sedenion boundary: 𝕆 passes, 𝕊 raises")\par
+            passed += 1\par
+    except Exception as e:\par
+        print(f"  [FAIL] Sedenion boundary: \{e\}")\par
+        failed += 1\par
+\par
+    # Test 8: Polar Lagrangian\par
+    try:\par
+        L = polar_lagrangian(L_kin=-0.5, L_mat=0.3, L_bias=0.1, L_coup=-0.2, layer=0)\par
+        assert L != 0.0\par
+        PHI = (1 + math.sqrt(5)) / 2\par
+        expected_inner = -0.5 + 0.3 + (1/PHI)*0.1 + (-0.2)\par
+        expected = (2/math.pi) * 0.25 * expected_inner\par
+        assert abs(L - expected) < 1e-10, f"Got \{L\}, expected \{expected\}"\par
+        print(f"  [PASS] Polar Lagrangian: (2/π)∮[...+(1/φ)L_bias+...] = \{L:.6f\}")\par
+        passed += 1\par
+    except Exception as e:\par
+        print(f"  [FAIL] Polar Lagrangian: \{e\}")\par
+        failed += 1\par
+\par
+    # Test 9: Blockchain ledger\par
+    try:\par
+        import tempfile\par
+        with tempfile.TemporaryDirectory() as tmpdir:\par
+            ledger = BlockchainLedger(os.path.join(tmpdir, 'test_ledger'))\par
+            b0 = ledger.append('text',  0, 0, 12345,   8, 'R', 0.001, False)\par
+            b1 = ledger.append('image', 0, 1, 99999,  64, 'O', 0.003, True)\par
+            valid, broken_id, msg = ledger.verify()\par
+            assert valid, f"Chain invalid: \{msg\}"\par
+            assert b1['prev_hash'] == b0['block_hash']\par
+        print(f"  [PASS] Blockchain ledger: 2-block chain verified, mastery event recorded")\par
+        passed += 1\par
+    except Exception as e:\par
+        print(f"  [FAIL] Blockchain ledger: \{e\}")\par
+        failed += 1\par
+\par
+    print("=" * 50)\par
+    print(f"  Results: \{passed\} passed, \{failed\} failed")\par
+    return failed == 0\par
+\par
+\par
+if __name__ == '__main__':\par
+    ok = run_self_test()\par
+    raise SystemExit(0 if ok else 1)\par
+
+}

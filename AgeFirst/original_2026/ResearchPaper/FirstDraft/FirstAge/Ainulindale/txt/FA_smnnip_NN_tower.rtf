@@ -1,0 +1,652 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Courier New;}}
+\f0\fs18
+#!/usr/bin/env python3\par
+"""\par
+==============================================================================\par
+FA_smnnip_NN_tower.py\par
+SMNNIP Neural Network Tower -- Pure Python3 -- First Age\par
+==============================================================================\par
+Standard Model of Neural Network Information Propagation\par
+FA_smnnip_NN_tower: The Neural Network Training Tower\par
+\par
+Two independent substrates. One shared tower. One Music.\par
+\par
+  TextSubstrate  (R, 97-char fixed vocab)\par
+      -> CayleyDickson.include() -> hidden_dim\par
+      |\par
+  ImageSubstrate (R, 1 Oct group/tile, spherical CMYK)\par
+      -> CayleyDickson.include() -> hidden_dim\par
+      |\par
+      +--------------------------+\par
+             C layer  U(1)         <- both modalities arrive as same shape\par
+             H layer  SU(2)\par
+             O layer  G2/SU(3)     <- sedenion boundary enforced\par
+             |\par
+           Output\par
+\par
+Corrected Ainulindale Lagrangian (Ainulindale_Conjecture_Revised.docx Apr 13):\par
+  L_NN = (2/pi) oint [L_kin + L_mat + (1/phi)*L_bias + L_coup] dr dtheta\par
+\par
+Running coupling (Ainulindale radial form):\par
+  alpha_NN(r) = g^2 / (4*pi*hbar_NN*ln(1/r))\par
+  Bridge to RG: ln(1/r) = ln(L/(L-l))\par
+\par
+Mastery: weights crystallize when vev_distance < hbar_NN/2\par
+\par
+Blockchain ledger records every training step and crystallization.\par
+\par
+Author: O Captain My Captain + Claude (Anthropic)\par
+Date:   April 2026 -- First Age\par
+==============================================================================\par
+"""\par
+\par
+import math\par
+import random\par
+import sys\par
+import os\par
+import time\par
+from typing import List, Tuple, Optional, Dict, Any\par
+\par
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))\par
+\par
+from FA_smnnip_hyperindex import (\par
+    TextHyperIndex, ImageHyperIndex, MultiChannelTupper,\par
+    SphericalColor, BlockchainLedger,\par
+    layer_to_r, r_to_layer, alpha_nn_from_r, polar_lagrangian,\par
+    assert_within_tower, SedenionBoundaryViolation,\par
+    MASTERY_THRESHOLDS, US_KEYBOARD_CHARS, VOCAB_SIZE,\par
+)\par
+\par
+try:\par
+    from smnnip_derivation_pure import RenormalizationGroup, Algebra\par
+    _DERIV = True\par
+except ImportError:\par
+    _DERIV = False\par
+\par
+try:\par
+    from smnnip_lagrangian_pure import PhysicalConstants\par
+    _LAG = True\par
+except ImportError:\par
+    _LAG = False\par
+\par
+# ── Minimal math helpers ─────────────────────────────────────────────────────\par
+\par
+def _dot(a, b):   return sum(x*y for x,y in zip(a,b))\par
+def _norm(v):     return math.sqrt(sum(x*x for x in v))\par
+def _clip(x, lo=-10.0, hi=10.0): return max(lo, min(hi, x))\par
+def _zeros(n):    return [0.0]*n\par
+def _matvec(M, v): return [_dot(row, v) for row in M]\par
+def _relu(v):     return [max(0.0, x) for x in v]\par
+\par
+def _softmax(v):\par
+    m = max(v)\par
+    e = [math.exp(x - m) for x in v]\par
+    s = sum(e) + 1e-12\par
+    return [x/s for x in e]\par
+\par
+def _cross_entropy(probs, idx):\par
+    return -math.log(max(probs[idx], 1e-12))\par
+\par
+# ── Constants ────────────────────────────────────────────────────────────────\par
+\par
+L_TOTAL      = 4\par
+PHI          = (1.0 + math.sqrt(5.0)) / 2.0\par
+BIAS_COUP    = 1.0 / PHI        # 0.6180... (1/phi, Ainulindale corrected)\par
+TWO_OVER_PI  = 2.0 / math.pi   # 0.6366...\par
+\par
+LNAME  = \{0:'R', 1:'C', 2:'H', 3:'O'\}\par
+LGAUGE = \{0:'trivial', 1:'U(1)', 2:'SU(2)', 3:'G2/SU(3)'\}\par
+LHBAR  = \{0:0.10, 1:0.08, 2:0.05, 3:0.02\}\par
+LG     = \{0:0.010, 1:0.009, 2:0.007, 3:0.005\}\par
+LMU    = \{0:0.5,  1:0.5,  2:0.4,  3:0.3\}\par
+LLAM   = \{0:0.10, 1:0.10, 2:0.12, 3:0.15\}\par
+\par
+# ==============================================================================\par
+# MASTERED WEIGHT FIELD\par
+# ==============================================================================\par
+\par
+class MasteredWeightField:\par
+    """Yang-Mills weight field with mastery crystallization."""\par
+\par
+    def __init__(self, in_d, out_d, layer):\par
+        self.in_d  = in_d\par
+        self.out_d = out_d\par
+        self.layer = layer\par
+        self.hbar  = LHBAR[layer]\par
+        self.g     = LG[layer]\par
+        self.r     = layer_to_r(layer, L_TOTAL)\par
+        self.alpha = alpha_nn_from_r(self.g, self.hbar, self.r)\par
+        self._mastered  = False\par
+        self._threshold = MASTERY_THRESHOLDS[LNAME[layer]]\par
+\par
+        sc = math.sqrt(2.0 / (in_d + out_d))\par
+        self.W  = [[random.gauss(0.0, sc) for _ in range(out_d)]\par
+                   for _ in range(in_d)]\par
+        self.dW = [[0.0]*out_d for _ in range(in_d)]\par
+\par
+    def is_mastered(self):   return self._mastered\par
+    def forward(self, psi):\par
+        return [sum(self.W[j][i]*psi[j] for j in range(min(self.in_d,len(psi))))\par
+                for i in range(self.out_d)]\par
+    def field_strength(self):\par
+        return math.sqrt(sum(w**2 for row in self.W for w in row))\par
+    def noether(self, psi):  return self.g * _dot(psi, psi)\par
+\par
+    def update(self, psi, grad, lr, mom=0.9):\par
+        if self._mastered:\par
+            gi = _zeros(self.in_d)\par
+            for i in range(min(self.out_d, len(grad))):\par
+                for j in range(self.in_d):\par
+                    gi[j] += self.W[j][i] * grad[i]\par
+            return gi\par
+        gn = _norm(grad)\par
+        sc = min(1.0, 1.0/(gn+1e-12)) if gn > 1.0 else 1.0\par
+        gi = _zeros(self.in_d)\par
+        for i in range(min(self.out_d, len(grad))):\par
+            for j in range(min(self.in_d, len(psi))):\par
+                dw = psi[j] * grad[i] * sc\par
+                self.dW[j][i] = mom*self.dW[j][i] - lr*dw\par
+                self.W[j][i]  = _clip(self.W[j][i] + self.dW[j][i])\par
+                gi[j] += self.W[j][i] * grad[i]\par
+        return gi\par
+\par
+    def check_mastery(self, vev):\par
+        if self._mastered: return True\par
+        if abs(self.field_strength() - vev) < self._threshold:\par
+            self._mastered = True\par
+            self.dW = [[0.0]*self.out_d for _ in range(self.in_d)]\par
+        return self._mastered\par
+\par
+    def vev_dist(self, vev):\par
+        return abs(self.field_strength() - vev)\par
+\par
+\par
+# ==============================================================================\par
+# MASTERED BIAS FIELD\par
+# ==============================================================================\par
+\par
+class MasteredBiasField:\par
+    """Higgs bias field with (1/phi) polar correction and mastery."""\par
+\par
+    def __init__(self, size, layer, mu_sq, lam):\par
+        self.size  = size\par
+        self.layer = layer\par
+        self.mu_sq = mu_sq\par
+        self.lam   = lam\par
+        self.vev   = math.sqrt(mu_sq/(2.0*lam)) if mu_sq > 0 else 0.0\par
+        self._mastered  = False\par
+        self._threshold = MASTERY_THRESHOLDS[LNAME[layer]]\par
+        self.beta = [random.gauss(0.0, 0.01) for _ in range(size)]\par
+        self.vel  = _zeros(size)\par
+\par
+    def is_mastered(self):  return self._mastered\par
+    def apply(self, psi):\par
+        return [psi[i] + self.beta[i] for i in range(min(len(psi), self.size))]\par
+\par
+    def potential(self):\par
+        b2 = sum(b*b for b in self.beta)\par
+        return -self.mu_sq*b2 + self.lam*b2*b2\par
+\par
+    def polar_l_bias(self):\par
+        """L_bias with (1/phi) Ainulindale correction."""\par
+        return BIAS_COUP * self.potential()\par
+\par
+    def vev_dist(self):\par
+        return abs(math.sqrt(sum(b*b for b in self.beta)) - self.vev)\par
+\par
+    def update(self, overlap, lr, mom=0.9):\par
+        if self._mastered: return\par
+        b2 = sum(b*b for b in self.beta)\par
+        for i in range(self.size):\par
+            dV    = (-2.0*self.mu_sq + 4.0*self.lam*b2) * self.beta[i]\par
+            drive = -overlap[i] if i < len(overlap) else 0.0\par
+            self.vel[i]  = mom*self.vel[i] - lr*(dV+drive)\par
+            self.beta[i] = _clip(self.beta[i] + self.vel[i])\par
+\par
+    def check_mastery(self):\par
+        if self._mastered: return True\par
+        if self.vev_dist() < self._threshold:\par
+            self._mastered = True\par
+            self.vel = _zeros(self.size)\par
+        return self._mastered\par
+\par
+\par
+# ==============================================================================\par
+# TEXT SUBSTRATE\par
+# ==============================================================================\par
+\par
+class TextSubstrate:\par
+    """Layer 0: US keyboard 97-char fixed vocab -> hidden_dim."""\par
+\par
+    def __init__(self, hidden_dim, ctx_len):\par
+        self.vocab_size = VOCAB_SIZE\par
+        self.hidden_dim = hidden_dim\par
+        self.ctx_len    = ctx_len\par
+        self.in_dim     = VOCAB_SIZE * ctx_len\par
+        self.r          = layer_to_r(0, L_TOTAL)  # r=1.0\par
+\par
+        self._c2i = \{c: i for i, c in enumerate(US_KEYBOARD_CHARS)\}\par
+        self._i2c = \{i: c for i, c in enumerate(US_KEYBOARD_CHARS)\}\par
+\par
+        self.W = MasteredWeightField(self.in_dim, hidden_dim, 0)\par
+        self.B = MasteredBiasField(hidden_dim, 0, LMU[0], LLAM[0])\par
+\par
+    def one_hot(self, c):\par
+        v = _zeros(self.vocab_size)\par
+        if c in self._c2i: v[self._c2i[c]] = 1.0\par
+        return v\par
+\par
+    def encode(self, ctx):\par
+        flat = []\par
+        for c in ctx[-self.ctx_len:]:\par
+            flat.extend(self.one_hot(c))\par
+        while len(flat) < self.in_dim: flat.append(0.0)\par
+        return flat[:self.in_dim]\par
+\par
+    def forward(self, ctx):\par
+        psi = self.encode(ctx)\par
+        out = self.W.forward(psi)\par
+        out = self.B.apply(out)\par
+        out = _relu(out)\par
+        L_kin  = -0.25 * self.W.field_strength()**2\par
+        J      = self.W.noether(psi)\par
+        return out, L_kin, J\par
+\par
+    def backward(self, ctx, grad, lr):\par
+        psi = self.encode(ctx)\par
+        gi  = self.W.update(psi, grad, lr)\par
+        self.B.update(grad, lr)\par
+        wm = self.W.check_mastery(self.B.vev)\par
+        bm = self.B.check_mastery()\par
+        return gi, wm, bm\par
+\par
+    def hyperindex(self, ctx):\par
+        return TextHyperIndex.index_record(ctx)\par
+\par
+\par
+# ==============================================================================\par
+# IMAGE SUBSTRATE\par
+# ==============================================================================\par
+\par
+class ImageSubstrate:\par
+    """Layer 0: 8x8 RGB tile -> spherical CMYK Oct -> hidden_dim."""\par
+\par
+    def __init__(self, hidden_dim, tile=8, img_w=8, img_h=8):\par
+        self.tile    = tile\par
+        self.in_dim  = tile * tile * 8\par
+        self.hidden_dim = hidden_dim\par
+        self.img_w   = img_w\par
+        self.img_h   = img_h\par
+\par
+        self.W = MasteredWeightField(self.in_dim, hidden_dim, 0)\par
+        self.B = MasteredBiasField(hidden_dim, 0, LMU[0], LLAM[0])\par
+\par
+    def encode(self, rgb_tile, depth=0.0, conf=0.0):\par
+        flat = []\par
+        for x in range(self.tile):\par
+            for y in range(self.tile):\par
+                try:   rv,gv,bv = rgb_tile[x][y]\par
+                except: rv,gv,bv = 0.0,0.0,0.0\par
+                flat.extend(SphericalColor.to_octonion(rv,gv,bv,depth,conf))\par
+        while len(flat) < self.in_dim: flat.append(0.0)\par
+        return flat[:self.in_dim]\par
+\par
+    def forward(self, rgb_tile, depth=0.0, conf=0.0):\par
+        psi = self.encode(rgb_tile, depth, conf)\par
+        out = self.W.forward(psi)\par
+        out = self.B.apply(out)\par
+        out = _relu(out)\par
+        L_kin = -0.25 * self.W.field_strength()**2\par
+        J     = self.W.noether(psi)\par
+        return out, L_kin, J\par
+\par
+    def backward(self, rgb_tile, grad, lr, depth=0.0, conf=0.0):\par
+        psi = self.encode(rgb_tile, depth, conf)\par
+        gi  = self.W.update(psi, grad, lr)\par
+        self.B.update(grad, lr)\par
+        wm = self.W.check_mastery(self.B.vev)\par
+        bm = self.B.check_mastery()\par
+        return gi, wm, bm\par
+\par
+    def tile_r(self, tx, ty):\par
+        return ImageHyperIndex.tile_radial_r(tx, ty, self.img_w, self.img_h)\par
+\par
+    def hyperindex(self, rgb_tile, tx=0, ty=0, depth=0.0, conf=0.0):\par
+        return ImageHyperIndex.index_record(\par
+            rgb_tile, tx, ty, self.img_w, self.img_h, depth, conf)\par
+\par
+\par
+# ==============================================================================\par
+# SHARED UPPER TOWER (C -> H -> O)\par
+# ==============================================================================\par
+\par
+class SharedUpperTower:\par
+    """\par
+    Shared C->H->O tower. Receives from either substrate.\par
+    By layer C the modality is forgotten -- one Music.\par
+    Sedenion boundary enforced at O (index 3).\par
+    """\par
+\par
+    def __init__(self, hidden_dim, output_dim):\par
+        self.hidden_dim = hidden_dim\par
+        self.output_dim = output_dim\par
+\par
+        assert_within_tower(1)\par
+        assert_within_tower(2)\par
+        assert_within_tower(3)\par
+\par
+        self.W1 = MasteredWeightField(hidden_dim, hidden_dim, 1)\par
+        self.B1 = MasteredBiasField(hidden_dim, 1, LMU[1], LLAM[1])\par
+        self.W2 = MasteredWeightField(hidden_dim, hidden_dim, 2)\par
+        self.B2 = MasteredBiasField(hidden_dim, 2, LMU[2], LLAM[2])\par
+        self.W3 = MasteredWeightField(hidden_dim, output_dim, 3)\par
+        self.B3 = MasteredBiasField(output_dim, 3, LMU[3], LLAM[3])\par
+\par
+        self.noether_hist:    List[float] = []\par
+        self.lagrangian_hist: List[float] = []\par
+\par
+    def _fwd(self, psi, W, B, layer):\par
+        assert_within_tower(layer)\par
+        out   = W.forward(psi)\par
+        out   = B.apply(out)\par
+        out   = _relu(out)\par
+        L_kin = -0.25 * W.field_strength()**2\par
+        L_mat = _dot(psi, psi) * 0.1\par
+        L_b   = B.polar_l_bias()\par
+        L_c   = -W.g * _dot(psi, psi)\par
+        L_p   = polar_lagrangian(L_kin, L_mat, L_b, L_c,\par
+                                  layer=layer, L_total=L_TOTAL)\par
+        J     = W.noether(psi)\par
+        return out, L_p, J\par
+\par
+    def forward(self, sub_out):\par
+        p, L1, J1 = self._fwd(sub_out, self.W1, self.B1, 1)\par
+        p, L2, J2 = self._fwd(p, self.W2, self.B2, 2)\par
+        p, L3, J3 = self._fwd(p, self.W3, self.B3, 3)\par
+        L_tot = L1 + L2 + L3\par
+        viol  = (abs(J2-J1) + abs(J3-J2)) / 2.0\par
+        self.noether_hist.append(viol)\par
+        self.lagrangian_hist.append(L_tot)\par
+        return p, L_tot, viol\par
+\par
+    def backward(self, grad, lr, sub_out):\par
+        hd = self.hidden_dim\par
+        g3 = self.W3.update(sub_out[:hd], grad, lr)\par
+        self.B3.update(grad, lr)\par
+        g2 = self.W2.update(sub_out[:hd], g3[:hd], lr)\par
+        self.B2.update(g3[:hd], lr)\par
+        g1 = self.W1.update(sub_out[:hd], g2[:hd], lr)\par
+        self.B1.update(g2[:hd], lr)\par
+        mastery = \{\par
+            'W1': self.W1.check_mastery(self.B1.vev),\par
+            'B1': self.B1.check_mastery(),\par
+            'W2': self.W2.check_mastery(self.B2.vev),\par
+            'B2': self.B2.check_mastery(),\par
+            'W3': self.W3.check_mastery(self.B3.vev),\par
+            'B3': self.B3.check_mastery(),\par
+        \}\par
+        return g1, mastery\par
+\par
+    def mastered(self):\par
+        return sum(1 for f in\par
+                   [self.W1,self.B1,self.W2,self.B2,self.W3,self.B3]\par
+                   if f.is_mastered())\par
+\par
+\par
+# ==============================================================================\par
+# TEXT NN TOWER\par
+# ==============================================================================\par
+\par
+class FATextNNTower:\par
+    """TextSubstrate -> SharedUpperTower -> softmax."""\par
+\par
+    def __init__(self, hidden_dim=64, ctx_len=8,\par
+                 ledger_path='FA_hyperindex_ledger'):\par
+        self.ctx_len    = ctx_len\par
+        self.hidden_dim = hidden_dim\par
+        self.out_dim    = VOCAB_SIZE\par
+        self.substrate  = TextSubstrate(hidden_dim, ctx_len)\par
+        self.tower      = SharedUpperTower(hidden_dim, VOCAB_SIZE)\par
+        self.ledger     = BlockchainLedger(ledger_path)\par
+        self._c2i       = \{c:i for i,c in enumerate(US_KEYBOARD_CHARS)\}\par
+        self._i2c       = \{i:c for i,c in enumerate(US_KEYBOARD_CHARS)\}\par
+        self.loss_hist: List[float] = []\par
+        self._epoch = 0; self._step = 0\par
+\par
+    def forward(self, ctx):\par
+        s,_,_ = self.substrate.forward(ctx)\par
+        l,_,_ = self.tower.forward(s)\par
+        return _softmax(l)\par
+\par
+    def train_step(self, ctx, target, lr=0.005):\par
+        s, Ls, Js = self.substrate.forward(ctx)\par
+        l, Lt, Jt = self.tower.forward(s)\par
+        probs     = _softmax(l)\par
+        ti        = self._c2i.get(target, 0)\par
+        loss      = _cross_entropy(probs, ti)\par
+        noether   = (Js + Jt) / 2.0\par
+\par
+        grad  = [p-(1.0 if i==ti else 0.0) for i,p in enumerate(probs)]\par
+        gs, m = self.tower.backward(grad, lr, s)\par
+        self.substrate.backward(ctx, gs[:self.hidden_dim], lr)\par
+\par
+        ti_txt, fi, dl = self.substrate.hyperindex(ctx)\par
+        self.ledger.append('text', self._epoch, self._step,\par
+                           ti_txt, dl, LNAME[0], noether,\par
+                           any(m.values()),\par
+                           \{'fano':str(fi), 'loss':loss\})\par
+        self.loss_hist.append(loss)\par
+        self._step += 1\par
+        return loss, noether\par
+\par
+    def train_epoch(self, text, lr=0.005, max_steps=500):\par
+        valid  = [(i, text[i:i+self.ctx_len], text[i+self.ctx_len])\par
+                  for i in range(len(text)-self.ctx_len-1)\par
+                  if text[i+self.ctx_len] in self._c2i]\par
+        random.shuffle(valid)\par
+        valid = valid[:max_steps]\par
+        tl = tn = 0.0\par
+        for _, ctx, tgt in valid:\par
+            ctx = ''.join(c if c in self._c2i else ' ' for c in ctx)\par
+            l, n = self.train_step(ctx, tgt, lr)\par
+            tl += l; tn += n\par
+        self._epoch += 1\par
+        n = max(1, len(valid))\par
+        return tl/n, tn/n\par
+\par
+    def generate(self, seed, length=100, temp=1.0):\par
+        ctx = seed[-self.ctx_len:]\par
+        ctx = ''.join(c if c in self._c2i else ' ' for c in ctx)\par
+        out = seed\par
+        for _ in range(length):\par
+            p = self.forward(ctx)\par
+            if temp != 1.0:\par
+                p = _softmax([math.log(x+1e-12)/temp for x in p])\par
+            rv = random.random(); cu = 0.0; ch = 0\par
+            for i, pv in enumerate(p):\par
+                cu += pv\par
+                if rv < cu: ch = i; break\par
+            c  = self._i2c.get(ch, '?')\par
+            out += c\par
+            ctx = (ctx + c)[-self.ctx_len:]\par
+        return out\par
+\par
+    def status(self):\par
+        v,_,msg = self.ledger.verify()\par
+        return (f"Mastery: tower \{self.tower.mastered()\}/6 "\par
+                f"| steps=\{self._step\} | chain=\{msg[:30]\}")\par
+\par
+\par
+# ==============================================================================\par
+# IMAGE NN TOWER\par
+# ==============================================================================\par
+\par
+class FAImageNNTower:\par
+    """ImageSubstrate -> SharedUpperTower -> class output."""\par
+\par
+    def __init__(self, hidden_dim=64, n_classes=16, tile=8,\par
+                 img_w=8, img_h=8,\par
+                 ledger_path='FA_hyperindex_ledger'):\par
+        self.hidden_dim = hidden_dim\par
+        self.n_classes  = n_classes\par
+        self.substrate  = ImageSubstrate(hidden_dim, tile, img_w, img_h)\par
+        self.tower      = SharedUpperTower(hidden_dim, n_classes)\par
+        self.ledger     = BlockchainLedger(ledger_path)\par
+        self._epoch = 0; self._step = 0\par
+\par
+    def forward(self, rgb_tile, depth=0.0, conf=0.0):\par
+        s,_,_ = self.substrate.forward(rgb_tile, depth, conf)\par
+        l,_,_ = self.tower.forward(s)\par
+        return _softmax(l)\par
+\par
+    def train_step(self, rgb_tile, target_class, lr=0.005,\par
+                   tx=0, ty=0, depth=0.0, conf=0.0):\par
+        s, Ls, Js = self.substrate.forward(rgb_tile, depth, conf)\par
+        l, Lt, Jt = self.tower.forward(s)\par
+        probs     = _softmax(l)\par
+        loss      = _cross_entropy(probs, target_class)\par
+        noether   = (Js + Jt) / 2.0\par
+\par
+        grad  = [p-(1.0 if i==target_class else 0.0)\par
+                 for i,p in enumerate(probs)]\par
+        gs, m = self.tower.backward(grad, lr, s)\par
+        self.substrate.backward(rgb_tile, gs[:self.hidden_dim],\par
+                                lr, depth, conf)\par
+\par
+        idx = self.substrate.hyperindex(rgb_tile, tx, ty, depth, conf)\par
+        self.ledger.append('image', self._epoch, self._step,\par
+                           idx.get('k_C','0'),\par
+                           self.substrate.tile**2,\par
+                           LNAME[0], noether, any(m.values()),\par
+                           \{'color':idx.get('color_index','0'),\par
+                            'r':idx.get('radial_r',0.0),\par
+                            'loss':loss\})\par
+        self._step += 1\par
+        return loss, noether\par
+\par
+\par
+# ==============================================================================\par
+# COMBINED TOWER (BOTH SUBSTRATES -> ONE SHARED TOWER)\par
+# ==============================================================================\par
+\par
+class FACombinedNNTower:\par
+    """\par
+    The Two Towers -- one shared upper tower, two independent substrates.\par
+\par
+    TextSubstrate  --> |\par
+                       +--> SharedUpperTower --> output\par
+    ImageSubstrate --> |\par
+\par
+    Independent themes. One Music.\par
+    """\par
+\par
+    def __init__(self, hidden_dim=64, ctx_len=8, n_classes=16,\par
+                 ledger_path='FA_hyperindex_ledger'):\par
+        out_dim = max(VOCAB_SIZE, n_classes)\par
+        self.text_sub  = TextSubstrate(hidden_dim, ctx_len)\par
+        self.img_sub   = ImageSubstrate(hidden_dim)\par
+        self.tower     = SharedUpperTower(hidden_dim, out_dim)\par
+        self.ledger    = BlockchainLedger(ledger_path)\par
+        self._c2i      = \{c:i for i,c in enumerate(US_KEYBOARD_CHARS)\}\par
+        self._i2c      = \{i:c for i,c in enumerate(US_KEYBOARD_CHARS)\}\par
+\par
+    def forward_text(self, ctx):\par
+        s,_,_ = self.text_sub.forward(ctx)\par
+        l,_,_ = self.tower.forward(s)\par
+        return _softmax(l[:VOCAB_SIZE])\par
+\par
+    def forward_image(self, rgb_tile, depth=0.0, conf=0.0):\par
+        s,_,_ = self.img_sub.forward(rgb_tile, depth, conf)\par
+        l,_,_ = self.tower.forward(s)\par
+        return _softmax(l)\par
+\par
+    def mastery_summary(self):\par
+        v,_,msg = self.ledger.verify()\par
+        return \{\par
+            'tower_mastered': self.tower.mastered(),\par
+            'text_W': self.text_sub.W.is_mastered(),\par
+            'text_B': self.text_sub.B.is_mastered(),\par
+            'img_W':  self.img_sub.W.is_mastered(),\par
+            'img_B':  self.img_sub.B.is_mastered(),\par
+            'chain':  v,\par
+            'blocks': self.ledger._block_id,\par
+        \}\par
+\par
+\par
+# ==============================================================================\par
+# DEMO\par
+# ==============================================================================\par
+\par
+def run_demo():\par
+    print("FA_smnnip_NN_tower -- Pure Python3 -- First Age")\par
+    print("=" * 60)\par
+    print(f"Lagrangian: (2/pi)*oint[L_kin + L_mat + (1/phi)*L_bias + L_coup]")\par
+    print(f"phi = \{PHI:.6f\}   1/phi = \{BIAS_COUP:.6f\}")\par
+    print(f"Radial: r(layer=0)=\{layer_to_r(0):.2f\}  r(layer=3)=\{layer_to_r(3):.2f\}")\par
+    print()\par
+\par
+    # Text tower\par
+    print("-- Text Tower --")\par
+    txt = FATextNNTower(hidden_dim=32, ctx_len=4,\par
+                         ledger_path='/tmp/FA_demo_ledger')\par
+    corpus = (\par
+        "the algebra tower is primary. the world is secondary. "\par
+        "noether conservation holds at every boundary. "\par
+        "permutations are the discrete skeleton of rotations. "\par
+        "the two towers sing different themes into one music. "\par
+    ) * 3\par
+    for ep in range(3):\par
+        loss, noether = txt.train_epoch(corpus, lr=0.005, max_steps=80)\par
+        print(f"  Epoch \{ep+1\}: loss=\{loss:.4f\}  noether=\{noether:.4f\}")\par
+    print(f"  Generated: \{repr(txt.generate('the ', length=30))\}")\par
+    print(f"  \{txt.status()\}")\par
+    print()\par
+\par
+    # Image tower\par
+    print("-- Image Tower --")\par
+    img = FAImageNNTower(hidden_dim=32, n_classes=8,\par
+                          ledger_path='/tmp/FA_demo_ledger')\par
+    tile = [[(x/7, y/7, 0.5) for y in range(8)] for x in range(8)]\par
+    loss, noether = img.train_step(tile, target_class=3, tx=2, ty=2)\par
+    th, ph, sa, ro = SphericalColor.rgb_to_spherical(0.5, 0.5, 0.5)\par
+    print(f"  Tile step: loss=\{loss:.4f\}  noether=\{noether:.4f\}")\par
+    print(f"  Center pixel: theta=\{th:.3f\} phi=\{ph:.3f\} "\par
+          f"sat=\{sa:.3f\} lum=\{ro:.3f\}")\par
+    print()\par
+\par
+    # Combined\par
+    print("-- Combined Tower (Two Themes -> One Music) --")\par
+    comb = FACombinedNNTower(hidden_dim=32, ctx_len=4,\par
+                              ledger_path='/tmp/FA_demo_ledger')\par
+    print(f"  \{comb.mastery_summary()\}")\par
+    print()\par
+\par
+    # Blockchain\par
+    print("-- Blockchain Verify --")\par
+    led = BlockchainLedger('/tmp/FA_demo_ledger')\par
+    v, _, msg = led.verify()\par
+    print(f"  \{msg\}")\par
+    print()\par
+\par
+    # Hyperindex\par
+    print("-- Hyperindex --")\par
+    seq = "the "\par
+    ti, fi, dl = TextHyperIndex.index_record(seq)\par
+    rec = TextHyperIndex.decode_text(ti, dl)\par
+    print(f"  '\{seq\}' -> text_idx=\{ti\} (\{ti.bit_length()\} bits) "\par
+          f"fano=\{fi\} -> '\{rec\}'")\par
+    k  = MultiChannelTupper.encode_tile(\par
+         [[[0.25*c for _ in range(8)] for _ in range(8)]\par
+          for c in range(4)])\par
+    print(f"  Tupper k_C=\{str(k[0])[:18]\}... (\{k[0].bit_length()\} bits)")\par
+    print()\par
+\par
+    print("=" * 60)\par
+    print("Done. Ledger: /tmp/FA_demo_ledger.jsonl + .chain")\par
+\par
+\par
+if __name__ == '__main__':\par
+    run_demo()\par
+
+}
