@@ -65,8 +65,10 @@ the SEVEN, from zero divisors
 the geometry — you get *no geometry*: an uncountable family of octonions meeting only in
 ℂ, with no incidence, no lines, no structure to speak of.
 
-With them you get exactly **7 points, 21 quaternions, and the Fano plane** — every axiom
-verified (see [[89_the_seven_octonions]]).
+With them you get exactly **7 points, 7 quaternions, and the Fano plane** — every axiom
+verified (see [[89_the_seven_octonions]]). *(Corrected 2026-08-16: earlier text said 21
+quaternions. There are 21 octonion PAIRS but only 7 distinct quaternions — all three
+pairs on a line share one.)*
 
 > The Definers do not create the algebra below. They select the finite geometry out of a
 > continuum. That is what "not a fault" means, stated as a measurement.

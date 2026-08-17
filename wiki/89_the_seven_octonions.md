@@ -69,16 +69,24 @@ something complete on its own.
 There are **7 distinct PRESERVE octonions** among the 84 diagonals, 12 diagonals each.
 
 Every pair of them intersects in exactly **4 dimensions** — all 21 pairs, no exceptions.
-And each of those 21 intersections is closed, contains 1, and is 4-dimensional, so by
-Hurwitz again it is **the quaternions ℍ**.
+Each intersection is closed, contains 1, and is 4-dimensional, so by Hurwitz again it is
+**the quaternions ℍ**. But the 21 pairs do **not** give 21 distinct quaternions: the three
+pairs on a Fano line all intersect in the *same* 4-space, so there are exactly **7**.
 
 > The quaternions were always there. They are the *pairwise intersections* of the
 > octonions, not the wings of the gain spectrum. Same picture, different location.
 
 ```
  7  OCTONIONS     dim 8
-21  QUATERNIONS   dim 4, = O_i ∩ O_j, and 21 = C(7,2)
+ 7  QUATERNIONS   dim 4, one per Fano LINE
 ```
+
+> **CORRECTED 2026-08-16.** This originally read "21 QUATERNIONS ... 21 = C(7,2)".
+> **That is wrong.** There are 21 *pairs* of octonions, but only **7 distinct
+> quaternions**: all three pairs on a given Fano line intersect in the **same**
+> 4-space (joint span dim 4, not 12; leak ~2e-15). Each line has **one quaternion at
+> its core**, shared by all three of its octonions. The structure is **7–7–7**:
+> 7 octonions, 7 struts, 7 quaternions.
 
 ---
 
@@ -106,9 +114,10 @@ That is the definition of the **Fano plane** — `PG(2,2)`, the smallest project
 7 points and 7 lines. Every axiom checks.
 
 ```
-OCTONIONS  =  the 7 POINTS
-STRUTS     =  the 7 LINES
-QUATERNIONS = the 21 FLAGS (point-on-line incidences)
+OCTONIONS   =  the 7 POINTS
+STRUTS      =  the 7 LINES
+QUATERNIONS =  the 7 LINE-CORES (one per line, shared by its 3 octonions)
+21 FLAGS    =  the point-on-line incidences, and the V4 orbit count
 ```
 
 And it is the *same* Fano plane that governs octonion multiplication itself — the lines
@@ -167,8 +176,9 @@ V₄ acts freely, so the orbits all have size 4:
 84 / 4 = 21
 ```
 
-and 21 is already three things on this page — the quaternions, the Fano flags, and now
-the orbits. **One rotor face per flag, two valves per face, three faces per strut**, with
+and 21 is two things on this page — the Fano **flags** (7 lines × 3 points) and the
+orbits. **Not the quaternions**: there are 7 of those, one per line. The earlier text
+claimed a triple identity; it is a double identity plus an error, corrected above. **One rotor face per flag, two valves per face, three faces per strut**, with
 nothing left over.
 
 ---
