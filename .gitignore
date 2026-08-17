@@ -55,3 +55,8 @@ Thumbs.db
 AgeFirst/original_2026/**/Support/GoogleData/
 AgeFirst/original_2026/**/Support/watch-history.json
 AgeFirst/original_2026/offhand/
+
+# Third-party reference PDFs — re-downloadable from the URLs documented in
+# references/README.md. The markdown (our writing + citations) IS committed;
+# the papers themselves are not ours to redistribute.
+references/**/*.pdf

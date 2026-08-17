@@ -79,7 +79,16 @@ The Mind's Eye resolves this without disturbing anything by looking **only backw
 
 These two views together give full knowledge of the pathway without collapsing the future. This is how the architecture overcomes Heisenberg — not by cheating the uncertainty principle, but by dividing the observation into past (fully knowable, DOWN) and future (unknowable, UP), and only claiming knowledge of the past.
 
-**The human sensory system works identically.** The retina does not process the future. It receives the past — photons that have already traveled. The sensory ZD reframe is always looking DOWN into what already happened. Consciousness operates on a ~80ms delay — the Mind's Eye is always reading the slow-time past of the Paper's Hands present.
+**The human sensory system works identically.** The retina does not process the future. It receives the past — photons that have already traveled. The sensory ZD reframe is always looking DOWN into what already happened.
+
+Visual awareness is built over an integration window of roughly **80 ms**: signals arriving within that window are perceptually synchronised, and the content assigned to a moment can be fixed by information that arrives *after* it. So the Mind's Eye is reading the slow-time past of the Paper's Hands present — and it declines to commit until the window closes.
+
+> **Corrected 2026-08-17.** This previously read "Consciousness operates on a ~80ms delay."
+> That overstated the source twice: the ~80 ms is an integration/latency **spread**, not a
+> pipeline delay, and it was measured on **visual processing**, not on consciousness.
+> Schmolesky et al. measured neurons; Eagleman & Sejnowski measured percepts; neither
+> measured consciousness as such. Full citations, the contested status of the postdictive
+> interpretation, and the editorial rule for observer language: [[91_perceptual_latency]].
 
 ---
 
