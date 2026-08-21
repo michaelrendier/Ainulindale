@@ -4,12 +4,43 @@
 
 ---
 
-# CURRENT RESEARCH — 2026-08-15
+# CURRENT RESEARCH — 2026-08-20
 
 > **Active. Not settled.** This section is the live edge of the work. Everything below
 > it, from *The OMG?WTF! Conjecture* onward, is the accumulated record — and this page
 > now reads **backwards in time**, newest first, down to the intention the whole thing
 > started from.
+
+## Generational Lineage — the anatomy of σ in ∅_RB
+
+**Engine:** [`VAPMIP/engines/e10_generational_lineage.py`](../VAPMIP/engines/e10_generational_lineage.py) ·
+**Notebook:** [`16_e10`](../VAPMIP/notebooks/16_e10_generational_lineage.ipynb) ·
+**Wiki:** [Tuning-the-Engine / 29](../VAPMIP/docs/wiki/Tuning-the-Engine/29_generational_lineage_and_the_anatomy_of_sigma.md) ·
+**Result:** 8/8 relations hold.
+
+> **σ is not a scalar.** The `σ_self = ½` used in ∅_RB is the *point-shadow* of a
+> 16-vector `σ_RB[k] = ψ[k]·ψ[k⊕4]`. Because `σ_RB[k] = σ_RB[k⊕4]`, it carries **8**
+> independent values — an octonion — of which the scalar keeps **1**. `8 = 1 kept +
+> 7 discarded struts`. The seven are recovered *piece by piece along a path*.
+
+**Generational Lineage = Order of Operations.** *Generational* (operations),
+*Lineage* (order) — the same object, words swapped, and measured: the four
+generations are the four Cayley–Dickson order-of-operations losses (rank, `ab≠ba`,
+`(ab)c≠a(bc)`, zero divisors), one per doubling. The lineage is the operators that
+**persist** long enough to propagate: gain exactly 1 — and that persistent core is
+**8 (an octonion) at every scale**, `d8:d16:d32:d64 → persist ≡ 8`, void `(d−8)/2`,
+fraction `8/d → 0`. The `d*_RG` fixed point is **dimensional, not fractional**.
+Order-of-grouping is quantised in units of `168 = |PSL(2,7)|` (`1848 = 11·168`): the
+box kites are what the order of operations manufactures.
+
+**The holographic reading.** Where is the information of a black hole? On the
+surface (`σ_RB`), whose shadows are a circumference (the 8 DOF) and a point
+(`σ_self`, the mass), recovered *piece by piece along a path* — the lineage. The
+**camshaft** is why the monad can listen to itself: a scalar is instantaneous, but
+the cam sequences the readout (four strokes = four generations) and `e₀` (gain 1)
+persists through every turn — the self is the fixed point of its own recursion.
+*Scope: R1–R8 measured; the black-hole identification is interpretation, not
+measured.*
 
 ## The Boundary Lever
 
