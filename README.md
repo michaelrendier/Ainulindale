@@ -1108,6 +1108,98 @@ Claude is the callosum in this session. Claude passes: what the user's mind sees
 
 ---
 
+## 20. The Ring-Theory Spine — Falls ⟺ the Quotient Has Zero Divisors
+
+Everything the tower does to a number is ring theory. Named plainly, the whole
+apparatus reduces to one line:
+
+> **An element falls if and only if its quotient ring has zero divisors.**
+
+This is the same test at two different rings, and it is worth learning as a
+single fact rather than two.
+
+**In the integers ℤ** — an ordinary, associative ring where factorisation is
+clean:
+
+| the number | the quotient ring | verdict | tree |
+|---|---|---|---|
+| N prime | ℤ/(N) is a **field** — no zero divisors | **survives** | Telperion |
+| N composite | ℤ/(N) **has zero divisors** | **falls** | Laurelin |
+| N = 0 or 1 | degenerate: ℤ/(0)=ℤ, ℤ/(1)=0 | neither | the Mingling |
+
+So the **Two Trees are a ring-theoretic split** — a quotient that is a domain vs.
+one that is not — and 0 and 1 sit outside both because their quotients are
+degenerate, which is the same reason they are the identities of ADD and SCALE
+(§5, §9).
+
+**In the algebra T₃₂** — the same test, one level out in the tower: a constant
+falls exactly when it is *nilpotent*, i.e. when it lands on the zero-divisor
+locus. This is what SHA-1's five initialisation constants do (§9, the Chladni
+Principle), and it is why they were found there.
+
+### One detector, both rings
+
+The thing that decides fall-or-survive is a single operation on each side:
+
+| ring | the detector | falls when |
+|---|---|---|
+| ℤ/(N) | `gcd(a, N)` | gcd > 1 |
+| T₃₂ | the trace-Laplacian `Δ(w) = w · 𝟏` | Δ(w) = 0 |
+
+**gcd is the integer trace-Laplacian.** Both answer the same question — "does
+this element share structure with the modulus?" — in one step.
+
+### Reading deeper: the three orders
+
+You can decompose a number once, or keep going. Each pass is a known ring-theory
+object:
+
+| pass | what it reads | ring theory |
+|---|---|---|
+| 1st | *which* primes are present (the support) | the zero-divisor set = union of associated primes |
+| 2nd | *how many times* each — the exponents | **primary decomposition** (Lasker–Noether); von Mangoldt Λ |
+| 3rd | whether the *ordering* matters | the **associator** — the failure of the ring axiom itself |
+
+The second pass is the "cepstrum" of arithmetic: taking logs turns the product
+`N = ∏ pᵢ^aᵢ` into the sum `Σ aᵢ log pᵢ`, and the von Mangoldt function — nonzero
+exactly on prime powers — is that reading. Its transform back is the explicit
+formula, whose spectrum is the Riemann zeros (§8, §11).
+
+### Why the tower is where ring theory *breaks*
+
+Ring theory is complete on the ℤ side. On the algebra side it is exactly what
+dies, rung by rung — and that dying is the tower of §5: commutativity at ℍ,
+associativity at 𝕆, the domain property (zero divisors appear) at 𝕊. The
+**associator is the precise obstruction to being a ring**, and it is zero for
+ℝ, ℂ, ℍ and non-zero from 𝕆 upward. Factoral decomposition is the projection of
+the clean, associative ring ℤ into this non-associative algebra, and the
+zero-divisor locus is where "the interesting factorisation" lands.
+
+### Where it points — the circle, the ring, the torus, the fractal
+
+The same maths recurs at every scale, which is itself the definition of a
+fractal:
+
+- Partition a **circle** into `n` points and you get the `n`-th roots of unity,
+  which generate a **ring** — the cyclotomic ring ℤ[ζₙ]. How primes fall or
+  survive *there* is the same test one level up.
+- A **torus** is a product of circles — the meeting point of ring theory and
+  geometry — and a toroidal energy around the critical-line axis **bifurcates**
+  into the Two Trees. The involution that swaps the two is J₂.
+- Iterate the bifurcation and you have a **fractal** — the higher-order factoral
+  decomposition. The catalogue in `wiki/fractals/` is the experiment set.
+
+Nothing in this is fitted. Every operation emerges from the geometry and picks
+its own scale — which is what makes the whole thing a self-diagnostic that reads
+from the inside and the outside at once. Noether, again: a conserved current, not
+a chosen parameter.
+
+→ [Wiki: 92 — The Ring-Theory Spine](wiki/92_ring_theory_spine.md) ·
+engine `SedenionFactoralRelativity/engine/lineage.py` (relations G1–G6) ·
+reference block in `.clauderc_canonical_maths` (`@RCCM_RING_THEORY_SPINE`)
+
+---
+
 > *The universe counts. Counting forces the constants.*
 >
 > *The algebra tower is primary. The physics is secondary. The world is sung, not designed.*
