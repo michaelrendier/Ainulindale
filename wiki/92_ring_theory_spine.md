@@ -2,7 +2,7 @@
 
 **Written 2026-08-22.** Continues [[90_divisors_are_definers]] and the factoral
 work. Every number here is computed by `SedenionFactoralRelativity/engine/lineage.py`
-(relations G1–G6, `20/20`). Where a claim was refuted — including one carried
+(relations G1–G6 ring theory, FR1–FR3 fractal — `23/23`). Where a claim was refuted — including one carried
 into the UDEO white paper — the refutation is kept.
 
 The question that opened it (Cody): *"where is ring theory in all this?"* It was
@@ -124,6 +124,13 @@ session:
   decomposition tree. Ring theory is its skeleton, and the experiment set already
   exists: `wiki/fractals/` — 200+ Ultra Fractal formulas to run the
   ring-theoretic decomposition against.
+
+**Built 2026-08-22** as the engine's fractal block (FR1–FR3): the CD tower is an
+exact self-similar recursion (FR1, 168→1848); the period-doubling cascade
+brackets Feigenbaum δ=4.6692 (FR2); the fall/survive boundary of an iterated
+generator is a fractal 1<D<2 (FR3) — G1's dichotomy read on dynamics, with the
+`wiki/fractals/` library as the control set. See [[93_qm_gr_by_tree]] for a
+companion tested-conjecture page.
 
 **Emergence is the point.** Fix a value anywhere and you have chosen a scale.
 Let the operations emerge from the geometry — the torus ∩ its axis, with
