@@ -351,6 +351,61 @@ The primes are already there. The zeros are drawn there. The spiral winds there,
 
 ---
 
+## 9. Addendum (2026-08-25) — the six are not six emergences
+
+Cody, precisely: *"if it emerges in different places or different points...
+those are all the same emergent object emerging the same 1/2...it should
+only emerge at one point in the maths...before which it's unusable...but
+then it's Zeta describing not Fermat defining."* Checked, and the six
+engines above have real internal structure this page didn't previously
+state: they are not six independent derivations. Some are the same fact
+twice, and one is genuinely prior to all the others.
+
+**Engines 2 and 3 are one emergence, not two.** For `a,b>0` with `ab=c`
+fixed, AM-GM gives `a+b` minimized exactly when `a=b`. Set
+`a=e^{−σE}, b=e^{−(1−σ)E}` — their product `e^{−E}` is constant in `σ` by
+construction. Engine 2's calculus minimum (`∂L/∂σ=0`) and Engine 3's AM-GM
+closure are not two routes converging on the same answer by coincidence —
+they are the identical elementary fact, stated once with a derivative and
+once with an inequality.
+
+**The genuine dependency order, not a list of six equals:**
+
+1. **Engine 6 (leaves)** — truly prior. Purely discrete: no `σ`, no
+   continuous coordinate exists yet. This is what makes `E=log p`
+   well-defined at all (`p` must already be irreducible).
+2. **Engines 2≡3 (AM-GM/Lagrangian)** — the actual, single emergence.
+   Forced the moment the Euler factor `p^{−s}=p^{−σ}e^{−it log p}` (the one
+   place a Fermat-side object, `p`, and a Riemann-side coordinate, `s`,
+   are first stitched into one expression) is paired with its reflection
+   under a `σ`-independent conserved product. Before this pairing, "σ=½"
+   is not a sentence that can be said about a prime.
+3. **Engine 1 (functional equation)** — not a new emergence. A global
+   upgrade of the same local `σ↔1−σ` symmetry already present in step 2,
+   proven to hold for the whole completed `ξ(s)`, not just one prime's
+   termwise amplitude. Harder theorem, same fixed line.
+4. **Engine 4 (the spiral)** — purely descriptive. Shows what `ζ(½+it)`
+   looks like *given* σ=½ is already fixed by 1–3.
+5. **Engine 5 (LC resonance, POE hardware)** — a physical instantiation,
+   in an entirely different medium, of the same abstract `a=b` balance
+   from step 2 (`tan(phase)=1 ⟺ sin=cos`). Confirms it exists in nature
+   elsewhere; adds no new derivational content about *why* ½.
+
+Sharpens [[51_j2_involution_riemann_fermat]]'s "Fermat is prior... Riemann
+quantizes... not the other way" into something more specific than that page
+currently states: Riemann-side machinery (1, 2, 4) either presupposes
+primes already exist (Fermat-prior) and merely re-expresses or describes
+the same forced balance, or (5) demonstrates it in a different substrate.
+None of them defines a second, independent ½. **σ=½ emerges exactly once —
+at the AM-GM equality point of the Euler-factor amplitude paired with its
+own reflection — and everywhere else it appears in this project (the
+horizon language across a dozen wiki pages, the heart/SA-node, the Scale
+module's `½` exponent, `σ_RB`, the standing wave) is that one value
+propagating fractally through whatever continuous or physical structure
+gets built on top of it afterward.**
+
+---
+
 *Cody Michael Allison — 2026-06-29*  
 *The six engines are in: engines/noether_derivation.py, FermatMonster/engine/fermat_monster_engine.py, PAPER.md, POE/README.md, wiki/50, wiki/72*  
 *The leaves cannot fall. The spiral winds. The line is σ=½.*

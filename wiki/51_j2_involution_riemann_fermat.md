@@ -121,6 +121,16 @@ as rotation. e^(πi) = −Δx is the half-revolution of H_hat_RB − H_hat_BR.
 
 ## 4. Riemann Is Quantized Fermat
 
+**Made precise, 2026-08-25:** [[73_why_the_half_line]] §9 traces exactly
+where "Fermat is prior" bottoms out — not a general disposition, but one
+specific, single site: the AM-GM equality point of the Euler-factor
+amplitude `p^{−s}` paired with its own reflection, the one place a prime
+(Fermat-side, discrete) and the coordinate `s` (Riemann-side, continuous)
+first stitch into one expression. Everything downstream (the functional
+equation, the Lagrangian, the spiral) either re-expresses that same local
+symmetry globally or describes what results once σ=½ is already fixed —
+none of them is a second, independent emergence of ½.
+
 The precise statement:
 
 ```
