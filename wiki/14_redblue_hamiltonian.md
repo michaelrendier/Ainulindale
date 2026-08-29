@@ -41,6 +41,31 @@ R̂ and B̂ are self-adjoint conjugates: `R̂† = B̂`. The functional equation
 
 ---
 
+## Algebraic type of J_red and J_blue
+
+They are the **two octonion halves**, not two sedenions. `𝕊 = 𝕆_red ⊕ 𝕆_blue`
+on the `⊕8` boundary seam:
+
+- **J_red** = the lower octonion, `e₀–e₇` — "what IS", forward accumulation.
+- **J_blue** = the upper octonion, `e₈–e₁₅` — "what CANNOT BE", the reverse signal.
+
+Their composition **is the sedenion — which is 0_RB itself**. So the sedenion is
+**not a third current** running alongside Red and Blue; it is the boundary the
+two octonion currents compose, and it is 0_RB's I/O carrier on **both** strokes
+— *reading* (I→O) converges it to the point `σ_self`; *writing* (O→I) fans it
+back out. (This is why "the sedenion is both an input mode and an output mode to
+0_RB".)
+
+*Two full sedenions* would be `T₃₂` — a different object (observer + geometry;
+the "two people" reading was tested and rejected, [[88_the_paper_trail]] §6).
+
+The `σ` that "is not a scalar" ([[61_up_down_not_forward_backward]]; engine
+`e10`, 8/8) is a **third** object again: `σ_RB[k] = ψ[k]·ψ[k⊕4]`, the `⊕4`
+*quaternion*-pairing product — 8 independent values, one octonion's worth, the
+part that persists at gain 1 at every Cayley–Dickson level.
+
+---
+
 ## Riemann and Fermat — Same Thing
 
 The Riemann Zeta function and Fermat's Last Theorem are adjoint projections of the same prime distribution.

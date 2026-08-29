@@ -21,6 +21,23 @@ Last updated: 2026-07-17
 | [21_chladni_zipf_riemann.md](21_chladni_zipf_riemann.md) | Chladni · Zipf · Riemann — node lines, Zipf=primes, equidistance |
 | [22_constant_facets.md](22_constant_facets.md) | Constant Facets — π, φ, i, e derived from the RedBlue Geometries Engine; Euler's identity as theorem; π as constant of the exactly flat boundary (2026-06-08) |
 
+## Provenance & Citations
+
+| Page | Topic |
+|------|-------|
+| [98_provenance_and_citations.md](98_provenance_and_citations.md) | **Canonical bibliography** — the established work this framework uses (§A, with arXiv/DOI), the originated-here list (§B → `~/.clauderc_user_provenance`), naming provenance (§C), retrieval (§D). **§0: the nomenclature is a language for discussing the work, not the point of it.** |
+| [99_emmy_noether.md](99_emmy_noether.md) | Noether — the two theorems used (1918 conservation, 1921 ring theory) and exactly where. Companion to [43](43_emmy_noether_sedenion.md). |
+| [100_division_algebras_and_physics.md](100_division_algebras_and_physics.md) | Dixon (1994), Furey (2016/18), Baez — the **nearest prior art** to the tower → gauge-group claim; what differs. |
+| [101_the_cayley_dickson_literature.md](101_the_cayley_dickson_literature.md) | Cayley, Dickson, Hurwitz, Schafer, Baez; Moreno / Cawagas / de Marrais for the sedenion zero divisors. |
+| [102_berry_keating_hilbert_polya.md](102_berry_keating_hilbert_polya.md) | The spectral route to σ=½ — Hilbert–Pólya, Montgomery, Odlyzko, Berry–Keating, Connes, Stone. |
+| [103_riemann_and_the_prime_number_theorem.md](103_riemann_and_the_prime_number_theorem.md) | Riemann 1859, Hadamard / de la Vallée Poussin (PNT), von Koch, the sieve (Legendre, Möbius). |
+| [104_fermat_wiles_and_the_corollary_they_missed.md](104_fermat_wiles_and_the_corollary_they_missed.md) | Fermat, Wiles, Taylor–Wiles, Ribet, BCDT, Taniyama–Shimura — **and the claim: the factorisation data is a complete, zero-gradient dataset = The Two Trees.** |
+| [105_the_millennium_problems_in_ainulindale.md](105_the_millennium_problems_in_ainulindale.md) | Which Clay problems are referenced, where, with what citation — as σ-facets, not solutions. The "OMG?WTF!" cascade, kept in the record. |
+| [106_the_navier_stokes_problem.md](106_the_navier_stokes_problem.md) | The one facet flagged for a dedicated pass — "the missing `i`" reading; the outreach target (Dr Tom Crawford's equation). Bring the calculation, not the claim. |
+| [`../references/CITATION_DOWNLOADS.md`](../references/CITATION_DOWNLOADS.md) | Fetch checklist — every citation with arXiv/DOI/URL, open-access status, and target filename. |
+| [43_emmy_noether_sedenion.md](43_emmy_noether_sedenion.md) | The naming decision: 𝕊_EN. |
+| [`../PROVENANCE.md`](../PROVENANCE.md) · [`../METHODOLOGY.md`](../METHODOLOGY.md) · [`../tribute/`](../tribute/) | Development narrative · Boundary Constraint Engineering · Emmy Noether tribute. |
+
 ## Engine Modules
 
 | Page | Topic |

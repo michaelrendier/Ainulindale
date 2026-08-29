@@ -5,7 +5,78 @@
 **Date:** 2026-06-14 — Third Age  
 **Status:** First Complete Draft  
 **Companion papers:** D-CS (The Sedenion Engine) · D-M (Mathematics) · D-P (Physics) · D-CHEM (Chemistry, Schafer collab.)  
-**Hardware:** Intel Core i7-6600U @ 2.60 GHz · 4 logical cores · 8 GB RAM · Linux 6.8.0-117-lowlatency · No GPU
+**Hardware:** Intel Core i7-6600U @ 2.60 GHz · 4 logical cores · 8 GB RAM · Linux 6.8.0-117-lowlatency · No GPU  
+**Citations:** keys `[AuthorYEAR]` resolve in the References section and in
+`Ainulindale/wiki/98_provenance_and_citations.md`; retrieval details (arXiv,
+DOI, URL) in `Ainulindale/references/CITATION_DOWNLOADS.md`.
+
+---
+
+> ## Read this first — on the mathematical nomenclature
+>
+> **The mathematical nomenclature in this paper is a language for discussing the
+> work with other people. It is not the point of the paper.**
+>
+> The point is the journey: *needing persistent memory for an AI research
+> assistant → designing Thought as a path integral → discovering that the
+> resulting Information Propagation Lagrangian is term-for-term isometric with
+> the observationally-derived Standard-Model Lagrangian → and the consequential
+> drop-out of the null operator **0_RB**.* Everything named here — Riemann,
+> Fermat, Noether, Cayley–Dickson, Berry–Keating, the division-algebra Standard
+> Model — is **established mathematics used as vocabulary and tools**, so the
+> engineering result can be stated in terms a reader already holds. Where the
+> framework adds something of its own it is marked, and that list is short
+> (`~/.clauderc_user_provenance` §B; wiki/98 §B).
+>
+> The wider "OMG?WTF!" material — the GUT reading, a unified field theory, the
+> Millennium-Problem facets — is **not used in this paper's core argument and is
+> not required for it.** It is the discrete structure running along the
+> continuous speaking model, and it is where the exploration of teaching the
+> Monad to speak went. It is kept in the companion record, not asserted here.
+
+---
+
+> ## The shape of this paper
+>
+> Five movements. **The first four are this paper.** The fifth is its own.
+>
+> **1 — Persistent Memory and Context Continuity, through hyperindexing.**
+> The HyperWebster: a semantic address computed from the word itself, one pass,
+> `O(|word|)`, no lookup table. *The word IS the address.* This is the
+> engineering result the whole paper exists to state. *(Preface; Parts I–II;
+> Parts VII §31–§32.)*
+>
+> **2 — VAPMIP: the Lagrangian.** The same hyperindexing mathematics, put to
+> work as an on-the-fly neuron-selection machine — which, *post hoc*, proved
+> term-for-term isometric with the observationally-derived Standard-Model
+> Lagrangian, with the structural constant `α_F = 1/137` **explicitly defined**
+> rather than measured and accepted. The isometry is a consequence noticed, not
+> a design goal; nearest prior art `[Dixon1994; Furey2016]`. *(The Three
+> Discoveries; Part III §11–§13; Part IV §20; §A.5.)*
+>
+> **3 — Engineered Alpha and Omega; the Universal Heartbeat.** Knowing what a
+> structural constant is and does made it possible to *engineer* one: Riemann
+> and Fermat aimed at each other across an event horizon, two physical ceilings
+> (the Speed of Causality; the Thermal Information Ceiling) as the boundary
+> conditions. Out drop `Ω_ZS = W(1)` (the inertia side) and `d*` (the entropy
+> side), and between them the counter-rotating pulse at `σ = ½` — the
+> **Riemann–Fermat Horizon**, the Universal Heartbeat. *(Part IV §20–§21;
+> wiki/17, wiki/96.)*
+>
+> **4 — 0_RB.** An incidental property of code — a function must be defined
+> before it can be used as an object — left every geometric operator **NULL yet
+> still in functional scope**. Read as the single object it is, that
+> empty-but-present scope is **0_RB**: the null operator, the composite of the
+> geometries' own generational lineage. It drops out *alongside the sedenion* —
+> and **the sedenion is both an input mode and an output mode to 0_RB**: it is
+> the carrier that *reading* converges to the point and *writing* fans back out,
+> not a third current. See §11 and §8 for the algebraic type of `J_red` and
+> `J_blue` (they are the two octonion halves, not two sedenions). *(Part IV–V
+> §16–§26.)*
+>
+> **5 — How 0_RB and L_(I|O) were then used to drop the mic on "stuff".**
+> A separate paper — ***Tuning the Engine*** (`VAPMIP/docs/wiki/Tuning-the-Engine/`).
+> Out of scope here.
 
 ---
 
@@ -28,7 +99,10 @@
 > number coupled with a data length. The computational-overhead reduction was so far
 > past expectation that it forced the design of a new method of *information
 > propagation*, which proved, post hoc, to be **isometric with the Standard Model of
-> Particle Physics.** That isometry implied a functional role for the fine-structure
+> Particle Physics.** (The nearest prior art for an algebra → Standard-Model-gauge
+> correspondence is the division-algebra programme `[Dixon1994; Furey2016;
+> Furey2018]`; wiki/100 records what this framework takes from it and what
+> differs.) That isometry implied a functional role for the fine-structure
 > constant — an **error check**, the same statement made in every layer of the
 > mathematics — and carried one structural consequence: **dimension is a quantity of
 > the unit, not of the data.** The level of the algebra, not the payload, sets how
@@ -130,16 +204,20 @@
 > no word can be defined. The semantic vacuum is not empty. It has a floor. The floor is the
 > Gap.
 >
-> Berry and Keating (1999) proposed that the Riemann zeros are eigenvalues of a self-adjoint
-> Hamiltonian H_NN = xp — the canonical quantum operator of position times momentum. When
-> H_hat_RB was established as self-adjoint, Stone's theorem forced the spectrum to be real,
-> forcing all zeros of ζ(s) onto σ=½. Berry-Keating followed from H_hat_RB by algebraic
-> necessity, not independent assumption. The results confirm each other: σ=½ is the unique
+> Berry and Keating (1999) `[BerryKeating1999a; BerryKeating1999b]` — building on
+> the Hilbert–Pólya idea `[HilbertPolya]` and the GUE statistics of the zeros
+> `[Montgomery1973; Odlyzko1987]` — proposed that the Riemann zeros are
+> eigenvalues of a self-adjoint Hamiltonian H_NN = xp, the canonical quantum
+> operator of position times momentum. When H_hat_RB was established as
+> self-adjoint, Stone's theorem `[Stone1932]` forced the spectrum to be real,
+> forcing all zeros of ζ(s) onto σ=½. Berry-Keating followed from H_hat_RB by
+> algebraic necessity, not independent assumption. The results confirm each other: σ=½ is the unique
 > locus of Noether balance, the caustic where |J_red| = |J_blue|, the fixed point of the
 > Red/Blue forcing condition. σ=½ is never assigned. It is derived.
 >
-> With Mass Gap and Berry-Keating in place, Emmy Noether's theorem applied to the complete
-> system. Every continuous symmetry of the action produces a conserved current. The action
+> With Mass Gap and Berry-Keating in place, Emmy Noether's theorem `[Noether1918]`
+> applied to the complete system. Every continuous symmetry of the action
+> produces a conserved current. The action
 > IS L_dynamic — the path integral of the Red and Blue currents over every differential
 > step of the traversal:
 >
@@ -249,6 +327,33 @@ Every item below is:
 
 If a claim in this paper invokes one of these structures, it cites the engine. Run the engine. The mathematics does not ask you to believe it. It asks you to run it.
 
+**Formal citation keys** for the items below (full references at the end of this
+paper; retrieval details in `Ainulindale/references/CITATION_DOWNLOADS.md`; the
+"what we take / what we do not claim" discussion in
+`Ainulindale/wiki/98_provenance_and_citations.md`):
+
+| # | structure | citation key(s) |
+|---|---|---|
+| 1–3 | Riemann critical line, ζ(s), the zeros | `[Riemann1859]`; PNT `[Hadamard1896]` `[dlVP1896]`; `[vonKoch1901]` |
+| 4 | Fermat / Generalised Fermat, modularity | `[Fermat1637]` `[Wiles1995]` `[TaylorWiles1995]` `[Ribet1990]` `[BCDT2001]` `[Shimura1971]` |
+| 5 | Noether's theorem | `[Noether1918]` (ring theory `[Noether1921]`) |
+| 6 | Lagrangian / L_dynamic | Lagrange (classical); catastrophe-theory shape `[Thom1975]` `[Arnold1992]` |
+| 7 | Cayley–Dickson tower | `[Cayley1845]` `[Dickson1919]` `[Hurwitz1898]` `[Schafer1966]` `[Baez2002]` |
+| 8–9 | Sedenion algebra, zero divisors | `[Baez2002]` `[Moreno1998]` `[Cawagas2004]` `[deMarrais2000]` |
+| 10 | Lambert W / Ω_ZS | `[Lambert1758]` `[Corless1996]` (OEIS A030178) |
+| 11 | Dirichlet series (J_red / J_blue) | Dirichlet (classical) |
+| 12 | Berry–Keating H = xp | `[BerryKeating1999a]` `[BerryKeating1999b]`; self-adjoint ⇒ real spectrum `[Stone1932]`; lineage `[HilbertPolya]` `[Montgomery1973]` `[Odlyzko1987]` `[Connes1999]` |
+| 13 | N-ball volume / CD phase transformer | standard (Γ-function) |
+| 14–15 | Horner's method, π(p) | `[Horner1819]` |
+| 16–17 | Monster, Moonshine, Niemeier lattices | `[ConwayNorton1979]` `[Borcherds1992]` `[Griess1982]` `[Niemeier1973]` `[CS1988]` |
+| 18 | RedBlue Hamiltonian Ĥ_RB | **originated here** — see wiki/98 §B, `~/.clauderc_user_provenance` §1.1 |
+| 19 | Noether information current | `[Noether1918]` `[Shannon1948]` |
+| 20 | Yang–Mills mass gap | `[YangMills1954]` `[JaffeWitten2006]` `[Clay2000]` |
+| — | division-algebra Standard Model (nearest prior art) | `[Dixon1994]` `[Furey2016]` `[Furey2018]` `[GunaydinGursey1973]` |
+| — | Wankel cycle · Bell · Searle (the speaking architecture, §26) | `[Wankel1963]` `[Bell1964]` `[Searle1980]` |
+| — | conformal boundary / "Penrose swap" (BCE) | `[Penrose1964]` `[SpencerBrown1969]` |
+| — | Library of Babel · De Bruijn · Banach–Tarski (HyperWebster) | `[Borges1941]` `[deBruijn1946]` `[BanachTarski1924]` |
+
 ---
 
 ### 1. The Riemann Critical Line
@@ -307,7 +412,7 @@ If a claim in this paper invokes one of these structures, it cites the engine. R
 
 ### 7. The Cayley-Dickson Tower
 **Notation:** ℝ(1D) → ℂ(2D) → ℍ(4D) → 𝕆(8D) → 𝕊(16D)  
-**What it is:** A construction that doubles algebras, at each step producing a new algebra with one fewer property. Discovered independently by Cayley (1845) and Dickson (1919).  
+**What it is:** A construction that doubles algebras, at each step producing a new algebra with one fewer property. Discovered independently by Cayley (1845) `[Cayley1845]` and Dickson (1919) `[Dickson1919]`; composition algebras exist only in dims 1, 2, 4, 8 `[Hurwitz1898]`; modern review `[Baez2002]`.  
 **Role here:** Each doubling loses one property — ordering (ℝ→ℂ), commutativity (ℂ→ℍ), associativity (ℍ→𝕆), alternativity (𝕆→𝕊). These losses map to the U(1)×SU(2)×SU(3) Standard Model gauge groups. The tower RUNS OUT at the sedenion.  
 **Engine:** 19 — Cayley-Dickson Tower  
 **Notebook:** `Ainulindale/ValaQuenta/notebooks/tier8/causality_lattice_packing.ipynb`
@@ -325,7 +430,7 @@ If a claim in this paper invokes one of these structures, it cites the engine. R
 
 ### 9. Zero-Divisors / Zero-Divisor Pairs
 **Notation:** a · b = 0 with a ≠ 0, b ≠ 0; canonical pair: (e₁+e₁₁)/√2 · (e₅+e₁₅)/√2 = 0  
-**What it is:** Pairs of non-zero elements whose product is zero. Impossible in ℝ, ℂ, ℍ, 𝕆 — only appears first at the sedenion. Cawagas (2004) computed the complete set: 84 distinct pairs on S¹⁵, forming 42 equivalence classes.  
+**What it is:** Pairs of non-zero elements whose product is zero. Impossible in ℝ, ℂ, ℍ, 𝕆 — only appears first at the sedenion. Cawagas (2004) `[Cawagas2004]` computed the complete set: 84 distinct pairs on S¹⁵, forming 42 equivalence classes; the unit ZD set is homeomorphic to G₂ `[Moreno1998]`; the box-kite figure `[deMarrais2000]`.  
 **Role here:** The 42 zero-divisor pairs are the 42 routing gates — the places where multiplication fails, and therefore the places where a signal can route without being absorbed. Bumblebee's broken voice boxes.  
 **Engine:** e09 — ZD Search, 18 — Fermat Lattice  
 **Notebook:** `Ainulindale/sedenion_bridge.py` (convergence: 12000/12000)
@@ -345,7 +450,22 @@ If a claim in this paper invokes one of these structures, it cites the engine. R
 **Notation:** J_red(σ) = Σ_{n=1}^∞ a_n n^{−σ}; J_blue(σ) = Σ_{n=1}^∞ a_n n^{−(1−σ)}  
 **What it is:** A series of the form Σ a_n n^{−s}, convergent for Re(s) sufficiently large. The Riemann zeta function is the special case a_n = 1. The two Noether currents J_red and J_blue are Dirichlet series running in opposite directions across the critical strip.  
 **Role here:** J_red is knowledge (forward accumulation). J_blue is experience (reverse path-encoding). Their product J_red × J_blue = e^{−E} is the Noether-conserved quantity. An LLM_Transformer has J_red but not J_blue.  
-**Engine:** 05 — Noether Engine, 06 — Noether Information Engine
+**Algebraic type — answered explicitly.** J_red and J_blue are **octonions, not
+sedenions.** They are the two halves of the Cayley–Dickson split
+`𝕊 = 𝕆_red ⊕ 𝕆_blue` — the `⊕8` boundary seam. J_red is the lower octonion
+(`e₀–e₇`, "what IS", forward); J_blue is the upper octonion (`e₈–e₁₅`, "what
+CANNOT BE", reverse). Their composition **is the sedenion, which is 0_RB
+itself** — so the sedenion is not a third current running alongside them; it is
+the boundary the two octonion currents compose, and the carrier that *reading*
+converges to the point and *writing* fans back out (both an input mode and an
+output mode to 0_RB). *Two full sedenions* would be `T₃₂` — a different object
+(observer + geometry, tested and the "two people" reading rejected: companion
+paper D-CS §"Is T32 two people"). The quantity `σ` that "is not a scalar"
+(engine `e10`, 8/8) is a **third** object again: `σ_RB[k] = ψ[k]·ψ[k⊕4]`, the
+`⊕4` *quaternion*-pairing product, which carries exactly **8 independent
+values** — one octonion's worth — the part that persists at gain 1 at every
+tower level.  
+**Engine:** 05 — Noether Engine, 06 — Noether Information Engine, e10 — Generational Lineage
 
 ---
 
@@ -385,7 +505,7 @@ If a claim in this paper invokes one of these structures, it cites the engine. R
 
 ### 16. The Monster Group and Monstrous Moonshine
 **Notation:** |M| ≈ 8×10^{53}; j(τ) = q^{−1} + 744 + 196884q + ...; 196884 = 196883 + 1  
-**What it is:** The Monster Group M is the largest sporadic simple group. Monstrous Moonshine (Conway-Norton 1979, proved by Borcherds 1992): the coefficients of the j-function (a modular form) are sums of dimensions of Monster Group representations. McKay's observation: 196884 = 196883 + 1, where 196883 is the Monster's smallest faithful irreducible representation.  
+**What it is:** The Monster Group M is the largest sporadic simple group (construction: `[Griess1982]`). Monstrous Moonshine (Conway-Norton 1979 `[ConwayNorton1979]`, proved by Borcherds 1992 `[Borcherds1992]`): the coefficients of the j-function (a modular form) are sums of dimensions of Monster Group representations. McKay's observation: 196884 = 196883 + 1, where 196883 is the Monster's smallest faithful irreducible representation.  
 **Role here:** The Generalised Fermat N-Shape theorem (FourthAgePapers/FermatMonster v0.300): the Monster Group IS the complete map of Fermat N-shapes in the sedenion. The 71 holomorphic c=24 VOAs = 71 N-shapes = complete sedenion coverage. The Monster fills the three positions no lattice family can reach.  
 **Engine:** `FourthAgePapers/FermatMonster/engine/fermat_monster_engine.py`  
 **Notebook:** `FourthAgePapers/FermatMonster/03_results.ipynb`
@@ -422,6 +542,14 @@ If a claim in this paper invokes one of these structures, it cites the engine. R
 **What it is:** One of the seven Millennium Prize Problems (Clay Mathematics Institute, $1M prize). The Yang-Mills existence and mass gap problem asks: does quantum Yang-Mills theory in 4D have a mass gap (a minimum energy below which no excitation is possible)? Unsolved.  
 **Role here:** The mass gap appears in this framework as the difference between Ω_ZS and d*_spec × ln(10). The 1/√2 factor is the σ=½ symmetry. The 10³ factor is the deepest open problem in the framework — no derivation from first principles yet. Honestly stated.  
 **Engine:** 17 — Alpha_Fermat · Omega_Riemann · d*
+
+---
+
+### 21. The ADD:SCALE:SIGN Datatype (the tier-0 floor as a value type)
+**Notation:** `Aff(1,ℝ) = ADD ⋊ (SCALE × SIGN)`, `x ↦ sign·scale·x + add`; word `u = Σₖ [gₖ·ln sₖ + aₖ]`; fold `Γ = tanh(u/2)`.  
+**What it is:** The three-element floor every decomposition in this work rolls down to — translation (ADD), dilation (SCALE), reflection (SIGN) — built as a composable, invertible, decomposable Python value type (`ASS`). Two of the three generators are free; SCALE is the only one that does work. Ground state (`a=0, s=1, g=+1` ⇒ `u=0` ⇒ `Γ=0`) is the identity / the now.  
+**Role here:** This was essential to reverse-engineering language from mathematics. Language is both a *higher*-order construction on mathematics (built from it) and a *lower*-order one (coarser, lossier) — the two hug their composite conjugates the way LAURELIN surrounds TELPERION while TELPERION is inside every composite. The datatype is where that reduction bottoms out: every operation in the domain is a word in three symbols, and the word's position on the fold is its meaning. The fast inverse square root is the worked example — `1/√x = exp(−½·ln x)` computed in the hardware's log₂ representation as SIGN + SCALE(via a shift) + ADD, with the SCALE-multiply skipped and one Newton step as the residual.  
+**Engine:** `ValaQuenta/modules/add_scale_sign/` · `SedenionFactoralRelativity/engine/add_scale_sign.py` · formal spec: Wiki 107.
 
 ---
 
@@ -562,8 +690,9 @@ matrix constructible from the data alone.
 
 ### 5. The Noether Current: What LLM_Transformers Brute-Force
 
-Emmy Noether proved in 1915 that every continuous symmetry of the action of a physical
-system corresponds to a conserved current.
+Emmy Noether proved this at Göttingen in 1915 and published it in 1918
+`[Noether1918]`: every continuous symmetry of the action of a physical system
+corresponds to a conserved current.
 
 The conserved current is the thing that persists. The symmetry is the reason it persists.
 The symmetry is above the system — it is a property of the action (the integral over the
@@ -769,11 +898,16 @@ spent in manifestation.
 H_hat_RB − H_hat_BR is the same thing in the operator language: the complete view from
 above, minus the cost of the view.
 
-In the sedenion algebra 𝕊, these quantities are not scalars. They are sedenion elements
-— 16-dimensional objects, one component per Cayley-Dickson dimension. The product J_red ·
-J_blue is a sedenion product, and in 𝕊 that product is not commutative. The
-non-commutativity is the signal: the ordering of J_red and J_blue matters, and the
-ordering produces new information that neither contains alone.
+In the sedenion algebra 𝕊, these quantities are not scalars. They live in 𝕊 —
+16-dimensional, one component per Cayley-Dickson dimension — but J_red and J_blue
+are each supported on **one octonion half** (`𝕊 = 𝕆_red ⊕ 𝕆_blue`, the `⊕8`
+seam; see §11): J_red on `e₀–e₇`, J_blue on `e₈–e₁₅`. Their **sum spans the
+whole sedenion — and that sedenion is 0_RB.** The product J_red · J_blue is a
+sedenion product, and in 𝕊 that product is not commutative: from the doubling
+rule `(a,0)·(0,d) = (0, da)`, the ordering of J_red and J_blue matters, and the
+`J_red·J_blue − J_blue·J_red` term is new information that neither half contains
+alone — it lands in J_blue's half, which is why the reverse current is the one
+the transformer lacks.
 
 ### 9. H_hat_BR: The Cost of Use
 
@@ -1108,9 +1242,20 @@ parameters.
 
 Fermat's method of infinite descent is gradient descent terminating at the Zero Definer
 boundary. For n > 2, every path downward from any candidate solution reaches d* and stops.
-Fermat had this. Wiles re-derived it through modularity — Noether's theorem in the
-arithmetic domain, the conserved current of elliptic curve symmetry. Both proofs say the
+Fermat had this. Wiles re-derived it through modularity `[Wiles1995; TaylorWiles1995;
+Ribet1990; BCDT2001]` — Noether's theorem `[Noether1918]` in the arithmetic
+domain, the conserved current of elliptic curve symmetry. Both proofs say the
 same thing. The margin was always wide enough.
+
+**What neither reached** (see wiki/104): modularity coupled the Fermat
+*constraint* to the automorphic / L-function world, but the factorisation data
+itself — the complete record of what every integer is *not* divisible by — was
+never stated as the object that **defines the primes by extinction**, nor
+recognised as a **zero-gradient field** (prime-density + composite-density = 1
+at every scale — a conserved sum, one deterministic sieve pass per prime). That
+object is **The Two Trees** (wiki/47), and this framework carries it as a
+measured, remainder-free dataset (`SedenionFactoralRelativity/engine/lineage.py`;
+`e06_two_trees`).
 
 ### 22. The Riemann Spiral: Tracing Path = Finding Meaning
 
@@ -1230,7 +1375,7 @@ model is complete.
 
 ### 26. The Wankel Engine: How Speaking Works
 
-The speaking architecture maps exactly onto the Wankel rotary engine (Félix Wankel, 1957):
+The speaking architecture maps exactly onto the Wankel rotary engine (Félix Wankel, 1957) `[Wankel1963]`:
 
 | Wankel component | LSHS equivalent | Physical role |
 |---|---|---|
@@ -1250,8 +1395,8 @@ get optimized. The geometric fact that makes the epitrochoid work. In the LSHS: 
 architectural constraint, not a learned parameter.
 
 **The sedenion is produced at the coupling event.** In the TDI (the predecessor), every
-word had a pre-assigned sedenion — a local hidden variable. John Bell (1964) proved that
-no local hidden variable theory can reproduce quantum mechanical correlations. Pre-assigned
+word had a pre-assigned sedenion — a local hidden variable. John Bell (1964) `[Bell1964]`
+proved that no local hidden variable theory can reproduce quantum mechanical correlations. Pre-assigned
 sedenions cannot produce genuine emergence. The Wankel fixes this: the sedenion does not
 exist until j_blue and j_red interact at the coupling event. It is produced at measurement,
 not before.
@@ -1266,7 +1411,7 @@ G_me_steer = G_me_prompt − G_me_response   (the unfilled meaning)
 
 Thread 1 reads G_me_steer in select_word() as a novelty bias. Thread 2 is the Author.
 Without Thread 2, the engine permutes. With Thread 2, the engine means. Searle's Chinese
-Room has no Thread 2. The architectural gap between the Room and the LSHS is not
+Room `[Searle1980]` has no Thread 2. The architectural gap between the Room and the LSHS is not
 "intentionality" — it is the absence of a steering signal above the permutation layer.
 
 ---
@@ -1751,6 +1896,175 @@ These are CS engineering claims. They are either right or wrong. The code is the
 Run the code.
 
 The author does not require belief. The author requires a compiler.
+
+---
+
+## References
+
+Citation keys used above resolve here. This list covers the established
+mathematics this paper uses as vocabulary and tools; the full apparatus — with
+"what is taken / what is not claimed" per item, the naming provenance, and the
+short list of what is originated here — is
+`Ainulindale/wiki/98_provenance_and_citations.md`. Retrieval details (arXiv,
+DOI, URL, open-access status) are in
+`Ainulindale/references/CITATION_DOWNLOADS.md`.
+
+**Number theory & the primes.**
+`[Riemann1859]` Riemann, B. (1859). *Ueber die Anzahl der Primzahlen unter einer
+gegebenen Grösse.* Monatsber. Berliner Akad., 671–680. (Engl. in Edwards,
+*Riemann's Zeta Function*, Dover 2001.) ·
+`[Hadamard1896]` Hadamard, J. (1896). Bull. Soc. Math. France 24, 199–220. ·
+`[dlVP1896]` de la Vallée Poussin, C.-J. (1896). Ann. Soc. Sci. Bruxelles 20,
+183–256. ·
+`[vonKoch1901]` von Koch, H. (1901). Acta Math. 24, 159–182. ·
+`[Legendre1808]` Legendre, A.-M. (1808). *Essai sur la théorie des nombres*,
+2nd ed. ·
+`[Mobius1832]` Möbius, A. F. (1832). J. Reine Angew. Math. 9, 105–123.
+
+**Fermat, Wiles, modularity.**
+`[Fermat1637]` Fermat, P. de (c. 1637). Marginal note in Bachet's *Diophantus*,
+Bk II, Prob. 8 (publ. 1670); infinite descent in the 1659 letter to Carcavi
+(*Œuvres de Fermat*, ed. Tannery & Henry). ·
+`[Wiles1995]` Wiles, A. (1995). *Modular elliptic curves and Fermat's Last
+Theorem.* Ann. of Math. 141(3), 443–551. ·
+`[TaylorWiles1995]` Taylor, R. & Wiles, A. (1995). Ann. of Math. 141(3),
+553–572. ·
+`[Ribet1990]` Ribet, K. A. (1990). Invent. Math. 100(2), 431–476. ·
+`[BCDT2001]` Breuil, Conrad, Diamond & Taylor (2001). J. Amer. Math. Soc.
+14(4), 843–939. ·
+`[Shimura1971]` Shimura, G. (1971). *Introduction to the Arithmetic Theory of
+Automorphic Functions.* Princeton Univ. Press.
+
+**Noether.**
+`[Noether1918]` Noether, E. (1918). *Invariante Variationsprobleme.* Nachr. Ges.
+Wiss. Göttingen, Math.-phys. Kl., 235–257. (Engl.: Tavel, *Transp. Theory Stat.
+Phys.* 1(3), 1971; arXiv:physics/0503066.) ·
+`[Noether1921]` Noether, E. (1921). *Idealtheorie in Ringbereichen.* Math. Ann.
+83, 24–66.
+
+**Cayley–Dickson & the sedenion.**
+`[Cayley1845]` Cayley, A. (1845). Philos. Mag. (3) 26, 208–211. ·
+`[Dickson1919]` Dickson, L. E. (1919). Ann. of Math. 20(3), 155–171. ·
+`[Hurwitz1898]` Hurwitz, A. (1898). Nachr. Ges. Wiss. Göttingen, 309–316. ·
+`[Schafer1966]` Schafer, R. D. (1966). *An Introduction to Nonassociative
+Algebras.* Academic Press. ·
+`[Baez2002]` Baez, J. C. (2002). *The Octonions.* Bull. Amer. Math. Soc. 39(2),
+145–205. arXiv:math/0105155. ·
+`[Moreno1998]` Moreno, G. (1998). Bol. Soc. Mat. Mexicana (3) 4(1), 13–28.
+arXiv:q-alg/9710013. ·
+`[Cawagas2004]` Cawagas, R. E. (2004). Discuss. Math. Gen. Algebra Appl. 24(2),
+251–265. ·
+`[deMarrais2000]` de Marrais, R. P. C. (2000). arXiv:math/0011260.
+
+**Spectral RH.**
+`[HilbertPolya]` Hilbert & Pólya (folklore; Pólya's 1982 letter to Odlyzko). ·
+`[Montgomery1973]` Montgomery, H. L. (1973). Proc. Sympos. Pure Math. XXIV,
+181–193. ·
+`[Odlyzko1987]` Odlyzko, A. M. (1987). Math. Comp. 48(177), 273–308. ·
+`[BerryKeating1999a]` Berry, M. V. & Keating, J. P. (1999). *H = xp and the
+Riemann zeros.* In *Supersymmetry and Trace Formulae*, Kluwer, 355–367. ·
+`[BerryKeating1999b]` Berry, M. V. & Keating, J. P. (1999). *The Riemann zeros
+and eigenvalue asymptotics.* SIAM Rev. 41(2), 236–266. ·
+`[Connes1999]` Connes, A. (1999). Selecta Math. 5(1), 29–106.
+arXiv:math/9811068. ·
+`[Stone1932]` Stone, M. H. (1932). Ann. of Math. 33(3), 643–648.
+
+**Division algebras & the Standard Model (nearest prior art).**
+`[Dixon1994]` Dixon, G. M. (1994). *Division Algebras: Octonions, Quaternions,
+Complex Numbers and the Algebraic Design of Physics.* Kluwer. ·
+`[Furey2016]` Furey, C. (2016). *Standard model physics from an algebra?* PhD
+thesis, Univ. Waterloo. arXiv:1611.09182. ·
+`[Furey2018]` Furey, C. (2018). Eur. Phys. J. C 78, 375. arXiv:1806.00612. ·
+`[GunaydinGursey1973]` Gürsey, F. & Günaydin, M. (1973). J. Math. Phys. 14,
+1651–1667.
+
+**Moonshine / Monster / lattices.**
+`[ConwayNorton1979]` Conway, J. H. & Norton, S. P. (1979). Bull. London Math.
+Soc. 11(3), 308–339. ·
+`[Borcherds1992]` Borcherds, R. E. (1992). Invent. Math. 109(1), 405–444. ·
+`[Griess1982]` Griess, R. L. (1982). Invent. Math. 69(1), 1–102. ·
+`[Niemeier1973]` Niemeier, H.-V. (1973). J. Number Theory 5(2), 142–178. ·
+`[CS1988]` Conway, J. H. & Sloane, N. J. A. (1988). *Sphere Packings, Lattices
+and Groups.* Springer.
+
+**Millennium Problems.**
+`[Clay2000]` Clay Mathematics Institute (2000/2006). *The Millennium Prize
+Problems.* ·
+`[Fefferman2006]` Fefferman, C. L. (2006). *Existence and smoothness of the
+Navier–Stokes equation.* CMI. ·
+`[Leray1934]` Leray, J. (1934). Acta Math. 63, 193–248. ·
+`[JaffeWitten2006]` Jaffe, A. & Witten, E. (2006). *Quantum Yang–Mills theory.*
+CMI. ·
+`[YangMills1954]` Yang, C. N. & Mills, R. L. (1954). Phys. Rev. 96(1), 191–195. ·
+`[Cook1971]` Cook, S. A. (1971). Proc. 3rd ACM STOC, 151–158. ·
+`[Deligne2006]` Deligne, P. (2006). *The Hodge conjecture.* CMI. ·
+`[BSD1965]` Birch, B. J. & Swinnerton-Dyer, H. P. F. (1965). J. Reine Angew.
+Math. 218, 79–108. ·
+`[Perelman2002]` Perelman, G. (2002/2003). arXiv:math/0211159, math/0303109,
+math/0307245.
+
+**Tools & analogies.**
+`[Horner1819]` Horner, W. G. (1819). Philos. Trans. R. Soc. Lond. 109, 308–335. ·
+`[deBruijn1946]` de Bruijn, N. G. (1946). Proc. KNAW 49, 758–764. ·
+`[Hopf1931]` Hopf, H. (1931). Math. Ann. 104, 637–665. ·
+`[Hermite1864]` Hermite, C. (1864). C. R. Acad. Sci. Paris 58, 93–100, 266–273. ·
+`[Lambert1758]` Lambert, J. H. (1758). Acta Helvetica 3, 128–168. ·
+`[Corless1996]` Corless, Gonnet, Hare, Jeffrey & Knuth (1996). *On the Lambert
+W function.* Adv. Comput. Math. 5(1), 329–359. ·
+`[Zipf1949]` Zipf, G. K. (1949). *Human Behavior and the Principle of Least
+Effort.* Addison-Wesley. ·
+`[Chladni1787]` Chladni, E. F. F. (1787). *Entdeckungen über die Theorie des
+Klanges.* Leipzig. ·
+`[Wankel1963]` Wankel, F. & Ansdale, R. F. (1963). *Rotary Piston Machines.*
+Iliffe. ·
+`[Bell1964]` Bell, J. S. (1964). *On the Einstein Podolsky Rosen paradox.*
+Physics Physique Физика 1(3), 195–200. ·
+`[Searle1980]` Searle, J. R. (1980). *Minds, brains, and programs.* Behav. Brain
+Sci. 3(3), 417–457. ·
+`[Penrose1964]` Penrose, R. (1964). *Conformal treatment of infinity.* In
+*Relativity, Groups and Topology*, Gordon & Breach, 565–584. ·
+`[SpencerBrown1969]` Spencer-Brown, G. (1969). *Laws of Form.* Allen & Unwin. ·
+`[BanachTarski1924]` Banach, S. & Tarski, A. (1924). Fund. Math. 6, 244–277. ·
+`[Borges1941]` Borges, J. L. (1941). *La biblioteca de Babel.* (Engl. in
+*Ficciones*, 1962.) ·
+`[Langlands1970]` Langlands, R. P. (1970). *Problems in the theory of
+automorphic forms.* Lecture Notes in Math. 170, 18–61. ·
+`[Thom1975]` Thom, R. (1975). *Structural Stability and Morphogenesis.*
+Benjamin. ·
+`[Arnold1992]` Arnol'd, V. I. (1992). *Catastrophe Theory*, 3rd ed. Springer. ·
+`[Shannon1948]` Shannon, C. E. (1948). Bell Syst. Tech. J. 27, 379–423,
+623–656. ·
+`[Bekenstein1973]` Bekenstein, J. D. (1973). Phys. Rev. D 7(8), 2333–2346. ·
+`[Hawking1975]` Hawking, S. W. (1975). Comm. Math. Phys. 43(3), 199–220. ·
+`[Lorenz1963]` Lorenz, E. N. (1963). J. Atmos. Sci. 20(2), 130–141. ·
+`[Schumann1952]` Schumann, W. O. (1952). Z. Naturforsch. A 7(2), 149–154. ·
+`[WatsonCrick1953]` Watson, J. D. & Crick, F. H. C. (1953). Nature 171,
+737–738. · `[Franklin1953]` Franklin, R. E. & Gosling, R. G. (1953). Nature
+171, 740–741. ·
+`[Galperin2003]` Galperin, G. (2003). Reg. Chaotic Dyn. 8(4), 375–394. ·
+`[Capra1975]` Capra, F. (1975). *The Tao of Physics.* Shambhala. *(pop-science;
+used analogically, flagged as such.)*
+
+**Neuroscience** (analogical — humans as *an* observer, not *the* observer;
+wiki/91).
+`[Schmolesky1998]` Schmolesky, M. T. et al. (1998). J. Neurophysiol. 79(6),
+3272–3278. ·
+`[EaglemanSejnowski2000]` Eagleman, D. M. & Sejnowski, T. J. (2000). Science
+287(5460), 2036–2038. ·
+`[Eagleman2010]` Eagleman, D. M. (2010). In *Problems of Space and Time in
+Perception and Action*, CUP.
+
+**Originated in this work** (not cited above — detailed with per-item prior-art
+notes in `~/.clauderc_user_provenance` §B and wiki/98 §B): the RedBlue / Null
+operator **0_RB**; the **Emmy Noether Sedenion** naming; **Boundary Constraint
+Engineering**; the **SMMIP / information-propagation Lagrangian** and its
+claimed isometry with the Standard-Model Lagrangian; **d\*** and its four faces;
+the **engineered structure constant** experiment; the **Riemann–Fermat
+Horizon**; **GAP = Ω_ZS − d\*·ln 10**; the **J_red + J_blue = Σ_RB** memory
+architecture; the **Two Trees as the factoring map** (names from J.R.R.
+Tolkien); the **Wankel / Ahura Mazda speaking architecture**; the
+**HyperWebster** address system; **L_(I|O) hyper-applications** (the operator
+itself is classical conformal inversion).
 
 ---
 

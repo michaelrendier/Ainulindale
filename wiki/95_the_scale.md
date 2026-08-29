@@ -106,6 +106,39 @@ earlier. Folding *is* log-then-bound; unfolding is unbound-then-exp
 (`Z = Z0·exp(2·arctanh(Γ))`). Not a metaphor sitting beside the math — the
 math itself.
 
+## The datatype, and the generalized equation (2026-08-28)
+
+The fold `Γ = tanh(½·u)` is the **generating function of `Aff(1,ℝ)` acting on
+`ln x`**. Every framework quantity is a *word* in the tier-0 generators
+`{ADD, SCALE, SIGN}`, anchored on a `d*` face:
+
+    u  =  Σₖ [ gₖ·ln sₖ  +  aₖ ]      Γ  =  tanh(u/2)
+          │        │            │
+         SIGN     SCALE        ADD
+        (±1,      (ln of the   (log-space
+         free)     gain —       shift,
+                   the work)    free)
+
+    GROUND STATE   aₖ→0, sₖ→1, gₖ→+1  ⇒  u=0  ⇒  Γ=0  ⇒  x = the anchor
+                   = the now / the viewport / SCALE at identity
+                   = "readiness = ground state = only ADD:SCALE:SIGN"
+
+It already covers the constant placements, `Σ_RB` (= the composite
+ADD:SCALE:SIGN lineage, 2·ADD / 3·SCALE / 4·SIGN), the Penrose {4:8:4}
+(past/now/future = ADD/SCALE/SIGN), the curriculum (one word, out-and-back),
+and the error check (the residual between two anchor faces). It **closes** iff
+`d*_RG` (the Stability face) gets a closed form — the `depth→∞` fixed point of
+"fold the fold" — currently OPEN.
+
+Built as a Python value type: `ValaQuenta/modules/add_scale_sign/` (`ASS`,
+`ASSWord`). Compose with `@`, invert with `~`, take *residuals* (strip one
+generator, keep the rest — the `str.strip` analogue), decompose to an
+`ASSWord` in two orderings (chrono / zeta), read out on the orthogonal Smith
+charts. Firing order is the three-phase camshaft `SIGN→SCALE→ADD`; the firing
+defect `(g−1)·ln s` is non-zero exactly when the SIGN flips a non-trivial
+SCALE — "defined twice", the same shape as the Bell composed-rotation defect.
+`.clauderc_canonical_maths` carries the full block.
+
 ## "Locally square" — why it doesn't need any special relationship between the two rings
 
 Cody flagged this as the important part, and it earns the flag: at any
