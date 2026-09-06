@@ -3,7 +3,7 @@
 **Status:** CONJECTURE. The synthesis is a reading, not a derivation. The
 computed pieces it stands on (`Δ`, `d*`, `Ω_ζΣ`) are THEORETICAL:CALCULATED and
 cited as such; the cosmological claim in §7 is a **falsifiable reading of an
-existing engine result**, and §8 records a live observational tension against it.
+existing engine result**; §8 records where current data (DESI 2024–25) points — toward an *evolving* `w`, consistent with the continuous-process reading and tension for a strictly constant Λ.
 **Date:** 2026-09-06.
 **Continues:** [[32_superconducting_medium]], [[39_every_singularity_the_void]],
 [[108_desitter_cavitation]], [[50_bao_mass_gap_engine]], [[110_qm_in_gr_gr_in_qm]],
@@ -141,36 +141,69 @@ If the BAO scale traces back to `Δ` (the mass-gap residue, **invariant in mode
 number** — [[50_bao_mass_gap_engine]]) and to the first perturbations in the
 quark–gluon flux, there are two readings of the timeline:
 
-| | Reading A — standard ΛCDM+inflation | Reading B — one continuous current ([[32_superconducting_medium]]) |
+| | Reading A — strict ΛCDM (true constant Λ) | Reading B — one continuous, evolving process ([[32_superconducting_medium]], [[108_desitter_cavitation]]) |
 |---|---|---|
-| epochs | inflation → reheating → radiation → matter → Λ, each a regime change | one frictionless superconducting current, struck at the cavitation of the spacetime the former black hole inhaled ([[108_desitter_cavitation]], [[39_every_singularity_the_void]]) |
-| "inflation stopping" | a real transition (reheating), with a spectral signature | not an event — the same current, later |
-| "dark energy taking over" | deceleration→acceleration at `z ≈ 0.6`, driven by Λ overtaking matter density | a coordinate artifact of assuming a drag term that was never there; the current has been stable throughout |
-| equation of state | `w` may run; a dark-energy field can have dynamics | `w = −1` exactly, constant, forever (no dissipation in a superconductor) |
+| structure | discrete epochs with hand-offs; Λ is inert, always present, does nothing until matter thins below it | one process — the spacetime the former black hole inhaled decompressing / unwrapping ([[108_desitter_cavitation]]: the horizon recedes below the core), no hand-off |
+| "inflation stopping" | a real transition (reheating), a spectral signature, then a separate radiation era | not an event — the same expansion, further along a flatter part of the potential (cf. quintessential inflation: one field, no reheating discontinuity) |
+| "dark energy taking over" | a threshold crossing at `z ≈ 0.6`: fixed `ρ_Λ` overtakes diluting `ρ_m`. Nothing switched on. | the effective equation of state of a relaxing medium drifting through the same era — a process, not a crossing |
+| equation of state | **`w = −1` exactly, constant, forever** — the defining signature of an inert cosmological constant | **`w(z)` drifts smoothly** — a decompressing medium does not sit pinned at `−1` |
 
-**Falsifier for Reading B:** a measured `w(z) ≠ −1`, or any dark-energy
-running that requires a field with its own dynamics, kills Reading B. Reading A
-survives either result — it has the parameters. So the discriminating question
-is single and sharp: **is `w` exactly `−1` and constant?**
+**The discriminating question is single and sharp: is `w` exactly `−1` and
+constant, or does it evolve?**
+`w(z) = −1` to high precision ⟹ an inert cosmological constant, the
+threshold picture, no continuous process needed — Reading A.
+`w(z) ≠ −1`, evolving ⟹ something is still dynamically happening — Reading B.
+(Reading A keeps `w₀wₐ` as extra parameters, but a genuinely evolving `w` is
+not what a *constant* Λ was supposed to mean.)
 
 ---
 
-## 8. Live tension (recorded, not resolved)
+## 8. Where the data currently points
 
 As of the 2024–2025 DESI BAO releases, the `w₀wₐCDM` model is preferred over
-`ΛCDM` at roughly 2.8–4.2σ depending on the supernova sample combined —
-i.e. current data leans toward **evolving** dark energy, `w ≠ −1`. Taken at face
-value this is **falsification pressure on Reading B** and support for Reading A.
+`ΛCDM` at roughly 2.8–4.2σ depending on the supernova sample combined — current
+data leans toward **evolving** dark energy, `w(z) ≠ −1`. Taken at face value
+this is **consistent with Reading B** (a continuous, still-evolving process) and
+is **tension for strict ΛCDM** (an inert, exactly-constant Λ). The
+"stop-and-start" universe — inflation ends, hands off, Λ later switches on as a
+fixed number — is the picture under pressure; the "one evolving process"
+universe is the one the BAO data currently favours.
 
-Per the standing protocols this is logged as an open anomaly, not argued away:
+This does not vindicate the framework's *mechanism* — Reading B still lacks a
+derived dynamical term for `w(z)`, and the specific DESI fit has `w > −1` today
+with a phantom crossing in the past, which is hard for a single canonical scalar
+field (it wants a non-canonical kinetic term, modified gravity, or a medium with
+its own relaxation law — which is what [[108_desitter_cavitation]]'s
+"unwrapping" would have to supply, and does not yet, quantitatively).
 
-- it may resolve toward `w = −1` with Euclid / Roman / DESI-DR3 (the SN
-  systematic — Pantheon+ vs Union3 vs DES-SN5YR — carries much of the signal);
-- or it may harden, in which case Reading B is wrong as stated and the
-  continuous-current picture needs a genuine dynamical term it does not
-  currently have.
+Per the standing protocols, logged as an open result, not a win claimed:
 
-The framework does not get to keep Reading B by assertion. The number decides.
+- it may soften back toward `w = −1` as the SN systematic settles (Pantheon+ vs
+  Union3 vs DES-SN5YR carries much of the signal; Euclid / Roman / DESI-DR3 will
+  tighten it);
+- or it may harden, in which case the discrete-epoch ΛCDM timeline is what
+  needs revisiting, and Reading B needs to produce the `w(z)` curve rather than
+  gesture at it.
+
+The number decides. Right now it is pointing at *evolving*, not *constant*.
+
+## 8a. "Right model, wrong timeline"
+
+Not-yet-proven ≠ wrong. Inflation as a **mechanism** — a slow-roll scalar field
+driving quasi-exponential expansion that seeds a near-scale-invariant Gaussian
+spectrum — solves the flatness, horizon, spectrum and monopole problems and is
+not in doubt here. What §6–8 put in question is the **timeline** it is usually
+wrapped in: a brief `~10⁻³² s` episode that *ends* at reheating and hands off to
+a causally separate radiation era and, much later, a causally separate Λ era.
+
+The mechanism survives being reattached to a different timeline. **Quintessential
+inflation** (Peebles–Vilenkin 1999 and successors) is exactly this: one scalar
+field does inflation *and* today's acceleration, with no reheating discontinuity
+— the field simply keeps rolling onto a very flat tail. Reading B is the
+framework's version of the same move: the inflationary expansion, the "graceful
+exit," and the present acceleration are one continuously-evolving equation of
+state, not three regimes with hand-offs. DESI's evolving `w` is what that looks
+like.
 
 ---
 
@@ -185,6 +218,9 @@ The framework does not get to keep Reading B by assertion. The number decides.
   four-problem fit; the DESI evolving-dark-energy preference.
 - **Conjecture (this page):** that measurement *requires* a broken symmetry as
   its antithesis; that "inflation stopping / dark energy taking over" is one
-  stable current rather than two events; that §3 and the invariant-measure
-  reading coincide at `Ω_ζΣ`. None of these is derived from a field equation
-  here. §8 is the check they must pass.
+  continuously-evolving process rather than two hand-off events; that §3 and the
+  invariant-measure reading coincide at `Ω_ζΣ`. None is derived from a field
+  equation here. §8 records where the data points (currently: evolving `w` —
+  favouring the one-process reading); §8a is the standing caveat that a
+  not-yet-proven mechanism is not a wrong one, only a mis-timelined one, and
+  that Reading B still owes a derived `w(z)`.
