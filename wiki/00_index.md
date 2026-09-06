@@ -132,6 +132,8 @@ Last updated: 2026-07-17
 | [109_the_emerger.md](109_the_emerger.md) | **2026-09-01** — The Emerger: sedenion bracketing & firing order, the **ascent** dual of Generational Lineage. Five bracketings, e0 anchored, C/H/O/FRAGMENT by CD-closure, σ_RB-phased firing order. Engine `modules/emerger/`. |
 | [110_qm_in_gr_gr_in_qm.md](110_qm_in_gr_gr_in_qm.md) | **2026-09-01** — QM in GR / GR in QM as two **jurisdictions** either side of a seam. QM-in-GR: a hard floor, much higher — the state enters only as `⟨ψ|T̂|ψ⟩`, phase lost (the `\|z\|²` step). GR-in-QM: a soft, low floor — the metric is a background potential `V=mΦ` — and it set the universe's initial conditions. The current between is the **Oblique Gear / σ_RB shear**, maximal at σ=½, doing its work at recombination — "the first ripples from hydrogen becoming stable ignited the fuel of decomposition." THEORETICAL side note; the VAPMIP UFT gets its own pass. Continues [[93_qm_gr_by_tree]]. |
 
+| [119_unified_chainmaille_theory.md](119_unified_chainmaille_theory.md) | **2026-09-05** — Unified Chainmaille Theory: a mail fabric is PG(3,2) on the edges. Ring **strength** (tier 0, node norm), weave **superness** `‖I‖/‖O‖` (tier 2, `L_(I|O)` per edge), force **dispersal** `λ₂(L)` (tier 3, weave-Laplacian spectral gap) are **one bilinear form per stitch read along three traversal orders** — order picks the axis (`skill §4`). Two Trees partition the rings (cut vertex ⟺ Laurelin). Inversion ≠ unwrapping: **focusing** = inverse of dispersal, a Julia basin of vulnerable configs; `J_N` doesn't commute with iteration; can't reassemble a cut hauberk. σ=½ = "a good weave". Companion `VAPMIP/docs/wiki/Kings-Maille-Box-Kite-Rings-As-Sentences.md`. |
+
 ## Roadmap & TODO
 
 | Page | Topic |
