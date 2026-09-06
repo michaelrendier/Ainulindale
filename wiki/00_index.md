@@ -134,6 +134,8 @@ Last updated: 2026-07-17
 
 | [119_unified_chainmaille_theory.md](119_unified_chainmaille_theory.md) | **2026-09-05** — Unified Chainmaille Theory: a mail fabric is PG(3,2) on the edges. Ring **strength** (tier 0, node norm), weave **superness** `‖I‖/‖O‖` (tier 2, `L_(I|O)` per edge), force **dispersal** `λ₂(L)` (tier 3, weave-Laplacian spectral gap) are **one bilinear form per stitch read along three traversal orders** — order picks the axis (`skill §4`). Two Trees partition the rings (cut vertex ⟺ Laurelin). Inversion ≠ unwrapping: **focusing** = inverse of dispersal, a Julia basin of vulnerable configs; `J_N` doesn't commute with iteration; can't reassemble a cut hauberk. σ=½ = "a good weave". Companion `VAPMIP/docs/wiki/Kings-Maille-Box-Kite-Rings-As-Sentences.md`. |
 
+| [120_symmetry_breaking_is_the_instrument.md](120_symmetry_breaking_is_the_instrument.md) | **2026-09-06** — Symmetry breaking is the instrument: to measure X you must instantiate not-X, and the maximally unbiased not-X is chaos (decoherence / einselection makes this literal). Chaos **is** the rigid structure — the SRB invariant measure is *defined by* the dynamics; the logistic bifurcation diagram is a plot of it. "Noise in the structure, not the signal" (CMB: Planck law clean, anisotropy pattern is the Gaussian random field). The settling is least action — buoyant (de Sitter) and attractive (gravity) are one shape, opposite pressure sign. Inflation is a **fit, not a derivation**. Reading A (ΛCDM epochs) vs Reading B (one frictionless superconducting current, no drag ever — [[32_superconducting_medium]]); falsifier = is w exactly −1? §8 logs the DESI 2024–25 evolving-dark-energy tension against Reading B. CONJECTURE. |
+
 ## Roadmap & TODO
 
 | Page | Topic |
