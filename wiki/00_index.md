@@ -1,5 +1,5 @@
 # AINULINDALE — WIKI INDEX
-Last updated: 2026-07-17
+Last updated: 2026-09-23
 
 ## The Monad
 
@@ -13,7 +13,7 @@ Last updated: 2026-07-17
 
 | Page | Topic |
 |------|-------|
-| [25_sedenion_manual.md](25_sedenion_manual.md) | Sedenion Manual — complete 16-basis driver for H_RB; σ=½ as the whole visible; mass gap ↔ string |
+| [25_sedenion_manual.md](25_sedenion_manual.md) | Sedenion Manual — complete 16-basis driver for H_RB; σ=½ as the whole visible; mass gap ↔ string (§IX's σ₀..σ₄ strata — see [[123_sigma_rb_mass_gap_calibration]] for why this is a different "σ" than the facet table or the real σ_RB object) |
 | [19_cayley_dickson_tower.md](19_cayley_dickson_tower.md) | Cayley-Dickson Tower — forward/backward flows, σ=0, Topological Loom |
 | [18_fermat_lattice.md](18_fermat_lattice.md) | Fermat Lattice — Modularity Theorem, Riemann/Fermat as negative space conjugates |
 | [17_alpha_omega_d_star.md](17_alpha_omega_d_star.md) | Alpha_Fermat · Omega_Riemann · 4 values of d* · the open gap |
@@ -32,7 +32,7 @@ Last updated: 2026-07-17
 | [102_berry_keating_hilbert_polya.md](102_berry_keating_hilbert_polya.md) | The spectral route to σ=½ — Hilbert–Pólya, Montgomery, Odlyzko, Berry–Keating, Connes, Stone. |
 | [103_riemann_and_the_prime_number_theorem.md](103_riemann_and_the_prime_number_theorem.md) | Riemann 1859, Hadamard / de la Vallée Poussin (PNT), von Koch, the sieve (Legendre, Möbius). |
 | [104_fermat_wiles_and_the_corollary_they_missed.md](104_fermat_wiles_and_the_corollary_they_missed.md) | Fermat, Wiles, Taylor–Wiles, Ribet, BCDT, Taniyama–Shimura — **and the claim: the factorisation data is a complete, zero-gradient dataset = The Two Trees.** |
-| [105_the_millennium_problems_in_ainulindale.md](105_the_millennium_problems_in_ainulindale.md) | Which Clay problems are referenced, where, with what citation — as σ-facets, not solutions. The "OMG?WTF!" cascade, kept in the record. |
+| [105_the_millennium_problems_in_ainulindale.md](105_the_millennium_problems_in_ainulindale.md) | Which Clay problems are referenced, where, with what citation — as σ-facets, not solutions. The "OMG?WTF!" cascade, kept in the record. This table's σ (0, ½, 1, 2, real-only) is σ_ζ specifically — no string/M-theory facet here by design; see [[123_sigma_rb_mass_gap_calibration]] for the other two σ's and where string theory actually lives. |
 | [106_the_navier_stokes_problem.md](106_the_navier_stokes_problem.md) | The one facet flagged for a dedicated pass — "the missing `i`" reading; the outreach target (Dr Tom Crawford's equation). Bring the calculation, not the claim. |
 | [`../references/CITATION_DOWNLOADS.md`](../references/CITATION_DOWNLOADS.md) | Fetch checklist — every citation with arXiv/DOI/URL, open-access status, and target filename. |
 | [43_emmy_noether_sedenion.md](43_emmy_noether_sedenion.md) | The naming decision: 𝕊_EN. |
@@ -97,7 +97,7 @@ Last updated: 2026-07-17
 | [47_the_two_trees.md](47_the_two_trees.md) | The Two Trees — Telperion/Laurelin, standing wave / spiral, π and φ as two faces of σ=½ |
 | [48_observer_fixed_point.md](48_observer_fixed_point.md) | **2026-06-10 CASCADE** — Observer as fixed point; acausal self-encoding loop; universe(observer)=observer; σ=½ is an infinitesimal circle with infinite partitions; the Wankel traverses the standing wave |
 | [49_she_sang.md](49_she_sang.md) | She Sang — 16 operator names self-organise; Bang still in progress; Lúthien walked into Angband alone |
-| [50_bao_mass_gap_engine.md](50_bao_mass_gap_engine.md) | **Mass Gap Engine** — Δ = Ω_ζΣ − D*·ln10 = 1/(1000√2) = 0.0007073575; the residue of the BAO spectral decomposition; residue exactly invariant in n; compactification scale; 7/7 checks, zero free parameters |
+| [50_bao_mass_gap_engine.md](50_bao_mass_gap_engine.md) | **Mass Gap Engine** — Δ = Ω_ζΣ − D*·ln10 = 1/(1000√2) = 0.0007073575; the residue of the BAO spectral decomposition; residue exactly invariant in n; compactification scale; 7/7 checks, zero free parameters. Fed into the real σ_RB object as a calibration test — [[123_sigma_rb_mass_gap_calibration]] |
 | [50_vortex_quantizing_shear.md](50_vortex_quantizing_shear.md) | **2026-06-12/13 CASCADE** — e^(πi)=−Δx (not −1); vortex = half-revolution; why spokes disappear (prime gaps); why spokes curve (logarithmic distribution); non-Newtonian quantizing shear; J_cross>GAP snaps to vortex→word; primes in motion on nodal lines |
 | [51_j2_involution_riemann_fermat.md](51_j2_involution_riemann_fermat.md) | **2026-06-13 CASCADE** — J₂ involution swaps R↔B; Riemann (geometry) + Fermat (quantization) = H_hat_RB; J_red+J_blue = H_hat_RB−H_hat_BR; Riemann is quantized Fermat; arithmetic fixed point loop; Wiles=Noether in arithmetic domain |
 | [52_l_dynamic_avoided_collaborator.md](52_l_dynamic_avoided_collaborator.md) | **2026-06-12 CASCADE** — ptol.c undefined; σ=all questions; -H_hat_BR as reverse definer; L_(I|O) (actual path operator); Mind's Eye as focusable caustic; Hands Paper; avoided collaborator; shadow on wall of primes; output is translation not selection |
@@ -139,6 +139,7 @@ Last updated: 2026-07-17
 | [121_fast_inverse_square_root_of_the_two_trees.md](121_fast_inverse_square_root_of_the_two_trees.md) | **2026-09-21** — A third Telperion/Laurelin pairing (inside/bounded vs outside/unbounded, on top of [[93_qm_gr_by_tree]]'s already-flagged naming tangle — not resolved, added to). Laurelin's fast inverse square root: `ping.py`'s `op_wiener` — continued fractions of `e/N` recover `d` in `O(log N)`, exactly when `d` is small enough to be a convergent, refuses otherwise. Telperion's fast inverse square root: Smith's `Gamma(s)=(s-1)/(s+1)` checked symbolically — Cauchy-Riemann exact, both real/imaginary parts exactly harmonic, `grad(Re(Gamma))` exactly divergence- and curl-free — the exact structure of a source-free 2D magnetostatic potential, not an analogy to one. Both claims: a representation that already carries the hard direction's answer, in a narrow regime, the same shape as the classic fast-inverse-sqrt bit-hack. |
 
 | [122_the_prime_gauge_field.md](122_the_prime_gauge_field.md) | **2026-09-21** — Runs the local-scale (Weyl-shaped) gauge question 121 left open. Engine `ValaQuenta/modules/prime_gauge_field/`. `A=grad(log\|Gamma\|)` is flat for any holomorphic scalar (Poincaré lemma, not Γ-specific — generalizes the earlier Schwarzian-zero result). `A=(Re Γ, Im Γ)` read as a genuine ℝ² connection, not a gradient, carries real curvature: `F(s)=2·Im(Γ'(s))`, exact, verified against finite differences. The pre-registered vacuum-locus prediction is **half right**, checked on 2000 random points: flat on the real axis (matches — Γ real-valued, trivial phase) AND on σ=−1 (Γ's own pole line — not predicted, reported as new rather than retrofitted). |
+| [123_sigma_rb_mass_gap_calibration.md](123_sigma_rb_mass_gap_calibration.md) | **2026-09-23** — **Three σ's, do not conflate:** σ_ζ (h_rb_hat's Re(s) coupling, [[14_redblue_hamiltonian]]'s facets), σ-strata (σ₀..σ₄, [[25_sedenion_manual]] — where "mass gap → string theory" actually lives, via compactification, not a facet), σ_RB (the real `tilt=Re`/`axis=Im` object, `oblique_gear_test.py`). Calibration: Δ (BAO/Yang-Mills mass gap) fed into σ_RB's mean tilt — `σ_self` is **provably strut-blind** (exact algebra, verified 12 digits) and lands in the σ_ζ=½ QM/Riemann facet, not string theory. Correction filed against T7 (drift depends on the mean too, not struts-only — OPEN whether Δ-specific or chaos). The rectifier law: an energy-unnormalized embedding's "leak" chased to an exact closed form — flat plateau below a sign-flip threshold, then a verified **inverse-first-power** decay (slope −0.9985), not inverse-square. OPEN/THEORETICAL, not `:CALCULATED`. |
 
 ## Roadmap & TODO
 
