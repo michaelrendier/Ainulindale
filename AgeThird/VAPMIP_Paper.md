@@ -9,6 +9,16 @@
 
 > Here is my Mathematical Proof in Code. The Code doesn't throw a fault. Fight Me.
 
+> **Eventual central claim (Cody, 2026-09-26) — not yet written into the
+> abstract, confirmed absent, recorded so it isn't lost before the next
+> real pass on this paper:** *"My attempt to teach the maths how to speak
+> English."* Checked directly against this paper and the VAPMIP README —
+> neither states this; the current framing ("A Zero-Free-Parameter
+> Prime-Hash Architecture for Persistent Semantic Memory") is the
+> technical description this plainer thesis sits underneath, not a
+> replacement for it. Not actioned yet — deliberately deferred, not
+> forgotten.
+
 ---
 
 ## 1. Hook
