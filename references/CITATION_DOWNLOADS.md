@@ -147,6 +147,26 @@ file, so nothing breaks without it.
 | Galperin2003 | Galperin, *Playing pool with π*, Reg. Chaotic Dyn. 8 (2003) 375–394 | doi:10.1070/RD2003v008n04ABEH000252; maths.tcd.ie mirror | OA | `Galperin_2003_pool_with_pi.pdf` |
 | Wankel1963 | Wankel & Ansdale, *Rotary Piston Machines*, Iliffe (1963) | library | PW | `Wankel_1963_rotary_piston.pdf` |
 
+## A.12 — CS: number theory / hashing for computational overhead reduction  →  `references/cs_hashing_overhead/`
+
+Citation pass, 2026-09-27, for `ScalarContextPropagation` §5 (the
+`spelling_code` positional Gödel-numbering hash: position selects a
+prime base, symbol becomes the exponent, decoded by factorisation) and
+the WordNet substrate it runs on. All 8 downloaded and content-verified
+(first-page text and page count checked against the known paper)
+2026-09-27.
+
+| key | ref | get it | acc | save as |
+|---|---|---|---|---|
+| Miller1995 | Miller, *WordNet: A Lexical Database for English*, CACM 38(11) (1995) 39–41 | doi:10.1145/219717.219748; free mirror at redirect.cs.umbc.edu | OA | `Miller_1995_wordnet.pdf` |
+| Mikolov2013 | Mikolov, Chen, Corrado, Dean, *Efficient Estimation of Word Representations in Vector Space* (2013) | arXiv:1301.3781 | OA | `Mikolov_2013_word2vec.pdf` |
+| Bloom1970 | Bloom, *Space/Time Trade-offs in Hash Coding with Allowable Errors*, CACM 13(7) (1970) 422–426 | doi:10.1145/362686.362692; free mirror at crystal.uta.edu | OA | `Bloom_1970_hash_coding_allowable_errors.pdf` |
+| Broder1997 | Broder, *On the Resemblance and Containment of Documents*, SEQUENCES 1997, 21–29 | free mirror at cs.princeton.edu | OA | `Broder_1997_resemblance_containment.pdf` |
+| Weinberger2009 | Weinberger, Dasgupta, Langford, Smola, Attenberg, *Feature Hashing for Large Scale Multitask Learning*, ICML 2009 | arXiv:0902.2206 | OA | `Weinberger_2009_feature_hashing.pdf` |
+| Jegou2011 | Jégou, Douze, Schmid, *Product Quantization for Nearest Neighbor Search*, IEEE TPAMI 33(1) (2011) 117–128 | doi:10.1109/TPAMI.2010.57; free author copy at irisa.fr | OA | `Jegou_2011_product_quantization.pdf` |
+| FredmanKomlosSzemeredi1984 | Fredman, Komlós, Szemerédi, *Storing a Sparse Table with O(1) Worst Case Access Time*, JACM 31(3) (1984) 538–544 — **original text paywalled at ACM, no free copy found**; downloaded instead: Matias, *The FKS Perfect Hashing Scheme* (lecture notes, Tel Aviv Univ.), a faithful secondary exposition of the same result, clearly labelled as such | doi:10.1145/828.1884 (PW, original); theory.stanford.edu/~matias (OA, exposition) | PW/OA | `Matias_notes_FKS_1984_perfect_hashing.pdf` |
+| Elhage2022 | Elhage, Hume, Olsson, et al. (Anthropic), *Toy Models of Superposition* (2022) | arXiv:2209.10652; transformer-circuits.pub | OA | `Elhage_2022_toy_models_superposition.pdf` |
+
 ---
 
 ## Priority order for the paper (do these first)
