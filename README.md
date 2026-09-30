@@ -4,6 +4,41 @@
 
 ---
 
+# Prerequisites — required viewing
+
+*These are the models I used in designing my computational overhead reduction "tricks".*
+
+The rest of this repository is built on them. Watch these first; every other name
+cited in this project (Standard Model, Dixon, Furey, Riemann, Fermat, Noether, …) was
+noticed **after** the code already worked and is cited `Post-Hoc:`. The reading below
+and these nine videos are the foundation the design was built directly against.
+
+**Read first — before everything else**
+0. Jorge Luis Borges, *The Library of Babel* (1941), and its online realisation,
+   https://libraryofbabel.info (built by Jonathan Basile, Librarian of Babel —
+   https://jonathanbasile.com/#babel). The founding idea: every possible text already
+   exists. Nothing has to be written down, only located.
+
+**Vsauce**
+1. *The Banach–Tarski Paradox* — https://www.youtube.com/watch?v=s86-Z-CbaHA
+2. *Which Way Is Down?* — https://www.youtube.com/watch?v=Xc4xYacTu-E
+3. *How Hot Can It Get?* (the Thermal Information Ceiling; watched shortly before the work began, early April 2026) — https://www.youtube.com/watch?v=4fuHzC9aTik
+
+**Veritasium**
+4. *This Toy Can Open Any Garage* (the de Bruijn sequence) — https://www.youtube.com/watch?v=CNodxp9Jy4A
+5. *The Strange Physics Principle That Shapes Reality* (the Lagrangian) — https://www.youtube.com/watch?v=Q10_srZ-pbs
+6. *The Biggest Misconception in Physics* — https://www.youtube.com/watch?v=lcjdwSY2AzM
+7. *What They (Probably) Don't Teach You About Rainbows At School* — https://www.youtube.com/watch?v=24GfgNtnjXc
+
+**Numberphile**
+8. *A Miraculous Proof (Ptolemy's Theorem)* — https://www.youtube.com/watch?v=bJOuzqu3MUQ
+
+**Grant Sanderson (3Blue1Brown)**
+9. *The most beautiful formula I wish more people knew* (title as given by the author; the
+   n-ball volume lecture) — https://www.youtube.com/watch?v=fsLh-NYhOoU
+
+---
+
 # CURRENT RESEARCH — 2026-08-20
 
 > **Active. Not settled.** This section is the live edge of the work. Everything below
