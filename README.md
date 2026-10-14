@@ -11,7 +11,7 @@
 The rest of this repository is built on them. Watch these first; every other name
 cited in this project (Standard Model, Dixon, Furey, Riemann, Fermat, Noether, …) was
 noticed **after** the code already worked and is cited `Post-Hoc:`. The reading below
-and these nine videos are the foundation the design was built directly against.
+and these nine videos, together with the Infocom Zork parser listed after them, are the foundation the design was built directly against.
 
 **Read first — before everything else**
 0. Jorge Luis Borges, *The Library of Babel* (1941), and its online realisation,
@@ -36,6 +36,9 @@ and these nine videos are the foundation the design was built directly against.
 **Grant Sanderson (3Blue1Brown)**
 9. *The most beautiful formula I wish more people knew* (title as given by the author; the
    n-ball volume lecture) — https://www.youtube.com/watch?v=fsLh-NYhOoU
+
+**Infocom (a tool selection, not a video)**
+10. *Zork I* (1980) and the Infocom ZIL / Z-machine **verb-governed grammar-table sentence parser** (Blank, Lebling et al.; Nelson's Inform 6/7). Deliberately selected and engineered with from the start (`VAPMIP/zork_parser.py`, `PtolC/zork.c`); **prior work, not `Post-Hoc:`** (Cody, 2026-10-13).
 
 ---
 
