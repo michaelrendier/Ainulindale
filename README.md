@@ -359,7 +359,7 @@ No GPU. No gradient descent. No cloud. 32 seconds. Every English word on the Rie
 
 ### Intellectual Property
 
-© 2026 Cody Michael Allison. All rights reserved.
+© 2026 Cody Michael Allison. Licensed under the GNU General Public License, version 3.0 (GPL-3.0-only); see `LICENSE`.
 
 This work — including all theoretical frameworks, mathematical derivations, code implementations, conjecture documents, and associated materials — is the exclusive intellectual property of Cody Michael Allison. Academic review, citation, and discussion are welcome. Commercial use is prohibited.
 
