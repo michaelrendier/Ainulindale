@@ -1,5 +1,5 @@
 # AINULINDALE — WIKI INDEX
-Last updated: 2026-09-23
+Last updated: 2026-10-15
 
 ## The Monad
 
@@ -20,6 +20,7 @@ Last updated: 2026-09-23
 | [20_three_phase_architecture.md](20_three_phase_architecture.md) | Three-Phase Architecture — H=xp, capacitor, eddy currents |
 | [21_chladni_zipf_riemann.md](21_chladni_zipf_riemann.md) | Chladni · Zipf · Riemann — node lines, Zipf=primes, equidistance |
 | [22_constant_facets.md](22_constant_facets.md) | Constant Facets — π, φ, i, e derived from the RedBlue Geometries Engine; Euler's identity as theorem; π as constant of the exactly flat boundary (2026-06-08) |
+| [126_the_circle_catalogue.md](126_the_circle_catalogue.md) | The Circle Catalogue — every unit circle, the six drawings and the seventh (ℓ_p); heartbeat ½ radius, imaginary circle, each value as σ_RB; engine `GenerationalLineage/engine/toolsets/circle.py` |
 
 ## Provenance & Citations
 
