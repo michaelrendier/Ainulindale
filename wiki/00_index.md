@@ -21,6 +21,8 @@ Last updated: 2026-10-15
 | [21_chladni_zipf_riemann.md](21_chladni_zipf_riemann.md) | Chladni · Zipf · Riemann — node lines, Zipf=primes, equidistance |
 | [22_constant_facets.md](22_constant_facets.md) | Constant Facets — π, φ, i, e derived from the RedBlue Geometries Engine; Euler's identity as theorem; π as constant of the exactly flat boundary (2026-06-08) |
 | [126_the_circle_catalogue.md](126_the_circle_catalogue.md) | The Circle Catalogue — every unit circle, the six drawings and the seventh (ℓ_p); heartbeat ½ radius, imaginary circle, each value as σ_RB; engine `GenerationalLineage/engine/toolsets/circle.py` |
+| [127_names_of_the_null_operator.md](127_names_of_the_null_operator.md) | Names of the Null Operator — chronology of Ĥ_RB → ∅_RB / 0_RB, dates and census |
+| [128_vapmip_paper_citation_pass_2026_10_16.md](128_vapmip_paper_citation_pass_2026_10_16.md) | Citation pass for the VAPMIP paper — built-against and Post-Hoc works, copies, what could not be fetched |
 
 ## Provenance & Citations
 
