@@ -23,6 +23,7 @@ Last updated: 2026-10-15
 | [126_the_circle_catalogue.md](126_the_circle_catalogue.md) | The Circle Catalogue — every unit circle, the six drawings and the seventh (ℓ_p); heartbeat ½ radius, imaginary circle, each value as σ_RB; engine `GenerationalLineage/engine/toolsets/circle.py` |
 | [127_names_of_the_null_operator.md](127_names_of_the_null_operator.md) | Names of the Null Operator — chronology of Ĥ_RB → ∅_RB / 0_RB, dates and census |
 | [128_vapmip_paper_citation_pass_2026_10_16.md](128_vapmip_paper_citation_pass_2026_10_16.md) | Citation pass for the VAPMIP paper — built-against and Post-Hoc works, copies, what could not be fetched |
+| [129_veritasium_spider_silk_the_orbweaver_impetus.md](129_veritasium_spider_silk_the_orbweaver_impetus.md) | Veritasium, Is spider web really stronger than steel? — the orb-weaver impetus (built-against), transcript copy |
 
 ## Provenance & Citations
 
