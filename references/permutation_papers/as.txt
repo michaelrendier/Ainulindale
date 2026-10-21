@@ -1,0 +1,840 @@
+        Approximate Similarity Search in Metric Spaces using
+                          Inverted Files                                                  ∗
+
+
+
+
+                                  Giuseppe Amato                                              Pasquale Savino
+                                        ISTI-CNR                                                   ISTI-CNR
+                                    Via G. Moruzzi, 1                                          Via G. Moruzzi, 1
+                                    56124, Pisa, Italy                                         56124, Pisa, Italy
+                        giuseppe.amato@isti.cnr.it                                  pasquale.savino@isti.cnr.it
+
+ABSTRACT                                                                    plication to generic similarity search problems still need to be in-
+We propose a new approach to perform approximate similarity search          vestigated. A promising direction to address this issue is the ap-
+in metric spaces. The idea at the basis of this technique is that when      proximate similarity search [21, 4, 1, 9] paradigm. Approximate
+two objects are very close one to each other they ’see’ the world           similarity search provides an improvement in similarity search per-
+around them in the same way. Accordingly, we can use a measure              formance at the price of some imprecision in the results.
+of dissimilarity between the view of the world, from the perspective
+of the two objects, in place of the distance function of the underly-       We propose a technique for approximate similarity search when
+ing metric space. To exploit this idea we represent each object of a        data are represented in generic metric spaces. The metric space ap-
+dataset by the ordering of a number of reference objects of the met-        proach to similarity search requires the similarity between objects
+ric space according to their distance from the object itself. In order      of a database to be measured by means of a distance (dissimilarity)
+to compare two objects of the dataset we compare the two corre-             function, which satisfies the metric postulates: positivity, symme-
+sponding orderings of the reference objects. We show that efficient         try, identity, and triangle inequality. A comprehensive dissertation
+and effective approximate similarity searching can be obtained by           on similarity search in metric space can be found in [20].
+using inverted files, relying on this idea. We show that the proposed
+approach performs better than other approaches in literature.               The basic idea of our proposal is that when two objects o1 and o2
+Categories and Subject Descriptors: H.3 [Information Storage                are very similar (which in metric spaces means that they are close
+and Retrieval]: H.3.3 Information Search and Retrieval;                     one to each other), their view of the surrounding world (their per-
+Keywords: Approximate Similarity Search, Access Methods                     spective) is similar as well. This implies that, if we take a set of
+                                                                            objects from the database and we order them according to their
+                                                                            similarity to o1 and o2 , the obtained orderings are also similar. The
+1.     INTRODUCTION                                                         basic idea here is that we can approximatively judge the similar-
+Traditional database systems are able to efficiently deal with struc-       ity between any two arbitrary objects o1 and o2 , by comparing the
+tured records by using the exact match paradigm. However, in some           ordering, according to their similarity to o1 and o2 , of a group of
+cases data cannot be represented effectively as structured records.         reference objects, instead of using the actual distance function be-
+Consider for instance, text data, multimedia data, or even biolog-          tween the two objects.
+ical data. In these cases, the similarity search paradigm [11] has
+to be used instead of exact match. Similarity searching consists in         Clearly, it is possible to find some special examples where very
+retrieving data that are similar, with respect to an application de-        similar (or even identical) orderings correspond to very dissimilar
+pendent similarity function, to a given query.                              objects. For instance, if reference points are all positioned on a
+                                                                            line, two objects that are positioned on another line orthogonal to
+Techniques for improving performance of exact match search can-             the first one will produce the same ordering of the reference points,
+not be used for similarity search, and the efficiency problem of the        independently of their actual position. However, we will see that
+similarity searching paradigm has been discussed since long time            in real cases, even with a random selection of the reference points,
+[18, 3, 20]. Techniques to efficiently deal with similarity search          the accuracy of this approach is very good.
+in very specific applications, as for instance full-text search [15,
+19], were developed. However, efficient approaches that allow ap-           We will also see that this technique can be very efficiently imple-
+∗
+ This work was partially supported by the DELOS NoE and the                 mented relying on the use of the inverted files, exploiting several
+Multimatch project, funded by the European Commission under                 years of investigation on scalable search techniques on this data
+FP6 (Sixth Framework Programme).                                            structure. In fact, our experiments prove that this technique offers
+                                                                            performance, in terms of efficiency and accuracy, much higher than
+                                                                            other methods existing in literature.
+Permission to make digital or hard copies of all or part of this work for
+personal or classroom use is granted without fee provided that copies
+are not made or distributed for profit or commercial advantage and that     The structure of the paper is as follows. Section 3 formalizes the
+copies bear this notice and the full citation on the first page. To copy    idea of searching by using the perspective of the objects. Section
+otherwise, to republish, to post on servers or to redistribute to lists,    4 shows how this idea can be efficiently supported by the use of
+requires prior specific permission and/or a fee.                            inverted files. Sections 5, 6, and 7 discuss some relevant opti-
+INFOSCALE 2008, June 4-6, Vico Equense, Italy
+Copyright © 2008 978-963-9799-28-8
+                                                                            mizations to the basic idea and assess the performance of the ap-
+DOI 10.4108/ICST.INFOSCALE2008.3486                                         proach trough extensive experimentation. Section 8 compares the
+proposed approach to approaches from the literature. Section 9            3.    PERSPECTIVE BASED SPACE TRANS-
+concludes and discusses possible future research directions.                    FORMATION
+                                                                          Let D be a domain of objects and d : D × D → R be a metric
+2.    RELATED WORKS                                                       distance function between objects of D. Let RO ⊂ D, be a set of
+Techniques for approximate similarity search can be broadly classi-       reference objects chosen from D.
+fied in techniques that exploit space transformations and techniques
+that reduce the amount of data to be accessed. Our approach can be        Given an object o ∈ D, we represent it as the ordering of the ref-
+considered an hybrid approach given that, as we will see, even if it      erence objects RO according to their distance d from o. More for-
+                                                                                                                             RO           RO
+it mainly based on a space transformation it also adopts techniques       mally, an object o ∈ D is represented with ō = Od,o  , where Od,o
+to reduces the amount of data accessed. Many approaches need ob-          is the ordered list containing all objects of RO, ordered according
+jects to be represented as vectors and cannot be applied to generic       to their distance d from o.
+metric spaces. A more complete survey can be found in [20].
+                                                                                                        RO
+                                                                          We denote the position in Od,o   of a reference object roi ∈ RO
+                                                                               RO                          RO
+Among space transformation techniques we mention dimension-               as Od,o (roi ). For example, if Od,o (roi ) = 3, roi is the 3rd near-
+ality reduction techniques as, for instance, those proposed in [7,        est object to o among those in RO. We call D̄ the domain of the
+12], where the authors propose techniques to approximatively and          transformed objects. ∀o ∈ D, ō ∈ D̄.
+efficiently compute the inner product between two vectors by ex-
+ploiting an ad-hoc dimensionality reduction. Space transformation         Figure 1 exemplifies the transformation process. Figure 1a) sketches
+is also used in approximate search techniques based on VA-Files           a number of reference objects (black points), data objects (white
+[17] where dimensionality reduction is obtained by quantizing the         points), and a query object (gray point). Figure 1b) shows the en-
+original data objects. Other techniques that fall in the category of      coding of the data objects in the transformed space. We will use
+space transformation are FastMap [8], which can be mainly used in         this as a running example throughout the reminder of the paper.
+vector spaces, and MetricMap [16] suited to metric spaces.
+                                                                          As we anticipated before, we assume that if two objects are very
+Techniques that reduce the space to be examined basically aim at          close one to each other, they have a similar view of the space. This
+improving performance by accessing and analyzing less data that is        means that also the orderings of the reference objects according to
+technically needed to have a mathematically precise result. These         their distance from the two objects should be similar. In order to
+strategies try to infer which are the most promising portions of the      measure the similarity between two orderings we use the Spearman
+space to be examined or to decide when it might be useless to con-        Footrule Distance (SF D) [6], which is a popular measure to com-
+tinue searching for qualifying objects. Many of these techniques          pare ordered lists. Given two ordered lists S1 and S2 , containing
+were defined exploiting data structures that use an hierarchical de-      all objects of RO, the SF D between S1 and S2 is computed as the
+composition of the space, as for instance the M-Trees [5]. In [13,        sum of the absolute differences between positions of objects in the
+14] a technique that analyzes the angle formed between objects in         two orderings. More formally
+a ball region, the center of this region, and a query object, to decide
+when a region has to be accessed is proposed. This technique can
+be applied on any data structure based on hierarchical decomposi-                                          X
+                                                                                      SF D(S1 , S2 ) =           |S1 (ro) − S2 (ro)|
+tion of the space by means of ball regions when data are represented
+                                                                                                         ro∈RO
+in a vector space. A technique employing a user-defined parame-
+ter as an upper bound on approximation error is presented in [21].
+The error parameter is used as an upper bound to the error intro-         We denote the distance between objects in the transformed domain
+                                                                             ¯ o¯1 , o¯2 ) = SF D(Od,o
+                                                                          as d(                    RO      RO
+                                                                                                        , Od,o  ).
+duced if a region of the space is not accessed when searching. A                                      1       2
+
+technique that retrieves k approximate nearest neighbors of a query
+object by returning k objects that statistically belong to the set of     The transformed domain D̄ and the distance d¯ can be used to per-
+l (l ≥ k) actual nearest neighbors of the query object is also pre-       form approximate similarity search in place of the domain D and
+sented in [21]. The value l is specified by the user as a fraction        the distance function d. Figure 1c) shows the distance, computed
+of the whole dataset. A technique called Probably Approximately           in the transformed space, of the data objects from the query object.
+Correct (PAC) nearest neighbor search in metric spaces is proposed        It can easily be seen that it is consistent (it gives the same ordering)
+in [4]. The approach searches the approximate nearest neighbor to         with the actual distance of data objects from the query.
+a query object guaranteeing that the introduced error is within a
+user-specified confidence interval. A technique that uses a prox-         In the following sections we will discuss how approximate similar-
+imity measure to decide which tree nodes can be pruned, even if           ity search can be executed very efficiently and precisely using this
+their bounding regions overlap the query region, is proposed in [1].      space transformation.
+When the proximity of a node’s bounding region and the query re-
+gion is small, the probability that qualifying objects will be found      4.    USING INVERTED FILES
+in their intersection is also small. A user-specified parameter is em-    Let us suppose that we have a dataset X ⊂ D and a query q ∈ D.
+ployed as a threshold to decide whether a node should be accessed         Suppose we want to search for the k objects of X nearest to q. An
+or not. If the proximity value is below the specified threshold, the      exhaustive approach is that of ordering the entire dataset X accord-
+node is not promising from a search point of view, and thus not           ing to the distance from q and to select the first k objects. Let X̄
+accessed.                                                                 be the dataset in the transformed space and q̄ ∈ D̄ the transformed
+                                                                          query. The approximate ordering of X with respect to q can be
+Comparison of our method is made against the proximity based                                                          ¯ ō), ∀o ∈ X. In the
+                                                                          obtained in D̄ by computing the distance d(q̄,
+method, presented above, which from other experiments seems to            following we will show that this ordering can be obtained by rep-
+be one of the best performing techniques.                                 resenting (indexing) the transformed objects with inverted files and
+                                               2
+                              1            q                        ō 1= (5,2,1,3,4)       d ( q , o1 ) = 0 + 1 + 1 + 0 + 0 = 2
+                                               o1
+                                       5                            ō2= (4,3,5,1,2)        d ( q , o2 ) = 2 + 2 + 2 + 2 + 4 = 12
+                                                                    ō3= (5,2,3,1,4)        d ( q , o3 ) = 0 + 2 + 1 + 1 + 0 = 4
+                                                    o3
+                                                                    ō4= (3,5,2,1,4)        d ( q , o4 ) = 1 + 2 + 0 + 3 + 0 = 6
+                                                         o4
+                                                                    q̄= (5,1,2,3,4)
+                             o2
+                    4                               3
+                                  a)                                        b)                                    c)
+
+
+Figure 1: Example of perspective based space transformation. a) Black points are reference objects; white points are data objects;
+the gray point is a query. b) Encoding of the data objects in the transformed space. c) Distances in the transformed space
+
+
+using search algorithms derived from the full text search area [15,                            1 → ((o1 ,3), (o2 ,4), (o3 ,4), (o4 ,4))
+19]. Let us see this in details.                                                               2 → ((o1 ,2), (o2 ,5), (o3 ,2), (o4 ,3))
+We can index transformed objects with inverted files as follows.                               3 → ((o1 ,4), (o2 ,2), (o3 ,3), (o4 ,1))
+Entries (the lexicon) of the inverted file are the objects of RO. The                          4 → ((o1 ,5), (o2 ,1), (o3 ,5), (o4 ,5))
+posting list associated with an entry ro ∈ RO is a list of pairs
+                                                                                               5 → ((o1 ,1), (o2 ,3), (o3 ,1), (o4 ,2))
+(o, OoRO (ro)), o ∈ X, that is a list where each object o of the
+dataset X is associated with the position of the reference object ro
+in ō. In other words, each reference object is associated with a list        Figure 2: Inverted file obtained for the running example of Fig-
+of pairs each referring an object of the dataset and the position of          ure 1
+the reference object in the transformed object’s representation. For
+instance, an entry (o, 7) in the posting list associated with reference       IN:     query: q,
+object ro, indicates that ro is the 7th closest object to o among those               reference objects: RO,
+in RO.                                                                                posting lists associated with reference objects;
+                                                                              OUT:    The set of accumulators: A
+Therefore, the inverted file has the following overall structure:             1. Set A ← {}.
+                                                                              2. For each ro ∈ RO
+                                                                              3.      Let pl be the posting list associated with ro
+                                                                                                      RO
+                                                                              4.      For each (o, Od,o  (ro)) ∈ pl
+        ro1 → ((o1 , OoRO  (ro1 )), . . . , (on , OoRO  (ro1 )))
+                        1                            n                        5.           If ao ∈/A
+        ...
+                                                                              6.                 Set ao = 0
+        rom → ((o1 , OoRO1
+                            (rom )), . . . , (on , OoROn
+                                                         (rom )))             7.                 Set A ← A ∪ {ao }
+                                                                                                               RO           RO
+                                                                              8.           Set ao = ao + |Od,q    (ro) − Od,o  (ro)|
+where n is the size of the dataset X and m is the size of the set of
+reference objects RO.
+
+Figure 2 shows the inverted file obtained for the running example                   Figure 3: Basic searching algorithm using inverted files.
+in Figure 1.
+
+A basic algorithm that quickly computes the distance d¯ of all ob-            text retrieval systems. The difference is that here we compute the
+jects of the dataset X from q using an inverted file data structure           Spearman Footrule Distance.
+is given in Figure 3. The Algorithm uses an accumulator ao , as-
+sociated with each object o found, to incrementally compute the               In the following we will discuss how we can estimate the number
+          ¯ q̄). The set of accumulators A is initially empty (line
+distance d(ō,                                                                of reference objects to be used with a dataset. In addition we will
+1.). The posting lists of the various entries are accessed (lines 2.          also discuss the cost of this solution in terms of storage space and
+and 3.) and for each entry in a posting list (line 4.) if the object          searching complexity. We will see that this preliminary solutions
+is seen for the first time a new accumulator is added to the list of          has some performance drawbacks. However, in the remaining sec-
+accumulators (lines 5.–7.). Then the value of the accumulator is up-          tions will suggest some relevant modifications to this basic strategy
+dated by adding the difference in position of the current reference           that guarantee much higher efficiency still offering a high approx-
+                 RO
+object ro, in Od,q          RO
+                      and Od,o (line 8.). At the end of the algorithm         imation accuracy. We will use the above solution as a baseline to
+execution all objects are associated with an accumulator that con-            evaluate the proposed refinements.
+tains their distance d¯ from the query object. It is easy to maintain
+the accumulators ordered during the algorithm execution so that at            4.1     How to chose the size of RO
+the end we have the entire dataset ordered. This algorithm is very            A basic question that should be answered is how to choose the num-
+similar to algorithms that incrementally compute the dot product in           ber of reference objects to be used to map D into D̄.
+Given a set of reference objects RO, the maximum number of dif-                      0,6                                        25000
+ferent objects that can be represented in the transformed space is
+given by the factorial of the size of RO: #(RO)!. This follows                       0,5
+                                                                                                                                20000
+by the fact that objects in D̄ are represented by permutations of all                                                                                k=1
+                                                                                     0,4
+elements of RO. However, we are not actually interested in the
+
+
+
+
+                                                                                                                                        Disk reads
+                                                                                                                                15000                k=3
+
+
+
+
+                                                                            Recall
+number of objects that we can represent in D̄. Rather, we are more                   0,3
+                                                                                                                                                     k=10
+interested in the capability of the distance d¯ to order objects with                                                           10000
+                                                                                                                                                     k=50
+respect to a query object q̄. It is easy to see that the maximum dis-                0,2
+
+tance measured by the SF D is (#RO)2 /2. In addition, note that                                                                 5000
+                                                                                                                                                     Disk
+                                                                                                                                                     reads
+                                                                                     0,1
+SF D always computes even values. Thus, the maximum number
+of different distances that can be computed is (#RO)2 /4. This                        0                                          0
+means that if the size of RO is too small, many objects will have                      100        200    300         400      500
+
+the same distance from any query object. In order to be able to                                          #RO
+
+distinguish the distance of each object of X̄ from any query object,
+                                                                                     0,007                                      25000
+the size of RO should be at least
+                                                                                     0,006
+                                                                                                                                20000
+                                                                                     0,005                                                           k=1
+                                  p
+                         #RO ≥ 2 · #X                              (1)                                                                               k=3
+
+
+
+
+                                                                                                                                        Disk reads
+                                                                                                                                15000
+                                                                                     0,004
+
+
+
+
+                                                                            EP
+                                                                                                                                                     k=10
+                                                                                     0,003
+                                                                                                                                10000
+This is just a theoretical and quite rough lower bound. It clearly                                                                                   k=50
+                                                                                     0,002
+does not guarantee that all objects will have a different distance                                                              5000
+                                                                                                                                                     Disk
+                                                                                                                                                     reads
+from any query object.                                                               0,001
+
+                                                                                           0                                     0
+According to Equation 1, in order to index a dataset containing                             100    200    300        400      500
+50,000 objects we need about 448 reference objects. In order to                                           #RO
+index 1,000,000 objects we need about 2000 reference objects.
+                                                                          Figure 4: Performance varying the number of reference ob-
+4.2    Storage and search cost                                            jects.
+Let’s estimate the cost of storing and searching the inverted file, us-
+ing the proposed structure, with the lower bound given by Equation
+1, and the search algorithm of Figure 3.                                  moment all entries of a posting list are read).
+
+Each posting list contains a pair for every object of the dataset X.      As a baseline, in order to assess the tradeoff between efficiency and
+Therefore the size of each posting list is proportional to the size of    approximation accuracy, we will use the basic approach presented
+the dataset X. The storage space needed to store√the inverted file is     above, whose performance is empirically evaluated in the following
+consequently proportional to #RO · #X ≈ 2 · #X · #X = 2 ·                 section.
+(#X)3/2 , which is higher than linear even if smaller than quadratic
+with respect to the size of the dataset X.
+                                                                          4.3              Performance evaluation
+Therefore, suppose we need 6 bytes to encode a pair in the post-          In this section, we report results of an experimental evaluation of
+ing list, the amount of space needed to store an inverted file for a      the above presented idea. As we said before we use this as a base-
+dataset of size 50,000 is about 128MB. In case of a dataset contain-      line to compare enhancements proposed in the next sections.
+ing 1,000,000 objects we need 11GB.
+                                                                          We conducted our experiments using a dataset of color histograms
+The algorithm given in Figure 3 has to read all posting lists in order    represented in 32 dimensions. This data set was obtained from the
+to process a query. Therefore, suppose a disks with average trans-        UCI Knowledge Discovery in Databases Archive [2]. The color
+fer rate of 50MB/s, we need about 2.5 seconds for the database            histograms were extracted from the Corel image collection as fol-
+with 50,000 objects and about 3.5 minutes for the dataset contain-        lows. The HSV space is divided into 32 subspaces (colors), using
+ing 1,000,000 objects. This is clearly outperformed by most tra-          8 ranges of hue and 4 ranges of saturation. The value for each di-
+ditional access methods for similarity search [10, 5] even without        mension of a vector is the density of each color in the entire image.
+approximation, provided that objects can be represented by vectors        The distance function used to compare two feature vectors is the
+or can be represented in metric spaces.                                   histogram intersection implemented as L1 . The dataset contains
+                                                                          50,000 objects. 50 random objects were used as queries and were
+In the reminder of the article we will modify this basic idea to gain     not inserted in the index.
+orders of magnitude in performance. We will proceed according
+to these guidelines: 1) we will reduce the search cost by reducing        As suggested in [20], we used the measure of the recall and position
+the number of posting lists accessed during search (the approach          error to assess the accuracy of the method. Specifically, given a
+proposed above accesses all posting lists); 2) we will reduce the         query object q, recall is defined as
+size of the inverted file by reducing the number of posting lists
+where each object is referred (at the moment each object is referred
+by every posting list); 3) we will further reduce the search cost                                               #(S ∩ S A )
+by reducing the amount of entries read in every posting list (at the                                     R=                                                  (2)
+                                                                                                                   #S
+and the position error is defined as                                                           ks=2                    d ( q , o1 ) = 0 + 1 = 1
+                    P                  A   A  A                                                                        d ( q , o2 ) = 2 + 2 = 4
+                        oA ∈S A |OX(O ) − S (O )|                                              q̄ = (5,1)
+            EP =                     A
+                                                  ,               (3)                                                  d ( q , o3 ) = 0 + 2 = 2
+                                 #S · #X
+                                                                                                                       d ( q , o4 ) = 1 + 2 = 3
+               A
+where S and S are the ordering of the k closest objects to q found
+respectively by an exact similarity search algorithm and by the pro-     Figure 5: Encoding the query with the ks closest reference ob-
+posed method. OX is the ordering of the entire dataset X with            jects and computing the distance in the transformed space us-
+respect to the distance from q.                                          ing this reduced encoding.
+
+In the experiments we set the disk block size to 4 KBytes and each
+entry of the posting lists is encoded with 4 bytes1 .                    we can modify the search algorithm in such a way that not all ref-
+                                                                         erence points are used.
+Results are shown in Figure 4. The graphs show the recall and
+the position error varying the number of reference objects RO for        More specifically, when we want to process a query object q, in-
+various options of the k closest objects to the query considered.                                                   RO
+                                                                         stead of representing it as the ordering Od,q  of all the objects in
+The graphs also show the number of disk block reads varying the          RO, we rather represent it as the ordering of the ks (ks ≤ #RO)
+number of reference objects. In the experiment we varied the size        reference objects of RO closest to q. We denote this ordering as
+of RO from 100 up to 500 objects. Note that according to the             q̄ = OkRO
+                                                                                 s ,d,q
+                                                                                        . The distance d¯ is now computed by using a variant
+observations made in Section 4.1 the size of RO should be about          of the Spearman Footrule Distance, the Induced Footrule Distance
+448 objects. We measured performance using k equal to 1, 3, 10,          (IF D), defined as:
+and 50. Reference objects RO were chosen randomly from the
+dataset.
+                                                                                                            X
+As expected, the search cost increases linearly with the size of RO.                 IF D(S1 , S2 ) =               |S1 (ro) − S2 (ro)|
+                                                                                                            ro∈S1
+Note also that, given that the algorithm orders the entire dataset,
+the number of disk reads is clearly independent from the number of
+considered objects k. Surprisingly, we note that the accuracy of the     The IF D considers just the elements occurring in the first ordered
+method is not heavily affected by size of RO. In fact we note that       list and discards the others. Differently than SF D, it produces both
+accuracy slightly improves (recall increases and error decreases)        even and odd values so the maximum distance also corresponds to
+when increasing size of RO from 100 to 200. However, it remains          the maximum number of different distances.
+basically constant for the remaining values. This suggests that the
+size obtained according to guidelines in Section 4.1 is in fact over-    Figure 5 shows the distance, computed in the transformed space
+estimated. This effect is exploited, as we will see, in enhancements     according to the IF D, of data objects from the query objects when
+of this technique presented in next sections.                            the query is represented just by using the ks closest reference ob-
+                                                                         jects.
+Looking more specifically at the results we can observe that recall
+improves with larger values of k. This is intuitively explained by       In order to support this optimization, the search algorithm given
+the fact that when the result set is large, the probability to have      in Figure 3 needs only to be modified in line 2. In fact, it should
+elements from the exact result is higher. For instance, when we          not access the posting lists associated with all reference objects.
+retrieve 50 objects (k is 50), on average we obtained a recall of        Rather it only accesses the posting lists associated with the ks clos-
+0.37. On the other hand, the position error is smaller for small         est reference objects to q. Line 2. is therefore changed to "For each
+values of k. This implies that generally, even if the true nearest       ro ∈ OkRO s ,d,q
+                                                                                          ".
+neighbors are missed, the real ranks of the retrieved objects are not
+far from to the nearest neighbors. For instance, when k is 1, we         As we will empirically prove in the following, using the ks refer-
+obtained a position error of about 0.001. This means that the 50-th      ence objects for representing queries has both the effect of reducing
+nearest neighbor was found on average instead of the first nearest       the search costs, given that just ks posting lists will be accessed,
+neighbor, on a database of 50.000 objects. With large values of          and increasing the effectiveness, given that the reference objects
+k, the probability that result objects with high rank are missed and     closest to q are the ones that more effectively represent the neigh-
+replaced by objects with much higher real rank is higher, so errors      boring of q.
+are also larger.
+                                                                         The search cost in this case is proportional to ks · #X that, when
+5.    SEARCHING WITH THE KS CLOSEST                                      ks ¿ #RO, is significantly smaller than before. Next section
+                                                                         discusses the effectiveness of this approach for various values of
+      REFERENCE POINTS                                                   ks .
+In previous section we have seen that no additional performance
+improvement is obtained when the size of RO increases above cer-
+tain values. Encouraged by the observation that an higher number         5.1    Performance evaluation
+of reference points does not necessarily imply higher effectiveness,     Here we discuss the results obtained by applying the above idea.
+1
+  This can be obtained by maintaining the entries of the posting list    The settings of the experiments are exactly as before. The only
+ordered according to the position and by using a small index for         difference is that in this case we maintain fixed the size of RO and
+each posting lists that gives the offset corresponding to the possible   we evaluate the performance by varying the number ks of objects
+positions. This is further discussed in Section 7.                       from RO used to represent the query q.
+                                             #RO=500                                     The idea of taking just the closest reference objects can also be used
+                                                                                         to represent any object that has to be indexed, rather than just the
+              0,6                                           25000
+                                                                                         query.
+              0,5
+                                                            20000
+
+              0,4
+                                                                                 k=1
+                                                                                         Let ki ≤ #RO be the number of reference objects used for index-
+                                                                                         ing. In this case every object can be represented as ō = OkRO           ,
+
+
+
+
+                                                                    Disk reads
+                                                            15000                k=3
+                                                                                                                                                           i ,d,o
+     Recall
+
+
+
+
+              0,3                                                                k=10    using a smaller amount of reference objects. Note that, in this case,
+              0,2
+                                                            10000                k=50    different objects will be typically represented by different reference
+                                                            5000
+                                                                                 Disk    objects, given that different objects will have different neighbor ref-
+                                                                                 reads
+              0,1
+                                                                                         erence objects.
+               0                                            0
+                    10     30    50             70     90                                This representation of an object will be clearly smaller than using
+                                      k_s                                                all reference objects. In addition, this has also the effect of reducing
+                                                                                         the size of the inverted file. In fact every object will be just inserted
+                                             #RO=500
+                                                                                         into ki posting lists, by reducing their size and by also reducing the
+              0,009                                         25000                        search cost. The size of each posting list will depend on the number
+              0,008                                                                      of objects that have the associated reference objects in the first ki
+                                                            20000
+              0,007                                                              k=1     positions. However, given that every object will be inserted in ki
+              0,006
+                                                            15000
+                                                                    Disk reads
+                                                                                 k=3     posting lists, the overall size of the inverted file will be proportional
+              0,005                                                                      to ki ∗ ·#X. Let ks ≤ ki be the number of reference objects used
+     EP
+
+
+
+
+                                                                                 k=10
+              0,004
+                                                            10000                        for searching. On average, we can estimate that the searching cost
+                                                                                 k=50
+              0,003
+                                                                                         will be proportional to ks · (ki ∗ ·#X)/#RO.
+              0,002                                         5000                 Disk
+                                                                                 reads
+              0,001
+                                                                                         Figure 7 shows the encoding of data objects in the transformed
+              0,000                                         0
+                      10    30    50            70     90
+                                                                                         space, when just the ki closest reference objects to an object is
+                                       k_s
+                                                                                         used (Figure 7a), the corresponding inverted file (Figure 7b), and
+                                                                                         the distances from the query computed in the transformed space ac-
+                                                                                         cording to this modification (Figure 7c). Note that the IF D com-
+Figure 6: Performance searching with a subset of reference ob-                           putes the distance by summing the position differences of reference
+jects. We maintain fixed the total number of reference objects.                          objects in the query and data object encoding. However, now it can
+                                                                                         happen that a reference object occurs in the query encoding and it
+                                                                                         does not occur in an object’s encoding. When this happens we sup-
+Results are reported in Figure 6. As before, the graphs show the                         pose that the position difference of the missing reference objects is
+recall, the position error and the number of disk block reads. We                        greater than the maximum possible. That is, we suppose that the
+used 500 as size for RO and we varied the value of ks from 10 to                         difference is ki + 1.
+100. Clearly, the cost increases linearly with ks and (when ks is
+smaller than #RO) it is lower than the cost obtained before, given                       Let us now discuss how the search algorithm has to be used with
+that less posting lists are accessed.                                                    this modification to the indexing strategy. The basic algorithm that
+                                                                                         we gave previously in Figure 3, computes the distance of objects
+Looking at the accuracy measures, on the other hand, we observe                          from the query incrementally using the accumulators. This tech-
+a non intuitive behavior. Surprisingly, accuracy is always better                        niques relies on the fact that every object appears exactly once in
+than that obtained using all objects of RO to represent the query                        every posting list. Therefore every posting list contributes to com-
+(compare Figure 6 with Figure 4). On average we obtain the best                          pute the distance of every object. However, as discussed above,
+results when ks is 50. In this case, when we retrieve 50 objects                         some reference objects might not occur in some object’s encod-
+(k is 50), the recall is about 0.54 and the error is about 0.0019. In                    ing and consequently some objects might be missing from some
+previous experiments, using all 500 objects of RO, to represent the                      posting lists. In fact, when an object is indexed with its ki closest
+query, we had a recall of about 0.38 and an error of about 0.0052.                       reference objects, it will appear just in ki posting lists. This means
+This, added to the fact that search cost is one order of magnitude                       that when processing a query, an object might be encountered in
+lower (about 2500 disk reads compared to 25000 of the previous ap-                       some posting lists and it might not be seen in others. This leads to
+proach) demonstrates that the method is very promising: we have                          miscalculation of the distance. In fact, when an object is not seen
+higher accuracy at much lower cost. This strange behavior can be                         in a posting list, it is as if 0 is erroneously summed to its accumu-
+explained by observing that the closest reference objects are the                        lator, in correspondence of the reference object associated with the
+most reliable to represent an object to be indexed, while reference                      posting list. However, note that 0 means that the position of the
+objects that are far from the indexed object introduce noise. In other                   reference object in an object is exactly the same than its position
+words nearby objects have the same ordering of the nearest refer-                        in the query, while the actual position difference (so the distance)
+ence objects, while ordering of reference objects that are far from                      should be higher.
+them might be completely different. This effect can be exploited to
+also encode the objects to be indexed with fewer reference objects,                      To solve this, we change the way in which the accumulators are
+in addition to the query. This is discussed more in details in next                      used. Figure 8 shows the modified algorithm. When objects are
+section.                                                                                 seen for the first time the associated accumulator is initialized with
+                                                                                         the maximum possible distance for an object, which is (ki + 1) · ks
+6.             INDEXING WITH THE KI CLOSEST REF-                                         (line 6.). In fact an object can be seen at most in ks posting lists and
+                                                                                         we assume an unseen reference object having position (ki + 1), as
+               ERENCE POINTS
+               ki=3                                                            ks=2
+
+               ō 1= (5,2,1)        1 → ((o1 ,3))                                                         d ( q , o1 ) = 0 + 1 = 1
+
+               ō2= (4,3,5)         2 → ((o1 ,2), (o3 ,2), (o4 ,3))            q̄= (5,1)
+                                                                                                          d ( q , o 2 ) = 2 + ( k i + 1) = 6
+                                    3 → ((o2 ,2), (o3 ,3), (o4 ,1))                                       d ( q , o3 ) = 0 + ( k i + 1) = 4
+               ō3= (5,2,3)
+                                    4 → ((o2 ,1))                                                         d ( q , o 4 ) = 1 + ( k i + 1) = 5
+               ō4= (3,5,2)
+                                    5 → ((o1 ,1), (o2 ,3), (o3 ,1), (o4 ,2))
+
+                  a)                              b)                                                          c)
+
+
+Figure 7: Indexing with the ki closest reference objects to data objects and searching with the ks closest reference objects to the
+query. a) Encoding of data objects. b) Inverted file. c) Distance from the query in the transformed space.
+
+
+IN:     query: q,                                                                                                           #RO=500,k_s=50
+        reference objects: RO,
+        posting lists associated with reference objects,                                     0,6                                                   25000
+
+        number of reference objects used for indexing: ki ,                                  0,5
+                                                                                                                                                   20000
+        number of reference objects used for searching: ks ;                                                                                                            k=1
+                                                                                             0,4
+OUT:    The set of accumulators: A                                                                                                                                      k=3
+
+
+
+
+                                                                                                                                                           Disk reads
+                                                                                                                                                   15000
+
+
+
+
+                                                                                    Recall
+1. Set A ← {}.                                                                               0,3                                                                        k=10
+2. For each ro ∈ OkRO s ,d,q                                                                 0,2
+                                                                                                                                                   10000                k=50
+3.      Let pl be the posting list associated with ro                                                                                                                   Disk
+                         RO                                                                                                                        5000
+4.      For each (o, Od,o    (ro)) ∈ pl                                                      0,1                                                                        reads
+
+5.           If ao ∈/A                                                                        0                                                    0
+6.                 Set ao = (ki + 1) ∗ ks                                                          50      150        250          350       450
+7.                 Set A ← A ∪ {ao }                                                                                        k_i
+                                             RO          RO
+8.           Set ao = ao − (ki + 1) + |Od,q     (ro) − Od,o (ro)|
+                                                                                                                            #RO=500,k_s=50
+
+                                                                                             0,009                                                 25000
+                                                                                             0,008
+Figure 8: Searching algorithm that uses an inverted file where                               0,007                                                 20000                k=1
+the closest ki reference objects were used to index objects.                                 0,006                                                                      k=3
+
+
+
+
+                                                                                                                                                           Disk reads
+                                                                                                                                                   15000
+                                                                                             0,005
+                                                                                    EP
+
+
+
+
+                                                                                                                                                                        k=10
+                                                                                             0,004
+                                                                                                                                                   10000                k=50
+discussed before. Every time an object is encountered its current                            0,003
+distance is reduced by replacing (subtracting) the maximum possi-                            0,002                                                 5000
+                                                                                                                                                                        Disk
+                                                                                                                                                                        reads
+ble difference, which is (ki + 1), with the actual position difference                       0,001
+
+from the query (line 8.).                                                                    0,000                                                 0
+                                                                                                     50      150       250         350       450
+                                                                                                                             k_i
+6.1    Performance evaluation
+Let us see what is the performance when just the ki closest objects
+of RO are used to represent objects. The experiments that we per-              Figure 9: Performance indexing with a subset of reference ob-
+formed are similar to those presented before. However in this case             jects. We maintain fixed the total number of reference objects
+we fix both the size of RO and the number ks of objects used to                and the subset of reference objects used for searching.
+represent the query, and we vary the settings for ki . Specifically,
+we choose 500 as size for RO, we set ks to 50, and we vary ki                  racy with much lower cost. In fact, when ki is set to 100 we have
+from 50 to 500.                                                                a search cost of about 600 disk blocks read, rather than 2500 (with
+                                                                               ks =50 and all reference objects used to index) or 25,000 (when
+Results are reported in Figure 9. Also in this case, we see that the           all reference objects were used to index and search), as discussed
+search cost linearly increases with values of ki . When all objects            in previous experiments. This confirms previous intuition that the
+of RO are used for searching (ki = 500), clearly, the cost is the              closest reference objects are the most reliable to represent an object
+same than that obtained in previous experiment in correspondence               to be indexed.
+of ks set to 50.
+
+For what concerns the accuracy, we can see that after a small im-              7.             ACCESSING A FRACTION OF THE POST-
+provement obtained moving setting for ki from 50 to 100, the per-                             ING LISTS
+formance remains substantially constant. Differences in perfor-                Previous algorithms read the entire content of the accessed posting
+mance, when settings of ki range from 100 to 500, are unnotice-                lists. However, also here we can find some opportunity for reduc-
+able. The clear advantage is that we obtain again the same accu-               ing the search cost. We can observe that in the posting lists there
+                                                   …      Pairs ordered according to the position
+                                                   …
+                q̄= (…,ro,…)                          →
+                                                   ro (…,(oi,p-MPD),…, (oj,p),…, (om,p+MPD),…)
+                                                   …
+                                                   …                accessed pairs
+
+                position p                                           max position difference: MPD
+
+Figure 10: Accessing a portion of the posting lists: just the consecutive entries in the interval [p − M P D, p + M P D] are accessed.
+
+
+are some pairs that are more promising that others. Specifically, the        IN:     query: q,
+most promising pairs are those whose position (the position of the                   reference objects: RO,
+reference object) is closer to that of the query. In fact, the IF D                  posting lists associated with reference objects,
+is computed by summing the position difference of a reference ob-                    number of reference objects used for indexing: ki ,
+ject in the query and in the searched objects. Given that we are                     number of reference objects used for searching: ks ,
+interested in the k closest objects to the query, it is likely that ob-              maximum allowed position difference: M P D;
+jects whose position difference is high will fall outside the first k.       OUT:    The set of accumulators: A
+Therefore, we can use a threshold parameter M P D which indi-                1. Set A ← {}.
+cates the Maximum Position Difference and we can access just the             2. For each ro ∈ OkRO s ,d,q
+pairs whose position difference is below the threshold.                      3.      Let mp = max(0, OkRO      s ,d,q
+                                                                                                                      (ro) − M P D),
+                                                                                          M p = min(ki , OkRO    s ,d,q (ro) + M P D)
+In order to do that efficiently we can maintain the pairs of the post-       4.      Let pl be the posting list associated with ro
+                                                                                           Mp
+ing lists ordered according to their position and, rather than access-       5.      Let plmp   the subset of pl containing pairs with positions
+ing the entire posting lists, we can sequentially scan just the portion                   between mp and M p
+                                                                                                      RO               Mp
+that contain pairs whose position difference is below the threshold.         6.      For each (o, Od,o    (ro)) ∈ plmP
+For instance, suppose that reference object ro has position p in the         7.           If ao ∈/A
+                   RO
+query q, that is Od,q (ro) = p. Then, the search algorithm will just         8.                 Set ao = ki ∗ ks
+access the consecutive pairs of the posting list, associated with ro,        9.                 Set A ← A ∪ {ao }
+whose position is in the interval [p − M P D, p + M P D]. This                                                         RO          RO
+                                                                             10.          Set ao = ao − ki + |Od,q        (ro) − Od,o (ro)|
+process is depicted in Figure 10.
+
+Note that the number of possible positions is much smaller than the
+number of pairs in a posting list. Therefore, sorting of the entries         Figure 11: Search algorithm that accesses a fraction of the post-
+of the posting lists, according to the position, can be efficiently          ing lists.
+performed in linear time using a count-sort algorithm, after bulk
+insertion.
+                                                                             imply more entries to be read in the posting lists. However, simi-
+The revised ranking algorithm, which accesses a subset of the post-          larly to what we have observed before, reading many entries is un-
+ing lists content, is given in Figure 11. It first computes the mini-        necessary from the accuracy point of view. In fact, from the graph
+mum (mp) and the maximum (M p) position that read pairs should               we can see that the performance increases when M P D ranges be-
+have (lines 3. and 4.). Then, it accesses just the pairs in that interval    tween 10 and 40, afterwards it practically remains constant. In a
+(line 5. 6.). Note that direct access to the initial position of the in-     few words, we have again the same accuracy than before while ac-
+terval can be obtained by maintaining an index (an array) for each           cessing less information from the disk. Specifically, when we set
+posting list that indicates the offset corresponding to possible posi-       M P D to 40, the search cost is about 390 disk block reads with an
+tions. The index for a posting list has size equal to the maximum            accuracy that is practically the same (in terms of recall and position
+possible position, which is ki , and can be stored at the beginning of       error) than that obtained by reading the full posting lists, as can be
+the posting list itself. Note that the use of an index for the positions     seen comparing Figures 12 ,6, and 9.
+in the posting list makes it possible to store only the reference to
+the object, rather than the pair containing the object and its posi-         8.    COMPARISONS
+tion. In fact the position can be inferred from the index, knowing
+                                                                             In this section we assess the performance of the proposed approach
+the absolute position of the object in the posting list.
+                                                                             in contrast with other methods of approximate similarity search in
+                                                                             metric spaces, proposed in literature. Comparisons among some
+7.1     Performance evaluation                                               relevant methods [21, 1, 4] were already presented in other works
+In order to test the effect of accessing just a portion of the posting       [1, 20]. Thus, for brevity we just compare the proposed techniques
+lists, we maintain fixed the size of RO, ks , and ki . We performed          with the method of approximate similarity search based on region
+various tests varying the value of M P D. Specifically, the size of          proximity [1], which was previously recognized as one offering
+RO was set to 500, ks to 50, and ki to 100. Values for M P D                 very high performance.
+ranged from 10 up to 100.
+                                                                             Approximate similarity search based on region proximity uses the
+Results are reported in Figure 12. As intuition suggests, the search         M-Tree [5] access method, and relies on a strategy of pruning non
+cost increases linearly with M P D, given that larger values of M P D        promising subtrees, during the search phase, measuring the proba-
+                                #RO=500,k_s=50,k_i=100                                               0,6
+
+           0,6                                            25000
+                                                                                                     0,5
+                                                                                                                                                 Proximity
+           0,5
+                                                          20000                k=1                   0,4
+                                                                                                                                                 ro=[100,500]
+           0,4
+
+
+
+
+                                                                                            Recall
+                                                                               k=3
+
+
+
+
+                                                                  Disk reads
+                                                          15000                                      0,3
+  Recall
+
+
+
+
+                                                                                                                                                 ro=500, k_s=[10,100]
+           0,3                                                                 k=10
+                                                          10000                                      0,2                                         ro=500,k_i=[50,500],k_s=50
+                                                                               k=50
+           0,2
+                                                                               Disk                                                              ro=500,k_i=100,k_s=50,MPD
+                                                          5000                                       0,1                                         =[10,100]
+           0,1                                                                 reads
+
+            0                                             0                                           0
+                 10       30    50         70        90                                                100        1000        10000     100000
+                                  MPD                                                                             Average disk reads
+
+                                #RO=500,k_s=50,k_i=100                                               0,009
+
+           0,009                                          25000                                      0,008
+
+           0,008                                                                                     0,007
+                                                          20000                                                                                  Proximity
+           0,007                                                               k=1                   0,006
+           0,006                                                                                     0,005                                       ro=[100,500]
+                                                                  Disk reads   k=3
+
+
+
+
+                                                                                            EP
+                                                          15000
+           0,005
+  EP
+
+
+
+
+                                                                                                     0,004                                       ro=500, k_s=[10,100]
+                                                                               k=10
+           0,004
+                                                          10000                                      0,003                                       ro=500,k_i=[50,500],k_s=50
+           0,003                                                               k=50
+                                                                                                     0,002                                       ro=500,k_i=100,k_s=50,MPD
+           0,002                                          5000                 Disk                                                              =[10,100]
+           0,001                                                               reads                 0,001
+
+                 0                                        0                                                0
+                     10    30    50        70        90                                                     100    1000        10000    100000
+                                     MPD                                                                           Average disk reads
+
+
+
+Figure 12: Performance accessing a portion of the posting lists                        Figure 13: Comparisons of various setting of the proposed ap-
+We maintain fixed the total number of reference objects, the                           proach against a state-of-the-art method. We consider the case
+subset of reference objects used for searching, and the subset of                      where the number k of retrieved objects is 50.
+reference objects used for indexing.
+
+                                                                                       consideration the effect of data placement in the disk and disk ac-
+                                                                                       cess sequences. In fact, the proximity based method relies on a tree
+bility of overlap of the underlying ball regions with the query re-                    based data structure where search algorithm cannot sequentially ac-
+gion. Tradeoff between accuracy and search cost can be tuned us-                       cess blocks in the disk. Rather, disk blocks are mostly accessed in
+ing a threshold on this probability of overlap. In order to have an                    a random fashion sequence. In contrast, a major advantage of in-
+objective comparison we used the same dataset described above [2]                      verted files is the possibility to perform searches by maximizing
+and the same queries. We also used the same size of the disk blocks                    sequential disk accesses, whose cost is much lower than random
+in both cases (as we said before it was set to 4 KBytes).                              accesses. Thus, due to this effect, the real performance advantage,
+                                                                                       of the proposed method over the proximity method, is in practice
+Results are reported in Figure 13. The graphs show the perfor-                         even higher than that shown in Figure 13.
+mance of the four variants of our proposal and the proximity based
+method when the number k of searched objects is 50. For each                           From the graphs it is also evident how the best variant of our method
+method we plotted the search cost, in terms of disk block reads,                       is when just a portion of the posting lists are accessed.
+against the recall and the precision error. A logarithmic scale is
+used for the search cost axis.
+                                                                                       9.             CONCLUSIONS AND FUTURE WORK
+Leaving out of consideration our baseline method, where all ref-                       In this paper we presented an approach to approximate similarity
+erence objects are used for indexing and searching, the remaining                      search in metric spaces based on a space transformation that relies
+variants typically offer much higher accuracy at the same search                       on the idea of perspective from a data point. We proved through
+cost with respect to the method based on proximity. Specifically,                      extensive experimentation that the proposed approach has clear ad-
+when the search cost is between 100 and 1000 disk accesses, our                        vantages over other methods existing in literature. A major charac-
+methods offers a recall around 0.5 and a position error of about                       teristics of the proposed technique is that it can be implemented by
+0.02. On the other hand, the proximity based method offers a re-                       using inverted files, thus capitalizing on many years of investigation
+call around 0,1-0,2 and a position error above 0.03. Note that the                     on efficient and scalable searching algorithms on this data structure.
+point with highest accuracy (recall 1 and error 0), offered by the                     The proposed approach belongs to the category of general purpose
+proximity based method, was obtained with extreme settings of                          access methods for similarity search. It can be applied to any appli-
+the approximation threshold corresponding to execute in fact ex-                       cation where the similarity search paradigm can be modelled using
+act similarity search.                                                                 metric spaces.
+
+We should also point out that the number of disk reads is an objec-                    There are still some issues that are worth of investigations to further
+tive measurement of cost that, on the other hand, does not take into                   improve this technique.
+We did not discuss and investigate how to optimally chose the ref-              Abbadi. Approximate nearest neighbor searching in
+erence points. In the experiments we chose reference objects ran-               multimedia databases. In Proceedings of the 17th
+domly from the dataset. However, performance can be higher if                   International Conference on Data Engineering, April 2-6,
+reference objects are selected carefully. In fact, in the introduction          2001, Heidelberg, Germany, pages 503–511. IEEE
+we gave an example of a bad choice of the reference points that                 Computer Society, 2001.
+returned misleading estimation of the similarity between objects.          [10] A. Guttman. R-trees: A dynamic index structure for spatial
+We believe that it is also possible to find strategies for choosing             searching. In Proceedings of the 1984 ACM SIGMOD
+reference objects that offer an optimal accuracy of the similarity              International Conference on Management of Data, Boston,
+estimation.                                                                     MA, pages 47–57, 1984.
+                                                                           [11] H. V. Jagadish, A. O. Mendelzon, and T. Milo.
+Our method relies on the settings of some parameters. In order to               Similarity-based queries. In Proceedings of the Fourteenth
+obtain good performance, the size of RO, and the settings for ks ,              ACM SIGACT-SIGMOD-SIGART Symposium on Principles
+ki , and M P D have to be chosen. In this paper we chose these                  of Database Systems, May 22-25, 1995, San Jose, California,
+parameters empirically. However, they depends on specific charac-               pages 36–45. ACM Press, 1995.
+teristics of the dataset like its intrinsic dimensionality, the distance   [12] Ü. Y. Ogras and H. Ferhatosmanoglu. Dimensionality
+distributions, the data distribution, in addition to its size. A serious        reduction using magnitude and shape approximations. In
+investigation on this will offer the possibility to optimally set the           Proceedings of the ACM International Conference on
+parameters beforehand by knowing the statistics of the database to              Information and Knowledge Management (CIKM 2003),
+be managed.                                                                     New Orleans, Louisiana, USA, November 3-8, 2003, pages
+                                                                                99–107. ACM Press, 2003.
+10.     REFERENCES                                                         [13] S. Pramanik, S. Alexander, and J. Li. An efficient searching
+ [1] G. Amato, F. Rabitti, P. Savino, and P. Zezula. Region                     algorithm for approximate nearest neighbor queries in high
+     proximity in metric spaces and its use for approximate                     dimensions. In Proceedings of the IEEE International
+     similarity search. ACM Trans. Inf. Syst., 21(2):192–227,                   Conference on Multimedia Computing and Systems (ICMCS
+     2003.                                                                      1999), Florence, Italy, June 7-11, 1999, volume 1. IEEE
+                                                                                Computer Society, 1999.
+ [2] S. D. Bay. The uci kdd archive. Irvine, CA: University of
+     California, Department of Information and Computer                    [14] S. Pramanik, J. Li, J. Ruan, and S. K. Bhattacharjee. Efficient
+     Science. http://kdd.ics.uci.edu.                                           search scheme for very large image databases. In G. B.
+                                                                                Beretta and R. Schettini, editors, Proceedings of the
+ [3] K. S. Beyer, J. Goldstein, R. Ramakrishnan, and U. Shaft.
+     When is ”nearest neighbor” meaningful? In C. Beeri and                     International Society for Optical Engineering (SPIE) on
+     P. Buneman, editors, Database Theory - ICDT ’99, 7th                       Internet Imaging, San Jose, California, USA, January 26,
+     International Conference, Jerusalem, Israel, January 10-12,                2000, volume 3964, pages 79–90. The International Society
+     1999, Proceedings, volume 1540 of Lecture Notes in                         for Optical Engineering, December 1999.
+     Computer Science, pages 217–235. Springer, 1999.                      [15] G. Salton and M. J. McGill. Introduction to Modern
+ [4] P. Ciaccia and M. Patella. Pac nearest neighbor queries:                   Information Retrieval. McGraw-Hill Book Company, 1983.
+     Approximate and controlled search in high-dimensional and             [16] X. Wang, J. T.-L. Wang, K.-I. Lin, D. Shasha, B. A. Shapiro,
+     metric spaces. In ICDE, pages 244–255, 2000.                               and K. Zhang. An index structure for data mining and
+ [5] P. Ciaccia, M. Patella, and P. Zezula. M-tree: An efficient                clustering. In Knowledge and Information Systems,
+                                                                                volume 2, pages 161–184. Springer, 2000.
+     access method for similarity search in metric spaces. In
+     M. Jarke, M. J. Carey, K. R. Dittrich, F. H. Lochovsky,               [17] R. Weber and K. Böhm. Trading quality for time with nearest
+     P. Loucopoulos, and M. A. Jeusfeld, editors, VLDB’97,                      neighbor search. In C. Zaniolo, P. C. Lockemann, M. H.
+     Proceedings of 23rd International Conference on Very Large                 Scholl, and T. Grust, editors, Proceedings of the 7th
+     Data Bases, August 25-29, 1997, Athens, Greece, pages                      International Conference on Extending Database Technology
+     426–435. Morgan Kaufmann, 1997.                                            (EDBT 2000), Konstanz, Germany, March 27-31, 2000,
+ [6] P. Diaconis. Group Representations in Probability and                      volume 1777 of Lecture Notes in Computer Science.
+                                                                                Springer, 2000.
+     Statistics, volume 11 of IMS Lecture Notes - Monograph
+     Series. Institute of Mathematical Statistics, Hawyard Ca,             [18] R. Weber, H.-J. Schek, and S. Blott. A quantitative analysis
+     1988.                                                                      and performance study for similarity-search methods in
+                                                                                high-dimensional spaces. In A. Gupta, O. Shmueli, and
+ [7] Ö. Egecioglu and H. Ferhatosmanoglu. Dimensionality
+     reduction and similarity computation by inner product                      J. Widom, editors, VLDB’98, Proceedings of 24rd
+     approximations. In Proceedings of the ACM International                    International Conference on Very Large Data Bases, August
+     Conference on Information and Knowledge Management                         24-27, 1998, New York City, New York, USA, pages 194–205.
+     (CIKM 2000), McLean, Virginia, USA, November 6-11,                         Morgan Kaufmann, 1998.
+     2000, pages 219–226. ACM Press, 2000.                                 [19] I. H. Witten, A. Moffat, and T. C. Bell. Bell: Managing
+ [8] C. Faloutsos and K.-I. Lin. FastMap: A fast algorithm for                  Gigabytes: Compressing and Indexing Documents and
+     indexing, data-mining and visualization of traditional and                 Images. Morgan Kaufmann, 1999.
+     multimedia datasets. In M. J. Carey and D. A. Schneider,              [20] P. Zezula, G. Amato, V. Dohnal, and M. Batko. Similarity
+     editors, Proceedings of the 18th ACM International                         Search - The Metric Space Approach, volume 32 of
+     Conference on Management of Data (SIGMOD 1995), San                        Advances in Database Systems. Springer, 2006.
+     Jose, California, USA, May 22-25, 1995, pages 163–174.                [21] P. Zezula, P. Savino, G. Amato, and F. Rabitti. Approximate
+     ACM Press, 1995.                                                           similarity retrieval with m-trees. VLDB J., 7(4):275–293,
+ [9] H. Ferhatosmanoglu, E. Tuncel, D. Agrawal, and A. E.                       1998.
+

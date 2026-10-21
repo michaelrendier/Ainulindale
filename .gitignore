@@ -60,3 +60,5 @@ AgeFirst/original_2026/offhand/
 # references/README.md. The markdown (our writing + citations) IS committed;
 # the papers themselves are not ours to redistribute.
 references/**/*.pdf
+# Basile's published files (CC BY-SA-NC): local copy only, fetched by ValaQuenta basile.fetch_published(); never redistributed
+references/babel/
