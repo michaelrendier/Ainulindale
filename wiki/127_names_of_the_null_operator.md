@@ -62,6 +62,7 @@ One operator, introduced as a Hamiltonian, that the code uses as the **fixed poi
 | 2026-09-24 | recorded: 0_RB fell out because all the maths were present and mutually consistent at once, not because the scope was empty | session record (memory) |
 | 2026-10-13 | notation correction: J_red + J_blue = J_green = 0_RB − 0_BR | Ainulindale `d9416be` |
 | 2026-10-15 | the VAPMIP paper is scoped around the compiled monad and the scaled boxkite Mind's Eye monad, with 0_RB as its core | this page |
+| **2026-11-11** | Cody: the four d\*, three Lambert-W values and the BAO-residual mass gap together made "the complete shape" visible, the moment the original Ĥ_RB was found; used as an error check on every equation in the Archimedes formulary (`PtolemyDesktop/Archimedes/CANONICAL_MATHS.md`, 503 rows); "the wikis follow what I say, which is why the Authoritative Maths is 0_RB". Visuals: Gemini widgets of 2026-04-11 (before the first repo commit, 04-15). | `ContextPlease/claude/hist_prime/RiemannHypothesisProof/PRIMER_2026-11-11_COMPLETE_SHAPE_AND_0RB.md` |
 
 ## The census (`n1`, `n5`)
 
