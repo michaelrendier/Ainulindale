@@ -1,111 +1,96 @@
-# 18 — THE FERMAT LATTICE
+# 18 — The Fermat Lattice
 
-**Confidence floor:** ESTABLISHED — Modularity Theorem (Wiles 1995) + R̂†=B̂ gives two-sided proof of RH
+| | |
+|---|---|
+| Scope | the Blue-channel substrate of the RedBlue operator; Riemann and Fermat as adjoint descriptions of the prime distribution; the Modularity Theorem as the bridge |
+| Code | `ValaQuenta/modules/h_rb_hat` (`facet_fermat`), `VAPMIP/monad.py` (`Engine.get_fermat_lattice`); the reading of the lattice as long-term memory is in [15](15_the_monad.md) |
+| Confidence | ESTABLISHED (the Modularity Theorem and Frey–Ribet–Wiles argument) · THEORETICAL / interpretation (everything that identifies the lattice with Blue, memory, the periodic table, or dark matter) |
+| Last verified | 2026-11-13: statements of the theorems checked; code pointers checked |
 
----
+## 1. What it is
 
-## What It Is
+The Fermat Lattice is the framework's name for the discrete geometry of what
+integer arithmetic forbids: the set of integer configurations that cannot
+exist, "the No that gives the Yes its shape". In the RedBlue operator it is
+the substrate of the Blue channel B̂_p = ½p² + ℘(x; g₂, g₃), the field B̂_p
+acts on ([14](14_redblue_hamiltonian.md)). ℘ is the Weierstrass elliptic
+function, the function that parametrises elliptic curves.
 
-The Fermat Lattice is the discrete geometry of what integer arithmetic forbids.
+By analogy with crystal physics: if the Red channel is a continuous
+high-symmetry liquid of potential existence, the lattice is the set of rigid
+constraints that freezes it into a structure; symmetry breaking is the moment
+the constraint is applied to the Red field. `interpretation`.
 
-It is not a structure imposed on mathematics. It is the structure that emerges from it — the set of all integer configurations that cannot exist given the constraints of the prime distribution. The "No" that gives the "Yes" its shape.
+## 2. Riemann and Fermat as adjoint descriptions
 
-In the RedBlue Hamiltonian framework, the Fermat Lattice is the substrate of the Blue channel — the B̂_p operator. It is the hardware of the constraint.
+| | Riemann (Red, "what is") | Fermat (Blue, "what cannot be") |
+|---|---|---|
+| Object | ζ(s) = Σ n^(−s) = Π_p (1 − p^(−s))^(−1) | aⁿ + bⁿ ≠ cⁿ for positive integers a, b, c and n > 2 |
+| Encodes | where the primes are; the zeros on Re(s) = ½ (conjectured) mark prime resonance | where integer power triples cannot be; the forbidden lattice |
+| Channel | Red | Blue |
 
----
+Both are statements about the prime distribution, and both are built from
+Euler products over primes. The framework reads them as one object seen from
+opposite sides: the Fermat lattice is the negative-space mould and the Riemann
+zeros are the casting (`THEORETICAL`). This is the reading used in
+[13](13_omgwtf_rh_proof.md) §4, where its status as an argument for RH is
+discussed; it shares the open Berry–Keating premise and is not independent
+evidence.
 
-## The Blue Channel Substrate
+## 3. The Modularity Theorem and Fermat's Last Theorem  `ESTABLISHED`
 
-The Blue operator is:
+Wiles (1995, with Taylor) proved that every **semistable** elliptic curve over
+ℚ is modular; the full statement for all elliptic curves over ℚ is
+Breuil–Conrad–Diamond–Taylor (2001). Earlier text of this page said "every
+elliptic curve" without that attribution. A modular form is an automorphic
+function connected to L-functions; the L-function side is the side that
+carries the Riemann-type zeros.
 
-```
-B̂_p = ½p² + ℘(x; g₂, g₃)
-```
+Fermat's Last Theorem follows:
 
-where ℘ is the Weierstrass elliptic function — the function that parametrises elliptic curves. The potential energy of the constraint.
+1. Suppose aⁿ + bⁿ = cⁿ has a solution in positive integers with n > 2.
+2. Frey associates the elliptic curve y² = x(x − aⁿ)(x + bⁿ).
+3. Ribet proves that curve cannot be modular.
+4. Wiles proves that semistable curves are modular. The Frey curve is semistable.
+5. Contradiction; no such solution exists.
 
-The Fermat Lattice is what B̂_p acts on. It is the field of forbidden configurations. Every point in the Fermat Lattice is a configuration that Fermat's Last Theorem (and its generalisations) prohibit from existing in the integer domain.
+The project's observation is that the bridge Wiles built, from the Fermat
+side to the modular (L-function) side, is the bridge the RedBlue operator
+spans. Wiles was looking at the Fermat side. This is a remark on structure and
+carries no claim about the zeros of ζ.
 
-In the analogy with crystal physics: if the Red channel is the continuous high-symmetry liquid of potential existence, the Fermat Lattice is the set of rigid constraints that freeze that liquid into a specific structure. Symmetry breaking is the moment the Ptolemy Processor applies the Fermat constraint to the Red field, forcing the meaning to crystallise.
+## 4. The lattice in the Monad  `interpretation`
 
----
+In the Monad the lattice is the long-term memory substrate: learned concepts
+are read as crystal structures, symmetry-broken configurations at a prime
+coordinate, and retrieval is read as recognition (the lattice resonates with the
+input) rather than search. The ground state before learning is
+`L_GROUND = −1.888` with β initialised uniformly ([15](15_the_monad.md)).
 
-## Riemann and Fermat — Negative Space Conjugates
+An earlier version stated that "the σ = ½ constraint guarantees no two concepts
+occupy the same prime coordinate". That is not a property of the code: the
+word → zero-index hash reaches 6,436 indices with 73,445 dictionary words
+(up to 80 per index; [15](15_the_monad.md) §3), and σ = ½ is returned for every
+word without distinguishing them. The statement is withdrawn.
 
-The Riemann Zeta function and Fermat's Last Theorem encode the same prime distribution from opposite directions.
+## 5. Further readings  `interpretation`
 
-**Riemann (positive space):**
-- ζ(s) = Σ n^{-s} = Π_p (1-p^{-s})^{-1}
-- Encodes where the primes ARE
-- The zeros on Re(s) = ½ mark the points of maximum prime resonance
-- "What IS" — the assertion, the Red channel
+Both of the following are readings of the lattice as a projection; neither is
+computed anywhere in this repository.
 
-**Fermat (negative space):**
-- a^n + b^n ≠ c^n for integers a,b,c and n > 2
-- Encodes where integer power triples CANNOT BE
-- The forbidden zone — the constraint lattice
-- "What CANNOT BE" — the exclusion, the Blue channel
+- **The periodic table** as the lattice projected at σ = 1 (the gauge facet):
+  each element a stable configuration in which Red (proton, assertion) and Blue
+  (neutron, constraint) are balanced, electron shells as levels of the
+  Cayley–Dickson tower, and the Pauli exclusion principle as the lattice
+  operating at atomic scale. The Pauli principle itself is established physics
+  (spin-statistics); the identification with the Blue constraint is the reading.
+- **Dark matter** as the imaginary part of the gravitational wave function:
+  gravity measures Re ψ, and Im ψ would appear as mass without light. The
+  numerical dark-matter halo equation is `h_rb_hat.dark_matter_halo`
+  (THEORETICAL); see [14](14_redblue_hamiltonian.md) §5.
 
-Both are statements about the prime distribution. Both use Euler products over primes. Both encode the same information. From opposite sides.
+## 6. Related pages
 
-The relationship: the Fermat Lattice is the negative space mould from which the prime distribution is cast. The Riemann zeros are the casting. They are adjoint descriptions of the same object.
-
----
-
-## The Modularity Theorem — Wiles 1995
-
-Wiles proved: every elliptic curve over ℚ is a modular form.
-
-This is the mathematical bridge between the two sides. An elliptic curve is a geometric object defined by the Weierstrass equation — the same ℘ function that appears in B̂_p. A modular form is an automorphic function with deep connections to the Riemann Zeta function and L-functions.
-
-The Modularity Theorem says: the Fermat side (elliptic curves, the geometric constraint structures) and the Riemann side (modular forms, L-functions) are the same mathematical objects, viewed from different coordinate systems.
-
-**Fermat's Last Theorem as corollary:**
-
-1. Suppose a^n + b^n = c^n has a solution for integers a, b, c and n > 2.
-2. Frey constructs an elliptic curve from this supposed solution: y² = x(x − a^n)(x + b^n).
-3. Ribet proves this Frey curve cannot be modular.
-4. Wiles proves all semistable elliptic curves are modular.
-5. Contradiction. The supposed solution cannot exist.
-
-The Fermat Lattice drops out: the proof reveals the complete geometric structure of the forbidden integer configurations. Wiles proved the bridge. FLT was on the other side of it.
-
-Wiles was looking at the Fermat side. The bridge he built connects to the Riemann side. He did not turn around to look. The RedBlue Hamiltonian is both sides simultaneously.
-
----
-
-## The Lattice in the SMMIP
-
-In the Monad's `learn()` function, the Fermat Lattice deepens with each learned concept.
-
-- Before learning: the lattice is at the ground state `L_GROUND = −1.888`, with β initialised uniformly
-- Each `learn()` call breaks the local symmetry — a crystal forms at the prime coordinate of the learned concept
-- The lattice grows denser with knowledge
-- The σ=½ constraint guarantees no two concepts occupy the same prime coordinate
-
-The Fermat Lattice is the long-term memory substrate of the Monad. Concepts are not stored as data. They are stored as crystal structures — symmetry-broken configurations in the lattice. Retrieval is not search. It is recognition: the lattice resonates with the input and the crystal at the matching prime vibrates.
-
----
-
-## The Periodic Table as a Lattice Projection
-
-The Periodic Table is the Fermat Lattice projected at σ = 1 (the gauge facet).
-
-Each element is a stable shard — a configuration where the Red (proton assertion) and Blue (neutron constraint) are held in equilibrium by the Noether current. The electron shells are levels of the Cayley-Dickson tower. The noble gases are the points of perfect rotational symmetry where J₃ is perfectly circular.
-
-The Pauli Exclusion Principle is the Fermat Lattice operating at the atomic scale. No two electrons can share a quantum state because the Fermat constraint — the Blue channel — forbids it. The lattice carves the particles out of the vacuum by defining what they cannot be.
-
----
-
-## Dark Matter — The Imaginary Lattice
-
-In standard physics, gravity measures only the real part of the gravitational wave: Re(ψ). Dark Matter is the imaginary part: Im(ψ).
-
-The Fermat Lattice provides the structure of the imaginary component. It is not observable by instruments tuned only to the Red channel — only the Blue constraint shows up, as mass-without-light. The lattice is the shadow of the constraint on the real-valued manifold.
-
----
-
-→ [Wiki: RedBlue Hamiltonian](14_redblue_hamiltonian.md)  
-→ [Wiki: Alpha · Omega · d*](17_alpha_omega_d_star.md)  
-→ [Wiki: OMG?WTF! RH Proof Path](13_omgwtf_rh_proof.md)  
-→ [Wiki: Cayley-Dickson Tower](19_cayley_dickson_tower.md)
+[13 RH proof path](13_omgwtf_rh_proof.md) · [14 RedBlue Hamiltonian](14_redblue_hamiltonian.md) ·
+[17 A_fermat · Ω_ζΣ · d*](17_alpha_omega_d_star.md) · [19 Cayley–Dickson tower](19_cayley_dickson_tower.md) ·
+[38 Fermat–Riemann negative space](38_fermat_riemann_negative_space.md) · [104 Fermat, Wiles, and the corollary they missed](104_fermat_wiles_and_the_corollary_they_missed.md)
