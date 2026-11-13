@@ -45,10 +45,18 @@ is the project's reading of them.)
 circular identity: energy is rotated, not destroyed". A second convention,
 used in the J_red/J_blue record, writes J_red + J_blue = J_green with
 J_green = 0_RB − 0_BR. The two differ by the sign of J_green, and the second
-is **not established as an operator identity** as stated; the test, the three
-candidate readings of J_green and the open question (the definition of 0_BR)
-are in [133](133_canonical_maths.md) §3 and §7. Until settled, cite the
-three-term form only as the wiki's statement of balance.
+has the sign of the **return flow** built in. Author's definition
+(2026-11-13): 0_BR is the conjugate of J_red and J_blue, because information
+travels backward while action propagates forward; the original object is
+Ĥ_RB and the detailed form is Ĥ_RB − Ĥ_BR, with the cross and dot products
+built in, so the inside-out comes for free. Under that definition the
+equation J_red + J_blue = 0_RB − 0_BR holds exactly in the operator test
+(reading OP-4 in the VAPMIP J_red/J_blue record §9), with 0_RB and 0_BR the
+forward term and its conjugate. It does not hold if 0_BR is the adjoint of
+the already-summed self-adjoint Ĥ (then the difference is 0). Details and
+the remaining question (which object J_green names) are in
+[133](133_canonical_maths.md) §3 and §7. The three-term form above remains
+the wiki's statement of balance until the sign convention is unified.
 
 R̂† = B̂ expresses self-adjointness; the functional equation ξ(s) = ξ(1−s) is
 read as that condition in the Riemann domain. Whether the spectrum of this

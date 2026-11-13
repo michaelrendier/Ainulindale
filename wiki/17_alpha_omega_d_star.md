@@ -23,10 +23,10 @@ Three different objects wear α and three wear σ. They are never interchangeabl
 Ω has the same problem (Ω_ζΣ, ω_H, Ω(n)); canonical spellings are in
 [133](133_canonical_maths.md) §0.
 
-**Open item: the value of A_fermat.** The original 2026-04-09 derivation puts
+**A_fermat: role settled, value open.** Author, 2026-11-13: A_fermat is the "chasing inertia" constant, what turned up when the search ran from the Fermat side of the maths; it is not α_fs. The numeric value is the remaining open item. The original 2026-04-09 derivation puts
 it at the d = 0 endpoint (x = T/T_P = 1, the ceiling of the forward curve).
 Earlier text of this page put it at 1/137.035999… as the "domain floor", which
-is how it came to be mistaken for α_fs. The two descriptions are not
+is how it came to be mistaken for α_fs. The two numeric descriptions are not
 reconciled; this page quotes no number for A_fermat until the author states
 which is meant. Source: `RiemannHypothesisProof/docs/GLOSSARY.md`.
 
@@ -222,7 +222,7 @@ construction.
 
 | Item | State |
 |---|---|
-| Value of A_fermat (x = 1 ceiling, or 1/137.036 floor) | OPEN: author to say |
+| Numeric value of A_fermat (x = 1 ceiling, or 1/137.036 floor); its role (Fermat-side inertia constant, not α_fs) is settled | OPEN: author to say |
 | d*_RG numeric value (target 0.24631) | OPEN; no closed form |
 | Origin of the 10³ in the gap | OPEN |
 | Which reading of the 4 d* : 3 W correspondence is canonical | OPEN |

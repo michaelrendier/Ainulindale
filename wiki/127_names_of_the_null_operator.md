@@ -37,7 +37,7 @@ One operator, introduced as a Hamiltonian, that the code uses as the **fixed poi
 - **Ĥ_RB / H_hat_RB is still the name of the operator everywhere in the mathematics** (the wikis, the papers, the engines, `h_rb_hat`). The full rename has **not** been done in any repository, and is not to be treated as stale.
 - **0_RB (∅_RB) is VAPMIP-only notation**, for the **Null Operator**: the point where the Monad starts with every value NULL, so that the mathematics can speak the way it wants to. It began as a typing convenience (0 is easier than Ĥ_RB) and then acquired the "empty set, never the numeral zero" meaning. It denotes the same object Ĥ_RB names, which an earlier model found "just sitting there" as a Hamiltonian.
 - **Σ_RB** (as the name of the sum J_red + J_blue) was a renotating artefact of a discussion about notation: at one point the notation was J_red + J_blue = Ĥ_RB, and Cody asked whether J_green = Ĥ_RB. It is not "wrong"; it is a historical notation. Lowercase σ_RB (tilt/axis) is a different, in-use object.
-- The chain now in force: **J_red + J_blue = J_green**, and J_green is to equal **0_RB (− 0_BR)**, the minus baking in the cross and dot products. Test record: VAPMIP `docs/wiki/J_red-J_blue-0_RB-Record.md` §4 and §9; reading in wiki 133 §3.
+- The chain now in force: **J_red + J_blue = J_green**, and J_green is to equal **0_RB (− 0_BR)**, the minus baking in the cross and dot products. Definition of 0_BR (author, 2026-11-13): the conjugate of J_red and J_blue, the return flow; Ĥ_RB is the original object and Ĥ_RB − Ĥ_BR the detailed form with cross and dot built in. Test record: VAPMIP `docs/wiki/J_red-J_blue-0_RB-Record.md` §4 and §9; reading in wiki 133 §3.
 
 ---
 
