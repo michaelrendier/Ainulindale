@@ -395,6 +395,42 @@ Download checklist: [`references/CITATION_DOWNLOADS.md`](../references/CITATION_
 
 ---
 
+### A.12 — The library: sphere packing, birdtracks, generating functions, and the Phillips articles
+
+Held in the local library (`/home/rendier/Documents/books/jeremy/`); inventory,
+hashes and per-source status in [134](134_the_library.md). The two open-access
+papers are held in `Ainulindale/references/library_convergence/`.
+
+- **[Viazovska2016]** Viazovska, M. S. (2016). *The sphere packing problem in
+  dimension 8.* arXiv:1603.04246 [math.NT]; Ann. of Math. 185 (2017), 991–1015.
+  *Takes:* E8 is the densest sphere packing in ℝ⁸. *Appears:* wiki 134 §2;
+  `FourthAgePapers/addenda/addendum_VII`. The identification of E8 with the
+  octonion constraint surface is the framework's reading.
+- **[CKMRV2016]** Cohn, H., Kumar, A., Miller, S. D., Radchenko, D. &
+  Viazovska, M. (2016). *The sphere packing problem in dimension 24.*
+  arXiv:1603.06518 [math.NT]. *Takes:* the Leech lattice is the densest packing
+  in ℝ²⁴ and the unique optimal periodic packing. The Leech → Monster → Wiles
+  chain is a reading, not part of the paper.
+- **[Leech]** Leech, J., *Some sphere packings in higher space*; *Notes on
+  sphere packings.* Journal and year to be confirmed (not on the title pages).
+- **[Cvitanovic2008]** Cvitanović, P. (2008). *Group Theory: Birdtracks, Lie's,
+  and Exceptional Groups.* Princeton University Press. (Local file: version
+  9.0.1, 2011.) *Takes:* birdtrack notation; the exceptional groups from the
+  Freudenthal–Tits magic square.
+- **[Wilf1994]** Wilf, H. S. (1990, 1994). *generatingfunctionology.* Academic
+  Press (Internet edition). *Takes:* generating functions as an algebraic
+  language; an analogy for the Horner encoding.
+- **[Phillips]** Phillips, S. M., *Articles 1–65* (author's website) and *Extra-
+  Sensory Perception of Quarks* (Theosophical Publishing House, 1980).
+  Cited as the source of the cross-disciplinary reading of the E8 × E8′ object
+  (sacred geometry, music, I Ching, genetic code). `EXTERNAL`: correspondences
+  of counts, not reviewed here and not adopted.
+
+Not in the library, cited elsewhere and still to be obtained and verified:
+Cosic (RRM; see [23](23_resonant_recognition.md) §6), Wyler, Dixon, Furey.
+
+---
+
 ## B. Originated here
 
 Detailed, with per-item prior-art notes, in `~/.clauderc_user_provenance`.

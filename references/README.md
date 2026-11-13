@@ -61,3 +61,21 @@ Cited but not held locally:
 **Scope boundary, deliberate:** no spinal-cord-injury material, no passive transport across
 injury, no epidural stimulation. Stroke and SCI are different literatures with different
 indications and must not be blended in a document that may reach a clinician.
+
+---
+
+## `library_convergence/`
+
+Open-access papers from the author's local library (`/home/rendier/Documents/books/jeremy/`),
+cited in [wiki 134](../wiki/134_the_library.md) and [wiki 98](../wiki/98_provenance_and_citations.md) §A.12.
+Hashes match the library copies; title pages read 2026-11-13.
+
+| file | citation | sha256 (first 16) |
+|---|---|---|
+| `Viazovska_2016_sphere_packing_dimension_8_arXiv1603.04246.pdf` | Viazovska MS. *The sphere packing problem in dimension 8.* arXiv:1603.04246 (2016) | `20b663456fb359cc` |
+| `CohnKumarMillerRadchenkoViazovska_2016_sphere_packing_dimension_24_arXiv1603.06518.pdf` | Cohn H, Kumar A, Miller SD, Radchenko D, Viazovska M. *The sphere packing problem in dimension 24.* arXiv:1603.06518 (2016) | `b9cec6cbe4194df9` |
+
+The rest of the library (Leech, Cvitanović, Wilf, 65 articles and a book by S. M. Phillips, and general
+mathematics texts) is **not** copied here: copyright or licence limits, and size (356 MB). It is listed with
+hashes in wiki 134.
+
