@@ -126,8 +126,7 @@ print('median J', round(statistics.median(vals), 3),
 
 ```
 galaxies 175  points 3389
-median J 1.658  fraction J>1 0.937
-fraction |J-1|<0.05 0.055
+median J 1.658  fraction J>1 0.937  fraction |J-1|<0.05 0.055
 ```
 
 With the conventional mass-to-light ratios (Υ_disk = 0.5, Υ_bulge = 0.7) the
