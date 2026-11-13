@@ -4,6 +4,35 @@
 
 ---
 
+## ContextPlease — the context library for this repository
+
+**ContextPlease** (https://github.com/michaelrendier/ContextPlease, a sibling repository: `../ContextPlease` in
+ThePlace) is the *Manual Transmission Context Continuity* library: the versioned record that lets a new human
+or AI agent pick up this project without rediscovering it. Nothing in it is loaded automatically; whoever works
+here chooses which file to read and when, so what carries over between sessions is exactly what was
+deliberately carried. Its `README.md` is the entry point and the rule set (no fitted parameters; failures stay
+in the code and data; read before you edit).
+
+What it holds that concerns **Ainulindale**:
+
+| Where in ContextPlease | What it is for this repository |
+|---|---|
+| `claude/.clauderc_canonical_maths` (`@RCCM_<NAME>` blocks) | the authoritative notation and equations; start any derivation here |
+| `claude/.clauderc_context_1` (`## Ainulindale`) | the current state of this repository, one overwritten entry |
+| `claude/.clauderc_context_2` | an append-only dated log of what happened and why |
+| `claude/.clauderc_citations`, `.clauderc_user_provenance` | the queue of published work that names things first engineered here, and original-versus-literature provenance |
+| `claude/hist_prime/Ainulindale/` | every context primer written about this repository |
+| `claude/hist_wiki/Ainulindale/`, `claude/hist_todo/Ainulindale/` | point-in-time **copies** of this repository's wiki and TODO |
+| `claude/scratchpad/<date>_<topic>/` | dated working directories (scripts, outputs, audits) with a README each |
+| `claude/references/INDEX.md` | the ledger of every third-party work downloaded, with title-page verification |
+| `claude/skills/` | the project's skills (for example `cs-paper-code-conventions`, which governs how code appears in papers) |
+
+**Authority.** This repository's own files, dated, outrank the ContextPlease copies of them (the `hist_*`
+directories are snapshots and can lag). The current statement of the author outranks both. Where the two
+disagree, the disagreement is a bug to be recorded, not resolved by guessing.
+
+---
+
 # Prerequisites — required viewing
 
 *These are the models I used in designing my computational overhead reduction "tricks".*
