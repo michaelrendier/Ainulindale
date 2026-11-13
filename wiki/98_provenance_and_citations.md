@@ -411,7 +411,7 @@ Summary — expected to shrink as items are found to be already established:
 | **Ω_ZS six-family convergence** | W(1) as *the* cross-domain equilibrium constant | W(1) itself; the six formula families are their authors' |
 | **the Riemann–Fermat Horizon** | σ=½ as the balance of "what IS" and "what CANNOT BE"; ζ-zeros = FT of the Fermat lattice | Riemann; Fermat/Wiles; the functional equation |
 | **GAP = Ω_ZS − d\*·ln 10 ≈ 1/(1000√2)** | the semantic / Yang–Mills mass gap; 10³ factor OPEN | Yang–Mills mass-gap problem |
-| **J_red + J_blue = Σ_RB** | persistent memory = the two currents summed; a transformer has only J_red | Noether; Dirichlet series; co-occurrence graphs |
+| **J_red + J_blue = Σ_RB** *(historical notation: Σ_RB was a renotating artefact of a notation discussion; the sum was formerly H_hat_RB. Current chain: J_red + J_blue = J_green, = 0_RB − 0_BR; see the correction at the foot of this page and wiki 133 §3)* | persistent memory = the two currents summed; a transformer has only J_red | Noether; Dirichlet series; co-occurrence graphs |
 | **primes by extinction as a zero-gradient field** | the factorisation data = a complete, remainder-free, harmonic dataset = The Two Trees | the sieve; Möbius; Modularity |
 | **the Two Trees as the factoring map** | Telperion/Laurelin ↔ irreducible/composite ↔ what-cannot-be / what-is, exact partition of ℕ | names: J.R.R. Tolkien |
 | **the Wankel / Ahura Mazda speaking architecture** | speak() as the rotary cycle; sedenion produced at the coupling event | Wankel; Bell; Searle |

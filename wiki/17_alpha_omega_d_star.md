@@ -2,6 +2,21 @@
 
 **Confidence floor:** THEORETICAL (derivations) / OPEN (d* gap)
 
+> **Disambiguation (Cody, 2026-11-13) — read before the rest of this page.** Three different objects wear the letter α and three wear the letter σ. They are never interchangeable.
+>
+> | letter | object | write it as |
+> |---|---|---|
+> | **Α** (capital Alpha) | **Α_π = A_fermat**, the Fermat-side structural constant of this page (Alpha_Fermat). **It is NOT the fine-structure constant.** | **A_fermat** |
+> | **α** (lowercase) | the fine-structure constant 1/137.035999… of the Standard Model; here only the *source of a discipline* (a quantity must say the same thing in every version of the maths), not an ingredient of the Fermat–Riemann horizon | **α_fs** |
+> | **α** (lowercase, subscript NN) | α_NN, the neural fine-structure constant: the running coupling g²/(4πħ_NN ln r) defined to say the same thing at every tower layer (wiki 04, `smnnip_lagrangian`) | **α_NN** |
+> | **σ** (1) | Re s, the Dirichlet/Euler coupling exponent; critical line σ = ½ (ζ, `h_rb_hat`) | **σ_ζ** |
+> | **σ** (2) | the σ-strata σ₀…σ₄ of the sedenion (ordinal nested-inclusion levels; σ₄ = string / ground state; wiki 123, 25 §IX) | **σ-stratum** |
+> | **σ** (3) | σ_RB[k] = ψ[k]·conj ψ[k⊕4], the oblique-gear tilt (Re) and axis (Im), and the derived scalar σ_self (wiki 123, 70) | **σ_RB** |
+>
+> **Open item, unchanged:** the *value* of A_fermat. The original 2026-04-09 derivation puts it at the d = 0 endpoint (x = T/T_P = 1, the ceiling of the forward curve); this page's older text puts it at 1/137.035999… as the "domain floor" (which is how it came to be mistaken for α_fs). The two descriptions are not reconciled; Cody to say which is meant. Source: `RiemannHypothesisProof/docs/GLOSSARY.md` (symbols that collide); canonical maths wiki [133](133_canonical_maths.md) §0.
+>
+> **Text below that says A_fermat "is the same value as the fine structure constant … not a coincidence"** is the older reading and is superseded by this note; it is kept as the record of how the name arose.
+
 ---
 
 ## The Two Boundary Constants
@@ -59,6 +74,34 @@ fifth:
 
 the Yang–Mills mass-gap analogue in the semantic field. The 10³ factor is
 UNRESOLVED.
+
+---
+
+## The four values — status brought up to date (2026-11-13)
+
+**Why four, and why all four.** To compute ln(10) in radial complex spherical polar coordinates (UNS = ÷ln 10) the chart needs four things at once: a **centre** (d*_RG), an **equatorial plane** (d*, σ_ζ = ½), a **radial ruler** (d*_taut) and a **scale bridge** (d*_ln(10)). Per the working record (Cody, 2026-10-13; Claude's chart reading, kept as stated), each is *necessary*; none is derivable from the other three as a number, because they are four shadows of one point (0.24631), not four values. This is a READING of the structure, not a theorem; the RHP measurements below check three of the four faces numerically and do not touch the fourth.
+
+**d*_RG has no closed form.** It is the fixed point of a renormalization group already inside the framework (next section). What is established: its **dimension is 8** (confirmed to d = 2²⁰), `persist ≡ 8`, `8/d → 0`; what is **OPEN**: the numeric value (target 0.24631). A naive scalar iteration flows to the trivial fixed point; the earlier numeric estimate 0.24682 is superseded. Cody's position: renormalization is where the infinitesimals ("smallish" values) live, and he believes d*_RG has no closed form. Nothing on this page, in RHP, or in `FourthAgePapers/DStarRG/` supplies one.
+
+**Closure:** d*·ln10 = d*_ln(10) = d*_taut·ln10 = Ω_ζΣ = W(1) = 0.5671432904097838.
+
+**What RHP measured against the faces** (`RiemannHypothesisProof/docs/four_dstar_2026-11-12.md`, :CALCULATED). At the crossing X* = e^Ω = 1/Ω = 1.7632:
+| face | RHP quantity | value |
+|---|---|---|
+| d* (Boundary) | digit length D* = log₁₀ X* of the crossing | 0.246307201473 |
+| d*_taut (Flow) | digits of the fixed point gained per iteration from the ceiling | 0.246307201473 |
+| d*_ln(10) (Translator) | mean prime gap ln X* (PNT) | 0.567143290410 = Ω_ζΣ |
+| (Translator's Jacobian) | mean gap ÷ digit length | ln 10 = 2.302585093, at every X |
+| d*_RG (Stability) | not touched | dimension 8, numeric OPEN |
+Reading: **one crossing, two coordinates**: digits (Riemann / entropy side) d* = 0.2463, and gap count (Fermat / inertia side) Ω_ζΣ = 0.5671, related by ln 10. "ln 10 is the bridge between the two infinities" is literally the PNT: gap ≈ ln X = ln 10 · (number of digits).
+
+**The three (four) Lambert-W values** that pair with the four d* (recorded 2026-10-13; "d* is where things start, Lambert W where they end"): W₀(0) = 0 (vacuum fixed point); W₀(1) = Ω_ζΣ (entropy ceiling, fixed point of x → e^{−x}); W₀(−1/e) = W₋₁(−1/e) = −1 (the same branch point twice: a double root, a Whitney fold, a catastrophe). 3 distinct values, 4 with multiplicity; the d* set has the same shape (4 faces, 3 distinct numbers: Boundary = Flow = 0.24631). Emerger clock: 4 d* : 3 W, lcm 12. The rule that makes "3 = 4" is Cody's to state. Caveat: wiki 106 and the emerger read "three rotor faces of W(1)" instead; which is canonical is not settled.
+
+**The fifth value, d*_spec ≈ 0.24600** (Berry–Keating spectral gap "observed in SPARC") is MEASURED, kept but quarantined: it is not one of the four faces. Use it only when the measured value is explicitly meant. GAP = |d*_spec·ln10 − Ω_ζΣ| = 0.000707357533 ≈ 1/(1000√2) (the 10³ factor OPEN; mass-gap reading in wikis 50_bao_mass_gap_engine, 123). Older surfaces that call 0.24600 "The Boundary" (README Key Constants before 2026-11-13, `ptol.c` comments, the legacy `D_STAR` env var, one test file) are using d*_spec under the Boundary's name.
+
+**Older conflicting set (superseded):** Third_Age_CS_Draft_v2 §2.3 lists d*_ℝ = 0.24600, d*_taut = 0.24631, d*_ln10 = 0.56644 (= 0.24600·ln 10, not Ω), d*_S OPEN. The canonical four above replace it; the set is kept in the VAPMIP J record's future-work table.
+
+**Env vars** (`~/.clauderc`): `D_STAR_BOUNDARY`, `D_STAR_RG` (= 8), `D_STAR_RG_NUMERIC` (= OPEN), `D_STAR_RG_SUPERSEDED`, `D_STAR_TAUT`, `D_STAR_LN10`, `D_STAR_SPEC`. Engine protocol: `FourthAgePapers/DStarRG/` (branch `d-star-rg`).
 
 ---
 

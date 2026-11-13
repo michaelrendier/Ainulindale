@@ -288,7 +288,7 @@ The original tool used to reduce computational overhead in the LSHS engine was d
 V(n) = π^(n/2) / Γ(n/2+1)   — the n-ball volume function (CD layer transformer)
 n* ≈ 5.257                    — peak: BAO freeze / data-code boundary
 V(0) = 1                      — identity
-V(16) = 0.2353               — sedenion boundary (NOTE: V(16) ≠ d*=0.2460; 4.3% off)
+V(16) = 0.2353               — sedenion boundary (NOTE: V(16) ≠ d*_spec=0.2460; 4.3% off)
 ```
 
 **Negative dimensional navigation:** below n = 0, the Gamma function in the denominator has poles at every negative even integer:
@@ -961,12 +961,13 @@ python3 -m ValaQuenta --qt          # Qt viewer
 
 | Symbol | Value | Role |
 |---|---|---|
-| Α_π | 1/137.035999... | Alpha_Fermat — BK domain floor |
-| Ω_ζΣ | 0.56714329... | Omega_Riemann — Lambert W fixed point |
-| d* | 0.24600 | The Boundary — BK spectral coordinate |
-| d*_RG | derived | The Stability — RG fixed point |
-| d*_taut | Ω/ln(10) | The Flow — tautological ceiling |
-| d*_ln(10) | d* × ln(10) | The Translator — decimal bridge |
+| Α_π = A_fermat | OPEN (older text: 1/137.035999…; original derivation: the x = 1 ceiling) | Alpha_Fermat — Fermat-side structural constant. **Not α_fs** (fine-structure constant) and **not α_NN** (neural running coupling); see [wiki 17](wiki/17_alpha_omega_d_star.md), [133 §0](wiki/133_canonical_maths.md) |
+| Ω_ζΣ | 0.56714329... | Omega_Riemann — Lambert W fixed point, W(1) |
+| d* | 0.24631 | The Boundary — σ_ζ = ½ spectral coordinate, the equatorial plane |
+| d*_RG | dimension 8; numeric OPEN, **no closed form** | The Stability — RG fixed point, the centre |
+| d*_taut | Ω/ln(10) = 0.246307201473 | The Flow — the radial unit |
+| d*_ln(10) | d* × ln(10) = Ω_ζΣ | The Translator — decimal bridge |
+| d*_spec | 0.24600 (measured, **not one of the four**) | Berry–Keating spectral gap observed in SPARC; GAP below is measured against it |
 | ω_H | e^π ≈ 23.141 | Hagedorn thermal ceiling |
 | φ | 1.6180339... | Golden ratio — recursion attractor |
 | sc | 1.0 at boundary | Conformal boundary condition |

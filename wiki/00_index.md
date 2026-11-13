@@ -1,5 +1,5 @@
 # AINULINDALE — WIKI INDEX
-Last updated: 2026-11-08
+Last updated: 2026-11-13
 
 ## The Monad
 
@@ -27,6 +27,7 @@ Last updated: 2026-11-08
 | [130_ring_circle_operators.md](130_ring_circle_operators.md) | **2026-10-20** — The sedenion as circle-modifying operators. 15 slot-circles through e₀, each rotating every other exactly in place; n anticommuting circles close to so(n+1); 63 of 105 pairs anticommute, 42 (the Assessor pairs) deform; the sedenion first scales at four slots; smallest generating set of the operator ring = five circles; UNS = Add : Scale : Sign with Sign split into 15 quarter turns. Code `VAPMIP/RingCircle/`. |
 | [131_riemann_canonical_maths.md](131_riemann_canonical_maths.md) | **2026-11-08** — Riemann Canonical Maths: the space (Cayley sphere, UNS), ζ structure, the Two Trees partition, the extinction flow (Buchstab ω / Dickman ρ, Laplace reciprocity, the stragglers' equation 1−1/(Uω(U))), wheels and the path of the first K primes, the Heartbeat H(u) from the two sets, wind, pancake coil, 0_RB lines, π catalogue (∫sin²=π is wiki 96), n-ball test; each item labelled ESTABLISHED / OURS-CALCULATED / READING / OPEN. Code `RiemannHypothesisProof/rhp/`. |
 | [132_ptycho_weak_lensing.md](132_ptycho_weak_lensing.md) | **2026-11-12** — Ptycho-Weak-Lensing engine: weak lensing as a spin-2 inverse problem (Kaiser–Squires, E/B, nulls, calibration), pointings as ptychographic probes with the B = 0 object constraint (gap-filling), intensity-only variant (OPEN), polarization Q+iU through the same E/B. Code `ValaQuenta/modules/ptycho_weak_lensing/`, notebook 21. |
+| [133_canonical_maths.md](133_canonical_maths.md) | **2026-11-13** — Canonical Maths (Ainulindalë): letters that collide (α_fs / A_fermat / α_NN; σ_ζ / σ-stratum / σ_RB; Ω_ζΣ / ω_H), the four d* faces brought up to date (d*_RG no closed form), the J chain, the 27 RCCM blocks indexed, zero-table inventory (25,000 zeros), the RHP update 2026-11-08→12, open decisions |
 
 ## Provenance & Citations
 
@@ -185,10 +186,10 @@ python3 -m ainulindale_engine --headless   # pipe output
 
 | Symbol | Value | Role |
 |---|---|---|
-| Α_π | 1/137.035999... | Alpha_Fermat — BK domain floor |
+| Α_π = A_fermat | OPEN (see [133](133_canonical_maths.md) §0) | Alpha_Fermat — NOT the fine-structure constant α_fs, NOT α_NN |
 | Ω_ζΣ | 0.56714329... | Omega_Riemann — Lambert W fixed point |
-| d* | 0.24600 | The Boundary |
-| d*_RG | derived | The Stability |
+| d* | 0.24631 | The Boundary (0.24600 is d*_spec, measured, not one of the four) |
+| d*_RG | dimension 8; numeric OPEN; no closed form | The Stability |
 | d*_taut | Ω/ln(10) | The Flow (ceiling) |
 | d*_ln(10) | d*×ln(10) | The Translator |
 | gap | 0.000707 | **CLOSED** — Yang-Mills mass gap; BAO backward run (Addendum VIII) |
