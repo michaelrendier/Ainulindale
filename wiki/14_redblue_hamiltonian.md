@@ -45,7 +45,7 @@ is the project's reading of them.)
 circular identity: energy is rotated, not destroyed". A second convention,
 used in the J_red/J_blue record, writes J_red + J_blue = J_green with
 J_green = 0_RB − 0_BR. The two differ by the sign of J_green, and the second
-has the sign of the **return flow** built in. Author's definition
+has the sign of the **return flow** built in. (Author, 2026-11-13: J_red + J_blue = J_green was Noether-current work: it is the balance of the conserved currents, and the three-term form is the same balance with J_green taken with the opposite sign.) Author's definition
 (2026-11-13): 0_BR is the conjugate of J_red and J_blue, because information
 travels backward while action propagates forward; the original object is
 Ĥ_RB and the detailed form is Ĥ_RB − Ĥ_BR, with the cross and dot products
