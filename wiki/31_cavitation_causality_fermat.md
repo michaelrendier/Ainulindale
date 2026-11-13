@@ -4,7 +4,7 @@
 |---|---|
 | Status | **First capture (2026-06-03, an eight-hour session), now with each checkable number verified.** The thesis is `THEORETICAL`; "E = mc² is Fermat's theorem" is `CONJECTURE`, which is the tier the code itself assigns (§6) |
 | Code | `ValaQuenta/modules/tier7_cosmos/maths.py`: `sedenion_hole_punch()` (line 3024; returned inside `full_cosmos`), `black_hole_crossing()` (line 788); `VAPMIP/engines/e05_nball_transformer.py` (the pulley ratios) |
-| Registry note | `sedenion_hole_punch` is **not** registered as its own equation (`tier7_cosmos` registers 15; `registry.run('tier7_cosmos.sedenion_hole_punch', …)` raises `KeyError`). The earlier page's "Engine 20: TODO" is out of date: the function exists but is not a registry equation. Under the Full Engine Protocol it needs registering, with a Toolbox page |
+| Registry note | `sedenion_hole_punch` is **not** registered as its own equation (`tier7_cosmos` registers 15; `registry.run('tier7_cosmos.sedenion_hole_punch', …)` raises `KeyError`). Author, 2026-11-13: it is part of the eventual **Sedenion Hyperindexing Frame of Reference**, so it is deliberately left unregistered until that engine is built; the earlier page's "Engine 20: TODO" meant that |
 | Last verified | 2026-11-13: Listing 1 executed; `sedenion_hole_punch()` run and its keys read |
 
 ## 1. The thesis
