@@ -97,3 +97,5 @@ d* ln10 = 0.56644 ; Omega - d* ln10 = 0.000707358 ; 1/(1000 sqrt2) = 0.000707107
 ## 10. Related pages
 
 [32](32_superconducting_medium.md) · [108](108_desitter_cavitation.md) · [110](110_qm_in_gr_gr_in_qm.md) · [75b](75b_bao_mass_gap_engine.md) · [74](74_lagrangians_are_catastrophe_theory.md) · [98](98_provenance_and_citations.md)
+
+**Source transcript.** The Gemini conversation in which the author asked whether crystal structures such as quartz are products of symmetry breaking (an explanation of spontaneous symmetry breaking; no calculation) is kept as [`../Gemini/gemini_RB.txt`](../Gemini/gemini_RB.txt) (152 KB; copied 2026-11-13 from `~/Desktop/SpaceGemini/`, identical to `PDesktop/gemini_RB.txt`). It was not read line by line.

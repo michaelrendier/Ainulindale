@@ -73,7 +73,7 @@ and these nine videos, together with the Infocom Zork parser listed after them, 
 
 # STATUS — 2026-11-13: the wiki overhaul
 
-Every page of [`wiki/`](wiki/00_index.md) (00–135, the unnumbered pages, `fractals/` and `MathLex/`) was re-read against the code and re-run where it carries a listing. **Corrections are kept beside the originals**, and every defect found in an engine, record or claim is ledgered in [wiki 135](wiki/135_engine_findings_ledger.md) (X-1 … X-53) for propagation to the engines. Highlights of what changed in the record: the Noether-current premise is retired (s ↦ 1 − s is a discrete involution); zero divisors are not an ideal; the "6.5σ" self-evaluation is withdrawn; the Gnarl/Popcorn fixed point at W(1), "Hermite zeros = GUE" and "TIA = cosine" are refuted; 21 of 46 MathLex output blocks were not produced by their code. The repository-wide notation is [wiki 133](wiki/133_canonical_maths.md); the reading list behind the convergence claims is [wiki 134](wiki/134_the_library.md).
+Every page of [`wiki/`](wiki/00_index.md) (00–135, the unnumbered pages, `fractals/` and `MathLex/`) was re-read against the code and re-run where it carries a listing. **Corrections are kept beside the originals**, and every defect found in an engine, record or claim is ledgered in [wiki 135](wiki/135_engine_findings_ledger.md) (X-1 … X-56) for propagation to the engines. Highlights of what changed in the record: the Noether-current premise is retired (s ↦ 1 − s is a discrete involution); zero divisors are not an ideal; the "6.5σ" self-evaluation is withdrawn; the Gnarl/Popcorn fixed point at W(1), "Hermite zeros = GUE" and "TIA = cosine" are refuted; 21 of 46 MathLex output blocks were not produced by their code. The repository-wide notation is [wiki 133](wiki/133_canonical_maths.md); the reading list behind the convergence claims is [wiki 134](wiki/134_the_library.md).
 
 **Scope of this repository (author, 2026-11-13).** Ainulindalë is where the Langlands programme, grand unification, a *non-Noether-current* unified field theory consistent with quantum mechanics, and the Standard Model Lagrangian (taken as it is, fitted) are held. The VAPMIP Lagrangian is the "derived backup analogue", whose isometries were found while building a way to drop dimensions from calculations by using larger puzzle pieces. Nothing here claims a Clay problem is solved.
 
@@ -961,7 +961,7 @@ Ainulindalë/
 │
 ├── archive/                   — Historical snapshots
 ├── outreach/                  — Primers, context documents, benchmarks
-├── wiki/                      — Full technical documentation (140 numbered files, 3 unnumbered pages, fractals/, MathLex/)
+├── wiki/                      — Full technical documentation (141 numbered files, 3 unnumbered pages, fractals/, MathLex/)
 └── media/                     — Images, SVG outputs
 ```
 

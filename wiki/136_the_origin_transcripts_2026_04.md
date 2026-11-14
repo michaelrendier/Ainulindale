@@ -83,10 +83,14 @@ percentile of c0 among 2000 values of c in (0.05, 6): 75.1 % ; R is largest at c
 2. The **"Inertia is the inverse of entropy"** reading and the "inertia-based speed of light" in the division algebras (norm preservation in ℍ; triality and non-associativity in 𝕆). These are the author's framing; the transcripts supply no calculation.
 3. The **mis-scaled temperature** above, which entered several of the author's later statements.
 
-## 4. Not yet done
+## 4. The pictures
+
+Thirteen screenshots of the simulators from these conversations are in [`images/gemini_simulators/`](images/gemini_simulators/README.md) and are placed in [96](96_the_riemann_fermat_horizon.md) (the Horizon). The one read-out relevant to §2 is the label "constant K: 140 Quadrillion" on the Horizon Invariance frames.
+
+## 5. Not yet done
 
 Reading `conversation-1` to `-3` line by line; the Gemini disambiguation of the fine-structure-constant curve and the transcripts of the Riemann–Fermat Horizon context (to arrive); the seven-month-old claude.ai text files. [96](96_the_riemann_fermat_horizon.md) is extended when they do.
 
-## 5. Related pages
+## 6. Related pages
 
 [17](17_alpha_omega_d_star.md) · [96](96_the_riemann_fermat_horizon.md) · [133](133_canonical_maths.md) · [135](135_engine_findings_ledger.md) · [98](98_provenance_and_citations.md)
