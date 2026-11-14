@@ -77,7 +77,8 @@ Last updated: 2026-11-13 (index repass: every page 00–135 and the unnumbered p
 
 | Page | Topic |
 |------|-------|
-| [fractals/index.md](fractals/index.md) | Full author index — 95 codes, all 213 .ufm files catalogued |
+| [fractals/_census.md](fractals/_census.md) | Measured census of the formulary: 213 files, 153 codes, 11,523 formula blocks (2026-11-13) |
+| [fractals/index.md](fractals/index.md) | Full author index — 213 `.ufm` files, 153 author codes, 11,523 formula blocks (measured; see `fractals/_census.md`) |
 | [fractals/_holcus_integration_notes.md](fractals/_holcus_integration_notes.md) | Top 5 formulas, sedenion CAM assignment, OMEGA_ZS findings, integration pseudocode |
 | [fractals/mt_mark_townsend.md](fractals/mt_mark_townsend.md) | **Gnarl/Popcorn = RedBlue Hamiltonian** (fixed point = OMEGA_ZS, independently derived) |
 | [fractals/ea_evert_agelink.md](fractals/ea_evert_agelink.md) | Avariant — only formula activating all 16 sedenion dimensions simultaneously |
