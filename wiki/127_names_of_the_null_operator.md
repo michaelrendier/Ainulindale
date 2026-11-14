@@ -105,3 +105,7 @@ The date and description of the claude.ai incident itself; the claude.ai convers
 ## Tests (2026-10-15, persistent scratchpad)
 
 `t1_battery.py` (13 checks, all PASS), `t2_rerun_jred_jblue.py` (the 2026-10-13 scripts re-run: 5 of 5 byte-identical), and the shape decomposition of the operator against the tier-0 floor (`GenerationalLineage/engine/valaquenta_calibration.py: decompose_h_rb_hat()`: shape matches). Results and the NULL-discipline census are in `VAPMIP/docs/wiki/J_red-J_blue-0_RB-Record.md`, section 2026-10-15.
+
+## Verification, 2026-11-13  `ESTABLISHED` (re-run)
+
+All fourteen commit hashes in the chronology resolve in their repositories, with the dates stated: Ainulindale `12e13f0` 2026-04-15, `a894f42` and `9224f6e` 2026-04-16, `dd7666b` 2026-04-27, `b7075a7` 2026-05-15, `91bd7b8` 2026-06-02, `d181172` 2026-06-03, `3a509bb` 2026-07-29, `d9416be` 2026-10-13; PtolemyDesktop `b6b25a6` 2026-05-10, `ca896fc` 2026-05-12, `27fbe82` 2026-05-16; FourthAgePapers `1d0f242` 2026-06-26; `.claude` `b0c4fc0` 2026-07-31. The census counts (302 files, 1,882 hits) were not re-run; Σ_RB's first date remains unchecked, as the table says.

@@ -114,3 +114,7 @@ Archimedes Screw `zeros_upto` off by ≈ 2.3 past n = 50; Σ_RB balance independ
 
 ## 11. Where each item lives
 `rhp/` modules: sphere, unsmap, wrap, extinction, nodal, chladni, coil, standing, heartbeat, wave, primepath, wheel65, diverge, zerorb, flow, bigpath, clock, echo, harness, lehmer, balance, primegame. Tests: `tests/` (107). Notebooks 01–06. Paper §7.4–7.20. Atlas: `rhp/atlas/` (see `docs/IMAGE_CATALOG.md`). Experiments log: `experiments/LOG_2026-11-07.md` (items 1–17). Engines: `GenerationalLineage/engine`, `AbrikosovTree/engine/two_trees.py`, `ValaQuenta/modules/{h_rb_hat,archimedes_screw,bao_mass_gap,inversion,spectral_primes,berry_keating,box_kite,oblique_gear,prime_gauge_field,add_scale_sign}`. Wiki: Ainulindale 47, 51, 58, 73, 75, 96, 126, 130.
+
+## Verification, 2026-11-13
+
+Re-computed: Σ_ρ 1/ρ = 1 + γ_E/2 − ½ ln 4π = 0.0230957090; ⟨H²⟩ = 2 + γ_E − ln 4π = 0.0461914179; the 65th prime is 313 and 317² = 100,489; π(10⁵) = 9,592; Π_{p≤313}(1 − 1/p) = 0.0965194 (page: 0.0965). The first 300 zeros contribute 0.0214962 of the 0.0230957 total of Σ 1/(¼ + γ²), the remainder being the slowly converging tail (a partial sum, not a check of the closed form on its own). The rhp/ code, its 107 tests, and the measured tables in §§4–6 were not re-run; the update to this page is §6 of [133](133_canonical_maths.md).
