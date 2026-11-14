@@ -160,7 +160,7 @@ a set of correspondences, **not claimed solutions**; the statuses are
 recorded in [105](105_the_millennium_problems_in_ainulindale.md). Older text on
 this page marked the Yang–Mills mass gap and Poincaré "CLOSED": the Yang–Mills
 item is the gap quantity GAP = Ω_ζΣ − d*_spec·ln 10 ≈ 1/(1000√2) discussed in
-[17](17_alpha_omega_d_star.md) and [50](50_bao_mass_gap_engine.md), and
+[17](17_alpha_omega_d_star.md) and [75b](75b_bao_mass_gap_engine.md), and
 Poincaré is the already-solved control case (Perelman), not a result here.
 
 ## 9. Related pages

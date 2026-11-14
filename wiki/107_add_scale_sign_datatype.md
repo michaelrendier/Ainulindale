@@ -113,7 +113,7 @@ LAURELIN (composite, "what is") is all around TELPERION (irreducible, "what cann
 
 ## 12. String theory as the M ⟂ J residual  `CONJECTURE`, no engine
 
-The Mandelbrot set (parameter space, z₀ = 0, c varies) and the Julia sets (dynamical space, c fixed, z₀ varies) are the two orthogonal viewpoints of z ↦ z² + c. The author's conjecture: string theory is the residual of that orthogonal pair, the same "residual" as the error check ([98](98_provenance_and_citations.md) §B; `~/.clauderc_user_provenance` §1.20) and the BAO spectral residue ([50](50_bao_mass_gap_engine.md)). THEORETICAL; no engine; recorded as the natural next probe.
+The Mandelbrot set (parameter space, z₀ = 0, c varies) and the Julia sets (dynamical space, c fixed, z₀ varies) are the two orthogonal viewpoints of z ↦ z² + c. The author's conjecture: string theory is the residual of that orthogonal pair, the same "residual" as the error check ([98](98_provenance_and_citations.md) §B; `~/.clauderc_user_provenance` §1.20) and the BAO spectral residue ([75b](75b_bao_mass_gap_engine.md)). THEORETICAL; no engine; recorded as the natural next probe.
 
 ## 13. SIGN and the Noether-current direction (2026-09-28)  `ESTABLISHED` (the identity)
 

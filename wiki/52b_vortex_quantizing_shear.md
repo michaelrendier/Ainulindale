@@ -1,10 +1,10 @@
-# 50 — The vortex, "e^(πi) = −Δx": what is exact, and what the tests show
+# 52b — The vortex, "e^(πi) = −Δx": what is exact, and what the tests show
 
 | | |
 |---|---|
 | Status | **Cascade capture (2026-06-12), "mathematical backbone of the primes spiral". `CONJECTURE`; the central identity is not an identity (§1), and the construction as stated does not produce a spiral (§2). The engine written to test the vortex-firing claim, `e08`, fails today (§4)** |
 | Code | Listing 1; `VAPMIP/engines/e08_vortex_quantizing_shear.py` |
-| Page numbering | one of three pages numbered 50 ([bao_mass_gap](50_bao_mass_gap_engine.md), [causality upper limit](50_causality_upper_limit.md)) |
+| Page numbering | one of three pages numbered 50 ([bao_mass_gap](75b_bao_mass_gap_engine.md), [causality upper limit](50_causality_upper_limit.md)) |
 | Last verified | 2026-11-13: Listing 1 executed; e08 run (output in the audit scratchpad) |
 
 > *"e^(πi) = −1" is not the whole statement. e^(πi) = −Δx. The −1 is a displacement, not a scalar.*

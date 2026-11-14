@@ -51,7 +51,7 @@ radiates as sound. There is no cavitation in air in that process.
 What survives as a statement of the framework is the geometric picture the
 page draws from it: two opposite pressure-like currents meeting at a surface where a
 discrete event occurs. The word "cavitation" there is a metaphor for a sharp
-transition at σ = ½, as in [50](50_vortex_quantizing_shear.md) (where the transition is
+transition at σ = ½, as in [52b](52b_vortex_quantizing_shear.md) (where the transition is
 the vortex nucleation at J_cross > GAP), and the vocal-fold physics is not
 evidence for it.
 

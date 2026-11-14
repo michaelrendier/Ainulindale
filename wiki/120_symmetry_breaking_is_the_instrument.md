@@ -4,7 +4,7 @@
 |---|---|
 | Scope | the claim that to measure X one must instantiate not-X: decoherence, the invariant measure of chaos, least action, the informational-thermal ceiling; inflation as a fit; two readings of the cosmic timeline and what data point to |
 | Date | 2026-09-06 |
-| Continues | [32](32_superconducting_medium.md), [39](39_every_singularity_the_void.md), [108](108_desitter_cavitation.md), [50](50_bao_mass_gap_engine.md), [110](110_qm_in_gr_gr_in_qm.md), [95](95_the_scale.md), [17](17_alpha_omega_d_star.md), [74](74_lagrangians_are_catastrophe_theory.md) |
+| Continues | [32](32_superconducting_medium.md), [39](39_every_singularity_the_void.md), [108](108_desitter_cavitation.md), [75b](75b_bao_mass_gap_engine.md), [110](110_qm_in_gr_gr_in_qm.md), [95](95_the_scale.md), [17](17_alpha_omega_d_star.md), [74](74_lagrangians_are_catastrophe_theory.md) |
 | Companion | `AbrikosovTree/render/broken_so4_diamagnetic.png` (what a broken hidden symmetry does to a phase space) |
 | Confidence | **CONJECTURE.** The synthesis is a reading, not a derivation. The standard-physics statements (§§1, 3, 6, 8) are cited, with the checks of §9; the computed pieces (Δ, d\*, Ω_ζΣ) are THEORETICAL:CALCULATED; the identity form of Δ is corrected in §5; the cosmological claim of §7 is a falsifiable reading of an existing engine result |
 | Last verified | 2026-11-13: Listing 1 executed; DESI DR2, Peebles–Vilenkin and Zurek references resolved against arXiv/Crossref (§9) |
@@ -35,7 +35,7 @@ shape recurring. ("Chaos' tendency to order is the medium finding the stationary
 
 ## 5. Indistinguishable at the ceiling
 
-Structure-noise and signal-law are separable only while the resolution allows; that resolution is a ratio (the Flashlight, [17](17_alpha_omega_d_star.md): "how many decimal places actually matter at this scale"), and it saturates at the informational-thermal ceiling Ω_ζΣ = W(1) = 0.56714…. d\*·ln 10 = 0.56644 is the floor of the same band, and Δ = Ω_ζΣ − d\*·ln 10 **≈ 1/(1000√2)** is the band itself ([50](50_bao_mass_gap_engine.md)).
+Structure-noise and signal-law are separable only while the resolution allows; that resolution is a ratio (the Flashlight, [17](17_alpha_omega_d_star.md): "how many decimal places actually matter at this scale"), and it saturates at the informational-thermal ceiling Ω_ζΣ = W(1) = 0.56714…. d\*·ln 10 = 0.56644 is the floor of the same band, and Δ = Ω_ζΣ − d\*·ln 10 **≈ 1/(1000√2)** is the band itself ([75b](75b_bao_mass_gap_engine.md)).
 
 **Correction.** The earlier page wrote Δ = 1/(1000√2) with an equals sign. Listing 1: Δ = 0.000707358 against 1/(1000√2) = 0.000707107, a relative difference of 0.035 %; the engine's own docstring says "identity holds to 3 significant figures", and [110](110_qm_in_gr_gr_in_qm.md) records that the exact reading was disproven on 2026-08-30. The identity is an approximation, and the "band" statement stands for Δ > 0 and Δ ≈ Ω_ζΣ − d\*·ln 10. At that ceiling the two readings of §3 ("a random field with a rigid correlation function" and "a deterministic law with a definite invariant measure") coincide because no further
 decimal place carries the distinction; "the seam at σ = 0.5 is where the instrument and its zero become the same object" is the framework's reading.
@@ -43,11 +43,11 @@ decimal place carries the distinction; "the seam at σ = 0.5 is where the instru
 ## 6. Inflation is a fit, not a derivation  `ESTABLISHED` (as a description of standing)
 
 Cosmological inflation is a parametrised scalar-field model whose potential V(φ) is chosen to reproduce four observations: flatness, horizon-scale uniformity, a near-scale-invariant Gaussian perturbation spectrum, absence of relic monopoles. It fits all four; it is not derived from a prior principle; the inflaton is not a Standard Model field. "We don't have a better model" is an accurate description of its standing, not a dismissal ([95](95_the_scale.md): the Mexican-hat shape resemblance is real and the identification is not shown; [110](110_qm_in_gr_gr_in_qm.md): "GR-in-QM shaped the universe" rephrases the inflationary-perturbation account, it does not replace it). The framework's own ground state is different: the x term of ψ(x), de Sitter expansion as the acoustic ground state, one
-continuous mode and not an epoch ([50](50_bao_mass_gap_engine.md)).
+continuous mode and not an epoch ([75b](75b_bao_mass_gap_engine.md)).
 
 ## 7. The two readings, and what would decide  `CONJECTURE`
 
-If the BAO scale traces to Δ (the mass-gap residue, invariant in mode number, [50](50_bao_mass_gap_engine.md)) and to the first perturbations in the quark–gluon flux, there are two readings of the timeline:
+If the BAO scale traces to Δ (the mass-gap residue, invariant in mode number, [75b](75b_bao_mass_gap_engine.md)) and to the first perturbations in the quark–gluon flux, there are two readings of the timeline:
 
 | | Reading A: strict ΛCDM (a true constant Λ) | Reading B: one continuous, evolving process ([32](32_superconducting_medium.md), [108](108_desitter_cavitation.md)) |
 |---|---|---|
@@ -96,4 +96,4 @@ d* ln10 = 0.56644 ; Omega - d* ln10 = 0.000707358 ; 1/(1000 sqrt2) = 0.000707107
 
 ## 10. Related pages
 
-[32](32_superconducting_medium.md) · [108](108_desitter_cavitation.md) · [110](110_qm_in_gr_gr_in_qm.md) · [50](50_bao_mass_gap_engine.md) · [74](74_lagrangians_are_catastrophe_theory.md) · [98](98_provenance_and_citations.md)
+[32](32_superconducting_medium.md) · [108](108_desitter_cavitation.md) · [110](110_qm_in_gr_gr_in_qm.md) · [75b](75b_bao_mass_gap_engine.md) · [74](74_lagrangians_are_catastrophe_theory.md) · [98](98_provenance_and_citations.md)

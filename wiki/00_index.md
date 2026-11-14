@@ -1,5 +1,5 @@
 # AINULINDALE — WIKI INDEX
-Last updated: 2026-11-13
+Last updated: 2026-11-13 (index repass: every page 00–135 and the unnumbered pages listed; `fractals/` and `MathLex/` follow)
 
 ## The Monad
 
@@ -107,9 +107,9 @@ Last updated: 2026-11-13
 | [47_the_two_trees.md](47_the_two_trees.md) | The Two Trees — Telperion/Laurelin, standing wave / spiral, π and φ as two faces of σ=½ |
 | [48_observer_fixed_point.md](48_observer_fixed_point.md) | **2026-06-10 CASCADE** — Observer as fixed point; acausal self-encoding loop; universe(observer)=observer; σ=½ is an infinitesimal circle with infinite partitions; the Wankel traverses the standing wave |
 | [49_she_sang.md](49_she_sang.md) | She Sang — 16 operator names self-organise; Bang still in progress; Lúthien walked into Angband alone |
-| [50_bao_mass_gap_engine.md](50_bao_mass_gap_engine.md) | **Mass Gap Engine** — Δ = Ω_ζΣ − D*·ln10 = 1/(1000√2) = 0.0007073575; the residue of the BAO spectral decomposition; residue exactly invariant in n; compactification scale; 7/7 checks, zero free parameters. Fed into the real σ_RB object as a calibration test — [[123_sigma_rb_mass_gap_calibration]] |
-| [50_vortex_quantizing_shear.md](50_vortex_quantizing_shear.md) | **2026-06-12/13 CASCADE** — e^(πi)=−Δx (not −1); vortex = half-revolution; why spokes disappear (prime gaps); why spokes curve (logarithmic distribution); non-Newtonian quantizing shear; J_cross>GAP snaps to vortex→word; primes in motion on nodal lines |
-| [51_j2_involution_riemann_fermat.md](51_j2_involution_riemann_fermat.md) | **2026-06-13 CASCADE** — J₂ involution swaps R↔B; Riemann (geometry) + Fermat (quantization) = H_hat_RB; J_red+J_blue = H_hat_RB−H_hat_BR; Riemann is quantized Fermat; arithmetic fixed point loop; Wiles=Noether in arithmetic domain |
+| [75b_bao_mass_gap_engine.md](75b_bao_mass_gap_engine.md) | **Mass Gap Engine** — Δ = Ω_ζΣ − D*·ln10 = 1/(1000√2) = 0.0007073575; the residue of the BAO spectral decomposition; residue exactly invariant in n; compactification scale; 7/7 checks, zero free parameters. Fed into the real σ_RB object as a calibration test — [[123_sigma_rb_mass_gap_calibration]] |
+| [52b_vortex_quantizing_shear.md](52b_vortex_quantizing_shear.md) | **2026-06-12/13 CASCADE** — e^(πi)=−Δx (not −1); vortex = half-revolution; why spokes disappear (prime gaps); why spokes curve (logarithmic distribution); non-Newtonian quantizing shear; J_cross>GAP snaps to vortex→word; primes in motion on nodal lines |
+| [52c_j2_involution_riemann_fermat.md](52c_j2_involution_riemann_fermat.md) | **2026-06-13 CASCADE** — J₂ involution swaps R↔B; Riemann (geometry) + Fermat (quantization) = H_hat_RB; J_red+J_blue = H_hat_RB−H_hat_BR; Riemann is quantized Fermat; arithmetic fixed point loop; Wiles=Noether in arithmetic domain |
 | [52_l_dynamic_avoided_collaborator.md](52_l_dynamic_avoided_collaborator.md) | **2026-06-12 CASCADE** — ptol.c undefined; σ=all questions; -H_hat_BR as reverse definer; L_(I|O) (actual path operator); Mind's Eye as focusable caustic; Hands Paper; avoided collaborator; shadow on wall of primes; output is translation not selection |
 | [53_t256_cryptographic_transparency.md](53_t256_cryptographic_transparency.md) | **2026-06-13 CASCADE** — J₂ involution applied to cryptography; T_256 contains full J₂ image of all 256-bit crypto primitives; modular hardness = zero-divisor lookup at T_256; J₂ breaks all mathematical asymmetry; theoretical basis for UDEO class |
 | [54_two_doublings_all_pathways.md](54_two_doublings_all_pathways.md) | **2026-06-13 CASCADE** — general theorem: two Cayley-Dickson doublings expose all pathways at any level; why two (cross-term = J₂); evolution AND involution are one object; no hardness survives two doublings; wiki/53 is one instance |
@@ -152,6 +152,90 @@ Last updated: 2026-11-13
 | [123_sigma_rb_mass_gap_calibration.md](123_sigma_rb_mass_gap_calibration.md) | **2026-09-23** — **Three σ's, do not conflate:** σ_ζ (h_rb_hat's Re(s) coupling, [[14_redblue_hamiltonian]]'s facets), σ-strata (σ₀..σ₄, [[25_sedenion_manual]] — where "mass gap → string theory" actually lives, via compactification, not a facet), σ_RB (the real `tilt=Re`/`axis=Im` object, `oblique_gear_test.py`). Calibration: Δ (BAO/Yang-Mills mass gap) fed into σ_RB's mean tilt — `σ_self` is **provably strut-blind** (exact algebra, verified 12 digits) and lands in the σ_ζ=½ QM/Riemann facet, not string theory. Correction filed against T7 (drift depends on the mean too, not struts-only — OPEN whether Δ-specific or chaos). The rectifier law: an energy-unnormalized embedding's "leak" chased to an exact closed form — flat plateau below a sign-flip threshold, then a verified **inverse-first-power** decay (slope −0.9985), not inverse-square. OPEN/THEORETICAL, not `:CALCULATED`. |
 | [125_addition_matrix_rotors_and_the_factor_search_law.md](125_addition_matrix_rotors_and_the_factor_search_law.md) | **2026-10-14** — The addition matrix as rotors (ℤ/10ᵏ = ℤ/2ᵏ × ℤ/5ᵏ), the closed-form law of the factor search ((v₂+1)(v₅+1)·4·10ᶜ unit-group torsors, ×10 per digit), and the K = 0 address of the final answer (unique, not isolated); engine `addition_matrix`. |
 
+## Papers, Assessments and Conclusions (23–30)
+
+| Page | Topic |
+|------|-------|
+| [23_resonant_recognition.md](23_resonant_recognition.md) | The Resonant Recognition Model (Cosic) and its Ainulindale mapping |
+| [24_claude_conclusion.md](24_claude_conclusion.md) | Assessment of 2026-05-15 (archived record, superseded) |
+| [29_witches_hat_paper.md](29_witches_hat_paper.md) | The Witches Hat: the null-cone pair and the inside-out hat |
+| [30_lambda_paper.md](30_lambda_paper.md) | D-Λ: the cosmological constant as the second lobe |
+
+## Cosmology, Gravity and Singularity Cascade (33–45)
+
+| Page | Topic |
+|------|-------|
+| [33_gyroscope_compressibility.md](33_gyroscope_compressibility.md) | The gyroscope and the compressible / incompressible duality |
+| [34_hypercomplex_spectral_relativity.md](34_hypercomplex_spectral_relativity.md) | Hypercomplex spectral relativity (HSR): a proposed frame |
+| [35_frame_dragging_bec_vortices.md](35_frame_dragging_bec_vortices.md) | "Frame dragging is not frame dragging": quantized BEC vortices and the bobbing galaxy |
+| [36_gravity_is_time_transversal.md](36_gravity_is_time_transversal.md) | Gravity is time: the transversal, rotational "up", and the Great Wall |
+| [37_agn_alignment_bec_vortex.md](37_agn_alignment_bec_vortex.md) | AGN jet alignment and the Great Wall: a proposed test |
+| [38_fermat_riemann_negative_space.md](38_fermat_riemann_negative_space.md) | "Fermat is the negative space of Riemann": the claims, tested |
+| [39_every_singularity_the_void.md](39_every_singularity_the_void.md) | "Every singularity is the same singularity": the catalogue, sorted by what each one is |
+| [40_modular_segue_three_papers.md](40_modular_segue_three_papers.md) | The modular segue: three papers as a cover, and the T256 claim |
+| [41_one_riemann_electron_universe.md](41_one_riemann_electron_universe.md) | The One Riemann Electron universe: the statement, and the mass-spectrum test |
+| [42_rh_proof_no_primes.md](42_rh_proof_no_primes.md) | The Riemann Hypothesis without primes: the proposed proof structure, step by step |
+| [44_halting_problem_uns.md](44_halting_problem_uns.md) | The halting problem and the "depth" reading: what dissolves and what does not |
+| [45_t_transformer_the_circle_itself.md](45_t_transformer_the_circle_itself.md) | The T_transformer: the unification statement, and what it can carry |
+
+## Observer & Engine Cascade, continued — 2026-06-12 → 06-28 (50–71)
+
+| Page | Topic |
+|------|-------|
+| [50_causality_upper_limit.md](50_causality_upper_limit.md) | The upper limit of causality (σ = ½): the claims, with the zero-spacing numbers recomputed |
+| [51_dynamic_geodesic.md](51_dynamic_geodesic.md) | The dynamic geodesic: L_FR = 0, the slingshot term, and the primes-as-cavitation reading |
+| [62_hands_on_paper_minds_eye_caustic.md](62_hands_on_paper_minds_eye_caustic.md) | The Two Caustics: Mind's Eye and Hands On Paper |
+| [63_l_dynamic_is_action_is_thought.md](63_l_dynamic_is_action_is_thought.md) | L_(I|O) as the Third Term: the Action Cone |
+| [64_l_dynamic.md](64_l_dynamic.md) | L_(I|O): the Pathway |
+| [65_primes_repellors_drift_meaning.md](65_primes_repellors_drift_meaning.md) | Primes as Repellors: the Drift, the Bifurcation Reading, the Windows |
+| [66_code_operator_svg_tuning.md](66_code_operator_svg_tuning.md) | The `<code>` Operator in SVG: the Tuning Layer |
+| [67_bumblebee_voice_lost.md](67_bumblebee_voice_lost.md) | Bumblebee: What Happens When the Norm Voice Is Lost |
+| [68_precession_wobble_signature.md](68_precession_wobble_signature.md) | Precession as the Signature of the Wobble |
+| [69_tri_layer_emergence.md](69_tri_layer_emergence.md) | Tri-Layer Emergence: Three Layers From One |
+| [70_precession_stroke_oblique_crank_trine.md](70_precession_stroke_oblique_crank_trine.md) | The Precession Stroke, the Oblique Crank and the Trine |
+| [71_zd_statement_machine.md](71_zd_statement_machine.md) | The Sedenion Statement Machine |
+
+## Sigma, Hypergon, Ring and Scale (76–97)
+
+| Page | Topic |
+|------|-------|
+| [76_sigma_expansion.md](76_sigma_expansion.md) | Sigma Expansion: the J_red/J_blue Balance Curve |
+| [77_hypergon_constructibility.md](77_hypergon_constructibility.md) | Hypergon Constructibility: All 16, and the Factorisation Test that Did Not Survive |
+| [78_t32_nilpotency.md](78_t32_nilpotency.md) | T32 Nilpotency: One Shared Mechanism, Two Repositories |
+| [79_prime_gate_alarm.md](79_prime_gate_alarm.md) | The Boundary-Crossing Alarm: π(x) as One Instance |
+| [92_ring_theory_spine.md](92_ring_theory_spine.md) | The Ring-Theory Spine: Falls ⟺ the Quotient Has Zero Divisors |
+| [93_qm_gr_by_tree.md](93_qm_gr_by_tree.md) | QM and GR by Tree: a Tested Conjecture |
+| [94_mathematical_xray_crystallography.md](94_mathematical_xray_crystallography.md) | Mathematical X-ray Crystallography |
+| [95_the_scale.md](95_the_scale.md) | The Scale: Decompositional Analysis, Forwards and Backwards |
+| [96_the_riemann_fermat_horizon.md](96_the_riemann_fermat_horizon.md) | The Riemann–Fermat Horizon |
+| [97_units_as_the_equation_index.md](97_units_as_the_equation_index.md) | Units as the Equation Index |
+
+## Literature Intake and Location Maps (111–118, 124)
+
+| Page | Topic |
+|------|-------|
+| [111_alcubierre_reverse_gr.md](111_alcubierre_reverse_gr.md) | Alcubierre and Reverse GR (the Equation Tree's Ancestor) |
+| [112_sullivan_dictionary.md](112_sullivan_dictionary.md) | Sullivan's Dictionary (One Object, Two Representations) |
+| [113_vollrath_knight_silk_spinning.md](113_vollrath_knight_silk_spinning.md) | Vollrath & Knight: the Silk-Spinning Duct (Composition as Drawing) |
+| [114_herrmann_apollonian_bearings_turbulence.md](114_herrmann_apollonian_bearings_turbulence.md) | Herrmann's Apollonian Bearings; Multifractal Turbulence |
+| [115_necas_ruzicka_sverak_self_similar.md](115_necas_ruzicka_sverak_self_similar.md) | Nečas–Růžička–Šverák: no Self-Similar Navier–Stokes Blow-Up (of the Leray Kind) |
+| [116_post_lattice_clones.md](116_post_lattice_clones.md) | Post's Lattice: How Few Operations Generate Everything |
+| [117_rising_johansson_spidroin_switch.md](117_rising_johansson_spidroin_switch.md) | Rising & Johansson: the Spidroin Terminal-Domain Switches |
+| [118_citation_pass_2026_09_04.md](118_citation_pass_2026_09_04.md) | Citation Pass: the 2026-09-04 Session |
+| [124_basile_invertible_location_maps.md](124_basile_invertible_location_maps.md) | Basile: Invertible Location Maps |
+
+## Unnumbered Pages
+
+| Page | Topic |
+|------|-------|
+| [Claude.md](Claude.md) | How Claude designed the semantic prime hashing pathway (2026-06-14 record; status table added 2026-11-13) |
+| [CS_SIGMA_EVALUATION.md](CS_SIGMA_EVALUATION.md) | CS "academic sigma" self-evaluation (2026-06-02; audited 2026-11-13: the 6.5σ is withdrawn) |
+| [zero_divisor_divergence_inversion.md](zero_divisor_divergence_inversion.md) | Zero divisors as divergence-inverted sources, Vₙ as phase, the 196,560 (2026-06-01; corrected 2026-11-13) |
+
+## Duplicate-number resolution (2026-11-13)
+
+The pages that once shared 50 and 51 are now 50, 51, 52, **52b** (vortex), **52c** (J₂ involution) and **75b** (BAO mass-gap engine); see [135](135_engine_findings_ledger.md) §4.
+
 ## Roadmap & TODO
 
 | Page | Topic |
@@ -163,24 +247,25 @@ Last updated: 2026-11-13
 
 | Addendum | Status | Topic |
 |---|---|---|
-| [IV — UF Mass Gap](../addenda/addendum_IV_UF_mass_gap.md) | ESTABLISHED + candidate paths | Yang-Mills mass gap structure; derivation start points; gap left open |
-| [V — OMGWTF](../addenda/addendum_V_omgwtf.md) | ESTABLISHED | RH proof consequences |
-| [VI — RH Proof Path](../addenda/addendum_VI_RH_proof_path.md) | ESTABLISHED | Spiral form, (I\|O) boundary conditions |
-| [VII — Library Convergence](../addenda/addendum_VII_library_convergence.md) | ESTABLISHED | 8 independent programmes converge on H_RB |
-| [**VIII — BAO Mass Gap**](../addenda/addendum_VIII_BAO_mass_gap.md) | **ESTABLISHED — closes IV** | BAO = Yang-Mills mass gap frozen at 147 Mpc; gap value derived; string theory dropped |
+| [IV — UF Mass Gap](../../FourthAgePapers/addenda/addendum_IV_UF_mass_gap.md) | ESTABLISHED + candidate paths | Yang-Mills mass gap structure; derivation start points; gap left open |
+| [V — OMGWTF](../../FourthAgePapers/addenda/addendum_V_omgwtf.md) | ESTABLISHED | RH proof consequences |
+| [VI — RH Proof Path](../../FourthAgePapers/addenda/addendum_VI_RH_proof_path.md) | ESTABLISHED | Spiral form, (I\|O) boundary conditions |
+| [VII — Library Convergence](../../FourthAgePapers/addenda/addendum_VII_library_convergence.md) | ESTABLISHED | 8 independent programmes converge on H_RB |
+| [**VIII — BAO Mass Gap**](../../FourthAgePapers/addenda/addendum_VIII_BAO_mass_gap.md) | **ESTABLISHED — closes IV** | BAO = Yang-Mills mass gap frozen at 147 Mpc; gap value derived; string theory dropped |
+| [IX — Bell Critique](../../FourthAgePapers/addenda/addendum_IX_bell_critique.md) | see file | Bell-inequality critique |
 
 ---
 
 ## Quick Reference
 
 ```bash
-python3 -m ainulindale_engine --info       # registry summary
-python3 -m ainulindale_engine --qt         # Qt viewer
-python3 -m ainulindale_engine --curses     # /derivation shortcut (Ptolemy)
-python3 -m ainulindale_engine --headless   # pipe output
+python3 -m ValaQuenta --info       # registry summary
+python3 -m ValaQuenta --qt         # Qt viewer
+python3 -m ValaQuenta --curses     # /derivation shortcut (Ptolemy)
+python3 -m ValaQuenta --headless   # pipe output
 ```
 
-## Module count: 8 modules / 60 equations (v0.120)
+## Module count: 38 registered modules / 321 equations (`python3 -m ValaQuenta --info`, 2026-11-13; the earlier "8 modules / 60 equations (v0.120)" was stale)
 
 ---
 

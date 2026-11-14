@@ -5,7 +5,7 @@
 | Scope | a jurisdiction/projection reading of the QM–GR seam: what each theory loses when read in the other's instruments, the asymmetry of the floors, the shear current between them, and recombination as the ignition point |
 | Written | 2026-09-01. A side note; continues [93](93_qm_gr_by_tree.md) (the QM↔GR distinction as radial, a tower-rung gap) and leaves the VAPMIP UFT for its own treatment |
 | The author | "i want my UFT used to show me what QM looks like in GR, and what GR looks like in QM … QM in GR is going to be a hard resolution floor much higher … but GR in QM shaped the actual universe … the current between them sliding past each other … what does the 'metric energy tensor' say about QM and what does Schrödinger and SMPP say about GR … different jurisdictions … it's where the first ripples from hydrogen becoming stable ignited the fuel of decomposition." |
-| Related | [92](92_ring_theory_spine.md), [90](90_divisors_are_definers.md), [17](17_alpha_omega_d_star.md), [50](50_bao_mass_gap_engine.md) (`ValaQuenta/modules/bao_mass_gap`), [73](73_why_the_half_line.md), [52](52_l_dynamic_avoided_collaborator.md), [82](82_l_io_photon_path.md), [47](47_the_two_trees.md), [108](108_desitter_cavitation.md); `project-oblique-gear`, `project-flattening-syndrome`, generational-lineage skill §7b |
+| Related | [92](92_ring_theory_spine.md), [90](90_divisors_are_definers.md), [17](17_alpha_omega_d_star.md), [75b](75b_bao_mass_gap_engine.md) (`ValaQuenta/modules/bao_mass_gap`), [73](73_why_the_half_line.md), [52](52_l_dynamic_avoided_collaborator.md), [82](82_l_io_photon_path.md), [47](47_the_two_trees.md), [108](108_desitter_cavitation.md); `project-oblique-gear`, `project-flattening-syndrome`, generational-lineage skill §7b |
 | Confidence | **THEORETICAL**: a reading, not a quantum-gravity theory. The standard-physics statements (§§2–3, recombination) are ESTABLISHED; one sentence of the earlier text is corrected in §3 |
 | Last verified | 2026-11-13: Listing 1 executed; its output is quoted below |
 
@@ -19,7 +19,7 @@ expensive is the loss?
 Read GR with QM's instruments (a fixed background, a chosen vacuum). Curvature becomes a potential term, V(x) = mΦ(x), in the Schrödinger equation; the metric perturbation h_μν becomes a spin-2 field on flat space (gravitons); gravity enters as a slowly varying external parameter, exactly as in the Schrödinger equation on a curved background and in quantum field theory in curved spacetime. The lost coordinate is **back-reaction** (the field's own weight on the geometry), and the loss is cheap
 because the background barely moves: the GR-in-QM floor is low and soft, so the projection carries far.
 
-This projection is what built the universe's initial conditions in the standard account: primordial density perturbations are a quantum field read through a metric, and their spectrum set the CMB anisotropies, the acoustic (BAO) scale and the seed of every halo. The `bao_mass_gap` engine measures the residue it leaves: Δ = Ω_ZS − d\*·ln 10 > 0, invariant in the mode number ([50](50_bao_mass_gap_engine.md)). *The stronger reading "Δ = 1/(1000√2) exactly = the Yang–Mills mass gap" was disproven as stated (2026-08-30); Δ > 0 and Δ ≈ Ω_ZS − d\*·ln 10 stand* (0.000707358 against 0.000707107, [56](56_telescope_caustic_zeno.md) Listing 1).
+This projection is what built the universe's initial conditions in the standard account: primordial density perturbations are a quantum field read through a metric, and their spectrum set the CMB anisotropies, the acoustic (BAO) scale and the seed of every halo. The `bao_mass_gap` engine measures the residue it leaves: Δ = Ω_ZS − d\*·ln 10 > 0, invariant in the mode number ([75b](75b_bao_mass_gap_engine.md)). *The stronger reading "Δ = 1/(1000√2) exactly = the Yang–Mills mass gap" was disproven as stated (2026-08-30); Δ > 0 and Δ ≈ Ω_ZS − d\*·ln 10 stand* (0.000707358 against 0.000707107, [56](56_telescope_caustic_zeno.md) Listing 1).
 
 ## 3. QM ⟶ GR: a hard, much higher floor  `INTERPRETATION`, one correction
 
@@ -94,4 +94,4 @@ jurisdiction takes over; gravitational collapse, "the fuel of decomposition", ig
 
 ## 9. Related pages
 
-[93](93_qm_gr_by_tree.md) · [108](108_desitter_cavitation.md) · [50](50_bao_mass_gap_engine.md) · [111](111_alcubierre_reverse_gr.md) · [112](112_sullivan_dictionary.md)
+[93](93_qm_gr_by_tree.md) · [108](108_desitter_cavitation.md) · [75b](75b_bao_mass_gap_engine.md) · [111](111_alcubierre_reverse_gr.md) · [112](112_sullivan_dictionary.md)

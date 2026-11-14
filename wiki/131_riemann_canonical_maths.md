@@ -2,7 +2,7 @@
 
 **Written 2026-11-08.** The canonical reference for the Two-Trees / ζ-pathway work in `RiemannHypothesisProof` (mirrored there as `docs/RIEMANN_CANONICAL_MATHS.md`; the image catalog is `docs/IMAGE_CATALOG.md`).
 **Updated 2026-11-13:** the repository-wide canonical maths page is [133](133_canonical_maths.md); it carries the letter-collision table, the four d* faces, the J chain, the zero-table inventory and the RHP findings of 2026-11-09 → 12 (Guinand–Weil, Fermat cubic, Chebyshev bias, ping to 200k, Klein group, four-d* measurements) that postdate this page. This page is not re-written; §6 of 133 is the update.
-Cross-ref: [47](47_the_two_trees.md), [51](51_j2_involution_riemann_fermat.md), [73](73_why_the_half_line.md), [75](75_abrikosov_lattice.md), [96](96_the_riemann_fermat_horizon.md), [126](126_the_circle_catalogue.md), [130](130_ring_circle_operators.md).
+Cross-ref: [47](47_the_two_trees.md), [52c](52c_j2_involution_riemann_fermat.md), [73](73_why_the_half_line.md), [75](75_abrikosov_lattice.md), [96](96_the_riemann_fermat_horizon.md), [126](126_the_circle_catalogue.md), [130](130_ring_circle_operators.md).
 
 
 **Written 2026-11-08** from the RiemannHypothesisProof repo (`rhp/`, tests, paper §7, `docs/`), the ValaQuenta / GenerationalLineage / AbrikosovTree engines, the Ainulindale wiki (47, 51, 58, 73, 75, 96, 126, 130) and the POE hardware primer.
@@ -90,7 +90,7 @@ Working variable U = ln x / ln y.
 - **bao_mass_gap**: "one standing wave per non-trivial zero"; ground state Ω − d*·ln 10 (a renamed subtraction, not a spectral residue — audited). Constants: Ω_ZS = W(1) = 0.567143…; d* = Ω/ln 10 = 0.24631 (the Boundary); four d* values (Boundary 0.24631, RG numeric OPEN, taut = Ω/ln10, ln10 = Ω_ZS) plus disputed 0.24600.
 - **Prime wavelength:** λ_prime / λ_factor in `h_rb_hat`; Σ_RB balance came out σ-independent (logged).
 - **Ring-circle operators (wiki 130):** the sedenion's 15 slot-circles through e₀; n anticommuting circles close to so(n+1); 42 Assessor pairs deform; first scaling at four slots; smallest generating set of the operator ring = 5 circles. Slot k ↔ the k-th prime; the Euler factor on σ = ½ is an exact circle (centre 1/(1−1/p), radius p^{−½}/(1−1/p), rate ln p). The sedenion Euler product (slots ↔ primes, firing order) is **not yet run**.
-- **Standing 0_RB lines to check any claim against:** wiki 73 (six engines for σ = ½), wiki 51 (J₂ involution Riemann–Fermat loop: Ĥ_RB = J_red (Fermat, discrete) + J_blue (Riemann, continuous)), wiki 58 ("Fermat defines, Riemann fires"), wiki 96 (the Horizon), wiki 75 (Abrikosov lattice: zeros as a vortex lattice, Nobel 2003).
+- **Standing 0_RB lines to check any claim against:** wiki 73 (six engines for σ = ½), wiki 52c (J₂ involution Riemann–Fermat loop: Ĥ_RB = J_red (Fermat, discrete) + J_blue (Riemann, continuous)), wiki 58 ("Fermat defines, Riemann fires"), wiki 96 (the Horizon), wiki 75 (Abrikosov lattice: zeros as a vortex lattice, Nobel 2003).
 - **The two zetas** (memory: Two Trees / L_(I|O)): prime side ζ(s) (Riemann fires, zeros σ = ½); factor side L(Δ,s) Ramanujan cusp form (Fermat defines; Deligne |τ(p)| ≤ 2p^{11/2} proven); N-specific ζ_ℚ(√N) = ζ·L(s,χ_N). The shakeable-leaf conjecture: a semiprime N = pq is a marginally bound leaf; where it drops defines the factors. OPEN; the Fermat half is not in the heartbeat wave of §6.
 
 ## 8. Reading guide: what is proven vs what is reading

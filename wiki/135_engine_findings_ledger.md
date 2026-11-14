@@ -17,7 +17,7 @@ Kinds: **D** defect in code; **T** test design flaw (the test cannot show what i
 | VQ-2 | D | `modules/archimedes_screw` `zeros_upto` | exact to n = 50, then drifts by about +2 (+2.27 at n = 51, +2.81 at n = 60, +1.84 at n = 100) | [133](133_canonical_maths.md) §5 | find the source of the offset past the cached 50 |
 | VQ-3 | X | `modules/clay_millennium` | one equation is registered with tier `COMPUTATIONAL`, outside the four-tier scheme (`weakest_tier` returns it unchanged) | [02](02_registry.md) §4 | decide: add the tier or relabel |
 | VQ-4 | R | `modules/tier7_cosmos::sedenion_hole_punch` | function exists and is bundled in `full_cosmos`; not registered as an equation. **Deliberate** (author, 2026-11-13): part of the eventual Sedenion Hyperindexing Frame of Reference | [31](31_cavitation_causality_fermat.md) | leave unregistered until that engine exists |
-| VQ-5 | R | `modules/bao_mass_gap` | 7/7 `validate` checks pass, but three are tautologies or consistency-with-precision and one rests on an unjustified threshold (`bao_resolvable`, ratio 0.4 > 0.1 with a unit mismatch); `gap_identity` is true to 3 s.f. only | [50](50_bao_mass_gap_engine.md) §§3, 6, 7 | rename the checks honestly; carry d* with its uncertainty |
+| VQ-5 | R | `modules/bao_mass_gap` | 7/7 `validate` checks pass, but three are tautologies or consistency-with-precision and one rests on an unjustified threshold (`bao_resolvable`, ratio 0.4 > 0.1 with a unit mismatch); `gap_identity` is true to 3 s.f. only | [75b](75b_bao_mass_gap_engine.md) §§3, 6, 7 | rename the checks honestly; carry d* with its uncertainty |
 | VQ-6 | X | wiki ↔ code | module-to-page links: `scale` and `add_scale_sign` both name page 107; nine modules name no Ainulindale page | [01](01_overview.md) §5 | fill the manifests |
 | VQ-7 | X | `modules/h_rb_hat` | code identifiers keep the "Σ_RB" notation (module description, `sigma_rb_evaluate`); notation scope ruling: Ĥ_RB in the maths, 0_RB in VAPMIP/Monad only | [14](14_redblue_hamiltonian.md), [127](127_names_of_the_null_operator.md) | rename only when the full rename is decided |
 | VQ-8 | T | `tier9_chem.cosic_eiip` | the SOR motif's dominant frequency is mapped to γ₃ with a free scale constant c_bio; a match to one of ~20 zeros is expected; reported as a result | [23](23_resonant_recognition.md) §3 | state c_bio's origin or mark the result as a fit |
@@ -34,8 +34,8 @@ Kinds: **D** defect in code; **T** test design flaw (the test cannot show what i
 | VP-6 | F | `e04_tia_similarity.py` | TIA 0.4770 (related) vs 0.4769 (distant): no separation | [27](27_third_age_CS_paper.md) §4 | measure is not discriminating |
 | VP-7 | F | `e05_nball_transformer.py` | V(16) = 0.2353 ≠ d*_spec 0.2460 (diff 0.0107); the ratio is π/2 only at ℝ→ℂ and ℂ→ℍ | [26](26_TODO_and_roadmap.md) §3, [31](31_cavitation_causality_fermat.md) §4 | recorded |
 | VP-8 | F | `e06_two_trees.py` | T/L ratio 0.456 vs π/φ 1.942; T ⟂ L: mean 0.85, max 0.88 (not orthogonal) | [26](26_TODO_and_roadmap.md) §3 | recorded |
-| VP-9 | F | `e08_vortex_quantizing_shear.py` | J_cross vs φ-threshold agreement 0.2648; the half-turn e^{π e₁}e₀ = −e₀ passes (this is Euler's identity in ℂ) | [50](50_vortex_quantizing_shear.md) §4 | recorded |
-| VP-10 | T | `e09_j2_involution.py` | tests whether **basis products** e_a·e_b are zero (they never are): "0/14 known pairs", "found 0, expected 42" are artefacts. The zero-divisors are the sums e_a ± e_b (84, 42 index pairs, 168 zero-product pairs). The J₂ "automorphism" failure (256/256) is **correct**: the swap e_i ↔ e_{i+8} sends the identity to e₈; the grading (a, b) ↦ (a, −b) is an automorphism (256/256) | [26](26_TODO_and_roadmap.md) §4, [51](51_j2_involution_riemann_fermat.md) §2 | rewrite the zero-divisor test as (e_a ± e_b)(e_c ± e_d) = 0; test the grading as J₂ |
+| VP-9 | F | `e08_vortex_quantizing_shear.py` | J_cross vs φ-threshold agreement 0.2648; the half-turn e^{π e₁}e₀ = −e₀ passes (this is Euler's identity in ℂ) | [52b](52b_vortex_quantizing_shear.md) §4 | recorded |
+| VP-10 | T | `e09_j2_involution.py` | tests whether **basis products** e_a·e_b are zero (they never are): "0/14 known pairs", "found 0, expected 42" are artefacts. The zero-divisors are the sums e_a ± e_b (84, 42 index pairs, 168 zero-product pairs). The J₂ "automorphism" failure (256/256) is **correct**: the swap e_i ↔ e_{i+8} sends the identity to e₈; the grading (a, b) ↦ (a, −b) is an automorphism (256/256) | [26](26_TODO_and_roadmap.md) §4, [52c](52c_j2_involution_riemann_fermat.md) §2 | rewrite the zero-divisor test as (e_a ± e_b)(e_c ± e_d) = 0; test the grading as J₂ |
 | VP-11 | T/F | `e10_caustic_l_dynamic.py` | the similarity measure is near-constant: random pairs 0.9789 ± 0.0238, synonyms 0.9759, antonyms 0.9856; so 0/5 convergence and 0/5 divergence say nothing about meaning | [52](52_l_dynamic_avoided_collaborator.md) §5 | a measure with discriminating power |
 | VP-12 | T | `e11_two_doublings.py` | "pathway count" is n(n−1) (ordered pairs of distinct basis elements), × 4 per doubling, no saturation at two | [54](54_two_doublings_all_pathways.md) §2 | define a quantity that can saturate |
 | VP-13 | T | `e12_index_not_value.py` | compares a one-step value shift (0.086) with one large index permutation (0.406); matched controls: random permutation 0.557, random prime values 0.507. Reversing P16 moves the dominant dimensions to the same prime *values* (53, 47) at indices 0, 1 | [55](55_index_not_value.md) §§2–3 | matched-magnitude controls |
@@ -52,7 +52,7 @@ Kinds: **D** defect in code; **T** test design flaw (the test cannot show what i
 | X-1 | E | `RiemannHypothesisProof/.venv` | no `scipy`, so `tests/test_unsmap_chladni_coil.py` fails to collect; with system `python3` the full suite passes (149 passed, 2026-11-13) | this page | add `scipy` to `requirements.txt` |
 | X-2 | D | `FourthAgePapers/…/ArdaQuenta/modes/witches_hat.py` | the operator mapping printed on wiki 29 §9 is not found as code; the referenced animation file is missing (`Ainulindale/animations/` does not exist) | [29](29_witches_hat_paper.md) §6 | regenerate the animation; document the mapping |
 | X-3 | X | `UniversalSynth/README.md` | left/right hand = Blue/Red assigned by the three-finger rule; the J_red/J_blue record takes J_red as the lower octonion; **the author's source of handedness is the tilt of the real axis against the imaginary axis (swap-twist; two precessions), not the three-finger rule**; open | [133](133_canonical_maths.md) §7.6 | settle by calculation (in progress) |
-| X-4 | X | wiki 14 vs wiki 51 (J₂) | Riemann = Red / Fermat = Blue on page 14; the reverse on page 51 | [51](51_j2_involution_riemann_fermat.md) §4 | same handedness resolution |
+| X-4 | X | wiki 14 vs wiki 52c (J₂) | Riemann = Red / Fermat = Blue on page 14; the reverse on page 52c | [52c](52c_j2_involution_riemann_fermat.md) §4 | same handedness resolution |
 | X-5 | X | `FourthAgePapers/addenda/addendum_VII` | Wyler/A_π identification contradicts the A_fermat ruling; unverified "85 %" and "seven independent programmes"; withdrawn wording (Euler's identity, Dixon) | [134](134_the_library.md) §5 | correct on reaching FourthAgePapers |
 | X-6 | X | `UniversalSynth/README.md` | piano/melancholy observation does not reproduce under the current prime hash (piano → zero 4066, melancholy → 1182) | UniversalSynth README | kept as dated record |
 | X-7 | X | `~/.clauderc_citations`, wiki 98 | Cosic, Wyler, Dixon, Furey absent from the library and the bibliography; Leech journal details unconfirmed; Hutsemékers, Taylor–Jagannathan, Tempel–Libeskind, Gott, Peebles, GP-B values from memory | [134](134_the_library.md) §6, [23](23_resonant_recognition.md) §6, [37](37_agn_alignment_bec_vortex.md) §8 | download and title-verify |
@@ -96,20 +96,20 @@ Kinds: **D** defect in code; **T** test design flaw (the test cannot show what i
 | X-45 | X | `Claude.md` (2026-06-14), `VAPMIP/monad.py` lines 133–205 | P1 hash reproduces as code (π(65,536) = 6,542 zero indices); "words live on σ = ½ by construction" is a definition, not a test; the many-to-one hash and the 16-names result need a null before any "confirmed" | [Claude](Claude.md) |
 | X-46 | R | wiki 127, 128, 129, 131, 132 | reproduced: all 14 commit hashes and dates of the Null Operator chronology; de Marrais arXiv:math/0011260; Veritasium `wt4p2oalmRY` title and channel; Σ1/ρ = 0.0230957 and ⟨H²⟩ = 0.0461914, the 65th prime 313, π(10⁵) = 9,592, Π_{p≤313}(1−1/p) = 0.0965 | [127](127_names_of_the_null_operator.md) |
 
-## 4. Page-level numbering note (index repass)
+## 4. Page-level numbering note (done 2026-11-13)
 
-Four pages carry duplicate numbers; chronological order from git history (author's rule, 2026-11-13: *succinct, contextual, chronological, these were steps taken in order*):
+Pages 50 and 51 each carried three or two files. The author's rule (2026-11-13): *succinct, contextual, chronological, these were steps taken in order*. Chronology from git history (first commit):
 
-| Chronological position | File | First committed |
-|---|---|---|
-| 1 | `50_causality_upper_limit.md` | 2026-06-12 17:01 |
-| 2 | `51_dynamic_geodesic.md` | 2026-06-12 17:42 |
-| 3 | `52_l_dynamic_avoided_collaborator.md` | 2026-06-12 23:57 |
-| 4 | `50_vortex_quantizing_shear.md` | 2026-06-13 00:00 |
-| 5 | `51_j2_involution_riemann_fermat.md` | 2026-06-13 00:05 |
-| later | `50_bao_mass_gap_engine.md` | 2026-07-31 (a different series: the engine) |
+| Chronological position | Former name | Now | First committed |
+|---|---|---|---|
+| 1 | `50_causality_upper_limit.md` | unchanged | 2026-06-12 17:01 |
+| 2 | `51_dynamic_geodesic.md` | unchanged | 2026-06-12 17:42 |
+| 3 | `52_l_dynamic_avoided_collaborator.md` | unchanged | 2026-06-12 23:57 |
+| 4 | `50_vortex_quantizing_shear.md` | `52b_vortex_quantizing_shear.md` | 2026-06-13 00:00 |
+| 5 | `51_j2_involution_riemann_fermat.md` | `52c_j2_involution_riemann_fermat.md` | 2026-06-13 00:05 |
+| later | `50_bao_mass_gap_engine.md` | `75b_bao_mass_gap_engine.md` | 2026-07-31 (follows 73–75 of 2026-07-17) |
 
-The renumbering follows this order, with the BAO engine page moved to the engine series. The cross-links in pages 40–55 use the present file names and will be updated with the rename.
+The suffix form follows the `59b` precedent and keeps every other page number stable: a full renumbering would have shifted about eighty pages. Inside the Ainulindale wiki, links, labels and titles were updated with the rename (28 files). **Not yet updated, by design** (later propagation phase): references to the old names outside `Ainulindale/wiki/`, namely in `ContextPlease/claude/` archives (history, left as written), `FourthAgePapers/ScalarContextPropagation`, ValaQuenta module docs and the `.clauderc_file_structure` / `.clauderc_ValaQuenta` files. The old names are searchable here.
 
 ## 5. Related pages
 

@@ -1,4 +1,4 @@
-# 50 — The mass-gap engine Δ (`bao_mass_gap`)
+# 75b — The mass-gap engine Δ (`bao_mass_gap`)
 
 | | |
 |---|---|
@@ -6,7 +6,7 @@
 | API page | `ValaQuenta/wiki/bao_mass_gap.md` · notebook `ValaQuenta/notebooks/core/19_bao_mass_gap.ipynb` |
 | Registry | 7 equations: `summary`, `gap_value`, `spectral_residue`, `gap_identity`, `bao_consistency`, `mtheory_compactification`, `validate` |
 | Last verified | 2026-11-13: every equation run through `registry.run('bao_mass_gap.<name>', {})`; Listing 1 executed |
-| Page numbering | three pages carry the number 50 (this one, [50 causality upper limit](50_causality_upper_limit.md), [50 vortex quantizing shear](50_vortex_quantizing_shear.md)); renumbering is part of the index repass |
+| Page numbering | three pages carry the number 50 (this one, [50 causality upper limit](50_causality_upper_limit.md), [50 vortex quantizing shear](52b_vortex_quantizing_shear.md)); renumbering is part of the index repass |
 
 ## 1. What it computes
 

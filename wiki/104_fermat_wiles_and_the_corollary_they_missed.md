@@ -16,7 +16,7 @@
 
 ## 2. What the proof established, in this framework's language
 
-Wiles (completed by Taylor–Wiles, generalised by BCDT) proved that every elliptic curve over ℚ is a modular form, an automorphic object with its own L-function. FLT follows via Ribet: a Fermat solution would give a Frey curve that could not be modular. In Ĥ_RB terms ([14](14_redblue_hamiltonian.md), [18](18_fermat_lattice.md), [51](51_j2_involution_riemann_fermat.md)): Fermat encodes where integer power-triples cannot be (the forbidden lattice, the negative space, the Blue channel by wiki 51 and 104's convention); the Riemann/automorphic
+Wiles (completed by Taylor–Wiles, generalised by BCDT) proved that every elliptic curve over ℚ is a modular form, an automorphic object with its own L-function. FLT follows via Ribet: a Fermat solution would give a Frey curve that could not be modular. In Ĥ_RB terms ([14](14_redblue_hamiltonian.md), [18](18_fermat_lattice.md), [52c](52c_j2_involution_riemann_fermat.md)): Fermat encodes where integer power-triples cannot be (the forbidden lattice, the negative space, the Blue channel by wiki 51 and 104's convention); the Riemann/automorphic
 side encodes what is (the prime distribution, the Euler product, the zeros); modularity is the bridge, and R̂† = B̂ is the operator form. "Wiles's proof already couples what cannot be to the Riemann/automorphic world": standard, as far as it goes. (Colour/Tree labels differ between pages; the open conflict is recorded in [96](96_the_riemann_fermat_horizon.md) §2.)
 
 ## 3. The step this framework adds, stated for checking or refutation
@@ -65,4 +65,4 @@ missed") has not been assessed against the literature: the sieve and the Möbius
 
 ## 4. Appears in
 
-[14](14_redblue_hamiltonian.md), [18](18_fermat_lattice.md), [47](47_the_two_trees.md), [51](51_j2_involution_riemann_fermat.md), [58](58_fermat_defines_riemann_fires.md) (corrected there: Fermat does not define the primes), [90](90_divisors_are_definers.md), [98](98_provenance_and_citations.md), [103](103_riemann_and_the_prime_number_theorem.md); `GenerationalLineage/` and the generational-lineage skill; D-CS_Memory §4, §21, §A.9; VAPMIP_Paper §5, §A.9.
+[14](14_redblue_hamiltonian.md), [18](18_fermat_lattice.md), [47](47_the_two_trees.md), [52c](52c_j2_involution_riemann_fermat.md), [58](58_fermat_defines_riemann_fires.md) (corrected there: Fermat does not define the primes), [90](90_divisors_are_definers.md), [98](98_provenance_and_citations.md), [103](103_riemann_and_the_prime_number_theorem.md); `GenerationalLineage/` and the generational-lineage skill; D-CS_Memory §4, §21, §A.9; VAPMIP_Paper §5, §A.9.

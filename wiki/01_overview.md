@@ -93,7 +93,7 @@ the module's manifest points to; a dash means the manifest names none.
 
 | Module | Version | Equations | Floor | Page |
 |---|---|---|---|---|
-| `bao_mass_gap` | 0.131 | 7 | ESTABLISHED | [50](50_bao_mass_gap_engine.md) |
+| `bao_mass_gap` | 0.131 | 7 | ESTABLISHED | [75b](75b_bao_mass_gap_engine.md) |
 | `inversion` | 0.111 | 7 | ESTABLISHED | [03](03_inversion_engine.md) |
 | `lagrangian` | 0.111 | 8 | THEORETICAL | [04](04_lagrangian_engine.md) |
 | `noether` | 0.111 | 6 | THEORETICAL | [05](05_noether_engine.md) |

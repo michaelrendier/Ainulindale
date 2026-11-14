@@ -88,8 +88,8 @@ two doublings" in the engine's table is the same growth after one.
 ## 3. What the theorem can be made to say, and what it cannot
 
 - **True and trivial:** 𝕆 is two doublings above ℂ, 𝕊 two above ℍ, T₆₄ two above 𝕊, T₂₅₆ two above T₆₄; the examples of §1 are the statement "N is two doublings above N/4". The first zero-divisors appear at 𝕊, which is two doublings above ℍ (and one above 𝕆) (`ESTABLISHED`; [19](19_cayley_dickson_tower.md), [25](25_sedenion_manual.md) §4).
-- **The cross-term argument** (the second doubling "introduces the cross-term between two independently conjugated units, which is J₂"): J₂ as the swap of the two halves is not an automorphism of the product ([51](51_j2_involution_riemann_fermat.md) §2); the cross-terms of a doubling (−d*b and bc* in the formula) are present after *one* doubling (the first doubling, ℝ → ℂ, already contains the conjugation and cross-terms in its own degenerate form), so the asymmetry "one doubling half-expressed, two fully" has no basis in the formula. The e11 "PASS" is that the upper half maps to the lower under the swap, a statement about the indexing of the halves.
-- **"The Cayley–Dickson doubling is an involution, its own inverse":** it is not. Doubling constructs a larger algebra from a smaller one; doubling twice gives the algebra of four times the dimension, not the original. (The *conjugation* is an involution; so is the grading (a, b) ↦ (a, −b), [51](51_j2_involution_riemann_fermat.md) §2.) "Point n + 2 contains the involution of point n" is a restatement that 𝔸_n sits inside 𝔸_{n+2} as a subalgebra.
+- **The cross-term argument** (the second doubling "introduces the cross-term between two independently conjugated units, which is J₂"): J₂ as the swap of the two halves is not an automorphism of the product ([52c](52c_j2_involution_riemann_fermat.md) §2); the cross-terms of a doubling (−d*b and bc* in the formula) are present after *one* doubling (the first doubling, ℝ → ℂ, already contains the conjugation and cross-terms in its own degenerate form), so the asymmetry "one doubling half-expressed, two fully" has no basis in the formula. The e11 "PASS" is that the upper half maps to the lower under the swap, a statement about the indexing of the halves.
+- **"The Cayley–Dickson doubling is an involution, its own inverse":** it is not. Doubling constructs a larger algebra from a smaller one; doubling twice gives the algebra of four times the dimension, not the original. (The *conjugation* is an involution; so is the grading (a, b) ↦ (a, −b), [52c](52c_j2_involution_riemann_fermat.md) §2.) "Point n + 2 contains the involution of point n" is a restatement that 𝔸_n sits inside 𝔸_{n+2} as a subalgebra.
 - **The per-level table** (J₂ = quaternion conjugation at ℝ → ℍ; "octonion conjugation plus a cross-term" at ℂ → 𝕆; "the sedenion involution that maps each zero-divisor pair to its partner" at ℍ → 𝕊): quaternion and octonion conjugation are involutions (`ESTABLISHED`); the statement about zero-divisor partners is not computed here; the "J₂" of each row is a different map.
 
 ## 4. "Evolution and involution": the Mind's Eye two levels up  `interpretation`
@@ -116,6 +116,6 @@ theorem about doublings does not move them ([44](44_halting_problem_uns.md) §4�
 
 ## 6. Related pages
 
-[19 Cayley–Dickson tower](19_cayley_dickson_tower.md) · [51 The J₂ involution](51_j2_involution_riemann_fermat.md) ·
+[19 Cayley–Dickson tower](19_cayley_dickson_tower.md) · [51 The J₂ involution](52c_j2_involution_riemann_fermat.md) ·
 [53 T_256 and cryptographic transparency](53_t256_cryptographic_transparency.md) · [26 Roadmap and engine status](26_TODO_and_roadmap.md) ·
 [55 Index, not value](55_index_not_value.md)

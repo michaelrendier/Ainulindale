@@ -112,6 +112,6 @@ by 1.2×10³³, a relative 1.9×10⁻¹¹.
 
 ## 7. Related pages
 
-[50 vortex shear / mass gap](50_vortex_quantizing_shear.md) · [52 L_(I|O) and the avoided collaborator](52_l_dynamic_avoided_collaborator.md) ·
+[50 vortex shear / mass gap](52b_vortex_quantizing_shear.md) · [52 L_(I|O) and the avoided collaborator](52_l_dynamic_avoided_collaborator.md) ·
 [57 The boundary ascending](57_boundary_ascending.md) · [82 The L_(I|O) photon path](82_l_io_photon_path.md) ·
 [133 Canonical maths](133_canonical_maths.md)

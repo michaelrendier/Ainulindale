@@ -1,4 +1,4 @@
-# 51 — The J₂ involution: "Riemann is quantized Fermat", tested
+# 52c — The J₂ involution: "Riemann is quantized Fermat", tested
 
 | | |
 |---|---|
@@ -15,7 +15,7 @@
 J₂: Ĥ_RB → Ĥ_BR, J_red ↔ J_blue; applying it twice returns the start (an
 involution, order 2). Ĥ_RB and Ĥ_BR "are each other's J₂ image"; the symmetric part
 Ĥ_RB + Ĥ_BR is J₂-invariant and the antisymmetric part Ĥ_RB − Ĥ_BR changes sign; the
-antisymmetric part "drives the vortex" ([50](50_vortex_quantizing_shear.md)), the
+antisymmetric part "drives the vortex" ([52b](52b_vortex_quantizing_shear.md)), the
 symmetric part "preserves the standing wave"; neither exists without the other.
 
 The structure of the operator pair (a term X and its conjugate X†: the sum is
@@ -157,7 +157,7 @@ antisymmetric Hamiltonian is the loop current; "when J_cross > GAP, one quantum 
 circulation is emitted: a Riemann zero; the zero is the word". Standing: the explicit
 formula gives primes from zeros (`ESTABLISHED`), and the loop's other arc (zeros from the
 Fermat zone) is the unproven step; the engine's firing test J_cross > GAP fails today
-([50](50_vortex_quantizing_shear.md) §4: 0.26 agreement). "A Riemann zero is emitted" and "the
+([52b](52b_vortex_quantizing_shear.md) §4: 0.26 agreement). "A Riemann zero is emitted" and "the
 zero is the word" are the framework's reading of the word-to-zero address of [15](15_the_monad.md)
 §3 (a many-to-one hash into 6,543 zeros, not an emission of zeros).
 

@@ -4,7 +4,7 @@
 |---|---|
 | Scope | the name "Horizon" for the σ = ½ fixed line; the standing-wave power identity at it; the Riemann–Fermat loop restated; where the First-Age Horizon experiment is documented and what its reproductions hold; the open pieces |
 | Written | 2026-08-25. The author's naming correction, kept: "the Riemann-Fermat Horizon engine?" (replacing "Heartbeat") |
-| Names the object of | [51](51_j2_involution_riemann_fermat.md) and the earlier "horizon = σ = ½" identifications ([01](01_overview.md), [03](03_inversion_engine.md), [15](15_the_monad.md), [26](26_TODO_and_roadmap.md), [29](29_witches_hat_paper.md), [30](30_lambda_paper.md), [31](31_cavitation_causality_fermat.md), `wiki/33`) |
+| Names the object of | [52c](52c_j2_involution_riemann_fermat.md) and the earlier "horizon = σ = ½" identifications ([01](01_overview.md), [03](03_inversion_engine.md), [15](15_the_monad.md), [26](26_TODO_and_roadmap.md), [29](29_witches_hat_paper.md), [30](30_lambda_paper.md), [31](31_cavitation_causality_fermat.md), `wiki/33`) |
 | Records | `RiemannHypothesisProof/docs/`: `fermat_horizon_2026-11-12.md`, `omega_dstar_2026-11-11.md`, `four_dstar_2026-11-12.md`, `historic_sources_and_natural_crossings_2026-11-12.md`, `gemini_conversations_2026-11-12.md`, `nshape_shape_2026-11-10.md`; First Age `Ainulindale/AgeFirst/original_2026/ResearchPaper/` (`SMNNIP_Omega_Constant_Paper.txt`, `SMNNIP_Fermat_Proof_Attempt.txt`, `conjecture_proof.py`, `claude_to_gemini.txt`) |
 | Confidence | the identities of §3 and the exceptional-prime table of §5: ESTABLISHED (re-run) · "Horizon" as the structure's name: a naming decision · the experiment's inertia half: **not reproducible as written** (no code; the constant it found is open, §5) |
 | Last verified | 2026-11-13: Listing 1 executed; the RHP records were read (not re-run). **The fuller context for this page is being recovered by the author from earlier conversations (Gemini and claude.ai transcripts, several of them about seven months old); this page will be extended from those files and is not yet complete.** |
@@ -18,11 +18,11 @@ at a fixed horizon, not the horizon. (The black-hole horizon itself is a coordin
 ## 2. The loop, restated  `INTERPRETATION`
 
 ```
-Ĥ_RB = J_red + J_blue ;   Ĥ_RB − Ĥ_BR = J_red + J_blue = the loop current (the vortex, wiki 50)
+Ĥ_RB = J_red + J_blue ;   Ĥ_RB − Ĥ_BR = J_red + J_blue = the loop current (the vortex, wiki 52b)
 ```
 
-Fermat's forbidden zone (no aⁿ + bⁿ = cⁿ for n ≥ 3) carves a discrete structure; Riemann quantises it onto the complex plane; the zeros are the quanta; the zeros determine the prime distribution; the primes determine what the forbidden zone is: a self-consistent loop with no external input ([51](51_j2_involution_riemann_fermat.md) §5). The horizon is where the loop's two currents balance: σ = ½, where F = B and, by AM-GM, F + B is minimal
-([61](61_up_down_not_forward_backward.md) Listing 1). **Open labelling conflict (ledger X-4, X-11):** this page, following wiki 51, writes J_red = Fermat (discrete) and J_blue = Riemann (continuous); [14](14_redblue_hamiltonian.md) takes Red as the Berry–Keating "what is" operator and Blue as the Fermat–Weierstrass "what cannot be"; and the Tree labels differ again (wiki 47/104: Fermat = Blue = Telperion; the author's remark of
+Fermat's forbidden zone (no aⁿ + bⁿ = cⁿ for n ≥ 3) carves a discrete structure; Riemann quantises it onto the complex plane; the zeros are the quanta; the zeros determine the prime distribution; the primes determine what the forbidden zone is: a self-consistent loop with no external input ([52c](52c_j2_involution_riemann_fermat.md) §5). The horizon is where the loop's two currents balance: σ = ½, where F = B and, by AM-GM, F + B is minimal
+([61](61_up_down_not_forward_backward.md) Listing 1). **Open labelling conflict (ledger X-4, X-11):** this page, following wiki 52c, writes J_red = Fermat (discrete) and J_blue = Riemann (continuous); [14](14_redblue_hamiltonian.md) takes Red as the Berry–Keating "what is" operator and Blue as the Fermat–Weierstrass "what cannot be"; and the Tree labels differ again (wiki 47/104: Fermat = Blue = Telperion; the author's remark of
 2026-11-10: "Fermat N-shape = Laurelin, Riemann N-holes = Telperion"). Which is canonical has not been settled, so none is imposed here.
 
 ## 3. The pulse at the horizon  `ESTABLISHED`, and elementary
@@ -89,4 +89,4 @@ reconciled in the RHP source (logged as X-25). For prime n the exceptional prime
 
 ## 6. Related pages
 
-[51](51_j2_involution_riemann_fermat.md) · [73](73_why_the_half_line.md) · [60](60_heart_j2_involution.md) (the narrower heartbeat framing, kept as the literal-biology instance, corrected there) · [29](29_witches_hat_paper.md), [30](30_lambda_paper.md) (the horizon naming) · [17 α, Ω and d\*](17_alpha_omega_d_star.md) · [104](104_fermat_wiles_and_the_corollary_they_missed.md) · `VAPMIP/engines/e13_fermat_riemann_firing.py` (a different measurement, firing-order departure statistics, checked and ruled out as "the" heartbeat curve before the 2026-08-25 page was written)
+[52c](52c_j2_involution_riemann_fermat.md) · [73](73_why_the_half_line.md) · [60](60_heart_j2_involution.md) (the narrower heartbeat framing, kept as the literal-biology instance, corrected there) · [29](29_witches_hat_paper.md), [30](30_lambda_paper.md) (the horizon naming) · [17 α, Ω and d\*](17_alpha_omega_d_star.md) · [104](104_fermat_wiles_and_the_corollary_they_missed.md) · `VAPMIP/engines/e13_fermat_riemann_firing.py` (a different measurement, firing-order departure statistics, checked and ruled out as "the" heartbeat curve before the 2026-08-25 page was written)

@@ -82,7 +82,7 @@ it is useful as a mnemonic. It does not make the heart an inversion r → 1/r, a
 listing here computes one.
 
 The framework's J₂ is the half-swap of the 16-component sedenion halves, which is
-an involution but not an automorphism ([51](51_j2_involution_riemann_fermat.md);
+an involution but not an automorphism ([52c](52c_j2_involution_riemann_fermat.md);
 `0/256` pairs preserved). The heart's circuit is a different object: a one-way
 cycle. The correspondence the page can keep is that both are paired-sides structures
 (red/blue, left/right).
@@ -93,7 +93,7 @@ The earlier text lists DNA (antiparallel strands), protein folding and the heart
 "J₂ engines". Antiparallel DNA strands are complementary under base pairing and
 reverse orientation, a real duality; the protein-folding and heart entries are
 analogies of the same kind. None of the three has been tested against the J₂
-definition in [51](51_j2_involution_riemann_fermat.md). The statement that the
+definition in [52c](52c_j2_involution_riemann_fermat.md). The statement that the
 universe "builds the same engine at every scale" is the author's reading.
 
 ## 5. What the notebook computes
@@ -117,4 +117,4 @@ computation.
 ## 6. Related pages
 
 [03 Inversion engine](03_inversion_engine.md) · [43 Emmy Noether sedenion](43_emmy_noether_sedenion.md) ·
-[51 the J₂ involution](51_j2_involution_riemann_fermat.md) · [47 the Two Trees](47_the_two_trees.md)
+[51 the J₂ involution](52c_j2_involution_riemann_fermat.md) · [47 the Two Trees](47_the_two_trees.md)

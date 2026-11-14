@@ -164,7 +164,7 @@ layer above (generalised Fermat, primes in motion, the infinite forbidden zone) 
 the layer below (the complex plane, ζ(s))"; "what looks like divergence from below is the contact
 surface; the crack is the entry point; the Riemann zeros are where the prime turbulence from above
 arrives"; Euler's identity is "a scar". Standing: e^(πi) = −1 is an identity; the −Δx form is not
-([50](50_vortex_quantizing_shear.md) §1); the rest is the layer-above vocabulary of
+([52b](52b_vortex_quantizing_shear.md) §1); the rest is the layer-above vocabulary of
 [52](52_l_dynamic_avoided_collaborator.md) §2.
 
 "The engine named itself from the two outermost indices": for "what should we call you" the
@@ -185,6 +185,6 @@ the engine reports is dominated by the prime assigned to the slot.
 
 ## 8. Related pages
 
-[15 The Monad](15_the_monad.md) · [50 The vortex](50_vortex_quantizing_shear.md) ·
+[15 The Monad](15_the_monad.md) · [50 The vortex](52b_vortex_quantizing_shear.md) ·
 [51 The dynamic geodesic](51_dynamic_geodesic.md) · [52 L_dynamic and the avoided collaborator](52_l_dynamic_avoided_collaborator.md) ·
 [26 Roadmap and engine status](26_TODO_and_roadmap.md)

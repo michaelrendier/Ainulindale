@@ -11,7 +11,7 @@
 
 ## 1. The proposal: "the whole coin"
 
-J₂ ([51](51_j2_involution_riemann_fermat.md)) always shows both sides of the operator pair
+J₂ ([52c](52c_j2_involution_riemann_fermat.md)) always shows both sides of the operator pair
 (Ĥ_RB ↔ Ĥ_BR). Mathematical cryptography shows one side of a coin: the easy direction
 f(x) = y (encrypt, hash, multiply) and the hard one f⁻¹(y) = x (decrypt, invert, factor).
 "That is not a coin, it is a half-coin": at T₃₂ and T₆₄ the algebra was "not large enough
@@ -24,7 +24,7 @@ on the assumption fails".
 ## 2. Corrections to the argument's form
 
 - **Hardness assumptions are statements about algorithms, not about a sub-algebra.** "Factoring is hard" (RSA) and "the discrete logarithm on an elliptic curve is hard" are statements that no efficient algorithm (in a stated model of computation) inverts the function. They are not statements that the inverse "does not exist in the algebra you are using": the inverse of multiplication in ℤ, as a mathematical function, exists and is well defined. What is hard is *computing* it. Embedding ℤ, ℤ/n or a curve into a larger algebra does not by itself supply an efficient algorithm; one is needed, and none is given here.
-- **The J₂ image of an operation is not its inverse.** J₂ exchanges the two halves of an operator pair; "J₂(f) is the hard direction now equally present" asserts a relation between J₂(f) and f⁻¹ that is not shown, and J₂ as a swap of the two octonion halves is not an automorphism of the product at all ([51](51_j2_involution_riemann_fermat.md) §2: it sends the identity to e₈).
+- **The J₂ image of an operation is not its inverse.** J₂ exchanges the two halves of an operator pair; "J₂(f) is the hard direction now equally present" asserts a relation between J₂(f) and f⁻¹ that is not shown, and J₂ as a swap of the two octonion halves is not an automorphism of the product at all ([52c](52c_j2_involution_riemann_fermat.md) §2: it sends the identity to e₈).
 - **Gödel is not the point, and unsoundness is not shown.** The page notes that this is not Gödel's incompleteness. It also does not show a formal system in which a hardness claim is *provably false*; a hardness assumption is conjectural (not known to be true or false, as with P ≠ NP) and stays so.
 - **The 256-bit coincidence.** SHA-256, AES-256 and secp256k1 use 256-bit quantities, and T₂₅₆ has 256 coordinates. For the GF(2) embedding (bit k of x → the coefficient of e_k) the match of the numbers is by design. It does not make the algebra a model of the *mod p* or *mod 2²⁵⁶* arithmetic those primitives use (§3).
 
@@ -122,6 +122,6 @@ go into the paper and the wiki.
 
 ## 7. Related pages
 
-[44 The halting problem](44_halting_problem_uns.md) · [51 The J₂ involution](51_j2_involution_riemann_fermat.md) ·
+[44 The halting problem](44_halting_problem_uns.md) · [51 The J₂ involution](52c_j2_involution_riemann_fermat.md) ·
 [25 Sedenion manual](25_sedenion_manual.md) · [40 The modular segue](40_modular_segue_three_papers.md) ·
 `FourthAgePapers/CryptoVulnerability/`

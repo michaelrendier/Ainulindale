@@ -4,7 +4,7 @@
 |---|---|
 | Scope | the six derivations of σ = ½ that the framework collects (symmetry, Lagrangian minimum, N-shape/AM-GM, the spiral, LC resonance, the factorisation tree); what each establishes; the 2026-08-25 dependency analysis; the Abrikosov-lattice corollary |
 | Origin | 2026-06-29 cascade capture; addendum 2026-08-25 (§9, kept) |
-| Predecessors | [72](72_the_cosmic_telescope.md), [58](58_fermat_defines_riemann_fires.md), [50](50_vortex_quantizing_shear.md), [51](51_j2_involution_riemann_fermat.md) |
+| Predecessors | [72](72_the_cosmic_telescope.md), [58](58_fermat_defines_riemann_fires.md), [52b](52b_vortex_quantizing_shear.md), [52c](52c_j2_involution_riemann_fermat.md) |
 | Code | `engines/noether_derivation.py` (archived at `RiemannHypothesisProof/archive/2026-11-03_pre-rewrite/engines/`), `FermatMonster/engine/fermat_monster_engine.py` |
 | Confidence | each derivation's own algebra: ESTABLISHED · the page's conclusion "σ = ½ is not a conjecture": **withdrawn**: the derivations locate the symmetric point of the model, not the zeros · the Riemann Hypothesis: OPEN |
 | Last verified | 2026-11-13: Listing 1 (zeta spiral facts) and the symbolic checks of [74](74_lagrangians_are_catastrophe_theory.md) executed; their output is quoted below |
@@ -111,7 +111,7 @@ What is corrected:
   4.59, 5.57, 6.29: close to n − 1 plus the fluctuation S(T) of the zero count
   (N(T) = θ(T)/π + 1 + S(T)), not to n. The relation e^{πi} = −1 is Euler's identity; the
   framework's reading e^{πi} = −Δx adds a displacement and belongs to
-  [50](50_vortex_quantizing_shear.md) as an operator-form statement, not to an
+  [52b](52b_vortex_quantizing_shear.md) as an operator-form statement, not to an
   identity of ζ.
 - **"L_(I|O) = Q/I = e^{(2σ−1)E}-type, equal to 1 at σ = ½, phase π/4."** The page defines
   I = Re ζ and Q = Im ζ and then evaluates Q/I as the ratio of the two exponentials F and B.
@@ -185,6 +185,6 @@ only attracts on-line ones) is the Riemann Hypothesis, and this page does not re
 
 ## 10. Related pages
 
-[13 the RH proof path](13_omgwtf_rh_proof.md) · [50 vortex shear](50_vortex_quantizing_shear.md) ·
+[13 the RH proof path](13_omgwtf_rh_proof.md) · [50 vortex shear](52b_vortex_quantizing_shear.md) ·
 [61 up/down](61_up_down_not_forward_backward.md) · [72](72_the_cosmic_telescope.md) ·
 [74 Lagrangians and catastrophe theory](74_lagrangians_are_catastrophe_theory.md) · [75 the Abrikosov lattice](75_abrikosov_lattice.md)

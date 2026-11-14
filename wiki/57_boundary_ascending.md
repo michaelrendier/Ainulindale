@@ -156,5 +156,5 @@ count of two, neither has been mapped onto the other.
 ## 6. Related pages
 
 [54 two doublings](54_two_doublings_all_pathways.md) · [53 T₂₅₆ transparency](53_t256_cryptographic_transparency.md) ·
-[51 the J₂ involution](51_j2_involution_riemann_fermat.md) · [55 index not value](55_index_not_value.md) ·
+[51 the J₂ involution](52c_j2_involution_riemann_fermat.md) · [55 index not value](55_index_not_value.md) ·
 [59 the Simpsons](59_the_secret_in_the_simpsons.md) · [135 findings ledger](135_engine_findings_ledger.md)

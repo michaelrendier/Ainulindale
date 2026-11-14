@@ -102,6 +102,6 @@ independent of any claim about ζ.
 
 ## 5. Related pages
 
-[51 the J₂ involution and quantised Fermat](51_j2_involution_riemann_fermat.md) ·
+[51 the J₂ involution and quantised Fermat](52c_j2_involution_riemann_fermat.md) ·
 [55 index not value](55_index_not_value.md) · [57 the boundary ascending](57_boundary_ascending.md) ·
 [62 caustics](62_hands_on_paper_minds_eye_caustic.md) · [133 canonical maths](133_canonical_maths.md)

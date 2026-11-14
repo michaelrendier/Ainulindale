@@ -22,7 +22,7 @@
 
 Plus:
 
-- **Yang–Mills mass gap:** appears as GAP = Ω_ZS − d\*·ln 10 ≈ 1/(1000√2) ([17](17_alpha_omega_d_star.md), [50](50_bao_mass_gap_engine.md); Addenda IV, VIII). The reading "Δ = 1/(1000√2) exactly" was disproven as stated on 2026-08-30 ([110](110_qm_in_gr_gr_in_qm.md)); [56](56_telescope_caustic_zeno.md) Listing 1 gives GAP = 0.000707358 against 1/(1000√2) = 0.000707107, a 0.035 % difference. [JaffeWitten2006], [YangMills1954].
+- **Yang–Mills mass gap:** appears as GAP = Ω_ZS − d\*·ln 10 ≈ 1/(1000√2) ([17](17_alpha_omega_d_star.md), [75b](75b_bao_mass_gap_engine.md); Addenda IV, VIII). The reading "Δ = 1/(1000√2) exactly" was disproven as stated on 2026-08-30 ([110](110_qm_in_gr_gr_in_qm.md)); [56](56_telescope_caustic_zeno.md) Listing 1 gives GAP = 0.000707358 against 1/(1000√2) = 0.000707107, a 0.035 % difference. [JaffeWitten2006], [YangMills1954].
 - **P vs NP:** J_red (hyperbolic) and J_blue (elliptic) are adjoint but **not isomorphic**; Wernicke/Broca as a J_neg/J_pos oracle ([38](38_fermat_riemann_negative_space.md), README §17–18). [Cook1971].
 - **Birch–Swinnerton-Dyer:** Noether's ring theory as "BSD's language" ([43](43_emmy_noether_sedenion.md)). [BSD1965].
 - **Poincaré:** the already-solved **control case**: trivial Σ_RB on a compact 3-manifold → S³; used to check the method, not to reprove the theorem (VAPMIP_Paper "Engine 12"). [Perelman2002], [Perelman2003a,b] (the three arXiv records were verified, [98](98_provenance_and_citations.md) §E).
@@ -65,4 +65,4 @@ Each problem is run through the decomposition discipline the framework applies t
 
 ## 5. Appears in
 
-[13](13_omgwtf_rh_proof.md), [14](14_redblue_hamiltonian.md), [31](31_cavitation_causality_fermat.md), [38](38_fermat_riemann_negative_space.md), [42](42_rh_proof_no_primes.md), [43](43_emmy_noether_sedenion.md), [50](50_bao_mass_gap_engine.md), [73](73_why_the_half_line.md), [93](93_qm_gr_by_tree.md), [98](98_provenance_and_citations.md), [106](106_the_navier_stokes_problem.md); D-CS_Memory §20, §A.9; VAPMIP_Paper "Engine 12".
+[13](13_omgwtf_rh_proof.md), [14](14_redblue_hamiltonian.md), [31](31_cavitation_causality_fermat.md), [38](38_fermat_riemann_negative_space.md), [42](42_rh_proof_no_primes.md), [43](43_emmy_noether_sedenion.md), [75b](75b_bao_mass_gap_engine.md), [73](73_why_the_half_line.md), [93](93_qm_gr_by_tree.md), [98](98_provenance_and_citations.md), [106](106_the_navier_stokes_problem.md); D-CS_Memory §20, §A.9; VAPMIP_Paper "Engine 12".

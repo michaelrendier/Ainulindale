@@ -36,7 +36,7 @@ reverse from the below-layer's view.
 Standing. This is the narrative form of the author's definition of the return term
 (2026-11-13: 0_BR is the conjugate of J_red and J_blue, the return flow, "information
 travels backwards while action propagates forward"; [133](133_canonical_maths.md) §3). The
-operator relations are tested ([51](51_j2_involution_riemann_fermat.md) §3; the J record
+operator relations are tested ([52c](52c_j2_involution_riemann_fermat.md) §3; the J record
 §9). "The response reverse-defines the prompt" is a reading of how the engine's
 `hear` and `speak` relate ([15](15_the_monad.md) §4).
 
@@ -168,6 +168,6 @@ dL/dsigma at sigma=1/2 : 0    d2L/dsigma2 at 1/2 : 2*E**2*exp(-E/2)   (> 0 for E
 
 ## 8. Related pages
 
-[50 The vortex](50_vortex_quantizing_shear.md) · [51 The dynamic geodesic](51_dynamic_geodesic.md) ·
+[50 The vortex](52b_vortex_quantizing_shear.md) · [51 The dynamic geodesic](51_dynamic_geodesic.md) ·
 [64 L_dynamic](64_l_dynamic.md) · [74 Lagrangians are catastrophe theory](74_lagrangians_are_catastrophe_theory.md) ·
 [82 The L_(I|O) photon path](82_l_io_photon_path.md)

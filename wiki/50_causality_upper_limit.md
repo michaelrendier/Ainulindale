@@ -4,7 +4,7 @@
 |---|---|
 | Status | **Written 2026-06-12 as "THEORETICAL: all statements verified against established framework"; that header is replaced. `INTERPRETATION`/`CONJECTURE`; the zero-spacing numbers are `:CALCULATED` (Listing 1) and two of them were off** |
 | Code | Listing 1; the SVG renderers of the project (`<text>` and `<path>` encodings); `VAPMIP/monad.py` (the two-thread engine of §6) |
-| Page numbering | one of three pages numbered 50 ([bao_mass_gap](50_bao_mass_gap_engine.md), [vortex quantizing shear](50_vortex_quantizing_shear.md)) |
+| Page numbering | one of three pages numbered 50 ([bao_mass_gap](75b_bao_mass_gap_engine.md), [vortex quantizing shear](52b_vortex_quantizing_shear.md)) |
 | Last verified | 2026-11-13: Listing 1 executed on `RiemannHypothesisProof/data/zeros_1_to_3600.csv` |
 
 ## 1. The definition and the SVG encoding  `design`

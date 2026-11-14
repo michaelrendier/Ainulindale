@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | Scope | a cross-test of `bao_mass_gap.py` against `oblique_gear_test.py`: the three objects named σ in the codebase; Δ fed into σ_RB's tilt; the strut-blindness of σ_self; a T7 mean-sensitivity anomaly; the "rectifier law" |
-| Measured | 2026-09-23; continues [50](50_bao_mass_gap_engine.md), [14](14_redblue_hamiltonian.md), [25](25_sedenion_manual.md) |
+| Measured | 2026-09-23; continues [75b](75b_bao_mass_gap_engine.md), [14](14_redblue_hamiltonian.md), [25](25_sedenion_manual.md) |
 | Code | `ValaQuenta/bao_mass_gap.py`; `ContextPlease/claude/scratchpad/2026-08-31_oblique-gear/oblique_gear_test.py` (`sigma_rb`, `tilt_axis`, `p_red_blue`, `sigma_self`) and `ANOMALY_CHASE.md` |
 | Confidence | the algebra of strut-blindness and the rectifier law: ESTABLISHED (re-derived and re-run, Listing 1) · **one number of the 2026-09-23 record does not reproduce** (§2) · T7: OPEN |
 | Last verified | 2026-11-13: Listing 1 executed; the formulas of `sigma_rb`, `p_red_blue` and `sigma_self` were read from the source; the T7 drift runs were not repeated |
@@ -90,4 +90,4 @@ log-log slope of (sigma_self - 1/2) against lambda over 1e2..1e5: -1.0000
 
 ## 6. Related pages
 
-[50](50_bao_mass_gap_engine.md) · [14](14_redblue_hamiltonian.md) · [25](25_sedenion_manual.md) · [85](85_the_apex_path.md) · [120](120_symmetry_breaking_is_the_instrument.md)
+[75b](75b_bao_mass_gap_engine.md) · [14](14_redblue_hamiltonian.md) · [25](25_sedenion_manual.md) · [85](85_the_apex_path.md) · [120](120_symmetry_breaking_is_the_instrument.md)

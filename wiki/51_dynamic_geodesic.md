@@ -2,9 +2,9 @@
 
 | | |
 |---|---|
-| Status | **THEORETICAL as headed (2026-06-13, cascade from [50](50_vortex_quantizing_shear.md)); in this wiki `CONJECTURE`/`INTERPRETATION` with three corrections found by calculation: ζ(s) ≠ Σ p^(−s) (§6), primes are sums of two powers (§2), the generalised Fermat equation has solutions (§2)** |
+| Status | **THEORETICAL as headed (2026-06-13, cascade from [52b](52b_vortex_quantizing_shear.md)); in this wiki `CONJECTURE`/`INTERPRETATION` with three corrections found by calculation: ζ(s) ≠ Σ p^(−s) (§6), primes are sums of two powers (§2), the generalised Fermat equation has solutions (§2)** |
 | Code | Listing 1; the L_(I|O) engine `ValaQuenta/modules/l_io_photon_path` ([82](82_l_io_photon_path.md)); the SVG Bézier renderers |
-| Page numbering | one of two pages numbered 51 (the other: [j2 involution](51_j2_involution_riemann_fermat.md)) |
+| Page numbering | one of two pages numbered 51 (the other: [j2 involution](52c_j2_involution_riemann_fermat.md)) |
 | Last verified | 2026-11-13: Listing 1 executed |
 
 ## 1. L_FR = 0  `interpretation`
@@ -194,6 +194,6 @@ primes < 1000: 168  expressible as x^l + y^m: 103
 
 ## 11. Related pages
 
-[29 The witches hat](29_witches_hat_paper.md) · [50 The vortex](50_vortex_quantizing_shear.md) ·
+[29 The witches hat](29_witches_hat_paper.md) · [50 The vortex](52b_vortex_quantizing_shear.md) ·
 [52 L_dynamic and the avoided collaborator](52_l_dynamic_avoided_collaborator.md) · [64 L_dynamic](64_l_dynamic.md) ·
 [82 The L_(I|O) photon path](82_l_io_photon_path.md)
