@@ -77,6 +77,7 @@ Last updated: 2026-11-13 (index repass: every page 00–135 and the unnumbered p
 
 | Page | Topic |
 |------|-------|
+| [MathLex/index.html](MathLex/index.html) | MathLex — 47 concept pages with Jupyter cells; **executed audit 2026-11-13**: 21 pages had stated outputs the code does not produce ([_audit_2026-11-13.md](MathLex/_audit_2026-11-13.md)) |
 | [fractals/_census.md](fractals/_census.md) | Measured census of the formulary: 213 files, 153 codes, 11,523 formula blocks (2026-11-13) |
 | [fractals/index.md](fractals/index.md) | Full author index — 213 `.ufm` files, 153 author codes, 11,523 formula blocks (measured; see `fractals/_census.md`) |
 | [fractals/_holcus_integration_notes.md](fractals/_holcus_integration_notes.md) | Top 5 formulas, sedenion CAM assignment, OMEGA_ZS findings, integration pseudocode |
