@@ -586,6 +586,29 @@ Dynamics* 8(4) 375, with an empty title field in Crossref.)
 - Open URLs checked: the Clay Millennium Problems page and OEIS A030178 (the omega constant)
   both resolve.
 
+### E.2 Literature of pages 111–118, 124, 128–129 and the zero-divisor page: Crossref / arXiv check, 2026-11-13
+
+Each record below was resolved against the public Crossref API (or arXiv API) and the title, container, volume, pages and year compared with the citation on the page. `NOT verified` means no record was located in this pass.
+
+| Work | Used in | Record found | Status |
+|---|---|---|---|
+| Alcubierre (1994) *The warp drive: hyper-fast travel within general relativity*, Class. Quantum Grav. 11, L73–L77 | [111](111_alcubierre_reverse_gr.md) | doi:10.1088/0264-9381/11/5/001 | VERIFIED |
+| Sullivan (1985) *Quasiconformal homeomorphisms and dynamics I*, Ann. Math. 122, 401–418 | [112](112_sullivan_dictionary.md) | doi:10.2307/1971308 | VERIFIED |
+| Vollrath & Knight (2001) *Liquid crystalline spinning of spider silk*, Nature 410, 541–548 | [113](113_vollrath_knight_silk_spinning.md) | doi:10.1038/35069000 | VERIFIED |
+| Herrmann, Mantica & Bessis (1990) *Space-filling bearings*, PRL 65, 3223–3226 | [114](114_herrmann_apollonian_bearings_turbulence.md) | doi:10.1103/physrevlett.65.3223 | VERIFIED |
+| Constantin & Fefferman (1993) Indiana Univ. Math. J. 42, 775 | [115](115_necas_ruzicka_sverak_self_similar.md) | doi:10.1512/iumj.1993.42.42034 (volume, first page, year agree; title not returned by Crossref) | VERIFIED (partial) |
+| Askarieh et al. (2010) *Self-assembly of spider silk proteins is controlled by a pH-sensitive relay*, Nature 465, 236–238 | [117](117_rising_johansson_spidroin_switch.md) | doi:10.1038/nature08962 | VERIFIED |
+| Hagn et al. (2010) *A conserved spider silk domain acts as a molecular switch that controls fibre assembly*, Nature 465, 239–242 | [117](117_rising_johansson_spidroin_switch.md) | doi:10.1038/nature08936 | VERIFIED |
+| Rising & Johansson (2015) *Toward spinning artificial spider silk*, Nat. Chem. Biol. 11, 309–315 | [117](117_rising_johansson_spidroin_switch.md) | doi:10.1038/nchembio.1789 | VERIFIED |
+| Odlyzko & Sloane (1979) *New bounds on the number of unit spheres that can touch a unit sphere in n dimensions*, J. Combin. Theory A 26, 210–214 | [zero_divisor_divergence_inversion](zero_divisor_divergence_inversion.md) (the 196,560 kissing number) | doi:10.1016/0097-3165(79)90074-8 | VERIFIED |
+| Cohn, Kumar, Miller, Radchenko & Viazovska (2017) *The sphere packing problem in dimension 24*, Ann. Math. 185, 1017–1033 | same | doi:10.4007/annals.2017.185.3.8 | VERIFIED |
+| de Marrais (2000) arXiv:math/0011260 | [128](128_vapmip_paper_citation_pass_2026_10_16.md) | arXiv record, submitted 2000-11-30 | VERIFIED |
+| Post (1941) *The Two-Valued Iterative Systems of Mathematical Logic*, Ann. Math. Studies 5 | [116](116_post_lattice_clones.md) | a book; not resolved in Crossref in this pass | NOT verified |
+| Landreh et al. (2017) (title and journal missing from the page) | [117](117_rising_johansson_spidroin_switch.md) | not located: the page's entry is incomplete | NOT verified |
+| Basile, `libraryofbabel.info-algo` (2019) | [124](124_basile_invertible_location_maps.md) | the repository, read directly (2026-09-30); not a Crossref item | read, not machine-verified |
+
+Levenshtein (1979, kissing number in 24 dimensions, independent of Odlyzko–Sloane; *Dokl. Akad. Nauk SSSR* 245) was not resolved. The queue in `~/.clauderc_citations` was updated to match.
+
 ## See also
 
 - [43_emmy_noether_sedenion.md](43_emmy_noether_sedenion.md) — the naming decision
