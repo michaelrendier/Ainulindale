@@ -31,7 +31,7 @@ Established facts underneath: the sphere S^(n−1) is the unit sphere of an
 n-dimensional algebra; the zero-divisor basis pairs of 𝕊 are counted in
 [25](25_sedenion_manual.md). The identification of σ = ½ with those spheres, and of
 the "wake" with a forbidden set at each level, is the framework's reading: a
-statement about how it uses the tower, not a derived theorem. A published result sits near it: Moreno (1998) is reported to show that
+statement about how it uses the tower, not a derived theorem. A published result sits near it: Moreno (preprint 1997, journal 1998) is reported to show that
 the norm-one zero-divisors of 𝕊 form a space homeomorphic to G₂. That is a
 fact about 𝕊 alone, quoted here from memory of the literature and not
 re-checked in this pass; it is named as the object the framework's σ = ½ reading
