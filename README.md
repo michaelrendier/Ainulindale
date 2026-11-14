@@ -71,7 +71,15 @@ and these nine videos, together with the Infocom Zork parser listed after them, 
 
 ---
 
-# CURRENT RESEARCH — 2026-08-20
+# STATUS — 2026-11-13: the wiki overhaul
+
+Every page of [`wiki/`](wiki/00_index.md) (00–135, the unnumbered pages, `fractals/` and `MathLex/`) was re-read against the code and re-run where it carries a listing. **Corrections are kept beside the originals**, and every defect found in an engine, record or claim is ledgered in [wiki 135](wiki/135_engine_findings_ledger.md) (X-1 … X-53) for propagation to the engines. Highlights of what changed in the record: the Noether-current premise is retired (s ↦ 1 − s is a discrete involution); zero divisors are not an ideal; the "6.5σ" self-evaluation is withdrawn; the Gnarl/Popcorn fixed point at W(1), "Hermite zeros = GUE" and "TIA = cosine" are refuted; 21 of 46 MathLex output blocks were not produced by their code. The repository-wide notation is [wiki 133](wiki/133_canonical_maths.md); the reading list behind the convergence claims is [wiki 134](wiki/134_the_library.md).
+
+**Scope of this repository (author, 2026-11-13).** Ainulindalë is where the Langlands programme, grand unification, a *non-Noether-current* unified field theory consistent with quantum mechanics, and the Standard Model Lagrangian (taken as it is, fitted) are held. The VAPMIP Lagrangian is the "derived backup analogue", whose isometries were found while building a way to drop dimensions from calculations by using larger puzzle pieces. Nothing here claims a Clay problem is solved.
+
+---
+
+# CURRENT RESEARCH — 2026-08-20 (kept as written; the status block above is newer)
 
 > **Active. Not settled.** This section is the live edge of the work. Everything below
 > it, from *The OMG?WTF! Conjecture* onward, is the accumulated record — and this page
@@ -953,7 +961,7 @@ Ainulindalë/
 │
 ├── archive/                   — Historical snapshots
 ├── outreach/                  — Primers, context documents, benchmarks
-├── wiki/                      — Full technical documentation (70+ pages)
+├── wiki/                      — Full technical documentation (140 numbered files, 3 unnumbered pages, fractals/, MathLex/)
 └── media/                     — Images, SVG outputs
 ```
 
@@ -983,6 +991,10 @@ python3 -m ValaQuenta --qt          # Qt viewer
 | [TuringStack](https://github.com/michaelrendier/TuringStack) | UDEO crypto vulnerability + D15 Noether-Wiles scope |
 | [PTorrent](https://github.com/michaelrendier/PTorrent) | Corpus distribution protocol for Android |
 | [UniversalSynth](https://github.com/michaelrendier/UniversalSynth) | Sonification engine |
+| [GenerationalLineage](https://github.com/michaelrendier/GenerationalLineage) | Generational-lineage engine and the toolsets (circle, scale, add-scale-sign …), 11 units hold |
+| [RiemannHypothesisProof](https://github.com/michaelrendier/RiemannHypothesisProof) | Two-Trees / ζ-pathway work: Cayley sphere, extinction flow, the heartbeat, zero tables |
+| [AbrikosovTree](https://github.com/michaelrendier/AbrikosovTree) | Abrikosov-lattice reading of the zeros, the Two Trees engine |
+| [ContextPlease](https://github.com/michaelrendier/ContextPlease) | Context library: primers, scratchpad, clauderc archive, references ledger |
 
 ---
 
@@ -1015,7 +1027,7 @@ python3 -m ValaQuenta --qt          # Qt viewer
 6. Thom, R. (1972). *Structural Stability and Morphogenesis.* Benjamin.
 7. Wiles, A. (1995). *Modular elliptic curves and Fermat's Last Theorem.* Annals of Mathematics.
 
-Full reference list: `conjecture/Second_Age_Ainulindale_Conjecture.md`
+Full reference list: `AgeSecond/Second_Age_Ainulindale_Conjecture.md`
 
 ---
 
@@ -1097,7 +1109,7 @@ An eighth researcher, approaching independently from "what connects division alg
 
 **The library converges because there is one book.** The book is the prime distribution. The cover is the Cayley-Dickson tower. The title is the Riemann Hypothesis.
 
-→ [Addendum VII: The Library Convergence](addenda/addendum_VII_library_convergence.md)
+→ [Addendum VII: The Library Convergence](../FourthAgePapers/addenda/addendum_VII_library_convergence.md)
 
 ### 5. The Constants are Outputs, Not Inputs
 

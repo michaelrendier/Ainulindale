@@ -1,5 +1,5 @@
 # AINULINDALE — WIKI INDEX
-Last updated: 2026-11-13 (index repass: every page 00–135 and the unnumbered pages listed; `fractals/` and `MathLex/` follow)
+Last updated: 2026-11-13 (overhaul complete for every page 00–135, the unnumbered pages, `fractals/` and `MathLex/`; corrections are kept beside the originals, ledger: [135](135_engine_findings_ledger.md))
 
 ## The Monad
 

@@ -27,6 +27,30 @@ APPENDIX material relative to the SMNNIP primary claim. They are
 consequential mathematics that falls out of the sigma result — not the
 argument itself.
 
+
+### Result of the open question, run 2026-11-13: **no match** (kept)
+
+The question above ("do normalised zero spacings match hydrogen level spacings?") was run for the first 100 zeros against E_{n+1} − E_n = 1/n² − 1/(n+1)².
+
+**Listing 1 — zero spacings against hydrogen level spacings** (written for this page; needs mpmath and numpy; runs cold in about a minute)
+
+```python
+import mpmath as mp, numpy as np
+z = np.array([float(mp.zetazero(n).imag) for n in range(1, 101)]); sp = np.diff(z)
+n = np.arange(1, 100); h = 1 / n ** 2 - 1 / (n + 1) ** 2
+print('first/last spacing: zeros %.2f, hydrogen %.0f' % (sp[0] / sp[-1], h[0] / h[-1]))
+print('Pearson r of the normalised spacings: %.4f' % np.corrcoef(sp / sp.mean(), h / h.mean())[0, 1])
+print('log-log slope of spacing against n: zeros %.3f, hydrogen %.3f' % (np.polyfit(np.log(n), np.log(sp), 1)[0], np.polyfit(np.log(n), np.log(h), 1)[0]))
+```
+
+```
+first/last spacing: zeros 2.43, hydrogen 369384
+Pearson r of the normalised spacings: 0.4995
+log-log slope of spacing against n: zeros -0.265, hydrogen -2.887
+```
+
+The zero spacings fall by a factor 2.4 over n = 1…99 (log-slope −0.27, the 1/ln γ drift); the hydrogen spacings fall by a factor 3.7×10⁵ (slope → −3, as 2/n³). The correlation r = 0.50 is only that both sequences decrease. **The spacings do not match.** The 2026-05-02 note that "the visual resemblance is in the shape of the density function" stands as the explanation.
+
 ---
 
 ## CONJECTURE RESTRUCTURE — PRIORITY

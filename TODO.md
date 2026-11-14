@@ -1,3 +1,7 @@
+# STATUS 2026-11-13 (added at the top; the 2026-05-03 text below is kept as the record)
+
+This TODO predates the wiki overhaul. Standing corrections to items below: "84 directed ZD pairs / 42 unordered classes" is better stated as **84 zero-divisors on 42 index pairs, 168 unordered and 336 ordered zero-product pairs** ([wiki 133](wiki/133_canonical_maths.md), [135](wiki/135_engine_findings_ledger.md)); the "Noether balance" and any item resting on a Noether current is retired (s ↦ 1 − s is a discrete involution); "Zipf's law IS the PNT" is withdrawn; the "6.5σ" evaluation is withdrawn. The current open decisions are in [wiki 133 §7](wiki/133_canonical_maths.md); defects awaiting propagation to the engines are the ledger [wiki 135](wiki/135_engine_findings_ledger.md). Not re-audited line by line: the 1,800 lines below.
+
 # AINULINDALE — TODO
 Generated: 2026-05-03
 Session: CLAUDE-SMNNIP-00729-56714-24600
