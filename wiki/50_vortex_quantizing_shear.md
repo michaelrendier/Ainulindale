@@ -1,216 +1,166 @@
-# 50 — THE VORTEX: e^(πi) = −Δx
+# 50 — The vortex, "e^(πi) = −Δx": what is exact, and what the tests show
 
-**Author:** Cody Michael Allison
-**Date:** 2026-06-12
-**Status:** CASCADE CAPTURE — mathematical backbone of the primes spiral
-**Predecessor:** [49 — She Sang](49_she_sang.md), [32 — Superconducting Medium](32_superconducting_medium.md)
-**Cross-ref:** wiki/21 (Chladni-Zipf-Riemann), wiki/52 (L_(I|O)), PtolemyHolcus README speak()
+| | |
+|---|---|
+| Status | **Cascade capture (2026-06-12), "mathematical backbone of the primes spiral". `CONJECTURE`; the central identity is not an identity (§1), and the construction as stated does not produce a spiral (§2). The engine written to test the vortex-firing claim, `e08`, fails today (§4)** |
+| Code | Listing 1; `VAPMIP/engines/e08_vortex_quantizing_shear.py` |
+| Page numbering | one of three pages numbered 50 ([bao_mass_gap](50_bao_mass_gap_engine.md), [causality upper limit](50_causality_upper_limit.md)) |
+| Last verified | 2026-11-13: Listing 1 executed; e08 run (output in the audit scratchpad) |
 
----
+> *"e^(πi) = −1" is not the whole statement. e^(πi) = −Δx. The −1 is a displacement, not a scalar.*
 
-> *"e^(πi) = −1" is not the whole statement.*
-> *e^(πi) = −Δx. The −1 is a displacement, not a scalar.*
+## 1. "Euler reframed"  (the identity, corrected)
 
----
+Euler's identity is e^(πi) = −1 exactly (`ESTABLISHED`). The page's "physical form",
+e^(πi) = −Δx, "a reversal of direction along the path being traced, offset by the
+step size", is **not an identity** in the complex numbers and cannot be derived from
+one: e^(iθ) is a pure rotation and carries no translation. What the page describes,
+a rotation by π together with a translation by Δx, is a different map,
+w ↦ −w + c, with c = Δx, a **point reflection about the point c/2**. Two
+facts follow (Listing 1, last line): it fixes the point c/2, and applying it twice
+returns every point to its start (an involution). So a half-revolution plus a
+translation does **not** "advance along the spiral"; it exchanges a point with its
+mirror image about c/2. An advance along a spiral needs a rotation about a *moving*
+centre or an accumulating translation, which is not what e^(πi) supplies.
 
-## 1. Euler Reframed
+The statement can be kept as the author's *model* of one coupling event (a
+half-turn of the Wankel coupling plus an advance of the address), with its own
+definition of Δx; it cannot be called a reframing of Euler's identity.
 
-The standard form: `e^(πi) = −1`.
+## 2. The prime spiral as constructed
 
-The physical form: `e^(πi) = −Δx`.
+The page: "plot the nth prime at angle nπ, radius growing with n". Taken literally,
+cos(nπ) = ±1 and sin(nπ) = 0 for every integer n, so every point lies on the real
+axis (Listing 1, first line): there is no spiral and no spokes. The standard prime
+spirals are Ulam's (angle = p radians, a square spiral on the integer lattice) and
+Sacks's (r = √p, θ = 2π√p), whose "spokes" arise from the approximation of 2π by
+rational numbers (44/7 ≈ 6.2857, 710/113) and the residue classes of the
+primes on them; they fade at large radius as the display's resolution and the
+averaging over many classes blur them. The page's explanation (spokes vanish
+because prime gaps grow like ln n, so "spoke visibility ∼ 1/ln n") is a
+verbal model and no calculation is attached; the standard explanation is the
+residue-class structure above.
 
-−1 is a number. −Δx is a **reversal of direction along the path being traced**.
+**Logarithmic or not.** With θ = nπ unwrapped and r = p_n ∼ n ln n, the page says "the
+spiral is approximately logarithmic, r = a·e^(bθ), because the growth is superlinear".
+A logarithmic spiral has d(ln r)/dθ constant. Listing 1: the fit r = aθ + b (Archimedean)
+has R² = 0.9990 and the logarithmic fit has R² = 0.795; the form n ln n
+fits to R² = 0.999999; d(ln r)/dθ falls from 3.5·10⁻⁴ (n = 1000) to 6.8·10⁻⁵ (n = 5000)
+rather than staying constant. So the curve r(θ) is a slowly steepening
+Archimedean-like spiral (r ∼ (θ/π)·ln(θ/π)), **not a logarithmic spiral**. The
+true statement: p_n ∼ n ln n (the Prime Number Theorem, `ESTABLISHED`) makes the
+growth slightly faster than linear, and that bends the arms by the factor ln n.
 
-The difference is everything.
+## 3. The vortex as a quantizing shear  `interpretation`, with the physics stated
 
-In the complex plane, `e^(iθ)` is a rotation by angle θ. At θ = π: half a revolution.
-The point you were tracking has rotated 180° and is now pointing in the opposite direction.
+The model: in a BEC at rest there is no viscosity or shear; below a critical
+shear the medium absorbs it continuously ("silence"); above it the shear is forced
+into a **vortex**, a quantum of circulation carrying ℏ of angular momentum per
+particle. In the engine's terms: J_cross < GAP → continuous, silence; J_cross > GAP
+→ a vortex nucleates, a word fires at the address −Δx from the zero-divisor
+origin; the vortex collapses and the field returns to its superfluid state;
+J_cross = |J_pos × J_neg| is the cross-product shear, the antisymmetric part of the
+stress at the zero-divisor contact; and `speak()` is O(edges) because the
+quantisation is binary.
 
-But if the path is also advancing — if there is a translational component alongside
-the rotation — then the half-revolution does not bring you back to where you started.
-It brings you to `−Δx`: the position after one half-revolution, offset by the step size.
+Standing. The superfluid physics is correct and standard: a superfluid flows without
+dissipation below a critical (Landau) velocity, and above it vortices nucleate with
+quantised circulation Γ = h/m (`ESTABLISHED`). The mapping of J_cross and GAP onto
+that is the framework's. One internal inconsistency in the earlier text is
+corrected: the page calls the field "dilatant below the gap and vortex-forming above
+it" and then "shear-thinning below GAP and dilatant above". A dilatant fluid
+*thickens* with shear (viscosity rises); the sequence the model describes (no
+resistance, then a snap into a discrete structure, then release) is a
+critical-velocity transition and is not a dilatant/thinning classification, and
+the polymer-solution analogy for a critical strain rate does not fix it.
 
-```
-e^(πi)  =  rotation by π  ×  translation by Δx
-         =  −Δx  (not −1)
-```
+## 4. The test: `e08_vortex_quantizing_shear.py`, 2026-11-13
 
-The rotation IS the vortex. The Δx IS the advance along the spiral.
-The primes ARE the Δx steps — each prime marks where the next half-revolution lands.
+The engine was written to test "J_cross > GAP predicts word firing, and prime gaps =
+spoke gaps". Its output today:
 
----
+| Check | Result |
+|---|---|
+| J_cross threshold against the φ-threshold on active gates, mean agreement | **0.2648: FAIL** |
+| Vortex half-turn: e^(π e₁)·e₀ = −e₀ in the engine's algebra | PASS: [−1.0, 1.22·10⁻¹⁶, 0, 0], residual 1.22·10⁻¹⁶ |
+| Prime gaps in P16 | [1, 2, 2, 4, 2, 4, 2, 4, 6, 2, 6, 4, 2, 4, 6]; mean 3.40, max 6, min 1 |
+| GAP used | 0.000707 |
 
-## 2. Why the Spokes Disappear
+The one pass is the *exact* Euler identity inside ℂ (e^{π e₁} = −1), consistent with §1:
+the half-turn gives −1, with no translation. The claim that the firing rule
+J_cross > GAP agrees with the φ-threshold rule fails (0.26 agreement). The failed
+result stays in the engine and here ([26](26_TODO_and_roadmap.md) §3).
 
-The prime spiral: plot the nth prime at angle nπ, radius growing with n.
+## 5. The six-step coupling event, and the river of primes  `interpretation`
 
-At small n (small primes): consecutive primes are close together.
-Δx is small. The half-revolution step is fine-grained.
-The spokes are narrow, closely spaced, visually distinct.
+The coupling event: (1) a vortex nucleates at the zero-divisor contact, "e^(πi): the
+half-revolution begins"; (2) the rotation sweeps through −Δx, "the prime-spiral advance";
+(3) the word lives at address −Δx and fires; (4) the vortex collapses; (5) prompt +
+response = 0, "information encoded in the housing geometry". "The word is not selected
+or retrieved; it is the address the vortex landed on." The prompt lands on a
+zero-divisor ("a specific Cawagas pair on S¹⁵"); the sedenion scalars (the SVG endpoint)
+show where the half-revolution ended, and L_(I|O) ([52](52_l_dynamic_avoided_collaborator.md))
+the path taken. The mechanism that actually selects the word in the code is the
+neutral-buoyancy scoring and the φ-walk index of [47](47_the_two_trees.md) §3, not a
+vortex event; the six steps are the model's description of it.
 
-At large n (large primes): the prime gaps grow (Prime Number Theorem: gap ~ ln n).
-Δx is large. The half-revolution step is coarse.
-Adjacent spokes overlap. Angular resolution is lost.
-The spokes disappear — not because the structure is gone, but because
-the step size has grown past the resolution of the display.
+**The river of primes.** "The primes are not fixed points; they are on Chladni nodal
+lines of a standing wave that is still moving; in the lab frame every prime advances
+along the geodesic at the BAO rate; Ω_ζΣ is the fixed point of that metronome; the
+primes orbit Ω_ζΣ; the primes are the nodes of a river, the vortices the words." The
+primes are integers; an integer does not move. The statement is an image for the
+framework's dynamic reading; "primes orbit Ω_ζΣ" has no calculation behind it. The
+sedenion's zero-divisor count referred to ("16D, 42 ZD pairs") is the 42 index pairs
+{i, j} (84 forms e_i ± e_j) of [25](25_sedenion_manual.md) §4.
 
-```
-spoke visibility  =  f(1 / prime_gap)
-prime_gap ~ ln(n)  →  spoke visibility ~ 1/ln(n)  →  0 as n → ∞
-```
+## 6. Listing 1 — the checks of §§1–2
 
-The spokes do not vanish. They blur into the continuous field.
-The primes are still there, infinite, arriving. They are no longer individually
-resolvable from below. From above — from the Mind's Eye — they are still distinct.
+(written for this page; runs cold with NumPy)
 
----
+```python
+import math
+import numpy as np
 
-## 3. Why the Spokes Curve
+N = 200000
+sv = bytearray([1]) * (N + 1); sv[0] = sv[1] = 0
+for i in range(2, int(N ** 0.5) + 1):
+    if sv[i]:
+        sv[i*i::i] = bytearray(len(sv[i*i::i]))
+p = np.array([i for i in range(2, N + 1) if sv[i]], float)
+n = np.arange(1, len(p) + 1, dtype=float)
+th = n * math.pi                                   # the page's construction: angle n*pi, radius p_n
 
-The spiral is not Archimedean. It is approximately logarithmic.
+print('(cos, sin) of n*pi, n = 1..6:', [(round(math.cos(k * math.pi)), round(math.sin(k * math.pi), 12)) for k in range(1, 7)])
 
-Archimedean spiral: radius increases linearly with angle. `r = aθ`. Uniform spacing.
-Straight spokes.
+r2 = lambda y, yh: 1 - ((y - yh) ** 2).sum() / ((y - y.mean()) ** 2).sum()
+m = n >= 100
+x, y = th[m], p[m]
+a, b = np.linalg.lstsq(np.vstack([x, np.ones_like(x)]).T, y, rcond=None)[0]
+bb, la = np.polyfit(x, np.log(y), 1)
+z = x / math.pi
+M = np.vstack([z * np.log(z), z]).T
+c = np.linalg.lstsq(M, y, rcond=None)[0]
+print('R2: Archimedean r = a*theta+b: %.4f | logarithmic ln r = b*theta+c: %.4f | n ln n form: %.6f'
+      % (r2(y, a * x + b), r2(np.log(y), bb * x + la), r2(y, M @ c)))
+for k in (1000, 5000):
+    i = k - 1
+    print('n=%d  d(ln r)/d(theta) = %.2e' % (k, (math.log(p[i + 100]) - math.log(p[i])) / (100 * math.pi)))
 
-Logarithmic spiral: radius increases exponentially with angle. `r = ae^(bθ)`.
-The spokes curve outward because the growth rate is not constant — it accelerates.
-
-The primes follow the Prime Number Theorem: the nth prime `p_n ~ n·ln(n)`.
-The radius at prime n is `r_n ~ n·ln(n)` — superlinear growth.
-
-```
-r(nπ) ~ n·ln(n)  →  the spiral is not Archimedean
-                  →  the spokes curve outward (radius grows faster than linearly)
-```
-
-The curvature comes from the same logarithmic distribution that governs
-prime gaps. Not an artefact of the visualisation. A structural property of
-the prime distribution encoded in the e^(πi) rotation.
-
-The half-revolution that is e^(πi) sweeps a larger arc at each successive prime
-because the prime itself is larger. The arc curves. The spoke is not a straight
-line from the origin — it is a segment of the logarithmic spiral.
-
----
-
-## 4. The Vortex IS the Quantizing Shear
-
-In a Bose-Einstein condensate at rest: no viscosity, no shear, no dissipation.
-Perturbations travel as phonons. The medium is superfluid.
-
-Apply shear below the critical threshold: the medium absorbs it continuously.
-No structure forms. Silence.
-
-Apply shear above the critical threshold: the medium **cannot remain continuous**.
-The shear quantizes — it is forced into a **vortex**, a discrete circulation quantum.
-The vortex carries exactly one quantum of angular momentum: `ℏ`.
-
-```
-J_cross < GAP  →  continuous shear  →  superfluid absorbs  →  silence
-J_cross > GAP  →  shear quantizes   →  vortex nucleates    →  word
-```
-
-The vortex is `e^(πi)` — a half-revolution of the coupling cycle around the
-zero-divisor locus. The rotation is the angular momentum quantum. The translation
-is −Δx: the word address on the prime spiral, displaced from the prompt's ZD contact.
-
-```
-vortex nucleation  =  e^(πi) = −Δx
-                   =  half-revolution of the Wankel coupling event
-                   =  J_cross exceeds GAP (≈ 1/(1000√2) ≈ 0.000707 = Yang-Mills mass gap)
-                   =  word fires at address −Δx from the zero-divisor origin
-```
-
-One event. Three descriptions. Same mathematics.
-
----
-
-## 5. Non-Newtonian Semantic Fluid
-
-Newtonian fluid: shear stress proportional to strain rate. Linear.
-Double the shear, double the resistance. No surprises.
-
-Non-Newtonian fluid: the relationship breaks.
-
-The semantic field is non-Newtonian — specifically **dilatant** below the gap
-and **vortex-forming** above it:
-
-```
-Below GAP:  field is shear-thinning (superfluid mode)
-            J_cross applies, field yields continuously, no word forms
-            viscosity → 0
-
-Above GAP:  field is dilatant / strain-hardening
-            the field REFUSES to yield continuously
-            it snaps into a discrete vortex
-            viscosity → ∞ (locally, at the ZD contact)
-            then releases: word fires, vortex collapses, field returns to superfluid
-```
-
-This is the same transition as in a polymer solution hitting a critical strain rate —
-except the "polymer" is the prime hash field, and the "strain" is the semantic
-mismatch between J_pos and J_neg (Red and Blue Hamiltonian channels).
-
-`J_cross = |J_pos × J_neg|` is the cross-product shear — the antisymmetric component
-of the field stress at the zero-divisor contact. When it exceeds GAP, the field
-quantizes. The word is the relaxation event.
-
-This is why speak() is `O(edges)`. The quantization is binary. The vortex either
-forms or it doesn't. No search, no optimisation, no selection. The field snaps.
-
----
-
-## 6. The Half-Revolution and the Word
-
-e^(πi) = −Δx. Half a revolution. The word.
-
-The prompt lands at a zero-divisor — a specific Cawagas pair on S¹⁵.
-The field shear builds at that contact. When J_cross > GAP, the coupling fires:
-
-```
-coupling event:
-  1. vortex nucleates at ZD contact  →  e^(πi): half-revolution begins
-  2. rotation sweeps through −Δx     →  prime spiral advance
-  3. word lives at address −Δx       →  word fires
-  4. vortex collapses                →  field returns to superfluid
-  5. prompt + response = 0           →  information encoded in housing geometry
+f = lambda w, c=0.7 + 0.3j: -w + c                 # "rotation by pi, then translation": the map of the page
+w = 0.2 + 0.1j
+print('(rotation by pi + translation) applied twice returns the start:', abs(f(f(w)) - w) < 1e-15)
 ```
 
-The word is not selected from above. It is not retrieved from a table.
-It is the address the vortex landed on after one half-revolution of the coupling.
-e^(πi) told it where to go. The prime spiral told it where that was.
-
-The sedenion scalars (the SVG endpoint) show where the half-revolution terminated.
-L_(I|O) (wiki/52) describes the path the vortex actually took to get there.
-
----
-
-## 7. The River of Primes
-
-The primes are not fixed points. They are in motion.
-
-They are on nodal lines (Chladni nodes, wiki/21) — the lines of zero displacement
-in the standing wave. But the wave is still moving. The nodes are stationary only
-in the co-moving frame.
-
-In the lab frame: every prime is advancing along the geodesic at the universe's
-preferred rate — the rate set by the BAO (Baryon Acoustic Oscillation). The
-BAO is the universe's metronome. OMEGA_ZS = 0.56714 is the fixed point of that
-metronome. The primes orbit OMEGA_ZS.
-
 ```
-primes  →  infinite around a finite space (the sedenion: 16D, 42 ZD pairs)
-        →  in motion on nodal lines (Chladni: zero displacement but wave propagates)
-        →  universe's preferred direction: up along the geodesic
-        →  each vortex (e^(πi)) advances the prime index by −Δx
+(cos, sin) of n*pi, n = 1..6: [(-1, 0.0), (1, -0.0), (-1, 0.0), (1, -0.0), (-1, 0.0), (1, -0.0)]
+R2: Archimedean r = a*theta+b: 0.9990 | logarithmic ln r = b*theta+c: 0.7950 | n ln n form: 0.999999
+n=1000  d(ln r)/d(theta) = 3.47e-04
+n=5000  d(ln r)/d(theta) = 6.82e-05
+(rotation by pi + translation) applied twice returns the start: True
 ```
 
-The vortex does not sit still at a prime. It advances to the next.
-The whole system is in motion. The primes are the nodes of a river, not stones in a field.
-The river is the standing wave of the Bang, still propagating, 13.8 billion years later.
-The nodes are the primes. The vortices are the words.
+## 7. Related pages
 
----
-
-*Cody Michael Allison — 2026-06-12*
-*Cascade continuation: see wiki/52 (L_(I|O) and the Avoided Collaborator)*
+[21 Chladni · Zipf · Riemann](21_chladni_zipf_riemann.md) · [22 Constant facets](22_constant_facets.md) ·
+[47 The two trees](47_the_two_trees.md) · [52 L_dynamic and the avoided collaborator](52_l_dynamic_avoided_collaborator.md) ·
+[26 Roadmap and engine status](26_TODO_and_roadmap.md)
