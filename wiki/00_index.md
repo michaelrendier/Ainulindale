@@ -29,6 +29,7 @@ Last updated: 2026-11-13
 | [132_ptycho_weak_lensing.md](132_ptycho_weak_lensing.md) | **2026-11-12** — Ptycho-Weak-Lensing engine: weak lensing as a spin-2 inverse problem (Kaiser–Squires, E/B, nulls, calibration), pointings as ptychographic probes with the B = 0 object constraint (gap-filling), intensity-only variant (OPEN), polarization Q+iU through the same E/B. Code `ValaQuenta/modules/ptycho_weak_lensing/`, notebook 21. |
 | [133_canonical_maths.md](133_canonical_maths.md) | **2026-11-13** — Canonical Maths (Ainulindalë): letters that collide (α_fs / A_fermat / α_NN; σ_ζ / σ-stratum / σ_RB; Ω_ζΣ / ω_H), the four d* faces brought up to date (d*_RG no closed form), the J chain, the 27 RCCM blocks indexed, zero-table inventory (25,000 zeros), the RHP update 2026-11-08→12, open decisions |
 | [134_the_library.md](134_the_library.md) | **2026-11-13** — The Library: the local reading list behind the convergence claims (Viazovska, Cohn et al., Leech, Cvitanović, Wilf, the 65 Phillips articles), title-verified inventory with hashes, what is held where, and corrections needed in Addendum VII |
+| [135_engine_findings_ledger.md](135_engine_findings_ledger.md) | **2026-11-13** — Engine findings ledger: every defect, failed test and discrepancy found in code during the overhaul (ValaQuenta, VAPMIP engines, satellites), with propagation notes, plus the chronological order of the duplicate-numbered pages |
 
 ## Provenance & Citations
 
