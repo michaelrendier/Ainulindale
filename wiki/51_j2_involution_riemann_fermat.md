@@ -1,271 +1,179 @@
-# 51 — THE J₂ INVOLUTION: RIEMANN IS QUANTIZED FERMAT
+# 51 — The J₂ involution: "Riemann is quantized Fermat", tested
 
-**Author:** Cody Michael Allison
-**Date:** 2026-06-13
-**Status:** CASCADE CAPTURE — the missing wiki; fills gap between 50 and 52
-**Predecessor:** [50 — The Vortex](50_vortex_quantizing_shear.md), [18 — Fermat Lattice](18_fermat_lattice.md), [14 — RedBlue Hamiltonian](14_redblue_hamiltonian.md)
-**Cross-ref:** wiki/38 (Fermat-Riemann negative space), wiki/52 (L_(I|O))
+| | |
+|---|---|
+| Status | **Cascade capture (2026-06-13), "the missing wiki between 50 and 52". `INTERPRETATION`/`CONJECTURE`. J₂ is an involution, but as a *swap of Red and Blue* it is **not** an automorphism of the algebra (§2); the page's identity J_red + J_blue = Ĥ_RB − Ĥ_BR carries a factor of 2 that the tested relation does not (§3); and its Red/Blue assignment of Riemann and Fermat is the reverse of other pages (§4)** |
+| Code | `VAPMIP/engines/e09_j2_involution.py` (run 2026-11-13); Listing 1 |
+| Test record | `VAPMIP/docs/wiki/J_red-J_blue-0_RB-Record.md` (§4 JG-3, JG-4; §9 OP-1…5, §9.1) |
+| Page numbering | one of two pages numbered 51 (the other: [dynamic geodesic](51_dynamic_geodesic.md)) |
+| Last verified | 2026-11-13: e09 run; Listing 1 executed |
 
----
+> *"Riemann (geometry) + Fermat (quantization) = Ĥ_RB. Riemann is quantized Fermat. The geometries quantize. The quantized shape the geometries."*
 
-> *"Riemann (geometry) + Fermat (quantization) = H_hat_RB.*
-> *Riemann is quantized Fermat.*
-> *The geometries quantize. The quantized shape the geometries."*
+## 1. J₂ as stated
 
----
+J₂: Ĥ_RB → Ĥ_BR, J_red ↔ J_blue; applying it twice returns the start (an
+involution, order 2). Ĥ_RB and Ĥ_BR "are each other's J₂ image"; the symmetric part
+Ĥ_RB + Ĥ_BR is J₂-invariant and the antisymmetric part Ĥ_RB − Ĥ_BR changes sign; the
+antisymmetric part "drives the vortex" ([50](50_vortex_quantizing_shear.md)), the
+symmetric part "preserves the standing wave"; neither exists without the other.
 
-## 1. The J₂ Involution
+The structure of the operator pair (a term X and its conjugate X†: the sum is
+self-adjoint, the "dot"; the difference is anti-self-adjoint, the "cross") is exactly
+what the J_red/J_blue record measured (OP-1…5), and the author's definition of 0_BR
+as the conjugate / return flow ([133](133_canonical_maths.md) §3) is the reading of
+that record. The statements above about symmetric and antisymmetric parts are
+correct in that sense.
 
-J₂ is the operator that swaps Red and Blue.
+## 2. J₂ as a swap of the two octonion halves: tested
 
-```
-J₂ : H_hat_RB  →  H_hat_BR
-     J_red      →  J_blue
-     J_blue     →  J_red
-```
+The engine `e09_j2_involution.py` takes J₂ to be the swap e_i ↔ e_{i+8} of the
+lower octonion (Red) and the upper octonion (Blue), and tests whether it is an
+automorphism of the sedenion product. Today's output:
 
-Apply J₂ twice: you are back where you started. It is an involution — order 2.
+| Check | Result |
+|---|---|
+| J₂² = identity | PASS |
+| J₂ is an automorphism, J₂(a·b) = J₂(a)·J₂(b) | **FAIL, 256 failures** (first pairs (0,0), (0,1), (0,2), …) |
+| J₂ maps zero-divisors to zero-divisors | PASS (0 of 0: no zero-divisors were found, §5) |
+| non-associativity | confirmed: 1848 of 4096 triples fail |
 
-H_hat_RB and H_hat_BR are not independent operators. They are each other's J₂ image.
-The symmetric part (H_hat_RB + H_hat_BR) is J₂-invariant — it does not change under
-the swap. The antisymmetric part (H_hat_RB − H_hat_BR) changes sign under J₂.
+**Why the automorphism test fails, and what is true** (Listing 1): the swap sends the
+identity e₀ to e₈. An automorphism must fix the identity (J(1·1) = J(1) forces
+J(1)J(1) = J(1)), so the swap cannot be one; it respects the product on 0 of the 256
+basis pairs. The involution that *does* respect the product is the Z₂ **grading**,
+(a, b) ↦ (a, −b), which fixes the Red half and negates the Blue half: it is an
+automorphism on all 256 pairs. It is the grading of the J_red/J_blue record:
+Red × Red → Red, Red × Blue → Blue, Blue × Blue → Red (the parity of the Cayley–Dickson
+doubling; JG-3). So the structure that is a symmetry of the algebra is the grading,
+and the "swap of Red and Blue" is a linear involution that is *not* a symmetry of
+the product. For the operator pair of §1 this is not a problem (the swap there
+acts on the operators X ↔ X†, not on the algebra's basis), but the sedenion-level
+statement "J₂ swaps the two octonions" needs the grading form to be an
+algebra symmetry.
 
-The antisymmetric part is what drives the vortex (wiki/50). The symmetric part is what
-preserves the standing wave. Neither can exist without the other. J₂ is the involution
-that relates them.
+**Listing 1 — the swap and the grading as candidate automorphisms** (written for
+this page; the same Cayley–Dickson doubling as [19](19_cayley_dickson_tower.md); runs cold)
 
----
+```python
+def conj(a):
+    return [a[0]] + [-x for x in a[1:]] if len(a) > 1 else list(a)
 
-## 2. Riemann + Fermat = H_hat_RB
+def mul(a, b):
+    if len(a) == 1:
+        return [a[0] * b[0]]
+    h = len(a) // 2
+    a1, a2, b1, b2 = a[:h], a[h:], b[:h], b[h:]
+    t1, t2, t3, t4 = mul(a1, b1), mul(conj(b2), a2), mul(b2, a1), mul(a2, conj(b1))
+    return [x - y for x, y in zip(t1, t2)] + [x + y for x, y in zip(t3, t4)]
 
-H_hat_RB has two components. They were always there. Their names were not obvious until now.
+e = lambda i: [1.0 if k == i else 0.0 for k in range(16)]
+swap_halves = lambda v: v[8:] + v[:8]                        # J2 as "swap Red and Blue": e_i <-> e_{i+8}
+grade       = lambda v: v[:8] + [-x for x in v[8:]]          # (a, b) -> (a, -b): Red fixed, Blue negated
+close = lambda u, v: max(abs(x - y) for x, y in zip(u, v)) < 1e-12
 
-```
-H_hat_RB  =  Riemann (geometry)  +  Fermat (quantization)
-```
-
-**Riemann — the geometry component:**
-
-The Riemann zeta function encodes the continuous geometry of the complex plane.
-The critical line σ=½ is a geometric object — a line in ℂ with infinite internal
-structure (the zeros). The zeros are not isolated points. They are the modes of
-a continuous geometry. Riemann is the Blue channel: restoring, geometric, curved.
-
-```
-J_blue  =  Riemann component
-         =  the restoring current — pulls the trajectory back toward the critical line
-         =  continuous geometry, curvature, the critical line as attractor
-```
-
-**Fermat — the quantization component:**
-
-Fermat's Last Theorem (Wiles 1995) defines a forbidden zone: no integer triples
-`(a, b, c)` satisfy `aⁿ + bⁿ = cⁿ` for n ≥ 3. The forbidden zone is discrete.
-It is a quantization — the integers that CANNOT exist are the quanta of the
-prohibition. Fermat is the Red channel: driving, discrete, the lattice of
-what is forbidden defining the structure of what is allowed.
-
-```
-J_red   =  Fermat component
-         =  the driving current — quantizes the geometry into discrete modes
-         =  the forbidden zone defining the allowed lattice
-         =  the integer prohibition that forces the prime distribution
-```
-
-Together:
-
-```
-H_hat_RB  =  J_red (Fermat)  +  J_blue (Riemann)
-           =  discrete quantization  +  continuous geometry
-           =  the complete Hamiltonian
-```
-
----
-
-## 3. J_red + J_blue = H_hat_RB − H_hat_BR
-
-The antisymmetric Hamiltonian.
-
-```
-H_hat_RB − H_hat_BR  =  J_red + J_blue
+for name, J in (('swap halves (e_i <-> e_i+8)', swap_halves), ('grading (a,b) -> (a,-b)', grade)):
+    inv = all(close(J(J(e(i))), e(i)) for i in range(16))
+    ok = sum(close(J(mul(e(i), e(j))), mul(J(e(i)), J(e(j)))) for i in range(16) for j in range(16))
+    print(f'{name:30} involution: {inv}   J(xy) = J(x)J(y) on {ok}/256 basis pairs')
+print('swap sends the identity e0 to e%d' % swap_halves(e(0)).index(1.0))
 ```
 
-This is not obvious from the definitions alone. It is a structural statement about
-the relationship between the Noether currents and the Hamiltonian operators.
-
-H_hat_RB drives from Red toward Blue: Fermat quantizes, Riemann receives.
-H_hat_BR drives from Blue toward Red: Riemann curves, Fermat receives.
-
-Their difference — the antisymmetric part — is what remains when you subtract
-the two directions. What remains is the **net flow**: the total Noether current
-of the system. That total is J_red + J_blue.
-
 ```
-H_hat_RB  =  +J_red driving, J_blue restoring  →  forward coupling
-H_hat_BR  =  +J_blue driving, J_red restoring  →  reverse coupling  (J₂ image)
-
-H_hat_RB − H_hat_BR  =  2 · (J_red + J_blue) antisymmetric part
-                       =  the net current that does not cancel under J₂
-                       =  the conserved charge of the vortex
+swap halves (e_i <-> e_i+8)    involution: True   J(xy) = J(x)J(y) on 0/256 basis pairs
+grading (a,b) -> (a,-b)        involution: True   J(xy) = J(x)J(y) on 256/256 basis pairs
+swap sends the identity e0 to e8
 ```
 
-The vortex (wiki/50) is driven by this antisymmetric part. The word fires when
-J_cross = |J_red × J_blue| exceeds GAP — when the antisymmetric Hamiltonian
-produces enough net current to nucleate the vortex.
+The engine's FAIL is therefore a correct result for the swap and is **kept**: it is the
+algebra saying the swap is not a symmetry. (The failure is the engine reporting the
+truth; the engine is not edited.)
 
-This is why the vortex carries angular momentum: it is the angular momentum
-of the antisymmetric Hamiltonian. The vortex IS J_red + J_blue made manifest
-as rotation. e^(πi) = −Δx is the half-revolution of H_hat_RB − H_hat_BR.
+## 3. "Riemann + Fermat = Ĥ_RB" and the identity with a factor 2
 
----
+The page's decomposition: Ĥ_RB = J_red + J_blue = (discrete quantisation) + (continuous
+geometry); and "Ĥ_RB − Ĥ_BR = J_red + J_blue" explained as the net current, then
+written "Ĥ_RB − Ĥ_BR = **2**·(J_red + J_blue), antisymmetric part".
 
-## 4. Riemann Is Quantized Fermat
+The page contradicts itself (the same relation with and without the 2). The tested
+operator relation is, for a red term X and its conjugate X† (OP-4, exact): with
+0_RB := X and 0_BR := X†, 0_RB − 0_BR = X − X† = the orientation-signed
+J_red + J_blue, with no factor 2; and with Ĥ := X + X† the old-notation sum, Ĥ_RB − Ĥ_BR
+for Ĥ_BR := Ĥ† is 0 (OP-3). So the factor 2 appears only if Ĥ_RB is the
+symmetrised object and Ĥ_BR a different one; the relation has to be stated with the
+definitions of §1, and the factor "2" removed or derived. Resolution recorded in
+[133](133_canonical_maths.md) §3 and §7.
 
-**Made precise, 2026-08-25:** [[73_why_the_half_line]] §9 traces exactly
-where "Fermat is prior" bottoms out — not a general disposition, but one
-specific, single site: the AM-GM equality point of the Euler-factor
-amplitude `p^{−s}` paired with its own reflection, the one place a prime
-(Fermat-side, discrete) and the coordinate `s` (Riemann-side, continuous)
-first stitch into one expression. Everything downstream (the functional
-equation, the Lagrangian, the spiral) either re-expresses that same local
-symmetry globally or describes what results once σ=½ is already fixed —
-none of them is a second, independent emergence of ½.
+## 4. Which side is Red? A discrepancy between pages
 
-The precise statement:
+This page: **Riemann = J_blue** ("the restoring current, the geometry") and **Fermat
+= J_red** ("the driving current, the quantisation"). [14](14_redblue_hamiltonian.md)
+and [13](13_omgwtf_rh_proof.md): **Red** = R̂_p = Berry–Keating xp = the Riemann side
+("what is"), **Blue** = B̂_p = Fermat–Weierstrass ("what cannot be"). The assignments
+are opposite. Both are conventions, and which half is Red is the open handedness
+question of [133](133_canonical_maths.md) §7.6 (the tilt/swap-twist source). Until it is
+settled, the Red = Riemann, Blue = Fermat convention of [14](14_redblue_hamiltonian.md)
+(which agrees with the `monad.py` header: J_pos Riemann, J_neg Fermat) is the one the
+wiki uses, and this page's reverse assignment is recorded as its own convention.
 
-```
-Riemann ζ(s)  =  the quantization of the Fermat forbidden zone
-```
+## 5. "Riemann is quantised Fermat"  `CONJECTURE`
 
-Fermat defines what cannot exist among the integers (no aⁿ + bⁿ = cⁿ for n ≥ 3).
-This prohibition carves a structure into the integers. The primes are what is
-left after the forbidden zone is removed — the integers that cannot be expressed
-as products of smaller integers.
+The claim: Fermat defines what cannot exist among the integers (no xⁿ + yⁿ = zⁿ for
+n ≥ 3); the primes are "what is left after the forbidden zone is removed"; Riemann
+quantises that structure onto the complex plane, "the zeros are the eigenvalues of the
+Fermat quantisation"; Fermat (discrete) → quantise → Riemann (continuous), "not the
+other way"; as classical mechanics → quantum mechanics, or a crystal lattice →
+phonons; "Wiles proved the Modularity Theorem, the proof that the Fermat quantisation
+is the Riemann geometry".
 
-Riemann then takes that structure and quantizes it onto the complex plane.
-The zeros of ζ(s) are the **eigenvalues** of the Fermat quantization. The
-continuous Riemann geometry is the quantized form of the discrete Fermat lattice.
+Standing. The central step ("the primes are what is left after the Fermat zone is
+removed") was tested and withdrawn: the n = 2 solutions reach every odd prime
+([38](38_fermat_riemann_negative_space.md) §2). The Modularity Theorem relates an elliptic
+curve's L-function to a modular form's and is not the statement that ζ is a
+"quantised" form of the Fermat lattice ([18](18_fermat_lattice.md) §3). "The zeros are
+eigenvalues" is the Berry–Keating premise, open ([42](42_rh_proof_no_primes.md)). The
+**Noether–Wiles insight** (Wiles's proof as Noether's theorem in the arithmetic domain: the
+symmetry is modularity, the conserved current the Fermat prohibition, "Noether's theorem
+guarantees it must be conserved because the symmetry is continuous") is a proposal
+at `CONJECTURE`: modularity is a statement about a discrete arithmetic correspondence, and
+Noether's theorem requires a continuous symmetry of an action, so the guarantee as
+worded does not apply.
 
-```
-Fermat (discrete)  →  quantize  →  Riemann (continuous)
-                                 (the zeros are the quanta)
-```
+The page's 2026-08-25 note: [73](73_why_the_half_line.md) §9 traces "where Fermat is prior
+bottoms out" to one site, the AM–GM equality point of the Euler-factor amplitude p^(−s)
+paired with its reflection: the single place a prime (discrete) and the coordinate
+s (continuous) first form one expression; the functional equation, the Lagrangian and the
+spiral either re-express that local symmetry or describe what follows once σ = ½ is fixed.
+(Treated on page 73.)
 
-Not the other way. Fermat is prior. Fermat defines the forbidden zone.
-Riemann quantizes it — lifts the discrete prohibition into a continuous
-spectral geometry.
+## 6. The loop  `INTERPRETATION`
 
-This is the same relationship as:
-- Classical mechanics (discrete trajectories) → quantize → quantum mechanics (continuous wave functions)
-- Crystal lattice (discrete) → quantize → phonon spectrum (continuous)
-- Fermat lattice (discrete) → quantize → Riemann spectrum (continuous zeros on σ=½)
+Forward: Fermat geometry quantises into Riemann zeros. Backward: the zeros determine the
+prime distribution (the explicit formula), which determines the multiplicative structure
+of ℤ, "which determines what the Fermat zone is". "The loop is self-consistent, an
+arithmetic fixed point, like universe(observer) = observer" ([48](48_observer_fixed_point.md));
+RH "is the statement that the loop is stable: the quanta land on the critical line"; the
+antisymmetric Hamiltonian is the loop current; "when J_cross > GAP, one quantum of
+circulation is emitted: a Riemann zero; the zero is the word". Standing: the explicit
+formula gives primes from zeros (`ESTABLISHED`), and the loop's other arc (zeros from the
+Fermat zone) is the unproven step; the engine's firing test J_cross > GAP fails today
+([50](50_vortex_quantizing_shear.md) §4: 0.26 agreement). "A Riemann zero is emitted" and "the
+zero is the word" are the framework's reading of the word-to-zero address of [15](15_the_monad.md)
+§3 (a many-to-one hash into 6,543 zeros, not an emission of zeros).
 
-Wiles proved the modularity theorem — that every elliptic curve over ℚ is
-modular. This is the proof that the Fermat quantization IS the Riemann geometry.
-They are the same object. Fermat is the discrete skeleton. Riemann is the
-continuous flesh. Wiles showed they are one body.
+## 7. What this means for the engine (as printed), with the two corrections
 
-**The Noether-Wiles insight (wiki/insight_noether_wiles):**
-Wiles' proof = Noether's theorem in the arithmetic domain.
-The symmetry is modularity. The conserved current is the Fermat prohibition.
-The conservation law is: aⁿ + bⁿ ≠ cⁿ for n ≥ 3.
-Noether's theorem guarantees it must be conserved because the symmetry is continuous.
+Riemann = J_blue (the coupling-space geometry), Fermat = J_red (the quantisation forcing
+discrete words), Ĥ_RB their sum (prompt → word), Ĥ_BR the J₂ image (word → prompt definer,
+[52](52_l_dynamic_avoided_collaborator.md)), J_red + J_blue = Ĥ_RB − Ĥ_BR = the vortex
+current = L_(I|O) in the fixed-point loop. Correct as vocabulary with: the Red/Blue
+convention of §4; the factor of 2 of §3; and, for e09's zero-divisor test, the
+anomaly recorded in [26](26_TODO_and_roadmap.md) §4 (the test checks basis products for
+zero and so cannot find any zero-divisor: "0 of 14 confirmed" and "found 0, expected 42" are
+artefacts of the test; the 84 zero-divisors e_i ± e_j are exact and are found in [25](25_sedenion_manual.md) §4).
 
----
+## 8. Related pages
 
-## 5. The Geometries Quantize. The Quantized Shape the Geometries.
-
-This is not one direction. It is a loop.
-
-**Forward:** the Fermat geometry quantizes into Riemann zeros.
-
-The forbidden zone (Fermat) imposes discrete constraints on the integers.
-Those constraints, lifted to the complex plane, produce the Riemann zero spectrum.
-The zeros are the discrete quanta of the Fermat geometry.
-
-```
-Fermat geometry (discrete)  →  [quantize]  →  Riemann zeros (quanta)
-```
-
-**Backward:** the Riemann zeros shape the Fermat geometry.
-
-The Riemann zeros determine the prime distribution (explicit formula).
-The prime distribution determines which integers are prime.
-The primes determine the multiplicative structure of ℤ.
-The multiplicative structure of ℤ determines what the Fermat forbidden zone IS.
-
-```
-Riemann zeros (quanta)  →  [prime distribution]  →  Fermat geometry (discrete)
-```
-
-**The loop:**
-
-```
-Fermat geometry
-      ↓  quantize
-Riemann zeros
-      ↓  prime distribution
-Fermat geometry  (the same one you started with)
-```
-
-The loop is self-consistent. It has no start. It requires no external input.
-The Fermat geometry produces the Riemann zeros that reproduce the Fermat geometry.
-
-This is the arithmetic fixed point. The same structure as `universe(observer) = observer`
-(wiki/48) — but at the level of the number line itself.
-
-The Riemann Hypothesis is the statement that this loop is **stable**:
-all the zeros lie on σ=½, meaning the quantization is exact — the quanta
-land exactly on the critical line, not scattered across the complex plane.
-If any zero were off the line, the loop would produce a different Fermat geometry.
-The Riemann Hypothesis says the loop is a fixed point: it reproduces itself exactly.
-
----
-
-## 6. H_hat_RB − H_hat_BR as the Loop Current
-
-The antisymmetric Hamiltonian is the current that circulates in the loop.
-
-```
-H_hat_RB:  Fermat quantizes Riemann  (forward direction)
-H_hat_BR:  Riemann shapes Fermat     (backward direction)
-H_hat_RB − H_hat_BR:  net current around the loop
-                     = J_red + J_blue
-                     = the conserved charge of the arithmetic fixed point
-```
-
-When J_cross > GAP: the loop current exceeds the quantization threshold.
-One quantum of circulation is emitted — a Riemann zero — and the loop relaxes.
-The Riemann zero is the word. The emission is the coupling event. The relaxation
-is `prompt + response = 0`.
-
-The loop never stops circulating. The primes keep arriving. The zeros keep being
-emitted. The language field keeps deepening. There is no final state because the
-fixed point is the process, not a destination.
-
----
-
-## 7. What This Means for the Engine
-
-```
-Riemann  =  J_blue  =  the geometry of the coupling space
-Fermat   =  J_red   =  the quantization that forces discrete words from continuous field
-H_hat_RB =  their sum  =  the forward-coupled Hamiltonian (prompt → word)
-H_hat_BR =  their J₂ image  =  the reverse Hamiltonian (word → prompt definer, wiki/52)
-
-J_red + J_blue  =  H_hat_RB − H_hat_BR  =  the vortex current (wiki/50)
-                                          =  L_(I|O) in the fixed point loop (wiki/52)
-```
-
-The engine does not have a Riemann component and a Fermat component.
-The engine IS the J₂ involution running — the continuous loop between
-geometry and quantization that has been running since the Bang.
-
-Each coupling event is one step of the loop. Each word is one emitted quantum.
-The monad.bin vocabulary is the record of all the quanta emitted so far.
-The corpus is the scar of the loop, written in language.
-
----
-
-*Cody Michael Allison — 2026-06-13*
-*Cascade chain: wiki/50 (vortex) → wiki/51 (this) → wiki/52 (L_(I|O))*
+[14 RedBlue Hamiltonian](14_redblue_hamiltonian.md) · [18 Fermat lattice](18_fermat_lattice.md) ·
+[26 Roadmap and engine status](26_TODO_and_roadmap.md) · [38 Fermat is the negative space of Riemann](38_fermat_riemann_negative_space.md) ·
+[133 Canonical maths](133_canonical_maths.md)
