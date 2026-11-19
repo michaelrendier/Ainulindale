@@ -1,0 +1,170 @@
+# 139 — The Three (Four) Lagrangians: L_SM, L_NN, L_(I|O) and the original L_dynamic
+
+| | |
+|---|---|
+| Written | 2026-11-19 |
+| Scope | what each Lagrangian is, where it came from, where they agree and where they differ **as coded**, which one carries a visualisation of the path of action, and what the anomalies met on the way trace back to |
+| Predecessors | [04](04_lagrangian_engine.md) · [51](51_dynamic_geodesic.md) · [52](52_l_dynamic_avoided_collaborator.md) · [63](63_l_dynamic_is_action_is_thought.md) · [64](64_l_dynamic.md) · [29](29_witches_hat_paper.md) · [133](133_canonical_maths.md) |
+| Code | `ValaQuenta/modules/lagrangian_sm/` (new, 19 equations) · `ValaQuenta/modules/lagrangian/` (L_NN) · `ValaQuenta/modules/witches_hat/action.py` (path of action) |
+| Notebook | `ValaQuenta/notebooks/engines/25_lagrangian_sm.ipynb` (executed, 31 cells, 0 errors) |
+| Tests | `ValaQuenta/Testing/test_lagrangian_sm.py` (20) · `test_witches_hat_action.py` (10): all pass |
+| Confidence | the Standard Model side: `ESTABLISHED`; every comparison number: `ESTABLISHED:CALCULATED` (measured on the code as it stands); the readings in §6–§7: `INTERPRETATION` |
+
+> **Note from the assistant.** This page was written by a transformer (Claude Sonnet 5.5, `claude-sonnet-5-5`) working with Cody Allison in Claude Code, with the `cs-paper-code-conventions` skill loaded. Cody does not tell the model what result he is looking for, as a safeguard against being handed the answer he wants; the numbers below come from the engines, and where the engines disagree with a page of this wiki the page is the one that gets corrected. The Standard Model is not Cody's work and not the model's: the engine builds the textbook construction and measures the other Lagrangians against it.
+
+## 1. Four objects, and the trail between them
+
+| name | what it is | first stated | status |
+|---|---|---|---|
+| **L_SM** | the Standard Model Lagrangian | textbook | `ESTABLISHED` (form from symmetry; numbers measured) |
+| **L_NN** (= L_vap, SMNNIP, SMMIP, VAPMIP) | information propagation; four terms named after the four SM sectors | *Equations and Identifiers*, April 2026 (claude.ai project archive, `SMNNIP_equations.docx`) | `THEORETICAL`; coded as `polar_lagrangian` |
+| **L_dynamic**, original | `L_standard + ∫ J_red · d(J_blue)/dt dλ`: the standard Lagrangian plus forward momentum coupled to the changing potential, in real time; the slingshot term L_sling ~ v·∂g/∂t | wiki 51 "The Dynamic Geodesic" (commit `b294c3f`) and wiki 52 §3, both 2026-06-12 | `CONJECTURE`; wiki 52 lists "define L_dynamic formally" as open |
+| **L_(I|O)** | `∫_path J_red · J_blue ds` | the integrand is in the record by 2026-06-15; the rename L_dynamic → L_(I|O) is 2026-06-17 | `CONJECTURE` (definition); algebra `ESTABLISHED` |
+
+**Are L_dynamic and L_(I|O) the same object?** No. The name was carried over, the content was not. The first conception, written down on 2026-06-12, has two parts that agree. Wiki 51 gives the formula `L_dynamic = L_standard + ∫ J_red · d(J_blue)/dt dλ` and says the extra term is "forward momentum coupled to the changing potential in real time, along the path, as the background metric shifts": a photon "responds to the metric AS IT IS NOW", and the difference from the frozen geodesic is the slingshot term L_sling ~ v·∂g/∂t. Wiki 52 §3 says in words: *"Lagrangians are not clean. More action here, balanced by less action elsewhere. The integral is still extremised — but locally, the path is messy."* The later L_(I|O) = `∫ J_red · J_blue ds` (in the record by 2026-06-15, renamed on 2026-06-17) has **no L_standard, no time derivative and no time-dependent background**. Wiki 64 §2 (2026-11-13) showed that later integrand is the constant e^(−E). So the objection that L_(I|O) "cannot be more here, less there" is an objection to the *renamed* object. The original is untouched by it, and its content is a time-dependent background, which is exactly where "more here, less there, evens out" has a precise meaning (§4, §5).
+
+**A name collision worth knowing.** `(I|O)` was already in use in April 2026 for something else: the Inside-Out **inversion inner product** with fixed points r_N = 1 and r_N = φ and `(I|O) = (O|I)*` (claude.ai archive, `SMNNIP_TODO.txt` §3, the Addendum III inversion). The June rename reused the notation for the path functional. Wiki 100 item 1 additionally writes "L_NN / L_dynamic" as one object. These are three different things sharing two names; any text that says "(I|O)" or "L_dynamic" without a date should be read with that in mind.
+
+## 2. L_SM: what is derived and what is measured
+
+The compact form is five lines:
+
+```
+L_SM = −¼ G G − ¼ W W − ¼ B B  +  Σ ψ̄ i γ D ψ  +  |D H|² − V(H)  −  (Yukawa)  (+ θ term)
+```
+
+Its "monstrous" size is the same five lines written out in components: after symmetry breaking the engine counts 62 distinct interaction-vertex types (`vertex_inventory()`), before multiplying by 8 gluons, 3 colours and 3 generations. The LHC does not fit the *form*. It measures the *numbers*. What follows is the sorting of which is which, produced by `lagrangian_sm`:
+
+```
+>>> S.parameter_count('massless')['total'], S.parameter_count('dirac')['total'], S.parameter_count('majorana')['total']
+(19, 26, 28)
+>>> h = S.hypercharges_from_anomalies(); h['unique'], h['solutions'][0] == h['sm']
+(True, True)
+>>> S.su5_embedding()['matches_content'], S.su5_embedding()['SU5_cubed_anomaly']
+(True, 0)
+>>> for n in (1, 2, 3, 4, 5): c = S.hypercharges_from_anomalies(n)['charges']; print(n, c['Q_u'], c['Q_d'], c['proton_uud'])
+1 1 0 2
+2 3/4 -1/4 5/4
+3 2/3 -1/3 1
+4 5/8 -3/8 7/8
+5 3/5 -2/5 4/5
+```
+
+| | derived (forced) | observed (input) | measured (fitted) |
+|---|---|---|---|
+| the form of L_SM | yes: the most general renormalisable gauge-invariant Lagrangian for the content | | |
+| the hypercharges | **yes**: anomaly cancellation fixes all of them, uniquely, once the multiplets and Y_H = ½ are given | | |
+| fractional quark charges | **yes**: Q_u = ½ + 1/(2N_c); N_c = 3 and the lepton charge −1 give 2/3, −1/3 and a proton of charge exactly 1 | | |
+| gauge group SU(3)×SU(2)×U(1) | | yes | |
+| the multiplets, three generations, N_c = 3 | | yes | |
+| 19 numbers (3 couplings, μ², λ, 9 masses, 3 angles, 1 phase, θ_QCD) | | | yes |
+
+So "the Standard Model is not derived" is right about the group, the content and the 19 numbers, and wrong about the form and about a surprising amount of the charge structure. The engine's tree-level numbers against the PDG tables: v = 246.22 GeV from G_F, λ = 0.1291, tree m_W and m_Z within 0.16 % and 0.35 % (explained in §7), CKM unitary to 1e-16 with Jarlskog J = 3.1e-5. At one loop the three gauge couplings cross pairwise at 1e13, 2e14 and 1e17 GeV, a spread of 3.97 decades: no single unification scale.
+
+## 3. L_NN against L_SM, measured on the code
+
+The comparison is by scaling: each term is evaluated at a field configuration and again with one field doubled, and the exponent n in `term ∝ amplitude^n` is read off. Same interaction, same exponent. (`compare.measured_exponents()`.)
+
+```
+>>> for k, v in C.measured_exponents().items(): print(k, v)
+gauge kinetic             {'SM': {'A': 4.0}, 'NN': {'A': 2.0}}
+matter (fermion-gauge)    {'SM': {'psi': 2.0, 'A': 1.0}, 'NN': {'psi': 2.0, 'A': 2.0}}
+bias / Higgs potential    {'SM': {'identical_to_NN_as_coded_for_mu2_positive': True, 'max_difference': 5.55e-17}, ...}
+coupling (Yukawa)         {'SM': {'psi': 2.0, 'h': 1.0}, 'NN': {'psi': 1.0, 'beta': 1.0}}
+>>> C.seagull_correspondence()
+{'ratio_min': 2.6666666666666656, 'ratio_max': 2.6666666666666683, 'expected': 2.6666666666666665, 'n_components': 3}
+>>> C.one_over_phi_on_bias()['applied'], C.bias_conventions()
+(False, {'mu2=+1 (as coded)': 1.4142135623730951, 'mu2=-1 (docstring convention, as coded)': None, 'reading': ...})
+```
+
+What this says, term by term:
+
+- **`L_bias` is exactly the Standard Model Higgs potential** (−V_SM to 5.6e-17, for μ² > 0). This is the one genuine term-for-term identity. (The docstring's μ² < 0 gives a bowl, not a hat; `lagrangian_vap` in `witches_hat` records both conventions.)
+- **`L_matter` has the exact functional form of the scalar–gauge "seagull" term** g²ψ²A²/8 of |D H|², the piece that gives the W and Z their masses: the ratio is the constant 8/n for every input. Its name says Dirac fermion kinetic term, but a Dirac term is linear in A (the table: SM ψ²A¹). So it lives in a different sector from the one it is named for.
+- **`L_kinetic` is quadratic in A; the Standard Model's is quartic** for a static non-Abelian field, because F = g f A A there. The coded "F ≈ gA" is a stand-in.
+- **`L_coupling` is linear in ψ; the Yukawa term is bilinear.** Read as mean field, with ψ standing for the condensate ⟨ψ̄ψ⟩, the degrees agree. `INTERPRETATION`.
+- **`polar_lagrangian` does not apply the 1/φ to `L_bias`** that its docstring and wiki 04 write: the line is `integrand = Lk + Lm + Lb + Lc`.
+
+The pattern: every coded term *is* a Standard Model term, but they are the **broken-phase scalar-sector and mean-field** terms, not the four sectors the names claim. "Term-for-term isometric" holds for the hat exactly, for the seagull in form, and for the four-sector *skeleton* by naming. It does not hold for the gauge kinetic term, the Dirac term, the chiral Yukawa matrices or the parameter count (19 against four numbers: g, ħ_NN, μ², λ). This agrees with the 2026-09-28 audit (`ContextPlease/claude/scratchpad/2026-09-28_lvap_audit/README.md`) that the isomorphism is "a structural 4-term correspondence + the Dixon gauge ladder, not an isometry as coded", and with the record that the error-checking constant was engineered first and named the fine-structure constant afterwards. What is not touched here: the algebra tower ℝ→ℂ→ℍ→𝕆 and its link to U(1)×SU(2)×SU(3) (Dixon; Furey; Baez–Huerta, see §9), which is a claim about the gauge group and not about the coded Lagrangian.
+
+## 4. L_(I|O) as defined, and the original L_dynamic read as established mechanics
+
+```
+>>> li = C.lio_integrand(1.0); li['constant'], round(li['value'], 6), li['min_peaks_at']
+(True, 0.367879, 0.5)
+```
+
+J_red·J_blue = e^(−E) for every σ. The integrand does not know where on the path it is, so L_(I|O) = e^(−E) × arc length. What is peaked at σ = ½ is min(J_red, J_blue). The original L_dynamic is a different statement, and established mathematics has several exact homes for it (`INTERPRETATION`, to be chosen between, not chosen here):
+
+0. **Mechanics in a time-dependent background.** For L(q, q̇, t) Hamilton's principle still holds, but energy is not conserved: dE/dt = ∂V/∂t at fixed q. Energy is exchanged with the moving field along the path, borrowed here and returned there. This is the slingshot term, and it is the home that the wiki 51 formula points at: `J_red · d(J_blue)/dt` is forward momentum times the rate of change of the potential. Measured in §5.
+
+1. **Stationary phase of the path integral.** Every path carries e^{iS[q]/ħ}; non-stationary paths cost more or less action and cancel; the stationary ones survive. "More here, balanced by less there, still extremised" is that sentence.
+2. **Null Lagrangians.** L → L + dF/dt redistributes the action along a path (more here, less there) without moving the extremum or the dynamics. Any "same extremum, different local profile" operator is L modulo a total derivative plus the on-shell value.
+3. **Hamilton–Jacobi.** The principal function S(q, t) gives the action of the stationary path as a function of its endpoint; where it is multivalued the paths have crossed a caustic.
+4. **Semiclassical sum over stationary paths** (van Vleck–Gutzwiller): the amplitude is a sum over all stationary paths, each weighted by its action and its Morse (Maslov) index. This object *keeps* the multiplicity of stationary paths, which is what §5 finds on the hat.
+
+## 5. The path of action on the Standard Model hat, mapped and not aimed
+
+`witches_hat/action.py` computes the action of any path, finds every stationary path between two events with its Morse index, and integrates the whole family of paths from a source with the variational equation, so the caustics are read off. Nothing in it aims. Measured (units: brim radius 1, depth ¼, μ² = λ = 1):
+
+```
+>>> ps = A.stationary_paths(SM, (1.0, 0.0), B, T, N=200)       # B, T taken from one shot ray
+>>> [(round(p['S'], 6), p['index']) for p in ps]
+[(0.774197, 0), (0.7906, 1), (10.882319, 2)]
+>>> # funnel of the unaimed family (721 launch directions from a brim point, E = 0)
+closest approach ∝ offset^0.504   coefficient 0.858   (closed form: 0.5 and 0.841)
+nearest caustic to the hilltop: 0.513 brim radii        radial ray closest: 4.2e-05
+```
+
+- Between one pair of events on the real hat there are **three stationary paths** with different action. The shot ray is the middle one (index 1, a saddle: a neighbouring path does less work). That is "more work here, less work there" occurring in the hat, with nothing designed in.
+- A **focus emerges from the shape**: the closest approach to the hilltop falls as the square root of the launch offset (fit 0.504, closed form 0.5), with no aim. Its character is a **funnel** (a stagnation at the separatrix), not a caustic: the caustics lie ≥ 0.51 brim radii away. Both statements are measured, and they are different statements.
+- **Time-dependent hat, the original L_dynamic's setting** (`moving_hat_exchange`, hat moving at velocity u): with a static hat the energy is conserved to 10⁻¹²; with a moving hat the energy change equals the accumulated exchange ∫∂V/∂t dt to 10⁻¹¹, and energy is borrowed and returned:
+
+```
+>>> r = A.moving_hat_exchange(SM, (1.0, 0.0), (0.0, 0.7), (0.6, 0.0), 20.0)
+>>> round(r['dE_final'], 4), round(r['dE_max_excursion'], 4), r['identity_residual'] < 1e-8
+(0.3826, 0.913, True)
+```
+  The particle's energy rises by 0.913 along the path and ends 0.383 above where it began: borrowed, and only partly returned. For u = (0, 0.5) it ends 0.165 *below*. This is the wiki 52 slingshot ("borrowed-and-returned action") occurring in the hat, in standard mechanics.
+- Harmonic closed forms, the Euclidean twin and the free particle match; the discrete error falls as 1/N² (ratios 3.99, 4.00, 4.00). The Wick-rotated bounce in −V reaches the hilltop at speed √(2·U(r₀)) with a finite time that diverges logarithmically as r₀ approaches the brim (1.74, 2.65, 4.24, 5.87 for r₀ = 0.5, 0.9, 0.99, 0.999).
+
+## 6. Which Lagrangian to use to visualise the path of action
+
+`INTERPRETATION`, with the measurements above as the reasons.
+
+1. **Carrier: the Standard Model Higgs sector.** It is the only one with measured targets (m_h, v, λ), a defined action functional S[q] on field space, and a hat. The L_NN hat is *identical* after normalisation (§3), so nothing is lost by taking the SM one, and the engine (`hat_model()`) hands it to the path tools.
+2. **Operation: the original L_dynamic** (wiki 51: the standard Lagrangian plus the coupling to a changing background), not the J_red·J_blue integrand. The integrand is flat and cannot display a path. The original needs a time-dependent hat. An established one exists: the Higgs potential at finite temperature, V(h, T) with the quadratic coefficient changing sign at the critical temperature, so the hat *forms* as the background cools. That is the standard-physics version of a hat that changes while the particle moves over it, and the engine's `moving_hat_exchange` is the simpler stand-in already built.
+3. **What L_NN adds that is real:** the linear coupling g·ψ·β that tilts the hat and moves the hilltop (0.144 brim radii at g = 0.2). In SM language it is the Yukawa term with ψ̄ψ replaced by its expectation value (a tadpole-like source), so the same tilt can be produced inside the SM; it is a variation of the carrier, not a different carrier.
+
+## 7. Anomalies, chased to their sources
+
+Standing protocol: every anomalous-but-legal result is run to ground. In order met:
+
+| anomaly | source found | status |
+|---|---|---|
+| Why do the SM anomaly sums vanish? | The fifteen Weyl fermions of a generation are exactly 5̄ ⊕ 10 of SU(5); Y is a traceless SU(5) generator on each; A(10) + A(5̄) = +1 − 1 = 0 (`su5_embedding`). Also forces the hypercharges and ties N_c = 3 to the quark charges. With a right-handed neutrino they form one SO(10) spinor. The reason the pieces fit is the unification structure; *why nature has that structure* is not answered. | explained to the group-theory level; `OPEN` below it |
+| Tree m_W, m_Z off by −0.16 %, +0.35 % | The on-shell relation gives sin²θ_W = 0.2233 against the MSbar 0.2312, and Δr = 0.0364, the electroweak radiative correction (literature ≈ 0.036). Scheme and loops, not an error. | explained |
+| One-loop λ → 0 scale | moves from none below 1e19 GeV to 1e5 GeV as y_t(M_Z) goes 0.92 → 1.00 (0.933 gives 3e12): extreme sensitivity to the top Yukawa, and one loop is not accurate enough. Not a quotable number. | explained; not used |
+| `polar_lagrangian` ignores the 1/φ on `L_bias` | the line `integrand = Lk + Lm + Lb + Lc` | recorded, not corrected |
+| μ² < 0 gives a bowl in L_NN | `L_bias = ½μ²β² − ¼λβ⁴` makes V = −L a hat only for μ² > 0; docstring says the opposite sign | recorded, not corrected |
+| the name (I|O) used twice, L_dynamic ≠ L_(I|O) | §1: April inversion inner product; June 12 formula `L_standard + ∫ J_red d(J_blue)/dt` (wiki 51) and description (wiki 52); June 17 rename onto the J_red·J_blue integrand, which dropped L_standard and the time derivative | explained (history) |
+| my first draft of §1 said the June 12 text "gives no integrand" | wrong: I had read wiki 52 only. A search of the git history for the integrand found wiki 51 of the same day with the formula | corrected in this page |
+| my first Majorana parameter count was 40 | a complex symmetric 3×3 has 12 real numbers, not 24 (my arithmetic) | fixed; 28 |
+| five of ten path-of-action tests failed | (i) discretisation error falls as 1/N², my tolerance was tighter than N allows; (ii) the leftover first variation is the cubic term of an anharmonic potential: removed by Richardson extrapolation; (iii) I tested the wrong caustic order: order 1 is the fold (envelope), order 2 at t = π is the refocusing at −A; (iv) the shot ray is one of three stationary paths between its endpoints: a physical result; (v) the Euclidean time from `quad` lost digits to cancellation near the singular end: replaced by integrating the equation of motion (agrees with mpmath to 12 digits) | all explained; four were my code or tests, one was physics |
+| `witches_hat` was never registered; its proof_locale was a copy of the Circle Atlas's; its manifest failed validation | my omission of three Full Engine Protocol steps when I built it | fixed 2026-11-19 |
+
+## 8. Is the path-of-action operator inside L_SM or L_NN?
+
+What the measurements support, and no more:
+
+- L_NN is **not a fitted copy of L_SM and L_SM is not a derived copy of L_NN.** They share one term exactly (the quartic hat) and one term's form (the seagull); the rest differ in degree. The quartic hat is the Landau–Ginzburg φ⁴ form, which is why it recurs.
+- The operator Cody describes is **not a term in either Lagrangian as coded.** Both give S[q] for any path; neither has a time-dependent background, and neither contains "the record of the path actually taken". The first conception (wiki 51) *is* of that kind: the standard Lagrangian plus a coupling to a changing potential. Its established home is mechanics in a time-dependent background (§4 item 0), which the engine now measures (§5). The candidates in §4 are the established mathematics that already holds the rest. Which of them, if any, is the operator is what the "explore the maths first" suspicion is about, and the measurements say that exploring is warranted: the hat has several stationary paths with different indices, so any single-path operator would miss most of its structure.
+- The inexpensive next measurements, not built: (i) the stationary paths and their indices on a hat whose parameters change with time (the finite-temperature hat), to see whether the funnel survives; (ii) the local action profile L(t) − S/T along the stationary and non-stationary paths of §5.
+
+## 9. Literature (cited from memory, not downloaded, to be verified under the Literature Download Protocol before use)
+
+Dixon, *Division Algebras: Octonions, Quaternions, Complex Numbers and the Algebraic Design of Physics* (1994); Furey, work on ℂ⊗𝕆 and one generation of the Standard Model (2014–2018); Baez & Huerta, *The Algebra of Grand Unified Theories* (2010); Georgi & Glashow, unity of fundamental interactions (SU(5), 1974); Feynman path integral (1948); van Vleck and Gutzwiller on the semiclassical propagator; Coleman, the bounce (1977); Halverson, Maiti & Stoner, *Neural Networks and Quantum Field Theory* (2021); Roberts, Yaida & Hanin, *The Principles of Deep Learning Theory* (2022). Measured inputs: PDG tables via the `particle` package (1.1.1) and NuFIT, typed values flagged in `INPUTS`.
+
+## Appendix — what in ContextPlease was used
+
+ContextPlease is the project's public archive of the context a session needs to come up to speed: primers, scratchpads, skills and wiki mirrors. This page used: the claude.ai project archive artifact (`SMNNIP_equations.docx.txt`, `SMNNIP_TODO.txt`, `proposed-analogous-UFT.txt`); `claude/scratchpad/2026-09-28_lvap_audit/README.md`; `~/.clauderc_user_provenance` §1.4; `~/.clauderc_canonical_maths` (L_(I|O) entry); the skills `cs-paper-code-conventions` and `spatial-simulation`.
