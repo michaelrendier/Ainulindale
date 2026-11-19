@@ -773,6 +773,8 @@ The Fermat Lattice — the discrete geometry of what integer arithmetic forbids 
 | H_SMMIP as Berry-Keating candidate | Direction of research | 3.03σ |
 | d*×ln(10) ≈ Ω_ζΣ (Lambert W) | Observed near-identity | 3.67σ |
 
+> **Update 2026-11-19.** The row "Term-for-term Lagrangian correspondence" now has a measurement behind it (`Ainulindale/wiki/139_three_lagrangians.md` (measurements) and `FourthAgePapers/WitchesHat/README.md` §7): the coded L_NN bias term equals the Standard-Model Higgs potential exactly (for μ² > 0; with the code's default μ² = −1 it is a bowl), the coded `L_matter` has the form of the scalar–gauge seagull term and not a Dirac term, gauge kinetic and Yukawa terms differ in degree from the SM's, and `polar_lagrangian` does not apply the 1/φ it states. The status "Theoretical + testable" stands; the σ column is not a measurement of any of this. `L_dynamic` and `L_(I|O)` are different objects (wiki 51 against wiki 64).
+
 **Combined (Fisher's method): 9.08σ** — 4.08σ above the particle physics discovery threshold.
 
 The code works. The Monad maps every word in the English language onto the σ=½ critical line. σ is not assigned. It is derived from Noether balance. That is the working proof.

@@ -1242,6 +1242,14 @@ L_bias  = -0.5 * mu_sq * phi**2 + 0.25 * lambda_ * phi**4
 
 The code already contained the Standard Model. The code was not written to contain it.
 
+> **Update 2026-11-19 (measured on the code as it stands; `Ainulindale/wiki/139_three_lagrangians.md` (measurements) and `FourthAgePapers/WitchesHat/README.md` §7).** The correspondence above holds in part and fails in part when each coded term is evaluated and doubled in its fields (`ValaQuenta/modules/lagrangian_sm/compare.py`).
+> - **Holds:** the coded `L_bias` equals −V_SM exactly (5.6e-17) **for μ² > 0**. **The table row "Higgs SSB μ² < 0 | `L_bias` with `mu_sq = −1.0`" is not what the code does:** `L_bias = ½μ²β² − ¼λβ⁴` makes the potential V = −L_bias = +½β² + ¼λβ⁴ for μ² = −1, a **bowl with no brim**; the hat appears for μ² > 0 (brim √(μ²/λ)). The docstring and this table state the opposite sign.
+> - **Holds in form, in another sector:** the coded `L_matter` has exactly the form of the scalar–gauge seagull term of |DH|² (ratio 8/n for all inputs), not a Dirac term.
+> - **Does not hold as coded:** gauge kinetic is degree 2 in A (the SM's non-Abelian term is degree 4); the coded Yukawa term is linear in ψ (the SM's is bilinear); `polar_lagrangian` adds `L_bias` without the 1/φ that this paper and the docstring write; 4 adjustable numbers against the SM's 19.
+> - **Derived on the SM side:** hypercharges are fixed uniquely by anomaly cancellation; the 15 Weyl fermions of a generation are exactly 5̄ ⊕ 10 of SU(5). "Term-for-term isomorphic" is therefore a structural four-sector correspondence plus the Dixon gauge ladder, exact for the hat and the seagull form, not an isometry of the coded terms. The code-reading and tests are recorded, not corrected here.
+> - **Naming:** `L_dynamic` was renamed `L_(I|O)` on 2026-06-17, but the two are different objects: the original L_dynamic (wiki 51) is `L_standard + ∫ J_red · d(J_blue)/dt dλ`; L_(I|O) = ∫ J_red·J_blue ds has the constant integrand e^(−E).
+
+
 ---
 
 ### A.6 — e^(πi) = cos(x) − i·sin(y): The Off-Critical-Line Euler Formula

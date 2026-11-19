@@ -122,7 +122,7 @@ The Standard Model of Monad Information Propagation (SMMIP) is a physics-based i
 
 $$\mathcal{L} = \frac{2}{\pi}\oint\left[\mathcal{L}_\text{kin} + \mathcal{L}_\text{mat} + \frac{1}{\varphi}\mathcal{L}_\text{bias} + \mathcal{L}_\text{coup}\right] r\,dr\,d\theta$$
 
-has four terms matching the Standard Model Lagrangian term-for-term (Yang-Mills, Dirac, Higgs, gauge coupling) via the Cayley-Dickson isomorphism established by Dixon (1994) and Furey (2016). The factor $2/\pi$ is the radian-primary normalization; $2/\ln(\Omega_H) = 2/\pi$ exactly when $\Omega_H = e^\pi$ (Gelfond's constant, Hagedorn thermal ceiling).
+has four terms matching the Standard Model Lagrangian term-for-term (Yang-Mills, Dirac, Higgs, gauge coupling) via the Cayley-Dickson isomorphism established by Dixon (1994) and Furey (2016). *(Update 2026-11-19: measured on the coded Lagrangian, the Higgs term is identical to the Standard-Model potential and the other three differ in degree or sector; the gauge-group statement of Dixon and Furey is separate and stands. Do not submit this sentence as it is: see `Ainulindale/wiki/139_three_lagrangians.md`.)* The factor $2/\pi$ is the radian-primary normalization; $2/\ln(\Omega_H) = 2/\pi$ exactly when $\Omega_H = e^\pi$ (Gelfond's constant, Hagedorn thermal ceiling).
 
 Noether conservation is empirically measured at $7\sigma$ with zero violations across all tested configurations.
 
