@@ -5,7 +5,7 @@
 | Written | 2026-11-24 |
 | Scope | the critical-line path as a rotation with a signed radial driver; the spring along t; where the primes are on it; how it compares with the Aizawa skeleton |
 | Requested by | Cody, 2026-11-24: "it's not flattening artifact...it's a top down view from a pole. it's missing the spring model. ... build me something for the Universal Native Space Riemann Zeta pathway and ensure that there is enough detail to see where the primes are ... let the Riemann Zeta function describe its own path to compare to the aizawa attractor." |
-| Code | `ValaQuenta/modules/zeta_uns_path/` · tests `Testing/test_zeta_uns_path.py` (16) · notebook `29_zeta_uns_path.ipynb` · wiki `wiki/zeta_uns_path.md`, toolbox 46 · viewer `RiemannHypothesisProof/visualizations/javascript/webgl_aizawa_vs_zeta_uns.html` |
+| Code | `ValaQuenta/modules/zeta_uns_path/` · tests `Testing/test_zeta_uns_path.py` (18) · notebook `29_zeta_uns_path.ipynb` · wiki `wiki/zeta_uns_path.md`, toolbox 46 · viewer `RiemannHypothesisProof/visualizations/javascript/webgl_aizawa_vs_zeta_uns.html` |
 | Confidence | ESTABLISHED (Hardy, Riemann-Siegel); CALCULATED for the driver, the prime resonance and the zero spectrum; the Aizawa comparison is structural only |
 
 > **Note from the assistant.** Written by a transformer (Claude Sonnet 5.5, `claude-sonnet-5-5`) working with Cody Allison in Claude Code. Cody does not tell the model what result he wants; the checks were written before the runs, and where one failed the failure is recorded here.
