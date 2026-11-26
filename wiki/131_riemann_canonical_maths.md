@@ -1,5 +1,13 @@
 # 131 — Riemann Canonical Maths
 
+> d* faces (all four are needed to chart ln(10) in Universal Native Space):  
+>   d*         = 0.24600          the value the code runs with (Boundary, σ_ζ=½ plane)  
+>   d*_taut    = 0.246307201473  A_π/ln10, the Flow (radial unit)  
+>   d*_RG      = dimension 8; numeric OPEN, no closed form  the Stability (centre r=0)  
+>   d*_ln(10)  = 0.5671432904   d*_taut·ln10 = A_π, the Translator (log bridge)  
+> Full story of d*: Ainulindale/wiki/17_alpha_omega_d_star.md; ~/.clauderc_canonical_maths @RCCM_FOUR_DSTAR; FourthAgePapers/DStarRG  
+
+
 **Written 2026-11-08.** The canonical reference for the Two-Trees / ζ-pathway work in `RiemannHypothesisProof` (mirrored there as `docs/RIEMANN_CANONICAL_MATHS.md`; the image catalog is `docs/IMAGE_CATALOG.md`).
 **Updated 2026-11-13:** the repository-wide canonical maths page is [133](133_canonical_maths.md); it carries the letter-collision table, the four d* faces, the J chain, the zero-table inventory and the RHP findings of 2026-11-09 → 12 (Guinand–Weil, Fermat cubic, Chebyshev bias, ping to 200k, Klein group, four-d* measurements) that postdate this page. This page is not re-written; §6 of 133 is the update.
 Cross-ref: [47](47_the_two_trees.md), [52c](52c_j2_involution_riemann_fermat.md), [73](73_why_the_half_line.md), [75](75_abrikosov_lattice.md), [96](96_the_riemann_fermat_horizon.md), [126](126_the_circle_catalogue.md), [130](130_ring_circle_operators.md).

@@ -21,6 +21,7 @@ Kinds: **D** defect in code; **T** test design flaw (the test cannot show what i
 | VQ-6 | X | wiki ↔ code | module-to-page links: `scale` and `add_scale_sign` both name page 107; nine modules name no Ainulindale page | [01](01_overview.md) §5 | fill the manifests |
 | VQ-7 | X | `modules/h_rb_hat` | code identifiers keep the "Σ_RB" notation (module description, `sigma_rb_evaluate`); notation scope ruling: Ĥ_RB in the maths, 0_RB in VAPMIP/Monad only | [14](14_redblue_hamiltonian.md), [127](127_names_of_the_null_operator.md) | rename only when the full rename is decided |
 | VQ-8 | T | `tier9_chem.cosic_eiip` | the SOR motif's dominant frequency is mapped to γ₃ with a free scale constant c_bio; a match to one of ~20 zeros is expected; reported as a result | [23](23_resonant_recognition.md) §3 | state c_bio's origin or mark the result as a fit |
+| VQ-9 | D | `modules/h_rb_hat/maths.py::sigma_rb_term` | the returned `balance` = E_red − E_blue (and the `self_adjoint` flag built on it) contains no sigma_riemann; the docstring says it is zero on the critical line. Reproduced 2026-11-25: identical at sigma_riemann = 0.5, 1, 2 | [ValaQuenta gallery/hrb B2](https://github.com/michaelrendier/ValaQuenta/blob/main/gallery/hrb/canvas2d_amgm_balance.html), `tests/test_h_rb_hat_sigma16.py::test_scalar_balance_does_not_depend_on_sigma_riemann` | decide what balance should mean (the imaginary-direction balance beta of the 16-component lift is the candidate); fix docstring or code |
 
 ## 2. VAPMIP engines (`VAPMIP/engines/`) and `monad.py`
 

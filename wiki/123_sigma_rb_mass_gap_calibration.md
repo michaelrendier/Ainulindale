@@ -1,5 +1,13 @@
 # 123 — σ_RB Mass-Gap Calibration: Three Sigmas, and What Does Not Conflate
 
+> d* faces (all four are needed to chart ln(10) in Universal Native Space):  
+>   d*         = 0.24600          the value the code runs with (Boundary, σ_ζ=½ plane)  
+>   d*_taut    = 0.246307201473  A_π/ln10, the Flow (radial unit)  
+>   d*_RG      = dimension 8; numeric OPEN, no closed form  the Stability (centre r=0)  
+>   d*_ln(10)  = 0.5671432904   d*_taut·ln10 = A_π, the Translator (log bridge)  
+> Full story of d*: Ainulindale/wiki/17_alpha_omega_d_star.md; ~/.clauderc_canonical_maths @RCCM_FOUR_DSTAR; FourthAgePapers/DStarRG  
+
+
 | | |
 |---|---|
 | Scope | a cross-test of `bao_mass_gap.py` against `oblique_gear_test.py`: the three objects named σ in the codebase; Δ fed into σ_RB's tilt; the strut-blindness of σ_self; a T7 mean-sensitivity anomaly; the "rectifier law" |
