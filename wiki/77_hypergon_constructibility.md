@@ -64,7 +64,7 @@ The
 random control beats the far-apart real-factor pairs on q (56.7 % against 45.4 %); if the
 mechanism tracked factoring structure it should not. **Verdict: artifact**, most likely of how
 small numbers map through the Hyperwebster base-97 address encoding. Reported plainly, per the
-policy that failed predictions stay in the record.
+policy that failed predictions stay in the record. (2026-11-27: the 110 close pairs are 25 distinct primes, 72 % nilpotent; and the one-digit odd primes are 18 of 23 nilpotent against 8 of 24 odd composites, P = 0.0022: a short-address effect, ledger X-64.)
 
 ## 4. Two bugs caught mid-build  `kept`
 
@@ -87,7 +87,13 @@ Two verified definitions, not yet unified:
 What connects either to factoring a composite N remains open; Part 2 closes the one candidate
 bridge that looked promising in the previous session's narrower test.
 
-## 6. Related pages
+## 6. The Niemeier gap  `ESTABLISHED` (the theorem) · `OURS` (its reading)  2026-11-27
+
+**Theorem.** If an ADE root system of rank 24 has all components with one Coxeter number h, then h mod 16 ∉ {1, 11, 15}.
+*Proof.* D_n and E_n have even h, so an odd h forces every component to be A_(h−1) and (h − 1) | 24; the odd h are 3, 5, 7, 9, 13, 25, residues 3, 5, 7, 9, 13. ∎
+`hypergon_constructibility.niemeier_root_systems()` generates the root systems from the defining condition and gets exactly the 23 of Niemeier (h ∈ {2,…,10, 12, 13, 14, 16, 18, 22, 25, 30, 46}); `niemeier_gap_theorem()` checks each step of the proof against them. The 15 Moonshine primes fall in the gap residues (17 → 1; 11, 59 → 11; 31, 47 → 15), but 68 % of 14-subsets of the 19 odd primes up to 71 do too (`moonshine_fill_control`), so the fill is arithmetic, not evidence. "Fermat N-shape = the forbidden zone at e_k" and "generalized Fermat IS the 71 VOAs" have no definition in code and stay THEORETICAL; the established meeting place of generalized Fermat x^p + y^q = z^r and the ADE classification is the spherical signatures (2,2,n), (2,3,3), (2,3,4), (2,3,5) (Darmon–Granville 1995; Beukers 1998), not yet in code. Ledger X-64 to X-66. Full account: `ValaQuenta/wiki/hypergon_constructibility.md` Part 4.
+
+## 7. Related pages
 
 [76](76_sigma_expansion.md) · [78 T32 nilpotency](78_t32_nilpotency.md) · [135 findings ledger](135_engine_findings_ledger.md) ·
 [19 the Cayley–Dickson tower](19_cayley_dickson_tower.md)
