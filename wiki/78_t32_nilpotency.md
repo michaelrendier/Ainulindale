@@ -60,3 +60,12 @@ record: failed results stay in documentation and code.
 
 [77 hypergon constructibility](77_hypergon_constructibility.md) · [81 SHA-1 collision geometry](81_sha1_real_collision_geometry.md) ·
 [135 findings ledger](135_engine_findings_ledger.md)
+
+## 5. The square law and the detector (added 2026-11-26)
+
+`MEASURED`, `modules/t32_nilpotency` 0.110, tests `tests/test_t32_nilpotency.py`:
+
+- **Square law.** In T32/GF(2) every x has x² ∈ {0, e₀}. Each element is nilpotent (x² = 0, the radical) or an involutory unit (x² = e₀). At dim 8, exhaustively: 128 nilpotent (counting 0), 128 involutory, 0 other.
+- **One detector.** Δ(w) = w·𝟏 (𝟏 = all ones) vanishes exactly when w² = 0: exhaustive at dim 2, 4, 8; no mismatch in 20,000 random words at dim 32.
+- **Corrected lemma** (2026-08-22, supersedes the UDEO white-paper proof): 𝟏 is not a global annihilator (e₀·𝟏 = 𝟏 ≠ 0); only the iff holds. The older statement stays in the record as withdrawn.
+- The 11 of 16 (sedenion basis primes) and 12 of 15 (Moonshine primes) nilpotent counts are counts, not a signal; the controls of §3 and [77](77_hypergon_constructibility.md) still apply.
