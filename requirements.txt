@@ -2,3 +2,4 @@
 matplotlib>=3.11  # tested 3.11.1
 numpy>=2.5  # tested 2.5.2
 sympy>=1.14  # tested 1.14.0
+tensorflow>=2.21  # tested 2.21.0
