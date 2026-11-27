@@ -158,3 +158,7 @@ problem, and that is the open item.
 
 [71 the zero-divisor statement machine](71_zd_statement_machine.md) · [83 the Archimedes screw](83_the_archimedes_screw.md) ·
 [57 the boundary ascending](57_boundary_ascending.md) · [19 the Cayley–Dickson tower](19_cayley_dickson_tower.md) · [25 the sedenion manual](25_sedenion_manual.md)
+
+---
+
+**Interactive pages (2026-11-27).** `ValaQuenta/gallery/box_kite/`: one octahedron, the 42 assessors as seven octahedra, the Fano plane and PG(3,2), the associator map, the group 1344 = 8 × 168 (non-split extension, computed). See `ValaQuenta/wiki/box_kite.md` and ledger X-69.
