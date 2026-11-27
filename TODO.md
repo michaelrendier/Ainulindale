@@ -250,6 +250,8 @@ SESSION RESULTS — 2026-06-09 (Genesis / H_hat_RB = Hyperindexing / N-S Surface
 
     FORMAL TARGETS:
     TODO: Prove that V(n) peak at n*≈5.257 is the BAO freeze point by dimensional
+
+> **2026-11-27 (ValaQuenta `bell_curve` 1.2):** the peak is now computed, not quoted: `nball_peak('volume')` = 5.2569464 (V = 5.2778) and `nball_peak('area')` = 7.2569464 (S = 33.16); V(16) = 0.2353. Γ(n/2) is the radial bookkeeping of the n-sphere ((√π)^n = (S/2)Γ(n/2)), which is what lets n be real; at n = 2 it is the circle (V = π, S = 2π). Whether the peak is the BAO freeze point remains THEORETICAL. Pictures: `ValaQuenta/gallery/hypergon_constructibility/canvas2d_nball.html`, `canvas2d_frame3d.html`.
           analysis — connect n* to the ratio of sedenion/octonion boundary energies.
     TODO: Formalise the negative-dimension zero lattice as a skip-index theorem:
           "Traversal through V(-2k)=0 nodes costs zero Noether charge."
