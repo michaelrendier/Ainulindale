@@ -23,7 +23,7 @@ G₂         continuous, dim 14, Aut(𝕆)        Moreno's blow-up: the shadow
 PSL(2,7)   finite, order 168, Aut(Fano)      the exact object
 ```
 
-PSL(2,7) is the finite subgroup of G₂ preserving the Fano labelling; G₂ forgets *which line is which*. The
+the finite group preserving the Fano labelling has order 1344 = 8 · 168 and PSL(2,7) is its quotient (enumerated 2026-11-27, `ValaQuenta` `labelled_automorphisms`; it acts transitively on the 168 unit zero-divisor points, stabiliser of order 8; ledger X-68); G₂ forgets *which line is which*. The
 framework's constant ZD_COMPOSITE = 168 is |PSL(2,7)|, and its diagrams were Fano-based throughout. That PSL(2,7) is
 "the exact object" (and G₂ the forgetful one) is the page's reading of de Marrais; the group orders and the
 subgroup relation are standard.
