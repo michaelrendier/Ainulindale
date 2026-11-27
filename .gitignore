@@ -62,3 +62,4 @@ AgeFirst/original_2026/offhand/
 references/**/*.pdf
 # Basile's published files (CC BY-SA-NC): local copy only, fetched by ValaQuenta basile.fetch_published(); never redistributed
 references/babel/
+.venv/
