@@ -105,7 +105,7 @@ the module's manifest points to; a dash means the manifest names none.
 | `turing_diagonal` | 0.100 | 5 | ESTABLISHED | — |
 | `singularity_null` | 0.100 | 5 | THEORETICAL | — |
 | `sigma_expansion` | 0.100 | 4 | THEORETICAL | [76](76_sigma_expansion.md) |
-| `t32_nilpotency` | 0.100 | 1 | ESTABLISHED | [78](78_t32_nilpotency.md) |
+| `t32_nilpotency` | 0.120 | 1 | ESTABLISHED (primitives) | [78](78_t32_nilpotency.md) |
 | `hypergon_constructibility` | 0.100 | 3 | OPEN | [77](77_hypergon_constructibility.md) |
 | `l_io_photon_path` | 0.2 | 6 | THEORETICAL | [82](82_l_io_photon_path.md) |
 | `archimedes_screw` | 0.3 | 29 | THEORETICAL | [83](83_the_archimedes_screw.md) |
