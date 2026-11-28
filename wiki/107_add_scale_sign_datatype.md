@@ -122,3 +122,8 @@ The spec's SIGN (g = ±1, the direction bit) is necessary but not sufficient for
 ## 14. Related pages
 
 [95 the Scale](95_the_scale.md) · [92 the ring-theory spine](92_ring_theory_spine.md) · [61 up/down](61_up_down_not_forward_backward.md) · [109 the Emerger](109_the_emerger.md)
+
+
+## Interactive pages (2026-11-27)
+
+`ValaQuenta/gallery/add_scale_sign/`: five pages (two maps and their composites, the bracket `[SCALE, ADD] = ADD` walked on a number line, the fold and the two Smith charts, the Long Path with the flip test, an exact 18-element grid), each checked against the Python engine on load. Writing them found that the quadrant letters of `to_smith()` were swapped against the rings described above (ledger X-71, fixed at 0.3).
