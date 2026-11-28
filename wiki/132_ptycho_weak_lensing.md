@@ -15,3 +15,8 @@
 ## Verification, 2026-11-13
 
 `tests/test_ptycho_weak_lensing.py` (with `tests/test_addition_matrix.py`): 18 passed. The synthetic figures above (1e-3, 1.5e-4, 4e-16) are the notebook's recorded output and were not individually re-derived in this pass.
+
+
+## Pixels to shear (2026-11-28, ValaQuenta engine version 0.2)
+
+`ValaQuenta/modules/ptycho_weak_lensing/shapes.py`: the PSF from stars, PSF-forward-modelled galaxy shapes, simulation of sheared galaxies, rotated-pair calibration (m, c), PSF leakage; its catalogue goes straight into `ks_map`. Cody's requirement (2026-11-27): ptychography maps the dark matter, so weak lensing is required, and where no weak-lensing catalogue exists it is built from the data. Record page: `ValaQuenta/wiki/ptycho_weak_lensing.md`.
